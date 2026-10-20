@@ -57,7 +57,15 @@ input[type=range]{accent-color:#C9A961}
 <div style="font-size: 12px; letter-spacing: 0.24em; color: #8A6D2F; font-weight: 600; text-align: center">EL VÍDEO</div>
 <h2 style="margin: 0; text-align: center; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(30px, 4vw, 44px); line-height: 1.1; color: #1B3A5C">Descubra el Condominio Coral en vídeo</h2>
 <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #0F2438; border: 1px solid #C9A961">
-<iframe src="https://www.youtube-nocookie.com/embed/qwL_NxCdlNY?rel=0&amp;modestbranding=1&amp;playsinline=1" title="Vídeo de presentación del Condominio Coral" style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<template v-if="vposter">
+<button type="button" @click="playVideo" aria-label="Ver el vídeo del Condominio Coral" style="position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; cursor: pointer; background: #0F2438">
+<img src="img/d2c72ad7b25016e7011230e337e9634c.jpg" alt="Portada del vídeo: Condominio Coral, Foz do Douro" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: clamp(64px, 9vw, 104px); height: clamp(64px, 9vw, 104px); border-radius: 50%; background: rgba(201, 169, 97, 0.96); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35); display: flex; align-items: center; justify-content: center"><svg width="40%" height="40%" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#1B3A5C"/></svg></span>
+</button>
+</template>
+<template v-if="vplay">
+<iframe src="https://www.youtube-nocookie.com/embed/qwL_NxCdlNY?autoplay=1&amp;rel=0&amp;modestbranding=1&amp;playsinline=1" title="Vídeo de presentación del Condominio Coral" style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</template>
 </div>
 </section>
 
@@ -297,7 +305,7 @@ class DCLogic { constructor(props){ this.props = props || {}; } setState(p){ Obj
 class Component extends DCLogic {
 constructor(props) {
 super(props);
-this.state = { andar: '3', zona: 0, pos: 50, g: 0 };
+this.state = { andar: '3', zona: 0, pos: 50, g: 0, vplay: false };
 }
 renderVals() {
 var B = '/_blob/';
@@ -337,6 +345,9 @@ var on = 'background: #C9A961; color: #1B3A5C;';
 var off = 'background: transparent; color: #F5F1E8;';
 var wa = function (msg) { return 'https://wa.me/351913998917?text=' + encodeURIComponent(msg); };
 return {
+vplay: s.vplay,
+vposter: !s.vplay,
+playVideo: function () { self.setState({ vplay: true }); },
 g: gal[g],
 counter: (g + 1) + ' / ' + n,
 prev: function () { self.setState({ g: (g - 1 + n) % n }); },
