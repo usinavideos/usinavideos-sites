@@ -218,7 +218,6 @@ def build(p):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(p['title'])}</title>
 <meta name="description" content="{e(p['desc'])}">
-<meta name="robots" content="noindex">
 <meta property="og:title" content="{e(p['title'])}">
 <meta property="og:description" content="{e(p['desc'])}">
 <meta property="og:image" content="https://usinavideos.pt/{p['slug']}/img/{p['hero']}.jpg">
