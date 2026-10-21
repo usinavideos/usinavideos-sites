@@ -135,6 +135,15 @@ section{padding:80px 0;scroll-margin-top:56px}
 .case-info h3{font-size:32px}
 .case-info p{color:#D8DEE5}
 
+.cl{margin-top:48px;border:1px solid var(--line);background:var(--card);padding:28px 24px;display:grid;gap:24px}
+.cl h3{font-size:34px;margin:8px 0 10px}
+.cl p{color:#D8DEE5}
+.cl-links{display:grid;gap:10px}
+.cl-links a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border:1px solid var(--line);color:var(--fg);text-decoration:none}
+.cl-links a:hover{border-color:var(--gold)}
+.cl-links span{font-size:13px;color:var(--gold)}
+@media(min-width:900px){.cl{grid-template-columns:1.4fr 1fr;align-items:center;padding:40px}}
+
 /* process */
 .steps{list-style:none;margin:40px 0 0;padding:0;display:grid;gap:16px;counter-reset:s}
 @media(min-width:900px){.steps{grid-template-columns:repeat(4,1fr)}}
@@ -333,6 +342,20 @@ footer img{height:18px;width:auto}
       <h3>Condomínio Coral</h3>
       <p>Reportagem fotográfica, vídeo com drone e Apresentação Digital Premium, em quatro línguas, de dois apartamentos T4+1 na Foz do Douro. Trabalho publicado com autorização da consultora responsável.</p>
       <div class="btns" style="margin-top:8px"><a class="btn ghost" href="t4coral/" target="_blank" rel="noopener">Abrir a apresentação</a></div>
+    </div>
+
+    <div class="cl">
+      <div>
+        <span class="eyebrow">Cliente de referência · Mediação imobiliária</span>
+        <h3>Cordial Level</h3>
+        <p>Somos o parceiro de produção da Cordial Level, mediação imobiliária premium no Grande Porto. Fazemos a vídeo-reportagem dos imóveis da carteira e das novas angariações, o podcast <em>Panorama Imobiliário PT</em> e os conteúdos das redes sociais.</p>
+        <p class="fine" style="margin-top:4px">Todos os imóveis estão publicados nos canais da Cordial Level.</p>
+      </div>
+      <div class="cl-links">
+        <a href="https://www.youtube.com/@CordialLevelPT" target="_blank" rel="noopener"><b>YouTube</b><span>@CordialLevelPT</span></a>
+        <a href="https://www.instagram.com/cordiallevel/" target="_blank" rel="noopener"><b>Instagram</b><span>@cordiallevel</span></a>
+        <a href="https://www.facebook.com/cordiallevel/" target="_blank" rel="noopener"><b>Facebook</b><span>/cordiallevel</span></a>
+      </div>
     </div>
   </div>
 </section>
