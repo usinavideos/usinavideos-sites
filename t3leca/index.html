@@ -57,6 +57,7 @@ img{max-width:100%;display:block}h1,h2,h3{font-family:var(--serif);font-weight:5
 .dark{background:var(--navy);color:var(--cream)}.dark .h2{color:var(--cream)}.dark .lead{color:#C9D2DE}
 .media{position:relative;width:100%;aspect-ratio:16/9;margin-top:24px;border:1px solid var(--gold);overflow:hidden;background:#0F2438}
 .media button,.media a.tour{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:#0F2438;cursor:pointer;display:block}
+.media.vert{aspect-ratio:9/16;max-width:420px;margin-left:auto;margin-right:auto}
 .media img{width:100%;height:100%;object-fit:cover;opacity:.9}
 .media iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(64px,9vw,100px);height:clamp(64px,9vw,100px);border-radius:50%;background:rgba(212,181,98,.96);box-shadow:0 10px 30px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center}
@@ -99,7 +100,7 @@ footer a{color:inherit}
 </style>
 </head>
 <body>
-<nav class="nav" aria-label="Secções"><div class="wrap"><a class="brand" href="#inicio">Cordial <b>Level</b></a><a href="#ficha">O imóvel</a><a href="#galeria">Fotografias</a><a href="#localizacao">Localização</a><a href="#contacto">Contacto</a></div></nav>
+<nav class="nav" aria-label="Secções"><div class="wrap"><a class="brand" href="#inicio">Cordial <b>Level</b></a><a href="#ficha">O imóvel</a><a href="#video">Vídeo</a><a href="#galeria">Fotografias</a><a href="#localizacao">Localização</a><a href="#contacto">Contacto</a></div></nav>
 
 <header id="inicio" class="hero">
   <img src="img/leca-37.jpg" alt="T3 em Leça da Palmeira, junto ao mar" fetchpriority="high">
@@ -139,7 +140,13 @@ footer a{color:inherit}
   </div>
 </section>
 
-
+<section id="video" class="dark">
+  <div class="wrap">
+    <span class="eyebrow">O vídeo</span>
+    <h2 class="h2">Leça da Palmeira, junto às Piscinas das Marés</h2>
+    <div class="media vert"><button data-yt="vU0bXm_uhGk" aria-label="Ver o vídeo do imóvel"><img src="img/leca-40.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"><svg width="40%" height="40%" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#1B3A6B"/></svg></span></button></div>
+  </div>
+</section>
 
 
 <section id="galeria">

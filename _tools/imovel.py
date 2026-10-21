@@ -76,6 +76,7 @@ img{max-width:100%;display:block}h1,h2,h3{font-family:var(--serif);font-weight:5
 .dark{background:var(--navy);color:var(--cream)}.dark .h2{color:var(--cream)}.dark .lead{color:#C9D2DE}
 .media{position:relative;width:100%;aspect-ratio:16/9;margin-top:24px;border:1px solid var(--gold);overflow:hidden;background:#0F2438}
 .media button,.media a.tour{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:#0F2438;cursor:pointer;display:block}
+.media.vert{aspect-ratio:9/16;max-width:420px;margin-left:auto;margin-right:auto}
 .media img{width:100%;height:100%;object-fit:cover;opacity:.9}
 .media iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(64px,9vw,100px);height:clamp(64px,9vw,100px);border-radius:50%;background:rgba(212,181,98,.96);box-shadow:0 10px 30px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center}
@@ -176,8 +177,8 @@ def build(p):
         video = f'''<section id="video" class="dark">
   <div class="wrap">
     <span class="eyebrow">O vídeo</span>
-    <h2 class="h2">Conheça o imóvel em vídeo</h2>
-    <div class="media"><button data-yt="{p['video']}" aria-label="Ver o vídeo do imóvel"><img src="{img(p.get('video_img', p['hero']))}" alt="" loading="lazy">{PLAY}</button></div>
+    <h2 class="h2">{e(p.get('video_h2', 'Conheça o imóvel em vídeo'))}</h2>
+    <div class="media{' vert' if p.get('video_vertical') else ''}"><button data-yt="{p['video']}" aria-label="Ver o vídeo do imóvel"><img src="{img(p.get('video_img', p['hero']))}" alt="" loading="lazy">{PLAY}</button></div>
   </div>
 </section>'''
     tour = ''
@@ -409,7 +410,8 @@ IMOVEIS = {
         loc_txt='A localização na Rua Francisco Sá Carneiro permite conjugar a tranquilidade de uma zona residencial com a proximidade a comércio, serviços, escolas, restauração e acessibilidades. O mar, as praias de Leça da Palmeira e a marginal estão por perto, com excelentes ligações a Matosinhos, Porto, Maia, aeroporto e principais vias rodoviárias.',
         maps='Rua Francisco Sá Carneiro, Leça da Palmeira', geo=(41.1937336, -8.7060774),
         legal='Informação sujeita a confirmação; áreas e características segundo a ficha CENTURY 21.',
-        video=None, tour=None,
+        video='vU0bXm_uhGk', video_vertical=True, video_img='leca-40',
+        video_h2='Leça da Palmeira, junto às Piscinas das Marés', tour=None,
     ),
     'casaraofoz': dict(
         ref='C0393-01661', curto='Moradia T4 Foz do Douro',

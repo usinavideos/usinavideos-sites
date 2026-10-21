@@ -36,7 +36,7 @@ def card(p):
   <div class="ph"><img src="{img_src}" alt="{html.escape(t)}" loading="lazy" width="900" height="675">{fl}{ai}</div>
   <div class="body"><span class="loc">{html.escape(loc)}</span><h3>{html.escape(t)}</h3><ul class="specs">{sp}</ul><div class="row"><span class="price">{price}</span><span class="ref">Ref. {ref}</span></div></div>
 </a>'''
-V=[('7JOcy10W8oY','Novo T1 em Matosinhos — pronto a habitar','Vídeo-reportagem · 10 min'),
+V=[('vU0bXm_uhGk','T3 em Leça da Palmeira, junto às Piscinas das Marés','Short · T3 Leça · 550 000 €'),('7JOcy10W8oY','Novo T1 em Matosinhos — pronto a habitar','Vídeo-reportagem · 10 min'),
    ('Re8UZQRVTOY','Oportunidade rara na Baixa do Porto: prédio inteiro com potencial construtivo','Vídeo-reportagem · 1 min'),
    ('ed1kwc3x27I','O maior erro ao comprar casa: qual é o seu potencial de financiamento?','Podcast Panorama Imobiliário PT · 26 min')]
 def vid(v):
