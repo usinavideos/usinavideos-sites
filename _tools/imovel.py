@@ -69,6 +69,8 @@ img{max-width:100%;display:block}h1,h2,h3{font-family:var(--serif);font-weight:5
 .feat{display:grid;gap:10px 28px;margin:28px 0 0;padding:0;list-style:none}
 @media(min-width:760px){.feat{grid-template-columns:1fr 1fr}}
 .feat li{padding-left:18px;position:relative}.feat li::before{content:"";position:absolute;left:0;top:.75em;width:9px;height:1px;background:var(--gold)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.chips span{border:1px solid var(--gold);padding:8px 16px;border-radius:999px;font-weight:700;font-size:15px;color:var(--navy);background:#fff}
+.dark .chips span{background:transparent;color:var(--cream)}
 .rooms{width:100%;border-collapse:collapse;margin-top:24px;font-size:15px;background:#fff;border:1px solid var(--line)}
 .rooms td{padding:11px 16px;border-bottom:1px solid var(--line)}.rooms td:last-child{text-align:right;font-weight:700;color:var(--navy);white-space:nowrap}
 .dark{background:var(--navy);color:var(--cream)}.dark .h2{color:var(--cream)}.dark .lead{color:#C9D2DE}
@@ -88,6 +90,9 @@ img{max-width:100%;display:block}h1,h2,h3{font-family:var(--serif);font-weight:5
 .lb button{position:absolute;background:none;border:0;color:#fff;font-size:34px;cursor:pointer;padding:12px 18px}
 .lb .x{top:8px;right:8px}.lb .p{left:4px;top:50%;transform:translateY(-50%)}.lb .n{right:4px;top:50%;transform:translateY(-50%)}
 .lb .c{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:#C9D2DE;font-size:13px}
+.map{position:relative;width:100%;aspect-ratio:16/9;margin-top:24px;border:1px solid var(--gold);overflow:hidden;background:#0F2438}
+@media(max-width:640px){.map{aspect-ratio:4/5}}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .maplink{display:inline-block;margin-top:20px;color:var(--navy);font-weight:700}
 .dirs{display:grid;gap:16px;margin-top:28px}@media(min-width:800px){.dirs{grid-template-columns:1fr 1fr}}
 .dir{background:#fff;border:1px solid var(--line);padding:26px 24px;display:flex;flex-direction:column;gap:12px}
@@ -142,6 +147,29 @@ def build(p):
     rooms = ''
     if p.get('rooms'):
         rooms = '<table class="rooms"><tbody>' + ''.join(f'<tr><td>{e(a)}</td><td>{e(b)}</td></tr>' for a, b in p['rooms']) + '</tbody></table>'
+
+    def sec(x):
+        paras = ''.join(f'<p class="lead" style="margin-top:12px">{e(t)}</p>' for t in x.get('paras', []))
+        chips = ('<div class="chips">' + ''.join(f'<span>{e(c)}</span>' for c in x['chips']) + '</div>') if x.get('chips') else ''
+        cls = ' class="dark"' if x.get('dark') else ''
+        return f'''<section id="{x['id']}"{cls}>
+  <div class="wrap">
+    <span class="eyebrow">{e(x['eb'])}</span>
+    <h2 class="h2">{e(x['h2'])}</h2>{paras}{chips}
+  </div>
+</section>'''
+    extras = ''.join(sec(x) for x in p.get('extras', []))
+    closing = sec(p['closing']) if p.get('closing') else ''
+    ficha_lead = ''.join(f'<p class="lead" style="margin-top:12px">{e(t)}</p>' for t in p.get('ficha_lead', []))
+    feat_h = f'<h3 style="margin-top:36px;font-size:28px;color:var(--navy)">{e(p["feat_h3"])}</h3>' if p.get('feat_h3') else ''
+    rooms_h = f'<h3 style="margin-top:36px;font-size:28px;color:var(--navy)">{e(p["rooms_h3"])}</h3>' if p.get('rooms_h3') else ''
+
+    if p.get('geo'):
+        la, lo = p['geo']
+        maplink = f'https://www.google.com/maps/dir/?api=1&destination={la},{lo}'
+        mapframe = f'<div class="map"><iframe title="Localização aproximada do imóvel" src="https://maps.google.com/maps?q={la},{lo}&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>'
+    else:
+        maplink = 'https://www.google.com/maps/search/?api=1&query=' + up.quote(p['maps']); mapframe = ''
 
     video = ''
     if p.get('video'):
@@ -222,12 +250,13 @@ def build(p):
 <section id="ficha" style="padding-top:0">
   <div class="wrap">
     <span class="eyebrow">O imóvel</span>
-    <h2 class="h2">{e(p['ficha_h2'])}</h2>
+    <h2 class="h2">{e(p['ficha_h2'])}</h2>{ficha_lead}
     <div class="facts">{facts}</div>
-    <ul class="feat">{feat}</ul>
-    {rooms}
+    {rooms_h}{rooms}
+    {feat_h}<ul class="feat">{feat}</ul>
   </div>
 </section>
+{extras}
 
 {video}
 {tour}
@@ -246,10 +275,12 @@ def build(p):
     <span class="eyebrow">Localização</span>
     <h2 class="h2">{e(p['loc_h2'])}</h2>
     <p class="lead">{e(p['loc_txt'])}</p>
-    <a class="maplink" style="color:var(--gold-l)" href="https://www.google.com/maps/search/?api=1&query={up.quote(p['maps'])}" target="_blank" rel="noopener">Ver no Google Maps ↗</a>
+    {mapframe}
+    <a class="maplink" style="color:var(--gold-l)" href="{maplink}" target="_blank" rel="noopener">Abrir no Google Maps · obter direções ↗</a>
   </div>
 </section>
 
+{closing}
 <section id="contacto">
   <div class="wrap">
     <span class="eyebrow">Contacto</span>
@@ -277,16 +308,51 @@ def build(p):
 
 
 LECA_G = [
-    ('leca-37', 'O edifício junto ao mar, visto de drone'), ('leca-38', 'O edifício e a orla marítima de Leça'),
-    ('leca-40', 'O mar e a piscina das marés, a poucos passos'), ('leca-44', 'A praia de Leça da Palmeira'),
-    ('leca-34', 'Fachada do edifício'), ('leca-36', 'O edifício e os jardins'),
-    ('leca-1', 'Sala com 42 m²'), ('leca-3', 'Sala'), ('leca-4', 'Zona de refeições junto à janela'),
-    ('leca-6', 'Mesa de jantar'), ('leca-7', 'Sala e zona de refeições'), ('leca-11', 'Cozinha equipada'),
-    ('leca-10', 'Cozinha'), ('leca-9', 'Cozinha'), ('leca-18', 'Casa de banho da suite'), ('leca-19', 'Casa de banho da suite'),
-    ('leca-21', 'Suite'), ('leca-23', 'Suite'), ('leca-14', 'Quarto'), ('leca-25', 'Quarto'),
-    ('leca-27', 'Casa de banho comum'), ('leca-30', 'Corredor dos quartos'), ('leca-12', 'Lavandaria'),
-    ('leca-32', 'Garagem com 2 lugares'), ('leca-43', 'O edifício visto de drone'), ('leca-45', 'A marginal e a praia'),
-    ('leca-46', 'A orla de Leça da Palmeira'),
+    ('leca-37', 'O edifício e o mar de Leça, vistos de drone'),
+    ('leca-38', 'O edifício e o mar de Leça, vistos de drone'),
+    ('leca-40', 'O edifício e o mar de Leça, vistos de drone'),
+    ('leca-44', 'O edifício e o mar de Leça, vistos de drone'),
+    ('leca-43', 'O edifício e o mar de Leça, vistos de drone'),
+    ('leca-45', 'O edifício e o mar de Leça, vistos de drone'),
+    ('leca-46', 'O edifício e o mar de Leça, vistos de drone'),
+    ('leca-39', 'O edifício e o mar de Leça, vistos de drone'),
+    ('leca-41', 'O edifício e o mar de Leça, vistos de drone'),
+    ('leca-42', 'O edifício e o mar de Leça, vistos de drone'),
+    ('leca-34', 'Fachada do edifício'),
+    ('leca-35', 'Fachada do edifício'),
+    ('leca-36', 'Fachada do edifício'),
+    ('leca-1', 'Sala com 41,91 m²'),
+    ('leca-2', 'Sala com 41,91 m²'),
+    ('leca-3', 'Sala com 41,91 m²'),
+    ('leca-5', 'Sala com 41,91 m²'),
+    ('leca-7', 'Sala com 41,91 m²'),
+    ('leca-8', 'Sala com 41,91 m²'),
+    ('leca-4', 'Zona de refeições'),
+    ('leca-6', 'Zona de refeições'),
+    ('leca-11', 'Cozinha'),
+    ('leca-10', 'Cozinha'),
+    ('leca-9', 'Cozinha'),
+    ('leca-12', 'Lavandaria'),
+    ('leca-13', 'Lavandaria'),
+    ('leca-21', 'Suíte'),
+    ('leca-22', 'Suíte'),
+    ('leca-23', 'Suíte'),
+    ('leca-18', 'Casa de banho da suíte'),
+    ('leca-19', 'Casa de banho da suíte'),
+    ('leca-20', 'Casa de banho da suíte'),
+    ('leca-24', 'Quarto'),
+    ('leca-25', 'Quarto'),
+    ('leca-14', 'Quarto'),
+    ('leca-15', 'Quarto'),
+    ('leca-16', 'Quarto'),
+    ('leca-27', 'Casa de banho comum'),
+    ('leca-28', 'Casa de banho comum'),
+    ('leca-29', 'Casa de banho comum'),
+    ('leca-30', 'Vestíbulo dos quartos e arrumação'),
+    ('leca-17', 'Vestíbulo dos quartos e arrumação'),
+    ('leca-31', 'Garagem com 2 lugares'),
+    ('leca-32', 'Garagem com 2 lugares'),
+    ('leca-33', 'Garagem com 2 lugares'),
 ]
 
 FOZ_G = [
@@ -305,27 +371,43 @@ FOZ_G = [
 IMOVEIS = {
     't3leca': dict(
         ref='C0393-01659', curto='T3 Leça da Palmeira',
-        title='T3 junto ao mar em Leça da Palmeira · Cordial Level',
-        desc='T3 com 138 m² úteis e 2 lugares de garagem, junto ao mar em Leça da Palmeira. 550 000 €.',
-        hero='leca-37', hero_alt='T3 junto ao mar em Leça da Palmeira',
-        loc='Leça da Palmeira · Matosinhos', h1='T3 junto ao mar', sub='138 m² úteis, 3 quartos e 2 lugares de garagem, a poucos passos das praias de Leça.',
+        title='T3 com 2 lugares de garagem em Leça da Palmeira · Cordial Level',
+        desc='T3 com 138 m², sala de 41,91 m², suíte, orientação Norte/Sul e 2 lugares de garagem em Leça da Palmeira. 550 000 €.',
+        hero='leca-37', hero_alt='T3 em Leça da Palmeira, junto ao mar',
+        loc='Rua Francisco Sá Carneiro · Leça da Palmeira · Matosinhos', h1='T3 em Leça da Palmeira',
+        sub='138 m², suíte, orientação Norte/Sul e 2 lugares de garagem, perto do mar.',
         price='550 000 €',
-        quote='Há casas que se escolhem pela planta. Esta escolhe-se também pelo que fica lá fora: o mar, as praias e o ritmo calmo de Leça.',
-        intro='Um T3 de 2008 com sala de quase 42 m², suite, chão em madeira de afizélia com aquecimento radiante e dois lugares de garagem — pronto a habitar, junto ao mar em Leça da Palmeira.',
-        ficha_h2='Espaço, conforto e dois lugares de garagem',
-        facts=[('Área útil', '138 m²'), ('Área bruta', '171 m²'), ('Quartos', '3 · 1 suite'), ('Casas de banho', '2'),
-               ('Garagem', '2 lugares'), ('Construção', '2008'), ('Certificado energético', 'C'), ('Exposição', 'Norte / Sul')],
-        features=['Pavimento em madeira de afizélia com aquecimento radiante', 'Recuperador de calor',
-                  'Cozinha equipada, com máquina de lavar loiça', 'Lavandaria independente',
-                  'Caixilharia com vidro duplo', 'Porta de segurança, alarme e videoporteiro',
-                  'Tetos falsos em pladur', 'Arrecadação'],
-        rooms=[('Sala', '41,91 m²'), ('Suite (quarto)', '18,78 m²'), ('Casa de banho da suite', '5,18 m²'), ('Quarto 2', '13,37 m²'),
-               ('Quarto 3', '11,12 m²'), ('Cozinha', '9,53 m²'), ('Corredor dos quartos', '5,45 m²'), ('Arrecadação', '5,32 m²'),
-               ('Casa de banho comum', '4,00 m²'), ('Lavandaria', '3,36 m²')],
+        quote='Imagine viver num apartamento onde o espaço não é um luxo, mas uma realidade.',
+        intro='Este magnífico T3 em Leça da Palmeira, com 138 m² de área, distingue-se pelas suas áreas generosas, excelente organização dos espaços, orientação Norte/Sul e pela comodidade de dispor de 2 lugares de garagem. Uma solução ideal para quem procura uma habitação familiar com dimensão, conforto e funcionalidade, numa das zonas mais procuradas do concelho de Matosinhos.',
+        ficha_h2='Um T3 onde as áreas fazem a diferença',
+        ficha_lead=['A zona social é marcada por uma ampla sala com 41,91 m², um espaço generoso e versátil, com capacidade para criar distintas áreas de estar e jantar, perfeito para receber família e amigos.',
+                    'A cozinha, com 9,53 m², é complementada por uma prática lavandaria de 3,36 m², proporcionando maior funcionalidade no dia a dia. Na zona privada, uma distribuição pensada para garantir conforto e privacidade.'],
+        facts=[('Área útil', '138 m²'), ('Sala', '41,91 m²'), ('Quartos', '3 · 1 suíte'), ('Casas de banho', '2'),
+               ('Garagem', '2 lugares'), ('Arrumação', '5,32 m²'), ('Orientação', 'Norte / Sul'), ('Certificado energético', 'C')],
+        rooms_h3='Áreas por divisão',
+        rooms=[('Sala', '41,91 m²'), ('Suíte', '18,78 m²'), ('Casa de banho da suíte', '5,18 m²'), ('Quarto', '13,37 m²'),
+               ('Quarto', '11,12 m²'), ('Cozinha', '9,53 m²'), ('Vestíbulo dos quartos', '5,45 m²'), ('Arrumação', '5,32 m²'),
+               ('Casa de banho comum', '4,00 m²'), ('Vestíbulo de entrada', '3,55 m²'), ('Vestíbulo', '3,50 m²'), ('Lavandaria', '3,36 m²'),
+               ('2 lugares de garagem', '27,95 m²')],
+        feat_h3='Conforto e equipamento',
+        features=['Pavimento em soalho de afizélia com piso radiante', 'Teto falso em gesso cartonado', 'Porta de segurança',
+                  'Recuperador de calor', 'Banheiras', 'Termoacumulador', 'Exaustor', 'Videoporteiro',
+                  'Caixilharia com vidro duplo', 'Orientação Norte/Sul'],
+        extras=[
+            dict(id='garagem', eb='Estacionamento', h2='2 lugares de garagem', dark=True,
+                 paras=['A propriedade dispõe ainda de 2 lugares de estacionamento, com uma área indicada de 27,95 m², proporcionando uma importante comodidade para quem valoriza estacionamento privativo e espaço adicional.']),
+            dict(id='destaque', eb='Em destaque', h2='O essencial deste T3',
+                 chips=['T3 com suíte', 'Sala de 41,91 m²', '2 lugares de garagem', 'Orientação Norte/Sul', 'Soalho em afizélia',
+                        'Recuperador de calor', 'Caixilharia com vidro duplo', 'Porta de segurança', 'Videoporteiro', 'Arrumos de 5,32 m²']),
+        ],
+        closing=dict(id='espaco', eb='Para quem valoriza espaço', h2='Um apartamento para quem valoriza espaço',
+                     paras=['Mais do que um simples T3, este é um apartamento pensado para quem procura áreas generosas, conforto e uma verdadeira sensação de espaço.',
+                            'A combinação entre a dimensão da habitação, a sala de quase 42 m², a suíte, os dois lugares de garagem e a localização em Leça da Palmeira faz desta uma solução particularmente interessante para famílias que não querem abdicar de espaço e qualidade de vida.',
+                            'Venha conhecer e descubra o espaço que este T3 tem para oferecer.']),
         gallery=LECA_G, alt='T3 em Leça da Palmeira', gal_h2='Por dentro e por fora',
-        loc_h2='Leça da Palmeira, junto ao mar',
-        loc_txt='Rua Francisco Sá Carneiro, em Leça da Palmeira. A poucos minutos a pé das praias e da marginal, com comércio, restauração, escolas e o centro de Matosinhos por perto, e acesso rápido ao Porto e ao aeroporto.',
-        maps='Rua Francisco Sá Carneiro, Leça da Palmeira',
+        loc_h2='Leça da Palmeira: qualidade de vida perto de tudo',
+        loc_txt='A localização na Rua Francisco Sá Carneiro permite conjugar a tranquilidade de uma zona residencial com a proximidade a comércio, serviços, escolas, restauração e acessibilidades. O mar, as praias de Leça da Palmeira e a marginal estão por perto, com excelentes ligações a Matosinhos, Porto, Maia, aeroporto e principais vias rodoviárias.',
+        maps='Rua Francisco Sá Carneiro, Leça da Palmeira', geo=(41.1937336, -8.7060774),
         legal='Informação sujeita a confirmação; áreas e características segundo a ficha CENTURY 21.',
         video=None, tour=None,
     ),
@@ -349,7 +431,7 @@ IMOVEIS = {
         gallery=FOZ_G, alt='Moradia T4 na Foz do Douro', gal_h2='A casa, a rua e o mar',
         loc_h2='Foz do Douro, entre o rio e o mar',
         loc_txt='Rua Senhora da Luz, no coração da Foz tradicional. Praias, marginal e Passeio Alegre a poucos minutos a pé, com comércio, restauração, escolas, banco e mercado na zona — tranquilidade residencial com acesso rápido ao centro do Porto.',
-        maps='Rua Senhora da Luz, Foz do Douro, Porto',
+        maps='Rua Senhora da Luz, Foz do Douro, Porto', geo=(41.1512834, -8.6767872),
         legal='Informação sujeita a confirmação; áreas e características segundo a ficha CENTURY 21.',
         video='zno11IhgXtE', tour='https://realsee.ai/xGWWkzlx', tour_img='foz-f2', video_img='foz-f79',
     ),

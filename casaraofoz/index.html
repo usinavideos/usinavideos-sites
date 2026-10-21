@@ -50,6 +50,8 @@ img{max-width:100%;display:block}h1,h2,h3{font-family:var(--serif);font-weight:5
 .feat{display:grid;gap:10px 28px;margin:28px 0 0;padding:0;list-style:none}
 @media(min-width:760px){.feat{grid-template-columns:1fr 1fr}}
 .feat li{padding-left:18px;position:relative}.feat li::before{content:"";position:absolute;left:0;top:.75em;width:9px;height:1px;background:var(--gold)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.chips span{border:1px solid var(--gold);padding:8px 16px;border-radius:999px;font-weight:700;font-size:15px;color:var(--navy);background:#fff}
+.dark .chips span{background:transparent;color:var(--cream)}
 .rooms{width:100%;border-collapse:collapse;margin-top:24px;font-size:15px;background:#fff;border:1px solid var(--line)}
 .rooms td{padding:11px 16px;border-bottom:1px solid var(--line)}.rooms td:last-child{text-align:right;font-weight:700;color:var(--navy);white-space:nowrap}
 .dark{background:var(--navy);color:var(--cream)}.dark .h2{color:var(--cream)}.dark .lead{color:#C9D2DE}
@@ -69,6 +71,9 @@ img{max-width:100%;display:block}h1,h2,h3{font-family:var(--serif);font-weight:5
 .lb button{position:absolute;background:none;border:0;color:#fff;font-size:34px;cursor:pointer;padding:12px 18px}
 .lb .x{top:8px;right:8px}.lb .p{left:4px;top:50%;transform:translateY(-50%)}.lb .n{right:4px;top:50%;transform:translateY(-50%)}
 .lb .c{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:#C9D2DE;font-size:13px}
+.map{position:relative;width:100%;aspect-ratio:16/9;margin-top:24px;border:1px solid var(--gold);overflow:hidden;background:#0F2438}
+@media(max-width:640px){.map{aspect-ratio:4/5}}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .maplink{display:inline-block;margin-top:20px;color:var(--navy);font-weight:700}
 .dirs{display:grid;gap:16px;margin-top:28px}@media(min-width:800px){.dirs{grid-template-columns:1fr 1fr}}
 .dir{background:#fff;border:1px solid var(--line);padding:26px 24px;display:flex;flex-direction:column;gap:12px}
@@ -118,10 +123,11 @@ footer a{color:inherit}
     <span class="eyebrow">O imóvel</span>
     <h2 class="h2">Uma moradia para renovar, com vista de mar</h2>
     <div class="facts"><div><b>165 m²</b><span>Área útil</span></div><div><b>169 m²</b><span>Área bruta</span></div><div><b>4</b><span>Quartos</span></div><div><b>2</b><span>Casas de banho</span></div><div><b>1990</b><span>Construção</span></div><div><b>E</b><span>Certificado energético</span></div><div><b>Para renovar</b><span>Estado</span></div><div><b>Moradia T4</b><span>Tipologia</span></div></div>
-    <ul class="feat"><li>Vista de mar</li><li>Boa exposição solar e muita luz natural</li><li>Pés-direitos altos</li><li>Isenta de licença de utilização</li><li>Potencial de valorização após obras</li><li>Zona tradicional da Foz do Douro, junto à marginal</li></ul>
     
+    <ul class="feat"><li>Vista de mar</li><li>Boa exposição solar e muita luz natural</li><li>Pés-direitos altos</li><li>Isenta de licença de utilização</li><li>Potencial de valorização após obras</li><li>Zona tradicional da Foz do Douro, junto à marginal</li></ul>
   </div>
 </section>
+
 
 <section id="video" class="dark">
   <div class="wrap">
@@ -153,9 +159,11 @@ footer a{color:inherit}
     <span class="eyebrow">Localização</span>
     <h2 class="h2">Foz do Douro, entre o rio e o mar</h2>
     <p class="lead">Rua Senhora da Luz, no coração da Foz tradicional. Praias, marginal e Passeio Alegre a poucos minutos a pé, com comércio, restauração, escolas, banco e mercado na zona — tranquilidade residencial com acesso rápido ao centro do Porto.</p>
-    <a class="maplink" style="color:var(--gold-l)" href="https://www.google.com/maps/search/?api=1&query=Rua%20Senhora%20da%20Luz%2C%20Foz%20do%20Douro%2C%20Porto" target="_blank" rel="noopener">Ver no Google Maps ↗</a>
+    <div class="map"><iframe title="Localização aproximada do imóvel" src="https://maps.google.com/maps?q=41.1512834,-8.6767872&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    <a class="maplink" style="color:var(--gold-l)" href="https://www.google.com/maps/dir/?api=1&destination=41.1512834,-8.6767872" target="_blank" rel="noopener">Abrir no Google Maps · obter direções ↗</a>
   </div>
 </section>
+
 
 <section id="contacto">
   <div class="wrap">
