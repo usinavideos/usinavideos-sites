@@ -110,6 +110,20 @@ section{padding:72px 0;scroll-margin-top:56px}
 .dir li a:hover{border-color:var(--gold)}
 .dir .btn{align-self:flex-start;margin-top:auto}
 .sig{margin:40px 0 0;text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(24px,4vw,34px);color:var(--navy)}
+.sell{background:#fff}
+.steps{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:18px;counter-reset:s}
+@media(min-width:900px){.steps{grid-template-columns:repeat(4,1fr)}}
+.steps li{counter-increment:s;border-top:2px solid var(--gold);padding-top:16px}
+.steps li::before{content:"0" counter(s);font-family:var(--serif);font-size:32px;color:var(--gold);display:block;line-height:1;margin-bottom:8px}
+.steps h3{font-size:23px;color:var(--navy);margin-bottom:6px}.steps p{font-size:15px;color:var(--muted)}.steps a{color:var(--navy)}
+.why{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:32px}
+@media(min-width:760px){.why{grid-template-columns:repeat(3,1fr)}}
+.why div{background:var(--cream);padding:18px}.why b{display:block;font-family:var(--serif);font-size:26px;color:var(--navy);font-weight:600}.why span{font-size:14px;color:var(--muted)}
+.btn.wa{background:#1E9E4A;color:#fff}
+#usufruto + #videos{border-top:1px solid rgba(212,181,98,.35)}
+.uf{display:grid;gap:16px;margin-top:28px}@media(min-width:800px){.uf{grid-template-columns:1fr 1fr}}
+.uf article{border:1px solid rgba(212,181,98,.5);padding:24px}.uf h3{font-size:26px;color:var(--gold-l);margin-bottom:10px}
+.uf ul{margin:0;padding-left:18px;display:grid;gap:8px;color:#E6EBF1}
 footer{background:var(--navy-d);color:#C9D2DE;font-size:13px}
 footer .wrap{padding-top:32px;padding-bottom:32px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
 footer .usina{display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none}
@@ -123,6 +137,8 @@ footer .usina:hover span{color:var(--gold-l)}
   <div class="wrap">
     <a class="brand" href="#inicio">Cordial <b>Level</b></a>
     <a class="l" href="#imoveis">Imóveis</a>
+    <a class="l" href="#vender">Vender</a>
+    <a class="l" href="#usufruto">Usufruto</a>
     <a class="l" href="#videos">Vídeos</a>
     <a class="l" href="#canais">Canais</a>
     <a class="l" href="#contacto">Contacto</a>
@@ -156,6 +172,46 @@ footer .usina:hover span{color:var(--gold-l)}
     </div>
     <a class="allprops" href="https://century21.pt/consultores/cramos" target="_blank" rel="noopener"><span><small>Carteira completa e sempre atualizada</small>century21.pt/consultores/cramos</span><b>Ver todos os imóveis →</b></a>
     <p class="note">Preços e disponibilidade sujeitos a confirmação. Informação atualizada em outubro de 2026; a ficha na CENTURY 21 tem sempre a versão mais recente.</p>
+  </div>
+</section>
+
+<section id="vender" class="sell">
+  <div class="wrap">
+    <span class="eyebrow">Para proprietários</span>
+    <h2 class="h2">Confie-nos a venda do seu imóvel.</h2>
+    <p class="lead">Vender bem é mais do que publicar um anúncio. É saber quanto vale o imóvel, apresentá-lo como merece e acompanhar cada passo até à escritura — com a segurança de uma rede CENTURY 21.</p>
+    <ol class="steps">
+      <li><h3>Avaliação de mercado</h3><p>Analisamos o imóvel, a zona e as vendas recentes para definir um preço realista e competitivo.</p></li>
+      <li><h3>Produção profissional</h3><p>Fotografia, vídeo, drone e uma apresentação digital própria do imóvel, produzidas pela Usina Vídeos — veja o <a href="../casaraofoz/">exemplo da Foz</a> e o <a href="../t3leca/">de Leça</a>.</p></li>
+      <li><h3>Divulgação certa</h3><p>Portais e rede CENTURY 21, redes sociais da Cordial Level e campanhas dirigidas a quem procura na zona.</p></li>
+      <li><h3>Acompanhamento até ao fim</h3><p>Visitas, negociação, documentação e apoio ao comprador no crédito habitação, até à escritura.</p></li>
+    </ol>
+    <div class="why">
+      <div><b>Mais de 10 anos</b><span>de experiência de Casemiro Ramos em mediação e avaliação imobiliária</span></div>
+      <div><b>25 anos</b><span>de experiência comercial de Renê Medeiros</span></div>
+      <div><b>Master Ruby Team 2025</b><span>distinção CENTURY 21 atribuída à equipa</span></div>
+    </div>
+    <div class="btns" style="margin-top:22px"><a class="btn wa" href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20tenho%20um%20im%C3%B3vel%20que%20gostaria%20de%20vender%20e%20queria%20falar%20com%20a%20Cordial%20Level." target="_blank" rel="noopener">WhatsApp Casemiro</a><a class="btn wa" href="https://wa.me/351912706395?text=Ol%C3%A1%20Ren%C3%AA%2C%20tenho%20um%20im%C3%B3vel%20que%20gostaria%20de%20vender%20e%20queria%20falar%20com%20a%20Cordial%20Level." target="_blank" rel="noopener">WhatsApp Renê</a></div>
+  </div>
+</section>
+
+<section id="usufruto" class="dark">
+  <div class="wrap">
+    <span class="eyebrow">Especialidade Cordial Level</span>
+    <h2 class="h2">Vender a casa e continuar a viver nela.</h2>
+    <p class="lead">A venda da propriedade de raiz com reserva de usufruto (também chamada nua-propriedade) permite ao proprietário receber já o valor da venda e manter, por toda a vida, o direito de habitar a casa. É uma das especialidades de Casemiro Ramos.</p>
+    <div class="uf">
+      <article><h3>Para quem vende</h3><ul>
+        <li>Recebe o capital agora, sem ter de sair de casa.</li>
+        <li>Mantém o direito de habitar (ou arrendar) o imóvel enquanto viver.</li>
+        <li>Pode usar o valor para complementar rendimentos, apoiar a família ou investir.</li></ul></article>
+      <article><h3>Para quem compra</h3><ul>
+        <li>Adquire o imóvel abaixo do valor de mercado da propriedade plena.</li>
+        <li>Torna-se proprietário pleno quando o usufruto termina.</li>
+        <li>Investimento patrimonial de longo prazo, sem gestão de inquilinos.</li></ul></article>
+    </div>
+    <p class="note" style="color:#C9D2DE">Cada caso é avaliado individualmente. O valor da nua-propriedade depende, entre outros fatores, da idade do usufrutuário. Esta informação é geral e não dispensa aconselhamento jurídico e fiscal.</p>
+    <div class="btns" style="margin-top:22px"><a class="btn wa" href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20venda%20com%20reserva%20de%20usufruto." target="_blank" rel="noopener">WhatsApp Casemiro</a><a class="btn wa" href="https://wa.me/351912706395?text=Ol%C3%A1%20Ren%C3%AA%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20venda%20com%20reserva%20de%20usufruto." target="_blank" rel="noopener">WhatsApp Renê</a></div>
   </div>
 </section>
 
@@ -199,14 +255,14 @@ footer .usina:hover span{color:var(--gold-l)}
         <a class="btn navy" href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20vi%20o%20site%20da%20Cordial%20Level%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Falar com Casemiro no WhatsApp</a>
       </article>
       <article class="dir">
-        <h3>Francisco Medeiros</h3>
+        <h3>Renê Medeiros</h3>
         <p class="role">Diretor · Cordial Level | CENTURY 21 Arquitectos</p>
         <ul>
-          <li><span>WhatsApp</span><a href="https://wa.me/351912706395?text=Ol%C3%A1%20Francisco%2C%20vi%20o%20site%20da%20Cordial%20Level%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">+351 912 706 395</a></li>
+          <li><span>WhatsApp</span><a href="https://wa.me/351912706395?text=Ol%C3%A1%20Ren%C3%AA%2C%20vi%20o%20site%20da%20Cordial%20Level%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">+351 912 706 395</a></li>
           <li><span>E-mail</span><a href="mailto:franciscomedeiros@century21.pt">franciscomedeiros@century21.pt</a></li>
           <li><span>CENTURY 21</span><a href="https://franciscomedeiros.century21.pt" target="_blank" rel="noopener">franciscomedeiros.century21.pt</a></li>
         </ul>
-        <a class="btn navy" href="https://wa.me/351912706395?text=Ol%C3%A1%20Francisco%2C%20vi%20o%20site%20da%20Cordial%20Level%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Falar com Francisco no WhatsApp</a>
+        <a class="btn navy" href="https://wa.me/351912706395?text=Ol%C3%A1%20Ren%C3%AA%2C%20vi%20o%20site%20da%20Cordial%20Level%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Falar com Renê no WhatsApp</a>
       </article>
     </div>
     <blockquote class="sig">“A sua exigência, a nossa assinatura.”</blockquote>
