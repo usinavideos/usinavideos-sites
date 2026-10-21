@@ -3,53 +3,377 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Usina Vídeos · Produção audiovisual imobiliária</title>
-<meta name="description" content="Usina Vídeos — produção audiovisual para o mercado imobiliário no Porto. Dirigida por Freire Neto e Sandra Freire.">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Usina Vídeos · Produção audiovisual imobiliária no Porto</title>
+<meta name="description" content="Reportagem fotográfica, vídeo com drone, vídeo com o consultor em cena, visita virtual 3D e Apresentação Digital Premium para imóveis no Grande Porto.">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Usina Vídeos · Produção audiovisual imobiliária">
+<meta property="og:description" content="Fotografia, vídeo, drone e apresentações digitais para consultores imobiliários no Grande Porto.">
+<meta property="og:image" content="https://usinavideos.pt/img/coral-drone.jpg">
+<meta property="og:url" content="https://usinavideos.pt/">
+<meta name="theme-color" content="#0A1620">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0A1620;--card:#0D1B28;--line:#1F4FA8;--fg:#F2F0EB;--muted:#9AA3AB;--gold:#C9A45C}
+:root{
+  --bg:#0A1620; --card:#0D1B28; --line:#1F4FA8; --line-soft:#173a6e;
+  --gold:#C9A45C; --fg:#F2F0EB; --muted:#A9B4C0;
+  --green:#1E9E4A; --red:#C62828; --amber:#E0A93B;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Mulish',system-ui,-apple-system,sans-serif;
+  --max:1120px;
+}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;background:var(--bg);color:var(--fg);font-family:'Mulish',system-ui,sans-serif;display:flex;align-items:center;justify-content:center;padding:48px 16px}
-main{width:100%;max-width:560px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px}
-.eyebrow{font-size:12px;letter-spacing:.26em;color:var(--gold);font-weight:700}
-h1{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(44px,11vw,72px);line-height:1}
-.lead{margin:0;color:#D7DCE0;font-size:17px;line-height:1.55}
-.dir{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:22px;color:var(--gold)}
-.cta{display:flex;align-items:center;justify-content:center;min-height:52px;width:100%;background:var(--gold);color:var(--bg);font-weight:700;text-decoration:none;border-radius:10px}
-.links{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.links a{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--fg);text-decoration:none;text-align:left}
-.links a:hover{border-color:var(--gold)}
-.links b{font-size:15px}.links span{font-size:12px;color:var(--muted)}
-.group{width:100%;display:flex;flex-direction:column;gap:10px}
-.label{font-size:11px;letter-spacing:.22em;color:var(--muted);font-weight:700;text-align:left}
-footer{font-size:12px;color:var(--muted)}
-@media (max-width:420px){.links{grid-template-columns:1fr}}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.65}
+img{max-width:100%;display:block}
+a{color:var(--gold)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+section{padding:80px 0;scroll-margin-top:56px}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.h2{font-size:clamp(34px,6vw,52px);margin:10px 0 16px}
+.lead{color:var(--muted);max-width:640px;font-size:17px}
+.dots{display:inline-flex;gap:6px;vertical-align:middle}
+.dots i{width:7px;height:7px;border-radius:50%;display:block}
+.dots i:nth-child(1){background:var(--green)}.dots i:nth-child(2){background:var(--red)}.dots i:nth-child(3){background:var(--amber)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(10,22,32,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-soft)}
+.nav .wrap{display:flex;align-items:center;gap:20px;min-height:56px}
+.nav .logo img{height:22px;width:auto}
+.nav .links{display:none;gap:22px;margin-left:auto;font-size:13px;letter-spacing:.06em}
+.nav .links a{color:var(--fg);text-decoration:none}
+.nav .links a:hover{color:var(--gold)}
+.nav .cta{margin-left:auto;font-size:13px;font-weight:700;color:var(--bg);background:var(--gold);padding:8px 14px;border-radius:2px;text-decoration:none;white-space:nowrap}
+@media(min-width:900px){.nav .links{display:flex}.nav .cta{margin-left:0}}
+
+/* hero */
+.hero{position:relative;min-height:88vh;min-height:88svh;display:flex;align-items:flex-end;padding:0;overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,22,32,.15) 0%,rgba(10,22,32,.35) 45%,rgba(10,22,32,.95) 100%)}
+.hero .wrap{position:relative;z-index:1;padding-bottom:56px;padding-top:120px;width:100%}
+.hero h1{font-size:clamp(44px,9vw,92px);max-width:900px;margin:14px 0 18px}
+.hero p.sub{font-size:18px;max-width:560px;color:#DCE2E8}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:14px 22px;border-radius:2px;font-weight:700;font-size:15px;text-decoration:none;text-align:center}
+.btn.gold{background:var(--gold);color:var(--bg)}
+.btn.ghost{border:1px solid var(--gold);color:var(--fg)}
+.btn:hover{filter:brightness(1.08)}
+.credit{position:absolute;z-index:1;right:12px;top:68px;font-size:11px;color:rgba(242,240,235,.75);letter-spacing:.04em}
+
+/* about */
+.about{display:grid;gap:40px}
+.about blockquote{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(26px,4vw,36px);line-height:1.3;color:var(--fg);border-left:2px solid var(--gold);padding-left:20px}
+.about .text{display:flex;flex-direction:column;gap:16px;color:#D8DEE5}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);margin-top:12px}
+.facts div{background:var(--bg);padding:16px 12px;text-align:center}
+.facts b{display:block;font-family:var(--serif);font-size:30px;font-weight:600;color:var(--gold);line-height:1}
+.facts span{font-size:12px;color:var(--muted)}
+@media(min-width:900px){.about{grid-template-columns:1fr 1.1fr;align-items:center;gap:72px}}
+
+/* services */
+.grid{display:grid;gap:16px;margin-top:40px}
+@media(min-width:640px){.grid.two{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.grid.three{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);padding:26px 24px;display:flex;flex-direction:column;gap:10px}
+.card h3{font-size:26px}
+.card p{color:#C9D1DA;font-size:15px}
+.card .num{font-family:var(--serif);color:var(--gold);font-size:18px}
+.tag-ia{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);border:1px solid var(--amber);padding:2px 8px;border-radius:2px;align-self:flex-start}
+
+/* pricing */
+.pkgs{display:grid;gap:16px;margin-top:40px}
+@media(min-width:900px){.pkgs{grid-template-columns:repeat(3,1fr)}}
+.pkg{background:var(--card);border:1px solid var(--line);padding:28px 24px;display:flex;flex-direction:column;gap:14px}
+.pkg.ref{border-color:var(--gold)}
+.pkg .label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.pkg h3{font-size:32px}
+.price{font-family:var(--serif);font-size:48px;font-weight:600;color:var(--gold);line-height:1}
+.price small{font-family:var(--sans);font-size:13px;font-weight:400;color:var(--muted);margin-left:6px}
+.pkg ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15px;color:#D8DEE5}
+.pkg li{padding-left:18px;position:relative}
+.pkg li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:1px;background:var(--gold)}
+.pkg .note{font-size:13px;color:var(--muted);margin-top:auto}
+
+.premium{margin-top:24px;border:1px solid var(--gold);background:linear-gradient(135deg,#0D1B28 0%,#10223a 100%);padding:32px 24px;display:grid;gap:24px}
+.premium .badge{display:inline-block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;background:var(--gold);color:var(--bg);padding:4px 10px;font-weight:700}
+.premium h3{font-size:clamp(30px,5vw,44px);margin:12px 0 10px}
+.premium .prices{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-end}
+.premium .prices div span{display:block;font-size:13px;color:var(--muted)}
+.premium ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.premium li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:#D8DEE5}
+.premium li b{color:var(--fg)}
+.premium li::before{content:"";flex:0 0 8px;height:8px;margin-top:.6em;border-radius:50%;background:var(--gold)}
+@media(min-width:900px){.premium{grid-template-columns:1.1fr 1fr;padding:44px;align-items:center}}
+
+.extras{margin-top:40px}
+.extras h3{font-size:28px;margin-bottom:6px}
+.table{width:100%;border-collapse:collapse;margin-top:16px;font-size:15px}
+.table th,.table td{text-align:left;padding:14px 0;border-bottom:1px solid var(--line-soft);vertical-align:top}
+.table td:last-child,.table th:last-child{text-align:right;white-space:nowrap;padding-left:16px}
+.table th{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.table td small{display:block;color:var(--muted);font-size:13px}
+.table .p{color:var(--gold);font-weight:700}
+.fine{font-size:13px;color:var(--muted);margin-top:18px}
+.bolsa{margin-top:28px;border:1px dashed var(--line);padding:20px 22px;font-size:15px;color:#D8DEE5}
+.bolsa b{color:var(--fg)}
+
+/* portfolio */
+.case{margin-top:40px;display:grid;gap:12px}
+.case .main{position:relative}
+.case img{height:auto}
+.case .main img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.case .thumbs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.case figure{margin:0;position:relative}
+.case .thumbs img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.case figcaption{font-size:12px;color:var(--muted);margin-top:6px}
+.ia-label{position:absolute;left:8px;top:8px;background:rgba(10,22,32,.85);color:var(--amber);border:1px solid var(--amber);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:3px 7px}
+@media(min-width:900px){.case .thumbs{grid-template-columns:repeat(4,1fr)}}
+.case-info{margin-top:24px;display:flex;flex-direction:column;gap:12px;max-width:720px}
+.case-info h3{font-size:32px}
+.case-info p{color:#D8DEE5}
+
+/* process */
+.steps{list-style:none;margin:40px 0 0;padding:0;display:grid;gap:16px;counter-reset:s}
+@media(min-width:900px){.steps{grid-template-columns:repeat(4,1fr)}}
+.steps li{counter-increment:s;border-top:1px solid var(--gold);padding-top:18px}
+.steps li::before{content:"0" counter(s);font-family:var(--serif);font-size:34px;color:var(--gold);display:block;line-height:1;margin-bottom:10px}
+.steps h3{font-size:24px;margin-bottom:6px}
+.steps p{font-size:15px;color:#C9D1DA}
+
+/* contact */
+.contact{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.contact-grid{display:grid;gap:40px;margin-top:8px}
+@media(min-width:900px){.contact-grid{grid-template-columns:1.2fr 1fr;align-items:center}}
+.contact .who h3{font-size:36px}
+.contact .who p{color:var(--muted)}
+.contact ul{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:10px;font-size:17px}
+.contact ul a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line)}
+.contact ul a:hover{color:var(--gold)}
+.contact ul span{display:inline-block;min-width:96px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.sign{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--gold);margin-top:24px}
+
+footer{padding:32px 0 96px;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+footer img{height:18px;width:auto}
+
+.wa{position:fixed;right:16px;bottom:16px;z-index:30;background:var(--green);color:#fff;font-weight:700;font-size:14px;padding:12px 16px;border-radius:999px;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.35)}
+@media(min-width:900px){.wa{display:none}}
 </style>
 </head>
 <body>
+
+<nav class="nav" aria-label="Navegação principal">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Usina Vídeos — início"><img src="img/logo-usina.png" alt="Usina Vídeos" width="1046" height="225"></a>
+    <div class="links">
+      <a href="#quem-somos">Quem somos</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#precos">Preços</a>
+      <a href="#portefolio">Portefólio</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#contactos">Contactos</a>
+    </div>
+    <a class="cta" href="https://calendly.com/usinavideos/videoreport" target="_blank" rel="noopener">Marcar sessão</a>
+  </div>
+</nav>
+
+<header id="inicio" class="hero">
+  <img src="img/coral-drone.jpg" alt="Vista aérea de um edifício residencial na Foz do Douro, com jardim e piscina" width="2200" height="1238" fetchpriority="high">
+  <p class="credit">Condomínio Coral, Foz do Douro · Usina Vídeos</p>
+  <div class="wrap">
+    <span class="eyebrow"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>&nbsp; Produção audiovisual imobiliária · Porto</span>
+    <h1>O imóvel certo merece ser bem apresentado.</h1>
+    <p class="sub">Fotografia, vídeo, drone e apresentações digitais para consultores imobiliários e proprietários no Grande Porto. Uma produção, um briefing, um contacto.</p>
+    <div class="btns">
+      <a class="btn gold" href="https://calendly.com/usinavideos/videoreport" target="_blank" rel="noopener">Marcar reportagem</a>
+      <a class="btn ghost" href="#precos">Ver serviços e preços</a>
+    </div>
+  </div>
+</header>
+
 <main>
-<div class="eyebrow">PRODUÇÃO AUDIOVISUAL IMOBILIÁRIA · PORTO</div>
-<h1>Usina Vídeos</h1>
-<p class="lead">Fotografia, vídeo com drone, reportagem e apresentações digitais premium para consultores imobiliários e proprietários.</p>
-<p class="dir">Dirigida por Freire Neto e Sandra Freire</p>
-<a class="cta" href="https://wa.me/351912988971?text=Ol%C3%A1%20Freire%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Usina%20V%C3%ADdeos." target="_blank" rel="noopener">Falar connosco no WhatsApp</a>
-<div class="group">
-<div class="label">USINA VÍDEOS</div>
-<div class="links">
-<a href="https://www.instagram.com/usina.videos" target="_blank" rel="noopener"><b>Instagram</b><span>@usina.videos</span></a>
-<a href="https://www.facebook.com/usinacomvideos" target="_blank" rel="noopener"><b>Facebook</b><span>/usinacomvideos</span></a>
-</div>
-</div>
-<div class="group">
-<div class="label">AS NOSSAS MARCAS</div>
-<div class="links">
-<a href="https://www.youtube.com/@DicasdoFreire/" target="_blank" rel="noopener"><b>Dicas do Freire</b><span>Canal no YouTube</span></a>
-<a href="https://www.youtube.com/@motoreseacao" target="_blank" rel="noopener"><b>Motores e Ação</b><span>Canal no YouTube</span></a>
-<a href="https://motoreseacao.com" target="_blank" rel="noopener"><b>motoreseacao.com</b><span>Jornalismo automóvel</span></a>
-<a href="mailto:freireneto@me.com"><b>E-mail</b><span>freireneto@me.com</span></a>
-</div>
-</div>
-<footer>© Usina Vídeos · Porto, Portugal</footer>
+
+<section id="quem-somos">
+  <div class="wrap about">
+    <div>
+      <span class="eyebrow">Quem somos</span>
+      <h2 class="h2">Olhar de jornalista, ao serviço do imóvel.</h2>
+      <blockquote>“A sua exigência, a nossa assinatura.”</blockquote>
+    </div>
+    <div class="text">
+      <p>A Usina Vídeos é dirigida por <strong>Manoel Freire Neto</strong>, jornalista profissional e produtor de conteúdo, com mais de 25 anos de experiência em reportagem e produção audiovisual.</p>
+      <p>Cada imóvel é tratado como uma reportagem: perceber o que o torna único, captá-lo com rigor e contá-lo de forma clara a quem procura casa. O resultado é um conteúdo que valoriza o imóvel e reforça a imagem do consultor que o apresenta.</p>
+      <p>Trabalhamos no Grande Porto — Porto, Matosinhos, Maia, Vila do Conde, Gondomar e arredores.</p>
+      <div class="facts" role="list">
+        <div role="listitem"><b>25+</b><span>anos de jornalismo</span></div>
+        <div role="listitem"><b>48h</b><span>entrega de fotografias</span></div>
+        <div role="listitem"><b>72h</b><span>vídeos e PDF</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicos" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Serviços</span>
+    <h2 class="h2">Tudo o que o imóvel precisa para ser visto.</h2>
+    <p class="lead">Cada serviço pode ser contratado isoladamente ou combinado num pacote.</p>
+    <div class="grid two three">
+      <article class="card"><span class="num">01</span><h3>Reportagem fotográfica</h3><p>Fotografia profissional de alta resolução, com composição e luz cuidadas, pronta para portais e redes sociais.</p></article>
+      <article class="card"><span class="num">02</span><h3>Vídeo com drone</h3><p>Planos aéreos em foto e vídeo que mostram o imóvel no território: envolvente, vistas, acessos e localização.</p></article>
+      <article class="card"><span class="num">03</span><h3>Vídeo com o consultor em cena</h3><p>O consultor apresenta o imóvel à câmara. Rosto, autoridade e presença nas redes, em formato vertical e horizontal.</p></article>
+      <article class="card"><span class="num">04</span><h3>Vlog</h3><p>Visita guiada num registo mais próximo e espontâneo, pensada para Reels, TikTok e YouTube.</p></article>
+      <article class="card"><span class="num">05</span><h3>Visita virtual 3D</h3><p>Visita navegável com planta integrada, para portais, apresentações e compradores à distância.</p></article>
+      <article class="card"><span class="num">06</span><h3>Tratamento de imagem e simulações</h3><p>Correção de cor e luz em todas as fotografias. Simulações de decoração ou de obra quando ajudam a imaginar o espaço.</p><span class="tag-ia">Simulações IA sempre identificadas</span></article>
+    </div>
+  </div>
+</section>
+
+<section id="precos" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Produtos e preços</span>
+    <h2 class="h2">Preços claros, por imóvel.</h2>
+    <p class="lead">Todos os valores são por imóvel e não incluem IVA, que acresce à taxa legal em vigor.</p>
+
+    <div class="pkgs">
+      <article class="pkg">
+        <span class="label">Pacote 01</span>
+        <h3>Essencial</h3>
+        <div class="price">40€<small>+ IVA</small></div>
+        <ul><li>Reportagem fotográfica de alta resolução</li><li>Tratamento de imagem incluído</li></ul>
+        <p class="note">Para a maioria das angariações do dia a dia.</p>
+      </article>
+      <article class="pkg">
+        <span class="label">Pacote 02</span>
+        <h3>Aéreo</h3>
+        <div class="price">65€<small>+ IVA</small></div>
+        <ul><li>Reportagem fotográfica de alta resolução</li><li>Vídeo do imóvel editado com música</li><li>Imagens aéreas com drone (foto e vídeo)</li></ul>
+        <p class="note">Para moradias, terrenos e imóveis com exterior ou vistas relevantes. Drone sujeito às condições meteorológicas, à disponibilidade e às autorizações de voo aplicáveis.</p>
+      </article>
+      <article class="pkg ref">
+        <span class="label">Pacote 03 · Referência</span>
+        <h3>Completo</h3>
+        <div class="price">98€<small>+ IVA</small></div>
+        <ul><li>Tudo o que o pacote Aéreo inclui</li><li>Visita virtual 3D navegável (alojamento durante 6 meses)</li><li>Planta técnica integrada na visita</li></ul>
+        <p class="note">Para imóveis premium e angariações de maior valor.</p>
+      </article>
+    </div>
+
+    <div class="premium">
+      <div>
+        <span class="badge">Novo</span>
+        <h3>Apresentação Digital Premium</h3>
+        <p style="color:#D8DEE5">Um mini-site próprio para o imóvel, com link exclusivo para enviar por WhatsApp ou e-mail, acompanhado de PDF e slides. Em várias línguas, para compradores nacionais e estrangeiros.</p>
+        <div class="prices" style="margin-top:22px">
+          <div><div class="price">100€<small>+ IVA</small></div><span>Apresentação isolada</span></div>
+          <div><div class="price">50€<small>+ IVA</small></div><span>Com reportagem da Usina Vídeos</span></div>
+        </div>
+        <div class="btns"><a class="btn gold" href="t4coral/" target="_blank" rel="noopener">Ver exemplo real</a></div>
+      </div>
+      <ul>
+        <li><span><b>Mini-site com link próprio</b> — fotografias, vídeo, localização e contacto do consultor numa só página.</span></li>
+        <li><span><b>PDF em formato A4</b> — para imprimir ou anexar a um e-mail.</span></li>
+        <li><span><b>Slides de apresentação</b> — para reuniões com proprietários ou compradores.</span></li>
+        <li><span><b>Multilingue</b> — português, inglês, espanhol e francês.</span></li>
+      </ul>
+    </div>
+
+    <div class="extras">
+      <h3>Produções à medida</h3>
+      <p class="lead">Para consultores, lojas e promotores que querem ir além da apresentação do imóvel.</p>
+      <table class="table">
+        <thead><tr><th scope="col">Serviço</th><th scope="col">Preço (+ IVA)</th></tr></thead>
+        <tbody>
+          <tr><td>Vídeo com o consultor em cena<small>Formatos vertical e horizontal para todas as plataformas</small></td><td class="p">110€</td></tr>
+          <tr><td>Vídeo de lançamento de empreendimento<small>Guião, narrativa e produção cinematográfica</small></td><td class="p">desde 250€</td></tr>
+          <tr><td>Podcast imobiliário<small>Produção e edição completas</small></td><td class="p">150€ / episódio</td></tr>
+          <tr><td>Transmissão em direto<small>Open house ou lançamento nas redes sociais e no YouTube</small></td><td class="p">300€</td></tr>
+          <tr><td>Gestão de tráfego e geração de leads<small>Campanhas Facebook e Instagram; o investimento em plataforma acresce</small></td><td class="p">100€ / imóvel</td></tr>
+          <tr><td>Vlog, tratamento de imagem avulso e simulações<small>Simulações geradas por IA sempre identificadas como tal</small></td><td class="p">Sob consulta</td></tr>
+        </tbody>
+      </table>
+      <p class="fine">A todos os preços acresce IVA à taxa legal em vigor. Deslocações fora do Grande Porto sob consulta.</p>
+      <div class="bolsa"><b>Bolsa de produções.</b> Sem avença nem compromisso de volume: o cliente adquire um crédito pré-pago, válido por 12 meses, e utiliza-o à medida das angariações. Ideal para lojas com volume variável.</div>
+    </div>
+  </div>
+</section>
+
+<section id="portefolio" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Portefólio</span>
+    <h2 class="h2">Trabalho recente.</h2>
+    <div class="case">
+      <figure class="main">
+        <img src="img/coral-fachada.jpg" alt="Fachada do Condomínio Coral, na Foz do Douro" loading="lazy" width="2200" height="1351">
+      </figure>
+      <div class="thumbs">
+        <figure><img src="img/coral-cozinha.jpg" alt="Cozinha com ilha em pedra natural" loading="lazy" width="1800" height="1013"><figcaption>Interiores</figcaption></figure>
+        <figure><img src="img/coral-banho.jpg" alt="Casa de banho em mármore com banheira" loading="lazy" width="1800" height="1013"><figcaption>Detalhe</figcaption></figure>
+        <figure><img src="img/foz-drone.jpg" alt="A Foz do Douro e o mar vistos de drone" loading="lazy" width="2200" height="1238"><figcaption>Drone · envolvente</figcaption></figure>
+        <figure><span class="ia-label">Simulação IA</span><img src="img/coral-cobertura-simulacao.jpg" alt="Cobertura vista de drone, com decoração simulada por IA" loading="lazy" width="2200" height="1238"><figcaption>Simulação de decoração (IA)</figcaption></figure>
+      </div>
+    </div>
+    <div class="case-info">
+      <span class="eyebrow">Foz do Douro · Porto</span>
+      <h3>Condomínio Coral</h3>
+      <p>Reportagem fotográfica, vídeo com drone e Apresentação Digital Premium, em quatro línguas, de dois apartamentos T4+1 na Foz do Douro. Trabalho publicado com autorização da consultora responsável.</p>
+      <div class="btns" style="margin-top:8px"><a class="btn ghost" href="t4coral/" target="_blank" rel="noopener">Abrir a apresentação</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Como funciona</span>
+    <h2 class="h2">Do agendamento à entrega.</h2>
+    <ol class="steps">
+      <li><h3>Agendamento</h3><p>Marque online a data da sessão e indique a morada, a tipologia e o que pretende.</p></li>
+      <li><h3>Produção</h3><p>Deslocamo-nos ao imóvel e fazemos a captação. Uma sessão dura, em regra, até 1h30.</p></li>
+      <li><h3>Pós-produção</h3><p>Seleção, tratamento de imagem, edição de vídeo e montagem da apresentação.</p></li>
+      <li><h3>Entrega</h3><p>Fotografias em 48 horas. Vídeos e PDF em 72 horas. Uma fatura por serviço ou pacote.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="contactos" class="contact">
+  <div class="wrap">
+    <span class="eyebrow">Contactos</span>
+    <h2 class="h2">Falemos do seu próximo imóvel.</h2>
+    <div class="contact-grid">
+      <div class="who">
+        <h3>Manoel Freire Neto</h3>
+        <p>Jornalista profissional · Produtor de conteúdo · Usina Vídeos</p>
+        <ul>
+          <li><span>WhatsApp</span><a href="https://wa.me/351912988971" target="_blank" rel="noopener">+351 912 988 971</a></li>
+          <li><span>Telefone</span><a href="tel:+351912988971">+351 912 988 971</a></li>
+          <li><span>E-mail</span><a href="mailto:freireneto@me.com">freireneto@me.com</a></li>
+        </ul>
+        <p class="sign">A sua exigência, a nossa assinatura.</p>
+      </div>
+      <div>
+        <p style="color:#D8DEE5;margin-bottom:20px">A forma mais rápida de marcar uma reportagem é escolher diretamente uma data livre na agenda.</p>
+        <div class="btns" style="margin-top:0">
+          <a class="btn gold" href="https://calendly.com/usinavideos/videoreport" target="_blank" rel="noopener">Marcar sessão no Calendly</a>
+          <a class="btn ghost" href="mailto:freireneto@me.com?subject=Pedido%20de%20Apresenta%C3%A7%C3%A3o%20Digital%20Premium">Pedir Apresentação Digital Premium</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo-usina.png" alt="Usina Vídeos" width="1046" height="225">
+    <span>© 2026 Usina Vídeos · Porto, Portugal · Preços + IVA</span>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/351912988971" target="_blank" rel="noopener" aria-label="Falar por WhatsApp">WhatsApp</a>
+
 </body>
 </html>
