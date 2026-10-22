@@ -88,6 +88,15 @@ section{padding:88px 0}
 .work.cdj{border-top:4px solid var(--r)}.work.cdj .bd{justify-content:center}.work.cdj em{color:var(--r)}
 .work.cdj .big{font-size:40px;font-weight:900;color:var(--fg);line-height:1}
 @media(min-width:760px){.work.cdj{grid-column:span 2}}
+/* desporto */
+.sport{display:grid;gap:18px;margin-top:36px;align-items:start}
+@media(min-width:760px){.sport{grid-template-columns:1fr 1fr}}
+@media(min-width:1100px){.sport{grid-template-columns:repeat(4,1fr)}}
+.sph{background:var(--ink);color:#D6D1CD;border-radius:16px;padding:20px;border-top:4px solid var(--c);margin-bottom:14px}
+.sph b{display:block;color:var(--fg);font-size:22px;font-weight:900;line-height:1.1}.sph p{margin:8px 0 10px;font-size:15px}
+.sph a{color:var(--y);font-weight:800;font-size:14px;text-decoration:none}
+.sp.more{padding-top:0}
+@media(min-width:1100px){.sp.more{margin-top:0}}
 /* como */
 .steps{display:grid;gap:16px;margin-top:40px;counter-reset:s}
 @media(min-width:800px){.steps{grid-template-columns:repeat(4,1fr)}}
@@ -129,7 +138,7 @@ footer a{color:#D6D1CD}
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
   <a class="logo" href="/en/"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
-  <div class="links"><a href="#quem">About</a><a href="#servicos">Services</a><a href="#trabalhos">Work</a><a href="#como">How it works</a><a href="#marcas">Brands</a><a href="#contacto">Contact</a></div>
+  <div class="links"><a href="#quem">About</a><a href="#servicos">Services</a><a href="#trabalhos">Work</a><a href="#desporto">Sport</a><a href="#como">How it works</a><a href="#marcas">Brands</a><a href="#contacto">Contact</a></div>
   <div class="lang"><a href="/" hreflang="pt-PT">PT</a><a href="/en/" hreflang="en" aria-current="page">EN</a><a href="/es/" hreflang="es">ES</a></div>
   <a class="btn y" href="https://wa.me/351912988971?text=Hello%20Freire%2C%20I%20would%20like%20a%20quote%20from%20Usina%20V%C3%ADdeos." target="_blank" rel="noopener">Ask for a quote</a>
 </div></nav>
@@ -168,9 +177,22 @@ footer a{color:#D6D1CD}
 <section id="trabalhos" class="dark">
   <div class="wrap">
     <span class="eb">Work</span><h2>Recent work, published with permission.</h2>
-    <div class="works"><a class="work" href="/cordiallevel/"><div class="ph"><img src="/cordiallevel/t3leca/img/leca-37-t.jpg" alt="Cordial Level" loading="lazy" width="900" height="563"></div><div class="bd"><h3>Cordial Level</h3><p>Production partner: website, property videos, podcast and social media. Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p><em>See the website →</em></div></a><a class="work" href="/t4coral/en.html"><div class="ph"><img src="/img/coral-fachada.jpg" alt="Condomínio Coral · Foz do Douro" loading="lazy" width="900" height="563"></div><div class="bd"><h3>Condomínio Coral · Foz do Douro</h3><p>Photography, drone and a digital presentation in four languages. Agent Cheila Monteiro · CENTURY 21 Arquitectos II · AMI 11414</p><em>See the presentation →</em></div></a><a class="work" href="/cordiallevel/anteroquental/"><div class="ph"><img src="/cordiallevel/anteroquental/img/aq-lapa-t.jpg" alt="Two-bedroom flat · Antero de Quental, Porto" loading="lazy" width="900" height="563"></div><div class="bd"><h3>Two-bedroom flat · Antero de Quental, Porto</h3><p>Photography, drone, 3D tour and property page. Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p><em>See the presentation →</em></div></a><a class="work" href="/cordiallevel/moncao/"><div class="ph"><img src="/cordiallevel/moncao/img/t1-area-t.jpg" alt="Land in Monção · Alto Minho" loading="lazy" width="900" height="563"></div><div class="bd"><h3>Land in Monção · Alto Minho</h3><p>Drone, video and project visualisations labelled as AI. Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p><em>See the presentation →</em></div></a><a class="work cdj" href="https://www.instagram.com/cdjregio/" target="_blank" rel="noopener"><div class="bd"><span class="big">CDJRegio</span><p>Clube Desportivo José Régio, Vila do Conde. Basketball match coverage and highlights.</p><em>@cdjregio · See on Instagram →</em></div></a></div>
+    <div class="works"><a class="work" href="/cordiallevel/"><div class="ph"><img src="/cordiallevel/t3leca/img/leca-37-t.jpg" alt="Cordial Level" loading="lazy" width="900" height="563"></div><div class="bd"><h3>Cordial Level</h3><p>Production partner: website, property videos, podcast and social media. Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p><em>See the website →</em></div></a><a class="work" href="/t4coral/en.html"><div class="ph"><img src="/img/coral-fachada.jpg" alt="Condomínio Coral · Foz do Douro" loading="lazy" width="900" height="563"></div><div class="bd"><h3>Condomínio Coral · Foz do Douro</h3><p>Photography, drone and a digital presentation in four languages. Agent Cheila Monteiro · CENTURY 21 Arquitectos II · AMI 11414</p><em>See the presentation →</em></div></a><a class="work" href="/cordiallevel/anteroquental/"><div class="ph"><img src="/cordiallevel/anteroquental/img/aq-lapa-t.jpg" alt="Two-bedroom flat · Antero de Quental, Porto" loading="lazy" width="900" height="563"></div><div class="bd"><h3>Two-bedroom flat · Antero de Quental, Porto</h3><p>Photography, drone, 3D tour and property page. Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p><em>See the presentation →</em></div></a><a class="work" href="/cordiallevel/moncao/"><div class="ph"><img src="/cordiallevel/moncao/img/t1-area-t.jpg" alt="Land in Monção · Alto Minho" loading="lazy" width="900" height="563"></div><div class="bd"><h3>Land in Monção · Alto Minho</h3><p>Drone, video and project visualisations labelled as AI. Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p><em>See the presentation →</em></div></a></div>
   </div>
 </section>
+
+<section id="desporto" style="background:var(--paper2)">
+  <div class="wrap">
+    <span class="eb">Sport</span><h2>Courtside, too.</h2><p class="lead">Basketball games and tournaments covered on video, with highlights and player profiles for social media.</p>
+    <div class="sport">
+      <div class="sp"><div class="sph" style="--c:var(--r)"><b>CDJRegio</b><p>Clube Desportivo José Régio · Vila do Conde. Highlights from youth and senior games.</p><a href="https://www.instagram.com/cdjregio/" target="_blank" rel="noopener">@cdjregio · View on Instagram →</a></div><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Deri9uUiObc/?utm_source=ig_embed" data-instgrm-version="14" style="background:#fff;border:0;border-radius:14px;margin:0;max-width:540px;min-width:280px;width:100%"><a href="https://www.instagram.com/reel/Deri9uUiObc/" target="_blank" rel="noopener">Instagram</a></blockquote></div>
+      <div class="sp"><div class="sph" style="--c:var(--g)"><b>MatchBall × Red Rose Thunder</b><p>International basketball tour in Portugal. Player profiles and highlights.</p><a href="https://www.instagram.com/matchballbasketball/" target="_blank" rel="noopener">@matchballbasketball · View on Instagram →</a></div><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DY-tmeisiO0/?utm_source=ig_embed" data-instgrm-version="14" style="background:#fff;border:0;border-radius:14px;margin:0;max-width:540px;min-width:280px;width:100%"><a href="https://www.instagram.com/reel/DY-tmeisiO0/" target="_blank" rel="noopener">Instagram</a></blockquote></div>
+      <div class="sp more"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DY-qsa9s-X4/?utm_source=ig_embed" data-instgrm-version="14" style="background:#fff;border:0;border-radius:14px;margin:0;max-width:540px;min-width:280px;width:100%"><a href="https://www.instagram.com/reel/DY-qsa9s-X4/" target="_blank" rel="noopener">Instagram</a></blockquote></div>
+      <div class="sp more"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DY-rnPmMvC0/?utm_source=ig_embed" data-instgrm-version="14" style="background:#fff;border:0;border-radius:14px;margin:0;max-width:540px;min-width:280px;width:100%"><a href="https://www.instagram.com/reel/DY-rnPmMvC0/" target="_blank" rel="noopener">Instagram</a></blockquote></div>
+    </div>
+  </div>
+</section>
+<script async src="https://www.instagram.com/embed.js"></script>
 
 <section id="como">
   <div class="wrap">
