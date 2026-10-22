@@ -17,10 +17,11 @@ T = {
 'pt': dict(
     socials=[('https://www.instagram.com/usina.videos','ig','Usina Vídeos','@usina.videos · últimos trabalhos','Seguir'),('https://www.instagram.com/neofreireportugal','ig','Freire Neto em Portugal','@neofreireportugal · Instagram pessoal','Seguir'),('https://www.instagram.com/freireneto','ig','Freire Neto no Brasil','@freireneto · Instagram','Seguir'),('https://www.instagram.com/motoreseacao','ig','Motores e Ação','@motoreseacao · Instagram','Seguir'),('https://www.linkedin.com/in/freireneto/','in','Freire Neto','LinkedIn','Ver perfil')],
     desp=dict(eb='Desporto', h2='Também no pavilhão.', p='Reportagem de jogos e torneios de basquetebol, com destaques e perfis de jogadores para as redes sociais.', cdj='Clube Desportivo José Régio · Vila do Conde. Destaques dos jogos da formação e dos seniores.', mb='MatchBall × Red Rose Thunder', mbp='Tour internacional de basquetebol em Portugal. Perfis e destaques dos jogadores.', ver='Ver no Instagram', mais='Ver mais no Instagram'),
+    sites={'nav': 'Sites', 'eb': 'Sites, apresentações e podcasts', 'h2': 'Soluções digitais para o seu negócio.', 'p': 'Além do vídeo, criamos as ferramentas onde ele vive: sites, apresentações e podcasts, com a mesma qualidade de reportagem.', 'items': [('Sites', 'Sites para agências, consultores e marcas, com carteira de imóveis, vídeos e contacto direto por WhatsApp.', [('Cordial Level', '/cordiallevel/')]), ('Apresentações digitais', 'Uma página por imóvel ou projeto, em várias línguas, para enviar por link, imprimir em PDF ou mostrar em reunião.', [('Condomínio Coral', '/t4coral/'), ('T3 Leça', '/cordiallevel/t3leca/')]), ('Podcasts', 'Formato, gravação, edição e publicação no YouTube e no Spotify, com cortes para as redes sociais.', [('Panorama Imobiliário PT', 'https://www.youtube.com/watch?v=ed1kwc3x27I')])], 'ex': 'Exemplo'},
     path='', html_lang='pt-PT', og_locale='pt_PT',
     title='Usina Vídeos · Produção audiovisual imobiliária em Portugal',
     desc='Fotografia, vídeo com drone, reportagem e apresentações digitais para imóveis, no Norte e em todo o Portugal. Peça orçamento.',
-    nav=[('quem', 'Quem somos'), ('servicos', 'Serviços'), ('trabalhos', 'Trabalhos'), ('desporto', 'Desporto'), ('como', 'Como funciona'), ('marcas', 'Marcas'), ('contacto', 'Contacto')],
+    nav=[('quem', 'Quem somos'), ('servicos', 'Serviços'), ('trabalhos', 'Trabalhos'), ('sites', 'Sites'), ('desporto', 'Desporto'), ('como', 'Como funciona'), ('marcas', 'Marcas'), ('contacto', 'Contacto')],
     cta='Peça orçamento',
     wa_msg='Olá Freire, gostaria de pedir um orçamento à Usina Vídeos.',
     hero_eb='Produção audiovisual imobiliária · Norte e todo o Portugal',
@@ -51,7 +52,8 @@ T = {
            ('/t4coral/', '/img/coral-fachada.jpg', 'Condomínio Coral · Foz do Douro', 'Fotografia, drone e apresentação digital em quatro línguas. Consultora Cheila Monteiro · CENTURY 21 Arquitectos II · AMI 11414', 'Ver a apresentação'),
            ('https://century21.pt/ref/C0554-00006', '/img/core-devesas-t.jpg', 'CENTURY 21 Core · Vila Nova de Gaia', 'Fotografia e vídeo de uma moradia T5 nas Devesas (consultor Vasco Dinis) e de um T3 em Oliveira do Douro.', 'Ver o anúncio'),
            ('/cordiallevel/anteroquental/', '/cordiallevel/anteroquental/img/aq-lapa-t.jpg', 'T2 Antero de Quental · Porto', 'Fotografia, drone, visita 3D e página do imóvel. ' + AMI, 'Ver a apresentação'),
-           ('/cordiallevel/moncao/', '/cordiallevel/moncao/img/t1-area-t.jpg', 'Terrenos em Monção · Alto Minho', 'Drone, vídeo e simulações de projeto identificadas como IA. ' + AMI, 'Ver a apresentação')],
+           ('/cordiallevel/moncao/', '/cordiallevel/moncao/img/t1-area-t.jpg', 'Terrenos em Monção · Alto Minho', 'Drone, vídeo e simulações de projeto identificadas como IA. ' + AMI, 'Ver a apresentação'),
+           ('https://www.youtube.com/watch?v=ed1kwc3x27I', 'https://i.ytimg.com/vi/ed1kwc3x27I/hqdefault.jpg', 'Panorama Imobiliário PT', 'O podcast da Cordial Level no YouTube, sobre o mercado e as decisões de quem compra casa. Produção e edição Usina Vídeos.', 'Ver no YouTube')],
     cdj=('CDJRegio', 'Clube Desportivo José Régio, Vila do Conde. Reportagem e destaques dos jogos de basquetebol.', 'Ver no Instagram'),
     como_eb='Como funciona', como_h2='Do pedido à entrega.',
     steps=[('Pedido de orçamento', 'Envie a morada, a tipologia e o que pretende, por WhatsApp ou e-mail.'),
@@ -71,10 +73,11 @@ T = {
 'en': dict(
     socials=[('https://www.instagram.com/usina.videos','ig','Usina Vídeos','@usina.videos · latest work','Follow'),('https://www.instagram.com/neofreireportugal','ig','Freire Neto in Portugal','@neofreireportugal · personal Instagram','Follow'),('https://www.instagram.com/freireneto','ig','Freire Neto in Brazil','@freireneto · Instagram','Follow'),('https://www.instagram.com/motoreseacao','ig','Motores e Ação','@motoreseacao · Instagram','Follow'),('https://www.linkedin.com/in/freireneto/','in','Freire Neto','LinkedIn','View profile')],
     desp=dict(eb='Sport', h2='Courtside, too.', p='Basketball games and tournaments covered on video, with highlights and player profiles for social media.', cdj='Clube Desportivo José Régio · Vila do Conde. Highlights from youth and senior games.', mb='MatchBall × Red Rose Thunder', mbp='International basketball tour in Portugal. Player profiles and highlights.', ver='View on Instagram', mais='See more on Instagram'),
+    sites={'nav': 'Websites', 'eb': 'Websites, presentations and podcasts', 'h2': 'Digital solutions for your business.', 'p': 'Beyond video, we build the places where it lives: websites, presentations and podcasts, with the same reporting quality.', 'items': [('Websites', 'Websites for agencies, agents and brands, with property listings, videos and direct WhatsApp contact.', [('Cordial Level', '/cordiallevel/')]), ('Digital presentations', 'One page per property or project, in several languages, to share by link, print as PDF or show in meetings.', [('Condomínio Coral', '/t4coral/en.html'), ('T3 Leça', '/cordiallevel/t3leca/')]), ('Podcasts', 'Format, recording, editing and publishing on YouTube and Spotify, with short clips for social media.', [('Panorama Imobiliário PT', 'https://www.youtube.com/watch?v=ed1kwc3x27I')])], 'ex': 'Example'},
     path='en/', html_lang='en', og_locale='en_GB',
     title='Usina Vídeos · Real estate photo and video production in Portugal',
     desc='Photography, drone video, video tours and digital property presentations across Northern Portugal and the whole country. Ask for a quote.',
-    nav=[('quem', 'About'), ('servicos', 'Services'), ('trabalhos', 'Work'), ('desporto', 'Sport'), ('como', 'How it works'), ('marcas', 'Brands'), ('contacto', 'Contact')],
+    nav=[('quem', 'About'), ('servicos', 'Services'), ('trabalhos', 'Work'), ('sites', 'Websites'), ('desporto', 'Sport'), ('como', 'How it works'), ('marcas', 'Brands'), ('contacto', 'Contact')],
     cta='Ask for a quote',
     wa_msg='Hello Freire, I would like a quote from Usina Vídeos.',
     hero_eb='Real estate video production · Northern Portugal and nationwide',
@@ -105,7 +108,8 @@ T = {
            ('/t4coral/en.html', '/img/coral-fachada.jpg', 'Condomínio Coral · Foz do Douro', 'Photography, drone and a digital presentation in four languages. Agent Cheila Monteiro · CENTURY 21 Arquitectos II · AMI 11414', 'See the presentation'),
            ('https://century21.pt/ref/C0554-00006', '/img/core-devesas-t.jpg', 'CENTURY 21 Core · Vila Nova de Gaia', 'Photography and video of a five-bedroom house in Devesas (agent Vasco Dinis) and a three-bedroom flat in Oliveira do Douro.', 'See the listing'),
            ('/cordiallevel/anteroquental/', '/cordiallevel/anteroquental/img/aq-lapa-t.jpg', 'Two-bedroom flat · Antero de Quental, Porto', 'Photography, drone, 3D tour and property page. ' + AMI, 'See the presentation'),
-           ('/cordiallevel/moncao/', '/cordiallevel/moncao/img/t1-area-t.jpg', 'Land in Monção · Alto Minho', 'Drone, video and project visualisations labelled as AI. ' + AMI, 'See the presentation')],
+           ('/cordiallevel/moncao/', '/cordiallevel/moncao/img/t1-area-t.jpg', 'Land in Monção · Alto Minho', 'Drone, video and project visualisations labelled as AI. ' + AMI, 'See the presentation'),
+           ('https://www.youtube.com/watch?v=ed1kwc3x27I', 'https://i.ytimg.com/vi/ed1kwc3x27I/hqdefault.jpg', 'Panorama Imobiliário PT', 'Cordial Level’s podcast on YouTube, about the market and the decisions behind buying a home (in Portuguese). Produced and edited by Usina Vídeos.', 'Watch on YouTube')],
     cdj=('CDJRegio', 'Clube Desportivo José Régio, Vila do Conde. Basketball match coverage and highlights.', 'See on Instagram'),
     como_eb='How it works', como_h2='From request to delivery.',
     steps=[('Quote request', 'Send us the address, the property type and what you need, by WhatsApp or e-mail.'),
@@ -125,10 +129,11 @@ T = {
 'es': dict(
     socials=[('https://www.instagram.com/usina.videos','ig','Usina Vídeos','@usina.videos · últimos trabajos','Seguir'),('https://www.instagram.com/neofreireportugal','ig','Freire Neto en Portugal','@neofreireportugal · Instagram personal','Seguir'),('https://www.instagram.com/freireneto','ig','Freire Neto en Brasil','@freireneto · Instagram','Seguir'),('https://www.instagram.com/motoreseacao','ig','Motores e Ação','@motoreseacao · Instagram','Seguir'),('https://www.linkedin.com/in/freireneto/','in','Freire Neto','LinkedIn','Ver perfil')],
     desp=dict(eb='Deporte', h2='También en la cancha.', p='Reportajes de partidos y torneos de baloncesto, con resúmenes y perfiles de jugadores para redes sociales.', cdj='Clube Desportivo José Régio · Vila do Conde. Resúmenes de los partidos de cantera y sénior.', mb='MatchBall × Red Rose Thunder', mbp='Gira internacional de baloncesto en Portugal. Perfiles y resúmenes de los jugadores.', ver='Ver en Instagram', mais='Ver más en Instagram'),
+    sites={'nav': 'Webs', 'eb': 'Webs, presentaciones y pódcasts', 'h2': 'Soluciones digitales para su negocio.', 'p': 'Además del vídeo, creamos las herramientas donde vive: webs, presentaciones y pódcasts, con la misma calidad de reportaje.', 'items': [('Webs', 'Webs para agencias, agentes y marcas, con cartera de inmuebles, vídeos y contacto directo por WhatsApp.', [('Cordial Level', '/cordiallevel/')]), ('Presentaciones digitales', 'Una página por inmueble o proyecto, en varios idiomas, para enviar por enlace, imprimir en PDF o mostrar en reuniones.', [('Condomínio Coral', '/t4coral/es.html'), ('T3 Leça', '/cordiallevel/t3leca/')]), ('Pódcasts', 'Formato, grabación, edición y publicación en YouTube y Spotify, con cortes para redes sociales.', [('Panorama Imobiliário PT', 'https://www.youtube.com/watch?v=ed1kwc3x27I')])], 'ex': 'Ejemplo'},
     path='es/', html_lang='es', og_locale='es_ES',
     title='Usina Vídeos · Producción audiovisual inmobiliaria en Portugal',
     desc='Fotografía, vídeo con dron, reportajes y presentaciones digitales de inmuebles en el Norte y en todo Portugal. Pida presupuesto.',
-    nav=[('quem', 'Quiénes somos'), ('servicos', 'Servicios'), ('trabalhos', 'Trabajos'), ('desporto', 'Deporte'), ('como', 'Cómo funciona'), ('marcas', 'Marcas'), ('contacto', 'Contacto')],
+    nav=[('quem', 'Quiénes somos'), ('servicos', 'Servicios'), ('trabalhos', 'Trabajos'), ('sites', 'Webs'), ('desporto', 'Deporte'), ('como', 'Cómo funciona'), ('marcas', 'Marcas'), ('contacto', 'Contacto')],
     cta='Pida presupuesto',
     wa_msg='Hola Freire, me gustaría pedir un presupuesto a Usina Vídeos.',
     hero_eb='Producción audiovisual inmobiliaria · Norte y todo Portugal',
@@ -159,7 +164,8 @@ T = {
            ('/t4coral/es.html', '/img/coral-fachada.jpg', 'Condomínio Coral · Foz do Douro', 'Fotografía, dron y presentación digital en cuatro idiomas. Agente Cheila Monteiro · CENTURY 21 Arquitectos II · AMI 11414', 'Ver la presentación'),
            ('https://century21.pt/ref/C0554-00006', '/img/core-devesas-t.jpg', 'CENTURY 21 Core · Vila Nova de Gaia', 'Fotografía y vídeo de una casa de cinco dormitorios en Devesas (agente Vasco Dinis) y de un piso de tres dormitorios en Oliveira do Douro.', 'Ver el anuncio'),
            ('/cordiallevel/anteroquental/', '/cordiallevel/anteroquental/img/aq-lapa-t.jpg', 'Piso de dos dormitorios · Antero de Quental, Oporto', 'Fotografía, dron, visita 3D y página del inmueble. ' + AMI, 'Ver la presentación'),
-           ('/cordiallevel/moncao/', '/cordiallevel/moncao/img/t1-area-t.jpg', 'Terrenos en Monção · Alto Minho', 'Dron, vídeo y simulaciones de proyecto identificadas como IA. ' + AMI, 'Ver la presentación')],
+           ('/cordiallevel/moncao/', '/cordiallevel/moncao/img/t1-area-t.jpg', 'Terrenos en Monção · Alto Minho', 'Dron, vídeo y simulaciones de proyecto identificadas como IA. ' + AMI, 'Ver la presentación'),
+           ('https://www.youtube.com/watch?v=ed1kwc3x27I', 'https://i.ytimg.com/vi/ed1kwc3x27I/hqdefault.jpg', 'Panorama Imobiliário PT', 'El pódcast de Cordial Level en YouTube, sobre el mercado y las decisiones de quien compra casa (en portugués). Producción y edición de Usina Vídeos.', 'Ver en YouTube')],
     cdj=('CDJRegio', 'Clube Desportivo José Régio, Vila do Conde. Reportajes y resúmenes de los partidos de baloncesto.', 'Ver en Instagram'),
     como_eb='Cómo funciona', como_h2='De la solicitud a la entrega.',
     steps=[('Solicitud de presupuesto', 'Envíenos la dirección, la tipología y lo que necesita, por WhatsApp o e-mail.'),
@@ -271,13 +277,14 @@ section{padding:88px 0}
 .step h3{font-size:20px;margin-top:6px}.step p{margin:8px 0 0;font-size:15px}
 /* marcas */
 .brands{display:grid;gap:16px;margin-top:40px;align-items:start}
-@media(min-width:900px){.brands{grid-template-columns:1.4fr 1fr}}
+@media(min-width:900px){.mea{display:grid;grid-template-columns:auto 1fr;column-gap:40px;align-items:center}.mea small{grid-column:1/-1}.mea img{grid-row:2/4;margin-top:16px}.mea p{margin-top:16px}.mea b{justify-self:start}}
 .mea{display:block;text-decoration:none;color:#fff;background:radial-gradient(520px 260px at 100% 0%,rgba(0,77,154,.55),transparent 70%),#0B0E14;border:1px solid rgba(47,127,208,.45);border-radius:18px;padding:30px 28px}
 .mea small{display:block;font-size:12px;letter-spacing:.2em;font-weight:800;color:var(--mea-l);text-transform:uppercase}
 .mea img{width:min(300px,70vw);height:auto;margin-top:16px;filter:brightness(0) invert(1)}
 .mea p{margin:14px 0 0;color:#C9CFD8}
 .mea b{display:inline-block;margin-top:20px;background:var(--mea);color:#fff;font-weight:800;font-size:15px;padding:12px 20px;border-radius:999px}
 .mea:hover b{background:var(--mea-l)}
+.mrow{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px}.mrow i{font-style:normal;font-weight:700;font-size:14px;color:#C9CFD8;margin-top:20px}
 .side{display:grid;gap:16px}
 .mini{display:flex;align-items:center;gap:14px;padding:20px;border-radius:16px;background:var(--ink2);border:1px solid var(--line);text-decoration:none;color:#D6D1CD}
 .mini b{display:block;color:var(--fg);font-size:17px}.mini span{font-size:14px}
@@ -285,7 +292,8 @@ section{padding:88px 0}
 .mini.ig{background:linear-gradient(var(--ink2),var(--ink2)) padding-box,linear-gradient(90deg,var(--y),var(--r),#8a3ab9) border-box;border:2px solid transparent}
 .mini.yt em{color:var(--r)}
 .mini.in{border-color:rgba(10,102,194,.6)}.mini.in em{color:#5AA3E8}
-.side{grid-template-columns:1fr}@media(min-width:600px) and (max-width:899px){.side{grid-template-columns:1fr 1fr}}
+.side{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}@media(max-width:400px){.side{grid-template-columns:1fr}}
+.card .ex{font-size:14px;font-weight:700;margin-top:14px}.card .ex a{color:var(--r)}
 /* contacto */
 .contact{display:grid;gap:14px;margin-top:32px}
 @media(min-width:800px){.contact{grid-template-columns:repeat(3,1fr)}}
@@ -324,11 +332,12 @@ def page(lang):
     nav = ''.join(f'<a href="#{a}">{e(b)}</a>' for a, b in t['nav'])
     servs = ''.join(f'<article class="card" style="--c:{COLORS[i % 3]}"><span class="n">{i + 1:02d}</span><h3>{e(a)}</h3><p>{e(b)}</p></article>' for i, (a, b) in enumerate(t['servs']))
     medida = ''.join(f'<li>{e(x)}</li>' for x in t['medida'])
-    works = ''.join(f'<a class="work" href="{h}"><div class="ph"><img src="{im}" alt="{e(ti)}" loading="lazy" width="900" height="563"></div><div class="bd"><h3>{e(ti)}</h3><p>{e(d)}</p><em>{e(c)} →</em></div></a>' for h, im, ti, d, c in t['works'])
+    works = ''.join(f'<a class="work" href="{h}"{" target=\"_blank\" rel=\"noopener\"" if h.startswith("http") else ""}><div class="ph"><img src="{im}" alt="{e(ti)}" loading="lazy" width="900" height="563"></div><div class="bd"><h3>{e(ti)}</h3><p>{e(d)}</p><em>{e(c)} →</em></div></a>' for h, im, ti, d, c in t['works'])
     cn, cd, cc = t['cdj']
     steps = ''.join(f'<div class="step"><h3>{e(a)}</h3><p>{e(b)}</p></div>' for a, b in t['steps'])
     stats = ''.join(f'<div><b>{a}</b><span>{e(b)}</span></div>' for a, b in t['stats'])
     quem = ''.join(f'<p>{x}</p>' for x in t['quem_p'])
+    sites = ''.join(f'<article class="card" style="--c:{COLORS[i % 3]}"><span class="n">{i + 1:02d}</span><h3>{e(a)}</h3><p>{e(b)}</p><p class="ex">{e(t["sites"]["ex"])}: ' + ' · '.join(f'<a href="{u}"' + (' target="_blank" rel="noopener"' if u.startswith('http') else '') + f'>{e(l)} →</a>' for l, u in exs) + '</p></article>' for i, (a, b, exs) in enumerate(t['sites']['items']))
     socials = ''.join(f'<a class="mini {k}" href="{u}" target="_blank" rel="noopener">{IG_SVG if k == "ig" else IN_SVG}<div><b>{e(a)}</b><span>{e(b)}</span></div><em>{e(c)} →</em></a>' for u, k, a, b, c in t['socials'])
     return f'''<!doctype html>
 <html lang="{t['html_lang']}">
@@ -392,6 +401,14 @@ def page(lang):
   </div>
 </section>
 
+<section id="sites">
+  <div class="wrap">
+    <span class="eb">{e(t['sites']['eb'])}</span><h2>{e(t['sites']['h2'])}</h2><p class="lead">{e(t['sites']['p'])}</p>
+    <div class="grid3">{sites}</div>
+    <div style="margin-top:28px"><a class="btn y" href="{wa}" target="_blank" rel="noopener">{WA_SVG}{e(t['cta'])}</a></div>
+  </div>
+</section>
+
 <section id="desporto" style="background:var(--paper2)">
   <div class="wrap">
     <span class="eb">{e(t['desp']['eb'])}</span><h2>{e(t['desp']['h2'])}</h2><p class="lead">{e(t['desp']['p'])}</p>
@@ -418,11 +435,10 @@ def page(lang):
       <a class="mea" href="https://motoreseacao.com/?utm_source=usinavideos&amp;utm_medium=banner&amp;utm_campaign=destaque_home" target="_blank" rel="noopener">
         <small>{e(t['mea_eb'])}</small>
         <img src="https://motoreseacao.com/wp-content/uploads/2021/10/cropped-Motores-e-Acao.png" alt="Motores e Ação" width="1000" height="286" loading="lazy">
-        <p>{e(t['mea_p'])}</p><b>{e(t['mea_b'])} →</b></a>
+        <p>{e(t['mea_p'])}</p><span class="mrow"><b>{e(t['mea_b'])} →</b><i>YouTube · @motoreseacao</i></span></a>
       <div class="side">
         {socials}
         <a class="mini yt" href="https://www.youtube.com/@DicasdoFreire/" target="_blank" rel="noopener">{YT_SVG}<div><b>{e(t['dicas'][0])}</b><span>{e(t['dicas'][1])}</span></div><em>{e(t['dicas'][2])} →</em></a>
-        <a class="mini yt" href="https://www.youtube.com/@motoreseacao" target="_blank" rel="noopener">{YT_SVG}<div><b>Motores e Ação</b><span>YouTube · @motoreseacao</span></div><em>{e(t['dicas'][2])} →</em></a>
       </div>
     </div>
   </div>
