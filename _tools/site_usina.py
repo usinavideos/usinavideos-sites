@@ -395,8 +395,8 @@ def page(lang):
     <div class="sport">
       <div class="sp"><div class="sph" style="--c:var(--r)"><b>CDJRegio</b><p>{e(t['desp']['cdj'])}</p><a href="https://www.instagram.com/cdjregio/" target="_blank" rel="noopener">@cdjregio · {e(t['desp']['ver'])} →</a></div>{ig_embed('Deri9uUiObc')}</div>
       <div class="sp"><div class="sph" style="--c:var(--g)"><b>{e(t['desp']['mb'])}</b><p>{e(t['desp']['mbp'])}</p><a href="https://www.instagram.com/matchballbasketball/" target="_blank" rel="noopener">@matchballbasketball · {e(t['desp']['ver'])} →</a></div>{ig_embed('DY-tmeisiO0')}</div>
-      <div class="sp more">{ig_embed('DY-qsa9s-X4')}</div>
-      <div class="sp more">{ig_embed('DY-rnPmMvC0')}</div>
+      <div class="sp more">{ig_embed('DVE7xnnCAar')}</div>
+      <div class="sp more">{ig_embed('DXfRHTljE75')}</div>
     </div>
   </div>
 </section>
