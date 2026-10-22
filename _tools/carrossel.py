@@ -80,7 +80,7 @@ def end_slide(n, total, title, lead, facts, link):
     return page(f'''<div class="s end"><img class="logo" src="file://{ROOT}/cordiallevel/img/logo-cordial-level.png">
 <h2>{e(title)}</h2><p class="lead">{e(lead)}</p>
 <div class="facts">{fx}</div>
-<div class="who"><div><b>Casemiro Ramos</b><span>WhatsApp 935 101 667</span></div><div><b>Renê Medeiros</b><span>WhatsApp 912 706 395</span></div></div>
+<div class="who"><div><b>Casemiro Ramos</b><span>WhatsApp 935 101 667</span></div><div><b>Francisco Medeiros</b><span>WhatsApp 912 706 395</span></div></div>
 <div class="web">Apresentação completa: {e(link)}<br>Todos os imóveis: century21.pt/consultores/cramos
 <small>Cordial Level | CENTURY 21 Arquitectos · AMI 11414 · Ref. {e(n and '')}</small></div></div>''')
 

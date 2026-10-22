@@ -13,7 +13,7 @@ USINA_WA = 'https://wa.me/351912988971?text='
 DIRETORES = [
     dict(nome='Casemiro Ramos', curto='Casemiro', num='351935101667', tel='+351 935 101 667',
          mail='cramos@century21.pt', site='https://century21.pt/consultores/cramos', site_txt='century21.pt/consultores/cramos'),
-    dict(nome='Renê Medeiros', curto='Renê', num='351912706395', tel='+351 912 706 395',
+    dict(nome='Francisco Medeiros', curto='Francisco', num='351912706395', tel='+351 912 706 395',
          mail='franciscomedeiros@century21.pt', site='https://franciscomedeiros.century21.pt', site_txt='franciscomedeiros.century21.pt'),
 ]
 
