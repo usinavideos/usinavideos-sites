@@ -16,10 +16,11 @@ e = html.escape
 T = {
 'pt': dict(
     socials=[('https://www.instagram.com/neofreireportugal','ig','Freire Neto em Portugal','@neofreireportugal · Instagram pessoal','Seguir'),('https://www.instagram.com/freireneto','ig','Freire Neto no Brasil','@freireneto · Instagram','Seguir'),('https://www.instagram.com/motoreseacao','ig','Motores e Ação','@motoreseacao · Instagram','Seguir'),('https://www.linkedin.com/in/freireneto/','in','Freire Neto','LinkedIn','Ver perfil')],
+    desp=dict(eb='Desporto', h2='Também no pavilhão.', p='Reportagem de jogos e torneios de basquetebol, com destaques e perfis de jogadores para as redes sociais.', cdj='Clube Desportivo José Régio · Vila do Conde. Destaques dos jogos da formação e dos seniores.', mb='MatchBall × Red Rose Thunder', mbp='Tour internacional de basquetebol em Portugal. Perfis e destaques dos jogadores.', ver='Ver no Instagram'),
     path='', html_lang='pt-PT', og_locale='pt_PT',
     title='Usina Vídeos · Produção audiovisual imobiliária em Portugal',
     desc='Fotografia, vídeo com drone, reportagem e apresentações digitais para imóveis, no Norte e em todo o Portugal. Peça orçamento.',
-    nav=[('quem', 'Quem somos'), ('servicos', 'Serviços'), ('trabalhos', 'Trabalhos'), ('como', 'Como funciona'), ('marcas', 'Marcas'), ('contacto', 'Contacto')],
+    nav=[('quem', 'Quem somos'), ('servicos', 'Serviços'), ('trabalhos', 'Trabalhos'), ('desporto', 'Desporto'), ('como', 'Como funciona'), ('marcas', 'Marcas'), ('contacto', 'Contacto')],
     cta='Peça orçamento',
     wa_msg='Olá Freire, gostaria de pedir um orçamento à Usina Vídeos.',
     hero_eb='Produção audiovisual imobiliária · Norte e todo o Portugal',
@@ -68,10 +69,11 @@ T = {
 ),
 'en': dict(
     socials=[('https://www.instagram.com/neofreireportugal','ig','Freire Neto in Portugal','@neofreireportugal · personal Instagram','Follow'),('https://www.instagram.com/freireneto','ig','Freire Neto in Brazil','@freireneto · Instagram','Follow'),('https://www.instagram.com/motoreseacao','ig','Motores e Ação','@motoreseacao · Instagram','Follow'),('https://www.linkedin.com/in/freireneto/','in','Freire Neto','LinkedIn','View profile')],
+    desp=dict(eb='Sport', h2='Courtside, too.', p='Basketball games and tournaments covered on video, with highlights and player profiles for social media.', cdj='Clube Desportivo José Régio · Vila do Conde. Highlights from youth and senior games.', mb='MatchBall × Red Rose Thunder', mbp='International basketball tour in Portugal. Player profiles and highlights.', ver='View on Instagram'),
     path='en/', html_lang='en', og_locale='en_GB',
     title='Usina Vídeos · Real estate photo and video production in Portugal',
     desc='Photography, drone video, video tours and digital property presentations across Northern Portugal and the whole country. Ask for a quote.',
-    nav=[('quem', 'About'), ('servicos', 'Services'), ('trabalhos', 'Work'), ('como', 'How it works'), ('marcas', 'Brands'), ('contacto', 'Contact')],
+    nav=[('quem', 'About'), ('servicos', 'Services'), ('trabalhos', 'Work'), ('desporto', 'Sport'), ('como', 'How it works'), ('marcas', 'Brands'), ('contacto', 'Contact')],
     cta='Ask for a quote',
     wa_msg='Hello Freire, I would like a quote from Usina Vídeos.',
     hero_eb='Real estate video production · Northern Portugal and nationwide',
@@ -120,10 +122,11 @@ T = {
 ),
 'es': dict(
     socials=[('https://www.instagram.com/neofreireportugal','ig','Freire Neto en Portugal','@neofreireportugal · Instagram personal','Seguir'),('https://www.instagram.com/freireneto','ig','Freire Neto en Brasil','@freireneto · Instagram','Seguir'),('https://www.instagram.com/motoreseacao','ig','Motores e Ação','@motoreseacao · Instagram','Seguir'),('https://www.linkedin.com/in/freireneto/','in','Freire Neto','LinkedIn','Ver perfil')],
+    desp=dict(eb='Deporte', h2='También en la cancha.', p='Reportajes de partidos y torneos de baloncesto, con resúmenes y perfiles de jugadores para redes sociales.', cdj='Clube Desportivo José Régio · Vila do Conde. Resúmenes de los partidos de cantera y sénior.', mb='MatchBall × Red Rose Thunder', mbp='Gira internacional de baloncesto en Portugal. Perfiles y resúmenes de los jugadores.', ver='Ver en Instagram'),
     path='es/', html_lang='es', og_locale='es_ES',
     title='Usina Vídeos · Producción audiovisual inmobiliaria en Portugal',
     desc='Fotografía, vídeo con dron, reportajes y presentaciones digitales de inmuebles en el Norte y en todo Portugal. Pida presupuesto.',
-    nav=[('quem', 'Quiénes somos'), ('servicos', 'Servicios'), ('trabalhos', 'Trabajos'), ('como', 'Cómo funciona'), ('marcas', 'Marcas'), ('contacto', 'Contacto')],
+    nav=[('quem', 'Quiénes somos'), ('servicos', 'Servicios'), ('trabalhos', 'Trabajos'), ('desporto', 'Deporte'), ('como', 'Cómo funciona'), ('marcas', 'Marcas'), ('contacto', 'Contacto')],
     cta='Pida presupuesto',
     wa_msg='Hola Freire, me gustaría pedir un presupuesto a Usina Vídeos.',
     hero_eb='Producción audiovisual inmobiliaria · Norte y todo Portugal',
@@ -248,6 +251,15 @@ section{padding:88px 0}
 .work.cdj{border-top:4px solid var(--r)}.work.cdj .bd{justify-content:center}.work.cdj em{color:var(--r)}
 .work.cdj .big{font-size:40px;font-weight:900;color:var(--fg);line-height:1}
 @media(min-width:760px){.work.cdj{grid-column:span 2}}
+/* desporto */
+.sport{display:grid;gap:18px;margin-top:36px;align-items:start}
+@media(min-width:760px){.sport{grid-template-columns:1fr 1fr}}
+@media(min-width:1100px){.sport{grid-template-columns:repeat(4,1fr)}}
+.sph{background:var(--ink);color:#D6D1CD;border-radius:16px;padding:20px;border-top:4px solid var(--c);margin-bottom:14px}
+.sph b{display:block;color:var(--fg);font-size:22px;font-weight:900;line-height:1.1}.sph p{margin:8px 0 10px;font-size:15px}
+.sph a{color:var(--y);font-weight:800;font-size:14px;text-decoration:none}
+.sp.more{padding-top:0}
+@media(min-width:1100px){.sp.more{margin-top:0}}
 /* como */
 .steps{display:grid;gap:16px;margin-top:40px;counter-reset:s}
 @media(min-width:800px){.steps{grid-template-columns:repeat(4,1fr)}}
@@ -294,6 +306,12 @@ STRIPE = '<div class="stripe" aria-hidden="true"><i style="background:var(--g)">
 COLORS = ['var(--y)', 'var(--r)', 'var(--g)']
 
 
+def ig_embed(code):
+    u = f'https://www.instagram.com/reel/{code}/'
+    return (f'<blockquote class="instagram-media" data-instgrm-permalink="{u}?utm_source=ig_embed" data-instgrm-version="14" '
+            f'style="background:#fff;border:0;border-radius:14px;margin:0;max-width:540px;min-width:280px;width:100%"><a href="{u}" target="_blank" rel="noopener">Instagram</a></blockquote>')
+
+
 def page(lang):
     t = T[lang]
     wa = f'https://wa.me/{WA_NUM}?text=' + up.quote(t['wa_msg'])
@@ -305,7 +323,6 @@ def page(lang):
     medida = ''.join(f'<li>{e(x)}</li>' for x in t['medida'])
     works = ''.join(f'<a class="work" href="{h}"><div class="ph"><img src="{im}" alt="{e(ti)}" loading="lazy" width="900" height="563"></div><div class="bd"><h3>{e(ti)}</h3><p>{e(d)}</p><em>{e(c)} →</em></div></a>' for h, im, ti, d, c in t['works'])
     cn, cd, cc = t['cdj']
-    works += f'<a class="work cdj" href="https://www.instagram.com/cdjregio/" target="_blank" rel="noopener"><div class="bd"><span class="big">{cn}</span><p>{e(cd)}</p><em>@cdjregio · {e(cc)} →</em></div></a>'
     steps = ''.join(f'<div class="step"><h3>{e(a)}</h3><p>{e(b)}</p></div>' for a, b in t['steps'])
     stats = ''.join(f'<div><b>{a}</b><span>{e(b)}</span></div>' for a, b in t['stats'])
     quem = ''.join(f'<p>{x}</p>' for x in t['quem_p'])
@@ -371,6 +388,19 @@ def page(lang):
     <div class="works">{works}</div>
   </div>
 </section>
+
+<section id="desporto" style="background:var(--paper2)">
+  <div class="wrap">
+    <span class="eb">{e(t['desp']['eb'])}</span><h2>{e(t['desp']['h2'])}</h2><p class="lead">{e(t['desp']['p'])}</p>
+    <div class="sport">
+      <div class="sp"><div class="sph" style="--c:var(--r)"><b>CDJRegio</b><p>{e(t['desp']['cdj'])}</p><a href="https://www.instagram.com/cdjregio/" target="_blank" rel="noopener">@cdjregio · {e(t['desp']['ver'])} →</a></div>{ig_embed('Deri9uUiObc')}</div>
+      <div class="sp"><div class="sph" style="--c:var(--g)"><b>{e(t['desp']['mb'])}</b><p>{e(t['desp']['mbp'])}</p><a href="https://www.instagram.com/matchballbasketball/" target="_blank" rel="noopener">@matchballbasketball · {e(t['desp']['ver'])} →</a></div>{ig_embed('DY-tmeisiO0')}</div>
+      <div class="sp more">{ig_embed('DY-qsa9s-X4')}</div>
+      <div class="sp more">{ig_embed('DY-rnPmMvC0')}</div>
+    </div>
+  </div>
+</section>
+<script async src="https://www.instagram.com/embed.js"></script>
 
 <section id="como">
   <div class="wrap">
