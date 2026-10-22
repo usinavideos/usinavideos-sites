@@ -30,7 +30,7 @@ html,body{width:1080px;height:1350px;overflow:hidden;background:#12284B}
 .top{position:absolute;left:64px;right:64px;top:56px;display:flex;justify-content:space-between;align-items:center}
 .top img{height:150px}
 .pg{font-size:22px;letter-spacing:.2em;color:#F7F5F0;font-weight:700;background:rgba(18,40,75,.55);padding:10px 16px;border-radius:999px}
-.txt{position:absolute;left:64px;right:64px;bottom:72px}
+.txt{position:absolute;left:64px;right:64px;bottom:96px}
 .eb{font-size:26px;letter-spacing:.22em;text-transform:uppercase;color:#D4B562;font-weight:800;margin-bottom:18px}
 h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:104px;line-height:.98;margin-bottom:22px}
 h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:78px;line-height:1.02;margin-bottom:18px}
@@ -38,7 +38,8 @@ p{font-size:34px;line-height:1.38;color:#E8ECF2;max-width:900px}
 .price{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:84px;color:#D4B562;margin-top:18px}
 .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 .chips span{border:2px solid #D4B562;color:#F7F5F0;font-weight:700;font-size:26px;padding:10px 20px;border-radius:999px;background:rgba(18,40,75,.6)}
-.swipe{position:absolute;right:64px;bottom:72px;font-size:24px;font-weight:700;letter-spacing:.12em;color:#D4B562}
+.ami{position:absolute;left:64px;right:64px;bottom:34px;font-size:21px;font-weight:700;letter-spacing:.06em;color:#C9D2DE}
+.swipe{position:absolute;right:64px;bottom:96px;font-size:24px;font-weight:700;letter-spacing:.12em;color:#D4B562}
 .ia{position:absolute;left:64px;top:200px;font-size:20px;font-weight:800;letter-spacing:.12em;color:#E0A93B;border:2px solid #E0A93B;padding:6px 12px;background:rgba(18,40,75,.75)}
 /* final */
 .end{background:#F7F5F0;color:#1B3A6B;padding:72px 64px;display:flex;flex-direction:column}
@@ -72,7 +73,7 @@ def photo_slide(img, n, total, eb, title, text='', price='', chips=(), big=False
     iab = '<div class="ia">SIMULAÇÃO IA · ILUSTRATIVA</div>' if ia else ''
     return page(f'''<div class="s"><img class="bg" src="file://{img}"><div class="shade"></div>
 <div class="top">{lg}<span class="pg">{n}/{total}</span></div>{iab}
-<div class="txt"><div class="eb">{e(eb)}</div>{h}{t}{pr}{ch}</div>{sw}</div>''')
+<div class="txt"><div class="eb">{e(eb)}</div>{h}{t}{pr}{ch}</div>{sw}<div class="ami">Cordial Level | CENTURY 21 Arquitectos · AMI 11414</div></div>''')
 
 
 def end_slide(n, total, title, lead, facts, link):

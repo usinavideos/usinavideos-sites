@@ -17,11 +17,12 @@ h1{font-family:'Cormorant Garamond';font-weight:600;font-size:118px;line-height:
 .ck{display:flex;flex-direction:column;gap:10px}
 .ck span{font-weight:800;font-size:34px;line-height:1.1}
 .ck span b{color:#D4B562}
+.ami{position:absolute;right:40px;bottom:26px;font-size:20px;font-weight:700;color:#F7F5F0;background:rgba(18,40,75,.8);padding:6px 12px;border-radius:6px}
 .pr{position:absolute;left:56px;bottom:46px;background:#D4B562;color:#12284B;font-family:'Cormorant Garamond';font-weight:600;font-size:64px;padding:2px 26px 6px;border-radius:8px}
 """
 def thumb(name, img, eb, h1, lines, price):
     ck = ''.join(f'<span>{l}</span>' for l in lines)
-    html = f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body><div class="t"><img class="bg" src="file://{img}"><div class="g"></div><img class="lg" src="file://{ROOT}/cordiallevel/img/logo-cordial-level-claro.png"><div class="tx"><div class="eb">{eb}</div><h1>{h1}</h1><div class="ck">{ck}</div></div><div class="pr">{price}</div></div></body></html>'
+    html = f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body><div class="t"><img class="bg" src="file://{img}"><div class="g"></div><img class="lg" src="file://{ROOT}/cordiallevel/img/logo-cordial-level-claro.png"><div class="tx"><div class="eb">{eb}</div><h1>{h1}</h1><div class="ck">{ck}</div></div><div class="pr">{price}</div><div class="ami">CENTURY 21 Arquitectos · AMI 11414</div></div></body></html>'
     f = OUT / f'{name}.html'; f.write_text(html)
     with sync_playwright() as p:
         b = p.chromium.launch(); pg = b.new_page(viewport={'width': 1280, 'height': 720})
@@ -45,13 +46,14 @@ h1{font-family:'Cormorant Garamond';font-weight:600;font-size:150px;line-height:
 .bot{position:absolute;left:70px;right:180px;top:1180px}
 .ck{display:flex;flex-direction:column;gap:14px}
 .ck span{font-weight:800;font-size:46px;line-height:1.1}.ck b{color:#D4B562}
+.vami{position:absolute;left:70px;right:180px;top:1700px;font-size:26px;font-weight:700;color:#F7F5F0}
 .pr{display:inline-block;margin-top:30px;background:#D4B562;color:#12284B;font-family:'Cormorant Garamond';font-weight:600;font-size:92px;padding:0 32px 8px;border-radius:12px}
 """
 
 
 def vthumb(name, img, eb, h1, lines, price):
     ck = ''.join(f'<span>{l}</span>' for l in lines)
-    html = f'<!doctype html><html><head><meta charset="utf-8"><style>{VCSS}</style></head><body><div class="v"><img class="bg" src="file://{img}"><div class="g"></div><img class="lg" src="file://{ROOT}/cordiallevel/img/logo-cordial-level-claro.png"><div class="top"><div class="eb">{eb}</div><h1>{h1}</h1></div><div class="bot"><div class="ck">{ck}</div><div class="pr">{price}</div></div></div></body></html>'
+    html = f'<!doctype html><html><head><meta charset="utf-8"><style>{VCSS}</style></head><body><div class="v"><img class="bg" src="file://{img}"><div class="g"></div><img class="lg" src="file://{ROOT}/cordiallevel/img/logo-cordial-level-claro.png"><div class="top"><div class="eb">{eb}</div><h1>{h1}</h1></div><div class="bot"><div class="ck">{ck}</div><div class="pr">{price}</div></div><div class="vami">Cordial Level | CENTURY 21 Arquitectos · AMI 11414</div></div></body></html>'
     f = OUT / f'{name}.html'; f.write_text(html)
     with sync_playwright() as p:
         b = p.chromium.launch(); pg = b.new_page(viewport={'width': 1080, 'height': 1920})

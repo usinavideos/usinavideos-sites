@@ -221,7 +221,7 @@ def build(p):
     def dir_card(d):
         return f'''<article class="dir">
         <h3>{d['nome']}</h3>
-        <p class="role">Diretor · Cordial Level | CENTURY 21 Arquitectos</p>
+        <p class="role">Diretor · Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p>
         <p class="cta-lbl">Fale comigo!</p>
         <div class="btns">
           <a class="b wa" href="{wa(d['num'], msg(d['curto']))}" target="_blank" rel="noopener">{WA_ICON}WhatsApp {d['curto']}</a>
@@ -260,7 +260,7 @@ def build(p):
     <h1>{e(p['h1'])}</h1>
     <p class="sub">{e(p['sub'])}</p>
     <div class="price">{e(p['price'])}</div>
-    <p class="by">Cordial Level | CENTURY 21 Arquitectos · Ref. {ref}</p>
+    <p class="by">Cordial Level | CENTURY 21 Arquitectos · AMI 11414 · Ref. {ref}</p>
   </div></div>
 </header>
 
@@ -318,7 +318,7 @@ def build(p):
 </section>
 
 <footer><div class="wrap">
-  <span>Cordial Level | CENTURY 21 Arquitectos · <a href="https://www.instagram.com/cordiallevel/">Instagram</a> · <a href="https://www.facebook.com/cordiallevel/">Facebook</a> · <a href="https://www.youtube.com/@CordialLevelPT">YouTube</a><br>{e(p['legal'])} Cada agência CENTURY 21 é jurídica e financeiramente independente.</span>
+  <span><b style="color:#F7F5F0;font-weight:700">Cordial Level | CENTURY 21 Arquitectos · AMI 11414</b> · <a href="https://www.instagram.com/cordiallevel/">Instagram</a> · <a href="https://www.facebook.com/cordiallevel/">Facebook</a> · <a href="https://www.youtube.com/@CordialLevelPT">YouTube</a><br>{e(p['legal'])} Cada agência CENTURY 21 é jurídica e financeiramente independente.</span>
   <a class="usina" href="{usina}" target="_blank" rel="noopener" aria-label="Usina Vídeos — WhatsApp"><span>Produção audiovisual</span><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
 </div></footer>
 
