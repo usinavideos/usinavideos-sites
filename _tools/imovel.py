@@ -401,7 +401,7 @@ IMOVEIS = {
         loc='Rua Francisco Sá Carneiro · Leça da Palmeira · Matosinhos', h1='T3 em Leça da Palmeira',
         sub='138 m², suíte, orientação Norte/Sul e 2 lugares de garagem, perto do mar.',
         price='550 000 €',
-        quote='Viver num apartamento onde o espaço não é um luxo, é realidade.',
+        quote='Viver em um apartamento onde o espaço não é um luxo, é realidade.',
         intro='Este magnífico T3 em Leça da Palmeira, com 138 m² de área, distingue-se pelas suas áreas generosas, excelente organização dos espaços, orientação Norte/Sul e pela comodidade de dispor de 2 lugares de garagem. Uma solução ideal para quem procura uma habitação familiar com dimensão, conforto e funcionalidade, numa das zonas mais procuradas do concelho de Matosinhos.',
         photos_intro=['leca-1', 'leca-21', 'leca-11'],
         photos_ficha=['leca-3', 'leca-4'],
