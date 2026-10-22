@@ -16,7 +16,7 @@ e = html.escape
 T = {
 'pt': dict(
     socials=[('https://www.instagram.com/usina.videos','ig','Usina Vídeos','@usina.videos · últimos trabalhos','Seguir'),('https://www.instagram.com/neofreireportugal','ig','Freire Neto em Portugal','@neofreireportugal · Instagram pessoal','Seguir'),('https://www.instagram.com/freireneto','ig','Freire Neto no Brasil','@freireneto · Instagram','Seguir'),('https://www.instagram.com/motoreseacao','ig','Motores e Ação','@motoreseacao · Instagram','Seguir'),('https://www.linkedin.com/in/freireneto/','in','Freire Neto','LinkedIn','Ver perfil')],
-    desp=dict(eb='Desporto', h2='Também no pavilhão.', p='Reportagem de jogos e torneios de basquetebol, com destaques e perfis de jogadores para as redes sociais.', cdj='Clube Desportivo José Régio · Vila do Conde. Destaques dos jogos da formação e dos seniores.', mb='MatchBall × Red Rose Thunder', mbp='Tour internacional de basquetebol em Portugal. Perfis e destaques dos jogadores.', ver='Ver no Instagram'),
+    desp=dict(eb='Desporto', h2='Também no pavilhão.', p='Reportagem de jogos e torneios de basquetebol, com destaques e perfis de jogadores para as redes sociais.', cdj='Clube Desportivo José Régio · Vila do Conde. Destaques dos jogos da formação e dos seniores.', mb='MatchBall × Red Rose Thunder', mbp='Tour internacional de basquetebol em Portugal. Perfis e destaques dos jogadores.', ver='Ver no Instagram', mais='Ver mais no Instagram'),
     path='', html_lang='pt-PT', og_locale='pt_PT',
     title='Usina Vídeos · Produção audiovisual imobiliária em Portugal',
     desc='Fotografia, vídeo com drone, reportagem e apresentações digitais para imóveis, no Norte e em todo o Portugal. Peça orçamento.',
@@ -69,7 +69,7 @@ T = {
 ),
 'en': dict(
     socials=[('https://www.instagram.com/usina.videos','ig','Usina Vídeos','@usina.videos · latest work','Follow'),('https://www.instagram.com/neofreireportugal','ig','Freire Neto in Portugal','@neofreireportugal · personal Instagram','Follow'),('https://www.instagram.com/freireneto','ig','Freire Neto in Brazil','@freireneto · Instagram','Follow'),('https://www.instagram.com/motoreseacao','ig','Motores e Ação','@motoreseacao · Instagram','Follow'),('https://www.linkedin.com/in/freireneto/','in','Freire Neto','LinkedIn','View profile')],
-    desp=dict(eb='Sport', h2='Courtside, too.', p='Basketball games and tournaments covered on video, with highlights and player profiles for social media.', cdj='Clube Desportivo José Régio · Vila do Conde. Highlights from youth and senior games.', mb='MatchBall × Red Rose Thunder', mbp='International basketball tour in Portugal. Player profiles and highlights.', ver='View on Instagram'),
+    desp=dict(eb='Sport', h2='Courtside, too.', p='Basketball games and tournaments covered on video, with highlights and player profiles for social media.', cdj='Clube Desportivo José Régio · Vila do Conde. Highlights from youth and senior games.', mb='MatchBall × Red Rose Thunder', mbp='International basketball tour in Portugal. Player profiles and highlights.', ver='View on Instagram', mais='See more on Instagram'),
     path='en/', html_lang='en', og_locale='en_GB',
     title='Usina Vídeos · Real estate photo and video production in Portugal',
     desc='Photography, drone video, video tours and digital property presentations across Northern Portugal and the whole country. Ask for a quote.',
@@ -122,7 +122,7 @@ T = {
 ),
 'es': dict(
     socials=[('https://www.instagram.com/usina.videos','ig','Usina Vídeos','@usina.videos · últimos trabajos','Seguir'),('https://www.instagram.com/neofreireportugal','ig','Freire Neto en Portugal','@neofreireportugal · Instagram personal','Seguir'),('https://www.instagram.com/freireneto','ig','Freire Neto en Brasil','@freireneto · Instagram','Seguir'),('https://www.instagram.com/motoreseacao','ig','Motores e Ação','@motoreseacao · Instagram','Seguir'),('https://www.linkedin.com/in/freireneto/','in','Freire Neto','LinkedIn','Ver perfil')],
-    desp=dict(eb='Deporte', h2='También en la cancha.', p='Reportajes de partidos y torneos de baloncesto, con resúmenes y perfiles de jugadores para redes sociales.', cdj='Clube Desportivo José Régio · Vila do Conde. Resúmenes de los partidos de cantera y sénior.', mb='MatchBall × Red Rose Thunder', mbp='Gira internacional de baloncesto en Portugal. Perfiles y resúmenes de los jugadores.', ver='Ver en Instagram'),
+    desp=dict(eb='Deporte', h2='También en la cancha.', p='Reportajes de partidos y torneos de baloncesto, con resúmenes y perfiles de jugadores para redes sociales.', cdj='Clube Desportivo José Régio · Vila do Conde. Resúmenes de los partidos de cantera y sénior.', mb='MatchBall × Red Rose Thunder', mbp='Gira internacional de baloncesto en Portugal. Perfiles y resúmenes de los jugadores.', ver='Ver en Instagram', mais='Ver más en Instagram'),
     path='es/', html_lang='es', og_locale='es_ES',
     title='Usina Vídeos · Producción audiovisual inmobiliaria en Portugal',
     desc='Fotografía, vídeo con dron, reportajes y presentaciones digitales de inmuebles en el Norte y en todo Portugal. Pida presupuesto.',
@@ -254,7 +254,7 @@ section{padding:88px 0}
 /* desporto */
 .sport{display:grid;gap:18px;margin-top:36px;align-items:start}
 @media(min-width:760px){.sport{grid-template-columns:1fr 1fr}}
-@media(min-width:1100px){.sport{grid-template-columns:repeat(4,1fr)}}
+.sport{max-width:900px}.spmore{margin-top:28px}
 .sph{background:var(--ink);color:#D6D1CD;border-radius:16px;padding:20px;border-top:4px solid var(--c);margin-bottom:14px}
 .sph b{display:block;color:var(--fg);font-size:22px;font-weight:900;line-height:1.1}.sph p{margin:8px 0 10px;font-size:15px}
 .sph a{color:var(--y);font-weight:800;font-size:14px;text-decoration:none}
@@ -395,9 +395,8 @@ def page(lang):
     <div class="sport">
       <div class="sp"><div class="sph" style="--c:var(--r)"><b>CDJRegio</b><p>{e(t['desp']['cdj'])}</p><a href="https://www.instagram.com/cdjregio/" target="_blank" rel="noopener">@cdjregio · {e(t['desp']['ver'])} →</a></div>{ig_embed('Deri9uUiObc')}</div>
       <div class="sp"><div class="sph" style="--c:var(--g)"><b>{e(t['desp']['mb'])}</b><p>{e(t['desp']['mbp'])}</p><a href="https://www.instagram.com/matchballbasketball/" target="_blank" rel="noopener">@matchballbasketball · {e(t['desp']['ver'])} →</a></div>{ig_embed('DY-tmeisiO0')}</div>
-      <div class="sp more">{ig_embed('DVE7xnnCAar')}</div>
-      <div class="sp more">{ig_embed('DXfRHTljE75')}</div>
     </div>
+    <div class="spmore"><a class="btn y" href="https://www.instagram.com/usina.videos/" target="_blank" rel="noopener">{e(t['desp']['mais'])} →</a></div>
   </div>
 </section>
 <script async src="https://www.instagram.com/embed.js"></script>
