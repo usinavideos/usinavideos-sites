@@ -25,10 +25,12 @@ CATS=[('todos','Todos'),('casa','Casas e apartamentos'),('terreno','Terrenos'),(
 def card(p):
     ref,cat,t,loc,price,specs,img,flag=p
     url=f'https://century21.pt/{"arrendar" if cat=="arrendar" else "comprar"}/{ref}'
-    LOCAL={'C0393-01659':('t3leca/','t3leca/img/leca-37-t.jpg'),'C0393-01661':('casaraofoz/','casaraofoz/img/foz-f52-t.jpg')}
+    LOCAL={'C0393-01659':('t3leca/','t3leca/img/leca-37-t.jpg'),'C0393-01661':('casaraofoz/','casaraofoz/img/foz-f52-t.jpg'),'C0393-01555':('bosquepicua/',None)}
     tgt=' target="_blank" rel="noopener"'
-    if ref in LOCAL: url,_im=LOCAL[ref]; tgt=''; img_src=_im
-    else: img_src=I+img+Q
+    img_src=I+img+Q
+    if ref in LOCAL:
+        url,_im=LOCAL[ref]; tgt=''
+        if _im: img_src=_im
     ai='<span class="ai">Imagem gerada por IA · ilustrativa</span>' if ref in AI else ''
     fl=f'<span class="flag">{html.escape(flag)}</span>' if flag else ''
     sp=''.join(f'<li>{html.escape(s)}</li>' for s in specs)

@@ -28,6 +28,10 @@ def img(name, w=None):
     return f'img/{name}-t.jpg' if w and w <= 900 else f'img/{name}.jpg'
 
 
+def simb(p, n):
+    return (' data-sim="1"', '<span class="sim">Simulação</span>') if n in p.get('sim', ()) else ('', '')
+
+
 def wa(num, txt):
     return f'https://wa.me/{num}?text=' + up.quote(txt)
 
@@ -86,7 +90,11 @@ img{max-width:100%;display:block}h1,h2,h3{font-family:var(--serif);font-weight:5
 .strip button{padding:0;border:0;background:#E9E4D8;cursor:zoom-in;overflow:hidden;aspect-ratio:4/3}
 .strip.n1 button{aspect-ratio:16/9}
 @media(min-width:640px){.strip.n3 button:first-child{aspect-ratio:auto}}
-.strip img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.strip button:hover img{transform:scale(1.03)}
+.strip img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.strip button,.gal button{position:relative}
+.sim{position:absolute;left:8px;bottom:8px;background:rgba(18,40,75,.86);color:#F7F5F0;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:4px 8px;pointer-events:none}
+.hero.plain{min-height:62vh;min-height:62svh;background:linear-gradient(160deg,#1B3A6B 0%,#12284B 100%)}
+.hero.plain .logo{position:absolute;top:28px;left:50%;transform:translateX(-50%);width:min(220px,46vw);height:auto;opacity:.95}.strip button:hover img{transform:scale(1.03)}
 .gal{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:28px}
 @media(min-width:900px){.gal{grid-template-columns:repeat(4,1fr);gap:10px}.gal button:nth-child(5n+1){grid-column:span 2;grid-row:span 2}}
 .gal button{padding:0;border:0;background:#E9E4D8;cursor:zoom-in;aspect-ratio:4/3;overflow:hidden}
@@ -127,7 +135,7 @@ footer a{color:inherit}
 JS = r"""
 (function(){
 var g=[].slice.call(document.querySelectorAll('.strip button,.gal button')),lb=document.querySelector('.lb'),li=lb.querySelector('img'),lc=lb.querySelector('.c'),i=0;
-function show(k){i=(k+g.length)%g.length;li.src=g[i].dataset.full;li.alt=g[i].querySelector('img').alt;lc.textContent=(i+1)+' / '+g.length;}
+function show(k){i=(k+g.length)%g.length;li.src=g[i].dataset.full;li.alt=g[i].querySelector('img').alt;lc.textContent=(i+1)+' / '+g.length+(g[i].dataset.sim?' · Simulação, imagem gerada digitalmente':'');}
 g.forEach(function(b,k){b.addEventListener('click',function(){show(k);lb.classList.add('on');lb.querySelector('.x').focus();});});
 lb.querySelector('.x').onclick=function(){lb.classList.remove('on');};
 lb.querySelector('.p').onclick=function(){show(i-1);};lb.querySelector('.n').onclick=function(){show(i+1);};
@@ -158,7 +166,7 @@ def build(p):
     caps = dict(p['gallery'])
     def strip(names):
         if not names: return ''
-        bt = ''.join(f'<button data-full="{img(n)}" aria-label="Ampliar: {e(caps.get(n, p["alt"]))}"><img src="{img(n, 900)}" alt="{e(caps.get(n, p["alt"]))}" loading="lazy"></button>' for n in names)
+        bt = ''.join(f'<button data-full="{img(n)}"{simb(p, n)[0]} aria-label="Ampliar: {e(caps.get(n, p["alt"]))}"><img src="{img(n, 900)}" alt="{e(caps.get(n, p["alt"]))}" loading="lazy">{simb(p, n)[1]}</button>' for n in names)
         return f'<div class="strip n{len(names)}">{bt}</div>'
 
     def sec(x):
@@ -190,7 +198,7 @@ def build(p):
   <div class="wrap">
     <span class="eyebrow">O vídeo</span>
     <h2 class="h2">{e(p.get('video_h2', 'Conheça o imóvel em vídeo'))}</h2>
-    <div class="media{' vert' if p.get('video_vertical') else ''}"><button data-yt="{p['video']}" aria-label="Ver o vídeo do imóvel"><img src="{img(p.get('video_img', p['hero']))}" alt="" loading="lazy">{PLAY}</button></div>
+    <div class="media{' vert' if p.get('video_vertical') else ''}"><button data-yt="{p['video']}" aria-label="Ver o vídeo do imóvel"><img src="{img(p.get('video_img', p.get('hero')))}" alt="" loading="lazy">{PLAY}</button></div>
   </div>
 </section>'''
     tour = ''
@@ -205,7 +213,7 @@ def build(p):
 </section>'''
 
     gal = ''.join(
-        f'<button data-full="{img(g)}" aria-label="Ampliar: {e(a)}"><img src="{img(g, 900)}" alt="{e(a)}" loading="lazy"></button>'
+        f'<button data-full="{img(g)}"{simb(p, g)[0]} aria-label="Ampliar: {e(a)}"><img src="{img(g, 900)}" alt="{e(a)}" loading="lazy">{simb(p, g)[1]}</button>'
         for g, a in p['gallery'])
 
     def dir_card(d):
@@ -232,7 +240,7 @@ def build(p):
 <meta name="description" content="{e(p['desc'])}">
 <meta property="og:title" content="{e(p['title'])}">
 <meta property="og:description" content="{e(p['desc'])}">
-<meta property="og:image" content="https://usinavideos.pt/cordiallevel/{p['slug']}/img/{p['hero']}.jpg">
+<meta property="og:image" content="{f"https://usinavideos.pt/cordiallevel/{p['slug']}/img/{p['hero']}.jpg" if p.get('hero') else 'https://usinavideos.pt/cordiallevel/img/capa-logo.jpg'}">
 <meta name="theme-color" content="#1B3A6B">
 <link rel="icon" href="/img/logo/usina-simbolo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -242,8 +250,8 @@ def build(p):
 <body>
 <nav class="nav" aria-label="Secções"><div class="wrap"><a class="brand" href="../">Cordial <b>Level</b></a>{nav}</div></nav>
 
-<header id="inicio" class="hero">
-  <img src="{img(p['hero'], 2200)}" alt="{e(p['hero_alt'])}" fetchpriority="high">
+<header id="inicio" class="hero{'' if p.get('hero') else ' plain'}">
+  {f'<img src="{img(p["hero"], 2200)}" alt="{e(p["hero_alt"])}" fetchpriority="high">' if p.get('hero') else '<img class="logo" src="../img/logo-cordial-level-claro.png" alt="Cordial Level">'}
   <div class="band"><div class="wrap">
     <div class="loc">{e(p['loc'])}</div>
     <h1>{e(p['h1'])}</h1>
@@ -452,6 +460,51 @@ IMOVEIS = {
         maps='Rua Senhora da Luz, Foz do Douro, Porto', geo=(41.1512834, -8.6767872),
         legal='Informação sujeita a confirmação; áreas e características segundo a ficha CENTURY 21.',
         video='zno11IhgXtE', tour='https://realsee.ai/xGWWkzlx', tour_img='foz-f2', video_img='foz-f79',
+    ),
+    'bosquepicua': dict(
+        ref='C0393-01555', curto='T2+1 Bosque da Pícua',
+        title='T2+1 com terraço e box no Bosque da Pícua · Cordial Level',
+        desc='T2+1 novo no Bosque, Parque da Pícua, Águas Santas: 92,30 m², terraço de 26,65 m², box de 33 m² para 2 carros e certificado energético A.',
+        hero=None, hero_alt='',
+        loc='Bosque · Parque da Pícua · Águas Santas · Maia', h1='T2+1 no Bosque da Pícua',
+        sub='Terraço privativo de 26,65 m², box de 33 m² para dois carros e jardins à porta.',
+        price='Preço sob consulta',
+        quote='Viver dentro de um parque, a oito minutos do centro do Porto.',
+        intro='Um T2+1 com áreas generosas e acabamentos de alta gama no Bosque, o empreendimento do Parque da Pícua, em Águas Santas. Suite com closet, um espaço extra para escritório, sala e cozinha em open space com 33,50 m² e um deck privativo de 26,65 m² para refeições ao ar livre. No piso -2, uma garagem em box com 33 m², com lugar para dois carros.',
+        photos_intro=['bp-fachada', 'bp-lagos', 'bp-esquina'],
+        ficha_h2='Um T2+1 pensado para viver dentro e fora',
+        ficha_lead=['A zona social junta sala e cozinha num só espaço com 33,50 m², amplo e luminoso, com ligação ao terraço. A suite tem 19,65 m² e closet; o segundo quarto tem 11,60 m².',
+                    'O espaço +1, com 5,20 m², serve de escritório para teletrabalho ou de quarto de apoio. Duas casas de banho completas.'],
+        facts=[('Área útil', '92,30 m²'), ('Área bruta', '118,95 m²'), ('Terraço', '26,65 m²'), ('Quartos', '2 + escritório'),
+               ('Casas de banho', '2'), ('Garagem', 'Box 33 m²'), ('Certificado energético', 'A'), ('Construção', '2026')],
+        rooms_h3='Áreas por divisão',
+        rooms=[('Sala e cozinha', '33,50 m²'), ('Suite com closet', '19,65 m²'), ('Quarto', '11,60 m²'), ('Espaço +1 (escritório)', '5,20 m²'),
+               ('Terraço / deck privativo', '26,65 m²'), ('Garagem em box, piso -2 (2 lugares)', '33 m²')],
+        feat_h3='Acabamentos e conforto',
+        features=['Cozinha equipada Bosch: placa de indução, forno, micro-ondas, combinado e máquina de lavar loiça', 'Exaustor',
+                  'Pré-instalação de ar condicionado', 'Bomba de calor de alta eficiência para águas sanitárias',
+                  'Caixilharia em alumínio com corte térmico e vidros duplos', 'Pavimento melamínico de alta durabilidade',
+                  'Aspiração central', 'Certificado energético A'],
+        extras=[
+            dict(id='garagem', eb='Estacionamento', h2='Uma box de 33 m² para dois carros', dark=True,
+                 paras=['A fração inclui uma garagem em box fechada no piso -2, com uns invulgares 33 m²: espaço para dois carros e para arrumação.']),
+            dict(id='empreendimento', eb='O empreendimento', h2='Bosque, no Parque da Pícua', photos=['bp-logradouro', 'bp-jardim'],
+                 paras=['O Bosque é um projeto de construção anti-sísmica e sustentável, com 1,5 hectares dedicados a espaços verdes, jardins e lagos, e espaços comuns como ginásio, salas de lazer e coworking.',
+                        'As imagens do empreendimento nesta página são simulações do edifício concluído, criadas a partir de fotografias da obra.'],
+                 chips=['T2+1 novo', 'Terraço de 26,65 m²', 'Box de 33 m² · 2 lugares', 'Suite com closet', 'Escritório', 'Certificado A', 'Cozinha Bosch', 'Aspiração central']),
+        ],
+        gallery=[('bp-fachada', 'Simulação: fachada principal com terraços ajardinados'), ('bp-lagos', 'Simulação: vista aérea com jardins e lagos'),
+                 ('bp-esquina', 'Simulação: esquina do edifício e arruamento arborizado'), ('bp-logradouro', 'Simulação: logradouro com jardins privativos'),
+                 ('bp-cobertura', 'Simulação: coberturas ajardinadas'), ('bp-jardim', 'Simulação: jardim com oliveiras e espelhos de água'),
+                 ('bp-parque', 'Simulação: o edifício, os lagos e o relvado')],
+        sim={'bp-fachada', 'bp-lagos', 'bp-esquina', 'bp-logradouro', 'bp-cobertura', 'bp-jardim', 'bp-parque'},
+        alt='Bosque, Parque da Pícua', gal_h2='O Bosque, depois de concluído',
+        gal_note='As imagens são simulações geradas digitalmente a partir de fotografias da obra e não são vinculativas.',
+        loc_h2='Pícua, Águas Santas: sossego a minutos do Porto',
+        loc_txt='Junto ao Jardim da Pícua e ao Parque Urbano dos Moutidos, com a A4, A3, A41, VCI e Circunvalação a poucos minutos. Hospital de São João e Polo Universitário a 6 minutos e centro do Porto a 8 minutos, segundo a ficha do imóvel.',
+        maps='Pícua, Águas Santas, Maia', geo=(41.2037790756507, -8.56774606227663),
+        legal='Informação sujeita a confirmação; áreas e características segundo a ficha CENTURY 21. Imagens do empreendimento: simulações, não vinculativas.',
+        video=None, tour=None,
     ),
 }
 

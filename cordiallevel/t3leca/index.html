@@ -66,7 +66,11 @@ img{max-width:100%;display:block}h1,h2,h3{font-family:var(--serif);font-weight:5
 .strip button{padding:0;border:0;background:#E9E4D8;cursor:zoom-in;overflow:hidden;aspect-ratio:4/3}
 .strip.n1 button{aspect-ratio:16/9}
 @media(min-width:640px){.strip.n3 button:first-child{aspect-ratio:auto}}
-.strip img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.strip button:hover img{transform:scale(1.03)}
+.strip img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.strip button,.gal button{position:relative}
+.sim{position:absolute;left:8px;bottom:8px;background:rgba(18,40,75,.86);color:#F7F5F0;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:4px 8px;pointer-events:none}
+.hero.plain{min-height:62vh;min-height:62svh;background:linear-gradient(160deg,#1B3A6B 0%,#12284B 100%)}
+.hero.plain .logo{position:absolute;top:28px;left:50%;transform:translateX(-50%);width:min(220px,46vw);height:auto;opacity:.95}.strip button:hover img{transform:scale(1.03)}
 .gal{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:28px}
 @media(min-width:900px){.gal{grid-template-columns:repeat(4,1fr);gap:10px}.gal button:nth-child(5n+1){grid-column:span 2;grid-row:span 2}}
 .gal button{padding:0;border:0;background:#E9E4D8;cursor:zoom-in;aspect-ratio:4/3;overflow:hidden}
@@ -221,7 +225,7 @@ footer a{color:inherit}
 <script>
 (function(){
 var g=[].slice.call(document.querySelectorAll('.strip button,.gal button')),lb=document.querySelector('.lb'),li=lb.querySelector('img'),lc=lb.querySelector('.c'),i=0;
-function show(k){i=(k+g.length)%g.length;li.src=g[i].dataset.full;li.alt=g[i].querySelector('img').alt;lc.textContent=(i+1)+' / '+g.length;}
+function show(k){i=(k+g.length)%g.length;li.src=g[i].dataset.full;li.alt=g[i].querySelector('img').alt;lc.textContent=(i+1)+' / '+g.length+(g[i].dataset.sim?' · Simulação, imagem gerada digitalmente':'');}
 g.forEach(function(b,k){b.addEventListener('click',function(){show(k);lb.classList.add('on');lb.querySelector('.x').focus();});});
 lb.querySelector('.x').onclick=function(){lb.classList.remove('on');};
 lb.querySelector('.p').onclick=function(){show(i-1);};lb.querySelector('.n').onclick=function(){show(i+1);};
