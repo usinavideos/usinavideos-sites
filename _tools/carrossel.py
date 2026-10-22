@@ -39,6 +39,11 @@ p{font-size:34px;line-height:1.38;color:#E8ECF2;max-width:900px}
 .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 .chips span{border:2px solid #D4B562;color:#F7F5F0;font-weight:700;font-size:26px;padding:10px 20px;border-radius:999px;background:rgba(18,40,75,.6)}
 .ami{position:absolute;left:64px;right:64px;bottom:34px;font-size:21px;font-weight:700;letter-spacing:.06em;color:#C9D2DE}
+.band>img.bg{height:800px;bottom:auto}
+.band .shade{background:linear-gradient(180deg,rgba(18,40,75,.55) 0%,rgba(18,40,75,0) 20%,rgba(18,40,75,0) 45%,#12284B 60%,#12284B 100%)}
+.band .ia{top:auto;bottom:auto;top:700px}
+.band .txt{top:850px;bottom:auto}
+.band .swipe{bottom:96px}
 .swipe{position:absolute;right:64px;bottom:96px;font-size:24px;font-weight:700;letter-spacing:.12em;color:#D4B562}
 .ia{position:absolute;left:64px;top:200px;font-size:20px;font-weight:800;letter-spacing:.12em;color:#E0A93B;border:2px solid #E0A93B;padding:6px 12px;background:rgba(18,40,75,.75)}
 /* final */
@@ -63,26 +68,30 @@ def page(body):
     return f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>{body}</body></html>'
 
 
-def photo_slide(img, n, total, eb, title, text='', price='', chips=(), big=False, ia=False, logo=True):
+def photo_slide(img, n, total, eb, title, text='', price='', chips=(), big=False, ia=False, logo=True, band=False):
     lg = f'<img src="file://{ROOT}/cordiallevel/img/logo-cordial-level-claro.png">' if logo else '<span></span>'
     h = f'<h1>{e(title)}</h1>' if big else f'<h2>{e(title)}</h2>'
     t = f'<p>{e(text)}</p>' if text else ''
     pr = f'<div class="price">{e(price)}</div>' if price else ''
     ch = ('<div class="chips">' + ''.join(f'<span>{e(c)}</span>' for c in chips) + '</div>') if chips else ''
     sw = '<div class="swipe">DESLIZE →</div>' if n == 1 else ''
-    iab = '<div class="ia">SIMULAÇÃO IA · ILUSTRATIVA</div>' if ia else ''
+    iab = f'<div class="ia">{e(ia if isinstance(ia, str) else "SIMULAÇÃO IA · ILUSTRATIVA")}</div>' if ia else ''
+    if band:
+        return page(f'''<div class="s band"><img class="bg" src="file://{img}"><div class="shade"></div>
+<div class="top">{lg}<span class="pg">{n}/{total}</span></div>{iab}
+<div class="txt"><div class="eb">{e(eb)}</div>{h}{t}{pr}{ch}</div>{sw}<div class="ami">Cordial Level | CENTURY 21 Arquitectos · AMI 11414</div></div>''')
     return page(f'''<div class="s"><img class="bg" src="file://{img}"><div class="shade"></div>
 <div class="top">{lg}<span class="pg">{n}/{total}</span></div>{iab}
 <div class="txt"><div class="eb">{e(eb)}</div>{h}{t}{pr}{ch}</div>{sw}<div class="ami">Cordial Level | CENTURY 21 Arquitectos · AMI 11414</div></div>''')
 
 
-def end_slide(n, total, title, lead, facts, link):
+def end_slide(n, total, title, lead, facts, link, link_label='Apresentação completa'):
     fx = ''.join(f'<div><b>{e(v)}</b><i>{e(k)}</i></div>' for k, v in facts)
     return page(f'''<div class="s end"><img class="logo" src="file://{ROOT}/cordiallevel/img/logo-cordial-level.png">
 <h2>{e(title)}</h2><p class="lead">{e(lead)}</p>
 <div class="facts">{fx}</div>
 <div class="who"><div><b>Casemiro Ramos</b><span>WhatsApp 935 101 667</span></div><div><b>Francisco Medeiros</b><span>WhatsApp 912 706 395</span></div></div>
-<div class="web">Apresentação completa: {e(link)}<br>Todos os imóveis: century21.pt/consultores/cramos
+<div class="web">{e(link_label)}: {e(link)}<br>Todos os imóveis: century21.pt/consultores/cramos
 <small>Cordial Level | CENTURY 21 Arquitectos · AMI 11414 · Ref. {e(n and '')}</small></div></div>''')
 
 
@@ -142,5 +151,46 @@ def leca():
     build('carrossel-leca', s)
 
 
+ANT = pathlib.Path(os.environ.get('ANTERO_IMG', '/tmp/antero-img'))
+BP = ROOT / 'cordiallevel/bosquepicua/img'
+
+
+def antero():
+    T = 8
+    s = [
+        photo_slide(ANT / 'antero-24.jpg', 1, T, 'Porto · Rua Antero de Quental', 'T2 remodelado no centro do Porto', 'Pronto a habitar, com 77,3 m².', '349 000 €', big=True),
+        photo_slide(ANT / 'antero-31.jpg', 2, T, 'Localização', 'Centralidade e mobilidade', 'Comércio, serviços, restauração e transportes à porta.'),
+        photo_slide(ANT / 'antero-26.jpg', 3, T, 'Sala', 'Sala e zona de refeições', 'Luminosa, com janelas para a cidade.'),
+        photo_slide(ANT / 'antero-17.jpg', 4, T, 'Cozinha', 'Cozinha remodelada e equipada', 'Placa, exaustor, frigorífico e máquinas de lavar loiça e roupa.'),
+        photo_slide(ANT / 'antero-3.jpg', 5, T, 'Quartos', 'Dois quartos', 'Com roupeiros e muita luz natural.', chips=('T2', '77,3 m²')),
+        photo_slide(ANT / 'antero-11.jpg', 6, T, 'Casa de banho', 'Casa de banho renovada', 'Base de duche e acabamentos atuais.'),
+        photo_slide(ANT / 'antero-27.jpg', 7, T, 'Para viver ou investir', 'Uma solução versátil', 'Para quem procura casa no Porto ou quer investir.'),
+        end_slide(8, T, 'T2 remodelado · Rua Antero de Quental', 'Imóvel renovado · cozinha equipada · licença de utilização n.º 423/1983 · certificado energético D.',
+                  [('Preço', '349 000 €'), ('Área útil', '77,3 m²'), ('Quartos', '2'), ('Estado', 'Renovado')], 'century21.pt/comprar/C0393-01689', 'Ficha completa'),
+    ]
+    s[-1] = s[-1].replace('Ref. ', 'Ref. C0393-01689')
+    build('carrossel-antero', s)
+
+
+def bosque():
+    T = 8
+    SIM = 'SIMULAÇÃO · NÃO VINCULATIVA'
+    s = [
+        photo_slide(BP / 'bp-fachada.jpg', 1, T, 'Bosque · Parque da Pícua · Maia', 'T2+1 com terraço e box', 'Em construção, com entrega prevista em 2028.', 'Preço sob consulta', big=True, ia=SIM, band=True),
+        photo_slide(BP / 'bp-lagos.jpg', 2, T, 'O empreendimento', '1,5 hectares de jardins e lagos', 'Construção anti-sísmica e sustentável.', ia=SIM, band=True),
+        photo_slide(BP / 'bp-jardim.jpg', 3, T, 'Águas Santas', 'Viver dentro de um parque', 'A oito minutos do centro do Porto.', ia=SIM, band=True),
+        photo_slide(BP / 'bp-cobertura.jpg', 4, T, 'Exterior privativo', 'Terraço de 26,65 m²', 'Um deck para refeições ao ar livre.', ia=SIM, band=True),
+        photo_slide(BP / 'bp-logradouro.jpg', 5, T, 'A casa', '92,30 m² bem distribuídos', 'Suite com closet, escritório e sala com cozinha em open space de 33,50 m².', ia=SIM, band=True),
+        photo_slide(BP / 'bp-esquina.jpg', 6, T, 'Garagem', 'Box de 33 m² para dois carros', 'No piso -2, com espaço para arrumação.', chips=('Certificado A', 'Cozinha Bosch'), ia=SIM, band=True),
+        photo_slide(BP / 'bp-parque.jpg', 7, T, 'Espaços comuns', 'Ginásio, coworking e lazer', 'Jardins, lagos e espaços para toda a família.', ia=SIM, band=True),
+        end_slide(8, T, 'T2+1 · Bosque da Pícua', 'Em construção · entrega prevista em 2028 · imagens: simulações não vinculativas.',
+                  [('Área útil', '92,30 m²'), ('Terraço', '26,65 m²'), ('Garagem', 'Box 33 m²'), ('Entrega', '2028')], 'usinavideos.pt/cordiallevel/bosquepicua'),
+    ]
+    s[-1] = s[-1].replace('Ref. ', 'Ref. C0393-01555')
+    build('carrossel-bosque-picua', s)
+
+
 if __name__ == '__main__':
-    foz(); leca()
+    quais = sys.argv[2:] or ['foz', 'leca']
+    for q in quais:
+        globals()[q]()
