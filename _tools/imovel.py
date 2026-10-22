@@ -117,6 +117,8 @@ img{max-width:100%;display:block}h1,h2,h3{font-family:var(--serif);font-weight:5
 .b.wa{background:#1E9E4A;color:#fff}.b.navy{background:var(--navy);color:var(--cream)}.b.line{border:1px solid var(--navy);color:var(--navy)}
 .b small{font-weight:400;font-size:12px;display:block}
 .b:hover{filter:brightness(1.08)}
+.cta-lbl{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--gold);margin:4px 0 -4px}
+.bar a span{display:flex;flex-direction:column;line-height:1.05;text-align:left}.bar a small{font-size:11px;font-weight:600;opacity:.9}
 .mail{font-size:14px;color:var(--muted)}.mail a{color:var(--navy)}
 .allprops{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center;padding:20px 24px;background:var(--navy);color:var(--cream);text-decoration:none;border-left:4px solid var(--gold)}
 .allprops span{font-family:var(--serif);font-size:clamp(20px,3.2vw,26px);word-break:break-word}
@@ -220,6 +222,7 @@ def build(p):
         return f'''<article class="dir">
         <h3>{d['nome']}</h3>
         <p class="role">Diretor · Cordial Level | CENTURY 21 Arquitectos</p>
+        <p class="cta-lbl">Fale comigo!</p>
         <div class="btns">
           <a class="b wa" href="{wa(d['num'], msg(d['curto']))}" target="_blank" rel="noopener">{WA_ICON}WhatsApp {d['curto']}</a>
           <a class="b line" href="tel:+{d['num']}">{TEL_ICON}Ligar · {d['tel']}</a>
@@ -228,7 +231,7 @@ def build(p):
         <p class="mail">E-mail: <a href="mailto:{d['mail']}?subject={up.quote('Ref. ' + ref + ' · ' + p['curto'])}">{d['mail']}</a></p>
       </article>'''
 
-    bar = ''.join(f'<a href="{wa(d["num"], msg(d["curto"]))}" target="_blank" rel="noopener" aria-label="WhatsApp {d["nome"]}">{WA_ICON}{d["curto"]}</a>' for d in DIRETORES)
+    bar = ''.join(f'<a href="{wa(d["num"], msg(d["curto"]))}" target="_blank" rel="noopener" aria-label="Fale comigo: WhatsApp {d["nome"]}">{WA_ICON}<span><small>Fale comigo!</small>{d["curto"]}</span></a>' for d in DIRETORES)
     usina = USINA_WA + up.quote(f"Olá Freire, vi a apresentação do imóvel {p['curto']} e gostaria de saber mais sobre os serviços da Usina Vídeos.")
 
     return f'''<!doctype html>
