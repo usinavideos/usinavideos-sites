@@ -16,7 +16,7 @@
 :root{--navy:#1B3A6B;--navy-d:#12284B;--gold:#B8962E;--gold-l:#D4B562;--cream:#F7F5F0;--ink:#1E2328;--muted:#5E6873;--line:#E3DED2;
 --serif:'Cormorant Garamond',Georgia,serif;--sans:'Mulish',system-ui,-apple-system,sans-serif;--max:1120px}
 *{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;padding-bottom:76px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;padding-bottom:100px;font-variant-numeric:lining-nums}
 @media(min-width:900px){body{padding-bottom:0}}
 img{max-width:100%;display:block}h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;margin:0;text-wrap:balance}p{margin:0}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}section{padding:80px 0;scroll-margin-top:56px}
@@ -66,7 +66,11 @@ img{max-width:100%;display:block}h1,h2,h3{font-family:var(--serif);font-weight:5
 .strip button{padding:0;border:0;background:#E9E4D8;cursor:zoom-in;overflow:hidden;aspect-ratio:4/3}
 .strip.n1 button{aspect-ratio:16/9}
 @media(min-width:640px){.strip.n3 button:first-child{aspect-ratio:auto}}
-.strip img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.strip button:hover img{transform:scale(1.03)}
+.strip img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.strip button,.gal button{position:relative}
+.sim{position:absolute;left:8px;bottom:8px;background:rgba(18,40,75,.86);color:#F7F5F0;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:4px 8px;pointer-events:none}
+.hero.plain{min-height:62vh;min-height:62svh;background:linear-gradient(160deg,#1B3A6B 0%,#12284B 100%)}
+.hero.plain .logo{position:absolute;top:28px;left:50%;transform:translateX(-50%);width:min(220px,46vw);height:auto;opacity:.95}.strip button:hover img{transform:scale(1.03)}
 .gal{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:28px}
 @media(min-width:900px){.gal{grid-template-columns:repeat(4,1fr);gap:10px}.gal button:nth-child(5n+1){grid-column:span 2;grid-row:span 2}}
 .gal button{padding:0;border:0;background:#E9E4D8;cursor:zoom-in;aspect-ratio:4/3;overflow:hidden}
@@ -90,7 +94,7 @@ img{max-width:100%;display:block}h1,h2,h3{font-family:var(--serif);font-weight:5
 .b small{font-weight:400;font-size:12px;display:block}
 .b:hover{filter:brightness(1.08)}
 .cta-lbl{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--gold);margin:4px 0 -4px}
-.bar a span{display:flex;flex-direction:column;line-height:1.05;text-align:left}.bar a small{font-size:11px;font-weight:600;opacity:.9}
+.bar-lbl{grid-column:1/-1;margin:0 0 -2px;text-align:center;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--gold-l);line-height:1.1}
 .mail{font-size:14px;color:var(--muted)}.mail a{color:var(--navy)}
 .allprops{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center;padding:20px 24px;background:var(--navy);color:var(--cream);text-decoration:none;border-left:4px solid var(--gold)}
 .allprops span{font-family:var(--serif);font-size:clamp(20px,3.2vw,26px);word-break:break-word}
@@ -103,7 +107,7 @@ footer .usina{display:flex;align-items:center;gap:12px;color:inherit;text-decora
 footer a{color:inherit}
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(18,40,75,.97);border-top:1px solid var(--gold)}
 .bar a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:999px;background:#1E9E4A;color:#fff;text-decoration:none;font-weight:700;font-size:14px}
-@media(min-width:900px){.bar{left:auto;right:18px;bottom:18px;grid-template-columns:auto auto;border:1px solid var(--gold);border-radius:999px;padding:8px}.bar a{padding:0 18px}}
+@media(min-width:900px){.bar{left:auto;right:18px;bottom:18px;grid-template-columns:auto auto;border:1px solid var(--gold);border-radius:22px;padding:10px 10px 10px}.bar a{padding:0 18px}}
 </style>
 </head>
 <body>
@@ -121,7 +125,7 @@ footer a{color:inherit}
 </header>
 
 <div class="quote">
-  <p class="q">“Imagine viver num apartamento onde o espaço não é um luxo, mas uma realidade.”</p>
+  <p class="q">“Viver num apartamento onde o espaço não é um luxo, é realidade.”</p>
   <div class="rule"></div>
   <p class="t">Este magnífico T3 em Leça da Palmeira, com 138 m² de área, distingue-se pelas suas áreas generosas, excelente organização dos espaços, orientação Norte/Sul e pela comodidade de dispor de 2 lugares de garagem. Uma solução ideal para quem procura uma habitação familiar com dimensão, conforto e funcionalidade, numa das zonas mais procuradas do concelho de Matosinhos.</p>
 </div>
@@ -219,13 +223,13 @@ footer a{color:inherit}
   <a class="usina" href="https://wa.me/351912988971?text=Ol%C3%A1%20Freire%2C%20vi%20a%20apresenta%C3%A7%C3%A3o%20do%20im%C3%B3vel%20T3%20Le%C3%A7a%20da%20Palmeira%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Usina%20V%C3%ADdeos." target="_blank" rel="noopener" aria-label="Usina Vídeos — WhatsApp"><span>Produção audiovisual</span><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
 </div></footer>
 
-<nav class="bar" aria-label="Contacto rápido por WhatsApp"><a href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20vi%20a%20apresenta%C3%A7%C3%A3o%20do%20im%C3%B3vel%20T3%20Le%C3%A7a%20da%20Palmeira%20%28ref.%20C0393-01659%29%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener" aria-label="Fale comigo: WhatsApp Casemiro Ramos"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c.3 1.8 1.8 3.6 3.6 4.4l1.2-1.1 2 .9-.4 1.6c-3.2.3-6.9-3.2-6.8-6.6l1.6-.4.9 2z"/></svg><span><small>Fale comigo!</small>Casemiro</span></a><a href="https://wa.me/351912706395?text=Ol%C3%A1%20Ren%C3%AA%2C%20vi%20a%20apresenta%C3%A7%C3%A3o%20do%20im%C3%B3vel%20T3%20Le%C3%A7a%20da%20Palmeira%20%28ref.%20C0393-01659%29%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener" aria-label="Fale comigo: WhatsApp Renê Medeiros"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c.3 1.8 1.8 3.6 3.6 4.4l1.2-1.1 2 .9-.4 1.6c-3.2.3-6.9-3.2-6.8-6.6l1.6-.4.9 2z"/></svg><span><small>Fale comigo!</small>Renê</span></a></nav>
+<nav class="bar" aria-label="Contacto rápido por WhatsApp"><p class="bar-lbl">Fale diretamente connosco</p><a href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20vi%20a%20apresenta%C3%A7%C3%A3o%20do%20im%C3%B3vel%20T3%20Le%C3%A7a%20da%20Palmeira%20%28ref.%20C0393-01659%29%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener" aria-label="Fale comigo: WhatsApp Casemiro Ramos"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c.3 1.8 1.8 3.6 3.6 4.4l1.2-1.1 2 .9-.4 1.6c-3.2.3-6.9-3.2-6.8-6.6l1.6-.4.9 2z"/></svg>Casemiro</a><a href="https://wa.me/351912706395?text=Ol%C3%A1%20Ren%C3%AA%2C%20vi%20a%20apresenta%C3%A7%C3%A3o%20do%20im%C3%B3vel%20T3%20Le%C3%A7a%20da%20Palmeira%20%28ref.%20C0393-01659%29%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener" aria-label="Fale comigo: WhatsApp Renê Medeiros"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c.3 1.8 1.8 3.6 3.6 4.4l1.2-1.1 2 .9-.4 1.6c-3.2.3-6.9-3.2-6.8-6.6l1.6-.4.9 2z"/></svg>Renê</a></nav>
 
 <div class="lb" role="dialog" aria-modal="true" aria-label="Fotografia ampliada"><img alt=""><button class="x" aria-label="Fechar">×</button><button class="p" aria-label="Anterior">‹</button><button class="n" aria-label="Seguinte">›</button><div class="c"></div></div>
 <script>
 (function(){
 var g=[].slice.call(document.querySelectorAll('.strip button,.gal button')),lb=document.querySelector('.lb'),li=lb.querySelector('img'),lc=lb.querySelector('.c'),i=0;
-function show(k){i=(k+g.length)%g.length;li.src=g[i].dataset.full;li.alt=g[i].querySelector('img').alt;lc.textContent=(i+1)+' / '+g.length;}
+function show(k){i=(k+g.length)%g.length;li.src=g[i].dataset.full;li.alt=g[i].querySelector('img').alt;lc.textContent=(i+1)+' / '+g.length+(g[i].dataset.sim?' · Simulação, imagem gerada digitalmente':'');}
 g.forEach(function(b,k){b.addEventListener('click',function(){show(k);lb.classList.add('on');lb.querySelector('.x').focus();});});
 lb.querySelector('.x').onclick=function(){lb.classList.remove('on');};
 lb.querySelector('.p').onclick=function(){show(i-1);};lb.querySelector('.n').onclick=function(){show(i+1);};
