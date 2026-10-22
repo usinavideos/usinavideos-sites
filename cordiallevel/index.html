@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex">
 <meta property="og:title" content="Cordial Level · Imóveis no Grande Porto">
 <meta property="og:description" content="Atendimento cordial. Soluções de alto nível. Compra · Venda · Investimento.">
-<meta property="og:image" content="https://usinavideos.pt/cordiallevel/img/capa.jpg">
+<meta property="og:image" content="https://usinavideos.pt/cordiallevel/t3leca/img/leca-38.jpg">
 <meta name="theme-color" content="#1B3A6B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,10 +37,6 @@ section{padding:72px 0;scroll-margin-top:56px}
 .nav a.l{color:var(--cream);text-decoration:none;font-size:13px;letter-spacing:.08em}
 .nav a.l:hover{color:var(--gold-l)}
 
-.hero{padding:0;background:#EEE9DF}
-.hero picture img{width:100%;height:auto}
-.hero .wrap{padding-top:36px;padding-bottom:44px;display:grid;gap:18px}
-.hero h1{font-size:clamp(34px,6vw,56px);color:var(--navy)}
 .hero .pill{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:12px;letter-spacing:.22em;font-weight:700;color:var(--navy)}
 .hero .pill span+span::before{content:"·";margin-right:18px;color:var(--gold)}
 .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
@@ -131,6 +127,43 @@ footer .wrap{padding-top:32px;padding-bottom:32px;display:flex;flex-wrap:wrap;ga
 footer .usina{display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none}
 footer .usina img{height:36px;width:auto}
 footer .usina:hover span{color:var(--gold-l)}
+
+.hero{position:relative;padding:0;background:var(--navy-d);color:var(--cream);overflow:hidden;min-height:min(88vh,760px);display:flex;align-items:flex-end}
+.slides,.slides img{position:absolute;inset:0;width:100%;height:100%}
+.slides img{object-fit:cover;opacity:0;animation:fade 18s infinite}
+.slides img:nth-child(1){opacity:1;animation-delay:0s}.slides img:nth-child(2){animation-delay:6s}.slides img:nth-child(3){animation-delay:12s}
+@keyframes fade{0%{opacity:0}4%{opacity:1}33%{opacity:1}38%{opacity:0}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.slides img{animation:none}.slides img:nth-child(n+2){display:none}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,40,75,.15) 0%,rgba(18,40,75,.55) 45%,rgba(12,28,54,.94) 100%)}
+.hero-in{position:relative;z-index:1;padding-top:120px;padding-bottom:48px;display:grid;gap:16px;width:100%}
+.hlogo{width:180px;height:auto}
+.hero h1{font-size:clamp(34px,6vw,60px);color:#fff;max-width:820px}
+.hlead{font-size:17px;color:#E6EBF1;max-width:620px}
+.hami{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold-l)}
+.hcred{font-size:12px;color:#AEB9C7}
+.btn.gold{background:var(--gold);color:var(--navy-d)}
+.btn.ghost{border:1px solid rgba(247,245,240,.7);color:var(--cream)}
+.feat{background:#fff}
+.fgrid{display:grid;gap:18px;margin-top:28px}
+@media(min-width:900px){.fgrid{grid-template-columns:1.5fr 1fr;grid-template-rows:auto auto}.fcard.big{grid-row:span 2}}
+.fcard{position:relative;display:block;overflow:hidden;background:var(--navy);color:var(--cream);text-decoration:none;min-height:300px}
+.fcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.fcard:hover img{transform:scale(1.04)}
+.fcard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,40,75,0) 25%,rgba(12,28,54,.7) 55%,rgba(12,28,54,.96) 100%)}
+.fbody{text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.fbody{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:20px 22px;display:grid;gap:6px}
+.fcard .loc{color:var(--gold-l)}
+.fcard h3{font-size:clamp(24px,3vw,32px);color:#fff}
+.fmeta{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}.fmeta b{font-family:var(--serif);font-size:28px;font-weight:600}.fmeta span{font-size:12px;color:#C9D2DE}
+.fgo{font-size:14px;font-weight:700;color:var(--gold-l)}
+@media(min-width:900px){.fcard.big{min-height:640px}.fcard{min-height:310px}}
+body{padding-bottom:104px}
+@media(min-width:900px){body{padding-bottom:0}footer .wrap{padding-bottom:110px}}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(18,40,75,.97);border-top:1px solid var(--gold)}
+.bar-lbl{grid-column:1/-1;margin:0 0 -2px;text-align:center;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--gold-l);line-height:1.1}
+.bar a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:999px;background:#1E9E4A;color:#fff;text-decoration:none;font-weight:700;font-size:14px}
+.bar a:hover{filter:brightness(1.08)}
+@media(min-width:900px){.bar{left:auto;right:18px;bottom:18px;grid-template-columns:auto auto;border:1px solid var(--gold);border-radius:22px;padding:10px}.bar a{padding:0 18px}}
 </style>
 </head>
 <body>
@@ -138,6 +171,7 @@ footer .usina:hover span{color:var(--gold-l)}
 <nav class="nav" aria-label="Secções">
   <div class="wrap">
     <a class="brand" href="#inicio">Cordial <b>Level</b></a>
+    <a class="l" href="#destaques">Destaques</a>
     <a class="l" href="#imoveis">Imóveis</a>
     <a class="l" href="#vender">Vender</a>
     <a class="l" href="#usufruto">Usufruto</a>
@@ -148,19 +182,45 @@ footer .usina:hover span{color:var(--gold-l)}
 </nav>
 
 <header id="inicio" class="hero">
-  <picture>
-    <source media="(min-width:700px)" srcset="img/capa.jpg">
-    <img src="img/capa-logo.jpg" alt="Cordial Level — Atendimento cordial. Soluções de alto nível. Compra, venda, investimento." width="1640" height="624">
-  </picture>
-  <div class="wrap">
+  <div class="slides" aria-hidden="true">
+    <img src="t3leca/img/leca-38.jpg" alt="" width="2200" height="1238" fetchpriority="high">
+    <img src="casaraofoz/img/foz-f80.jpg" alt="" width="2200" height="1238" loading="lazy">
+    <img src="img/antero-20.jpg" alt="" width="2200" height="1238" loading="lazy">
+  </div>
+  <div class="wrap hero-in">
+    <img class="hlogo" src="img/logo-cordial-level-claro.png" alt="Cordial Level" width="240">
     <h1>Imóveis no Grande Porto, apresentados com o cuidado que merecem.</h1>
-    <p class="lead">Cordial Level | CENTURY 21 Arquitectos · AMI 11414. Casas, terrenos e oportunidades de investimento, com vídeo-reportagem e acompanhamento de perto, do primeiro contacto à escritura.</p>
+    <p class="hlead">Casas, terrenos e oportunidades de investimento, com vídeo-reportagem e acompanhamento de perto, do primeiro contacto à escritura.</p>
+    <p class="hami">Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p>
     <div class="btns">
-      <a class="btn navy" href="#imoveis">Ver os 17 imóveis</a>
-      <a class="btn line" href="https://century21.pt/consultores/cramos" target="_blank" rel="noopener">Todos os imóveis na CENTURY 21</a>
+      <a class="btn gold" href="#destaques">Imóveis em destaque</a>
+      <a class="btn ghost" href="#imoveis">Ver os 17 imóveis</a>
     </div>
+    <p class="hcred">Na imagem: Leça da Palmeira · Foz do Douro · Antero de Quental</p>
   </div>
 </header>
+
+<section id="destaques" class="feat">
+  <div class="wrap">
+    <span class="eyebrow">Em destaque</span>
+    <h2 class="h2">Três imóveis, apresentados por inteiro.</h2>
+    <p class="lead">Fotografia, vídeo e drone da Usina Vídeos. Toque para ver a apresentação completa.</p>
+    <div class="fgrid">
+      <a class="fcard big" href="t3leca/">
+        <img src="t3leca/img/leca-36.jpg" alt="Edifício do T3 em Leça da Palmeira, junto ao mar" loading="lazy" width="2200" height="1238">
+        <div class="fbody"><span class="loc">Leça da Palmeira · 1.ª linha de mar</span><h3>T3 com 171 m² e 2 lugares de garagem</h3><p class="fmeta"><b>550 000 €</b><span>Ref. C0393-01659</span></p><span class="fgo">Ver apresentação →</span></div>
+      </a>
+      <a class="fcard" href="casaraofoz/">
+        <img src="casaraofoz/img/foz-f52-t.jpg" srcset="casaraofoz/img/foz-f52-t.jpg 900w, casaraofoz/img/foz-f52.jpg 2200w" sizes="(min-width:900px) 40vw, 100vw" alt="Fachada do casarão na Foz do Douro" loading="lazy" width="900" height="506">
+        <div class="fbody"><span class="loc">Foz do Douro, Porto</span><h3>Moradia T4 com vista de mar</h3><p class="fmeta"><b>875 000 €</b><span>Ref. C0393-01661</span></p><span class="fgo">Ver apresentação →</span></div>
+      </a>
+      <a class="fcard" href="https://century21.pt/comprar/C0393-01689" target="_blank" rel="noopener">
+        <img src="img/antero-20-t.jpg" srcset="img/antero-20-t.jpg 900w, img/antero-20.jpg 2200w" sizes="(min-width:900px) 40vw, 100vw" alt="Sala do T2 remodelado na Rua Antero de Quental" loading="lazy" width="900" height="506">
+        <div class="fbody"><span class="loc">Antero de Quental, Porto</span><h3>T2 remodelado e equipado</h3><p class="fmeta"><b>349 000 €</b><span>Ref. C0393-01689</span></p><span class="fgo">Ver ficha na CENTURY 21 →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
 
 <main>
 <section id="imoveis">
@@ -191,7 +251,7 @@ footer .usina:hover span{color:var(--gold-l)}
   <div class="body"><span class="loc">Grande Porto</span><h3>T2+1 novo com terraço de 27 m² e garagem box</h3><ul class="specs"><li>2 quartos</li><li>2 WC</li><li>119 m²</li></ul><div class="row"><span class="price">408 000 €</span><span class="ref">Ref. C0393-01555</span></div></div>
 </a>
 <a class="prop" data-cat="casa" href="https://century21.pt/comprar/C0393-01689" target="_blank" rel="noopener">
-  <div class="ph"><img src="https://images.century21.pt/56b2793c-7533-4f13-ac73-c21a0374aede/F-20.jpeg?width=900&height=675&quality=85" alt="T2 remodelado e equipado na Rua Antero de Quental" loading="lazy" width="900" height="675"><span class="flag">Visita virtual</span></div>
+  <div class="ph"><img src="img/antero-20-t.jpg" alt="T2 remodelado e equipado na Rua Antero de Quental" loading="lazy" width="900" height="675"><span class="flag">Visita virtual</span></div>
   <div class="body"><span class="loc">Porto</span><h3>T2 remodelado e equipado na Rua Antero de Quental</h3><ul class="specs"><li>2 quartos</li><li>1 WC</li><li>78 m²</li></ul><div class="row"><span class="price">349 000 €</span><span class="ref">Ref. C0393-01689</span></div></div>
 </a>
 <a class="prop" data-cat="casa" href="https://century21.pt/comprar/C0393-01583" target="_blank" rel="noopener">
@@ -350,6 +410,8 @@ footer .usina:hover span{color:var(--gold-l)}
     <a class="usina" href="https://wa.me/351912988971?text=Ol%C3%A1%20Freire%2C%20vi%20o%20site%20da%20Cordial%20Level%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Usina%20V%C3%ADdeos." target="_blank" rel="noopener" aria-label="Usina Vídeos — WhatsApp"><span>Produção audiovisual</span><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
   </div>
 </footer>
+
+<nav class="bar" aria-label="Contacto rápido por WhatsApp"><p class="bar-lbl">Fale diretamente connosco</p><a href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20vi%20o%20site%20da%20Cordial%20Level%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener" aria-label="Fale comigo: WhatsApp Casemiro Ramos"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c.3 1.8 1.8 3.6 3.6 4.4l1.2-1.1 2 .9-.4 1.6c-3.2.3-6.9-3.2-6.8-6.6l1.6-.4.9 2z"/></svg>Casemiro</a><a href="https://wa.me/351912706395?text=Ol%C3%A1%20Francisco%2C%20vi%20o%20site%20da%20Cordial%20Level%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener" aria-label="Fale comigo: WhatsApp Francisco Medeiros"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c.3 1.8 1.8 3.6 3.6 4.4l1.2-1.1 2 .9-.4 1.6c-3.2.3-6.9-3.2-6.8-6.6l1.6-.4.9 2z"/></svg>Francisco</a></nav>
 
 <script>
 document.querySelectorAll('.tab').forEach(function(b){b.addEventListener('click',function(){

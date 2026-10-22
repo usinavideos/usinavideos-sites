@@ -25,11 +25,11 @@ CATS=[('todos','Todos'),('casa','Casas e apartamentos'),('terreno','Terrenos'),(
 def card(p):
     ref,cat,t,loc,price,specs,img,flag=p
     url=f'https://century21.pt/{"arrendar" if cat=="arrendar" else "comprar"}/{ref}'
-    LOCAL={'C0393-01659':('t3leca/','t3leca/img/leca-37-t.jpg'),'C0393-01661':('casaraofoz/','casaraofoz/img/foz-f52-t.jpg'),'C0393-01555':('bosquepicua/',None)}
+    LOCAL={'C0393-01659':('t3leca/','t3leca/img/leca-37-t.jpg'),'C0393-01661':('casaraofoz/','casaraofoz/img/foz-f52-t.jpg'),'C0393-01555':('bosquepicua/',None),'C0393-01689':('https://century21.pt/comprar/C0393-01689','img/antero-20-t.jpg')}
     tgt=' target="_blank" rel="noopener"'
     img_src=I+img+Q
     if ref in LOCAL:
-        url,_im=LOCAL[ref]; tgt=''
+        url,_im=LOCAL[ref]; tgt='' if not url.startswith('http') else tgt
         if _im: img_src=_im
     ai='<span class="ai">Imagem gerada por IA · ilustrativa</span>' if ref in AI else ''
     fl=f'<span class="flag">{html.escape(flag)}</span>' if flag else ''
@@ -44,10 +44,13 @@ V=[('vU0bXm_uhGk','T3 em Leça da Palmeira, junto às Piscinas das Marés','Shor
 def vid(v):
     i,t,m=v
     return f'''<figure class="vid"><button class="yt" data-id="{i}" aria-label="Ver vídeo: {html.escape(t)}"><img src="https://i.ytimg.com/vi/{i}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play" aria-hidden="true"></span></button><figcaption><span>{m}</span>{html.escape(t)}</figcaption></figure>'''
+ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c.3 1.8 1.8 3.6 3.6 4.4l1.2-1.1 2 .9-.4 1.6c-3.2.3-6.9-3.2-6.8-6.6l1.6-.4.9 2z"/></svg>'
+def wam(n,nome): return f'https://wa.me/{n}?text='+__import__('urllib.parse').parse.quote(f'Olá {nome}, vi o site da Cordial Level e gostaria de mais informações.')
+BAR='<nav class="bar" aria-label="Contacto rápido por WhatsApp"><p class="bar-lbl">Fale diretamente connosco</p>'+''.join(f'<a href="{wam(n,c)}" target="_blank" rel="noopener" aria-label="Fale comigo: WhatsApp {f}">{ICON}{c}</a>' for n,c,f in [('351935101667','Casemiro','Casemiro Ramos'),('351912706395','Francisco','Francisco Medeiros')])+'</nav>'
 WA='https://wa.me/351912988971?text=Ol%C3%A1%20Freire%2C%20vi%20o%20site%20da%20Cordial%20Level%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Usina%20V%C3%ADdeos.'
 tabs=''.join(f'<button class="tab{" on" if k=="todos" else ""}" data-f="{k}" aria-pressed="{"true" if k=="todos" else "false"}">{n}</button>' for k,n in CATS)
 props='\n'.join(card(p) for p in P)
 vids='\n'.join(vid(v) for v in V)
-out=open('_tools/cordiallevel_template.html').read().replace('{{TABS}}',tabs).replace('{{PROPS}}',props).replace('{{VIDS}}',vids).replace('{{WA}}',WA).replace('{{N}}',str(len(P)))
+out=open('_tools/cordiallevel_template.html').read().replace('{{TABS}}',tabs).replace('{{PROPS}}',props).replace('{{VIDS}}',vids).replace('{{WA}}',WA).replace('{{N}}',str(len(P))).replace('{{BAR}}',BAR)
 open('cordiallevel/index.html','w').write(out)
 print('ok',len(out))
