@@ -81,6 +81,12 @@ img{max-width:100%;display:block}h1,h2,h3{font-family:var(--serif);font-weight:5
 .media iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(64px,9vw,100px);height:clamp(64px,9vw,100px);border-radius:50%;background:rgba(212,181,98,.96);box-shadow:0 10px 30px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center}
 .tourlabel{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--gold-l);color:var(--navy);font-weight:700;padding:14px 22px;letter-spacing:.06em;white-space:nowrap}
+.strip{display:grid;gap:8px;margin-top:28px;grid-template-columns:1fr}
+@media(min-width:640px){.strip.n2{grid-template-columns:1fr 1fr}.strip.n3{grid-template-columns:2fr 1fr}.strip.n3 button:first-child{grid-row:span 2}}
+.strip button{padding:0;border:0;background:#E9E4D8;cursor:zoom-in;overflow:hidden;aspect-ratio:4/3}
+.strip.n1 button{aspect-ratio:16/9}
+@media(min-width:640px){.strip.n3 button:first-child{aspect-ratio:auto}}
+.strip img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.strip button:hover img{transform:scale(1.03)}
 .gal{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:28px}
 @media(min-width:900px){.gal{grid-template-columns:repeat(4,1fr);gap:10px}.gal button:nth-child(5n+1){grid-column:span 2;grid-row:span 2}}
 .gal button{padding:0;border:0;background:#E9E4D8;cursor:zoom-in;aspect-ratio:4/3;overflow:hidden}
@@ -120,7 +126,7 @@ footer a{color:inherit}
 
 JS = r"""
 (function(){
-var g=[].slice.call(document.querySelectorAll('.gal button')),lb=document.querySelector('.lb'),li=lb.querySelector('img'),lc=lb.querySelector('.c'),i=0;
+var g=[].slice.call(document.querySelectorAll('.strip button,.gal button')),lb=document.querySelector('.lb'),li=lb.querySelector('img'),lc=lb.querySelector('.c'),i=0;
 function show(k){i=(k+g.length)%g.length;li.src=g[i].dataset.full;li.alt=g[i].querySelector('img').alt;lc.textContent=(i+1)+' / '+g.length;}
 g.forEach(function(b,k){b.addEventListener('click',function(){show(k);lb.classList.add('on');lb.querySelector('.x').focus();});});
 lb.querySelector('.x').onclick=function(){lb.classList.remove('on');};
@@ -149,6 +155,12 @@ def build(p):
     if p.get('rooms'):
         rooms = '<table class="rooms"><tbody>' + ''.join(f'<tr><td>{e(a)}</td><td>{e(b)}</td></tr>' for a, b in p['rooms']) + '</tbody></table>'
 
+    caps = dict(p['gallery'])
+    def strip(names):
+        if not names: return ''
+        bt = ''.join(f'<button data-full="{img(n)}" aria-label="Ampliar: {e(caps.get(n, p["alt"]))}"><img src="{img(n, 900)}" alt="{e(caps.get(n, p["alt"]))}" loading="lazy"></button>' for n in names)
+        return f'<div class="strip n{len(names)}">{bt}</div>'
+
     def sec(x):
         paras = ''.join(f'<p class="lead" style="margin-top:12px">{e(t)}</p>' for t in x.get('paras', []))
         chips = ('<div class="chips">' + ''.join(f'<span>{e(c)}</span>' for c in x['chips']) + '</div>') if x.get('chips') else ''
@@ -156,7 +168,7 @@ def build(p):
         return f'''<section id="{x['id']}"{cls}>
   <div class="wrap">
     <span class="eyebrow">{e(x['eb'])}</span>
-    <h2 class="h2">{e(x['h2'])}</h2>{paras}{chips}
+    <h2 class="h2">{e(x['h2'])}</h2>{paras}{chips}{strip(x.get('photos'))}
   </div>
 </section>'''
     extras = ''.join(sec(x) for x in p.get('extras', []))
@@ -246,13 +258,14 @@ def build(p):
   <div class="rule"></div>
   <p class="t">{e(p['intro'])}</p>
 </div>
+{('<div class="wrap" style="margin-top:-24px;margin-bottom:56px">' + strip(p['photos_intro']) + '</div>') if p.get('photos_intro') else ''}
 
 <section id="ficha" style="padding-top:0">
   <div class="wrap">
     <span class="eyebrow">O imóvel</span>
-    <h2 class="h2">{e(p['ficha_h2'])}</h2>{ficha_lead}
+    <h2 class="h2">{e(p['ficha_h2'])}</h2>{ficha_lead}{strip(p.get('photos_ficha'))}
     <div class="facts">{facts}</div>
-    {rooms_h}{rooms}
+    {rooms_h}{rooms}{strip(p.get('photos_rooms'))}
     {feat_h}<ul class="feat">{feat}</ul>
   </div>
 </section>
@@ -379,6 +392,9 @@ IMOVEIS = {
         price='550 000 €',
         quote='Imagine viver num apartamento onde o espaço não é um luxo, mas uma realidade.',
         intro='Este magnífico T3 em Leça da Palmeira, com 138 m² de área, distingue-se pelas suas áreas generosas, excelente organização dos espaços, orientação Norte/Sul e pela comodidade de dispor de 2 lugares de garagem. Uma solução ideal para quem procura uma habitação familiar com dimensão, conforto e funcionalidade, numa das zonas mais procuradas do concelho de Matosinhos.',
+        photos_intro=['leca-1', 'leca-21', 'leca-11'],
+        photos_ficha=['leca-3', 'leca-4'],
+        photos_rooms=['leca-18', 'leca-24', 'leca-12'],
         ficha_h2='Um T3 onde as áreas fazem a diferença',
         ficha_lead=['A zona social é marcada por uma ampla sala com 41,91 m², um espaço generoso e versátil, com capacidade para criar distintas áreas de estar e jantar, perfeito para receber família e amigos.',
                     'A cozinha, com 9,53 m², é complementada por uma prática lavandaria de 3,36 m², proporcionando maior funcionalidade no dia a dia. Na zona privada, uma distribuição pensada para garantir conforto e privacidade.'],
@@ -395,12 +411,13 @@ IMOVEIS = {
                   'Caixilharia com vidro duplo', 'Orientação Norte/Sul'],
         extras=[
             dict(id='garagem', eb='Estacionamento', h2='2 lugares de garagem', dark=True,
+                 photos=['leca-32', 'leca-31'],
                  paras=['A propriedade dispõe ainda de 2 lugares de estacionamento, com uma área indicada de 27,95 m², proporcionando uma importante comodidade para quem valoriza estacionamento privativo e espaço adicional.']),
-            dict(id='destaque', eb='Em destaque', h2='O essencial deste T3',
+            dict(id='destaque', eb='Em destaque', h2='O essencial deste T3', photos=['leca-5', 'leca-27', 'leca-30'],
                  chips=['T3 com suíte', 'Sala de 41,91 m²', '2 lugares de garagem', 'Orientação Norte/Sul', 'Soalho em afizélia',
                         'Recuperador de calor', 'Caixilharia com vidro duplo', 'Porta de segurança', 'Videoporteiro', 'Arrumos de 5,32 m²']),
         ],
-        closing=dict(id='espaco', eb='Para quem valoriza espaço', h2='Um apartamento para quem valoriza espaço',
+        closing=dict(id='espaco', eb='Para quem valoriza espaço', h2='Um apartamento para quem valoriza espaço', photos=['leca-7'],
                      paras=['Mais do que um simples T3, este é um apartamento pensado para quem procura áreas generosas, conforto e uma verdadeira sensação de espaço.',
                             'A combinação entre a dimensão da habitação, a sala de quase 42 m², a suíte, os dois lugares de garagem e a localização em Leça da Palmeira faz desta uma solução particularmente interessante para famílias que não querem abdicar de espaço e qualidade de vida.',
                             'Venha conhecer e descubra o espaço que este T3 tem para oferecer.']),

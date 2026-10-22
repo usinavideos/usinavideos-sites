@@ -61,6 +61,12 @@ img{max-width:100%;display:block}h1,h2,h3{font-family:var(--serif);font-weight:5
 .media iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(64px,9vw,100px);height:clamp(64px,9vw,100px);border-radius:50%;background:rgba(212,181,98,.96);box-shadow:0 10px 30px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center}
 .tourlabel{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--gold-l);color:var(--navy);font-weight:700;padding:14px 22px;letter-spacing:.06em;white-space:nowrap}
+.strip{display:grid;gap:8px;margin-top:28px;grid-template-columns:1fr}
+@media(min-width:640px){.strip.n2{grid-template-columns:1fr 1fr}.strip.n3{grid-template-columns:2fr 1fr}.strip.n3 button:first-child{grid-row:span 2}}
+.strip button{padding:0;border:0;background:#E9E4D8;cursor:zoom-in;overflow:hidden;aspect-ratio:4/3}
+.strip.n1 button{aspect-ratio:16/9}
+@media(min-width:640px){.strip.n3 button:first-child{aspect-ratio:auto}}
+.strip img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.strip button:hover img{transform:scale(1.03)}
 .gal{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:28px}
 @media(min-width:900px){.gal{grid-template-columns:repeat(4,1fr);gap:10px}.gal button:nth-child(5n+1){grid-column:span 2;grid-row:span 2}}
 .gal button{padding:0;border:0;background:#E9E4D8;cursor:zoom-in;aspect-ratio:4/3;overflow:hidden}
@@ -117,6 +123,7 @@ footer a{color:inherit}
   <div class="rule"></div>
   <p class="t">Moradia T4 de 1990 com 165 m² úteis, pés-direitos altos, muita luz natural e vista de mar. Para renovar ao seu gosto — para habitação própria ou investimento — e dispensada de licença de utilização.</p>
 </div>
+
 
 <section id="ficha" style="padding-top:0">
   <div class="wrap">
@@ -205,7 +212,7 @@ footer a{color:inherit}
 <div class="lb" role="dialog" aria-modal="true" aria-label="Fotografia ampliada"><img alt=""><button class="x" aria-label="Fechar">×</button><button class="p" aria-label="Anterior">‹</button><button class="n" aria-label="Seguinte">›</button><div class="c"></div></div>
 <script>
 (function(){
-var g=[].slice.call(document.querySelectorAll('.gal button')),lb=document.querySelector('.lb'),li=lb.querySelector('img'),lc=lb.querySelector('.c'),i=0;
+var g=[].slice.call(document.querySelectorAll('.strip button,.gal button')),lb=document.querySelector('.lb'),li=lb.querySelector('img'),lc=lb.querySelector('.c'),i=0;
 function show(k){i=(k+g.length)%g.length;li.src=g[i].dataset.full;li.alt=g[i].querySelector('img').alt;lc.textContent=(i+1)+' / '+g.length;}
 g.forEach(function(b,k){b.addEventListener('click',function(){show(k);lb.classList.add('on');lb.querySelector('.x').focus();});});
 lb.querySelector('.x').onclick=function(){lb.classList.remove('on');};
