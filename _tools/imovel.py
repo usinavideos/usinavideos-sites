@@ -242,7 +242,7 @@ def build(p):
     def dir_card(d):
         return f'''<article class="dir">
         <h3>{d['nome']}</h3>
-        <p class="role">Diretor · Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p>
+        <p class="role">Consultor · Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p>
         <p class="cta-lbl">Fale comigo!</p>
         <div class="btns">
           <a class="b wa" href="{wa(d['num'], msg(d['curto']))}" target="_blank" rel="noopener">{WA_ICON}WhatsApp {d['curto']}</a>
@@ -330,7 +330,7 @@ def build(p):
   <div class="wrap">
     <span class="eyebrow">Contacto</span>
     <h2 class="h2">Marque a sua visita</h2>
-    <p class="lead">Fale diretamente com um dos diretores da Cordial Level.</p>
+    <p class="lead">Fale diretamente com um dos consultores da Cordial Level.</p>
     <div class="dirs">{dir_card(DIRETORES[0])}{dir_card(DIRETORES[1])}</div>
     <a class="allprops" href="{CRAMOS}" target="_blank" rel="noopener"><span><small>Todos os imóveis da Cordial Level</small>century21.pt/consultores/cramos</span><b>Ver a carteira completa →</b></a>
     <p class="more" style="margin-top:14px">{' · '.join(f'<a href="https://century21.pt/comprar/{r}" target="_blank" rel="noopener" style="color:var(--navy)">Ficha CENTURY 21 (ref. {r}) ↗</a>' for r in p.get('refs', [ref]))}</p>
@@ -590,20 +590,20 @@ IMOVEIS = {
         quote='Onde o coração do Alvarinho encontra a serenidade do Rio Minho.',
         intro='Dois terrenos rústicos de cultura e vinha na freguesia de São Bento (Bela), em Monção, na Região Demarcada do Vinho Alvarinho. Solo fértil para vinha, sossego total e o Rio Minho, as Termas e o centro histórico a poucos minutos. Para um projeto de vida, uma exploração agrícola ou um investimento a estudar.',
         photos_intro=['mc-muralhas', 'mc-rio', 't1-igreja'],
-        navs=[('terreno1', 'Terreno 3600 m²'), ('terreno2', 'Terreno 1350 m²'), ('galeria', 'Fotografias')],
+        navs=[('terreno1', 'Terreno 3600 m²'), ('terreno2', 'Terreno 1350 m²'), ('projetos', 'Projetos'), ('video', 'Vídeo'), ('galeria', 'Fotografias')],
         lotes=[
             dict(id='terreno1', ref='C0393-01441', eb='Terreno 1 · Panasqueira, junto ao Recanto de São Bento',
                  h2='Terreno com 3600 m²', price='75 000 €', geo=(42.072910104535, -8.43833682762678),
                  paras=['Situado imediatamente ao lado do Recanto de São Bento, o terreno tem duas frentes, confrontando com caminhos a Norte e a Sul, o que garante boa acessibilidade e versatilidade para qualquer projeto.',
                         'Terreno rústico de cultura e vinha, com solo fértil e árvores de fruto. O Rio Minho fica a cerca de 2 minutos, as Termas de Monção a 2 km e o centro histórico a cerca de 5 minutos.'],
-                 photos=[['t1-area'], ['t1-limites', 't1-d4'], ['t1-3', 't1-1', 't1-acesso']],
+                 photos=[['t1-area'], ['t1-d4', 't1-d1'], ['t1-3', 't1-1', 't1-acesso']],
                  facts=[('Área do terreno', '3600 m²'), ('Preço por m²', '20,83 €'), ('Frentes', '2 · Norte e Sul'), ('Classificação', 'Rústico')],
                  chips=['Vinha · Região do Alvarinho', 'Árvores de fruto', 'Acesso por estrada', 'Duas frentes', 'Rio Minho a ~2 min', 'Termas a 2 km']),
             dict(id='terreno2', ref='C0393-01442', eb='Terreno 2 · Codeçais', dark=True,
                  h2='Terreno com 1350 m²', price='35 000 €', geo=(42.065256, -8.4206685),
                  paras=['No lugar de Codeçais, também em São Bento (Bela), um terreno rústico de cultura e vinha com 1350 m², boa exposição solar e vista sobre a vila.',
                         'O Rio Minho fica a cerca de 5 minutos, as Termas de Monção a cerca de 8 minutos e o centro histórico a cerca de 5 minutos.'],
-                 photos=[['t2-area'], ['t2-limites', 't2-d1'], ['t2-d4', 't2-acesso', 't2-portao']],
+                 photos=[['t2-area'], ['t2-d1', 't2-d2'], ['t2-d4', 't2-acesso', 't2-portao']],
                  facts=[('Área do terreno', '1350 m²'), ('Preço por m²', '25,93 €'), ('Exposição', 'Boa exposição solar'), ('Classificação', 'Rústico')],
                  chips=['Vinha · Região do Alvarinho', 'Árvores de fruto', 'Vista sobre a vila', 'Perto da igreja', 'Rio Minho a ~5 min']),
         ],
@@ -618,18 +618,18 @@ IMOVEIS = {
                  photos=['mc-t1-hoje', 'mc-sim-casa', 'mc-sim-glamping']),
             dict(id='projetos2', eb='Projetos possíveis · Terreno 2', h2='Uma casa ou duas cabanas nos socalcos',
                  paras=['O terreno de 1350 m² hoje e duas simulações: socalcos de pedra recuperados com vinha, com uma pequena casa no socalco mais alto ou duas cabanas de madeira para turismo rural.',
-                        'Imagem ilustrativa, gerada digitalmente. Não é um projeto aprovado: qualquer construção depende do PDM de Monção e de licenciamento pela Câmara Municipal.'],
+                        'Imagens ilustrativas, geradas digitalmente. Não são projetos aprovados: qualquer construção depende do PDM de Monção e de licenciamento pela Câmara Municipal.'],
                  photos=['mc-t2-hoje', 'mc-sim-t2-casa', 'mc-sim-t2-cabanas']),
         ],
         facts=[], features=[],
-        gallery=[('t1-area', 'Terreno 1: limites aproximados dos 3600 m²'), ('t1-limites', 'Terreno 1: limites aproximados'),
+        gallery=[('t1-area', 'Terreno 1: limites aproximados dos 3600 m²'),
                  ('t1-d4', 'Terreno 1 visto de drone'), ('t1-d1', 'Terreno 1 visto de drone'), ('t1-d2', 'Terreno 1 e o Recanto de São Bento'),
                  ('t1-d3', 'Terreno 1 e a serra'), ('t1-d5', 'Terreno 1 visto de drone'), ('t1-d6', 'Terreno 1 visto de drone'),
                  ('t1-d7', 'Terreno 1 visto de drone'), ('t1-1', 'Terreno 1'), ('t1-2', 'Terreno 1'), ('t1-3', 'Terreno 1: árvores'),
                  ('t1-4', 'Terreno 1: muro e caminho'), ('t1-5', 'Terreno 1: caminho de acesso'), ('t1-6', 'Terreno 1'),
                  ('t1-7', 'Terreno 1: frente para o caminho'), ('t1-acesso', 'Acesso pelo Recanto de São Bento'),
                  ('t1-placa', 'Recanto de São Bento'), ('t1-igreja', 'Igreja de São Bento'),
-                 ('t2-area', 'Terreno 2: limites aproximados dos 1350 m²'), ('t2-limites', 'Terreno 2: limites aproximados'),
+                 ('t2-area', 'Terreno 2: limites aproximados dos 1350 m²'),
                  ('t2-d1', 'Terreno 2 visto de drone'), ('t2-d2', 'Terreno 2 visto de drone'), ('t2-d3', 'Terreno 2 visto de drone'),
                  ('t2-d4', 'Terreno 2 e a paisagem'), ('t2-acesso', 'Terreno 2: acesso'), ('t2-placa', 'Terreno 2'), ('t2-portao', 'Terreno 2: entrada'),
                  ('mc-rio', 'O Rio Minho em Monção'), ('mc-rio-muralhas', 'O Rio Minho e as muralhas'), ('mc-muralhas', 'As muralhas e o centro de Monção'),
