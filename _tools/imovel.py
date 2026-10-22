@@ -40,7 +40,7 @@ CSS = r"""
 :root{--navy:#1B3A6B;--navy-d:#12284B;--gold:#B8962E;--gold-l:#D4B562;--cream:#F7F5F0;--ink:#1E2328;--muted:#5E6873;--line:#E3DED2;
 --serif:'Cormorant Garamond',Georgia,serif;--sans:'Mulish',system-ui,-apple-system,sans-serif;--max:1120px}
 *{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;padding-bottom:76px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;padding-bottom:100px;font-variant-numeric:lining-nums}
 @media(min-width:900px){body{padding-bottom:0}}
 img{max-width:100%;display:block}h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;margin:0;text-wrap:balance}p{margin:0}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}section{padding:80px 0;scroll-margin-top:56px}
@@ -118,7 +118,7 @@ img{max-width:100%;display:block}h1,h2,h3{font-family:var(--serif);font-weight:5
 .b small{font-weight:400;font-size:12px;display:block}
 .b:hover{filter:brightness(1.08)}
 .cta-lbl{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--gold);margin:4px 0 -4px}
-.bar a span{display:flex;flex-direction:column;line-height:1.05;text-align:left}.bar a small{font-size:11px;font-weight:600;opacity:.9}
+.bar-lbl{grid-column:1/-1;margin:0 0 -2px;text-align:center;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--gold-l);line-height:1.1}
 .mail{font-size:14px;color:var(--muted)}.mail a{color:var(--navy)}
 .allprops{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center;padding:20px 24px;background:var(--navy);color:var(--cream);text-decoration:none;border-left:4px solid var(--gold)}
 .allprops span{font-family:var(--serif);font-size:clamp(20px,3.2vw,26px);word-break:break-word}
@@ -131,7 +131,7 @@ footer .usina{display:flex;align-items:center;gap:12px;color:inherit;text-decora
 footer a{color:inherit}
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(18,40,75,.97);border-top:1px solid var(--gold)}
 .bar a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:999px;background:#1E9E4A;color:#fff;text-decoration:none;font-weight:700;font-size:14px}
-@media(min-width:900px){.bar{left:auto;right:18px;bottom:18px;grid-template-columns:auto auto;border:1px solid var(--gold);border-radius:999px;padding:8px}.bar a{padding:0 18px}}
+@media(min-width:900px){.bar{left:auto;right:18px;bottom:18px;grid-template-columns:auto auto;border:1px solid var(--gold);border-radius:22px;padding:10px 10px 10px}.bar a{padding:0 18px}}
 """
 
 JS = r"""
@@ -231,7 +231,7 @@ def build(p):
         <p class="mail">E-mail: <a href="mailto:{d['mail']}?subject={up.quote('Ref. ' + ref + ' · ' + p['curto'])}">{d['mail']}</a></p>
       </article>'''
 
-    bar = ''.join(f'<a href="{wa(d["num"], msg(d["curto"]))}" target="_blank" rel="noopener" aria-label="Fale comigo: WhatsApp {d["nome"]}">{WA_ICON}<span><small>Fale comigo!</small>{d["curto"]}</span></a>' for d in DIRETORES)
+    bar = ''.join(f'<a href="{wa(d["num"], msg(d["curto"]))}" target="_blank" rel="noopener" aria-label="Fale comigo: WhatsApp {d["nome"]}">{WA_ICON}{d["curto"]}</a>' for d in DIRETORES)
     usina = USINA_WA + up.quote(f"Olá Freire, vi a apresentação do imóvel {p['curto']} e gostaria de saber mais sobre os serviços da Usina Vídeos.")
 
     return f'''<!doctype html>
@@ -322,7 +322,7 @@ def build(p):
   <a class="usina" href="{usina}" target="_blank" rel="noopener" aria-label="Usina Vídeos — WhatsApp"><span>Produção audiovisual</span><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
 </div></footer>
 
-<nav class="bar" aria-label="Contacto rápido por WhatsApp">{bar}</nav>
+<nav class="bar" aria-label="Contacto rápido por WhatsApp"><p class="bar-lbl">Fale diretamente connosco</p>{bar}</nav>
 
 <div class="lb" role="dialog" aria-modal="true" aria-label="Fotografia ampliada"><img alt=""><button class="x" aria-label="Fechar">×</button><button class="p" aria-label="Anterior">‹</button><button class="n" aria-label="Seguinte">›</button><div class="c"></div></div>
 <script>{JS}</script>
@@ -401,7 +401,7 @@ IMOVEIS = {
         loc='Rua Francisco Sá Carneiro · Leça da Palmeira · Matosinhos', h1='T3 em Leça da Palmeira',
         sub='138 m², suíte, orientação Norte/Sul e 2 lugares de garagem, perto do mar.',
         price='550 000 €',
-        quote='Imagine viver num apartamento onde o espaço não é um luxo, mas uma realidade.',
+        quote='Viver num apartamento onde o espaço não é um luxo, é realidade.',
         intro='Este magnífico T3 em Leça da Palmeira, com 138 m² de área, distingue-se pelas suas áreas generosas, excelente organização dos espaços, orientação Norte/Sul e pela comodidade de dispor de 2 lugares de garagem. Uma solução ideal para quem procura uma habitação familiar com dimensão, conforto e funcionalidade, numa das zonas mais procuradas do concelho de Matosinhos.',
         photos_intro=['leca-1', 'leca-21', 'leca-11'],
         photos_ficha=['leca-3', 'leca-4'],
