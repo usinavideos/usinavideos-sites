@@ -75,8 +75,22 @@ section{padding:72px 0;scroll-margin-top:56px}
 .dark{background:var(--navy);color:var(--cream)}
 .dark .h2{color:var(--cream)}
 .dark .lead{color:#C9D2DE}
-.vids{display:grid;gap:22px;margin-top:32px}
-@media(min-width:900px){.vids{grid-template-columns:1.4fr 1fr}.vids .vid:first-child{grid-row:span 2}}
+.vfeat{display:grid;gap:22px;margin-top:32px;align-items:center}
+@media(min-width:900px){.vfeat{grid-template-columns:1.55fr 1fr;gap:36px}}
+.vtxt h3{font-family:var(--serif);font-size:clamp(26px,3vw,34px);line-height:1.12;font-weight:600;margin:6px 0 10px}
+.vtxt p{color:#C9D2DE;margin:0 0 18px}
+.vtag{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-l);font-weight:700}
+.vtxt .btn{margin-right:18px}
+.vlk{display:inline-block;margin:12px 0 0;color:var(--gold-l);font-weight:700;font-size:14px}
+.vid .vlk{display:block;margin:8px 0 0;font-family:var(--sans);font-size:14px}
+.vsub{font-family:var(--serif);font-size:26px;font-weight:600;margin:56px 0 0;padding-top:28px;border-top:1px solid rgba(212,181,98,.35)}
+.vgrid{display:grid;gap:22px;margin-top:22px}
+@media(min-width:640px){.vgrid{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.vgrid{grid-template-columns:repeat(4,1fr)}.vgrid .vid figcaption{font-size:19px}}
+.pod{display:grid;gap:22px;margin-top:56px;padding:24px;border:1px solid rgba(212,181,98,.5);background:rgba(0,0,0,.14);align-items:center}
+@media(min-width:900px){.pod{grid-template-columns:1fr 1.3fr;gap:36px;padding:32px}}
+.pod .ep{margin:0;padding-top:14px;border-top:1px solid rgba(212,181,98,.3)}.pod .ep b{display:block;font-family:var(--serif);font-size:21px;color:var(--cream);font-weight:600;line-height:1.2}.pod .ep span{font-size:13px;color:var(--gold-l)}
+.vcta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
 .vid{margin:0}
 .yt{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:1px solid rgba(212,181,98,.5);background:#000;cursor:pointer;overflow:hidden}
 .yt img{width:100%;height:100%;object-fit:cover;opacity:.88;transition:opacity .2s}
@@ -349,12 +363,11 @@ body{padding-bottom:104px}
     <span class="eyebrow">Vídeos e podcast</span>
     <h2 class="h2">Conheça os imóveis antes da visita.</h2>
     <p class="lead">Vídeo-reportagens dos imóveis e o podcast <em>Panorama Imobiliário PT</em>, sobre o mercado e as decisões de quem compra casa.</p>
-    <div class="vids">
-<figure class="vid"><button class="yt" data-id="vU0bXm_uhGk" aria-label="Ver vídeo: T3 em Leça da Palmeira, junto às Piscinas das Marés"><img src="https://i.ytimg.com/vi/vU0bXm_uhGk/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play" aria-hidden="true"></span></button><figcaption><span>Short · T3 Leça · 550 000 €</span>T3 em Leça da Palmeira, junto às Piscinas das Marés</figcaption></figure>
-<figure class="vid"><button class="yt" data-id="7JOcy10W8oY" aria-label="Ver vídeo: Novo T1 em Matosinhos — pronto a habitar"><img src="https://i.ytimg.com/vi/7JOcy10W8oY/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play" aria-hidden="true"></span></button><figcaption><span>Vídeo-reportagem · 10 min</span>Novo T1 em Matosinhos — pronto a habitar</figcaption></figure>
-<figure class="vid"><button class="yt" data-id="Re8UZQRVTOY" aria-label="Ver vídeo: Oportunidade rara na Baixa do Porto: prédio inteiro com potencial construtivo"><img src="https://i.ytimg.com/vi/Re8UZQRVTOY/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play" aria-hidden="true"></span></button><figcaption><span>Vídeo-reportagem · 1 min</span>Oportunidade rara na Baixa do Porto: prédio inteiro com potencial construtivo</figcaption></figure>
-<figure class="vid"><button class="yt" data-id="ed1kwc3x27I" aria-label="Ver vídeo: O maior erro ao comprar casa: qual é o seu potencial de financiamento?"><img src="https://i.ytimg.com/vi/ed1kwc3x27I/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play" aria-hidden="true"></span></button><figcaption><span>Podcast Panorama Imobiliário PT · 26 min</span>O maior erro ao comprar casa: qual é o seu potencial de financiamento?</figcaption></figure>
-    </div>
+<div class="vfeat"><button class="yt" data-id="yo7RN7u6JJY" aria-label="Ver vídeo: Terrenos junto ao Rio Minho, em Monção"><img src="https://i.ytimg.com/vi/yo7RN7u6JJY/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play" aria-hidden="true"></span></button><div class="vtxt"><span class="vtag">Novo · Vídeo-reportagem · 1 min 45 s</span><h3>Terrenos junto ao Rio Minho, em Monção</h3><p>Dois terrenos de cultura e vinha em São Bento (Bela), na terra do Alvarinho, a minutos do rio, das Termas e do centro histórico de Monção.</p><a class="btn gold" href="moncao/">Ver a apresentação dos terrenos →</a><a class="vlk" href="https://www.youtube.com/watch?v=yo7RN7u6JJY" target="_blank" rel="noopener">Ver no YouTube ↗</a></div></div>
+<h3 class="vsub">Vídeo-reportagens</h3>
+<div class="vgrid"><figure class="vid"><button class="yt" data-id="xEDuuPNMacM" aria-label="Ver vídeo: T3 em Leça da Palmeira, junto às Piscinas das Marés"><img src="https://i.ytimg.com/vi/xEDuuPNMacM/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play" aria-hidden="true"></span></button><figcaption><span>Vídeo-reportagem · 1 min 42 s</span>T3 em Leça da Palmeira, junto às Piscinas das Marés<a class="vlk" href="t3leca/">Ver a apresentação →</a></figcaption></figure><figure class="vid"><button class="yt" data-id="vU0bXm_uhGk" aria-label="Ver vídeo: T3 em Leça da Palmeira, em formato vertical"><img src="https://i.ytimg.com/vi/vU0bXm_uhGk/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play" aria-hidden="true"></span></button><figcaption><span>Short · 550 000 €</span>T3 em Leça da Palmeira, em formato vertical<a class="vlk" href="t3leca/">Ver a apresentação →</a></figcaption></figure><figure class="vid"><button class="yt" data-id="7JOcy10W8oY" aria-label="Ver vídeo: Novo T1 em Matosinhos, pronto a habitar"><img src="https://i.ytimg.com/vi/7JOcy10W8oY/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play" aria-hidden="true"></span></button><figcaption><span>Vídeo-reportagem · 10 min</span>Novo T1 em Matosinhos, pronto a habitar</figcaption></figure><figure class="vid"><button class="yt" data-id="Re8UZQRVTOY" aria-label="Ver vídeo: Prédio inteiro na Baixa do Porto, com potencial construtivo"><img src="https://i.ytimg.com/vi/Re8UZQRVTOY/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play" aria-hidden="true"></span></button><figcaption><span>Vídeo-reportagem · 1 min 12 s</span>Prédio inteiro na Baixa do Porto, com potencial construtivo</figcaption></figure></div>
+<div class="pod"><button class="yt" data-id="ed1kwc3x27I" aria-label="Ver vídeo: O maior erro ao comprar casa: qual é o seu potencial de financiamento?"><img src="https://i.ytimg.com/vi/ed1kwc3x27I/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play" aria-hidden="true"></span></button><div class="vtxt"><span class="vtag">Podcast · Panorama Imobiliário PT</span><h3>Conversas sobre o mercado e as decisões de quem compra casa</h3><p>Episódios sobre o que pesa numa compra de casa: financiamento, preço, timing e negociação.</p><p class="ep"><b>O maior erro ao comprar casa: qual é o seu potencial de financiamento?</b><span>Episódio · 26 min</span></p></div></div>
+<div class="vcta"><a class="btn gold" href="https://www.youtube.com/@CordialLevelPT?sub_confirmation=1" target="_blank" rel="noopener">Subscrever o canal no YouTube</a><a class="btn ghost" href="https://www.youtube.com/@CordialLevelPT/videos" target="_blank" rel="noopener">Ver todos os vídeos ↗</a></div>
   </div>
 </section>
 
