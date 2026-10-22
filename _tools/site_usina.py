@@ -307,7 +307,7 @@ COLORS = ['var(--y)', 'var(--r)', 'var(--g)']
 
 
 def ig_embed(code):
-    u = f'https://www.instagram.com/reel/{code}/'
+    u = f'https://www.instagram.com/p/{code}/'
     return (f'<blockquote class="instagram-media" data-instgrm-permalink="{u}?utm_source=ig_embed" data-instgrm-version="14" '
             f'style="background:#fff;border:0;border-radius:14px;margin:0;max-width:540px;min-width:280px;width:100%"><a href="{u}" target="_blank" rel="noopener">Instagram</a></blockquote>')
 
