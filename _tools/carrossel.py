@@ -103,8 +103,8 @@ def build(name, slides):
     print(name, len(slides))
 
 
-FOZ = ROOT / 'casaraofoz/img'
-LEC = ROOT / 't3leca/img'
+FOZ = ROOT / 'cordiallevel/casaraofoz/img'
+LEC = ROOT / 'cordiallevel/t3leca/img'
 
 
 def foz():
@@ -118,7 +118,7 @@ def foz():
         photo_slide(FOZ / 'foz-f40.jpg', 6, T, 'Quatro quartos', '165 m² úteis', '4 quartos e 2 casas de banho, distribuídos por vários pisos.', chips=('T4', '165 m²', '2 WC')),
         photo_slide(FOZ / 'foz-f43.jpg', 7, T, 'A vista', 'O mar ao fundo', 'Para renovar à sua medida — para viver ou investir.'),
         end_slide(8, T, 'Moradia T4 · Foz do Douro', 'Para renovar · dispensada de licença de utilização · vídeo e visita virtual 3D na apresentação.',
-                  [('Preço', '875 000 €'), ('Área útil', '165 m²'), ('Quartos', '4'), ('Construção', '1990')], 'usinavideos.pt/casaraofoz'),
+                  [('Preço', '875 000 €'), ('Área útil', '165 m²'), ('Quartos', '4'), ('Construção', '1990')], 'usinavideos.pt/cordiallevel/casaraofoz'),
     ]
     s[-1] = s[-1].replace('Ref. ', 'Ref. C0393-01661')
     build('carrossel-foz', s)
@@ -135,7 +135,7 @@ def leca():
         photo_slide(LEC / 'leca-18.jpg', 6, T, 'Casas de banho', 'Duas casas de banho', 'Acabamentos cuidados, pronto a habitar.'),
         photo_slide(LEC / 'leca-32.jpg', 7, T, 'Garagem', 'Dois lugares de garagem', 'Em Leça da Palmeira, um pormenor que faz toda a diferença.', chips=('2 lugares', 'Arrecadação')),
         end_slide(8, T, 'T3 junto ao mar · Leça da Palmeira', 'Construção de 2008 · certificado energético C · pronto a habitar.',
-                  [('Preço', '550 000 €'), ('Área útil', '138 m²'), ('Quartos', '3 · 1 suite'), ('Garagem', '2 lugares')], 'usinavideos.pt/t3leca'),
+                  [('Preço', '550 000 €'), ('Área útil', '138 m²'), ('Quartos', '3 · 1 suite'), ('Garagem', '2 lugares')], 'usinavideos.pt/cordiallevel/t3leca'),
     ]
     s[-1] = s[-1].replace('Ref. ', 'Ref. C0393-01659')
     build('carrossel-leca', s)

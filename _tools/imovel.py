@@ -232,7 +232,7 @@ def build(p):
 <meta name="description" content="{e(p['desc'])}">
 <meta property="og:title" content="{e(p['title'])}">
 <meta property="og:description" content="{e(p['desc'])}">
-<meta property="og:image" content="https://usinavideos.pt/{p['slug']}/img/{p['hero']}.jpg">
+<meta property="og:image" content="https://usinavideos.pt/cordiallevel/{p['slug']}/img/{p['hero']}.jpg">
 <meta name="theme-color" content="#1B3A6B">
 <link rel="icon" href="/img/logo/usina-simbolo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -240,7 +240,7 @@ def build(p):
 <style>{CSS}</style>
 </head>
 <body>
-<nav class="nav" aria-label="Secções"><div class="wrap"><a class="brand" href="#inicio">Cordial <b>Level</b></a>{nav}</div></nav>
+<nav class="nav" aria-label="Secções"><div class="wrap"><a class="brand" href="../">Cordial <b>Level</b></a>{nav}</div></nav>
 
 <header id="inicio" class="hero">
   <img src="{img(p['hero'], 2200)}" alt="{e(p['hero_alt'])}" fetchpriority="high">
@@ -458,7 +458,17 @@ IMOVEIS = {
 if __name__ == '__main__':
     for slug, p in IMOVEIS.items():
         p['slug'] = slug
-        os.makedirs(os.path.join(ROOT, slug), exist_ok=True)
-        with open(os.path.join(ROOT, slug, 'index.html'), 'w') as f:
+        d = os.path.join(ROOT, 'cordiallevel', slug)
+        os.makedirs(d, exist_ok=True)
+        with open(os.path.join(d, 'index.html'), 'w') as f:
             f.write(build(p))
+        # endereço antigo -> novo (links já partilhados no YouTube e redes)
+        old = os.path.join(ROOT, slug)
+        os.makedirs(old, exist_ok=True)
+        new = f'https://usinavideos.pt/cordiallevel/{slug}/'
+        with open(os.path.join(old, 'index.html'), 'w') as f:
+            f.write(f'<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><title>{e(p["title"])}</title>'
+                    f'<link rel="canonical" href="{new}"><meta http-equiv="refresh" content="0; url=/cordiallevel/{slug}/">'
+                    f'<script>location.replace("/cordiallevel/{slug}/"+location.hash)</script></head>'
+                    f'<body><p><a href="/cordiallevel/{slug}/">{e(p["title"])}</a></p></body></html>')
         print('ok', slug, len(p['gallery']), 'fotos')

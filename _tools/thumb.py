@@ -29,7 +29,7 @@ def thumb(name, img, eb, h1, lines, price):
         pg.screenshot(path=str(OUT / f'{name}.jpg'), type='jpeg', quality=90); b.close()
     f.unlink()
 if __name__ == '__main__':
-    L = ROOT / 't3leca/img'
+    L = ROOT / 'cordiallevel/t3leca/img'
     thumb('thumb-t3-leca-a', L / 'leca-37.jpg', 'Leça da Palmeira', 'T3 junto<br>ao mar', ['<b>✓</b> Sala de 42 m² · suíte', '<b>✓</b> 2 lugares de garagem'], '550 000 €')
     thumb('thumb-t3-leca-b', L / 'leca-1.jpg', 'Leça da Palmeira · T3', '138 m²<br>de espaço', ['<b>✓</b> Sala de 42 m² · suíte', '<b>✓</b> 2 lugares de garagem'], '550 000 €')
 
