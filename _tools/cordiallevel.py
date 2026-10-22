@@ -38,19 +38,33 @@ def card(p):
   <div class="ph"><img src="{img_src}" alt="{html.escape(t)}" loading="lazy" width="900" height="675">{fl}{ai}</div>
   <div class="body"><span class="loc">{html.escape(loc)}</span><h3>{html.escape(t)}</h3><ul class="specs">{sp}</ul><div class="row"><span class="price">{price}</span><span class="ref">Ref. {ref}</span></div></div>
 </a>'''
-V=[('vU0bXm_uhGk','T3 em Leça da Palmeira, junto às Piscinas das Marés','Short · T3 Leça · 550 000 €'),('7JOcy10W8oY','Novo T1 em Matosinhos — pronto a habitar','Vídeo-reportagem · 10 min'),
-   ('Re8UZQRVTOY','Oportunidade rara na Baixa do Porto: prédio inteiro com potencial construtivo','Vídeo-reportagem · 1 min'),
-   ('ed1kwc3x27I','O maior erro ao comprar casa: qual é o seu potencial de financiamento?','Podcast Panorama Imobiliário PT · 26 min')]
+FEAT=('yo7RN7u6JJY','Terrenos junto ao Rio Minho, em Monção','Novo · Vídeo-reportagem · 1 min 45 s',
+      'Dois terrenos de cultura e vinha em São Bento (Bela), na terra do Alvarinho, a minutos do rio, das Termas e do centro histórico de Monção.','moncao/','Ver a apresentação dos terrenos')
+V=[('xEDuuPNMacM','T3 em Leça da Palmeira, junto às Piscinas das Marés','Vídeo-reportagem · 1 min 42 s','t3leca/'),
+   ('vU0bXm_uhGk','T3 em Leça da Palmeira, em formato vertical','Short · 550 000 €','t3leca/'),
+   ('7JOcy10W8oY','Novo T1 em Matosinhos, pronto a habitar','Vídeo-reportagem · 10 min',None),
+   ('Re8UZQRVTOY','Prédio inteiro na Baixa do Porto, com potencial construtivo','Vídeo-reportagem · 1 min 12 s',None)]
+POD=('ed1kwc3x27I','O maior erro ao comprar casa: qual é o seu potencial de financiamento?','Episódio · 26 min')
+YTCH='https://www.youtube.com/@CordialLevelPT'
+def yt(i,t):
+    return f'<button class="yt" data-id="{i}" aria-label="Ver vídeo: {html.escape(t)}"><img src="https://i.ytimg.com/vi/{i}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play" aria-hidden="true"></span></button>'
 def vid(v):
-    i,t,m=v
-    return f'''<figure class="vid"><button class="yt" data-id="{i}" aria-label="Ver vídeo: {html.escape(t)}"><img src="https://i.ytimg.com/vi/{i}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play" aria-hidden="true"></span></button><figcaption><span>{m}</span>{html.escape(t)}</figcaption></figure>'''
+    i,t,m,lk=v
+    more=f'<a class="vlk" href="{lk}">Ver a apresentação →</a>' if lk else ''
+    return f'<figure class="vid">{yt(i,t)}<figcaption><span>{m}</span>{html.escape(t)}{more}</figcaption></figure>'
+fi,ft,fm,fd,fl,flt=FEAT
+VIDS=(f'''<div class="vfeat">{yt(fi,ft)}<div class="vtxt"><span class="vtag">{fm}</span><h3>{html.escape(ft)}</h3><p>{html.escape(fd)}</p><a class="btn gold" href="{fl}">{flt} →</a><a class="vlk" href="https://www.youtube.com/watch?v={fi}" target="_blank" rel="noopener">Ver no YouTube ↗</a></div></div>
+<h3 class="vsub">Vídeo-reportagens</h3>
+<div class="vgrid">{''.join(vid(v) for v in V)}</div>
+<div class="pod">{yt(POD[0],POD[1])}<div class="vtxt"><span class="vtag">Podcast · Panorama Imobiliário PT</span><h3>Conversas sobre o mercado e as decisões de quem compra casa</h3><p>Episódios sobre o que pesa numa compra de casa: financiamento, preço, timing e negociação.</p><p class="ep"><b>{html.escape(POD[1])}</b><span>{POD[2]}</span></p></div></div>
+<div class="vcta"><a class="btn gold" href="{YTCH}?sub_confirmation=1" target="_blank" rel="noopener">Subscrever o canal no YouTube</a><a class="btn ghost" href="{YTCH}/videos" target="_blank" rel="noopener">Ver todos os vídeos ↗</a></div>''')
 ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c.3 1.8 1.8 3.6 3.6 4.4l1.2-1.1 2 .9-.4 1.6c-3.2.3-6.9-3.2-6.8-6.6l1.6-.4.9 2z"/></svg>'
 def wam(n,nome): return f'https://wa.me/{n}?text='+__import__('urllib.parse').parse.quote(f'Olá {nome}, vi o site da Cordial Level e gostaria de mais informações.')
 BAR='<nav class="bar" aria-label="Contacto rápido por WhatsApp"><p class="bar-lbl">Fale diretamente connosco</p>'+''.join(f'<a href="{wam(n,c)}" target="_blank" rel="noopener" aria-label="Fale comigo: WhatsApp {f}">{ICON}{c}</a>' for n,c,f in [('351935101667','Casemiro','Casemiro Ramos'),('351912706395','Francisco','Francisco Medeiros')])+'</nav>'
 WA='https://wa.me/351912988971?text=Ol%C3%A1%20Freire%2C%20vi%20o%20site%20da%20Cordial%20Level%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Usina%20V%C3%ADdeos.'
 tabs=''.join(f'<button class="tab{" on" if k=="todos" else ""}" data-f="{k}" aria-pressed="{"true" if k=="todos" else "false"}">{n}</button>' for k,n in CATS)
 props='\n'.join(card(p) for p in P)
-vids='\n'.join(vid(v) for v in V)
+vids=VIDS
 out=open('_tools/cordiallevel_template.html').read().replace('{{TABS}}',tabs).replace('{{PROPS}}',props).replace('{{VIDS}}',vids).replace('{{WA}}',WA).replace('{{N}}',str(len(P))).replace('{{BAR}}',BAR)
 open('cordiallevel/index.html','w').write(out)
 print('ok',len(out))

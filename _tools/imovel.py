@@ -275,7 +275,7 @@ def build(p):
 <nav class="nav" aria-label="Secções"><div class="wrap"><a class="brand" href="../">Cordial <b>Level</b></a>{nav}</div></nav>
 
 <header id="inicio" class="hero{'' if p.get('hero') else ' plain'}">
-  {f'<img src="{img(p["hero"], 2200)}" alt="{e(p["hero_alt"])}" fetchpriority="high">' if p.get('hero') else '<img class="logo" src="../img/logo-cordial-level-claro.png" alt="Cordial Level">'}
+  {f'<img src="{img(p["hero"], 2200)}" alt="{e(p["hero_alt"])}" fetchpriority="high"' + (f' style="object-position:{p["hero_pos"]}"' if p.get("hero_pos") else '') + '>' if p.get('hero') else '<img class="logo" src="../img/logo-cordial-level-claro.png" alt="Cordial Level">'}
   <div class="band"><div class="wrap">
     <div class="loc">{e(p['loc'])}</div>
     <h1>{e(p['h1'])}</h1>
@@ -535,7 +535,7 @@ IMOVEIS = {
         ref='C0393-01689', curto='T2 Antero de Quental',
         title='T2 remodelado na Rua Antero de Quental, Porto · Cordial Level',
         desc='T2 com 77,30 m², totalmente remodelado e com cozinha equipada, na Rua Antero de Quental, no Porto. Pronto a habitar. 349 000 €.',
-        hero='aq-24', hero_alt='Sala do T2 remodelado na Rua Antero de Quental, Porto',
+        hero='aq-lapa', hero_pos='78% 30%', hero_alt='A Igreja da Lapa e a Rua Antero de Quental, no Porto, vistas de drone',
         loc='Rua Antero de Quental · Porto', h1='T2 remodelado na Antero de Quental',
         sub='77,30 m², cozinha equipada e casa de banho nova, numa zona central e consolidada do Porto.',
         price='349 000 €',
@@ -554,6 +554,8 @@ IMOVEIS = {
                   'Casa de banho renovada, com base de duche', 'Pavimento flutuante em todo o apartamento',
                   'Certificado energético D', 'Licença de utilização n.º 423/1983'],
         extras=[
+            dict(id='lapa', eb='A rua', h2='Junto à Igreja da Lapa', photos=['aq-lapa', 'aq-rua'],
+                 paras=['A Rua Antero de Quental parte do Largo da Lapa, ao lado da igreja barroca que é uma das imagens do Porto. Uma zona consolidada e central, com comércio, serviços e transportes à porta.']),
             dict(id='vista', eb='Luz e vista', h2='Janelas abertas sobre o verde', dark=True, photos=['aq-27', 'aq-28'],
                  paras=['As janelas da sala e dos quartos abrem para um interior de quarteirão arborizado: luz natural, sossego e uma vista desafogada, no centro da cidade.']),
             dict(id='destaque', eb='Em destaque', h2='O essencial deste T2', photos=['aq-24', 'aq-5', 'aq-18'],
@@ -568,7 +570,8 @@ IMOVEIS = {
                  ('aq-17', 'Cozinha'), ('aq-19', 'Cozinha com zona de refeições'), ('aq-18', 'Zona de lavandaria'),
                  ('aq-11', 'Casa de banho renovada'), ('aq-12', 'Casa de banho renovada'), ('aq-3', 'Quarto'), ('aq-4', 'Quarto'),
                  ('aq-5', 'Quarto'), ('aq-6', 'Quarto'), ('aq-8', 'Quarto'), ('aq-9', 'Quarto'), ('aq-13', 'Entrada'), ('aq-15', 'Corredor'),
-                 ('aq-27', 'Vista da janela'), ('aq-28', 'Vista da janela'), ('aq-30', 'O edifício'), ('aq-31', 'A rua e o edifício')],
+                 ('aq-27', 'Vista da janela'), ('aq-28', 'Vista da janela'), ('aq-30', 'O edifício'), ('aq-31', 'A rua e o edifício'),
+                 ('aq-lapa', 'A Igreja da Lapa e a Rua Antero de Quental, vistas de drone'), ('aq-rua', 'A Rua Antero de Quental, vista de drone')],
         alt='T2 na Rua Antero de Quental, Porto', gal_h2='Por dentro e por fora',
         loc_h2='Antero de Quental: centralidade e mobilidade',
         loc_txt='Situado na Rua Antero de Quental, numa zona consolidada da cidade do Porto, o apartamento beneficia da proximidade a comércio, serviços, restauração, transportes públicos e equipamentos do dia a dia, com acesso rápido a diferentes zonas da cidade.',
