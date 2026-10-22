@@ -25,7 +25,7 @@ CATS=[('todos','Todos'),('casa','Casas e apartamentos'),('terreno','Terrenos'),(
 def card(p):
     ref,cat,t,loc,price,specs,img,flag=p
     url=f'https://century21.pt/{"arrendar" if cat=="arrendar" else "comprar"}/{ref}'
-    LOCAL={'C0393-01659':('t3leca/','t3leca/img/leca-37-t.jpg'),'C0393-01661':('casaraofoz/','casaraofoz/img/foz-f52-t.jpg'),'C0393-01555':('bosquepicua/',None),'C0393-01689':('https://century21.pt/comprar/C0393-01689','img/antero-20-t.jpg')}
+    LOCAL={'C0393-01659':('t3leca/','t3leca/img/leca-37-t.jpg'),'C0393-01661':('casaraofoz/','casaraofoz/img/foz-f52-t.jpg'),'C0393-01555':('bosquepicua/',None),'C0393-01689':('anteroquental/','img/antero-20-t.jpg'),'C0393-01441':('moncao/#terreno1','moncao/img/t1-limites-t.jpg'),'C0393-01442':('moncao/#terreno2','moncao/img/t2-d4-t.jpg')}
     tgt=' target="_blank" rel="noopener"'
     img_src=I+img+Q
     if ref in LOCAL:

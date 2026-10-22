@@ -75,6 +75,7 @@ img{max-width:100%;display:block}h1,h2,h3{font-family:var(--serif);font-weight:5
 .feat li{padding-left:18px;position:relative}.feat li::before{content:"";position:absolute;left:0;top:.75em;width:9px;height:1px;background:var(--gold)}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.chips span{border:1px solid var(--gold);padding:8px 16px;border-radius:999px;font-weight:700;font-size:15px;color:var(--navy);background:#fff}
 .dark .chips span{background:transparent;color:var(--cream)}
+.lprice{font-family:var(--serif);font-size:clamp(30px,4vw,38px);color:var(--gold);font-weight:600;margin-top:10px;font-variant-numeric:lining-nums}.lprice small{font-family:var(--sans,inherit);font-size:14px;font-weight:600;color:var(--muted);margin-left:10px;letter-spacing:.04em}.dark .lprice{color:var(--gold-l)}.dark .lprice small{color:#C9D2DE}
 .rooms{width:100%;border-collapse:collapse;margin-top:24px;font-size:15px;background:#fff;border:1px solid var(--line)}
 .rooms td{padding:11px 16px;border-bottom:1px solid var(--line)}.rooms td:last-child{text-align:right;font-weight:700;color:var(--navy);white-space:nowrap}
 .dark{background:var(--navy);color:var(--cream)}.dark .h2{color:var(--cream)}.dark .lead{color:#C9D2DE}
@@ -153,10 +154,11 @@ def build(p):
     ref = p['ref']
     ficha = f'https://century21.pt/comprar/{ref}'
     msg = lambda nome: f"Olá {nome}, vi a apresentação do imóvel {p['curto']} (ref. {ref}) e gostaria de mais informações."
-    navs = [('ficha', 'O imóvel'), ('galeria', 'Fotografias')]
-    if p.get('video'): navs.insert(1, ('video', 'Vídeo'))
-    if p.get('tour'): navs.insert(2 if p.get('video') else 1, ('tour', 'Visita 3D'))
-    navs += [('localizacao', 'Localização'), ('contacto', 'Contacto')]
+    navs = p.get('navs') or [('ficha', 'O imóvel'), ('galeria', 'Fotografias')]
+    if not p.get('navs'):
+        if p.get('video'): navs.insert(1, ('video', 'Vídeo'))
+        if p.get('tour'): navs.insert(2 if p.get('video') else 1, ('tour', 'Visita 3D'))
+    navs = navs + [('localizacao', 'Localização'), ('contacto', 'Contacto')]
     nav = ''.join(f'<a href="#{a}">{b}</a>' for a, b in navs)
 
     facts = ''.join(f'<div><b>{e(v)}</b><span>{e(k)}</span></div>' for k, v in p['facts'])
@@ -182,6 +184,25 @@ def build(p):
   </div>
 </section>'''
     extras = ''.join(sec(x) for x in p.get('extras', []))
+
+    def lote(x):
+        lf = ''.join(f'<div><b>{e(v)}</b><span>{e(k)}</span></div>' for k, v in x['facts'])
+        paras = ''.join(f'<p class="lead" style="margin-top:12px">{e(t)}</p>' for t in x.get('paras', []))
+        chips = ('<div class="chips">' + ''.join(f'<span>{e(c)}</span>' for c in x['chips']) + '</div>') if x.get('chips') else ''
+        la, lo = x['geo']
+        strips = ''.join(strip(g) for g in x['photos'])
+        cls = ' class="dark"' if x.get('dark') else ''
+        lk = 'var(--gold-l)' if x.get('dark') else 'var(--navy)'
+        return f'''<section id="{x['id']}"{cls}>
+  <div class="wrap">
+    <span class="eyebrow">{e(x['eb'])}</span>
+    <h2 class="h2">{e(x['h2'])}</h2>
+    <p class="lprice">{e(x['price'])} <small>Ref. {x['ref']}</small></p>{paras}{strips}
+    <div class="facts">{lf}</div>{chips}
+    <p class="more" style="margin-top:18px"><a href="https://www.google.com/maps/dir/?api=1&destination={la},{lo}" target="_blank" rel="noopener" style="color:{lk}">Localização no Google Maps ↗</a> · <a href="https://century21.pt/comprar/{x['ref']}" target="_blank" rel="noopener" style="color:{lk}">Ficha CENTURY 21 (ref. {x['ref']}) ↗</a></p>
+  </div>
+</section>'''
+    lotes = ''.join(lote(x) for x in p.get('lotes', []))
     closing = sec(p['closing']) if p.get('closing') else ''
     ficha_lead = ''.join(f'<p class="lead" style="margin-top:12px">{e(t)}</p>' for t in p.get('ficha_lead', []))
     feat_h = f'<h3 style="margin-top:36px;font-size:28px;color:var(--navy)">{e(p["feat_h3"])}</h3>' if p.get('feat_h3') else ''
@@ -271,7 +292,7 @@ def build(p):
 </div>
 {('<div class="wrap" style="margin-top:-24px;margin-bottom:56px">' + strip(p['photos_intro']) + '</div>') if p.get('photos_intro') else ''}
 
-<section id="ficha" style="padding-top:0">
+{lotes}{'' if p.get('lotes') else f'''<section id="ficha" style="padding-top:0">
   <div class="wrap">
     <span class="eyebrow">O imóvel</span>
     <h2 class="h2">{e(p['ficha_h2'])}</h2>{ficha_lead}{strip(p.get('photos_ficha'))}
@@ -279,7 +300,7 @@ def build(p):
     {rooms_h}{rooms}{strip(p.get('photos_rooms'))}
     {feat_h}<ul class="feat">{feat}</ul>
   </div>
-</section>
+</section>'''}
 {extras}
 
 {video}
@@ -312,7 +333,7 @@ def build(p):
     <p class="lead">Fale diretamente com um dos diretores da Cordial Level.</p>
     <div class="dirs">{dir_card(DIRETORES[0])}{dir_card(DIRETORES[1])}</div>
     <a class="allprops" href="{CRAMOS}" target="_blank" rel="noopener"><span><small>Todos os imóveis da Cordial Level</small>century21.pt/consultores/cramos</span><b>Ver a carteira completa →</b></a>
-    <p class="more" style="margin-top:14px"><a href="{ficha}" target="_blank" rel="noopener" style="color:var(--navy)">Ficha oficial deste imóvel na CENTURY 21 (ref. {ref}) ↗</a></p>
+    <p class="more" style="margin-top:14px">{' · '.join(f'<a href="https://century21.pt/comprar/{r}" target="_blank" rel="noopener" style="color:var(--navy)">Ficha CENTURY 21 (ref. {r}) ↗</a>' for r in p.get('refs', [ref]))}</p>
     <p class="sig">A sua exigência, a nossa assinatura.</p>
   </div>
 </section>
@@ -509,6 +530,106 @@ IMOVEIS = {
         legal='Informação sujeita a confirmação; áreas e características segundo a ficha CENTURY 21. Imagens do empreendimento: simulações, não vinculativas.',
         video=None, tour=None,
     ),
+
+    'anteroquental': dict(
+        ref='C0393-01689', curto='T2 Antero de Quental',
+        title='T2 remodelado na Rua Antero de Quental, Porto · Cordial Level',
+        desc='T2 com 77,30 m², totalmente remodelado e com cozinha equipada, na Rua Antero de Quental, no Porto. Pronto a habitar. 349 000 €.',
+        hero='aq-24', hero_alt='Sala do T2 remodelado na Rua Antero de Quental, Porto',
+        loc='Rua Antero de Quental · Porto', h1='T2 remodelado na Antero de Quental',
+        sub='77,30 m², cozinha equipada e casa de banho nova, numa zona central e consolidada do Porto.',
+        price='349 000 €',
+        quote='Pronto a habitar, no coração do Porto.',
+        intro='Apartamento T2 com 77,30 m², totalmente remodelado, na Rua Antero de Quental. Uma solução funcional e atual, pronta a habitar, adequada tanto para habitação própria como para investimento, perto de comércio, serviços, restauração e transportes públicos.',
+        photos_intro=['aq-21', 'aq-1', 'aq-3'],
+        ficha_h2='Remodelado, equipado e pronto a habitar',
+        ficha_lead=['A sala junta zona de estar e de refeições, com muita luz natural e vista desafogada sobre o verde. A cozinha, remodelada e equipada, tem espaço para uma mesa de apoio.',
+                    'Dois quartos amplos, uma casa de banho completamente renovada com base de duche e um corredor de distribuição que separa a zona social da zona privada.'],
+        photos_ficha=['aq-14', 'aq-19'],
+        facts=[('Área útil', '77,30 m²'), ('Área bruta', '78,43 m²'), ('Quartos', '2'), ('Casas de banho', '1'),
+               ('Estado', 'Remodelado'), ('Cozinha', 'Equipada'), ('Certificado energético', 'D'), ('Tipologia', 'T2')],
+        photos_rooms=['aq-4', 'aq-11', 'aq-6'],
+        feat_h3='Equipamento e documentação',
+        features=['Cozinha equipada com placa e exaustor', 'Frigorífico', 'Máquina de lavar loiça', 'Máquina de lavar roupa',
+                  'Casa de banho renovada, com base de duche', 'Pavimento flutuante em todo o apartamento',
+                  'Certificado energético D', 'Licença de utilização n.º 423/1983'],
+        extras=[
+            dict(id='vista', eb='Luz e vista', h2='Janelas abertas sobre o verde', dark=True, photos=['aq-27', 'aq-28'],
+                 paras=['As janelas da sala e dos quartos abrem para um interior de quarteirão arborizado: luz natural, sossego e uma vista desafogada, no centro da cidade.']),
+            dict(id='destaque', eb='Em destaque', h2='O essencial deste T2', photos=['aq-24', 'aq-5', 'aq-18'],
+                 chips=['T2 com 77,30 m²', 'Totalmente remodelado', 'Pronto a habitar', 'Cozinha equipada', 'Casa de banho nova',
+                        'Zona central do Porto', 'Habitação ou investimento']),
+        ],
+        closing=dict(id='versatil', eb='Uma solução versátil', h2='Para viver ou para investir', photos=['aq-30'],
+                     paras=['Pelas suas características, localização e estado de conservação, este T2 é uma opção interessante para quem procura casa no Porto ou para quem pretende investir no mercado imobiliário.',
+                            'Marque a sua visita e venha conhecer este apartamento.']),
+        gallery=[('aq-20', 'Sala'), ('aq-22', 'Sala'), ('aq-23', 'Sala'), ('aq-24', 'Sala com vista'), ('aq-21', 'Zona de refeições'),
+                 ('aq-26', 'Zona de refeições'), ('aq-1', 'Cozinha equipada'), ('aq-14', 'Cozinha equipada'), ('aq-16', 'Cozinha'),
+                 ('aq-17', 'Cozinha'), ('aq-19', 'Cozinha com zona de refeições'), ('aq-18', 'Zona de lavandaria'),
+                 ('aq-11', 'Casa de banho renovada'), ('aq-12', 'Casa de banho renovada'), ('aq-3', 'Quarto'), ('aq-4', 'Quarto'),
+                 ('aq-5', 'Quarto'), ('aq-6', 'Quarto'), ('aq-8', 'Quarto'), ('aq-9', 'Quarto'), ('aq-13', 'Entrada'), ('aq-15', 'Corredor'),
+                 ('aq-27', 'Vista da janela'), ('aq-28', 'Vista da janela'), ('aq-30', 'O edifício'), ('aq-31', 'A rua e o edifício')],
+        alt='T2 na Rua Antero de Quental, Porto', gal_h2='Por dentro e por fora',
+        loc_h2='Antero de Quental: centralidade e mobilidade',
+        loc_txt='Situado na Rua Antero de Quental, numa zona consolidada da cidade do Porto, o apartamento beneficia da proximidade a comércio, serviços, restauração, transportes públicos e equipamentos do dia a dia, com acesso rápido a diferentes zonas da cidade.',
+        maps='Rua Antero de Quental, Porto', geo=(41.1602049, -8.6116069),
+        legal='Informação sujeita a confirmação; áreas e características segundo a ficha CENTURY 21.',
+        video=None, tour='https://realsee.ai/bbEEVDWB', tour_img='aq-22',
+    ),
+    'moncao': dict(
+        ref='C0393-01441 · C0393-01442', refs=['C0393-01441', 'C0393-01442'], curto='Terrenos em Monção',
+        title='Dois terrenos junto ao Rio Minho, em Monção · Cordial Level',
+        desc='Dois terrenos de cultura e vinha em São Bento (Bela), Monção, na Região Demarcada do Alvarinho, perto do Rio Minho e das Termas: 3600 m² por 75 000 € e 1350 m² por 35 000 €.',
+        hero='mc-rio-muralhas', hero_alt='O Rio Minho e as muralhas de Monção, vistos de drone',
+        loc='São Bento (Bela) · Monção · Alto Minho', h1='Dois terrenos junto ao Rio Minho',
+        sub='3600 m² e 1350 m² de terreno de cultura e vinha, na terra do Alvarinho, a minutos do rio, das Termas e do centro histórico.',
+        price='75 000 € · 35 000 €',
+        quote='Onde o coração do Alvarinho encontra a serenidade do Rio Minho.',
+        intro='Dois terrenos rústicos de cultura e vinha na freguesia de São Bento (Bela), em Monção, na Região Demarcada do Vinho Alvarinho. Solo fértil para vinha, sossego total e o Rio Minho, as Termas e o centro histórico a poucos minutos. Para um projeto de vida, uma exploração agrícola ou um investimento a estudar.',
+        photos_intro=['mc-muralhas', 'mc-rio', 't1-igreja'],
+        navs=[('terreno1', 'Terreno 3600 m²'), ('terreno2', 'Terreno 1350 m²'), ('galeria', 'Fotografias')],
+        lotes=[
+            dict(id='terreno1', ref='C0393-01441', eb='Terreno 1 · Panasqueira, junto ao Recanto de São Bento',
+                 h2='Terreno com 3600 m²', price='75 000 €', geo=(42.072910104535, -8.43833682762678),
+                 paras=['Situado imediatamente ao lado do Recanto de São Bento, o terreno tem duas frentes, confrontando com caminhos a Norte e a Sul, o que garante boa acessibilidade e versatilidade para qualquer projeto.',
+                        'Terreno rústico de cultura e vinha, com solo fértil e árvores de fruto. O Rio Minho fica a cerca de 2 minutos, as Termas de Monção a 2 km e o centro histórico a cerca de 5 minutos.'],
+                 photos=[['t1-area'], ['t1-limites', 't1-d4'], ['t1-3', 't1-1', 't1-acesso']],
+                 facts=[('Área do terreno', '3600 m²'), ('Preço por m²', '20,83 €'), ('Frentes', '2 · Norte e Sul'), ('Classificação', 'Rústico')],
+                 chips=['Vinha · Região do Alvarinho', 'Árvores de fruto', 'Acesso por estrada', 'Duas frentes', 'Rio Minho a ~2 min', 'Termas a 2 km']),
+            dict(id='terreno2', ref='C0393-01442', eb='Terreno 2 · Codeçais', dark=True,
+                 h2='Terreno com 1350 m²', price='35 000 €', geo=(42.065256, -8.4206685),
+                 paras=['No lugar de Codeçais, também em São Bento (Bela), um terreno rústico de cultura e vinha com 1350 m², boa exposição solar e vista sobre a vila.',
+                        'O Rio Minho fica a cerca de 5 minutos, as Termas de Monção a cerca de 8 minutos e o centro histórico a cerca de 5 minutos.'],
+                 photos=[['t2-area'], ['t2-limites', 't2-d1'], ['t2-d4', 't2-acesso', 't2-portao']],
+                 facts=[('Área do terreno', '1350 m²'), ('Preço por m²', '25,93 €'), ('Exposição', 'Boa exposição solar'), ('Classificação', 'Rústico')],
+                 chips=['Vinha · Região do Alvarinho', 'Árvores de fruto', 'Vista sobre a vila', 'Perto da igreja', 'Rio Minho a ~5 min']),
+        ],
+        extras=[
+            dict(id='potencial', eb='O potencial', h2='Vinha, turismo ou um refúgio seu',
+                 paras=['A região é conhecida pelo Alvarinho, pelas Termas e pelo turismo de natureza. Estes terrenos servem para vinha e cultura e podem ser o ponto de partida para um projeto turístico ou de habitação.',
+                        'Importante: são terrenos classificados como rústicos. A possibilidade de construir — casa, alojamento local, glamping ou outro equipamento — depende do Plano Diretor Municipal de Monção e de licenciamento pela Câmara Municipal, não estando garantida. Antes de comprar com esse objetivo, recomendamos um pedido de informação prévia à Câmara.'],
+                 photos=['mc-rio-muralhas', 't1-placa', 't2-d3']),
+        ],
+        facts=[], features=[],
+        gallery=[('t1-area', 'Terreno 1: limites aproximados dos 3600 m²'), ('t1-limites', 'Terreno 1: limites aproximados'),
+                 ('t1-d4', 'Terreno 1 visto de drone'), ('t1-d1', 'Terreno 1 visto de drone'), ('t1-d2', 'Terreno 1 e o Recanto de São Bento'),
+                 ('t1-d3', 'Terreno 1 e a serra'), ('t1-d5', 'Terreno 1 visto de drone'), ('t1-d6', 'Terreno 1 visto de drone'),
+                 ('t1-d7', 'Terreno 1 visto de drone'), ('t1-1', 'Terreno 1'), ('t1-2', 'Terreno 1'), ('t1-3', 'Terreno 1: árvores'),
+                 ('t1-4', 'Terreno 1: muro e caminho'), ('t1-5', 'Terreno 1: caminho de acesso'), ('t1-6', 'Terreno 1'),
+                 ('t1-7', 'Terreno 1: frente para o caminho'), ('t1-acesso', 'Acesso pelo Recanto de São Bento'),
+                 ('t1-placa', 'Recanto de São Bento'), ('t1-igreja', 'Igreja de São Bento'),
+                 ('t2-area', 'Terreno 2: limites aproximados dos 1350 m²'), ('t2-limites', 'Terreno 2: limites aproximados'),
+                 ('t2-d1', 'Terreno 2 visto de drone'), ('t2-d2', 'Terreno 2 visto de drone'), ('t2-d3', 'Terreno 2 visto de drone'),
+                 ('t2-d4', 'Terreno 2 e a paisagem'), ('t2-acesso', 'Terreno 2: acesso'), ('t2-placa', 'Terreno 2'), ('t2-portao', 'Terreno 2: entrada'),
+                 ('mc-rio', 'O Rio Minho em Monção'), ('mc-rio-muralhas', 'O Rio Minho e as muralhas'), ('mc-muralhas', 'As muralhas e o centro de Monção')],
+        alt='Terrenos em Monção', gal_h2='Os terrenos, o rio e a vila',
+        gal_note='Os limites desenhados nas fotografias são aproximados e servem apenas de orientação.',
+        loc_h2='São Bento (Bela), Monção',
+        loc_txt='Os dois terrenos ficam na freguesia de São Bento (Bela), a poucos minutos do Rio Minho, das Termas de Monção e do centro histórico, com as suas muralhas, gastronomia, comércio e serviços. O mapa mostra o Terreno 1; a localização de cada terreno está na respetiva secção.',
+        maps='São Bento, Bela, Monção', geo=(42.072910104535, -8.43833682762678),
+        legal='Informação sujeita a confirmação; áreas e características segundo as fichas CENTURY 21. Terrenos rústicos: a edificabilidade depende do PDM de Monção e de licenciamento municipal.',
+        video=None, tour=None,
+    ),
 }
 
 if __name__ == '__main__':
@@ -519,6 +640,8 @@ if __name__ == '__main__':
         with open(os.path.join(d, 'index.html'), 'w') as f:
             f.write(build(p))
         # endereço antigo -> novo (links já partilhados no YouTube e redes)
+        if slug not in ('t3leca', 'casaraofoz', 'bosquepicua'):
+            print('ok', slug, len(p['gallery']), 'fotos'); continue
         old = os.path.join(ROOT, slug)
         os.makedirs(old, exist_ok=True)
         new = f'https://usinavideos.pt/cordiallevel/{slug}/'
