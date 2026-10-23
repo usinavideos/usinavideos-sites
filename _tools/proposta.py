@@ -95,7 +95,13 @@ EDICAO = [('Reel ou short (até 60 s)', '35€', 'vertical, com legendas e músi
           ('Projetos mais longos', '20€/hora', 'orçamento fechado antes de começar')]
 
 CLIENTES = {
-    'ricardo-ribeiro': dict(nome='Ricardo Ribeiro', cidade='Lisboa',
+    'cristina-russo': dict(nome='Cristina Russo', cidade='Grande Porto', edicao=False,
+        h1='Os seus imóveis, apresentados como merecem.',
+        intro='Proposta preparada para a Cristina Russo, consultora imobiliária. Depois das reportagens em Leça, em Campo (Valongo) e no Cerco, propomos uma parceria com preços fixos por imóvel, prazos curtos e um único contacto para tudo.',
+        juntos=[('img/cr-leca-t.jpg', 'T3 em Leça da Palmeira', 'Fotografia e vídeo'),
+                ('img/cr-valongo-t.jpg', 'T2 em Campo, Valongo', 'Fotografia e vídeo'),
+                ('img/cr-cerco-t.jpg', 'T3 no Cerco, Porto', 'Fotografia e vídeo · outubro de 2026')]),
+    'ricardo-ribeiro': dict(nome='Ricardo Ribeiro', cidade='Lisboa', edicao=True, h1='Vídeo para eventos, imóveis e reportagem.',
         intro='Proposta preparada para o Ricardo Ribeiro, jornalista em Lisboa, para eventos, imóveis e edição de material já captado. Do jornalista para o jornalista: a mesma linguagem de reportagem, com prazos de redação.'),
 }
 
@@ -112,6 +118,16 @@ def edicao_html():
       <div style="background:var(--ink2);border-color:var(--line);color:#D6D1CD"><b style="color:#fff">Rondas extra</b>Cada ronda de alterações adicional: 20€ + IVA. Tradução e legendas noutras línguas sob orçamento.</div>
     </div>
     <p class="note" style="color:#C9C3BF">Cobertura de eventos e reportagem de imóveis em Lisboa: captação orçamentada por evento ou por dia, com a deslocação indicada à parte. Pode juntar a edição desta tabela.</p></div>
+</section>
+'''
+
+
+def juntos_html(c):
+    cards = ''.join(f'<article class="card ic" style="--c:{COLORS[i % 3]}"><img src="{im}" alt="{e(t)}" loading="lazy"><span class="n">{i + 1:02d}</span><h3>{e(t)}</h3><p>{e(d)}</p></article>' for i, (im, t, d) in enumerate(c['juntos']))
+    return f'''<section id="juntos" style="background:var(--paper2)">
+  <div class="wrap"><span class="eb">Já trabalhámos juntos</span><h2>Os seus imóveis, pela Usina.</h2>
+    <p class="lead">Algumas das reportagens que fizemos para si. É este o padrão que propomos manter em todas as angariações.</p>
+    <div class="grid3">{cards}</div></div>
 </section>
 '''
 
@@ -144,7 +160,7 @@ def build(cliente=None):
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
   <a class="logo" href="/"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
-  <div class="links">{'<a href="#edicao">Edição</a>' if cliente else ''}<a href="#pacotes">Pacotes</a><a href="#videos">Vídeos</a><a href="#premium">Serviços premium</a><a href="#condicoes">Condições</a><a href="/#trabalhos">Trabalhos</a></div>
+  <div class="links">{'<a href="#edicao">Edição</a>' if cliente and cliente.get('edicao') else ''}{'<a href="#juntos">O nosso trabalho</a>' if cliente and cliente.get('juntos') else ''}<a href="#pacotes">Pacotes</a><a href="#videos">Vídeos</a><a href="#premium">Serviços premium</a><a href="#condicoes">Condições</a><a href="/#trabalhos">Trabalhos</a></div>
   <a class="btn y" href="{WA}" target="_blank" rel="noopener">Avançar</a>
 </div></nav>
 
@@ -152,7 +168,7 @@ def build(cliente=None):
   <img src="/img/foz-drone.jpg" alt="" fetchpriority="high">
   <div class="wrap">
     <span class="eb">{e('Proposta para ' + cliente['nome'] + ' · ' + cliente['cidade']) if cliente else 'Proposta de serviços · Usina Vídeos'}</span>
-    <h1>{'Vídeo para eventos, imóveis e reportagem.' if cliente else 'Produção audiovisual para o mercado imobiliário.'}</h1>
+    <h1>{e(cliente['h1']) if cliente else 'Produção audiovisual para o mercado imobiliário.'}</h1>
     <p>{e(cliente['intro']) if cliente else 'Para agências, consultores, promotores e proprietários. Um parceiro, um briefing, um contacto, do Norte a todo o país.'}</p>
     <div class="row"><a class="btn y" href="#pacotes">Ver pacotes</a><a class="btn o" href="{CAL}" target="_blank" rel="noopener">Marcar sessão</a></div>
     {STRIPE}
@@ -173,7 +189,7 @@ def build(cliente=None):
     <div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">{ent}</div></div>
 </section>
 
-{edicao_html() if cliente else ''}
+{edicao_html() if cliente and cliente.get('edicao') else ''}{juntos_html(cliente) if cliente and cliente.get('juntos') else ''}
 <section id="pacotes">
   <div class="wrap"><span class="eb">Pacotes por imóvel</span><h2>Preços claros, por imóvel.</h2>
     <p class="lead">Valores sem IVA, que acresce à taxa legal em vigor.</p>
