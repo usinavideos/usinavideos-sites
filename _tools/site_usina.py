@@ -21,10 +21,11 @@ T = {
     desp=dict(eb='Desporto', h2='Também no pavilhão.', p='Reportagem de jogos e torneios de basquetebol, com destaques e perfis de jogadores para as redes sociais.', cdj='Clube Desportivo José Régio · Vila do Conde. Destaques dos jogos da formação e dos seniores.', mb='MatchBall × Red Rose Thunder', mbp='Tour internacional de basquetebol em Portugal. Perfis e destaques dos jogadores.', ver='Ver no Instagram', mais='Ver mais no Instagram'),
     sites={'nav': 'Sites', 'eb': 'Sites, apresentações e podcasts', 'h2': 'Soluções digitais para o seu negócio.', 'p': 'Além do vídeo, criamos as ferramentas onde ele vive: sites, apresentações e podcasts, com a mesma qualidade de reportagem.', 'items': [('Sites', 'Sites para agências, consultores e marcas, com carteira de imóveis, vídeos e contacto direto por WhatsApp.', [('Cordial Level', '/cordiallevel/')]), ('Apresentações digitais', 'Uma página por imóvel ou projeto, em várias línguas, para enviar por link, imprimir em PDF ou mostrar em reunião.', [('Condomínio Coral', '/t4coral/'), ('T3 Leça', '/cordiallevel/t3leca/')]), ('Podcasts', 'Formato, gravação, edição e publicação no YouTube e no Spotify, com cortes para as redes sociais.', [('Panorama Imobiliário PT', 'https://www.youtube.com/watch?v=ed1kwc3x27I')])], 'ex': 'Exemplo'},
     ig_cl='Em destaque no Instagram da Cordial Level',
+    agenda={'nav': 'Agenda', 'eb': 'Agenda', 'h2': 'Agenda aberta para o final de outubro e novembro.', 'p': 'Escolha o dia e a hora da sua sessão diretamente no nosso calendário. Prefere falar primeiro? Envie-nos uma mensagem pelo WhatsApp.', 'alt': 'Abrir o calendário numa nova janela'},
     path='', html_lang='pt-PT', og_locale='pt_PT',
     title='Usina Vídeos · Produção audiovisual imobiliária em Portugal',
     desc='Fotografia, vídeo com drone, reportagem e apresentações digitais para imóveis, no Norte e em todo o Portugal. Peça orçamento.',
-    nav=[('quem', 'Quem somos'), ('servicos', 'Serviços'), ('trabalhos', 'Trabalhos'), ('sites', 'Sites'), ('desporto', 'Desporto'), ('como', 'Como funciona'), ('marcas', 'Marcas'), ('contacto', 'Contacto')],
+    nav=[('quem', 'Quem somos'), ('servicos', 'Serviços'), ('trabalhos', 'Trabalhos'), ('sites', 'Sites'), ('desporto', 'Desporto'), ('como', 'Como funciona'), ('marcas', 'Marcas'), ('agenda', 'Agenda'), ('contacto', 'Contacto')],
     cta='Peça orçamento',
     wa_msg='Olá Freire, gostaria de pedir um orçamento à Usina Vídeos.',
     hero_eb='Produção audiovisual imobiliária · Norte e todo o Portugal',
@@ -78,10 +79,11 @@ T = {
     desp=dict(eb='Sport', h2='Courtside, too.', p='Basketball games and tournaments covered on video, with highlights and player profiles for social media.', cdj='Clube Desportivo José Régio · Vila do Conde. Highlights from youth and senior games.', mb='MatchBall × Red Rose Thunder', mbp='International basketball tour in Portugal. Player profiles and highlights.', ver='View on Instagram', mais='See more on Instagram'),
     sites={'nav': 'Websites', 'eb': 'Websites, presentations and podcasts', 'h2': 'Digital solutions for your business.', 'p': 'Beyond video, we build the places where it lives: websites, presentations and podcasts, with the same reporting quality.', 'items': [('Websites', 'Websites for agencies, agents and brands, with property listings, videos and direct WhatsApp contact.', [('Cordial Level', '/cordiallevel/')]), ('Digital presentations', 'One page per property or project, in several languages, to share by link, print as PDF or show in meetings.', [('Condomínio Coral', '/t4coral/en.html'), ('T3 Leça', '/cordiallevel/t3leca/')]), ('Podcasts', 'Format, recording, editing and publishing on YouTube and Spotify, with short clips for social media.', [('Panorama Imobiliário PT', 'https://www.youtube.com/watch?v=ed1kwc3x27I')])], 'ex': 'Example'},
     ig_cl='Featured on Cordial Level’s Instagram',
+    agenda={'nav': 'Booking', 'eb': 'Booking', 'h2': 'Now booking for late October and November.', 'p': 'Pick the day and time of your shoot directly in our calendar. Prefer to talk first? Send us a WhatsApp message.', 'alt': 'Open the calendar in a new window'},
     path='en/', html_lang='en', og_locale='en_GB',
     title='Usina Vídeos · Real estate photo and video production in Portugal',
     desc='Photography, drone video, video tours and digital property presentations across Northern Portugal and the whole country. Ask for a quote.',
-    nav=[('quem', 'About'), ('servicos', 'Services'), ('trabalhos', 'Work'), ('sites', 'Websites'), ('desporto', 'Sport'), ('como', 'How it works'), ('marcas', 'Brands'), ('contacto', 'Contact')],
+    nav=[('quem', 'About'), ('servicos', 'Services'), ('trabalhos', 'Work'), ('sites', 'Websites'), ('desporto', 'Sport'), ('como', 'How it works'), ('marcas', 'Brands'), ('agenda', 'Booking'), ('contacto', 'Contact')],
     cta='Ask for a quote',
     wa_msg='Hello Freire, I would like a quote from Usina Vídeos.',
     hero_eb='Real estate video production · Northern Portugal and nationwide',
@@ -135,10 +137,11 @@ T = {
     desp=dict(eb='Deporte', h2='También en la cancha.', p='Reportajes de partidos y torneos de baloncesto, con resúmenes y perfiles de jugadores para redes sociales.', cdj='Clube Desportivo José Régio · Vila do Conde. Resúmenes de los partidos de cantera y sénior.', mb='MatchBall × Red Rose Thunder', mbp='Gira internacional de baloncesto en Portugal. Perfiles y resúmenes de los jugadores.', ver='Ver en Instagram', mais='Ver más en Instagram'),
     sites={'nav': 'Webs', 'eb': 'Webs, presentaciones y pódcasts', 'h2': 'Soluciones digitales para su negocio.', 'p': 'Además del vídeo, creamos las herramientas donde vive: webs, presentaciones y pódcasts, con la misma calidad de reportaje.', 'items': [('Webs', 'Webs para agencias, agentes y marcas, con cartera de inmuebles, vídeos y contacto directo por WhatsApp.', [('Cordial Level', '/cordiallevel/')]), ('Presentaciones digitales', 'Una página por inmueble o proyecto, en varios idiomas, para enviar por enlace, imprimir en PDF o mostrar en reuniones.', [('Condomínio Coral', '/t4coral/es.html'), ('T3 Leça', '/cordiallevel/t3leca/')]), ('Pódcasts', 'Formato, grabación, edición y publicación en YouTube y Spotify, con cortes para redes sociales.', [('Panorama Imobiliário PT', 'https://www.youtube.com/watch?v=ed1kwc3x27I')])], 'ex': 'Ejemplo'},
     ig_cl='Destacado en el Instagram de Cordial Level',
+    agenda={'nav': 'Agenda', 'eb': 'Agenda', 'h2': 'Agenda abierta para finales de octubre y noviembre.', 'p': 'Elija el día y la hora de su sesión directamente en nuestro calendario. ¿Prefiere hablar primero? Envíenos un mensaje por WhatsApp.', 'alt': 'Abrir el calendario en una nueva ventana'},
     path='es/', html_lang='es', og_locale='es_ES',
     title='Usina Vídeos · Producción audiovisual inmobiliaria en Portugal',
     desc='Fotografía, vídeo con dron, reportajes y presentaciones digitales de inmuebles en el Norte y en todo Portugal. Pida presupuesto.',
-    nav=[('quem', 'Quiénes somos'), ('servicos', 'Servicios'), ('trabalhos', 'Trabajos'), ('sites', 'Webs'), ('desporto', 'Deporte'), ('como', 'Cómo funciona'), ('marcas', 'Marcas'), ('contacto', 'Contacto')],
+    nav=[('quem', 'Quiénes somos'), ('servicos', 'Servicios'), ('trabalhos', 'Trabajos'), ('sites', 'Webs'), ('desporto', 'Deporte'), ('como', 'Cómo funciona'), ('marcas', 'Marcas'), ('agenda', 'Agenda'), ('contacto', 'Contacto')],
     cta='Pida presupuesto',
     wa_msg='Hola Freire, me gustaría pedir un presupuesto a Usina Vídeos.',
     hero_eb='Producción audiovisual inmobiliaria · Norte y todo Portugal',
@@ -449,6 +452,15 @@ def page(lang):
     </div>
   </div>
 </section>
+
+<section id="agenda" style="background:var(--paper2)">
+  <div class="wrap">
+    <span class="eb">{e(t['agenda']['eb'])}</span><h2>{e(t['agenda']['h2'])}</h2><p class="lead">{e(t['agenda']['p'])}</p>
+    <div class="row" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:22px"><a class="btn y" href="{wa}" target="_blank" rel="noopener">{WA_SVG}WhatsApp</a><a class="btn o" style="color:var(--ink)" href="https://calendly.com/usinavideos/videoreport" target="_blank" rel="noopener">{e(t['agenda']['alt'])} ↗</a></div>
+    <div class="calendly-inline-widget" data-url="https://calendly.com/usinavideos/videoreport?hide_gdpr_banner=1&amp;primary_color=e5ae29" style="min-width:300px;height:720px;margin-top:28px;border-radius:18px;overflow:hidden;background:#fff"></div>
+  </div>
+</section>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 <section id="contacto">
   <div class="wrap">
