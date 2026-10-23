@@ -65,16 +65,17 @@ EXTRA_CSS = """
 .prem article{background:var(--ink2);border:1px solid var(--line);border-radius:16px;padding:22px}
 .prem b.pr{display:block;font-size:30px;font-weight:900;color:var(--y);line-height:1}.prem b.pr small{font-size:13px;color:#C9C3BF;font-weight:700;margin-left:6px}
 .prem h3{font-size:19px;margin-top:10px}.prem p{margin:8px 0 0;font-size:15px}.prem a,.card a{color:var(--y)}
+.prem4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))!important}@media(min-width:1100px){.prem4{grid-template-columns:repeat(4,1fr)!important}}
 .note{margin-top:22px;font-size:14px;color:var(--muted)}
 .cond{display:grid;gap:14px;margin-top:32px}@media(min-width:800px){.cond{grid-template-columns:repeat(3,1fr)}}
 .cond div{background:#fff;border:1px solid #E3DED6;border-radius:14px;padding:20px}.cond b{display:block;color:var(--ink);font-size:16px;margin-bottom:6px}
 """
 
 
-EDICAO = [('Reel ou short (até 60 s)', '50€', 'vertical, com legendas e música'),
-          ('Vídeo até 3 minutos', '120€', 'imóvel, entrevista ou resumo de evento'),
-          ('Vídeo até 10 minutos', '220€', 'reportagem, entrevista longa ou aftermovie'),
-          ('Projetos mais longos', '30€/hora', 'orçamento fechado antes de começar')]
+EDICAO = [('Reel ou short (até 60 s)', '35€', 'vertical, com legendas e música'),
+          ('Vídeo até 3 minutos', '95€', 'imóvel, entrevista ou resumo de evento'),
+          ('Vídeo até 10 minutos', '150€', 'reportagem, entrevista longa ou aftermovie'),
+          ('Projetos mais longos', '20€/hora', 'orçamento fechado antes de começar')]
 
 CLIENTES = {
     'ricardo-ribeiro': dict(nome='Ricardo Ribeiro', cidade='Lisboa',
@@ -87,7 +88,7 @@ def edicao_html():
     return f'''<section id="edicao" class="dark">
   <div class="wrap"><span class="eb">Edição de material já captado</span><h2>Envie o material, nós editamos.</h2>
     <p class="lead">Recebemos os ficheiros por WeTransfer, Google Drive ou disco e devolvemos o vídeo pronto a publicar, em formato horizontal e vertical.</p>
-    <div class="prem">{rows}</div>
+    <div class="prem prem4">{rows}</div>
     <div class="cond" style="margin-top:22px">
       <div style="background:var(--ink2);border-color:var(--line);color:#D6D1CD"><b style="color:#fff">Incluído</b>Seleção dos melhores planos, correção de cor, som, música licenciada, legendas e uma ronda de alterações.</div>
       <div style="background:var(--ink2);border-color:var(--line);color:#D6D1CD"><b style="color:#fff">Prazos</b>72 horas para vídeos até 3 minutos. Urgência em 24 horas: +30%.</div>
