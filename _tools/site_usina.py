@@ -434,7 +434,6 @@ def page(lang):
   <div class="wrap">
     <span class="eb">{e(t['marcas_eb'])}</span><h2>{e(t['marcas_h2'])}</h2>
     <div class="brands">
-      {mea_banner(lang, 'usinavideos')}
       <div class="side">
         {socials}
         <a class="mini yt" href="https://www.youtube.com/@DicasdoFreire/" target="_blank" rel="noopener">{YT_SVG}<div><b>{e(t['dicas'][0])}</b><span>{e(t['dicas'][1])}</span></div><em>{e(t['dicas'][2])} →</em></a>
@@ -454,7 +453,7 @@ def page(lang):
   </div>
 </section>
 
-<footer><div class="wrap">
+<footer><div class="wrap" style="display:block;margin-bottom:28px">{mea_banner(lang, 'usinavideos')}</div><div class="wrap">
   <img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298">
   <span>© Usina Vídeos · {e(t['foot'])} · <a href="https://www.facebook.com/usinacomvideos" target="_blank" rel="noopener">Facebook</a></span>
 </div></footer>
