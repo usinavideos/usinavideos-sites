@@ -6,7 +6,8 @@ Uso: python3 _tools/proposta.py
 """
 import html, os, sys, urllib.parse as up
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from site_usina import CSS, WA_SVG, STRIPE, COLORS
+from site_usina import CSS, WA_SVG, STRIPE, COLORS, T, IG_SVG, IN_SVG, YT_SVG
+from mea_banner import mea_banner
 from mea_banner import MEA_CSS
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -15,10 +16,17 @@ WA = 'https://wa.me/351912988971?text=' + up.quote('Olá Freire, vi a proposta d
 CAL = 'https://calendly.com/usinavideos/videoreport'
 VALIDADE = '31 de dezembro de 2026'
 
-ENTREG = [('Fotografia profissional', 'Alta resolução, luz e composição editorial, pronta para portais e redes sociais.'),
-          ('Vídeo do imóvel', 'Edição dinâmica com música licenciada, legendas e versões para cada plataforma.'),
-          ('Drone', 'Planos aéreos em foto e vídeo que mostram a envolvente, a localização e os acessos.'),
-          ('Visita virtual 3D com planta', 'Visita navegável a 360° com planta técnica integrada, para portais e reuniões.')]
+ENTREG = [('Fotografia profissional', 'Alta resolução, luz e composição editorial, pronta para portais e redes sociais.', '/cordiallevel/t3leca/img/leca-1-t.jpg'),
+          ('Vídeo do imóvel', 'Edição dinâmica com música licenciada, legendas e versões para cada plataforma.', '/img/coral-cozinha.jpg'),
+          ('Drone', 'Planos aéreos em foto e vídeo que mostram a envolvente, a localização e os acessos.', '/cordiallevel/t3leca/img/leca-37-t.jpg'),
+          ('Visita virtual 3D com planta', 'Visita navegável a 360° com planta técnica integrada, para portais e reuniões.', '/cordiallevel/casaraofoz/img/foz-f2-t.jpg')]
+PK_IMG = ['/cordiallevel/anteroquental/img/aq-20-t.jpg', '/cordiallevel/moncao/img/t1-d4-t.jpg', '/img/coral-fachada.jpg']
+VIDEOS = [('yo7RN7u6JJY', 'Terrenos em Monção', 'Drone e vídeo-reportagem · 1 min 45 s'),
+          ('xEDuuPNMacM', 'T3 em Leça da Palmeira', 'Vídeo do imóvel com drone · 1 min 42 s'),
+          ('vU0bXm_uhGk', 'Short vertical de Leça', 'Formato para Reels, Shorts e TikTok'),
+          ('7JOcy10W8oY', 'T1 em Matosinhos', 'Vídeo-reportagem · 10 min'),
+          ('ed1kwc3x27I', 'Podcast Panorama Imobiliário PT', 'Gravação e edição · 26 min'),
+          ('Re8UZQRVTOY', 'Prédio na Baixa do Porto', 'Vídeo do imóvel · 1 min 12 s')]
 
 PACOTES = [
     ('Pacote 01', 'Essencial', '40€', ['Fotografia profissional de alta resolução', 'Vídeo do imóvel editado com música <em>(oferta de lançamento)</em>'],
@@ -65,6 +73,15 @@ EXTRA_CSS = """
 .prem article{background:var(--ink2);border:1px solid var(--line);border-radius:16px;padding:22px}
 .prem b.pr{display:block;font-size:30px;font-weight:900;color:var(--y);line-height:1}.prem b.pr small{font-size:13px;color:#C9C3BF;font-weight:700;margin-left:6px}
 .prem h3{font-size:19px;margin-top:10px}.prem p{margin:8px 0 0;font-size:15px}.prem a,.card a{color:var(--y)}
+.card.ic{padding:0;overflow:hidden}.card.ic img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}.card.ic .n,.card.ic h3,.card.ic p{margin-left:22px;margin-right:22px}.card.ic .n{display:block;margin-top:16px}.card.ic p{margin-bottom:22px}
+.pk .pkimg{width:calc(100% + 52px);margin:-26px -26px 18px;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:13px 13px 0 0}
+.pvs{display:grid;gap:18px;margin-top:32px}@media(min-width:700px){.pvs{grid-template-columns:1fr 1fr}}@media(min-width:1050px){.pvs{grid-template-columns:repeat(3,1fr)}}
+.pv{margin:0}.yt2{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;border-radius:14px;overflow:hidden;background:#000;cursor:pointer}
+.yt2 img{width:100%;height:100%;object-fit:cover;opacity:.9}.yt2:hover img{opacity:1}.yt2 iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt2 .pl{position:absolute;left:50%;top:50%;width:66px;height:66px;margin:-33px 0 0 -33px;border-radius:50%;background:var(--y)}
+.yt2 .pl::after{content:"";position:absolute;left:27px;top:21px;border-style:solid;border-width:12px 0 12px 19px;border-color:transparent transparent transparent var(--ink)}
+.pv figcaption{margin-top:10px}.pv b{display:block;color:#fff;font-size:18px}.pv span{font-size:14px;color:#C9C3BF}
+#redes .side{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}@media(min-width:1100px){#redes .side{grid-template-columns:repeat(4,1fr)}}.mini.fb em{color:#5AA3E8}
 .prem4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))!important}@media(min-width:1100px){.prem4{grid-template-columns:repeat(4,1fr)!important}}
 .note{margin-top:22px;font-size:14px;color:var(--muted)}
 .cond{display:grid;gap:14px;margin-top:32px}@media(min-width:800px){.cond{grid-template-columns:repeat(3,1fr)}}
@@ -100,11 +117,13 @@ def edicao_html():
 
 
 def build(cliente=None):
-    ent = ''.join(f'<article class="card" style="--c:{COLORS[i % 3]}"><span class="n">{i + 1:02d}</span><h3>{e(a)}</h3><p>{e(b)}</p></article>' for i, (a, b) in enumerate(ENTREG))
-    pk = ''.join(f'<article class="{"ref" if ref else ""}" style="--c:{COLORS[i % 3]}"><span class="lb">{e(lb)}</span><h3>{e(n)}</h3><div class="pr">{p}<small>+ IVA · por imóvel</small></div><ul>{"".join(f"<li>{x}</li>" for x in items)}</ul><p>{e(d)}</p></article>'
+    ent = ''.join(f'<article class="card ic" style="--c:{COLORS[i % 3]}"><img src="{im}" alt="{e(a)}" loading="lazy"><span class="n">{i + 1:02d}</span><h3>{e(a)}</h3><p>{e(b)}</p></article>' for i, (a, b, im) in enumerate(ENTREG))
+    vids = ''.join(f'<figure class="pv"><button class="yt2" data-id="{v}" aria-label="Ver vídeo: {e(t)}"><img src="https://i.ytimg.com/vi/{v}/hqdefault.jpg" alt="" loading="lazy"><span class="pl" aria-hidden="true"></span></button><figcaption><b>{e(t)}</b><span>{e(m)}</span></figcaption></figure>' for v, t, m in VIDEOS)
+    pk = ''.join(f'<article class="{"ref" if ref else ""}" style="--c:{COLORS[i % 3]}"><img class="pkimg" src="{PK_IMG[i]}" alt="" loading="lazy"><span class="lb">{e(lb)}</span><h3>{e(n)}</h3><div class="pr">{p}<small>+ IVA · por imóvel</small></div><ul>{"".join(f"<li>{x}</li>" for x in items)}</ul><p>{e(d)}</p></article>'
                  for i, (lb, n, p, items, d, ref) in enumerate(PACOTES))
     prem = ''.join(f'<article><b class="pr">{p}<small>{e(s)}</small></b><h3>{e(n)}</h3><p>{d}</p></article>' for n, p, s, d in PREMIUM)
     esp = ''.join(f'<article class="card" style="--c:{COLORS[i % 3]}"><h3>{e(a)}</h3><p>{b}</p></article>' for i, (a, b) in enumerate(ESPECIAIS))
+    socials = ''.join(f'<a class="mini {k}" href="{u}" target="_blank" rel="noopener">{IG_SVG if k == "ig" else IN_SVG}<div><b>{e(a)}</b><span>{e(b)}</span></div><em>{e(c)} →</em></a>' for u, k, a, b, c in T['pt']['socials'])
     steps = ''.join(f'<div class="step"><h3>{e(a)}</h3><p>{e(b)}</p></div>' for a, b in STEPS)
     return f'''<!doctype html>
 <html lang="pt-PT">
@@ -125,7 +144,7 @@ def build(cliente=None):
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
   <a class="logo" href="/"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
-  <div class="links">{'<a href="#edicao">Edição</a>' if cliente else ''}<a href="#pacotes">Pacotes</a><a href="#premium">Serviços premium</a><a href="#condicoes">Condições</a><a href="/#trabalhos">Trabalhos</a></div>
+  <div class="links">{'<a href="#edicao">Edição</a>' if cliente else ''}<a href="#pacotes">Pacotes</a><a href="#videos">Vídeos</a><a href="#premium">Serviços premium</a><a href="#condicoes">Condições</a><a href="/#trabalhos">Trabalhos</a></div>
   <a class="btn y" href="{WA}" target="_blank" rel="noopener">Avançar</a>
 </div></nav>
 
@@ -169,7 +188,14 @@ def build(cliente=None):
   </div>
 </section>
 
-<section id="premium" class="dark">
+<section id="videos" class="dark">
+  <div class="wrap"><span class="eb">Exemplos em vídeo</span><h2>Veja o resultado.</h2>
+    <p class="lead">Trabalhos recentes da Usina Vídeos. Toque para ver aqui mesmo.</p>
+    <div class="pvs">{vids}</div>
+    <div style="margin-top:24px"><a class="btn o" style="color:#fff" href="https://www.youtube.com/@CordialLevelPT" target="_blank" rel="noopener">Mais vídeos no YouTube →</a></div></div>
+</section>
+
+<section id="premium" class="dark" style="border-top:1px solid var(--line)">
   <div class="wrap"><span class="eb">Serviços premium</span><h2>Autoridade digital e geração de contactos.</h2>
     <p class="lead">Além dos pacotes por imóvel, produções que valorizam o consultor, a agência e o empreendimento.</p>
     <div class="prem">{prem}</div></div>
@@ -199,14 +225,21 @@ def build(cliente=None):
     <div><span class="eb">Falemos do seu próximo imóvel</span><h2>Freire Neto</h2><p style="margin-top:14px">Jornalista e produtor de conteúdo · Usina Vídeos</p>
       <div class="row" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:22px"><a class="btn y" href="{WA}" target="_blank" rel="noopener">{WA_SVG}WhatsApp +351 912 988 971</a><a class="btn o" style="color:#fff" href="{CAL}" target="_blank" rel="noopener">Marcar sessão online</a></div>
       <p style="margin-top:18px">E-mail: <a href="mailto:freireneto@me.com" style="color:var(--y)">freireneto@me.com</a> · <a href="/" style="color:var(--y)">usinavideos.pt</a></p></div>
-    <div class="stats"><div><b>Cordial Level</b><span>site, vídeos e podcast</span></div><div><b>Coral</b><span>apresentação em 4 línguas</span></div><div><b>C21 Core</b><span>fotografia e vídeo</span></div><div><b>CDJRegio</b><span>reportagem desportiva</span></div></div>
+    <div class="stats"><a href="/cordiallevel/" style="display:block;background:var(--ink);padding:22px 20px;text-decoration:none"><b>Cordial Level</b><span>site, vídeos e podcast →</span></a><a href="/t4coral/" style="display:block;background:var(--ink);padding:22px 20px;text-decoration:none"><b>Coral</b><span>apresentação em 4 línguas →</span></a><a href="https://century21.pt/ref/C0554-00006" target="_blank" rel="noopener" style="display:block;background:var(--ink);padding:22px 20px;text-decoration:none"><b>C21 Core</b><span>fotografia e vídeo →</span></a><a href="https://www.instagram.com/cdjregio/" target="_blank" rel="noopener" style="display:block;background:var(--ink);padding:22px 20px;text-decoration:none"><b>CDJRegio</b><span>reportagem desportiva →</span></a></div>
   </div>
 </section>
 
-<footer><div class="wrap">
-  <img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298">
+<section id="redes" class="dark" style="padding-top:0">
+  <div class="wrap"><span class="eb">Siga o nosso trabalho</span><h2 style="font-size:clamp(26px,3vw,36px)">Redes e canais.</h2>
+    <div class="side" style="margin-top:28px">{socials}<a class="mini yt" href="https://www.youtube.com/@DicasdoFreire/" target="_blank" rel="noopener">{YT_SVG}<div><b>Dicas do Freire</b><span>O canal de Freire Neto no YouTube.</span></div><em>Ver o canal →</em></a><a class="mini yt" href="https://www.youtube.com/@motoreseacao" target="_blank" rel="noopener">{YT_SVG}<div><b>Motores e Ação</b><span>YouTube · @motoreseacao</span></div><em>Ver o canal →</em></a><a class="mini fb" href="https://www.facebook.com/usinacomvideos" target="_blank" rel="noopener"><svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="#1877F2"/><path d="M13.5 20v-6h2l.4-2.5h-2.4V10c0-.7.3-1.3 1.4-1.3H16V6.5c-.3 0-1.1-.1-2-.1-2 0-3.2 1.2-3.2 3.3v1.8H8.7V14h2.1v6z" fill="#fff"/></svg><div><b>Usina Vídeos</b><span>Facebook · /usinacomvideos</span></div><em>Seguir →</em></a></div>
+  </div>
+</section>
+
+<footer><div class="wrap" style="display:block;margin-bottom:28px">{mea_banner('pt', 'proposta')}</div><div class="wrap">
+  <a href="/" aria-label="Usina Vídeos · página inicial"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
   <span>A sua exigência, a nossa assinatura. · © Usina Vídeos</span>
 </div></footer>
+<script>document.querySelectorAll('.yt2').forEach(function(b){{b.addEventListener('click',function(){{var i=document.createElement('iframe');i.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0';i.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';i.allowFullscreen=true;i.title=b.getAttribute('aria-label');b.innerHTML='';b.appendChild(i)}},{{once:true}})}});</script>
 </body>
 </html>
 '''

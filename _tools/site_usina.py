@@ -454,7 +454,7 @@ def page(lang):
 </section>
 
 <footer><div class="wrap" style="display:block;margin-bottom:28px">{mea_banner(lang, 'usinavideos')}</div><div class="wrap">
-  <img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298">
+  <a href="/{t['path']}" aria-label="Usina Vídeos · página inicial"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
   <span>© Usina Vídeos · {e(t['foot'])} · <a href="https://www.facebook.com/usinacomvideos" target="_blank" rel="noopener">Facebook</a></span>
 </div></footer>
 </body>
