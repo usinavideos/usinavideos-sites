@@ -269,6 +269,7 @@ section{padding:88px 0}
 .work.cdj .big{font-size:40px;font-weight:900;color:var(--fg);line-height:1}
 @media(min-width:760px){.work.cdj{grid-column:span 2}}
 /* instagram cl */
+.igrow iframe.instagram-media,.sport iframe.instagram-media{min-height:620px!important;background:#fff!important}
 .igh{color:var(--fg);font-size:24px;margin:56px 0 0;padding-top:28px;border-top:1px solid var(--line)}
 .igrow{display:grid;gap:18px;margin-top:24px;align-items:start}@media(min-width:760px){.igrow{grid-template-columns:repeat(3,1fr)}}
 /* desporto */
