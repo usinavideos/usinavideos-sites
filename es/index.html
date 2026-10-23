@@ -135,6 +135,27 @@ footer{background:var(--ink);color:var(--muted);padding:36px 0;font-size:14px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
 footer img{height:30px;width:auto}
 footer a{color:#D6D1CD}
+
+.meab{position:relative;overflow:hidden;background:#0B0E14;color:#fff;border-radius:22px;isolation:isolate;min-height:420px;display:flex;align-items:center}
+.meab>img.mb-car{position:absolute;inset:0 0 0 auto;width:68%;height:100%;object-fit:cover;z-index:-2}
+.meab::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#0B0E14 0,#0B0E14 34%,rgba(11,14,20,.86) 46%,rgba(0,77,154,.18) 78%,rgba(0,0,0,.05) 100%)}
+.meab::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,#004D9A,#2F7FD0 60%,#fff)}
+.meab .mb-in{padding:44px 40px;max-width:640px}
+.meab .mb-lg{width:min(300px,64vw);height:auto;filter:brightness(0) invert(1);display:block}
+.meab .mb-eb{display:block;margin-top:22px;font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#5AA3E8}
+.meab h3{margin:10px 0 0;font-family:Mulish,system-ui,sans-serif;font-weight:900;font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.01em;color:#fff}
+.meab p{margin:14px 0 0;color:#C9CFD8;font-size:17px;line-height:1.5;max-width:46ch}
+.meab .mb-row{border:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;margin-top:24px}
+.meab .mb-go{display:inline-flex;align-items:center;gap:8px;background:#004D9A;color:#fff;font-weight:800;font-size:16px;padding:15px 24px;border-radius:999px;text-decoration:none;box-shadow:0 8px 28px rgba(0,77,154,.45);animation:meapulse 2.6s ease-in-out infinite}
+.meab .mb-go:hover{background:#2F7FD0}
+.meab .mb-yt{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:800;font-size:15px;padding:13px 18px;border-radius:999px;border:2px solid rgba(255,255,255,.4);text-decoration:none}
+.meab .mb-yt:hover{border-color:#fff}
+.meab .mb-st{display:flex;align-items:baseline;gap:8px;margin-top:22px;font-size:14px;color:#C9CFD8}.meab .mb-st b{font-size:26px;font-weight:900;color:#fff}
+.meab .mb-cap{position:absolute;right:16px;bottom:14px;font-size:11px;color:rgba(255,255,255,.6)}
+@keyframes meapulse{0%,100%{box-shadow:0 8px 28px rgba(0,77,154,.45)}50%{box-shadow:0 8px 34px rgba(47,127,208,.8)}}
+@media(prefers-reduced-motion:reduce){.meab .mb-go{animation:none}}
+@media(max-width:760px){.meab{flex-direction:column;align-items:stretch;min-height:0}.meab>img.mb-car{position:relative;width:100%;height:230px;order:-1}
+.meab::before{background:linear-gradient(180deg,rgba(11,14,20,0) 0,rgba(11,14,20,0) 150px,#0B0E14 230px)}.meab .mb-in{padding:4px 22px 34px}.meab .mb-cap{top:200px;bottom:auto}}
 </style>
 <!--seo-->
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -223,10 +244,18 @@ footer a{color:#D6D1CD}
   <div class="wrap">
     <span class="eb">Nuestras marcas</span><h2>También producimos contenido propio.</h2>
     <div class="brands">
-      <a class="mea" href="https://motoreseacao.com/?utm_source=usinavideos&amp;utm_medium=banner&amp;utm_campaign=destaque_home" target="_blank" rel="noopener">
-        <small>Destacado · una marca de Usina Vídeos</small>
-        <img src="https://motoreseacao.com/wp-content/uploads/2021/10/cropped-Motores-e-Acao.png" alt="Motores e Ação" width="1000" height="286" loading="lazy">
-        <p>Periodismo del motor desde 2002: lanzamientos, pruebas y ofertas en Brasil y Portugal.</p><span class="mrow"><b>Leer en motoreseacao.com →</b><i>YouTube · @motoreseacao</i></span></a>
+      <div class="meab">
+  <img class="mb-car" src="/img/mea-toro.jpg" alt="" loading="lazy" width="2200" height="1467">
+  <div class="mb-in">
+    <img class="mb-lg" src="https://motoreseacao.com/wp-content/uploads/2021/10/cropped-Motores-e-Acao.png" alt="Motores e Ação" width="1000" height="286" loading="lazy">
+    <span class="mb-eb">Periodismo del motor desde 2002</span>
+    <h3>¿Vas a cambiar de coche?<br>Mira primero la prueba sin filtro.</h3>
+    <p>Lanzamientos, pruebas y ofertas en Brasil y Portugal, con más de 20 años de experiencia (en portugués).</p>
+    <div class="mb-row"><a class="mb-go" href="https://motoreseacao.com/?utm_source=usinavideos&amp;utm_medium=banner&amp;utm_campaign=mea_top" target="_blank" rel="noopener">Ver las pruebas →</a><a class="mb-yt" href="https://www.youtube.com/@motoreseacao" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4" fill="#D0252F"/><path d="M10 9v6l5-3z" fill="#fff"/></svg>Ver en YouTube</a></div>
+    <div class="mb-st"><b>115 mil+</b>suscriptores en YouTube</div>
+  </div>
+  <span class="mb-cap">Fiat Toro Ranch · imagen: Fiat</span>
+</div>
       <div class="side">
         <a class="mini ig" href="https://www.instagram.com/usina.videos" target="_blank" rel="noopener"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#E5AE29" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#E5AE29"/></svg><div><b>Usina Vídeos</b><span>@usina.videos · últimos trabajos</span></div><em>Seguir →</em></a><a class="mini ig" href="https://www.instagram.com/neofreireportugal" target="_blank" rel="noopener"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#E5AE29" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#E5AE29"/></svg><div><b>Freire Neto en Portugal</b><span>@neofreireportugal · Instagram personal</span></div><em>Seguir →</em></a><a class="mini ig" href="https://www.instagram.com/freireneto" target="_blank" rel="noopener"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#E5AE29" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#E5AE29"/></svg><div><b>Freire Neto en Brasil</b><span>@freireneto · Instagram</span></div><em>Seguir →</em></a><a class="mini ig" href="https://www.instagram.com/motoreseacao" target="_blank" rel="noopener"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#E5AE29" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#E5AE29"/></svg><div><b>Motores e Ação</b><span>@motoreseacao · Instagram</span></div><em>Seguir →</em></a><a class="mini in" href="https://www.linkedin.com/in/freireneto/" target="_blank" rel="noopener"><svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4" fill="#0A66C2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 10v7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg><div><b>Freire Neto</b><span>LinkedIn</span></div><em>Ver perfil →</em></a>
         <a class="mini yt" href="https://www.youtube.com/@DicasdoFreire/" target="_blank" rel="noopener"><svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4" fill="#D0252F"/><path d="M10 9v6l5-3z" fill="#fff"/></svg><div><b>Dicas do Freire</b><span>El canal de Freire Neto en YouTube (en portugués).</span></div><em>Ver el canal →</em></a>
