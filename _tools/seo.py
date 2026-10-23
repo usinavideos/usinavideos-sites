@@ -114,6 +114,7 @@ for p, lang in USINA_LANG.items():
     s = open(os.path.join(ROOT, f), encoding='utf-8').read()
     url = f'{BASE}/{p}'
     out = common(s, url)
+    out.append('<meta name="msvalidate.01" content="56593FE2E31FC20F2AEE040C5E1B0D3D">')
     if 'hreflang="x-default"' not in s: out.append(f'<link rel="alternate" hreflang="x-default" href="{BASE}/">')
     out.append(ld({'@graph': [dict(USINA), {'@type': 'WebSite', '@id': BASE + '/#site', 'url': BASE + '/', 'name': 'Usina Vídeos', 'inLanguage': lang, 'publisher': {'@id': USINA['@id']}},
                               {'@type': 'WebPage', 'url': url, 'name': html.unescape(re.search(r'<title>(.*?)</title>', s).group(1)), 'inLanguage': lang, 'isPartOf': {'@id': BASE + '/#site'}, 'about': {'@id': USINA['@id']}}]}))
