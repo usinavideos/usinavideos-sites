@@ -1,3 +1,6 @@
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from mea_banner import mea_banner, MEA_CSS
 import html
 I='https://images.century21.pt/'
 Q='?width=900&height=675&quality=85'
@@ -65,6 +68,6 @@ WA='https://wa.me/351912988971?text=Ol%C3%A1%20Freire%2C%20vi%20o%20site%20da%20
 tabs=''.join(f'<button class="tab{" on" if k=="todos" else ""}" data-f="{k}" aria-pressed="{"true" if k=="todos" else "false"}">{n}</button>' for k,n in CATS)
 props='\n'.join(card(p) for p in P)
 vids=VIDS
-out=open('_tools/cordiallevel_template.html').read().replace('{{TABS}}',tabs).replace('{{PROPS}}',props).replace('{{VIDS}}',vids).replace('{{WA}}',WA).replace('{{N}}',str(len(P))).replace('{{BAR}}',BAR)
+out=open('_tools/cordiallevel_template.html').read().replace('{{TABS}}',tabs).replace('{{PROPS}}',props).replace('{{VIDS}}',vids).replace('{{WA}}',WA).replace('{{N}}',str(len(P))).replace('{{BAR}}',BAR).replace('{{MEA}}',mea_banner('pt','cordiallevel')).replace('{{MEACSS}}',MEA_CSS)
 open('cordiallevel/index.html','w').write(out)
 print('ok',len(out))

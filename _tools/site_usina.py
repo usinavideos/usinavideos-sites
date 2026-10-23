@@ -5,7 +5,9 @@ Uso: python3 _tools/site_usina.py   -> escreve index.html, en/index.html, es/ind
 Regras: sem preços (pedido de orçamento); simulações IA sempre identificadas;
 anúncios Cordial Level sempre com "CENTURY 21 Arquitectos · AMI 11414".
 """
-import html, os, urllib.parse as up
+import html, os, sys, urllib.parse as up
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from mea_banner import mea_banner, MEA_CSS
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WA_NUM = '351912988971'
@@ -353,7 +355,7 @@ def page(lang):
 <link rel="icon" href="/img/logo/usina-simbolo.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/img/logo/usina-simbolo-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<style>{CSS}</style>
+<style>{CSS}{MEA_CSS}</style>
 </head>
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
@@ -432,10 +434,7 @@ def page(lang):
   <div class="wrap">
     <span class="eb">{e(t['marcas_eb'])}</span><h2>{e(t['marcas_h2'])}</h2>
     <div class="brands">
-      <a class="mea" href="https://motoreseacao.com/?utm_source=usinavideos&amp;utm_medium=banner&amp;utm_campaign=destaque_home" target="_blank" rel="noopener">
-        <small>{e(t['mea_eb'])}</small>
-        <img src="https://motoreseacao.com/wp-content/uploads/2021/10/cropped-Motores-e-Acao.png" alt="Motores e Ação" width="1000" height="286" loading="lazy">
-        <p>{e(t['mea_p'])}</p><span class="mrow"><b>{e(t['mea_b'])} →</b><i>YouTube · @motoreseacao</i></span></a>
+      {mea_banner(lang, 'usinavideos')}
       <div class="side">
         {socials}
         <a class="mini yt" href="https://www.youtube.com/@DicasdoFreire/" target="_blank" rel="noopener">{YT_SVG}<div><b>{e(t['dicas'][0])}</b><span>{e(t['dicas'][1])}</span></div><em>{e(t['dicas'][2])} →</em></a>
