@@ -20,6 +20,7 @@ T = {
     socials=[('https://www.instagram.com/usina.videos','ig','Usina Vídeos','@usina.videos · últimos trabalhos','Seguir'),('https://www.instagram.com/neofreireportugal','ig','Freire Neto em Portugal','@neofreireportugal · Instagram pessoal','Seguir'),('https://www.instagram.com/freireneto','ig','Freire Neto no Brasil','@freireneto · Instagram','Seguir'),('https://www.instagram.com/motoreseacao','ig','Motores e Ação','@motoreseacao · Instagram','Seguir'),('https://www.linkedin.com/in/freireneto/','in','Freire Neto','LinkedIn','Ver perfil')],
     desp=dict(eb='Desporto', h2='Também no pavilhão.', p='Reportagem de jogos e torneios de basquetebol, com destaques e perfis de jogadores para as redes sociais.', cdj='Clube Desportivo José Régio · Vila do Conde. Destaques dos jogos da formação e dos seniores.', mb='MatchBall × Red Rose Thunder', mbp='Tour internacional de basquetebol em Portugal. Perfis e destaques dos jogadores.', ver='Ver no Instagram', mais='Ver mais no Instagram'),
     sites={'nav': 'Sites', 'eb': 'Sites, apresentações e podcasts', 'h2': 'Soluções digitais para o seu negócio.', 'p': 'Além do vídeo, criamos as ferramentas onde ele vive: sites, apresentações e podcasts, com a mesma qualidade de reportagem.', 'items': [('Sites', 'Sites para agências, consultores e marcas, com carteira de imóveis, vídeos e contacto direto por WhatsApp.', [('Cordial Level', '/cordiallevel/')]), ('Apresentações digitais', 'Uma página por imóvel ou projeto, em várias línguas, para enviar por link, imprimir em PDF ou mostrar em reunião.', [('Condomínio Coral', '/t4coral/'), ('T3 Leça', '/cordiallevel/t3leca/')]), ('Podcasts', 'Formato, gravação, edição e publicação no YouTube e no Spotify, com cortes para as redes sociais.', [('Panorama Imobiliário PT', 'https://www.youtube.com/watch?v=ed1kwc3x27I')])], 'ex': 'Exemplo'},
+    ig_cl='Em destaque no Instagram da Cordial Level',
     path='', html_lang='pt-PT', og_locale='pt_PT',
     title='Usina Vídeos · Produção audiovisual imobiliária em Portugal',
     desc='Fotografia, vídeo com drone, reportagem e apresentações digitais para imóveis, no Norte e em todo o Portugal. Peça orçamento.',
@@ -76,6 +77,7 @@ T = {
     socials=[('https://www.instagram.com/usina.videos','ig','Usina Vídeos','@usina.videos · latest work','Follow'),('https://www.instagram.com/neofreireportugal','ig','Freire Neto in Portugal','@neofreireportugal · personal Instagram','Follow'),('https://www.instagram.com/freireneto','ig','Freire Neto in Brazil','@freireneto · Instagram','Follow'),('https://www.instagram.com/motoreseacao','ig','Motores e Ação','@motoreseacao · Instagram','Follow'),('https://www.linkedin.com/in/freireneto/','in','Freire Neto','LinkedIn','View profile')],
     desp=dict(eb='Sport', h2='Courtside, too.', p='Basketball games and tournaments covered on video, with highlights and player profiles for social media.', cdj='Clube Desportivo José Régio · Vila do Conde. Highlights from youth and senior games.', mb='MatchBall × Red Rose Thunder', mbp='International basketball tour in Portugal. Player profiles and highlights.', ver='View on Instagram', mais='See more on Instagram'),
     sites={'nav': 'Websites', 'eb': 'Websites, presentations and podcasts', 'h2': 'Digital solutions for your business.', 'p': 'Beyond video, we build the places where it lives: websites, presentations and podcasts, with the same reporting quality.', 'items': [('Websites', 'Websites for agencies, agents and brands, with property listings, videos and direct WhatsApp contact.', [('Cordial Level', '/cordiallevel/')]), ('Digital presentations', 'One page per property or project, in several languages, to share by link, print as PDF or show in meetings.', [('Condomínio Coral', '/t4coral/en.html'), ('T3 Leça', '/cordiallevel/t3leca/')]), ('Podcasts', 'Format, recording, editing and publishing on YouTube and Spotify, with short clips for social media.', [('Panorama Imobiliário PT', 'https://www.youtube.com/watch?v=ed1kwc3x27I')])], 'ex': 'Example'},
+    ig_cl='Featured on Cordial Level’s Instagram',
     path='en/', html_lang='en', og_locale='en_GB',
     title='Usina Vídeos · Real estate photo and video production in Portugal',
     desc='Photography, drone video, video tours and digital property presentations across Northern Portugal and the whole country. Ask for a quote.',
@@ -132,6 +134,7 @@ T = {
     socials=[('https://www.instagram.com/usina.videos','ig','Usina Vídeos','@usina.videos · últimos trabajos','Seguir'),('https://www.instagram.com/neofreireportugal','ig','Freire Neto en Portugal','@neofreireportugal · Instagram personal','Seguir'),('https://www.instagram.com/freireneto','ig','Freire Neto en Brasil','@freireneto · Instagram','Seguir'),('https://www.instagram.com/motoreseacao','ig','Motores e Ação','@motoreseacao · Instagram','Seguir'),('https://www.linkedin.com/in/freireneto/','in','Freire Neto','LinkedIn','Ver perfil')],
     desp=dict(eb='Deporte', h2='También en la cancha.', p='Reportajes de partidos y torneos de baloncesto, con resúmenes y perfiles de jugadores para redes sociales.', cdj='Clube Desportivo José Régio · Vila do Conde. Resúmenes de los partidos de cantera y sénior.', mb='MatchBall × Red Rose Thunder', mbp='Gira internacional de baloncesto en Portugal. Perfiles y resúmenes de los jugadores.', ver='Ver en Instagram', mais='Ver más en Instagram'),
     sites={'nav': 'Webs', 'eb': 'Webs, presentaciones y pódcasts', 'h2': 'Soluciones digitales para su negocio.', 'p': 'Además del vídeo, creamos las herramientas donde vive: webs, presentaciones y pódcasts, con la misma calidad de reportaje.', 'items': [('Webs', 'Webs para agencias, agentes y marcas, con cartera de inmuebles, vídeos y contacto directo por WhatsApp.', [('Cordial Level', '/cordiallevel/')]), ('Presentaciones digitales', 'Una página por inmueble o proyecto, en varios idiomas, para enviar por enlace, imprimir en PDF o mostrar en reuniones.', [('Condomínio Coral', '/t4coral/es.html'), ('T3 Leça', '/cordiallevel/t3leca/')]), ('Pódcasts', 'Formato, grabación, edición y publicación en YouTube y Spotify, con cortes para redes sociales.', [('Panorama Imobiliário PT', 'https://www.youtube.com/watch?v=ed1kwc3x27I')])], 'ex': 'Ejemplo'},
+    ig_cl='Destacado en el Instagram de Cordial Level',
     path='es/', html_lang='es', og_locale='es_ES',
     title='Usina Vídeos · Producción audiovisual inmobiliaria en Portugal',
     desc='Fotografía, vídeo con dron, reportajes y presentaciones digitales de inmuebles en el Norte y en todo Portugal. Pida presupuesto.',
@@ -262,6 +265,9 @@ section{padding:88px 0}
 .work.cdj{border-top:4px solid var(--r)}.work.cdj .bd{justify-content:center}.work.cdj em{color:var(--r)}
 .work.cdj .big{font-size:40px;font-weight:900;color:var(--fg);line-height:1}
 @media(min-width:760px){.work.cdj{grid-column:span 2}}
+/* instagram cl */
+.igh{color:var(--fg);font-size:24px;margin:56px 0 0;padding-top:28px;border-top:1px solid var(--line)}
+.igrow{display:grid;gap:18px;margin-top:24px;align-items:start}@media(min-width:760px){.igrow{grid-template-columns:repeat(3,1fr)}}
 /* desporto */
 .sport{display:grid;gap:18px;margin-top:36px;align-items:start}
 @media(min-width:760px){.sport{grid-template-columns:1fr 1fr}}
@@ -400,6 +406,8 @@ def page(lang):
   <div class="wrap">
     <span class="eb">{e(t['trab_eb'])}</span><h2>{e(t['trab_h2'])}</h2>
     <div class="works">{works}</div>
+    <h3 class="igh">{e(t['ig_cl'])}</h3>
+    <div class="igrow">{ig_embed('Dd7UOxSDG8Q')}{ig_embed('DbMWJvfs3_z')}{ig_embed('DYfFrTsDZk0')}</div>
   </div>
 </section>
 
