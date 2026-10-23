@@ -58,3 +58,16 @@ def mea_banner(lang='pt', source='usinavideos'):
   </div>
   <span class="mb-cap">{t['cap']}</span>
 </div>'''
+
+
+ALT = {'pt': 'Motores e Ação: antes de comprar carro, passa por aqui. Lançamentos, testes e ofertas no Brasil e em Portugal.',
+       'en': 'Motores e Ação: before buying a car, stop here. Launches, road tests and offers in Brazil and Portugal.',
+       'es': 'Motores e Ação: antes de comprar coche, pasa por aquí. Lanzamientos, pruebas y ofertas en Brasil y Portugal.'}
+
+
+def mea_banner(lang='pt', source='usinavideos'):  # banner em imagem (1200x300) criado pelo Freire
+    return (f'<a class="meaimg" href="https://www.motoreseacao.com/?utm_source={source}&amp;utm_medium=banner&amp;utm_campaign=mea_top" target="_blank" rel="noopener">'
+            f'<img src="/img/banner-motoreseacao-1200x300.jpg" alt="{ALT[lang]}" width="1200" height="300" loading="lazy"></a>')
+
+
+MEA_CSS += ".meaimg{display:block;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .25s}.meaimg:hover{transform:translateY(-2px)}.meaimg img{display:block;width:100%;height:auto}"
