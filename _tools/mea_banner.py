@@ -2,7 +2,7 @@
 
 mea_banner(lang, source) devolve o <section> pronto; MEA_CSS vai no <style> da página.
 """
-LOGO = 'https://motoreseacao.com/wp-content/uploads/2021/10/cropped-Motores-e-Acao.png'
+LOGO = '/img/logo/motores-e-acao-branco.png'
 IMG = '/img/mea-toro.jpg'
 
 TXT = {

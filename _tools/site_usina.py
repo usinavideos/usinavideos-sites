@@ -324,6 +324,7 @@ footer a{color:#D6D1CD}
 WA_SVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>'
 IG_SVG = '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#E5AE29" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#E5AE29"/></svg>'
 YT_SVG = '<svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4" fill="#D0252F"/><path d="M10 9v6l5-3z" fill="#fff"/></svg>'
+MEA_ICON = '<img src="/img/logo/motores-e-acao-quadrado.jpg" alt="" width="34" height="34" style="border-radius:8px;flex:0 0 auto">'
 IN_SVG = '<svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4" fill="#0A66C2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 10v7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>'
 STRIPE = '<div class="stripe" aria-hidden="true"><i style="background:var(--g)"></i><i style="background:var(--y)"></i><i style="background:var(--r)"></i></div>'
 COLORS = ['var(--y)', 'var(--r)', 'var(--g)']
@@ -350,7 +351,7 @@ def page(lang):
     stats = ''.join(f'<div><b>{a}</b><span>{e(b)}</span></div>' for a, b in t['stats'])
     quem = ''.join(f'<p>{x}</p>' for x in t['quem_p'])
     sites = ''.join(f'<article class="card" style="--c:{COLORS[i % 3]}"><span class="n">{i + 1:02d}</span><h3>{e(a)}</h3><p>{e(b)}</p><p class="ex">{e(t["sites"]["ex"])}: ' + ' · '.join(f'<a href="{u}"' + (' target="_blank" rel="noopener"' if u.startswith('http') else '') + f'>{e(l)} →</a>' for l, u in exs) + '</p></article>' for i, (a, b, exs) in enumerate(t['sites']['items']))
-    socials = ''.join(f'<a class="mini {k}" href="{u}" target="_blank" rel="noopener">{IG_SVG if k == "ig" else IN_SVG}<div><b>{e(a)}</b><span>{e(b)}</span></div><em>{e(c)} →</em></a>' for u, k, a, b, c in t['socials'])
+    socials = ''.join(f'<a class="mini {k}" href="{u}" target="_blank" rel="noopener">{MEA_ICON if "motoreseacao" in u else (IG_SVG if k == "ig" else IN_SVG)}<div><b>{e(a)}</b><span>{e(b)}</span></div><em>{e(c)} →</em></a>' for u, k, a, b, c in t['socials'])
     return f'''<!doctype html>
 <html lang="{t['html_lang']}">
 <head>

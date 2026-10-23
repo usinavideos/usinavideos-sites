@@ -6,7 +6,7 @@ Uso: python3 _tools/proposta.py
 """
 import html, os, sys, urllib.parse as up
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from site_usina import CSS, WA_SVG, STRIPE, COLORS, T, IG_SVG, IN_SVG, YT_SVG
+from site_usina import CSS, WA_SVG, STRIPE, COLORS, T, IG_SVG, IN_SVG, YT_SVG, MEA_ICON
 from mea_banner import mea_banner
 from mea_banner import MEA_CSS
 
@@ -139,7 +139,7 @@ def build(cliente=None):
                  for i, (lb, n, p, items, d, ref) in enumerate(PACOTES))
     prem = ''.join(f'<article><b class="pr">{p}<small>{e(s)}</small></b><h3>{e(n)}</h3><p>{d}</p></article>' for n, p, s, d in PREMIUM)
     esp = ''.join(f'<article class="card" style="--c:{COLORS[i % 3]}"><h3>{e(a)}</h3><p>{b}</p></article>' for i, (a, b) in enumerate(ESPECIAIS))
-    socials = ''.join(f'<a class="mini {k}" href="{u}" target="_blank" rel="noopener">{IG_SVG if k == "ig" else IN_SVG}<div><b>{e(a)}</b><span>{e(b)}</span></div><em>{e(c)} →</em></a>' for u, k, a, b, c in T['pt']['socials'])
+    socials = ''.join(f'<a class="mini {k}" href="{u}" target="_blank" rel="noopener">{MEA_ICON if "motoreseacao" in u else (IG_SVG if k == "ig" else IN_SVG)}<div><b>{e(a)}</b><span>{e(b)}</span></div><em>{e(c)} →</em></a>' for u, k, a, b, c in T['pt']['socials'])
     steps = ''.join(f'<div class="step"><h3>{e(a)}</h3><p>{e(b)}</p></div>' for a, b in STEPS)
     return f'''<!doctype html>
 <html lang="pt-PT">
@@ -247,7 +247,7 @@ def build(cliente=None):
 
 <section id="redes" class="dark" style="padding-top:0">
   <div class="wrap"><span class="eb">Siga o nosso trabalho</span><h2 style="font-size:clamp(26px,3vw,36px)">Redes e canais.</h2>
-    <div class="side" style="margin-top:28px">{socials}<a class="mini yt" href="https://www.youtube.com/@DicasdoFreire/" target="_blank" rel="noopener">{YT_SVG}<div><b>Dicas do Freire</b><span>O canal de Freire Neto no YouTube.</span></div><em>Ver o canal →</em></a><a class="mini yt" href="https://www.youtube.com/@motoreseacao" target="_blank" rel="noopener">{YT_SVG}<div><b>Motores e Ação</b><span>YouTube · @motoreseacao</span></div><em>Ver o canal →</em></a><a class="mini fb" href="https://www.facebook.com/usinacomvideos" target="_blank" rel="noopener"><svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="#1877F2"/><path d="M13.5 20v-6h2l.4-2.5h-2.4V10c0-.7.3-1.3 1.4-1.3H16V6.5c-.3 0-1.1-.1-2-.1-2 0-3.2 1.2-3.2 3.3v1.8H8.7V14h2.1v6z" fill="#fff"/></svg><div><b>Usina Vídeos</b><span>Facebook · /usinacomvideos</span></div><em>Seguir →</em></a></div>
+    <div class="side" style="margin-top:28px">{socials}<a class="mini yt" href="https://www.youtube.com/@DicasdoFreire/" target="_blank" rel="noopener">{YT_SVG}<div><b>Dicas do Freire</b><span>O canal de Freire Neto no YouTube.</span></div><em>Ver o canal →</em></a><a class="mini yt" href="https://www.youtube.com/@motoreseacao" target="_blank" rel="noopener">{MEA_ICON}<div><b>Motores e Ação</b><span>YouTube · @motoreseacao</span></div><em>Ver o canal →</em></a><a class="mini fb" href="https://www.facebook.com/usinacomvideos" target="_blank" rel="noopener"><svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="#1877F2"/><path d="M13.5 20v-6h2l.4-2.5h-2.4V10c0-.7.3-1.3 1.4-1.3H16V6.5c-.3 0-1.1-.1-2-.1-2 0-3.2 1.2-3.2 3.3v1.8H8.7V14h2.1v6z" fill="#fff"/></svg><div><b>Usina Vídeos</b><span>Facebook · /usinacomvideos</span></div><em>Seguir →</em></a></div>
   </div>
 </section>
 
