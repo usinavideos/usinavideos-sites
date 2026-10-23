@@ -94,6 +94,7 @@ def inject(path, block, drop_desc=False):
 
 
 def common(s, url, kind='website', desc=None):
+    s = re.sub(r'<!--seo-->.*?<!--/seo-->', '', s, flags=re.S)  # ver só o que está fora do bloco gerado
     out = [ROBOTS]
     if 'rel="canonical"' not in s: out.append(f'<link rel="canonical" href="{url}">')
     if desc and 'name="description"' not in s: out.append(f'<meta name="description" content="{html.escape(desc)}">')
