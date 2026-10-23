@@ -428,7 +428,7 @@ def page(lang):
   <div class="wrap">
     <span class="eb">{e(t['desp']['eb'])}</span><h2>{e(t['desp']['h2'])}</h2><p class="lead">{e(t['desp']['p'])}</p>
     <div class="sport">
-      <div class="sp"><div class="sph" style="--c:var(--r)"><b>CDJRegio</b><p>{e(t['desp']['cdj'])}</p><a href="https://www.instagram.com/cdjregio/" target="_blank" rel="noopener">@cdjregio · {e(t['desp']['ver'])} →</a></div>{ig_embed('Deri9uUiObc')}</div>
+      <div class="sp"><div class="sph" style="--c:var(--r)"><img src="https://cdjregio.pt/assets/logo.webp" alt="CDJRegio" width="56" height="56" loading="lazy" style="float:right;width:56px;height:56px;margin-left:12px"><b>CDJRegio</b><p>{e(t['desp']['cdj'])}</p><a href="https://cdjregio.pt/" target="_blank" rel="noopener">cdjregio.pt →</a> · <a href="https://www.instagram.com/cdjregio/" target="_blank" rel="noopener">@cdjregio →</a></div>{ig_embed('Deri9uUiObc')}</div>
       <div class="sp"><div class="sph" style="--c:var(--g)"><b>{e(t['desp']['mb'])}</b><p>{e(t['desp']['mbp'])}</p><a href="https://www.instagram.com/matchballbasketball/" target="_blank" rel="noopener">@matchballbasketball · {e(t['desp']['ver'])} →</a></div>{ig_embed('DY-tmeisiO0')}</div>
     </div>
     <div class="spmore"><a class="btn y" href="https://www.instagram.com/usina.videos/" target="_blank" rel="noopener">{e(t['desp']['mais'])} →</a></div>
