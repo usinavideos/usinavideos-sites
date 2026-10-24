@@ -21,9 +21,9 @@ ENTREG = [('Fotografia profissional', 'Alta resolução, luz e composição edit
           ('Drone', 'Planos aéreos em foto e vídeo que mostram a envolvente, a localização e os acessos.', '/cordiallevel/t3leca/img/leca-37-t.jpg'),
           ('Visita virtual 3D com planta', 'Visita navegável a 360° com planta técnica integrada, para portais e reuniões.', '/cordiallevel/casaraofoz/img/foz-f2-t.jpg')]
 PK_IMG = ['/cordiallevel/anteroquental/img/aq-20-t.jpg', '/cordiallevel/moncao/img/t1-d4-t.jpg', '/img/coral-fachada.jpg']
-VIDEOS = [('yo7RN7u6JJY', 'Terrenos em Monção', 'Drone e vídeo-reportagem · 1 min 45 s'),
+VIDEOS = [('qwL_NxCdlNY', 'T4+1 no Condomínio Coral, Foz do Douro', 'Vídeo com a consultora Cheila Monteiro'),
+          ('yo7RN7u6JJY', 'Terrenos em Monção', 'Drone e vídeo-reportagem · 1 min 45 s'),
           ('xEDuuPNMacM', 'T3 em Leça da Palmeira', 'Vídeo do imóvel com drone · 1 min 42 s'),
-          ('vU0bXm_uhGk', 'Short vertical de Leça', 'Formato para Reels, Shorts e TikTok'),
           ('7JOcy10W8oY', 'T1 em Matosinhos', 'Vídeo-reportagem · 10 min'),
           ('ed1kwc3x27I', 'Podcast Panorama Imobiliário PT', 'Gravação e edição · 26 min'),
           ('Re8UZQRVTOY', 'Prédio na Baixa do Porto', 'Vídeo do imóvel · 1 min 12 s')]
@@ -69,6 +69,8 @@ EXTRA_CSS = """
 .pk p{margin:16px 0 0;font-size:14px}
 .cmp{width:100%;border-collapse:collapse;margin-top:28px;background:#fff;border-radius:14px;overflow:hidden;font-size:15px}
 .cmp th,.cmp td{padding:14px 16px;border-bottom:1px solid #E3DED6;text-align:left}.cmp th{background:var(--ink);color:#fff;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.cl{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:8px}.cl li{padding-left:22px;position:relative;color:#D6D1CD}.cl li::before{content:"✓";position:absolute;left:0;color:var(--y);font-weight:900}
+.cs{display:grid;grid-template-columns:1fr 1fr;gap:10px}.cs img{width:100%;height:100%;object-fit:cover;border-radius:14px;aspect-ratio:4/3}.cs img:first-child{grid-column:1/3;aspect-ratio:16/9}
 .tab{margin-top:8px;font-size:14px;color:var(--muted)}.tab b{color:#23863D}.cmp td.dc{color:#23863D}
 .zg{display:grid;gap:12px;margin-top:30px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}.zn{background:#fff;border:1px solid #E3DED6;border-left:5px solid var(--c);border-radius:14px;padding:16px 18px;display:grid;gap:4px}.zn span{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--c)}.zn b{font-size:17px;color:var(--ink)}.zn em{font-style:normal;color:var(--muted);font-size:15px}
 .cmp td:last-child{font-weight:800;color:var(--ink)}.cmp tr.t td{font-weight:900;background:var(--paper2)}
@@ -167,6 +169,19 @@ def zona_html(c):
 '''
 
 
+def case_html():
+    return f'''<section id="case" class="dark">
+  <div class="wrap two" style="align-items:center">
+    <div><span class="eb">Case · Condomínio Coral, Foz do Douro</span><h2>Um T4+1 apresentado em quatro línguas.</h2>
+      <p style="margin-top:18px">Para a consultora <b style="color:#fff">Cheila Monteiro</b> (CENTURY 21 Arquitectos II · AMI 11414), fizemos a produção completa de um T4+1 de nova construção com 236 m² na Foz: fotografia, drone, vídeo com a consultora em cena e uma página própria do imóvel em português, inglês, espanhol e francês.</p>
+      <ul class="cl"><li>Fotografia de interiores e exteriores</li><li>Planos aéreos com drone sobre a Foz</li><li>Vídeo com a consultora a apresentar o imóvel</li><li>Apresentação digital em 4 línguas, com simulação identificada como IA</li></ul>
+      <div class="row" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:22px"><a class="btn y" href="/t4coral/">Ver a apresentação</a><a class="btn o" style="color:#fff" href="https://youtu.be/qwL_NxCdlNY" target="_blank" rel="noopener">Ver o vídeo da Cheila</a></div></div>
+    <div class="cs"><img src="/img/coral-fachada.jpg" alt="Condomínio Coral, Foz do Douro" loading="lazy"><img src="/img/coral-drone.jpg" alt="Drone sobre a Foz do Douro" loading="lazy"><img src="/img/coral-cozinha.jpg" alt="Cozinha do T4+1 Coral" loading="lazy"></div>
+  </div>
+</section>
+'''
+
+
 def edicao_html():
     rows = ''.join(f'<article><b class="pr">{p}<small>+ IVA</small></b><h3>{e(n)}</h3><p>{e(d)}</p></article>' for n, p, d in EDICAO)
     return f'''<section id="edicao" class="dark">
@@ -222,7 +237,7 @@ def build(cliente=None):
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
   <a class="logo" href="/"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
-  <div class="links">{'<a href="#edicao">Edição</a>' if cliente and cliente.get('edicao') else ''}{'<a href="#juntos">O nosso trabalho</a>' if cliente and cliente.get('juntos') else ''}{'<a href="#zona">A zona</a>' if cliente and cliente.get('zona') else ''}{'<a href="#plano">O plano</a>' if cliente and cliente.get('plano') else ''}<a href="#pacotes">Pacotes</a><a href="#videos">Vídeos</a><a href="#premium">Serviços premium</a><a href="#condicoes">Condições</a><a href="/#trabalhos">Trabalhos</a></div>
+  <div class="links">{'<a href="#edicao">Edição</a>' if cliente and cliente.get('edicao') else ''}{'<a href="#juntos">O nosso trabalho</a>' if cliente and cliente.get('juntos') else ''}{'<a href="#zona">A zona</a>' if cliente and cliente.get('zona') else ''}{'<a href="#plano">O plano</a>' if cliente and cliente.get('plano') else ''}<a href="#case">Case</a><a href="#pacotes">Pacotes</a><a href="#videos">Vídeos</a><a href="#premium">Serviços premium</a><a href="#condicoes">Condições</a><a href="/#trabalhos">Trabalhos</a></div>
   <a class="btn y" href="{WA}" target="_blank" rel="noopener">Avançar</a>
 </div></nav>
 
@@ -241,7 +256,7 @@ def build(cliente=None):
   <div class="wrap two">
     <div><span class="eb">Porquê um parceiro</span><h2>Avulso ou parceria estruturada?</h2>
       <p style="margin-top:20px">Contratar cada serviço a um fornecedor diferente gera custos imprevisíveis e qualidade variável de imóvel para imóvel. Com a Usina Vídeos, fotografia, vídeo, drone, visita 3D e apresentação digital saem da mesma equipa, com o mesmo padrão e um único contacto.</p>
-      <p>A equipa é dirigida por <b>Freire Neto</b>, jornalista desde 1997 e fundador do Motores e Ação, e por <b>Sandra Freire</b>, na edição de vídeo.</p></div>
+      <p>A equipa é dirigida por <b>Freire Neto</b>, jornalista desde 1997 e fundador do Motores e Ação, e por <b>Sandra Freire</b>, responsável pela edição, produção e administração, com 20 anos de experiência em televisão, produtoras e no Motores e Ação.</p></div>
     <div class="stats"><div><b>25+</b><span>anos de reportagem</span></div><div><b>48h</b><span>entrega de fotografias</span></div><div><b>72h</b><span>vídeo e visita 3D</span></div><div><b>PT · EN · ES · FR</b><span>apresentações multilingues</span></div></div>
   </div>
 </section>
@@ -251,7 +266,7 @@ def build(cliente=None):
     <div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">{ent}</div></div>
 </section>
 
-{edicao_html() if cliente and cliente.get('edicao') else ''}{juntos_html(cliente) if cliente and cliente.get('juntos') else ''}{zona_html(cliente) if cliente and cliente.get('zona') else ''}{plano_html(cliente) if cliente and cliente.get('plano') else ''}
+{case_html()}{edicao_html() if cliente and cliente.get('edicao') else ''}{juntos_html(cliente) if cliente and cliente.get('juntos') else ''}{zona_html(cliente) if cliente and cliente.get('zona') else ''}{plano_html(cliente) if cliente and cliente.get('plano') else ''}
 <section id="pacotes">
   <div class="wrap"><span class="eb">Pacotes por imóvel</span><h2>Preços claros, por imóvel.</h2>
     <p class="lead">Valores sem IVA, que acresce à taxa legal em vigor.</p>
