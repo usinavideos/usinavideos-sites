@@ -113,7 +113,7 @@ CLIENTES = {
         plano=[('Fase 1 · Esta semana', 'Vídeo «Viver em Leça»', 100, 175,
                 ['Gravação consigo em cena a apresentar Leça: praia, Quinta da Conceição, comércio, autocarros', 'Imagens aéreas de Leça com drone', 'Final com o vídeo e as fotos da moradia que já produzimos', 'Versão YouTube (até 3 min) e 2 Reels, um deles convite para o open house']),
                ('Fase 2 · Semanas 1 e 2', 'Página de apresentação do imóvel', 50, 100,
-                ['Página própria da moradia com fotos, vídeos, mapa e distâncias', 'Destaque para o open house de 29 de outubro', 'Botões de WhatsApp, chamada e e-mail diretos para si', 'Formulário de contacto para captar leads']),
+                ['Página própria da moradia com fotos, vídeos, mapa e distâncias', 'Destaque para o open house de 29 de outubro', 'Botões de WhatsApp, chamada e e-mail diretos para si, com ligação a cristinarusso.century21.pt', 'Formulário de contacto para captar leads']),
                ('Fase 3 · Semanas 1 a 4', 'Gestão da campanha nas redes', 50, 100,
                 ['Primeira semana dedicada a levar visitas ao open house', 'Anúncios Facebook e Instagram segmentados por zona e perfil de comprador', 'Ajustes semanais de público e criativos', 'Investimento em anúncios: 120€ no mês (30€ por semana), gerido pela Usina']),
                ('Fase 4 · Semana 5', 'Avaliação de resultados', 0, 0,
