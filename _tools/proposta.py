@@ -182,7 +182,7 @@ def plano_html(c):
     <div class="orc" style="margin-top:28px"><div><h3>{tv}€ + IVA + {m}€ em anúncios</h3><p>Produção e gestão por {tv}€ + IVA, em vez de {tt}€ de tabela: um desconto de {tt - tv}€ por já ser nosso cliente. Os {m}€ de anúncios vão integralmente para a Meta, sem margem: a Usina gere e paga a campanha na sua conta de anúncios e, se precisar, emite-lhe a fatura.</p></div>
       <div><h4>Como avançamos</h4><ul>{''.join(f'<li>{e(x)}</li>' for x in c['passos'])}</ul></div></div>
     <div class="leads"><div><span class="eb">Os contactos são seus</span><h3>Cada contacto chega diretamente a si.</h3></div>
-      <ul><li><b>WhatsApp, e-mail ou telefone:</b> quem responde ao vídeo, à página ou aos anúncios fala logo consigo, sem intermediários.</li><li><b>A Usina gera os contactos:</b> conteúdo, página e campanha a trabalhar para o imóvel.</li><li><b>O acompanhamento é seu:</b> a resposta, a qualificação e a marcação de visitas ficam a seu cargo.</li></ul></div>
+      <ul><li><b>WhatsApp, e-mail ou telefone:</b> quem responde ao vídeo, à página ou aos anúncios fala logo consigo, sem intermediários.</li><li><b>A Usina gera os contactos:</b> conteúdo, página e campanha a trabalhar para o imóvel.</li><li><b>O acompanhamento é seu:</b> a resposta, a qualificação e a marcação de visitas ficam a seu cargo.</li><li><b>Oferta Usina:</b> mensagens de resposta prontas a usar, para WhatsApp e e-mail, cordiais e pensadas para converter o contacto em visita.</li></ul></div>
     <p class="note">Drone sujeito às condições meteorológicas e às autorizações de voo. Os resultados da campanha dependem do mercado e do investimento; o relatório mostra os números reais, sem promessas de vendas.</p></div>
 </section>
 '''
