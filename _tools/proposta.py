@@ -71,6 +71,7 @@ EXTRA_CSS = """
 .cmp th,.cmp td{padding:14px 16px;border-bottom:1px solid #E3DED6;text-align:left}.cmp th{background:var(--ink);color:#fff;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
 .cl{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:8px}.cl li{padding-left:22px;position:relative;color:#D6D1CD}.cl li::before{content:"✓";position:absolute;left:0;color:var(--y);font-weight:900}
 .cs{display:grid;grid-template-columns:1fr 1fr;gap:10px}.cs img{width:100%;height:100%;object-fit:cover;border-radius:14px;aspect-ratio:4/3}.cs img:first-child{grid-column:1/3;aspect-ratio:16/9}
+.ev{display:flex;flex-wrap:wrap;gap:16px 40px;align-items:center;justify-content:space-between}
 .tab{margin-top:8px;font-size:14px;color:var(--muted)}.tab b{color:#23863D}.cmp td.dc{color:#23863D}
 .zg{display:grid;gap:12px;margin-top:30px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}.zn{background:#fff;border:1px solid #E3DED6;border-left:5px solid var(--c);border-radius:14px;padding:16px 18px;display:grid;gap:4px}.zn span{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--c)}.zn b{font-size:17px;color:var(--ink)}.zn em{font-style:normal;color:var(--muted);font-size:15px}
 .cmp td:last-child{font-weight:800;color:var(--ink)}.cmp tr.t td{font-weight:900;background:var(--paper2)}
@@ -100,12 +101,35 @@ EDICAO = [('Reel ou short (até 60 s)', '35€', 'vertical, com legendas e músi
           ('Projetos mais longos', '20€/hora', 'orçamento fechado antes de começar')]
 
 CLIENTES = {
-    'cristina-russo': dict(nome='Cristina Russo', cidade='Grande Porto', edicao=False,
-        h1='Os seus imóveis, apresentados como merecem.',
-        intro='Proposta preparada para a Cristina Russo, consultora imobiliária. Depois das reportagens em Leça, em Campo (Valongo) e no Cerco, propomos uma parceria com preços fixos por imóvel, prazos curtos e um único contacto para tudo.',
-        juntos=[('img/cr-leca-t.jpg', 'T3 em Leça da Palmeira', 'Fotografia e vídeo'),
+    'cristina-russo': dict(nome='Cristina Russo', cidade='Leça da Palmeira', edicao=False,
+        h1='A sua moradia em Leça, apresentada por quem conhece a zona.',
+        intro='Proposta preparada para a Cristina Russo, consultora imobiliária da CENTURY 21 Arquitectos III (AMI 23921). Partimos da vídeo-reportagem que já fizemos à moradia T3 da Viela das Icas e juntamos um vídeo consigo a apresentar Leça, uma página própria do imóvel e uma campanha nas redes, a começar pelo open house de 29 de outubro. Ao fim de um mês avaliamos os resultados juntos.',
+        hero='img/cr-leca.jpg',
+        evento=('Open house', '29 de outubro · quinta-feira · 15h às 18h', 'Viela das Icas, n.º 7 · Leça da Palmeira', 'Antes do evento publicamos um Reel-convite e pomos a campanha a chegar a quem procura casa em Matosinhos e no Porto. No dia, podemos captar imagens para os conteúdos seguintes.'),
+        juntos_t=('Já trabalhámos juntos', 'Os seus imóveis, pela Usina.', 'A moradia de Leça abre o novo vídeo e a página do imóvel. Leça, Valongo e Cerco: o mesmo padrão em todas as angariações.'),
+        juntos=[('img/cr-leca-t.jpg', 'Moradia T3 em Leça da Palmeira', 'Fotografia e vídeo · o imóvel desta proposta'),
                 ('img/cr-valongo-t.jpg', 'T2 em Campo, Valongo', 'Fotografia e vídeo'),
-                ('img/cr-cerco-t.jpg', 'T3 no Cerco, Porto', 'Fotografia e vídeo · outubro de 2026')]),
+                ('img/cr-cerco-t.jpg', 'T3 no Cerco, Porto', 'Fotografia e vídeo · outubro de 2026')],
+        plano=[('Fase 1 · Esta semana', 'Vídeo «Viver em Leça»', 100, 175,
+                ['Gravação consigo em cena a apresentar Leça: praia, Quinta da Conceição, comércio, autocarros', 'Imagens aéreas de Leça com drone', 'Final com o vídeo e as fotos da moradia que já produzimos', 'Versão YouTube (até 3 min) e 2 Reels, um deles convite para o open house']),
+               ('Fase 2 · Semanas 1 e 2', 'Página de apresentação do imóvel', 50, 100,
+                ['Página própria da moradia com fotos, vídeos, mapa e distâncias', 'Destaque para o open house de 29 de outubro', 'Botões de WhatsApp, chamada e e-mail diretos para si', 'Formulário de contacto para captar leads']),
+               ('Fase 3 · Semanas 1 a 4', 'Gestão da campanha nas redes', 50, 100,
+                ['Primeira semana dedicada a levar visitas ao open house', 'Anúncios Facebook e Instagram segmentados por zona e perfil de comprador', 'Ajustes semanais de público e criativos', 'Investimento em anúncios: 120€ no mês (30€ por semana), gerido pela Usina']),
+               ('Fase 4 · Semana 5', 'Avaliação de resultados', 0, 0,
+                ['Relatório de visualizações, cliques e contactos recebidos', 'Reunião de 30 minutos para decidir os próximos passos', 'Ajuste ou reforço da estratégia com base nos números'])],
+        meta=120,
+        passos=['Gravamos consigo em Leça no início da semana', 'Reel-convite publicado antes de 29 de outubro', 'Vídeo completo e página logo a seguir; avaliação ao fim de 1 mês'],
+        zona_t='Viela das Icas, Leça da Palmeira · Matosinhos', zona_ref='Viela das Icas, n.º 7',
+        zona_h2='Tudo a poucos passos, num bairro de topo.',
+        zona_lead='É isto que vai mostrar no vídeo: autocarro, supermercados, farmácia, bancos e centro de saúde a menos de 5 minutos a pé, a Quinta da Conceição ao lado e a praia de Leça logo ali.',
+        zona=[('Autocarro', 'Paragem Centro de Saúde de Leça', '200 m · 3 min a pé'), ('Supermercado', 'Mercadona', '270 m · 4 min a pé'),
+              ('Supermercado', 'Pingo Doce e Continente', '350 a 550 m · 5 a 8 min a pé'), ('Farmácia', 'Farmácia Beleza', '300 m · 5 min a pé'),
+              ('Banco', 'ABANCA, BPI e Santander', '220 a 800 m · 3 a 11 min a pé'), ('Saúde', 'USF Maresia (centro de saúde)', '250 m · 4 min a pé'),
+              ('Saúde', 'Hospital Pedro Hispano', '3,3 km · 8 min de carro'), ('Escola', 'EB Eng. Fernando Pinto de Oliveira', '600 m · 9 min a pé'),
+              ('Parque', 'Parque da Quinta da Conceição', '700 m · 10 min a pé'), ('Praia', 'Praia de Leça e Piscina das Marés', '1,3 a 1,5 km · 4 min de carro'),
+              ('Compras', 'MAR Shopping e IKEA', '1,2 km · 4 min de carro'), ('Lazer', 'Farol e Casa de Chá da Boa Nova', '1,8 km · 5 min de carro'),
+              ('Metro', 'Estação Mercado, Matosinhos', '1,3 km · 5 min de carro'), ('Viagens', 'Aeroporto Francisco Sá Carneiro', '5,5 km · 10 min de carro')]),
     'ricardo-ribeiro': dict(nome='Ricardo Ribeiro', cidade='Lisboa', edicao=True, h1='Vídeo para eventos, imóveis e reportagem.',
         intro='Proposta preparada para o Ricardo Ribeiro, jornalista em Lisboa, para eventos, imóveis e edição de material já captado. Do jornalista para o jornalista: a mesma linguagem de reportagem, com prazos de redação.'),
     'tiago-branquinha': dict(nome='Tiago Branquinha', cidade='Porto', edicao=False,
@@ -125,7 +149,10 @@ CLIENTES = {
                ('Fase 4 · Semana 6', 'Avaliação de resultados', 0, 0,
                 ['Relatório de visualizações, cliques e contactos recebidos', 'Reunião de 30 minutos para decidir os próximos passos', 'Ajuste ou reforço da estratégia com base nos números'])],
         meta=120,
-        zona_t='Rua Dr. Cruz Malpique, Prelada · Ramalde, Porto',
+        zona_t='Rua Dr. Cruz Malpique, Prelada · Ramalde, Porto', zona_ref='Rua Dr. Cruz Malpique',
+        zona_h2='Tudo perto, num bairro calmo.',
+        zona_lead='É isto que vai mostrar no vídeo: metro a 10 minutos a pé, supermercados, escola e hospital no bairro, e os jardins históricos da Prelada ao virar da esquina.',
+        passos=['Marcamos a gravação consigo na Prelada', 'Vídeo e página prontos na semana seguinte', 'Avaliação conjunta ao fim de 1 mês de campanha'],
         zona=[('Metro', 'Estação Ramalde', '650 m · 10 min a pé'), ('Metro', 'Estação Viso', '1,1 km · 15 min a pé'),
               ('Autocarro', 'Paragens STCP Parque da Prelada', '550 m · 7 min a pé'), ('Supermercado', 'Pingo Doce Ramalde', '400 m · 6 min a pé'),
               ('Supermercado', 'Continente Bom Dia Prelada', '950 m · 13 min a pé'), ('Escola', 'EB 2/3 Maria Lamas', '450 m · 6 min a pé'),
@@ -152,8 +179,16 @@ def plano_html(c):
       <tr><td>Investimento em anúncios na Meta (4 semanas × 30€)</td><td>{m}€</td><td>{m}€</td><td>sem margem</td></tr>
       <tr class="t"><td>Total do primeiro mês <small style="font-weight:600">(IVA à parte na produção)</small></td><td>{tt + m}€</td><td>{tv + m}€</td><td class="dc">−{tt - tv}€</td></tr></tbody></table></div>
     <div class="orc" style="margin-top:28px"><div><h3>{tv}€ + IVA + {m}€ em anúncios</h3><p>Produção e gestão por {tv}€ + IVA, em vez de {tt}€ de tabela: um desconto de {tt - tv}€ por já ser nosso cliente. Os {m}€ de anúncios vão integralmente para a Meta, sem margem: a Usina gere e paga a campanha na sua conta de anúncios e, se precisar, emite-lhe a fatura.</p></div>
-      <div><h4>Como avançamos</h4><ul><li>Marcamos a gravação consigo na Prelada</li><li>Vídeo e página prontos na semana seguinte</li><li>Avaliação conjunta ao fim de 1 mês de campanha</li></ul></div></div>
+      <div><h4>Como avançamos</h4><ul>{''.join(f'<li>{e(x)}</li>' for x in c['passos'])}</ul></div></div>
     <p class="note">Drone sujeito às condições meteorológicas e às autorizações de voo. Os resultados da campanha dependem do mercado e do investimento; o relatório mostra os números reais, sem promessas de vendas.</p></div>
+</section>
+'''
+
+
+def evento_html(c):
+    t, d, l, p = c['evento']
+    return f'''<section id="evento" style="padding:44px 0;background:var(--y)">
+  <div class="wrap ev"><div><span class="eb" style="color:var(--ink)">{e(t)}</span><h2 style="margin-top:6px">{e(d)}</h2><p style="margin-top:6px;font-weight:700;color:var(--ink)">{e(l)}</p></div><p style="color:var(--ink);max-width:52ch">{e(p)}</p></div>
 </section>
 '''
 
@@ -161,10 +196,10 @@ def plano_html(c):
 def zona_html(c):
     cards = ''.join(f'<div class="zn" style="--c:{COLORS[i % 3]}"><span>{e(k)}</span><b>{e(n)}</b><em>{e(d)}</em></div>' for i, (k, n, d) in enumerate(c['zona']))
     return f'''<section id="zona" style="background:var(--paper2)">
-  <div class="wrap"><span class="eb">A zona · {e(c['zona_t'])}</span><h2>Tudo perto, num bairro calmo.</h2>
-    <p class="lead">É isto que vai mostrar no vídeo: metro a 10 minutos a pé, supermercados, escola e hospital no bairro, e os jardins históricos da Prelada ao virar da esquina.</p>
+  <div class="wrap"><span class="eb">A zona · {e(c['zona_t'])}</span><h2>{e(c['zona_h2'])}</h2>
+    <p class="lead">{e(c['zona_lead'])}</p>
     <div class="zg">{cards}</div>
-    <p class="note">Distâncias aproximadas a partir da Rua Dr. Cruz Malpique, em linha reta e tempos estimados. Confirmamos no terreno durante a gravação.</p></div>
+    <p class="note">Distâncias aproximadas a partir de {e(c['zona_ref'])}, em linha reta e tempos estimados. Confirmamos no terreno durante a gravação.</p></div>
 </section>
 '''
 
@@ -266,7 +301,7 @@ def build(cliente=None):
     <div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">{ent}</div></div>
 </section>
 
-{case_html()}{edicao_html() if cliente and cliente.get('edicao') else ''}{juntos_html(cliente) if cliente and cliente.get('juntos') else ''}{zona_html(cliente) if cliente and cliente.get('zona') else ''}{plano_html(cliente) if cliente and cliente.get('plano') else ''}
+{case_html()}{edicao_html() if cliente and cliente.get('edicao') else ''}{juntos_html(cliente) if cliente and cliente.get('juntos') else ''}{evento_html(cliente) if cliente and cliente.get('evento') else ''}{zona_html(cliente) if cliente and cliente.get('zona') else ''}{plano_html(cliente) if cliente and cliente.get('plano') else ''}
 <section id="pacotes">
   <div class="wrap"><span class="eb">Pacotes por imóvel</span><h2>Preços claros, por imóvel.</h2>
     <p class="lead">Valores sem IVA, que acresce à taxa legal em vigor.</p>
