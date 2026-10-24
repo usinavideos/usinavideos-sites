@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proposta para Tiago Branquinha · Usina Vídeos</title>
+<meta name="description" content="Pacotes de fotografia, vídeo, drone, visita 3D e apresentações digitais para o mercado imobiliário. Proposta Usina Vídeos.">
+<meta name="robots" content="noindex, follow">
+<meta property="og:title" content="Proposta de serviços · Usina Vídeos"><meta property="og:description" content="Fotografia, vídeo, drone, visita 3D e apresentações digitais para imóveis. Pacotes a partir de 40€ + IVA.">
+<meta property="og:image" content="https://usinavideos.pt/img/foz-drone.jpg"><meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#141213">
+<link rel="icon" href="/img/logo/usina-simbolo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#141213;--ink2:#1E1B1C;--line:#34302F;--paper:#F7F5F0;--paper2:#EFEBE4;--fg:#F2F0EB;--muted:#A9A3A0;--txt:#3B3634;--y:#E5AE29;--r:#D0252F;--g:#3EB15C;--mea:#004D9A;--mea-l:#2F7FD0}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;font-family:Mulish,system-ui,sans-serif;color:var(--txt);background:var(--paper);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;font-variant-numeric:lining-nums}
+a{color:inherit}img{max-width:100%;display:block}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.eb{display:block;font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--r)}
+.dark .eb{color:var(--y)}
+h1,h2,h3{font-weight:900;line-height:1.08;letter-spacing:-.01em;margin:0;color:var(--ink)}
+.dark h1,.dark h2,.dark h3{color:var(--fg)}
+h2{font-size:clamp(30px,4.2vw,46px);margin-top:10px;max-width:22ch}
+.lead{font-size:18px;max-width:62ch;margin:16px 0 0}
+section{padding:88px 0}
+.dark{background:var(--ink);color:#D6D1CD}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 24px;border-radius:999px;font-weight:800;font-size:16px;text-decoration:none;line-height:1.1}
+.btn.y{background:var(--y);color:var(--ink)}.btn.y:hover{filter:brightness(1.08)}
+.btn.o{border:2px solid currentColor}
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(20,18,19,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:18px;height:64px}
+.nav .logo img{height:30px;width:auto}
+.nav .links{display:flex;gap:18px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.nav .links::-webkit-scrollbar{display:none}
+.nav .links a{color:#D6D1CD;text-decoration:none;font-size:14px;font-weight:700;white-space:nowrap}
+.nav .links a:hover{color:var(--y)}
+.lang{display:flex;gap:2px;font-size:12px;font-weight:800}
+.lang a{color:var(--muted);text-decoration:none;padding:4px 6px;border-radius:6px}
+.lang a[aria-current]{color:var(--ink);background:var(--y)}
+.nav .btn{padding:10px 16px;font-size:14px}
+@media(max-width:900px){.nav .links{display:none}.nav .wrap{gap:10px}.nav .lang{margin-left:auto}}
+@media(max-width:420px){.nav .btn{display:none}}
+/* hero */
+.hero{position:relative;min-height:min(86vh,760px);display:flex;align-items:flex-end;background:var(--ink);overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.62}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,19,.15) 0,rgba(20,18,19,.55) 55%,var(--ink) 100%)}
+.hero .wrap{position:relative;z-index:1;padding-bottom:64px;padding-top:120px}
+.hero h1{font-size:clamp(40px,6.4vw,78px);max-width:16ch;margin-top:14px}
+.hero p{color:#E4DFDB;font-size:clamp(17px,1.6vw,20px);max-width:56ch;margin:20px 0 0}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero .btn.o{color:#fff}
+.stripe{display:flex;width:120px;height:5px;border-radius:3px;overflow:hidden;margin-top:26px}.stripe i{flex:1}
+.cap{position:absolute;right:20px;bottom:16px;z-index:1;font-size:12px;color:rgba(255,255,255,.65)}
+/* quem */
+.two{display:grid;gap:40px}
+@media(min-width:900px){.two{grid-template-columns:1.25fr 1fr;gap:64px;align-items:start}}
+.two p{margin:0 0 16px}.two b{color:var(--ink)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-radius:14px;overflow:hidden}
+.stats div{background:var(--ink);padding:22px 20px}
+.stats b{display:block;font-size:30px;font-weight:900;color:var(--y);line-height:1}
+.stats span{font-size:13px;color:#C9C3BF}
+/* serviços */
+.grid3{display:grid;gap:16px;margin-top:40px}
+@media(min-width:700px){.grid3{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.grid3{grid-template-columns:1fr 1fr 1fr}}
+.card{background:#fff;border:1px solid #E3DED6;border-radius:16px;padding:24px;border-top:4px solid var(--c,var(--y))}
+.card .n{font-size:13px;font-weight:900;color:var(--c,var(--y))}
+.card h3{font-size:22px;margin-top:8px}.card p{margin:10px 0 0;font-size:16px}
+.orc{display:grid;gap:28px;margin-top:28px;background:var(--ink);color:#D6D1CD;border-radius:20px;padding:32px}
+@media(min-width:900px){.orc{grid-template-columns:1fr 1fr;padding:44px;gap:48px}}
+.orc h3{color:var(--fg);font-size:28px}.orc p{margin:12px 0 22px}
+.orc ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.orc li{padding-left:22px;position:relative}.orc li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;background:var(--y)}
+.orc h4{margin:0 0 14px;color:var(--fg);font-size:15px;letter-spacing:.16em;text-transform:uppercase}
+.tag{display:inline-block;margin-top:18px;font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--ink);background:var(--paper2);padding:6px 12px;border-radius:999px}
+/* trabalhos */
+.works{display:grid;gap:18px;margin-top:40px}
+@media(min-width:760px){.works{grid-template-columns:1fr 1fr}}
+.work{display:flex;flex-direction:column;background:var(--ink2);border:1px solid var(--line);border-radius:18px;overflow:hidden;text-decoration:none;color:#D6D1CD}
+.work .ph{aspect-ratio:16/10;overflow:hidden;background:#000}.work .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.work:hover .ph img{transform:scale(1.04)}
+.work .bd{padding:22px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.work h3{font-size:22px}.work p{margin:0;font-size:15px}
+.work em{font-style:normal;font-weight:800;color:var(--y);margin-top:auto;padding-top:8px}
+.work.cdj{border-top:4px solid var(--r)}.work.cdj .bd{justify-content:center}.work.cdj em{color:var(--r)}
+.work.cdj .big{font-size:40px;font-weight:900;color:var(--fg);line-height:1}
+@media(min-width:760px){.work.cdj{grid-column:span 2}}
+/* instagram cl */
+.igrow iframe.instagram-media,.sport iframe.instagram-media{min-height:620px!important;background:#fff!important}
+.igh{color:var(--fg);font-size:24px;margin:56px 0 0;padding-top:28px;border-top:1px solid var(--line)}
+.igrow{display:grid;gap:18px;margin-top:24px;align-items:start}@media(min-width:760px){.igrow{grid-template-columns:repeat(3,1fr)}}
+/* desporto */
+.sport{display:grid;gap:18px;margin-top:36px;align-items:start}
+@media(min-width:760px){.sport{grid-template-columns:1fr 1fr}}
+.sport{max-width:900px}.spmore{margin-top:28px}
+.sph{background:var(--ink);color:#D6D1CD;border-radius:16px;padding:20px;border-top:4px solid var(--c);margin-bottom:14px}
+.sph b{display:block;color:var(--fg);font-size:22px;font-weight:900;line-height:1.1}.sph p{margin:8px 0 10px;font-size:15px}
+.sph a{color:var(--y);font-weight:800;font-size:14px;text-decoration:none}
+.sp.more{padding-top:0}
+@media(min-width:1100px){.sp.more{margin-top:0}}
+/* como */
+.steps{display:grid;gap:16px;margin-top:40px;counter-reset:s}
+@media(min-width:800px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{border-top:3px solid var(--ink);padding-top:16px;counter-increment:s}
+.step::before{content:counter(s,decimal-leading-zero);font-weight:900;font-size:14px;color:var(--r)}
+.step h3{font-size:20px;margin-top:6px}.step p{margin:8px 0 0;font-size:15px}
+/* marcas */
+.brands{display:grid;gap:16px;margin-top:40px;align-items:start}
+@media(min-width:900px){.mea{display:grid;grid-template-columns:auto 1fr;column-gap:40px;align-items:center}.mea small{grid-column:1/-1}.mea img{grid-row:2/4;margin-top:16px}.mea p{margin-top:16px}.mea b{justify-self:start}}
+.mea{display:block;text-decoration:none;color:#fff;background:radial-gradient(520px 260px at 100% 0%,rgba(0,77,154,.55),transparent 70%),#0B0E14;border:1px solid rgba(47,127,208,.45);border-radius:18px;padding:30px 28px}
+.mea small{display:block;font-size:12px;letter-spacing:.2em;font-weight:800;color:var(--mea-l);text-transform:uppercase}
+.mea img{width:min(300px,70vw);height:auto;margin-top:16px;filter:brightness(0) invert(1)}
+.mea p{margin:14px 0 0;color:#C9CFD8}
+.mea b{display:inline-block;margin-top:20px;background:var(--mea);color:#fff;font-weight:800;font-size:15px;padding:12px 20px;border-radius:999px}
+.mea:hover b{background:var(--mea-l)}
+.mrow{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px}.mrow i{font-style:normal;font-weight:700;font-size:14px;color:#C9CFD8;margin-top:20px}
+.side{display:grid;gap:16px}
+.mini{display:flex;align-items:center;gap:14px;padding:20px;border-radius:16px;background:var(--ink2);border:1px solid var(--line);text-decoration:none;color:#D6D1CD}
+.mini b{display:block;color:var(--fg);font-size:17px}.mini span{font-size:14px}
+.mini em{margin-left:auto;font-style:normal;font-weight:800;font-size:14px;color:var(--y);white-space:nowrap}
+.mini.ig{background:linear-gradient(var(--ink2),var(--ink2)) padding-box,linear-gradient(90deg,var(--y),var(--r),#8a3ab9) border-box;border:2px solid transparent}
+.mini.yt em{color:var(--r)}
+.mini.in{border-color:rgba(10,102,194,.6)}.mini.in em{color:#5AA3E8}
+.side{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}@media(max-width:400px){.side{grid-template-columns:1fr}}
+.card .ex{font-size:14px;font-weight:700;margin-top:14px}.card .ex a{color:var(--r)}
+/* contacto */
+.contact{display:grid;gap:14px;margin-top:32px}
+@media(min-width:800px){.contact{grid-template-columns:repeat(3,1fr)}}
+.contact a{display:block;padding:22px;border-radius:16px;background:#fff;border:1px solid #E3DED6;text-decoration:none}
+.contact a.wa{background:var(--y);border-color:var(--y)}
+.contact small{display:block;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--r)}
+.contact a.wa small{color:var(--ink)}
+.contact b{display:block;font-size:20px;color:var(--ink);margin-top:6px;word-break:break-word}
+.contact span{font-size:14px}
+footer{background:var(--ink);color:var(--muted);padding:36px 0;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+footer img{height:30px;width:auto}
+footer a{color:#D6D1CD}
+
+.meab{position:relative;overflow:hidden;background:#0B0E14;color:#fff;border-radius:22px;isolation:isolate;min-height:420px;display:flex;align-items:center}
+.meab>img.mb-car{position:absolute;inset:0 0 0 auto;width:68%;height:100%;object-fit:cover;z-index:-2}
+.meab::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#0B0E14 0,#0B0E14 34%,rgba(11,14,20,.86) 46%,rgba(0,77,154,.18) 78%,rgba(0,0,0,.05) 100%)}
+.meab::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,#004D9A,#2F7FD0 60%,#fff)}
+.meab .mb-in{padding:44px 40px;max-width:640px}
+.meab .mb-lg{width:min(300px,64vw);height:auto;filter:brightness(0) invert(1);display:block}
+.meab .mb-eb{display:block;margin-top:22px;font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#5AA3E8}
+.meab h3{margin:10px 0 0;font-family:Mulish,system-ui,sans-serif;font-weight:900;font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.01em;color:#fff}
+.meab p{margin:14px 0 0;color:#C9CFD8;font-size:17px;line-height:1.5;max-width:46ch}
+.meab .mb-row{border:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;margin-top:24px}
+.meab .mb-go{display:inline-flex;align-items:center;gap:8px;background:#004D9A;color:#fff;font-weight:800;font-size:16px;padding:15px 24px;border-radius:999px;text-decoration:none;box-shadow:0 8px 28px rgba(0,77,154,.45);animation:meapulse 2.6s ease-in-out infinite}
+.meab .mb-go:hover{background:#2F7FD0}
+.meab .mb-yt{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:800;font-size:15px;padding:13px 18px;border-radius:999px;border:2px solid rgba(255,255,255,.4);text-decoration:none}
+.meab .mb-yt:hover{border-color:#fff}
+.meab .mb-st{display:flex;align-items:baseline;gap:8px;margin-top:22px;font-size:14px;color:#C9CFD8}.meab .mb-st b{font-size:26px;font-weight:900;color:#fff}
+.meab .mb-cap{position:absolute;right:16px;bottom:14px;font-size:11px;color:rgba(255,255,255,.6)}
+@keyframes meapulse{0%,100%{box-shadow:0 8px 28px rgba(0,77,154,.45)}50%{box-shadow:0 8px 34px rgba(47,127,208,.8)}}
+@media(prefers-reduced-motion:reduce){.meab .mb-go{animation:none}}
+@media(max-width:760px){.meab{flex-direction:column;align-items:stretch;min-height:0}.meab>img.mb-car{position:relative;width:100%;height:230px;order:-1}
+.meab::before{background:linear-gradient(180deg,rgba(11,14,20,0) 0,rgba(11,14,20,0) 150px,#0B0E14 230px)}.meab .mb-in{padding:4px 22px 34px}.meab .mb-cap{top:200px;bottom:auto}}
+.meaimg{display:block;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .25s}.meaimg:hover{transform:translateY(-2px)}.meaimg img{display:block;width:100%;height:auto}
+.pk{display:grid;gap:16px;margin-top:36px}@media(min-width:900px){.pk{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.pk.pk4{grid-template-columns:repeat(2,1fr)}}@media(min-width:1200px){.pk.pk4{grid-template-columns:repeat(4,1fr)}.pk4 h3{font-size:22px}.pk4 .pr{font-size:40px}}
+.pk article{background:#fff;border:1px solid #E3DED6;border-radius:18px;padding:26px;border-top:5px solid var(--c);display:flex;flex-direction:column}
+.pk article.ref{background:var(--ink);color:#D6D1CD;border-color:var(--ink);border-top-color:var(--y)}
+.pk article.ref h3,.pk article.ref .pr{color:#fff}
+.pk .lb{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--c)}
+.pk h3{font-size:28px;margin-top:6px}.pk .pr{font-size:48px;font-weight:900;color:var(--ink);line-height:1;margin-top:14px}
+.pk .pr small{font-size:14px;font-weight:700;color:var(--muted);margin-left:6px}
+.pk ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:8px;font-size:15px}
+.pk li{padding-left:22px;position:relative}.pk li::before{content:"✓";position:absolute;left:0;font-weight:900;color:var(--c)}
+.pk li em{font-style:normal;color:var(--r);font-weight:700}
+.pk p{margin:16px 0 0;font-size:14px}
+.cmp{width:100%;border-collapse:collapse;margin-top:28px;background:#fff;border-radius:14px;overflow:hidden;font-size:15px}
+.cmp th,.cmp td{padding:14px 16px;border-bottom:1px solid #E3DED6;text-align:left}.cmp th{background:var(--ink);color:#fff;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.cmp td:last-child{font-weight:800;color:var(--ink)}.cmp tr.t td{font-weight:900;background:var(--paper2)}
+.prem{display:grid;gap:14px;margin-top:36px}@media(min-width:760px){.prem{grid-template-columns:1fr 1fr}}@media(min-width:1100px){.prem{grid-template-columns:repeat(3,1fr)}}
+.prem article{background:var(--ink2);border:1px solid var(--line);border-radius:16px;padding:22px}
+.prem b.pr{display:block;font-size:30px;font-weight:900;color:var(--y);line-height:1}.prem b.pr small{font-size:13px;color:#C9C3BF;font-weight:700;margin-left:6px}
+.prem h3{font-size:19px;margin-top:10px}.prem p{margin:8px 0 0;font-size:15px}.prem a,.card a{color:var(--y)}
+.card.ic{padding:0;overflow:hidden}.card.ic img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}.card.ic .n,.card.ic h3,.card.ic p{margin-left:22px;margin-right:22px}.card.ic .n{display:block;margin-top:16px}.card.ic p{margin-bottom:22px}
+.pk .pkimg{width:calc(100% + 52px);margin:-26px -26px 18px;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:13px 13px 0 0}
+.pvs{display:grid;gap:18px;margin-top:32px}@media(min-width:700px){.pvs{grid-template-columns:1fr 1fr}}@media(min-width:1050px){.pvs{grid-template-columns:repeat(3,1fr)}}
+.pv{margin:0}.yt2{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;border-radius:14px;overflow:hidden;background:#000;cursor:pointer}
+.yt2 img{width:100%;height:100%;object-fit:cover;opacity:.9}.yt2:hover img{opacity:1}.yt2 iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt2 .pl{position:absolute;left:50%;top:50%;width:66px;height:66px;margin:-33px 0 0 -33px;border-radius:50%;background:var(--y)}
+.yt2 .pl::after{content:"";position:absolute;left:27px;top:21px;border-style:solid;border-width:12px 0 12px 19px;border-color:transparent transparent transparent var(--ink)}
+.pv figcaption{margin-top:10px}.pv b{display:block;color:#fff;font-size:18px}.pv span{font-size:14px;color:#C9C3BF}
+#redes .side{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}@media(min-width:1100px){#redes .side{grid-template-columns:repeat(4,1fr)}}.mini.fb em{color:#5AA3E8}
+.prem4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))!important}@media(min-width:1100px){.prem4{grid-template-columns:repeat(4,1fr)!important}}
+.note{margin-top:22px;font-size:14px;color:var(--muted)}
+.cond{display:grid;gap:14px;margin-top:32px}@media(min-width:800px){.cond{grid-template-columns:repeat(3,1fr)}}
+.cond div{background:#fff;border:1px solid #E3DED6;border-radius:14px;padding:20px}.cond b{display:block;color:var(--ink);font-size:16px;margin-bottom:6px}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Menu"><div class="wrap">
+  <a class="logo" href="/"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
+  <div class="links"><a href="#plano">O plano</a><a href="#pacotes">Pacotes</a><a href="#videos">Vídeos</a><a href="#premium">Serviços premium</a><a href="#condicoes">Condições</a><a href="/#trabalhos">Trabalhos</a></div>
+  <a class="btn y" href="https://wa.me/351912988971?text=Ol%C3%A1%20Freire%2C%20vi%20a%20proposta%20da%20Usina%20V%C3%ADdeos%20e%20gostaria%20de%20avan%C3%A7ar%20com%20um%20or%C3%A7amento." target="_blank" rel="noopener">Avançar</a>
+</div></nav>
+
+<header class="hero dark" style="min-height:min(70vh,620px)">
+  <img src="/img/foz-drone.jpg" alt="" fetchpriority="high">
+  <div class="wrap">
+    <span class="eb">Proposta para Tiago Branquinha · Porto</span>
+    <h1>O seu T2 na Prelada, contado por quem conhece a zona.</h1>
+    <p>Proposta preparada para o Tiago Branquinha, consultor imobiliário. Partimos da vídeo-reportagem que já fizemos ao T2 na Prelada e juntamos um vídeo consigo a apresentar a região, uma página própria do imóvel e uma campanha nas redes para gerar contactos. Ao fim de um mês avaliamos os resultados juntos.</p>
+    <div class="row"><a class="btn y" href="#plano">Ver o plano</a><a class="btn o" href="https://calendly.com/usinavideos/videoreport" target="_blank" rel="noopener">Marcar sessão</a></div>
+    <div class="stripe" aria-hidden="true"><i style="background:var(--g)"></i><i style="background:var(--y)"></i><i style="background:var(--r)"></i></div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap two">
+    <div><span class="eb">Porquê um parceiro</span><h2>Avulso ou parceria estruturada?</h2>
+      <p style="margin-top:20px">Contratar cada serviço a um fornecedor diferente gera custos imprevisíveis e qualidade variável de imóvel para imóvel. Com a Usina Vídeos, fotografia, vídeo, drone, visita 3D e apresentação digital saem da mesma equipa, com o mesmo padrão e um único contacto.</p>
+      <p>A equipa é dirigida por <b>Freire Neto</b>, jornalista desde 1997 e fundador do Motores e Ação, e por <b>Sandra Freire</b>, na edição de vídeo.</p></div>
+    <div class="stats"><div><b>25+</b><span>anos de reportagem</span></div><div><b>48h</b><span>entrega de fotografias</span></div><div><b>72h</b><span>vídeo e visita 3D</span></div><div><b>PT · EN · ES · FR</b><span>apresentações multilingues</span></div></div>
+  </div>
+</section>
+
+<section style="background:var(--paper2)">
+  <div class="wrap"><span class="eb">O que recebe</span><h2>Quatro entregáveis, um briefing.</h2>
+    <div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))"><article class="card ic" style="--c:var(--y)"><img src="/cordiallevel/t3leca/img/leca-1-t.jpg" alt="Fotografia profissional" loading="lazy"><span class="n">01</span><h3>Fotografia profissional</h3><p>Alta resolução, luz e composição editorial, pronta para portais e redes sociais.</p></article><article class="card ic" style="--c:var(--r)"><img src="/img/coral-cozinha.jpg" alt="Vídeo do imóvel" loading="lazy"><span class="n">02</span><h3>Vídeo do imóvel</h3><p>Edição dinâmica com música licenciada, legendas e versões para cada plataforma.</p></article><article class="card ic" style="--c:var(--g)"><img src="/cordiallevel/t3leca/img/leca-37-t.jpg" alt="Drone" loading="lazy"><span class="n">03</span><h3>Drone</h3><p>Planos aéreos em foto e vídeo que mostram a envolvente, a localização e os acessos.</p></article><article class="card ic" style="--c:var(--y)"><img src="/cordiallevel/casaraofoz/img/foz-f2-t.jpg" alt="Visita virtual 3D com planta" loading="lazy"><span class="n">04</span><h3>Visita virtual 3D com planta</h3><p>Visita navegável a 360° com planta técnica integrada, para portais e reuniões.</p></article></div></div>
+</section>
+
+<section id="plano">
+  <div class="wrap"><span class="eb">O plano para o seu imóvel</span><h2>Vídeo, página e campanha: um mês para gerar contactos.</h2>
+    <p class="lead">Quatro fases, um só contacto. Cada fase alimenta a seguinte: o vídeo leva às redes, as redes levam à página, a página leva até si.</p>
+    <div class="pk pk4"><article style="--c:var(--y)"><span class="lb">Fase 1 · Semana 1</span><h3>Vídeo «Viver na Prelada»</h3><div class="pr">175€<small>+ IVA</small></div><ul><li>Gravação consigo em cena a apresentar a zona: acessos, comércio, escolas, parques</li><li>Imagens novas da região e planos aéreos com drone</li><li>Final com as imagens do T2 que já temos</li><li>Versão YouTube (horizontal, até 3 min) e 2 Reels verticais com legendas</li></ul></article><article style="--c:var(--r)"><span class="lb">Fase 2 · Semana 2</span><h3>Página de apresentação do imóvel</h3><div class="pr">50€<small>+ IVA</small></div><ul><li>Página própria do T2 com fotos, vídeos, mapa e localização</li><li>Botões de WhatsApp e chamada direta para si</li><li>Formulário de contacto para captar leads</li><li>Pronta a partilhar nos anúncios e nas redes</li></ul></article><article style="--c:var(--g)"><span class="lb">Fase 3 · Semanas 2 a 5</span><h3>Campanha nas redes</h3><div class="pr">100€<small>+ IVA</small></div><ul><li>Anúncios Facebook e Instagram segmentados por zona e perfil de comprador</li><li>Vídeo e Reels a levar tráfego para a página do imóvel</li><li>Ajustes semanais de público e criativos</li><li>Investimento sugerido: 20 a 30€ por semana, pago diretamente à Meta</li></ul></article><article style="--c:var(--y)"><span class="lb">Fase 4 · Semana 6</span><h3>Avaliação de resultados</h3><div class="pr" style="font-size:34px">Incluída</div><ul><li>Relatório de visualizações, cliques e contactos recebidos</li><li>Reunião de 30 minutos para decidir os próximos passos</li><li>Ajuste ou reforço da estratégia com base nos números</li></ul></article></div>
+    <div class="orc" style="margin-top:28px"><div><h3>Pacote completo: 290€ + IVA</h3><p>Fases 1 a 4 contratadas em conjunto, em vez de 325€ + IVA em separado. O investimento em anúncios (20 a 30€ por semana, cerca de 80 a 120€ no mês) é pago por si diretamente à Meta e não está incluído.</p></div>
+      <div><h4>Como avançamos</h4><ul><li>Marcamos a gravação consigo na Prelada</li><li>Vídeo e página prontos na semana seguinte</li><li>Avaliação conjunta ao fim de 1 mês de campanha</li></ul></div></div>
+    <p class="note">Drone sujeito às condições meteorológicas e às autorizações de voo. Os resultados da campanha dependem do mercado e do investimento; o relatório mostra os números reais, sem promessas de vendas.</p></div>
+</section>
+
+<section id="pacotes">
+  <div class="wrap"><span class="eb">Pacotes por imóvel</span><h2>Preços claros, por imóvel.</h2>
+    <p class="lead">Valores sem IVA, que acresce à taxa legal em vigor.</p>
+    <div class="pk"><article class="" style="--c:var(--y)"><img class="pkimg" src="/cordiallevel/anteroquental/img/aq-20-t.jpg" alt="" loading="lazy"><span class="lb">Pacote 01</span><h3>Essencial</h3><div class="pr">40€<small>+ IVA · por imóvel</small></div><ul><li>Fotografia profissional de alta resolução</li><li>Vídeo do imóvel editado com música <em>(oferta de lançamento)</em></li></ul><p>Para a maioria das angariações do dia a dia.</p></article><article class="" style="--c:var(--r)"><img class="pkimg" src="/cordiallevel/moncao/img/t1-d4-t.jpg" alt="" loading="lazy"><span class="lb">Pacote 02</span><h3>Aéreo</h3><div class="pr">65€<small>+ IVA · por imóvel</small></div><ul><li>Fotografia profissional de alta resolução</li><li>Vídeo do imóvel editado com música <em>(oferta de lançamento)</em></li><li>Fotografia e vídeo aéreos com drone</li></ul><p>Para moradias, terrenos e imóveis com exterior ou vistas relevantes.</p></article><article class="ref" style="--c:var(--g)"><img class="pkimg" src="/img/coral-fachada.jpg" alt="" loading="lazy"><span class="lb">Pacote 03 · Referência</span><h3>Completo</h3><div class="pr">98€<small>+ IVA · por imóvel</small></div><ul><li>Fotografia profissional de alta resolução</li><li>Vídeo do imóvel editado com música</li><li>Fotografia e vídeo aéreos com drone</li><li>Visita virtual 3D navegável (alojamento 6 meses)</li><li>Planta técnica integrada na visita</li></ul><p>Para imóveis premium e angariações de maior valor.</p></article></div>
+    <div style="overflow-x:auto;margin-top:28px;border-radius:14px"><table class="cmp" style="margin-top:0;min-width:560px"><thead><tr><th>Entregável</th><th>Contratado em separado (média)</th><th>Usina Vídeos</th></tr></thead><tbody>
+      <tr><td>Fotografia profissional</td><td>80–120€</td><td>Incluído</td></tr>
+      <tr><td>Vídeo do imóvel</td><td>90–150€</td><td>Incluído</td></tr>
+      <tr><td>Drone</td><td>60–80€</td><td>Incluído no Aéreo e no Completo</td></tr>
+      <tr><td>Visita virtual 3D com planta</td><td>80–120€</td><td>Incluído no Completo</td></tr>
+      <tr class="t"><td>Total</td><td>310–470€</td><td>98€ + IVA (Completo)</td></tr></tbody></table></div>
+    <p class="note">A oferta de lançamento do vídeo editado nos pacotes Essencial e Aéreo é válida até 31 de dezembro de 2026. Drone sujeito às condições meteorológicas, à disponibilidade e às autorizações de voo.</p>
+  </div>
+</section>
+
+<section id="videos" class="dark">
+  <div class="wrap"><span class="eb">Exemplos em vídeo</span><h2>Veja o resultado.</h2>
+    <p class="lead">Trabalhos recentes da Usina Vídeos. Toque para ver aqui mesmo.</p>
+    <div class="pvs"><figure class="pv"><button class="yt2" data-id="yo7RN7u6JJY" aria-label="Ver vídeo: Terrenos em Monção"><img src="https://i.ytimg.com/vi/yo7RN7u6JJY/hqdefault.jpg" alt="" loading="lazy"><span class="pl" aria-hidden="true"></span></button><figcaption><b>Terrenos em Monção</b><span>Drone e vídeo-reportagem · 1 min 45 s</span></figcaption></figure><figure class="pv"><button class="yt2" data-id="xEDuuPNMacM" aria-label="Ver vídeo: T3 em Leça da Palmeira"><img src="https://i.ytimg.com/vi/xEDuuPNMacM/hqdefault.jpg" alt="" loading="lazy"><span class="pl" aria-hidden="true"></span></button><figcaption><b>T3 em Leça da Palmeira</b><span>Vídeo do imóvel com drone · 1 min 42 s</span></figcaption></figure><figure class="pv"><button class="yt2" data-id="vU0bXm_uhGk" aria-label="Ver vídeo: Short vertical de Leça"><img src="https://i.ytimg.com/vi/vU0bXm_uhGk/hqdefault.jpg" alt="" loading="lazy"><span class="pl" aria-hidden="true"></span></button><figcaption><b>Short vertical de Leça</b><span>Formato para Reels, Shorts e TikTok</span></figcaption></figure><figure class="pv"><button class="yt2" data-id="7JOcy10W8oY" aria-label="Ver vídeo: T1 em Matosinhos"><img src="https://i.ytimg.com/vi/7JOcy10W8oY/hqdefault.jpg" alt="" loading="lazy"><span class="pl" aria-hidden="true"></span></button><figcaption><b>T1 em Matosinhos</b><span>Vídeo-reportagem · 10 min</span></figcaption></figure><figure class="pv"><button class="yt2" data-id="ed1kwc3x27I" aria-label="Ver vídeo: Podcast Panorama Imobiliário PT"><img src="https://i.ytimg.com/vi/ed1kwc3x27I/hqdefault.jpg" alt="" loading="lazy"><span class="pl" aria-hidden="true"></span></button><figcaption><b>Podcast Panorama Imobiliário PT</b><span>Gravação e edição · 26 min</span></figcaption></figure><figure class="pv"><button class="yt2" data-id="Re8UZQRVTOY" aria-label="Ver vídeo: Prédio na Baixa do Porto"><img src="https://i.ytimg.com/vi/Re8UZQRVTOY/hqdefault.jpg" alt="" loading="lazy"><span class="pl" aria-hidden="true"></span></button><figcaption><b>Prédio na Baixa do Porto</b><span>Vídeo do imóvel · 1 min 12 s</span></figcaption></figure></div>
+    <div style="margin-top:24px"><a class="btn o" style="color:#fff" href="https://www.youtube.com/@CordialLevelPT" target="_blank" rel="noopener">Mais vídeos no YouTube →</a></div></div>
+</section>
+
+<section id="premium" class="dark" style="border-top:1px solid var(--line)">
+  <div class="wrap"><span class="eb">Serviços premium</span><h2>Autoridade digital e geração de contactos.</h2>
+    <p class="lead">Além dos pacotes por imóvel, produções que valorizam o consultor, a agência e o empreendimento.</p>
+    <div class="prem"><article><b class="pr">100€<small>50€ com reportagem Usina</small></b><h3>Apresentação digital do imóvel</h3><p>Página própria do imóvel com fotos, vídeo, mapa e contactos, em várias línguas. <a href="/t4coral/">Exemplo</a></p></article><article><b class="pr">110€<small>por vídeo</small></b><h3>Vídeo com o consultor em cena</h3><p>Rosto, autoridade e presença nas redes, em formato vertical e horizontal.</p></article><article><b class="pr">desde 250€<small></small></b><h3>Vídeo de lançamento de empreendimento</h3><p>Guião, narrativa e produção cinematográfica para empreendimentos e imóveis de luxo.</p></article><article><b class="pr">150€<small>por episódio</small></b><h3>Podcast imobiliário</h3><p>Gravação e edição completas. <a href="https://www.youtube.com/watch?v=ed1kwc3x27I" target="_blank" rel="noopener">Exemplo</a></p></article><article><b class="pr">300€<small></small></b><h3>Transmissão em direto</h3><p>Open house ou lançamento em direto nas redes sociais e no YouTube.</p></article><article><b class="pr">100€<small>por imóvel</small></b><h3>Gestão de campanhas e contactos</h3><p>Campanhas Facebook e Instagram segmentadas por zona e comprador. Acresce o investimento em anúncios.</p></article></div></div>
+</section>
+
+<section style="background:var(--paper2)">
+  <div class="wrap"><span class="eb">Projetos especiais</span><h2>À medida do projeto.</h2>
+    <div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))"><article class="card" style="--c:var(--y)"><h3>Vídeos de luxo</h3><p>Produções cinematográficas com narrativa e banda sonora, para propriedades de alto valor.</p></article><article class="card" style="--c:var(--r)"><h3>Sites e páginas de imóveis</h3><p>Sites para agências e consultores e páginas únicas por imóvel ou empreendimento. <a href="/cordiallevel/">Exemplo</a></p></article><article class="card" style="--c:var(--g)"><h3>Visitas interativas</h3><p>Visitas virtuais com pontos de informação, medições e multimédia.</p></article><article class="card" style="--c:var(--y)"><h3>Conteúdo de marca</h3><p>Vídeos institucionais para promotores, construtoras e agências.</p></article></div>
+    <div class="orc" style="margin-top:28px"><div><h3>Bolsa de produções</h3><p>Sem avença nem compromisso de volume: um crédito pré-pago, válido 12 meses, usado à medida das angariações. Sem renovação automática.</p></div>
+      <div><h4>Ideal para</h4><ul><li>Lojas e equipas com volume variável</li><li>Períodos de transição</li><li>Um primeiro teste à parceria</li></ul></div></div>
+  </div>
+</section>
+
+<section id="condicoes">
+  <div class="wrap"><span class="eb">Processo e condições</span><h2>Do pedido à entrega.</h2>
+    <div class="steps"><div class="step"><h3>Pedido</h3><p>Por WhatsApp, e-mail ou marcação online: morada, tipologia e serviço pretendido.</p></div><div class="step"><h3>Produção</h3><p>Deslocamo-nos ao imóvel e fazemos a captação. Uma sessão dura, em regra, até 1h30.</p></div><div class="step"><h3>Pós-produção</h3><p>Seleção, tratamento de imagem, edição de vídeo e montagem.</p></div><div class="step"><h3>Entrega</h3><p>Fotografias em 48 horas. Vídeo e visita 3D em 72 horas.</p></div></div>
+    <div class="cond">
+      <div><b>Zona e deslocações</b>Preços para produções no Norte de Portugal. Fora do Norte, como Lisboa, a deslocação é orçamentada à parte e indicada na proposta.</div>
+      <div><b>Faturação</b>Uma fatura por serviço ou pacote, ou condições acordadas por projeto.</div>
+      <div><b>Validade</b>Valores válidos até 31 de dezembro de 2026. Simulações feitas com IA são sempre identificadas como tal.</div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap two">
+    <div><span class="eb">Falemos do seu próximo imóvel</span><h2>Freire Neto</h2><p style="margin-top:14px">Jornalista e produtor de conteúdo · Usina Vídeos</p>
+      <div class="row" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:22px"><a class="btn y" href="https://wa.me/351912988971?text=Ol%C3%A1%20Freire%2C%20vi%20a%20proposta%20da%20Usina%20V%C3%ADdeos%20e%20gostaria%20de%20avan%C3%A7ar%20com%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>WhatsApp +351 912 988 971</a><a class="btn o" style="color:#fff" href="https://calendly.com/usinavideos/videoreport" target="_blank" rel="noopener">Marcar sessão online</a></div>
+      <p style="margin-top:18px">E-mail: <a href="mailto:freireneto@me.com" style="color:var(--y)">freireneto@me.com</a> · <a href="/" style="color:var(--y)">usinavideos.pt</a></p></div>
+    <div class="stats"><a href="/cordiallevel/" style="display:block;background:var(--ink);padding:22px 20px;text-decoration:none"><b>Cordial Level</b><span>site, vídeos e podcast →</span></a><a href="/t4coral/" style="display:block;background:var(--ink);padding:22px 20px;text-decoration:none"><b>Coral</b><span>apresentação em 4 línguas →</span></a><a href="https://century21.pt/ref/C0554-00006" target="_blank" rel="noopener" style="display:block;background:var(--ink);padding:22px 20px;text-decoration:none"><b>C21 Core</b><span>fotografia e vídeo →</span></a><a href="https://cdjregio.pt/" target="_blank" rel="noopener" style="display:block;background:var(--ink);padding:22px 20px;text-decoration:none"><b>CDJRegio</b><span>reportagem desportiva →</span></a></div>
+  </div>
+</section>
+
+<section id="redes" class="dark" style="padding-top:0">
+  <div class="wrap"><span class="eb">Siga o nosso trabalho</span><h2 style="font-size:clamp(26px,3vw,36px)">Redes e canais.</h2>
+    <div class="side" style="margin-top:28px"><a class="mini ig" href="https://www.instagram.com/usina.videos" target="_blank" rel="noopener"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#E5AE29" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#E5AE29"/></svg><div><b>Usina Vídeos</b><span>@usina.videos · últimos trabalhos</span></div><em>Seguir →</em></a><a class="mini ig" href="https://www.instagram.com/neofreireportugal" target="_blank" rel="noopener"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#E5AE29" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#E5AE29"/></svg><div><b>Freire Neto em Portugal</b><span>@neofreireportugal · Instagram pessoal</span></div><em>Seguir →</em></a><a class="mini ig" href="https://www.instagram.com/freireneto" target="_blank" rel="noopener"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#E5AE29" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#E5AE29"/></svg><div><b>Freire Neto no Brasil</b><span>@freireneto · Instagram</span></div><em>Seguir →</em></a><a class="mini ig" href="https://www.instagram.com/motoreseacao" target="_blank" rel="noopener"><img src="/img/logo/motores-e-acao-quadrado.jpg" alt="" width="34" height="34" style="border-radius:8px;flex:0 0 auto"><div><b>Motores e Ação</b><span>@motoreseacao · Instagram</span></div><em>Seguir →</em></a><a class="mini in" href="https://www.linkedin.com/in/freireneto/" target="_blank" rel="noopener"><svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4" fill="#0A66C2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 10v7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg><div><b>Freire Neto</b><span>LinkedIn</span></div><em>Ver perfil →</em></a><a class="mini yt" href="https://www.youtube.com/@DicasdoFreire/" target="_blank" rel="noopener"><svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4" fill="#D0252F"/><path d="M10 9v6l5-3z" fill="#fff"/></svg><div><b>Dicas do Freire</b><span>O canal de Freire Neto no YouTube.</span></div><em>Ver o canal →</em></a><a class="mini yt" href="https://www.youtube.com/@motoreseacao" target="_blank" rel="noopener"><img src="/img/logo/motores-e-acao-quadrado.jpg" alt="" width="34" height="34" style="border-radius:8px;flex:0 0 auto"><div><b>Motores e Ação</b><span>YouTube · @motoreseacao</span></div><em>Ver o canal →</em></a><a class="mini fb" href="https://www.facebook.com/usinacomvideos" target="_blank" rel="noopener"><svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="#1877F2"/><path d="M13.5 20v-6h2l.4-2.5h-2.4V10c0-.7.3-1.3 1.4-1.3H16V6.5c-.3 0-1.1-.1-2-.1-2 0-3.2 1.2-3.2 3.3v1.8H8.7V14h2.1v6z" fill="#fff"/></svg><div><b>Usina Vídeos</b><span>Facebook · /usinacomvideos</span></div><em>Seguir →</em></a></div>
+  </div>
+</section>
+
+<footer><div class="wrap" style="display:block;margin-bottom:28px"><a class="meaimg" href="https://www.motoreseacao.com/?utm_source=proposta&amp;utm_medium=banner&amp;utm_campaign=mea_top" target="_blank" rel="noopener"><img src="/img/banner-motoreseacao-1200x300.jpg" alt="Motores e Ação: antes de comprar carro, passa por aqui. Lançamentos, testes e ofertas no Brasil e em Portugal." width="1200" height="300" loading="lazy"></a></div><div class="wrap">
+  <a href="/" aria-label="Usina Vídeos · página inicial"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
+  <span>A sua exigência, a nossa assinatura. · © Usina Vídeos</span>
+</div></footer>
+<script>document.querySelectorAll('.yt2').forEach(function(b){b.addEventListener('click',function(){var i=document.createElement('iframe');i.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0';i.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';i.allowFullscreen=true;i.title=b.getAttribute('aria-label');b.innerHTML='';b.appendChild(i)},{once:true})});</script>
+</body>
+</html>
