@@ -119,7 +119,7 @@ CLIENTES = {
                ('Fase 2 · Semana 2', 'Página de apresentação do imóvel', 50, 100,
                 ['Página própria do T2 com fotos, vídeos, planta, mapa e distâncias', 'Botões de WhatsApp e chamada direta para si', 'Formulário de contacto para captar leads', 'Pronta a partilhar nos anúncios e nas redes']),
                ('Fase 3 · Semanas 2 a 5', 'Gestão da campanha nas redes', 50, 100,
-                ['Anúncios Facebook e Instagram segmentados por zona e perfil de comprador', 'Vídeo e Reels a levar tráfego para a página do imóvel', 'Ajustes semanais de público e criativos', 'Investimento em anúncios: 120€ no mês (30€ por semana)']),
+                ['Anúncios Facebook e Instagram segmentados por zona e perfil de comprador', 'Vídeo e Reels a levar tráfego para a página do imóvel', 'Ajustes semanais de público e criativos', 'Investimento em anúncios: 120€ no mês (30€ por semana), gerido pela Usina']),
                ('Fase 4 · Semana 6', 'Avaliação de resultados', 0, 0,
                 ['Relatório de visualizações, cliques e contactos recebidos', 'Reunião de 30 minutos para decidir os próximos passos', 'Ajuste ou reforço da estratégia com base nos números'])],
         meta=120,
@@ -149,7 +149,7 @@ def plano_html(c):
       <tr class="t"><td>Produção e gestão</td><td>{tt}€ + IVA</td><td>{tv}€ + IVA</td><td class="dc">−{tt - tv}€ ({round((tt - tv) * 100 / tt)}%)</td></tr>
       <tr><td>Investimento em anúncios na Meta (4 semanas × 30€)</td><td>{m}€</td><td>{m}€</td><td>sem margem</td></tr>
       <tr class="t"><td>Total do primeiro mês <small style="font-weight:600">(IVA à parte na produção)</small></td><td>{tt + m}€</td><td>{tv + m}€</td><td class="dc">−{tt - tv}€</td></tr></tbody></table></div>
-    <div class="orc" style="margin-top:28px"><div><h3>{tv}€ + IVA + {m}€ em anúncios</h3><p>Produção e gestão por {tv}€ + IVA, em vez de {tt}€ de tabela: um desconto de {tt - tv}€ por já ser nosso cliente. Os {m}€ de anúncios vão integralmente para a Meta, sem margem da Usina, pagos por si diretamente na conta de anúncios.</p></div>
+    <div class="orc" style="margin-top:28px"><div><h3>{tv}€ + IVA + {m}€ em anúncios</h3><p>Produção e gestão por {tv}€ + IVA, em vez de {tt}€ de tabela: um desconto de {tt - tv}€ por já ser nosso cliente. Os {m}€ de anúncios vão integralmente para a Meta, sem margem: a Usina gere e paga a campanha na sua conta de anúncios e, se precisar, emite-lhe a fatura.</p></div>
       <div><h4>Como avançamos</h4><ul><li>Marcamos a gravação consigo na Prelada</li><li>Vídeo e página prontos na semana seguinte</li><li>Avaliação conjunta ao fim de 1 mês de campanha</li></ul></div></div>
     <p class="note">Drone sujeito às condições meteorológicas e às autorizações de voo. Os resultados da campanha dependem do mercado e do investimento; o relatório mostra os números reais, sem promessas de vendas.</p></div>
 </section>
