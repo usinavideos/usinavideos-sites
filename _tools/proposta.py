@@ -107,7 +107,7 @@ CLIENTES = {
     'tiago-branquinha': dict(nome='Tiago Branquinha', cidade='Porto', edicao=False,
         h1='O seu T2 na Prelada, contado por quem conhece a zona.',
         intro='Proposta preparada para o Tiago Branquinha, consultor imobiliário. Partimos da vídeo-reportagem que já fizemos ao T2 na Prelada e juntamos um vídeo consigo a apresentar a região, uma página própria do imóvel e uma campanha nas redes para gerar contactos. Ao fim de um mês avaliamos os resultados juntos.',
-        plano=[('Fase 1 · Semana 1', 'Vídeo «Viver na Prelada»', '175€',
+        plano=[('Fase 1 · Semana 1', 'Vídeo «Viver na Prelada»', '100€',
                 ['Gravação consigo em cena a apresentar a zona: acessos, comércio, escolas, parques', 'Imagens novas da região e planos aéreos com drone', 'Final com as imagens do T2 que já temos', 'Versão YouTube (horizontal, até 3 min) e 2 Reels verticais com legendas']),
                ('Fase 2 · Semana 2', 'Página de apresentação do imóvel', '50€',
                 ['Página própria do T2 com fotos, vídeos, mapa e localização', 'Botões de WhatsApp e chamada direta para si', 'Formulário de contacto para captar leads', 'Pronta a partilhar nos anúncios e nas redes']),
@@ -115,7 +115,7 @@ CLIENTES = {
                 ['Anúncios Facebook e Instagram segmentados por zona e perfil de comprador', 'Vídeo e Reels a levar tráfego para a página do imóvel', 'Ajustes semanais de público e criativos', 'Investimento sugerido: 20 a 30€ por semana, pago diretamente à Meta']),
                ('Fase 4 · Semana 6', 'Avaliação de resultados', 'Incluída',
                 ['Relatório de visualizações, cliques e contactos recebidos', 'Reunião de 30 minutos para decidir os próximos passos', 'Ajuste ou reforço da estratégia com base nos números'])],
-        plano_total=('325€', '290€')),
+        plano_total=('250€', '250€')),
 }
 
 
@@ -126,7 +126,7 @@ def plano_html(c):
   <div class="wrap"><span class="eb">O plano para o seu imóvel</span><h2>Vídeo, página e campanha: um mês para gerar contactos.</h2>
     <p class="lead">Quatro fases, um só contacto. Cada fase alimenta a seguinte: o vídeo leva às redes, as redes levam à página, a página leva até si.</p>
     <div class="pk pk4">{cards}</div>
-    <div class="orc" style="margin-top:28px"><div><h3>Pacote completo: {pac} + IVA</h3><p>Fases 1 a 4 contratadas em conjunto, em vez de {soma} + IVA em separado. O investimento em anúncios (20 a 30€ por semana, cerca de 80 a 120€ no mês) é pago por si diretamente à Meta e não está incluído.</p></div>
+    <div class="orc" style="margin-top:28px"><div><h3>Pacote completo: {pac} + IVA</h3><p>{f"Fases 1 a 4 contratadas em conjunto, em vez de {soma} + IVA em separado." if soma != pac else "Fases 1 a 4, com o vídeo principal a preço especial de cliente."} O investimento em anúncios (20 a 30€ por semana, cerca de 80 a 120€ no mês) é pago por si diretamente à Meta e não está incluído.</p></div>
       <div><h4>Como avançamos</h4><ul><li>Marcamos a gravação consigo na Prelada</li><li>Vídeo e página prontos na semana seguinte</li><li>Avaliação conjunta ao fim de 1 mês de campanha</li></ul></div></div>
     <p class="note">Drone sujeito às condições meteorológicas e às autorizações de voo. Os resultados da campanha dependem do mercado e do investimento; o relatório mostra os números reais, sem promessas de vendas.</p></div>
 </section>
