@@ -23,7 +23,7 @@ USINA = {
     'areaServed': [{'@type': 'AdministrativeArea', 'name': 'Norte de Portugal'}, {'@type': 'Country', 'name': 'Portugal'}],
     'knowsLanguage': ['pt-PT', 'en', 'es'],
     'founder': [{'@type': 'Person', 'name': 'Freire Neto', 'jobTitle': 'Jornalista e produtor audiovisual', 'sameAs': ['https://www.linkedin.com/in/freireneto/', 'https://www.instagram.com/freireneto', 'https://www.instagram.com/neofreireportugal']},
-                {'@type': 'Person', 'name': 'Sandra Freire', 'jobTitle': 'Editora de vídeo'}],
+                {'@type': 'Person', 'name': 'Sandra Freire', 'jobTitle': 'Edição, produção e administração'}],
     'sameAs': ['https://www.instagram.com/usina.videos', 'https://www.facebook.com/usinacomvideos', 'https://motoreseacao.com',
                'https://www.youtube.com/@motoreseacao', 'https://www.youtube.com/@DicasdoFreire/'],
     'makesOffer': [{'@type': 'Offer', 'itemOffered': {'@type': 'Service', 'name': n}} for n in
@@ -209,7 +209,7 @@ open(os.path.join(ROOT, 'robots.txt'), 'w').write(
 # llms.txt: resumo para assistentes de IA
 open(os.path.join(ROOT, 'llms.txt'), 'w').write(f'''# Usina Vídeos
 
-> Produção audiovisual imobiliária em Portugal (Norte e todo o país): fotografia, vídeo com drone, reportagem, visitas 3D, sites, apresentações digitais e podcasts. Dirigida por Freire Neto (jornalista desde 1997, fundador do Motores e Ação) e Sandra Freire. Orçamentos por WhatsApp +351 912 988 971 ou freireneto@me.com.
+> Produção audiovisual imobiliária em Portugal (Norte e todo o país): fotografia, vídeo com drone, reportagem, visitas 3D, sites, apresentações digitais e podcasts. Dirigida por Freire Neto (jornalista desde 1997, fundador do Motores e Ação) e Sandra Freire (edição, produção e administração, 20 anos em televisão, produtoras e no Motores e Ação). Orçamentos por WhatsApp +351 912 988 971 ou freireneto@me.com.
 
 ## Site
 - [Usina Vídeos (PT)]({BASE}/): serviços, trabalhos, desporto, marcas e contacto

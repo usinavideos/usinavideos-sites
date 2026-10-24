@@ -33,8 +33,9 @@ T = {
     hero_p='Fotografia, vídeo com drone, reportagem e apresentações digitais para consultores imobiliários, promotores e proprietários. Uma produção, um briefing, um contacto.',
     hero_b2='Ver trabalhos',
     hero_cap='Foz do Douro, Porto · drone Usina Vídeos',
+    team=[('Freire Neto', 'Direção, reportagem e imagem', 'Jornalista desde 1997 e fundador do Motores e Ação.'), ('Sandra Freire', 'Edição, produção e administração', '20 anos em televisão, produtoras e no Motores e Ação.')],
     quem_eb='Quem somos', quem_h2='Olhar de jornalista, ao serviço do imóvel.',
-    quem_p=['A Usina Vídeos é dirigida por <b>Freire Neto</b> e <b>Sandra Freire</b>. Freire Neto é jornalista desde 1997 e fundador do Motores e Ação, com mais de 25 anos de reportagem e produção audiovisual. Sandra Freire assina a edição de vídeo.',
+    quem_p=['A Usina Vídeos é dirigida por <b>Freire Neto</b> e <b>Sandra Freire</b>. Freire Neto é jornalista desde 1997 e fundador do Motores e Ação, com mais de 25 anos de reportagem e produção audiovisual. Sandra Freire é responsável pela edição, produção e administração, com 20 anos de experiência em televisão, produtoras e no Motores e Ação.',
             'Cada imóvel é tratado como uma reportagem: perceber o que o torna único, captá-lo com rigor e contá-lo de forma clara a quem procura casa. O resultado valoriza o imóvel e reforça a imagem de quem o apresenta.',
             'Trabalhamos em <b>todo o Norte</b> e em <b>qualquer ponto de Portugal</b>, com a deslocação incluída no orçamento.'],
     stats=[('25+', 'anos de jornalismo'), ('48h', 'entrega de fotografias'), ('72h', 'vídeos e PDF'), ('PT · EN · ES', 'apresentações multilingues')],
@@ -53,7 +54,7 @@ T = {
     orc_p='Diga-nos a morada, a tipologia e o que pretende. Respondemos com uma proposta clara, por imóvel ou por pacote, com o IVA indicado.',
     trab_eb='Trabalhos', trab_h2='Trabalho recente, publicado com autorização.',
     works=[('/cordiallevel/', '/cordiallevel/t3leca/img/leca-37-t.jpg', 'Cordial Level', 'Parceiro de produção: site, vídeo-reportagens, podcast e redes sociais. ' + AMI, 'Ver o site'),
-           ('/t4coral/', '/img/coral-fachada.jpg', 'Condomínio Coral · Foz do Douro', 'Fotografia, drone e apresentação digital em quatro línguas. Consultora Cheila Monteiro · CENTURY 21 Arquitectos II · AMI 11414', 'Ver a apresentação'),
+           ('/t4coral/', '/img/coral-fachada.jpg', 'Condomínio Coral · Foz do Douro', 'Fotografia, drone, vídeo com a consultora e apresentação digital em quatro línguas. Consultora Cheila Monteiro · CENTURY 21 Arquitectos II · AMI 11414', 'Ver a apresentação'),
            ('https://century21.pt/ref/C0554-00006', '/img/core-devesas-t.jpg', 'CENTURY 21 Core · Vila Nova de Gaia', 'Fotografia e vídeo de uma moradia T5 nas Devesas (consultor Vasco Dinis) e de um T3 em Oliveira do Douro.', 'Ver o anúncio'),
            ('/cordiallevel/anteroquental/', '/cordiallevel/anteroquental/img/aq-lapa-t.jpg', 'T2 Antero de Quental · Porto', 'Fotografia, drone, visita 3D e página do imóvel. ' + AMI, 'Ver a apresentação'),
            ('/cordiallevel/moncao/', '/cordiallevel/moncao/img/t1-area-t.jpg', 'Terrenos em Monção · Alto Minho', 'Drone, vídeo e simulações de projeto identificadas como IA. ' + AMI, 'Ver a apresentação'),
@@ -91,8 +92,9 @@ T = {
     hero_p='Photography, drone video, video tours and digital presentations for real estate agents, developers and owners. One shoot, one brief, one contact.',
     hero_b2='See our work',
     hero_cap='Foz do Douro, Porto · drone by Usina Vídeos',
+    team=[('Freire Neto', 'Direction, reporting and camera', 'Journalist since 1997 and founder of Motores e Ação.'), ('Sandra Freire', 'Editing, production and administration', '20 years in television, production companies and Motores e Ação.')],
     quem_eb='About us', quem_h2='A journalist’s eye, working for your property.',
-    quem_p=['Usina Vídeos is run by <b>Freire Neto</b> and <b>Sandra Freire</b>. Freire Neto has been a journalist since 1997 and founded Motores e Ação, with over 25 years of reporting and video production. Sandra Freire is the video editor.',
+    quem_p=['Usina Vídeos is run by <b>Freire Neto</b> and <b>Sandra Freire</b>. Freire Neto has been a journalist since 1997 and founded Motores e Ação, with over 25 years of reporting and video production. Sandra Freire runs editing, production and administration, with 20 years of experience in television, production companies and Motores e Ação.',
             'We treat every property like a story: find what makes it unique, capture it carefully and show it clearly to buyers. The result adds value to the property and to the agent who presents it.',
             'We work across <b>Northern Portugal</b> and <b>anywhere in the country</b>, with travel included in the quote.'],
     stats=[('25+', 'years of journalism'), ('48h', 'photo delivery'), ('72h', 'videos and PDF'), ('PT · EN · ES', 'multilingual presentations')],
@@ -111,7 +113,7 @@ T = {
     orc_p='Tell us the address, the property type and what you need. We reply with a clear proposal, per property or per package, with VAT shown.',
     trab_eb='Work', trab_h2='Recent work, published with permission.',
     works=[('/cordiallevel/', '/cordiallevel/t3leca/img/leca-37-t.jpg', 'Cordial Level', 'Production partner: website, property videos, podcast and social media. ' + AMI, 'See the website'),
-           ('/t4coral/en.html', '/img/coral-fachada.jpg', 'Condomínio Coral · Foz do Douro', 'Photography, drone and a digital presentation in four languages. Agent Cheila Monteiro · CENTURY 21 Arquitectos II · AMI 11414', 'See the presentation'),
+           ('/t4coral/en.html', '/img/coral-fachada.jpg', 'Condomínio Coral · Foz do Douro', 'Photography, drone, a video with the agent and a digital presentation in four languages. Agent Cheila Monteiro · CENTURY 21 Arquitectos II · AMI 11414', 'See the presentation'),
            ('https://century21.pt/ref/C0554-00006', '/img/core-devesas-t.jpg', 'CENTURY 21 Core · Vila Nova de Gaia', 'Photography and video of a five-bedroom house in Devesas (agent Vasco Dinis) and a three-bedroom flat in Oliveira do Douro.', 'See the listing'),
            ('/cordiallevel/anteroquental/', '/cordiallevel/anteroquental/img/aq-lapa-t.jpg', 'Two-bedroom flat · Antero de Quental, Porto', 'Photography, drone, 3D tour and property page. ' + AMI, 'See the presentation'),
            ('/cordiallevel/moncao/', '/cordiallevel/moncao/img/t1-area-t.jpg', 'Land in Monção · Alto Minho', 'Drone, video and project visualisations labelled as AI. ' + AMI, 'See the presentation'),
@@ -149,8 +151,9 @@ T = {
     hero_p='Fotografía, vídeo con dron, reportajes y presentaciones digitales para agentes inmobiliarios, promotores y propietarios. Una producción, un briefing, un contacto.',
     hero_b2='Ver trabajos',
     hero_cap='Foz do Douro, Oporto · dron de Usina Vídeos',
+    team=[('Freire Neto', 'Dirección, reportaje e imagen', 'Periodista desde 1997 y fundador de Motores e Ação.'), ('Sandra Freire', 'Edición, producción y administración', '20 años en televisión, productoras y en Motores e Ação.')],
     quem_eb='Quiénes somos', quem_h2='Mirada de periodista, al servicio del inmueble.',
-    quem_p=['Usina Vídeos está dirigida por <b>Freire Neto</b> y <b>Sandra Freire</b>. Freire Neto es periodista desde 1997 y fundador de Motores e Ação, con más de 25 años de reportaje y producción audiovisual. Sandra Freire firma la edición de vídeo.',
+    quem_p=['Usina Vídeos está dirigida por <b>Freire Neto</b> y <b>Sandra Freire</b>. Freire Neto es periodista desde 1997 y fundador de Motores e Ação, con más de 25 años de reportaje y producción audiovisual. Sandra Freire es responsable de la edición, la producción y la administración, con 20 años de experiencia en televisión, productoras y en Motores e Ação.',
             'Tratamos cada inmueble como un reportaje: entender qué lo hace único, captarlo con rigor y contarlo con claridad a quien busca casa. El resultado da valor al inmueble y a quien lo presenta.',
             'Trabajamos en <b>todo el Norte</b> y en <b>cualquier punto de Portugal</b>, con el desplazamiento incluido en el presupuesto.'],
     stats=[('25+', 'años de periodismo'), ('48h', 'entrega de fotografías'), ('72h', 'vídeos y PDF'), ('PT · EN · ES', 'presentaciones multilingües')],
@@ -169,7 +172,7 @@ T = {
     orc_p='Indíquenos la dirección, la tipología y lo que necesita. Respondemos con una propuesta clara, por inmueble o por paquete, con el IVA indicado.',
     trab_eb='Trabajos', trab_h2='Trabajo reciente, publicado con autorización.',
     works=[('/cordiallevel/', '/cordiallevel/t3leca/img/leca-37-t.jpg', 'Cordial Level', 'Socio de producción: web, vídeo-reportajes, pódcast y redes sociales. ' + AMI, 'Ver la web'),
-           ('/t4coral/es.html', '/img/coral-fachada.jpg', 'Condomínio Coral · Foz do Douro', 'Fotografía, dron y presentación digital en cuatro idiomas. Agente Cheila Monteiro · CENTURY 21 Arquitectos II · AMI 11414', 'Ver la presentación'),
+           ('/t4coral/es.html', '/img/coral-fachada.jpg', 'Condomínio Coral · Foz do Douro', 'Fotografía, dron, vídeo con la agente y presentación digital en cuatro idiomas. Agente Cheila Monteiro · CENTURY 21 Arquitectos II · AMI 11414', 'Ver la presentación'),
            ('https://century21.pt/ref/C0554-00006', '/img/core-devesas-t.jpg', 'CENTURY 21 Core · Vila Nova de Gaia', 'Fotografía y vídeo de una casa de cinco dormitorios en Devesas (agente Vasco Dinis) y de un piso de tres dormitorios en Oliveira do Douro.', 'Ver el anuncio'),
            ('/cordiallevel/anteroquental/', '/cordiallevel/anteroquental/img/aq-lapa-t.jpg', 'Piso de dos dormitorios · Antero de Quental, Oporto', 'Fotografía, dron, visita 3D y página del inmueble. ' + AMI, 'Ver la presentación'),
            ('/cordiallevel/moncao/', '/cordiallevel/moncao/img/t1-area-t.jpg', 'Terrenos en Monção · Alto Minho', 'Dron, vídeo y simulaciones de proyecto identificadas como IA. ' + AMI, 'Ver la presentación'),
@@ -235,6 +238,7 @@ section{padding:88px 0}
 .stripe{display:flex;width:120px;height:5px;border-radius:3px;overflow:hidden;margin-top:26px}.stripe i{flex:1}
 .cap{position:absolute;right:20px;bottom:16px;z-index:1;font-size:12px;color:rgba(255,255,255,.65)}
 /* quem */
+.team{display:grid;gap:12px;margin-top:22px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.team>div{background:#fff;border:1px solid #E3DED6;border-left:5px solid var(--c);border-radius:14px;padding:16px 18px}.team b{display:block;font-size:18px;color:var(--ink)}.team span{display:block;margin-top:2px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}.team p{margin:8px 0 0!important;font-size:15px}
 .two{display:grid;gap:40px}
 @media(min-width:900px){.two{grid-template-columns:1.25fr 1fr;gap:64px;align-items:start}}
 .two p{margin:0 0 16px}.two b{color:var(--ink)}
@@ -350,6 +354,7 @@ def page(lang):
     steps = ''.join(f'<div class="step"><h3>{e(a)}</h3><p>{e(b)}</p></div>' for a, b in t['steps'])
     stats = ''.join(f'<div><b>{a}</b><span>{e(b)}</span></div>' for a, b in t['stats'])
     quem = ''.join(f'<p>{x}</p>' for x in t['quem_p'])
+    quem += '<div class="team">' + ''.join(f'<div style="--c:{COLORS[i % 3]}"><b>{e(n)}</b><span>{e(r)}</span><p>{e(d)}</p></div>' for i, (n, r, d) in enumerate(t['team'])) + '</div>'
     sites = ''.join(f'<article class="card" style="--c:{COLORS[i % 3]}"><span class="n">{i + 1:02d}</span><h3>{e(a)}</h3><p>{e(b)}</p><p class="ex">{e(t["sites"]["ex"])}: ' + ' · '.join(f'<a href="{u}"' + (' target="_blank" rel="noopener"' if u.startswith('http') else '') + f'>{e(l)} →</a>' for l, u in exs) + '</p></article>' for i, (a, b, exs) in enumerate(t['sites']['items']))
     socials = ''.join(f'<a class="mini {k}" href="{u}" target="_blank" rel="noopener">{MEA_ICON if "motoreseacao" in u else (IG_SVG if k == "ig" else IN_SVG)}<div><b>{e(a)}</b><span>{e(b)}</span></div><em>{e(c)} →</em></a>' for u, k, a, b, c in t['socials'])
     return f'''<!doctype html>
