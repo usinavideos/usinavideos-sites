@@ -56,6 +56,7 @@ STEPS = [('Pedido', 'Por WhatsApp, e-mail ou marcação online: morada, tipologi
 
 EXTRA_CSS = """
 .pk{display:grid;gap:16px;margin-top:36px}@media(min-width:900px){.pk{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.pk.pk4{grid-template-columns:repeat(2,1fr)}}@media(min-width:1200px){.pk.pk4{grid-template-columns:repeat(4,1fr)}.pk4 h3{font-size:22px}.pk4 .pr{font-size:40px}}
 .pk article{background:#fff;border:1px solid #E3DED6;border-radius:18px;padding:26px;border-top:5px solid var(--c);display:flex;flex-direction:column}
 .pk article.ref{background:var(--ink);color:#D6D1CD;border-color:var(--ink);border-top-color:var(--y)}
 .pk article.ref h3,.pk article.ref .pr{color:#fff}
@@ -103,7 +104,33 @@ CLIENTES = {
                 ('img/cr-cerco-t.jpg', 'T3 no Cerco, Porto', 'Fotografia e vídeo · outubro de 2026')]),
     'ricardo-ribeiro': dict(nome='Ricardo Ribeiro', cidade='Lisboa', edicao=True, h1='Vídeo para eventos, imóveis e reportagem.',
         intro='Proposta preparada para o Ricardo Ribeiro, jornalista em Lisboa, para eventos, imóveis e edição de material já captado. Do jornalista para o jornalista: a mesma linguagem de reportagem, com prazos de redação.'),
+    'tiago-branquinha': dict(nome='Tiago Branquinha', cidade='Porto', edicao=False,
+        h1='O seu T2 na Prelada, contado por quem conhece a zona.',
+        intro='Proposta preparada para o Tiago Branquinha, consultor imobiliário. Partimos da vídeo-reportagem que já fizemos ao T2 na Prelada e juntamos um vídeo consigo a apresentar a região, uma página própria do imóvel e uma campanha nas redes para gerar contactos. Ao fim de um mês avaliamos os resultados juntos.',
+        plano=[('Fase 1 · Semana 1', 'Vídeo «Viver na Prelada»', '175€',
+                ['Gravação consigo em cena a apresentar a zona: acessos, comércio, escolas, parques', 'Imagens novas da região e planos aéreos com drone', 'Final com as imagens do T2 que já temos', 'Versão YouTube (horizontal, até 3 min) e 2 Reels verticais com legendas']),
+               ('Fase 2 · Semana 2', 'Página de apresentação do imóvel', '50€',
+                ['Página própria do T2 com fotos, vídeos, mapa e localização', 'Botões de WhatsApp e chamada direta para si', 'Formulário de contacto para captar leads', 'Pronta a partilhar nos anúncios e nas redes']),
+               ('Fase 3 · Semanas 2 a 5', 'Campanha nas redes', '100€',
+                ['Anúncios Facebook e Instagram segmentados por zona e perfil de comprador', 'Vídeo e Reels a levar tráfego para a página do imóvel', 'Ajustes semanais de público e criativos', 'Investimento sugerido: 20 a 30€ por semana, pago diretamente à Meta']),
+               ('Fase 4 · Semana 6', 'Avaliação de resultados', 'Incluída',
+                ['Relatório de visualizações, cliques e contactos recebidos', 'Reunião de 30 minutos para decidir os próximos passos', 'Ajuste ou reforço da estratégia com base nos números'])],
+        plano_total=('325€', '290€')),
 }
+
+
+def plano_html(c):
+    cards = ''.join(f'<article style="--c:{COLORS[i % 3]}"><span class="lb">{e(f)}</span><h3>{e(n)}</h3><div class="pr"{"" if "€" in p else ' style="font-size:34px"'}>{p}{"<small>+ IVA</small>" if "€" in p else ""}</div><ul>{"".join(f"<li>{e(x)}</li>" for x in items)}</ul></article>' for i, (f, n, p, items) in enumerate(c['plano']))
+    soma, pac = c['plano_total']
+    return f'''<section id="plano">
+  <div class="wrap"><span class="eb">O plano para o seu imóvel</span><h2>Vídeo, página e campanha: um mês para gerar contactos.</h2>
+    <p class="lead">Quatro fases, um só contacto. Cada fase alimenta a seguinte: o vídeo leva às redes, as redes levam à página, a página leva até si.</p>
+    <div class="pk pk4">{cards}</div>
+    <div class="orc" style="margin-top:28px"><div><h3>Pacote completo: {pac} + IVA</h3><p>Fases 1 a 4 contratadas em conjunto, em vez de {soma} + IVA em separado. O investimento em anúncios (20 a 30€ por semana, cerca de 80 a 120€ no mês) é pago por si diretamente à Meta e não está incluído.</p></div>
+      <div><h4>Como avançamos</h4><ul><li>Marcamos a gravação consigo na Prelada</li><li>Vídeo e página prontos na semana seguinte</li><li>Avaliação conjunta ao fim de 1 mês de campanha</li></ul></div></div>
+    <p class="note">Drone sujeito às condições meteorológicas e às autorizações de voo. Os resultados da campanha dependem do mercado e do investimento; o relatório mostra os números reais, sem promessas de vendas.</p></div>
+</section>
+'''
 
 
 def edicao_html():
@@ -160,7 +187,7 @@ def build(cliente=None):
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
   <a class="logo" href="/"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
-  <div class="links">{'<a href="#edicao">Edição</a>' if cliente and cliente.get('edicao') else ''}{'<a href="#juntos">O nosso trabalho</a>' if cliente and cliente.get('juntos') else ''}<a href="#pacotes">Pacotes</a><a href="#videos">Vídeos</a><a href="#premium">Serviços premium</a><a href="#condicoes">Condições</a><a href="/#trabalhos">Trabalhos</a></div>
+  <div class="links">{'<a href="#edicao">Edição</a>' if cliente and cliente.get('edicao') else ''}{'<a href="#juntos">O nosso trabalho</a>' if cliente and cliente.get('juntos') else ''}{'<a href="#plano">O plano</a>' if cliente and cliente.get('plano') else ''}<a href="#pacotes">Pacotes</a><a href="#videos">Vídeos</a><a href="#premium">Serviços premium</a><a href="#condicoes">Condições</a><a href="/#trabalhos">Trabalhos</a></div>
   <a class="btn y" href="{WA}" target="_blank" rel="noopener">Avançar</a>
 </div></nav>
 
@@ -170,7 +197,7 @@ def build(cliente=None):
     <span class="eb">{e('Proposta para ' + cliente['nome'] + ' · ' + cliente['cidade']) if cliente else 'Proposta de serviços · Usina Vídeos'}</span>
     <h1>{e(cliente['h1']) if cliente else 'Produção audiovisual para o mercado imobiliário.'}</h1>
     <p>{e(cliente['intro']) if cliente else 'Para agências, consultores, promotores e proprietários. Um parceiro, um briefing, um contacto, do Norte a todo o país.'}</p>
-    <div class="row"><a class="btn y" href="#pacotes">Ver pacotes</a><a class="btn o" href="{CAL}" target="_blank" rel="noopener">Marcar sessão</a></div>
+    <div class="row"><a class="btn y" href="{'#plano' if cliente and cliente.get('plano') else '#pacotes'}">{'Ver o plano' if cliente and cliente.get('plano') else 'Ver pacotes'}</a><a class="btn o" href="{CAL}" target="_blank" rel="noopener">Marcar sessão</a></div>
     {STRIPE}
   </div>
 </header>
@@ -189,7 +216,7 @@ def build(cliente=None):
     <div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">{ent}</div></div>
 </section>
 
-{edicao_html() if cliente and cliente.get('edicao') else ''}{juntos_html(cliente) if cliente and cliente.get('juntos') else ''}
+{edicao_html() if cliente and cliente.get('edicao') else ''}{juntos_html(cliente) if cliente and cliente.get('juntos') else ''}{plano_html(cliente) if cliente and cliente.get('plano') else ''}
 <section id="pacotes">
   <div class="wrap"><span class="eb">Pacotes por imóvel</span><h2>Preços claros, por imóvel.</h2>
     <p class="lead">Valores sem IVA, que acresce à taxa legal em vigor.</p>
