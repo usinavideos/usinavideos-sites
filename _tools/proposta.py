@@ -69,6 +69,8 @@ EXTRA_CSS = """
 .pk p{margin:16px 0 0;font-size:14px}
 .cmp{width:100%;border-collapse:collapse;margin-top:28px;background:#fff;border-radius:14px;overflow:hidden;font-size:15px}
 .cmp th,.cmp td{padding:14px 16px;border-bottom:1px solid #E3DED6;text-align:left}.cmp th{background:var(--ink);color:#fff;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.tab{margin-top:8px;font-size:14px;color:var(--muted)}.tab b{color:#23863D}.cmp td.dc{color:#23863D}
+.zg{display:grid;gap:12px;margin-top:30px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}.zn{background:#fff;border:1px solid #E3DED6;border-left:5px solid var(--c);border-radius:14px;padding:16px 18px;display:grid;gap:4px}.zn span{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--c)}.zn b{font-size:17px;color:var(--ink)}.zn em{font-style:normal;color:var(--muted);font-size:15px}
 .cmp td:last-child{font-weight:800;color:var(--ink)}.cmp tr.t td{font-weight:900;background:var(--paper2)}
 .prem{display:grid;gap:14px;margin-top:36px}@media(min-width:760px){.prem{grid-template-columns:1fr 1fr}}@media(min-width:1100px){.prem{grid-template-columns:repeat(3,1fr)}}
 .prem article{background:var(--ink2);border:1px solid var(--line);border-radius:16px;padding:22px}
@@ -112,28 +114,55 @@ CLIENTES = {
         juntos=[('img/tb-sala-t.jpg', 'Sala', 'Ampla, com luz natural'),
                 ('img/tb-vista-t.jpg', 'Vista', 'Desafogada sobre a zona'),
                 ('img/tb-cozinha-t.jpg', 'Cozinha', 'Equipada e funcional')],
-        plano=[('Fase 1 · Semana 1', 'Vídeo «Viver na Prelada»', '100€',
-                ['Gravação consigo em cena a apresentar a zona: acessos, comércio, escolas, parques', 'Imagens novas da região e planos aéreos com drone', 'Final com as imagens do T2 que já temos', 'Versão YouTube (horizontal, até 3 min) e 2 Reels verticais com legendas']),
-               ('Fase 2 · Semana 2', 'Página de apresentação do imóvel', '50€',
-                ['Página própria do T2 com fotos, vídeos, mapa e localização', 'Botões de WhatsApp e chamada direta para si', 'Formulário de contacto para captar leads', 'Pronta a partilhar nos anúncios e nas redes']),
-               ('Fase 3 · Semanas 2 a 5', 'Campanha nas redes', '100€',
-                ['Anúncios Facebook e Instagram segmentados por zona e perfil de comprador', 'Vídeo e Reels a levar tráfego para a página do imóvel', 'Ajustes semanais de público e criativos', 'Investimento sugerido: 20 a 30€ por semana, pago diretamente à Meta']),
-               ('Fase 4 · Semana 6', 'Avaliação de resultados', 'Incluída',
+        plano=[('Fase 1 · Semana 1', 'Vídeo «Viver na Prelada»', 100, 175,
+                ['Gravação consigo em cena a apresentar a zona: metro, comércio, escolas, parques', 'Imagens novas da região e planos aéreos com drone', 'Final com as imagens do T2 que já temos', 'Versão YouTube (horizontal, até 3 min) e 2 Reels verticais com legendas']),
+               ('Fase 2 · Semana 2', 'Página de apresentação do imóvel', 50, 100,
+                ['Página própria do T2 com fotos, vídeos, planta, mapa e distâncias', 'Botões de WhatsApp e chamada direta para si', 'Formulário de contacto para captar leads', 'Pronta a partilhar nos anúncios e nas redes']),
+               ('Fase 3 · Semanas 2 a 5', 'Gestão da campanha nas redes', 50, 100,
+                ['Anúncios Facebook e Instagram segmentados por zona e perfil de comprador', 'Vídeo e Reels a levar tráfego para a página do imóvel', 'Ajustes semanais de público e criativos', 'Investimento em anúncios: 120€ no mês (30€ por semana)']),
+               ('Fase 4 · Semana 6', 'Avaliação de resultados', 0, 0,
                 ['Relatório de visualizações, cliques e contactos recebidos', 'Reunião de 30 minutos para decidir os próximos passos', 'Ajuste ou reforço da estratégia com base nos números'])],
-        plano_total=('250€', '250€')),
+        meta=120,
+        zona_t='Rua Dr. Cruz Malpique, Prelada · Ramalde, Porto',
+        zona=[('Metro', 'Estação Ramalde', '650 m · 10 min a pé'), ('Metro', 'Estação Viso', '1,1 km · 15 min a pé'),
+              ('Autocarro', 'Paragens STCP Parque da Prelada', '550 m · 7 min a pé'), ('Supermercado', 'Pingo Doce Ramalde', '400 m · 6 min a pé'),
+              ('Supermercado', 'Continente Bom Dia Prelada', '950 m · 13 min a pé'), ('Escola', 'EB 2/3 Maria Lamas', '450 m · 6 min a pé'),
+              ('Saúde', 'Hospital da Prelada', '550 m · 8 min a pé'), ('Saúde', 'Hospital de São João', '2,9 km · 10 min de carro'),
+              ('Lazer', 'Casa e jardins da Prelada, de Nasoni', '450 m · 6 min a pé'), ('Parque', 'Parque da Cidade e praia', '3,8 km · 10 min de carro'),
+              ('Compras', 'NorteShopping', '1,9 km · 5 min de carro'), ('Cultura', 'Casa da Música', '1,5 km · 2 estações de metro')]),
 }
 
 
 def plano_html(c):
-    cards = ''.join(f'<article style="--c:{COLORS[i % 3]}"><span class="lb">{e(f)}</span><h3>{e(n)}</h3><div class="pr"{"" if "€" in p else ' style="font-size:34px"'}>{p}{"<small>+ IVA</small>" if "€" in p else ""}</div><ul>{"".join(f"<li>{e(x)}</li>" for x in items)}</ul></article>' for i, (f, n, p, items) in enumerate(c['plano']))
-    soma, pac = c['plano_total']
+    def pr(v, t):
+        if not v:
+            return '<div class="pr" style="font-size:34px">Incluída</div>'
+        return f'<div class="pr">{v}€<small>+ IVA</small></div><div class="tab">Tabela <s>{t}€</s> · <b>poupa {t - v}€</b></div>'
+    cards = ''.join(f'<article style="--c:{COLORS[i % 3]}"><span class="lb">{e(f)}</span><h3>{e(n)}</h3>{pr(v, t)}<ul>{"".join(f"<li>{e(x)}</li>" for x in items)}</ul></article>' for i, (f, n, v, t, items) in enumerate(c['plano']))
+    rows = ''.join(f'<tr><td>{e(n)}</td><td>{f"{t}€" if t else "—"}</td><td>{f"{v}€" if v else "Incluída"}</td><td class="dc">{f"−{t - v}€ ({round((t - v) * 100 / t)}%)" if t else "—"}</td></tr>' for f, n, v, t, items in c['plano'])
+    tt = sum(x[3] for x in c['plano']); tv = sum(x[2] for x in c['plano']); m = c['meta']
     return f'''<section id="plano">
   <div class="wrap"><span class="eb">O plano para o seu imóvel</span><h2>Vídeo, página e campanha: um mês para gerar contactos.</h2>
     <p class="lead">Quatro fases, um só contacto. Cada fase alimenta a seguinte: o vídeo leva às redes, as redes levam à página, a página leva até si.</p>
     <div class="pk pk4">{cards}</div>
-    <div class="orc" style="margin-top:28px"><div><h3>Pacote completo: {pac} + IVA</h3><p>{f"Fases 1 a 4 contratadas em conjunto, em vez de {soma} + IVA em separado." if soma != pac else "Fases 1 a 4, com o vídeo principal a preço especial de cliente."} O investimento em anúncios (20 a 30€ por semana, cerca de 80 a 120€ no mês) é pago por si diretamente à Meta e não está incluído.</p></div>
+    <div style="overflow-x:auto;margin-top:28px;border-radius:14px"><table class="cmp" style="margin-top:0;min-width:560px"><thead><tr><th>Serviço</th><th>Preço de tabela</th><th>Para si</th><th>Desconto</th></tr></thead><tbody>{rows}
+      <tr class="t"><td>Produção e gestão</td><td>{tt}€ + IVA</td><td>{tv}€ + IVA</td><td class="dc">−{tt - tv}€ ({round((tt - tv) * 100 / tt)}%)</td></tr>
+      <tr><td>Investimento em anúncios na Meta (4 semanas × 30€)</td><td>{m}€</td><td>{m}€</td><td>sem margem</td></tr>
+      <tr class="t"><td>Total do primeiro mês <small style="font-weight:600">(IVA à parte na produção)</small></td><td>{tt + m}€</td><td>{tv + m}€</td><td class="dc">−{tt - tv}€</td></tr></tbody></table></div>
+    <div class="orc" style="margin-top:28px"><div><h3>{tv}€ + IVA + {m}€ em anúncios</h3><p>Produção e gestão por {tv}€ + IVA, em vez de {tt}€ de tabela: um desconto de {tt - tv}€ por já ser nosso cliente. Os {m}€ de anúncios vão integralmente para a Meta, sem margem da Usina, pagos por si diretamente na conta de anúncios.</p></div>
       <div><h4>Como avançamos</h4><ul><li>Marcamos a gravação consigo na Prelada</li><li>Vídeo e página prontos na semana seguinte</li><li>Avaliação conjunta ao fim de 1 mês de campanha</li></ul></div></div>
     <p class="note">Drone sujeito às condições meteorológicas e às autorizações de voo. Os resultados da campanha dependem do mercado e do investimento; o relatório mostra os números reais, sem promessas de vendas.</p></div>
+</section>
+'''
+
+
+def zona_html(c):
+    cards = ''.join(f'<div class="zn" style="--c:{COLORS[i % 3]}"><span>{e(k)}</span><b>{e(n)}</b><em>{e(d)}</em></div>' for i, (k, n, d) in enumerate(c['zona']))
+    return f'''<section id="zona" style="background:var(--paper2)">
+  <div class="wrap"><span class="eb">A zona · {e(c['zona_t'])}</span><h2>Tudo perto, num bairro calmo.</h2>
+    <p class="lead">É isto que vai mostrar no vídeo: metro a 10 minutos a pé, supermercados, escola e hospital no bairro, e os jardins históricos da Prelada ao virar da esquina.</p>
+    <div class="zg">{cards}</div>
+    <p class="note">Distâncias aproximadas a partir da Rua Dr. Cruz Malpique, em linha reta e tempos estimados. Confirmamos no terreno durante a gravação.</p></div>
 </section>
 '''
 
@@ -193,7 +222,7 @@ def build(cliente=None):
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
   <a class="logo" href="/"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
-  <div class="links">{'<a href="#edicao">Edição</a>' if cliente and cliente.get('edicao') else ''}{'<a href="#juntos">O nosso trabalho</a>' if cliente and cliente.get('juntos') else ''}{'<a href="#plano">O plano</a>' if cliente and cliente.get('plano') else ''}<a href="#pacotes">Pacotes</a><a href="#videos">Vídeos</a><a href="#premium">Serviços premium</a><a href="#condicoes">Condições</a><a href="/#trabalhos">Trabalhos</a></div>
+  <div class="links">{'<a href="#edicao">Edição</a>' if cliente and cliente.get('edicao') else ''}{'<a href="#juntos">O nosso trabalho</a>' if cliente and cliente.get('juntos') else ''}{'<a href="#zona">A zona</a>' if cliente and cliente.get('zona') else ''}{'<a href="#plano">O plano</a>' if cliente and cliente.get('plano') else ''}<a href="#pacotes">Pacotes</a><a href="#videos">Vídeos</a><a href="#premium">Serviços premium</a><a href="#condicoes">Condições</a><a href="/#trabalhos">Trabalhos</a></div>
   <a class="btn y" href="{WA}" target="_blank" rel="noopener">Avançar</a>
 </div></nav>
 
@@ -222,7 +251,7 @@ def build(cliente=None):
     <div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">{ent}</div></div>
 </section>
 
-{edicao_html() if cliente and cliente.get('edicao') else ''}{juntos_html(cliente) if cliente and cliente.get('juntos') else ''}{plano_html(cliente) if cliente and cliente.get('plano') else ''}
+{edicao_html() if cliente and cliente.get('edicao') else ''}{juntos_html(cliente) if cliente and cliente.get('juntos') else ''}{zona_html(cliente) if cliente and cliente.get('zona') else ''}{plano_html(cliente) if cliente and cliente.get('plano') else ''}
 <section id="pacotes">
   <div class="wrap"><span class="eb">Pacotes por imóvel</span><h2>Preços claros, por imóvel.</h2>
     <p class="lead">Valores sem IVA, que acresce à taxa legal em vigor.</p>
