@@ -106,10 +106,10 @@ CLIENTES = {
         intro='Proposta preparada para a Cristina Russo, consultora imobiliária da CENTURY 21 Arquitectos III (AMI 23921). Partimos da vídeo-reportagem que já fizemos à moradia T3 da Viela das Icas e juntamos um vídeo consigo a apresentar Leça, uma página própria do imóvel e uma campanha nas redes, a começar pelo open house de 29 de outubro. Ao fim de um mês avaliamos os resultados juntos.',
         hero='img/cr-leca.jpg',
         evento=('Open house', '29 de outubro · quinta-feira · 15h às 18h', 'Viela das Icas, n.º 7 · Leça da Palmeira', 'Antes do evento publicamos um Reel-convite e pomos a campanha a chegar a quem procura casa em Matosinhos e no Porto. No dia, podemos captar imagens para os conteúdos seguintes.'),
-        juntos_t=('Já trabalhámos juntos', 'Os seus imóveis, pela Usina.', 'A moradia de Leça abre o novo vídeo e a página do imóvel. Leça, Valongo e Cerco: o mesmo padrão em todas as angariações.'),
-        juntos=[('img/cr-leca-t.jpg', 'Moradia T3 em Leça da Palmeira', 'Fotografia e vídeo · o imóvel desta proposta'),
-                ('img/cr-valongo-t.jpg', 'T2 em Campo, Valongo', 'Fotografia e vídeo'),
-                ('img/cr-cerco-t.jpg', 'T3 no Cerco, Porto', 'Fotografia e vídeo · outubro de 2026')],
+        juntos_t=('Já trabalhámos juntos', 'Os seus imóveis, pela Usina.', 'Os três imóveis que tem hoje à venda foram todos fotografados e filmados pela Usina. A moradia de Leça abre agora o novo vídeo e a página do imóvel.'),
+        juntos=[('img/cr-leca-t.jpg', 'Moradia T3 em Leça da Palmeira', '745 000 € · 3 quartos · 3 WC · 188 m² · o imóvel desta proposta', 'https://cristinarusso.century21.pt/comprar/C0521-00227'),
+                ('img/cr-valongo-t.jpg', 'T2 em Campo, Valongo', '210 000 € · 2 quartos · 1 WC · 80 m² · fotografia e vídeo', 'https://cristinarusso.century21.pt/comprar/C0521-00219'),
+                ('img/cr-cerco-t.jpg', 'T3 no Cerco, Campanhã', '310 000 € · 3 quartos · 2 WC · 109 m² · fotografia e vídeo', 'https://cristinarusso.century21.pt/comprar/C0521-00222')],
         plano=[('Fase 1 · Esta semana', 'Vídeo «Viver em Leça»', 100, 175,
                 ['Gravação consigo em cena a apresentar Leça: praia, Quinta da Conceição, comércio, autocarros', 'Imagens aéreas de Leça com drone', 'Final com o vídeo e as fotos da moradia que já produzimos', 'Versão YouTube (até 3 min) e 2 Reels, um deles convite para o open house']),
                ('Fase 2 · Semanas 1 e 2', 'Página de apresentação do imóvel', 50, 100,
@@ -234,7 +234,7 @@ def edicao_html():
 
 
 def juntos_html(c):
-    cards = ''.join(f'<article class="card ic" style="--c:{COLORS[i % 3]}"><img src="{im}" alt="{e(t)}" loading="lazy"><span class="n">{i + 1:02d}</span><h3>{e(t)}</h3><p>{e(d)}</p></article>' for i, (im, t, d) in enumerate(c['juntos']))
+    cards = ''.join(f'<article class="card ic" style="--c:{COLORS[i % 3]}"><img src="{x[0]}" alt="{e(x[1])}" loading="lazy"><span class="n">{i + 1:02d}</span><h3>{e(x[1])}</h3><p>{e(x[2])}</p>' + (f'<p><a href="{x[3]}" target="_blank" rel="noopener" style="font-weight:800;color:var(--ink)">Ver o anúncio →</a></p>' if len(x) > 3 else '') + '</article>' for i, x in enumerate(c['juntos']))
     jt = c.get('juntos_t', ('Já trabalhámos juntos', 'Os seus imóveis, pela Usina.', 'Algumas das reportagens que fizemos para si. É este o padrão que propomos manter em todas as angariações.'))
     return f'''<section id="juntos" style="background:var(--paper2)">
   <div class="wrap"><span class="eb">{e(jt[0])}</span><h2>{e(jt[1])}</h2>
