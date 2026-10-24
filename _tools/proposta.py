@@ -107,6 +107,11 @@ CLIENTES = {
     'tiago-branquinha': dict(nome='Tiago Branquinha', cidade='Porto', edicao=False,
         h1='O seu T2 na Prelada, contado por quem conhece a zona.',
         intro='Proposta preparada para o Tiago Branquinha, consultor imobiliário. Partimos da vídeo-reportagem que já fizemos ao T2 na Prelada e juntamos um vídeo consigo a apresentar a região, uma página própria do imóvel e uma campanha nas redes para gerar contactos. Ao fim de um mês avaliamos os resultados juntos.',
+        hero='img/tb-predio.jpg',
+        juntos_t=('A reportagem que já fizemos', 'O T2 na Prelada, pela Usina.', 'Fotografia e vídeo já entregues. São estas imagens que fecham o novo vídeo e dão vida à página do imóvel.'),
+        juntos=[('img/tb-sala-t.jpg', 'Sala', 'Ampla, com luz natural'),
+                ('img/tb-vista-t.jpg', 'Vista', 'Desafogada sobre a zona'),
+                ('img/tb-cozinha-t.jpg', 'Cozinha', 'Equipada e funcional')],
         plano=[('Fase 1 · Semana 1', 'Vídeo «Viver na Prelada»', '100€',
                 ['Gravação consigo em cena a apresentar a zona: acessos, comércio, escolas, parques', 'Imagens novas da região e planos aéreos com drone', 'Final com as imagens do T2 que já temos', 'Versão YouTube (horizontal, até 3 min) e 2 Reels verticais com legendas']),
                ('Fase 2 · Semana 2', 'Página de apresentação do imóvel', '50€',
@@ -151,9 +156,10 @@ def edicao_html():
 
 def juntos_html(c):
     cards = ''.join(f'<article class="card ic" style="--c:{COLORS[i % 3]}"><img src="{im}" alt="{e(t)}" loading="lazy"><span class="n">{i + 1:02d}</span><h3>{e(t)}</h3><p>{e(d)}</p></article>' for i, (im, t, d) in enumerate(c['juntos']))
+    jt = c.get('juntos_t', ('Já trabalhámos juntos', 'Os seus imóveis, pela Usina.', 'Algumas das reportagens que fizemos para si. É este o padrão que propomos manter em todas as angariações.'))
     return f'''<section id="juntos" style="background:var(--paper2)">
-  <div class="wrap"><span class="eb">Já trabalhámos juntos</span><h2>Os seus imóveis, pela Usina.</h2>
-    <p class="lead">Algumas das reportagens que fizemos para si. É este o padrão que propomos manter em todas as angariações.</p>
+  <div class="wrap"><span class="eb">{e(jt[0])}</span><h2>{e(jt[1])}</h2>
+    <p class="lead">{e(jt[2])}</p>
     <div class="grid3">{cards}</div></div>
 </section>
 '''
@@ -192,7 +198,7 @@ def build(cliente=None):
 </div></nav>
 
 <header class="hero dark" style="min-height:min(70vh,620px)">
-  <img src="/img/foz-drone.jpg" alt="" fetchpriority="high">
+  <img src="{(cliente or {}).get('hero', '/img/foz-drone.jpg')}" alt="" fetchpriority="high">
   <div class="wrap">
     <span class="eb">{e('Proposta para ' + cliente['nome'] + ' · ' + cliente['cidade']) if cliente else 'Proposta de serviços · Usina Vídeos'}</span>
     <h1>{e(cliente['h1']) if cliente else 'Produção audiovisual para o mercado imobiliário.'}</h1>
