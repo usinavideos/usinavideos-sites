@@ -17,7 +17,7 @@ USINA = {
     '@type': ['Organization', 'ProfessionalService'], '@id': BASE + '/#usina',
     'name': 'Usina Vídeos', 'url': BASE + '/', 'logo': BASE + '/img/logo/usina-horizontal-1200.png',
     'image': BASE + '/img/foz-drone.jpg',
-    'description': 'Produção audiovisual imobiliária: fotografia, vídeo com drone, reportagem, sites, apresentações digitais e podcasts, no Norte e em todo o Portugal.',
+    'description': 'Produtora de conteúdo e comunicação: vídeo, fotografia, drone, conteúdo para redes, sites e campanhas digitais para empresas, marcas e profissionais. Imobiliário, automóvel, desporto, turismo e negócios, no Norte e em todo o Portugal.',
     'telephone': '+351912988971', 'email': 'freireneto@me.com',
     'address': {'@type': 'PostalAddress', 'addressRegion': 'Porto', 'addressCountry': 'PT'},
     'areaServed': [{'@type': 'AdministrativeArea', 'name': 'Norte de Portugal'}, {'@type': 'Country', 'name': 'Portugal'}],
@@ -209,7 +209,7 @@ open(os.path.join(ROOT, 'robots.txt'), 'w').write(
 # llms.txt: resumo para assistentes de IA
 open(os.path.join(ROOT, 'llms.txt'), 'w').write(f'''# Usina Vídeos
 
-> Produção audiovisual imobiliária em Portugal (Norte e todo o país): fotografia, vídeo com drone, reportagem, visitas 3D, sites, apresentações digitais e podcasts. Dirigida por Freire Neto (jornalista desde 1997, fundador do Motores e Ação) e Sandra Freire (edição, produção e administração, 20 anos em televisão, produtoras e no Motores e Ação). Orçamentos por WhatsApp +351 912 988 971 ou freireneto@me.com.
+> Produtora de conteúdo e comunicação em Portugal (Norte e todo o país): vídeo, fotografia, drone, conteúdo para redes, sites, campanhas e marketing digital para empresas, marcas e profissionais. Áreas: imobiliário, automóvel, desporto, turismo, negócios e pessoas. Dirigida por Freire Neto (jornalista desde 1997, fundador do Motores e Ação) e Sandra Freire (edição, produção e administração, 20 anos em televisão, produtoras e no Motores e Ação). Orçamentos por WhatsApp +351 912 988 971 ou freireneto@me.com.
 
 ## Site
 - [Usina Vídeos (PT)]({BASE}/): serviços, trabalhos, desporto, marcas e contacto
