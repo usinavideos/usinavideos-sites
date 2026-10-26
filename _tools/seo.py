@@ -21,7 +21,7 @@ USINA = {
     'telephone': '+351912988971', 'email': 'freireneto@me.com',
     'address': {'@type': 'PostalAddress', 'addressRegion': 'Porto', 'addressCountry': 'PT'},
     'areaServed': [{'@type': 'AdministrativeArea', 'name': 'Norte de Portugal'}, {'@type': 'Country', 'name': 'Portugal'}],
-    'knowsLanguage': ['pt-PT', 'en', 'es'],
+    'knowsLanguage': ['pt-PT', 'en', 'es'], 'foundingDate': '2002',
     'founder': [{'@type': 'Person', 'name': 'Freire Neto', 'jobTitle': 'Jornalista e produtor audiovisual', 'sameAs': ['https://www.linkedin.com/in/freireneto/', 'https://www.instagram.com/freireneto', 'https://www.instagram.com/neofreireportugal']},
                 {'@type': 'Person', 'name': 'Sandra Freire', 'jobTitle': 'Edição, produção e administração'}],
     'sameAs': ['https://www.instagram.com/usina.videos', 'https://www.facebook.com/usinacomvideos', 'https://motoreseacao.com',
