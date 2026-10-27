@@ -1,5 +1,6 @@
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from social_banner import social_banner, SOCIAL_CSS
 from mea_banner import mea_banner, MEA_CSS
 import html
 I='https://images.century21.pt/'
@@ -70,6 +71,6 @@ WA='https://wa.me/351912988971?text=Ol%C3%A1%20Freire%2C%20vi%20o%20site%20da%20
 tabs=''.join(f'<button class="tab{" on" if k=="todos" else ""}" data-f="{k}" aria-pressed="{"true" if k=="todos" else "false"}">{n}</button>' for k,n in CATS)
 props='\n'.join(card(p) for p in P)
 vids=VIDS+'<h3 class="vsub">No Instagram da Cordial Level</h3><div class="igrow">'+''.join(f'<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/{c}/?utm_source=ig_embed" data-instgrm-version="14" style="background:#fff;border:0;border-radius:14px;margin:0;max-width:540px;min-width:260px;width:100%"><a href="https://www.instagram.com/p/{c}/" target="_blank" rel="noopener">Instagram</a></blockquote>' for c in ['Dd7UOxSDG8Q','DbMWJvfs3_z','DYfFrTsDZk0'])+'</div><script async src="https://www.instagram.com/embed.js"></script>'
-out=open('_tools/cordiallevel_template.html').read().replace('{{TABS}}',tabs).replace('{{PROPS}}',props).replace('{{VIDS}}',vids).replace('{{WA}}',WA).replace('{{N}}',str(len(P))).replace('{{BAR}}',BAR).replace('{{MEA}}',mea_banner('pt','cordiallevel')).replace('{{MEACSS}}',MEA_CSS)
+out=open('_tools/cordiallevel_template.html').read().replace('{{TABS}}',tabs).replace('{{PROPS}}',props).replace('{{VIDS}}',vids).replace('{{WA}}',WA).replace('{{N}}',str(len(P))).replace('{{BAR}}',BAR).replace('{{MEA}}',mea_banner('pt','cordiallevel')).replace('{{MEACSS}}',MEA_CSS).replace('{{SOCIAL}}',social_banner('cl')).replace('{{SOCIALCSS}}',SOCIAL_CSS)
 open('cordiallevel/index.html','w').write(out)
 print('ok',len(out))

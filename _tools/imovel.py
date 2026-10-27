@@ -4,6 +4,10 @@
 Uso: python3 _tools/imovel.py            -> escreve t3leca/index.html e casaraofoz/index.html
 Os dados de cada imóvel estão em IMOVEIS, no fim deste ficheiro.
 """
+import html
+import sys as _s, os as _o
+_s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))
+from social_banner import social_banner, SOCIAL_CSS
 import html, os, urllib.parse as up
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -285,7 +289,7 @@ def build(p):
 <link rel="icon" href="/img/logo/usina-simbolo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
-<style>{CSS}{CREDITO_CSS}</style>
+<style>{CSS}{CREDITO_CSS}{SOCIAL_CSS}</style>
 </head>
 <body>
 <nav class="nav" aria-label="Secções"><div class="wrap"><a class="brand" href="../">Cordial <b>Level</b></a>{nav}</div></nav>
@@ -353,6 +357,8 @@ def build(p):
     <p class="sig">A sua exigência, a nossa assinatura.</p>
   </div>
 </section>
+
+<section id="redes" style="padding-top:0"><div class="wrap">{social_banner('cl')}</div></section>
 
 <footer><div class="wrap">
   <span><b style="color:#F7F5F0;font-weight:700">Cordial Level | CENTURY 21 Arquitectos · AMI 11414</b> · <a href="https://www.instagram.com/cordiallevel/">Instagram</a> · <a href="https://www.facebook.com/cordiallevel/">Facebook</a> · <a href="https://www.youtube.com/@CordialLevelPT">YouTube</a><br>{e(p['legal'])} Cada agência CENTURY 21 é jurídica e financeiramente independente.</span>

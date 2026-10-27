@@ -109,7 +109,23 @@ footer a{color:inherit}
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(18,40,75,.97);border-top:1px solid var(--gold)}
 .bar a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:999px;background:#1E9E4A;color:#fff;text-decoration:none;font-weight:700;font-size:14px}
 @media(min-width:900px){.bar{left:auto;right:18px;bottom:18px;grid-template-columns:auto auto;border:1px solid var(--gold);border-radius:22px;padding:10px 10px 10px}.bar a{padding:0 18px}}
-.credito{background:#0F2438;border-top:5px solid var(--gold)}.cr{display:grid;gap:28px;align-items:center}@media(min-width:900px){.cr{grid-template-columns:1.4fr 1fr}}.crb{display:grid;gap:12px}.crb .b{text-align:center;justify-content:center}.crb small{color:#B9B3A6;font-size:13px;line-height:1.5}</style>
+.credito{background:#0F2438;border-top:5px solid var(--gold)}.cr{display:grid;gap:28px;align-items:center}@media(min-width:900px){.cr{grid-template-columns:1.4fr 1fr}}.crb{display:grid;gap:12px}.crb .b{text-align:center;justify-content:center}.crb small{color:#B9B3A6;font-size:13px;line-height:1.5}
+.sb{border-radius:22px;padding:34px 30px;display:grid;gap:26px;align-items:center;box-shadow:0 12px 34px rgba(0,0,0,.18)}
+@media(min-width:960px){.sb{grid-template-columns:1fr 1.25fr;padding:42px 44px}}
+.sb .sb-eb{display:block;font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+.sb h3{color:#fff!important;margin:8px 0 0;font-size:clamp(24px,3vw,34px);line-height:1.12;font-weight:800}
+.sb p{margin:12px 0 0!important;font-size:16px;line-height:1.55;color:rgba(255,255,255,.82)!important}@media(min-width:560px){.sb-l .sb-yt,.sb-l .sb-in{grid-column:1/-1}}
+.sb>*{min-width:0}.sb-l{display:grid;gap:10px;min-width:0}.sb-i{min-width:0}@media(min-width:560px){.sb-l{grid-template-columns:1fr 1fr}}
+.sb-i{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;text-decoration:none;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);transition:transform .2s,background .2s}
+.sb-i:hover{transform:translateY(-2px);background:rgba(255,255,255,.14)}
+.sb-i svg{width:36px;height:36px;flex:none}.sb-i span{display:flex;flex-direction:column;min-width:0}
+.sb-i b{font-size:16px;color:#fff}.sb-i small{font-size:13px;color:rgba(255,255,255,.72);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sb-i em{margin-left:auto;flex:none;font-style:normal;font-weight:800;font-size:13px;white-space:nowrap}
+.sb .sb-i.sb-yt em{color:#fff}.sb-i.sb-yt{background:#FF0033;border-color:#FF0033}.sb-i.sb-yt small{color:rgba(255,255,255,.85)}.sb-i.sb-yt em{color:#fff}
+.sb-i.sb-yt svg rect{fill:#fff}.sb-i.sb-yt svg path{fill:#FF0033}
+.sb-cl{background:linear-gradient(135deg,#0F2438,#1B3A57);color:#fff;border-bottom:5px solid #C9A45C}.sb-cl .sb-eb{color:#D4B562}.sb-cl .sb-i em{color:#D4B562}
+.sb-us{background:#141213;color:#fff;border-bottom:5px solid #E5AE29}.sb-us .sb-eb{color:#E5AE29}.sb-us .sb-i em{color:#E5AE29}
+</style>
 <!--seo-->
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link rel="canonical" href="https://usinavideos.pt/cordiallevel/cedofeita/">
@@ -249,6 +265,8 @@ footer a{color:inherit}
     <p class="sig">A sua exigência, a nossa assinatura.</p>
   </div>
 </section>
+
+<section id="redes" style="padding-top:0"><div class="wrap"><div class="sb sb-cl"><div class="sb-t"><span class="sb-eb">Siga a Cordial Level</span><h3>Os novos imóveis chegam primeiro às redes.</h3><p>Vídeo-reportagens, Shorts e o podcast Panorama Imobiliário PT. Subscreva e ative as notificações.</p></div><div class="sb-l"><a class="sb-i sb-yt" href="https://www.youtube.com/@CordialLevelPT?sub_confirmation=1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="#FF0033"/><path d="M10 9v6l5.2-3z" fill="#fff"/></svg><span><b>YouTube</b><small>@CordialLevelPT</small></span><em>Subscrever →</em></a><a class="sb-i sb-ig" href="https://www.instagram.com/cordiallevel/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="igg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".45" stop-color="#D62976"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="6" fill="url(#igg)"/><circle cx="12" cy="12" r="4.4" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.3" fill="#fff"/></svg><span><b>Instagram</b><small>@cordiallevel</small></span><em>Seguir →</em></a><a class="sb-i sb-fb" href="https://www.facebook.com/cordiallevel/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#1877F2"/><path d="M13.3 20v-6h2l.4-2.5h-2.4V10c0-.7.3-1.3 1.4-1.3h1.1V6.6c-.3 0-1-.1-1.9-.1-2 0-3.1 1.2-3.1 3.2v1.8H8.7V14h2.1v6z" fill="#fff"/></svg><span><b>Facebook</b><small>/cordiallevel</small></span><em>Seguir →</em></a></div></div></div></section>
 
 <footer><div class="wrap">
   <span><b style="color:#F7F5F0;font-weight:700">Cordial Level | CENTURY 21 Arquitectos · AMI 11414</b> · <a href="https://www.instagram.com/cordiallevel/">Instagram</a> · <a href="https://www.facebook.com/cordiallevel/">Facebook</a> · <a href="https://www.youtube.com/@CordialLevelPT">YouTube</a><br>Informação sujeita a confirmação; áreas e características segundo a ficha CENTURY 21. Cada agência CENTURY 21 é jurídica e financeiramente independente.</span>

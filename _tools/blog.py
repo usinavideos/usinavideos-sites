@@ -12,6 +12,7 @@ import html, json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from site_usina import CSS, COLORS, WA_SVG
 from mea_banner import mea_banner, MEA_CSS
+from social_banner import social_banner, SOCIAL_CSS
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = 'https://usinavideos.pt'
@@ -206,7 +207,7 @@ def head(title, desc, url, img, kind, ld):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
-<style>{CSS}{MEA_CSS}{BLOG_CSS}</style>
+<style>{CSS}{MEA_CSS}{BLOG_CSS}{SOCIAL_CSS}</style>
 </head>
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
@@ -217,7 +218,8 @@ def head(title, desc, url, img, kind, ld):
 '''
 
 
-FOOT = f'''<footer><div class="wrap" style="display:block;margin-bottom:28px">{mea_banner('pt', 'usinavideos_blog')}</div><div class="wrap">
+FOOT = f'''<section style="padding:0 0 56px"><div class="wrap">{social_banner('usina')}</div></section>
+<footer><div class="wrap" style="display:block;margin-bottom:28px">{mea_banner('pt', 'usinavideos_blog')}</div><div class="wrap">
   <a href="/" aria-label="Usina Vídeos · página inicial"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
   <span>Produtora de conteúdo e comunicação · Norte e todo o Portugal · © Usina Vídeos</span>
 </div></footer>

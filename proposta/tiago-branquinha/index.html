@@ -33,14 +33,14 @@ section{padding:88px 0}
 .nav{position:sticky;top:0;z-index:20;background:rgba(20,18,19,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;align-items:center;gap:18px;height:64px}
 .nav .logo img{height:30px;width:auto}
-.nav .links{display:flex;gap:18px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.nav .links{display:flex;gap:16px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
 .nav .links::-webkit-scrollbar{display:none}
 .nav .links a{color:#D6D1CD;text-decoration:none;font-size:14px;font-weight:700;white-space:nowrap}
 .nav .links a:hover{color:var(--y)}
 .lang{display:flex;gap:2px;font-size:12px;font-weight:800}
 .lang a{color:var(--muted);text-decoration:none;padding:4px 6px;border-radius:6px}
 .lang a[aria-current]{color:var(--ink);background:var(--y)}
-.nav .btn{padding:10px 16px;font-size:14px}
+.nav .btn{padding:10px 16px;font-size:14px;white-space:nowrap;flex:none}
 @media(max-width:900px){.nav .links{display:none}.nav .wrap{gap:10px}.nav .lang{margin-left:auto}}
 @media(max-width:420px){.nav .btn{display:none}}
 /* hero */
@@ -54,6 +54,11 @@ section{padding:88px 0}
 .hero .btn.o{color:#fff}
 .stripe{display:flex;width:120px;height:5px;border-radius:3px;overflow:hidden;margin-top:26px}.stripe i{flex:1}
 .cap{position:absolute;right:20px;bottom:16px;z-index:1;font-size:12px;color:rgba(255,255,255,.65)}
+/* confiança e botão WhatsApp */
+.trust{background:var(--ink2);border-bottom:1px solid var(--line)}.trust .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;padding-top:16px;padding-bottom:16px}
+.trust span{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--y)}.trust b{color:#E9E5E1;font-size:16px;font-weight:800;letter-spacing:.02em;opacity:.85}
+.fab{position:fixed;right:16px;bottom:16px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.fab{color:#fff}.fab svg{width:30px;height:30px}
 /* quem */
 .team{display:grid;gap:12px;margin-top:22px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.team>div{background:#fff;border:1px solid #E3DED6;border-left:5px solid var(--c);border-radius:14px;padding:16px 18px}.team b{display:block;font-size:18px;color:var(--ink)}.team span{display:block;margin-top:2px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}.team p{margin:8px 0 0!important;font-size:15px}
 .two{display:grid;gap:40px}
