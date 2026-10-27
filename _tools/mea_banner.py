@@ -65,9 +65,30 @@ ALT = {'pt': 'Motores e Ação: antes de comprar carro, passa por aqui. Lançame
        'es': 'Motores e Ação: antes de comprar coche, pasa por aquí. Lanzamientos, pruebas y ofertas en Brasil y Portugal.'}
 
 
-def mea_banner(lang='pt', source='usinavideos'):  # banner em imagem (1200x300) criado pelo Freire
-    return (f'<a class="meaimg" href="https://www.motoreseacao.com/?utm_source={source}&amp;utm_medium=banner&amp;utm_campaign=mea_top" target="_blank" rel="noopener">'
-            f'<img src="/img/banner-motoreseacao-1200x300.jpg" alt="{ALT[lang]}" width="1200" height="300" loading="lazy"></a>')
+MOB = {'pt': ('Motores e Ação · desde 2002', 'Antes de comprar carro, passa por aqui.', 'Lançamentos, testes e ofertas · Brasil e Portugal', 'Ver no motoreseacao.com'),
+       'en': ('Motores e Ação · since 2002', 'Before buying a car, stop here.', 'Launches, road tests and offers · Brazil and Portugal', 'Visit motoreseacao.com'),
+       'es': ('Motores e Ação · desde 2002', 'Antes de comprar coche, pasa por aquí.', 'Lanzamientos, pruebas y ofertas · Brasil y Portugal', 'Ver en motoreseacao.com')}
+
+
+def mea_banner(lang='pt', source='usinavideos'):  # banner em imagem (1200x300) + versão para telemóvel
+    u = f'https://www.motoreseacao.com/?utm_source={source}&amp;utm_medium=banner&amp;utm_campaign=mea_top'
+    eb, h, p, cta = MOB[lang]
+    return (f'<a class="meaimg" href="{u}" target="_blank" rel="noopener">'
+            f'<img src="/img/banner-motoreseacao-1200x300.jpg" alt="{ALT[lang]}" width="1200" height="300" loading="lazy"></a>'
+            f'<a class="meam" href="{u}" target="_blank" rel="noopener" aria-label="{ALT[lang]}">'
+            f'<span class="mm-im"><img class="mm-car" src="/img/mea-toro-t.jpg" alt="" loading="lazy"><span class="mm-cap">Fiat Toro Ranch · imagem Fiat</span></span>'
+            f'<span class="mm-bd"><img class="mm-lg" src="/img/logo/motores-e-acao-quadrado.jpg" alt="Motores e Ação" width="120" height="120" loading="lazy">'
+            f'<span><span class="mm-eb">{eb}</span><b>{h}</b><span class="mm-p">{p}</span></span></span>'
+            f'<span class="mm-cta">{cta} →</span></a>')
 
 
 MEA_CSS += ".meaimg{display:block;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .25s}.meaimg:hover{transform:translateY(-2px)}.meaimg img{display:block;width:100%;height:auto}"
+MEA_CSS += """.meam{display:none}
+@media(max-width:640px){.meaimg{display:none}.meam{display:block;border-radius:18px;overflow:hidden;background:#0B0E14;color:#fff;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.meam .mm-im{display:block;position:relative}.meam .mm-car{display:block;width:100%!important;height:auto!important;aspect-ratio:16/9;object-fit:cover}.meam .mm-cap{position:absolute;right:10px;bottom:8px;font-size:10px;color:rgba(255,255,255,.75)}
+.meam .mm-bd{display:flex;gap:14px;align-items:flex-start;padding:18px 18px 4px}.meam .mm-lg{width:56px!important;height:56px!important;border-radius:12px;flex:none}
+.meam .mm-eb{display:block;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#E96A4C}
+.meam b{display:block;margin-top:4px;font-size:24px;line-height:1.08;font-weight:900;text-transform:uppercase;color:#fff}
+.meam .mm-p{display:block;margin-top:6px;font-size:14px;color:#C9CFD8}
+.meam .mm-cta{display:block;margin:14px 18px 18px;text-align:center;background:#E0503A;color:#fff;font-weight:900;font-size:16px;padding:13px 16px;border-radius:999px}}
+"""
