@@ -23,6 +23,41 @@ CATS = {'bastidores': 'Bastidores e making of', 'comunicacao': 'Comunicação e 
         'mercados': 'Mercados', 'cases': 'Cases'}
 
 POSTS = [
+    dict(slug='home-staging-antes-da-reportagem', cat='comunicacao', date='2026-10-27',
+         title='Home staging: o que fazer antes da sessão de fotografia e vídeo',
+         desc='Arrumação, limpeza, luz e a ajuda de proprietários, inquilinos e consultor: o checklist para fotos e vídeos de imóveis que geram contactos.',
+         img='/cordiallevel/t3leca/img/leca-1.jpg',
+         lead='A câmara só mostra o que lá está. Um imóvel bem preparado rende mais no ecrã do que qualquer edição.',
+         body='''<p>Antes de qualquer visita, o comprador vê o imóvel nas fotografias e no vídeo. É aí que decide se marca. Por isso a preparação, o chamado <b>home staging</b>, começa antes de chegarmos com a câmara.</p>
+<p>Os números vêm dos Estados Unidos, mas a lógica é a mesma cá: no relatório de 2025 da associação nacional de mediadores (NAR), <b>83%</b> dos agentes de compradores dizem que um imóvel preparado ajuda o comprador a imaginar-se lá a viver, e <b>49%</b> dos agentes de vendedores viram o tempo de venda baixar. As divisões mais preparadas são a sala, o quarto principal e a cozinha.</p>
+<h2>1. Arrumar e despersonalizar</h2>
+<p>Menos é mais. Guardar objetos pessoais, fotografias de família, ímanes do frigorífico, produtos à vista na casa de banho e cabos soltos. Bancadas e mesas quase vazias.</p>
+<h2>2. Limpeza a fundo</h2>
+<p>Vidros, espelhos, inox e torneiras apanham tudo. Camas feitas, toalhas lavadas e iguais, chão sem marcas. Arejar a casa antes da sessão.</p>
+<h2>3. Luz, sempre</h2>
+<p>Estores e cortinas abertos, todas as luzes acesas, lâmpadas a funcionar e da mesma cor. Marcar a sessão para a hora de melhor luz natural do imóvel.</p>
+<h2>4. Pequenos arranjos</h2>
+<p>Lâmpadas fundidas, puxadores soltos, manchas e torneiras a pingar. Na fotografia, um defeito pequeno parece maior.</p>
+<figure class="bf"><img src="/cordiallevel/t3leca/img/leca-14.jpg" alt="Quarto preparado para a sessão, T3 em Leça da Palmeira" loading="lazy"><figcaption>Quarto preparado para a reportagem · Cordial Level | CENTURY 21 Arquitectos · AMI 11414</figcaption></figure>
+<h2>5. Proprietários e inquilinos do mesmo lado</h2>
+<p>Avisar com dias de antecedência, combinar o horário e explicar o que vai ser filmado. Pedir que retirem carros da entrada e da garagem, levem os animais e guardem objetos de valor. Uma casa habitada pode ficar impecável, se todos souberem o plano.</p>
+<h2>6. O consultor antes e durante</h2>
+<ul><li><b>Antes:</b> visita prévia, lista das divisões e dos pontos fortes, chaves, planta e acessos (garagem, arrecadação, terraço).</li>
+<li><b>No dia:</b> chegar antes da equipa, abrir estores, acender luzes, dar os últimos retoques e estar pronto para aparecer no vídeo.</li></ul>
+<table class="bt"><thead><tr><th>Divisão</th><th>O que preparar</th></tr></thead><tbody>
+<tr><td>Sala</td><td>Sofá alinhado, almofadas, mesa livre, luz natural e artificial</td></tr>
+<tr><td>Quarto</td><td>Cama feita com roupa clara, mesas de cabeceira quase vazias</td></tr>
+<tr><td>Cozinha</td><td>Bancadas livres, inox limpo, nada no lava-loiça</td></tr>
+<tr><td>Casa de banho</td><td>Toalhas iguais, sem produtos à vista, tampa da sanita fechada</td></tr>
+<tr><td>Exterior</td><td>Varanda, jardim e entrada arrumados, sem carros à frente</td></tr></tbody></table>
+<h2>O exemplo da Cordial Level</h2>
+<p>Na Cordial Level, os consultores <b>Casemiro Ramos</b> e <b>Francisco Medeiros</b> chegam sempre antes ao imóvel e deixam tudo impecável: ambientes arrumados, iluminados e preparados ao pormenor. É esse cuidado com o home staging que se vê depois nas reportagens dos imóveis que anunciam.</p>
+<figure class="bf"><img src="/cordiallevel/t3leca/img/leca-18.jpg" alt="Casa de banho preparada para a sessão" loading="lazy"><figcaption>Cordial Level | CENTURY 21 Arquitectos · AMI 11414</figcaption></figure>
+<p>Quando um imóvel está vazio ou precisa de obras, podemos fazer simulações de decoração. São sempre identificadas como imagens criadas com IA.</p>
+<p class="cap">Fontes: <a href="https://www.nar.realtor/newsroom/nar-report-reveals-home-staging-boosts-sale-prices-and-reduces-time-on-market" target="_blank" rel="noopener">NAR, 2025 Profile of Home Staging</a> · <a href="https://www.imovirtual.com/noticias/imobiliario/importancia-home-staging" target="_blank" rel="noopener">Imovirtual, a importância do home staging</a></p>''',
+         dica='Na véspera, envie ao proprietário ou inquilino este checklist por WhatsApp. No dia, chegue 30 minutos antes da equipa.',
+         veredito='Home staging não é decoração cara. É método, limpeza e luz, e começa no consultor.',
+         links=[('Ver os imóveis da Cordial Level', '/cordiallevel/'), ('Peça orçamento pelo WhatsApp', WA)]),
     dict(slug='bastidores-condominio-coral-foz', cat='bastidores', date='2026-10-27',
          title='Bastidores: como produzimos o T4+1 do Condomínio Coral, na Foz',
          desc='Fotografia, drone, vídeo com a consultora e uma página em quatro línguas: o making of de um imóvel premium na Foz do Douro.',
