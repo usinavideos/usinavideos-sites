@@ -78,22 +78,27 @@ def build():
 .yhero p{{margin-top:18px;font-size:19px;line-height:1.55;color:#D6D1CD;max-width:62ch}}.yhero .eb{{color:#F2C200}}
 .ytab{{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;font-size:15px;min-width:560px}}.ytab th,.ytab td{{padding:13px 15px;border-bottom:1px solid #E3DED6;text-align:left;vertical-align:top}}.ytab th{{background:var(--ink);color:#fff;font-size:12px;letter-spacing:.08em;text-transform:uppercase}}
 .ystats b{{font-size:clamp(19px,5.2vw,28px)!important;word-break:break-word}}
+.yh{{display:grid;gap:30px;align-items:center}}@media(min-width:900px){{.yh{{grid-template-columns:1fr 280px}}}}.ylogo{{width:100%;height:auto!important;max-width:280px;border-radius:22px;align-self:center}}@media(max-width:899px){{.ylogo{{max-width:140px;order:-1}}}}
+.ygal{{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:28px}}.ygal img{{width:100%;height:100%;object-fit:cover;border-radius:14px;aspect-ratio:16/9}}
 .draft{{display:inline-block;margin-top:18px;background:#F2C200;color:#141213;font-weight:900;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px}}
 </style>
 </head>
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
   <a class="logo" href="/"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
-  <div class="links"><a href="#modelo">O modelo</a><a href="#vendas">Vendas</a><a href="#autoridade">Autoridade</a><a href="#divulgacao">Divulgação</a><a href="#comercial">Comercial</a><a href="#opcoes">Como começar</a></div>
+  <div class="links"><a href="#modelo">O modelo</a><a href="#vendas">Vendas</a><a href="#autoridade">Autoridade</a><a href="#divulgacao">Divulgação</a><a href="#site">Site</a><a href="#comercial">Comercial</a><a href="#opcoes">Como começar</a></div>
   <a class="btn y" href="{WA}" target="_blank" rel="noopener">Conversar</a>
 </div></nav>
 
-<header class="yhero"><div class="wrap">
+<header class="yhero"><div class="wrap yh">
+  <div>
   <span class="eb">Proposta para a Yellow Rules · Viana do Castelo</span>
   <h1>Conteúdo todas as semanas, gravado num dia por mês.</h1>
   <p>Para o Renato e a Michelle Furmann. A Yellow Rules já tem o mais difícil: experiência, marcas fortes e um rosto que as pessoas querem ver. A Usina Vídeos junta-lhe produção profissional e regularidade, para gerar mais vendas na 2r4.eu, mais lojistas e mais autoridade para o Jeca Joia.</p>
   <span class="draft">Rascunho para a primeira conversa</span>
   {STRIPE}
+  </div>
+  <img class="ylogo" src="img/yr-logo.jpg" alt="Yellow Rules" width="931" height="911">
 </div></header>
 
 <section>
@@ -102,6 +107,7 @@ def build():
       <p style="margin-top:18px">A nossa proposta é somar a este trabalho: transformar o dia a dia do Renato (testes, visitas a lojistas, provas) em ainda mais conteúdo, publicado todas as semanas e sempre com um caminho para a venda.</p></div>
     <div class="stats">{forcas}</div>
   </div>
+  <div class="wrap ygal"><img src="img/yr-armazem.jpg" alt="Armazém da Yellow Rules em Viana do Castelo" loading="lazy"><img src="img/yr-bms.jpg" alt="Peças BMS Racing" loading="lazy"><img src="img/yr-xgrip.jpg" alt="Campanha X-Grip" loading="lazy"></div>
 </section>
 
 <section id="modelo" style="background:var(--paper2)">
@@ -133,6 +139,15 @@ def build():
   <div class="wrap"><span class="eb">Divulgação nos nossos canais</span><h2>A Yellow Rules também nos nossos meios.</h2>
     <p class="lead">Cada conteúdo produzido em conjunto chega também ao público da Usina Vídeos e do Motores e Ação.</p>
     <div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">{div}</div></div>
+</section>
+
+<section id="site">
+  <div class="wrap two">
+    <div><span class="eb">Site e loja online</span><h2>Os vídeos também a vender na 2r4.eu.</h2>
+      <p style="margin-top:18px">Com o vosso acesso, podemos manter o yellowrules.com e a 2r4.eu atualizados: banners das campanhas, novidades das marcas, vídeos nas fichas de produto e páginas em português e espanhol. Quem visita a loja vê o produto a funcionar antes de comprar.</p>
+      <ul class="cl" style="margin-top:16px"><li style="color:var(--txt)">Banners e campanhas do mês, como os portes grátis</li><li style="color:var(--txt)">Vídeo do Jeca Joia nas fichas dos produtos testados</li><li style="color:var(--txt)">Páginas por marca, prontas para Google e anúncios</li><li style="color:var(--txt)">Textos e fotografias novos a cada sessão em Viana</li></ul></div>
+    <img src="img/yr-portes.jpg" alt="Campanha de portes grátis da 2R4" loading="lazy" style="width:100%;border-radius:16px">
+  </div>
 </section>
 
 <section id="comercial" style="background:var(--paper2)">
