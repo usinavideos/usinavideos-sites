@@ -41,9 +41,10 @@ def card(p):
   <div class="ph"><img src="{img_src}" alt="{html.escape(t)}" loading="lazy" width="900" height="675">{fl}{ai}</div>
   <div class="body"><span class="loc">{html.escape(loc)}</span><h3>{html.escape(t)}</h3><ul class="specs">{sp}</ul><div class="row"><span class="price">{price}</span><span class="ref">Ref. {ref}</span></div></div>
 </a>'''
-FEAT=('yo7RN7u6JJY','Terrenos junto ao Rio Minho, em Monção','Novo · Vídeo-reportagem · 1 min 45 s',
-      'Dois terrenos de cultura e vinha em São Bento (Bela), na terra do Alvarinho, a minutos do rio, das Termas e do centro histórico de Monção.','moncao/','Ver a apresentação dos terrenos')
-V=[('xEDuuPNMacM','T3 em Leça da Palmeira, junto às Piscinas das Marés','Vídeo-reportagem · 1 min 42 s','t3leca/'),
+FEAT=('07GUVT6ILno','T1 duplex em Cedofeita, no centro do Porto','Novo · Vídeo-reportagem · 1 min 38 s',
+      'T1 duplex de 2022 num condomínio com pátio ajardinado, garagem e elevador, a poucos minutos da Baixa. 289 000 €.','cedofeita/','Ver a apresentação do imóvel')
+V=[('yo7RN7u6JJY','Terrenos junto ao Rio Minho, em Monção','Vídeo-reportagem · 1 min 45 s','moncao/'),
+   ('xEDuuPNMacM','T3 em Leça da Palmeira, junto às Piscinas das Marés','Vídeo-reportagem · 1 min 42 s','t3leca/'),
    ('vU0bXm_uhGk','T3 em Leça da Palmeira, em formato vertical','Short · 550 000 €','t3leca/'),
    ('7JOcy10W8oY','Novo T1 em Matosinhos, pronto a habitar','Vídeo-reportagem · 10 min',None),
    ('Re8UZQRVTOY','Prédio inteiro na Baixa do Porto, com potencial construtivo','Vídeo-reportagem · 1 min 12 s',None)]
