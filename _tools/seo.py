@@ -214,6 +214,12 @@ if os.path.exists(os.path.join(ROOT, 'blog/index.html')):
         if os.path.exists(os.path.join(ROOT, 'blog', d, 'index.html')):
             pages.append((f'{BASE}/blog/{d}/', None))
 
+# Web stories (AMP; meta escritos pelo _tools/webstory_*.py)
+if os.path.isdir(os.path.join(ROOT, 'web-stories')):
+    for d in sorted(os.listdir(os.path.join(ROOT, 'web-stories'))):
+        if os.path.exists(os.path.join(ROOT, 'web-stories', d, 'index.html')):
+            pages.append((f'{BASE}/web-stories/{d}/', None))
+
 # sitemap.xml (lastmod só muda quando o conteúdo da página muda)
 
 
