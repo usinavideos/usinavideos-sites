@@ -36,6 +36,22 @@ def wa(num, txt):
     return f'https://wa.me/{num}?text=' + up.quote(txt)
 
 
+CREDITO = """<section id="credito" class="credito">
+  <div class="wrap cr">
+    <div><span class="eyebrow" style="color:var(--gold-l)">Crédito habitação</span>
+      <h2 class="h2" style="color:#fff">Ajudamos também no crédito.</h2>
+      <p class="lead" style="color:#D9D3C6">A CENTURY 21 Arquitectos apoia na intermediação de crédito habitação: compara propostas de vários bancos, procura as melhores condições e oportunidades para o seu perfil e acompanha todo o processo até à escritura.</p>
+      <p class="lead" style="color:#fff;font-weight:700">Fale diretamente connosco e saiba todos os detalhes e dicas.</p></div>
+    <div class="crb"><a class="b wa" href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20gostava%20de%20saber%20mais%20sobre%20o%20apoio%20no%20cr%C3%A9dito%20habita%C3%A7%C3%A3o." target="_blank" rel="noopener">Falar sobre crédito · Casemiro</a>
+      <a class="b wa" href="https://wa.me/351912706395?text=Ol%C3%A1%20Francisco%2C%20gostava%20de%20saber%20mais%20sobre%20o%20apoio%20no%20cr%C3%A9dito%20habita%C3%A7%C3%A3o." target="_blank" rel="noopener">Falar sobre crédito · Francisco</a>
+      <a class="b line" style="border-color:var(--gold-l);color:var(--gold-l)" href="https://century21.pt/credito-habitacao" target="_blank" rel="noopener">Simulador CENTURY 21 ↗</a>
+      <small>Cordial Level | CENTURY 21 Arquitectos · AMI 11414. Sujeito a aprovação das instituições de crédito.</small></div>
+  </div>
+</section>
+"""
+CREDITO_CSS = ".credito{background:#0F2438;border-top:5px solid var(--gold)}.cr{display:grid;gap:28px;align-items:center}@media(min-width:900px){.cr{grid-template-columns:1.4fr 1fr}}.crb{display:grid;gap:12px}.crb .b{text-align:center;justify-content:center}.crb small{color:#B9B3A6;font-size:13px;line-height:1.5}"
+
+
 CSS = r"""
 :root{--navy:#1B3A6B;--navy-d:#12284B;--gold:#B8962E;--gold-l:#D4B562;--cream:#F7F5F0;--ink:#1E2328;--muted:#5E6873;--line:#E3DED2;
 --serif:'Cormorant Garamond',Georgia,serif;--sans:'Mulish',system-ui,-apple-system,sans-serif;--max:1120px}
@@ -269,7 +285,7 @@ def build(p):
 <link rel="icon" href="/img/logo/usina-simbolo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
-<style>{CSS}</style>
+<style>{CSS}{CREDITO_CSS}</style>
 </head>
 <body>
 <nav class="nav" aria-label="Secções"><div class="wrap"><a class="brand" href="../">Cordial <b>Level</b></a>{nav}</div></nav>
@@ -326,7 +342,7 @@ def build(p):
 </section>
 
 {closing}
-<section id="contacto">
+{CREDITO}<section id="contacto">
   <div class="wrap">
     <span class="eyebrow">Contacto</span>
     <h2 class="h2">Marque a sua visita</h2>
@@ -583,39 +599,44 @@ IMOVEIS = {
         ref='C0393-01583', curto='T1 duplex Cedofeita',
         title='T1 duplex quase novo em Cedofeita, Porto · Cordial Level',
         desc='T1 duplex de 2022 em Cedofeita, no centro do Porto, com garagem, elevador e ar condicionado. 59 m² úteis. 289 000 €.',
-        hero='cf-fachada', hero_alt='Fachada do edifício em Cedofeita, no Porto, com azulejo amarelo e piso recuado em zinco',
+        hero='cf-drone-patio', hero_alt='O condomínio em Cedofeita visto de drone: fachada amarela, casas e pátio interior ajardinado',
         loc='Cedofeita · Porto', h1='T1 duplex em Cedofeita',
-        sub='Construção de 2022 num edifício de fachada clássica recuperada, com garagem, elevador e ar condicionado, no centro do Porto.',
+        sub='Num condomínio de 2022 com pátio ajardinado, garagem e elevador, no centro do Porto.',
         price='289 000 €',
         quote='O charme do Porto antigo, com o conforto de uma casa nova.',
-        intro='Apartamento T1 duplex com 59 m² úteis, praticamente novo, num edifício reabilitado em 2022 em Cedofeita. Um espaço funcional com quarto, casa de banho moderna e cozinha equipada, garagem no edifício e elevador. Para viver no centro ou para investir.',
-        photos_intro=['cf-frente', 'cf-entrada', 'cf-garagem'],
+        intro='Apartamento T1 duplex com 59 m² úteis, praticamente novo, num condomínio de 2022 em Cedofeita, com pátio interior ajardinado. Sala com escada para o piso superior, quarto, casa de banho moderna, cozinha equipada, garagem e elevador. Para viver no centro ou para investir.',
+        photos_intro=['cf-sala', 'cf-cozinha', 'cf-quarto'],
         ficha_h2='Duplex, quase novo e pronto a habitar',
         ficha_lead=['Distribuído por dois pisos, com a zona social separada do quarto. Paredes pintadas, pavimento em madeira e muita luz natural.',
                     'Cozinha equipada com eletrodomésticos de qualidade, casa de banho moderna e ar condicionado. Elevador e lugar de garagem no edifício.'],
-        photos_ficha=['cf-rua', 'cf-elevadores'],
+        photos_ficha=['cf-sala', 'cf-cozinha'],
         facts=[('Área útil', '59 m²'), ('Área bruta', '60 m²'), ('Tipologia', 'T1 duplex'), ('Casas de banho', '1'),
                ('Ano', '2022'), ('Estado', 'Quase novo'), ('Garagem', 'Sim'), ('Certificado energético', 'C')],
-        photos_rooms=['cf-esquina', 'cf-lateral', 'cf-garagem'],
+        photos_rooms=['cf-quarto', 'cf-patio', 'cf-garagem'],
         feat_h3='Equipamento e documentação',
         features=['Cozinha equipada', 'Ar condicionado', 'Pavimento em madeira', 'Elevador', 'Garagem no edifício',
                   'Construção de 2022', 'Certificado energético C', 'Licença de utilização NUD/549132/2022/CMP'],
         extras=[
-            dict(id='edificio', eb='O edifício', h2='Fachada clássica, interior novo', photos=['cf-fachada', 'cf-frente'],
-                 paras=['Um edifício de azulejo amarelo e cantaria recuperado em 2022, com um piso recuado em zinco. A traça tradicional do Porto por fora, construção nova por dentro.']),
+            dict(id='condominio', eb='O condomínio', h2='Um pátio ajardinado no centro do Porto', photos=['cf-drone-casas', 'cf-patio', 'cf-condominio'],
+                 paras=['Atrás da fachada de azulejo amarelo, um condomínio de 2022 com casas em torno de um pátio interior ajardinado, calçada e escadaria. Sossego e privacidade a poucos minutos da Baixa.']),
+            dict(id='edificio', eb='O edifício', h2='Fachada clássica, interior novo', photos=['cf-fachada', 'cf-drone-rua'],
+                 paras=['O edifício da frente, de azulejo amarelo e cantaria, foi recuperado com um piso recuado em zinco. A traça tradicional do Porto por fora, construção nova por dentro.']),
             dict(id='garagem', eb='Garagem', h2='Estacionamento no próprio edifício', dark=True, photos=['cf-garagem', 'cf-elevadores'],
                  paras=['Garagem coberta no edifício, com elevadores. No centro do Porto, onde estacionar é difícil, é uma vantagem rara.']),
-            dict(id='destaque', eb='Em destaque', h2='O essencial deste T1', photos=['cf-entrada', 'cf-rua', 'cf-esquina'],
-                 chips=['T1 duplex', '59 m² úteis', 'Construção de 2022', 'Garagem', 'Elevador', 'Ar condicionado', 'Centro do Porto', 'Habitação ou investimento']),
+            dict(id='destaque', eb='Em destaque', h2='O essencial deste T1', photos=['cf-porta', 'cf-escadas', 'cf-telhados'],
+                 chips=['T1 duplex', '59 m² úteis', 'Construção de 2022', 'Pátio ajardinado', 'Garagem', 'Elevador', 'Ar condicionado', 'Centro do Porto', 'Habitação ou investimento']),
         ],
-        closing=dict(id='versatil', eb='Uma solução versátil', h2='Para viver ou para investir', photos=['cf-lateral'],
+        closing=dict(id='versatil', eb='Uma solução versátil', h2='Para viver ou para investir', photos=['cf-drone-cidade'],
                      paras=['Pelo estado, pela localização e pela garagem, este T1 duplex é uma boa opção para quem quer viver no centro do Porto ou investir em arrendamento.',
                             'Marque a sua visita e venha conhecer este apartamento.']),
-        gallery=[('cf-fachada', 'Fachada do edifício'), ('cf-frente', 'O edifício visto da rua'), ('cf-rua', 'Fachada principal'),
-                 ('cf-esquina', 'O edifício e a rua'), ('cf-lateral', 'Vista lateral'), ('cf-entrada', 'Entrada'),
+        gallery=[('cf-sala', 'Sala com escada para o piso superior'), ('cf-cozinha', 'Cozinha equipada'), ('cf-quarto', 'Quarto'),
+                 ('cf-drone-patio', 'O condomínio visto de drone'), ('cf-drone-casas', 'Casas e pátio interior'), ('cf-patio', 'Pátio ajardinado'),
+                 ('cf-escadas', 'Escadaria do pátio'), ('cf-condominio', 'O condomínio'), ('cf-porta', 'Entrada'), ('cf-entrada', 'Entrada'),
+                 ('cf-telhados', 'Casas do condomínio'), ('cf-fachada', 'Fachada do edifício'), ('cf-frente', 'O edifício visto da rua'),
+                 ('cf-drone-rua', 'A rua vista de drone'), ('cf-avenida', 'A rua'), ('cf-drone-cidade', 'Cedofeita vista de drone'),
                  ('cf-garagem', 'Garagem'), ('cf-elevadores', 'Elevadores de acesso à garagem')],
-        alt='T1 duplex em Cedofeita, Porto', gal_h2='O edifício e a garagem',
-        gal_note='Fotografias do interior e vídeo do imóvel brevemente.',
+        alt='T1 duplex em Cedofeita, Porto', gal_h2='Por dentro e por fora',
+        gal_note='Imagens do interior retiradas do vídeo da Usina Vídeos; fotografias aéreas CENTURY 21 Arquitectos.',
         loc_h2='Cedofeita: o centro do Porto à porta',
         loc_txt='Em Cedofeita, uma das zonas mais procuradas do Porto, com bancos, farmácias, restaurantes, comércio e espaços verdes por perto, e a Baixa a poucos minutos.',
         maps='Cedofeita, Porto', geo=(41.1532354, -8.6211018),
