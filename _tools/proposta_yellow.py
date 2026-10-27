@@ -86,7 +86,7 @@ def build():
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
   <a class="logo" href="/"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
-  <div class="links"><a href="#modelo">O modelo</a><a href="#vendas">Vendas</a><a href="#autoridade">Autoridade</a><a href="#divulgacao">Divulgação</a><a href="#site">Site</a><a href="#comercial">Comercial</a><a href="#opcoes">Como começar</a></div>
+  <div class="links"><a href="#modelo">O modelo</a><a href="#vendas">Vendas</a><a href="#autoridade">Autoridade</a><a href="#reportagem">Reportagem</a><a href="#divulgacao">Divulgação</a><a href="#site">Site</a><a href="#comercial">Comercial</a><a href="#opcoes">Como começar</a></div>
   <a class="btn y" href="{WA}" target="_blank" rel="noopener">Conversar</a>
 </div></nav>
 
@@ -132,6 +132,16 @@ def build():
     <div><span class="eb">Com a Michelle</span><h2>Nós produzimos, a Michelle publica.</h2>
       <p style="margin-top:18px">A gestão das redes continua com quem conhece a marca e a comunidade. A Usina entrega os vídeos editados em todos os formatos, as fotografias, o calendário e os textos de cada publicação. Se for útil, também podemos publicar e gerir os anúncios.</p></div>
     <div class="stats ystats"><div><b>Horizontal</b><span>YouTube e site</span></div><div><b>Vertical</b><span>Reels, Shorts, TikTok</span></div><div><b>PT · ES</b><span>legendas para Portugal e Espanha</span></div><div><b>Relatório</b><span>vendas e alcance todos os meses</span></div></div>
+  </div>
+</section>
+
+<section id="reportagem" class="dark">
+  <div class="wrap two">
+    <div><span class="eb">Primeiro passo · Motores e Ação</span><h2>Uma reportagem sobre a Yellow Rules.</h2>
+      <p style="margin-top:18px">Uma reportagem em estilo vlog, natural e espontânea como o Jeca Joia, a contar a história da empresa: da Revista Pró Moto ao armazém em Viana do Castelo, as marcas, os pilotos e as ações em Portugal. Publicada no YouTube e no site do Motores e Ação e no blog da Usina.</p>
+      <ul class="cl"><li>O Renato e a Michelle a contar a história, sem guião rígido</li><li>Armazém, produtos e marcas em destaque</li><li>Visita a um lojista e a uma prova, com drone</li><li>Cortes verticais para as redes dos dois lados</li></ul></div>
+    <div><span class="eb">Série · Bastidores na estrada</span><h3 style="font-size:26px;margin-top:10px;color:#fff">O Jeca nas visitas e nos eventos.</h3>
+      <p style="margin-top:14px;color:#D6D1CD">Acompanhamos o Renato nas visitas a empresas e lojistas e nos eventos, a gravar os bastidores tal como acontecem. Episódios curtos, espontâneos, que mostram as marcas a chegar às pessoas e reforçam a proximidade com os parceiros.</p></div>
   </div>
 </section>
 
