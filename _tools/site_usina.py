@@ -8,6 +8,7 @@ anúncios Cordial Level sempre com "CENTURY 21 Arquitectos · AMI 11414".
 import html, os, sys, urllib.parse as up
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from mea_banner import mea_banner, MEA_CSS
+from social_banner import social_banner, SOCIAL_CSS
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WA_NUM = '351912988971'
@@ -383,7 +384,7 @@ def page(lang):
 <link rel="icon" href="/img/logo/usina-simbolo.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/img/logo/usina-simbolo-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<style>{CSS}{MEA_CSS}</style>
+<style>{CSS}{MEA_CSS}{SOCIAL_CSS}</style>
 </head>
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
@@ -493,6 +494,7 @@ def page(lang):
   </div>
 </section>
 
+<section id="siga" style="padding-bottom:0"><div class="wrap">{social_banner('usina', lang)}</div></section>
 <footer><div class="wrap" style="display:block;margin-bottom:28px">{mea_banner(lang, 'usinavideos')}</div><div class="wrap">
   <a href="/{t['path']}" aria-label="Usina Vídeos · página inicial"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
   <span>© Usina Vídeos · {e(t['foot'])} · <a href="https://www.facebook.com/usinacomvideos" target="_blank" rel="noopener">Facebook</a></span>

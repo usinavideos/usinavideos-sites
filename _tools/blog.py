@@ -12,6 +12,7 @@ import html, json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from site_usina import CSS, COLORS, WA_SVG
 from mea_banner import mea_banner, MEA_CSS
+from social_banner import social_banner, SOCIAL_CSS
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = 'https://usinavideos.pt'
@@ -116,10 +117,10 @@ POSTS = [
 <figure class="bf"><img src="/img/coral-drone.jpg" alt="Drone sobre o Condomínio Coral, Foz do Douro" loading="lazy"><figcaption>Drone Usina Vídeos · Foz do Douro</figcaption></figure>
 <h2>Porque é que funciona</h2>
 <p>Quem compra na Foz compara muito e muitas vezes está fora do país. O vídeo dá confiança, o drone responde à pergunta «onde fica?» e a página em quatro línguas evita o reencaminhamento de PDFs e fotos soltas.</p>
-<div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/XQ-kl1XxiCo?rel=0" title="Vídeo do Condomínio Coral com Cheila Monteiro" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>''',
+<div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/qwL_NxCdlNY?rel=0" title="Vídeo do Condomínio Coral com Cheila Monteiro" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>''',
          dica='Grave o consultor sempre no próprio imóvel e no fim do vídeo. É o rosto que o comprador vai procurar quando ligar.',
          veredito='Um briefing, uma produção, quatro entregáveis. É este o padrão que propomos para qualquer imóvel premium.',
-         links=[('Ver a apresentação do Coral', '/t4coral/'), ('Ver o vídeo no YouTube', 'https://youtu.be/XQ-kl1XxiCo')]),
+         links=[('Ver a apresentação do Coral', '/t4coral/'), ('Ver o vídeo no YouTube', 'https://youtu.be/qwL_NxCdlNY')]),
     dict(slug='5-regras-video-que-gera-contactos', cat='comunicacao', date='2026-10-27',
          title='5 regras para um vídeo que gera contactos',
          desc='Gancho, legendas, formatos, contacto no ecrã e resposta rápida: o que separa um vídeo bonito de um vídeo que traz clientes.',
@@ -206,7 +207,7 @@ def head(title, desc, url, img, kind, ld):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
-<style>{CSS}{MEA_CSS}{BLOG_CSS}</style>
+<style>{CSS}{MEA_CSS}{BLOG_CSS}{SOCIAL_CSS}</style>
 </head>
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
@@ -217,7 +218,8 @@ def head(title, desc, url, img, kind, ld):
 '''
 
 
-FOOT = f'''<footer><div class="wrap" style="display:block;margin-bottom:28px">{mea_banner('pt', 'usinavideos_blog')}</div><div class="wrap">
+FOOT = f'''<section style="padding:0 0 56px"><div class="wrap">{social_banner('usina')}</div></section>
+<footer><div class="wrap" style="display:block;margin-bottom:28px">{mea_banner('pt', 'usinavideos_blog')}</div><div class="wrap">
   <a href="/" aria-label="Usina Vídeos · página inicial"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
   <span>Produtora de conteúdo e comunicação · Norte e todo o Portugal · © Usina Vídeos</span>
 </div></footer>
