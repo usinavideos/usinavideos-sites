@@ -161,6 +161,25 @@ input[type=range]{accent-color:#C9A961}
 </div>
 </div>
 
+<div style="display: flex; flex-direction: column; gap: 14px; padding-top: 8px">
+<div style="font-size: 12px; letter-spacing: 0.24em; color: #8A6D2F; font-weight: 600">BEFORE AND AFTER</div>
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 34px; line-height: 1.15; color: #1B3A5C">See the real space and a decoration proposal</h3>
+<p style="margin: 0; max-width: 760px; color: #5E646B">The same rooms, empty as they are today and with virtual staging. Slide to compare.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<template v-for="it in itabs">
+<button type="button" @click="it.pick" :style="`min-height: 44px; padding: 0 18px; border-radius: 999px; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 13px; ${it.style}`">{{it.nome}}</button>
+</template>
+</div>
+<div style="position: relative; border-radius: 16px; overflow: hidden; background: #1B3A5C">
+<img :src="ia.real" :alt="`${ia.nome} — Real space`" style="width: 100%; height: clamp(260px, 52vw, 600px); object-fit: cover; display: block">
+<img :src="ia.sim" :alt="`${ia.nome} — Virtual staging · digitally generated image`" :style="`position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; clip-path: inset(0 0 0 ${ipos}%)`">
+<div aria-hidden="true" :style="`position: absolute; top: 0; bottom: 0; left: ${ipos}%; width: 2px; background: #C9A961`"></div>
+<span style="position: absolute; top: 14px; left: 14px; background: rgba(15, 36, 56, 0.88); color: #F5F1E8; font-size: 12px; padding: 6px 12px; border-radius: 999px">Real space</span>
+<span style="position: absolute; bottom: 14px; right: 14px; max-width: 70%; background: rgba(201, 169, 97, 0.95); color: #1B3A5C; font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 999px">Virtual staging · digitally generated image</span>
+</div>
+<label style="display: flex; align-items: center; gap: 14px; font-size: 13px; color: #5E646B">Slide to compare<input type="range" min="0" max="100" :value="ipos" @input="onIpos" style="flex: 1; min-height: 44px"></label>
+</div>
+
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: #E4DCC8; border: 1px solid #E4DCC8; border-radius: 14px; overflow: hidden">
 <div style="background: #FFFFFF; padding: 18px"><div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; color: #1B3A5C">T4+1</div><div style="font-size: 14px">apartment type</div></div>
 <div style="background: #FFFFFF; padding: 18px"><div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; color: #1B3A5C">236 m²</div><div style="font-size: 14px">net living area</div></div>
@@ -314,16 +333,14 @@ class DCLogic { constructor(props){ this.props = props || {}; } setState(p){ Obj
 class Component extends DCLogic {
 constructor(props) {
 super(props);
-this.state = { andar: '3', zona: 0, pos: 50, g: 0, vplay: false };
+this.state = { andar: '3', zona: 0, pos: 50, ip: 50, isel: 0, g: 0, vplay: false };
 }
 renderVals() {
 var B = '/_blob/';
 var gal = [
 { src: 'img/202d086a94acc073e599c0d454841074.jpg', cap: 'Kitchen with natural stone island', sim: false },
-{ src: 'img/bbc5279b1182ff70d064280b4ec6eefe.jpg', cap: 'Living and dining room', sim: true },
-{ src: 'img/6ea6bcabd46459f5ddc9dd3d41b33e0e.jpg', cap: 'Living and dining room — current state', sim: false },
-{ src: 'img/2d918d32c1c7f2f543d7ec0b59fe7ae0.jpg', cap: 'Master suite', sim: true },
-{ src: 'img/347bde4f2d5c35ac51db2365641314c4.jpg', cap: 'Master suite — current state', sim: false },
+{ src: 'img/6ea6bcabd46459f5ddc9dd3d41b33e0e.jpg', cap: 'Living and dining room', sim: false },
+{ src: 'img/347bde4f2d5c35ac51db2365641314c4.jpg', cap: 'Master suite', sim: false },
 { src: 'img/b4d1885209ceefb03f4b33757049ecd9.jpg', cap: 'Walk-in closet', sim: false },
 { src: 'img/b998edeeb0a174a46eca3cc8529b53f7.jpg', cap: 'Marble bathroom', sim: false },
 { src: 'img/7c227b8a56c1aec6a6dd9573f8ba79c9.jpg', cap: 'Freestanding bathtub', sim: false },
@@ -351,6 +368,8 @@ var n = gal.length;
 var on = 'background: #C9A961; color: #1B3A5C;';
 var off = 'background: transparent; color: #F5F1E8;';
 var wa = function (msg) { return 'https://wa.me/351913998917?text=' + encodeURIComponent(msg); };
+var ilist = [{ nome: 'Living and dining room', real: 'img/6ea6bcabd46459f5ddc9dd3d41b33e0e.jpg', sim: 'img/bbc5279b1182ff70d064280b4ec6eefe.jpg' }, { nome: 'Master suite', real: 'img/347bde4f2d5c35ac51db2365641314c4.jpg', sim: 'img/2d918d32c1c7f2f543d7ec0b59fe7ae0.jpg' }];
+var isel = s.isel || 0;
 return {
 vplay: s.vplay,
 vposter: !s.vplay,
@@ -375,6 +394,10 @@ plantaAlt: is2 ? '2nd floor plan with L-shaped side terrace' : '3rd floor plan',
 andarLabel: is2 ? '2ND FLOOR' : '3RD FLOOR',
 plantaTxt: is2 ? 'Open-plan living area to the west, four en-suite bedrooms with walk-in closets to the east and the access core in the centre.' : 'Living room and open-plan social area to the east, four en-suite bedrooms with walk-in closets to the west and the access core in the centre.',
 waAndar: is2 ? wa('Hello Cheila, I would like to know the terms for the 2nd-floor apartment at Condomínio Coral (Ref. C0393-01179).') : wa('Hello Cheila, I would like to know the terms for the 3rd-floor apartment at Condomínio Coral (Ref. C0393-01178).'),
+ia: ilist[isel],
+itabs: ilist.map(function (it, i) { return { nome: it.nome, style: i === isel ? 'background: #1B3A5C; color: #F5F1E8; border: 1px solid #1B3A5C;' : 'background: transparent; color: #1B3A5C; border: 1px solid #C9A961;', pick: function () { self.setState({ isel: i, ip: 50 }); } }; }),
+ipos: s.ip,
+onIpos: function (e) { self.setState({ ip: Number(e.target.value) }); },
 waGeral: wa('Hello Cheila, I would like to book a viewing at Condomínio Coral.')
 };
 }
