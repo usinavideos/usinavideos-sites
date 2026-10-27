@@ -22,6 +22,7 @@ T = {
     sites={'nav': 'Sites', 'eb': 'Sites, apresentações e podcasts', 'h2': 'Soluções digitais para o seu negócio.', 'p': 'Além do vídeo, criamos as ferramentas onde ele vive: sites, apresentações e podcasts, com a mesma qualidade de reportagem.', 'items': [('Sites', 'Sites para agências, consultores e marcas, com carteira de imóveis, vídeos e contacto direto por WhatsApp.', [('Cordial Level', '/cordiallevel/')]), ('Apresentações digitais', 'Uma página por imóvel ou projeto, em várias línguas, para enviar por link, imprimir em PDF ou mostrar em reunião.', [('Condomínio Coral', '/t4coral/'), ('T3 Leça', '/cordiallevel/t3leca/')]), ('Podcasts', 'Formato, gravação, edição e publicação no YouTube e no Spotify, com cortes para as redes sociais.', [('Panorama Imobiliário PT', 'https://www.youtube.com/watch?v=ed1kwc3x27I')])], 'ex': 'Exemplo'},
     ig_cl='Em destaque no Instagram da Cordial Level',
     agenda={'nav': 'Agenda', 'eb': 'Agenda', 'h2': 'Agenda aberta para o final de outubro e novembro.', 'p': 'Escolha o dia e a hora da sua sessão diretamente no nosso calendário. Prefere falar primeiro? Envie-nos uma mensagem pelo WhatsApp.', 'alt': 'Abrir o calendário numa nova janela'},
+    trust_t='Confiam em nós', fab='Fale connosco no WhatsApp',
     path='', html_lang='pt-PT', og_locale='pt_PT',
     title='Usina Vídeos · Produtora de conteúdo e comunicação em Portugal',
     desc='Vídeo, fotografia, drone, conteúdo para redes, sites e campanhas digitais para empresas, marcas e profissionais. Imobiliário, automóvel, desporto, turismo e negócios, no Norte e em todo o Portugal. Peça orçamento.',
@@ -56,7 +57,7 @@ T = {
     works=[('/cordiallevel/', '/cordiallevel/t3leca/img/leca-37-t.jpg', 'Cordial Level', 'Parceiro de produção: site, vídeo-reportagens, podcast e redes sociais. ' + AMI, 'Ver o site'),
            ('/t4coral/', '/img/coral-fachada.jpg', 'Condomínio Coral · Foz do Douro', 'Fotografia, drone, vídeo com a consultora e apresentação digital em quatro línguas. Consultora Cheila Monteiro · CENTURY 21 Arquitectos II · AMI 11414', 'Ver a apresentação'),
            ('https://century21.pt/ref/C0554-00006', '/img/core-devesas-t.jpg', 'CENTURY 21 Core · Vila Nova de Gaia', 'Fotografia e vídeo de uma moradia T5 nas Devesas (consultor Vasco Dinis) e de um T3 em Oliveira do Douro.', 'Ver o anúncio'),
-           ('https://www.motoreseacao.com/?utm_source=usinavideos&utm_medium=trabalhos&utm_campaign=usina', '/img/mea-toro.jpg', 'Motores e Ação · Automóvel', 'Jornalismo automóvel desde 2002: testes, lançamentos e conteúdos para marcas, no Brasil e em Portugal. Mais de 115 mil inscritos no YouTube.', 'Ver o site'),
+           ('https://www.motoreseacao.com/?utm_source=usinavideos&utm_medium=trabalhos&utm_campaign=usina', '/img/mea-toro.jpg', 'Motores e Ação · Automóvel', 'Jornalismo automóvel desde 2002: testes, lançamentos e conteúdos para marcas, no Brasil e em Portugal. Mais de 115 mil inscritos no YouTube. Imagem: Fiat.', 'Ver o site'),
            ('/cordiallevel/moncao/', '/cordiallevel/moncao/img/t1-area-t.jpg', 'Terrenos em Monção · Alto Minho', 'Drone, vídeo e simulações de projeto identificadas como IA. ' + AMI, 'Ver a apresentação'),
            ('https://www.youtube.com/watch?v=ed1kwc3x27I', 'https://i.ytimg.com/vi/ed1kwc3x27I/hqdefault.jpg', 'Panorama Imobiliário PT', 'O podcast da Cordial Level no YouTube, sobre o mercado e as decisões de quem compra casa. Produção e edição Usina Vídeos.', 'Ver no YouTube')],
     cdj=('CDJRegio', 'Clube Desportivo José Régio, Vila do Conde. Reportagem e destaques dos jogos de basquetebol.', 'Ver no Instagram'),
@@ -81,10 +82,11 @@ T = {
     sites={'nav': 'Websites', 'eb': 'Websites, presentations and podcasts', 'h2': 'Digital solutions for your business.', 'p': 'Beyond video, we build the places where it lives: websites, presentations and podcasts, with the same reporting quality.', 'items': [('Websites', 'Websites for agencies, agents and brands, with property listings, videos and direct WhatsApp contact.', [('Cordial Level', '/cordiallevel/')]), ('Digital presentations', 'One page per property or project, in several languages, to share by link, print as PDF or show in meetings.', [('Condomínio Coral', '/t4coral/en.html'), ('T3 Leça', '/cordiallevel/t3leca/')]), ('Podcasts', 'Format, recording, editing and publishing on YouTube and Spotify, with short clips for social media.', [('Panorama Imobiliário PT', 'https://www.youtube.com/watch?v=ed1kwc3x27I')])], 'ex': 'Example'},
     ig_cl='Featured on Cordial Level’s Instagram',
     agenda={'nav': 'Booking', 'eb': 'Booking', 'h2': 'Now booking for late October and November.', 'p': 'Pick the day and time of your shoot directly in our calendar. Prefer to talk first? Send us a WhatsApp message.', 'alt': 'Open the calendar in a new window'},
+    trust_t='Trusted by', fab='Chat with us on WhatsApp',
     path='en/', html_lang='en', og_locale='en_GB',
     title='Usina Vídeos · Content and communication agency in Portugal',
     desc='Video, photography, drone, social media content, websites and digital campaigns for companies, brands and professionals. Real estate, automotive, sport, tourism and business, across Northern Portugal and nationwide. Ask for a quote.',
-    nav=[('quem', 'About'), ('servicos', 'Services'), ('trabalhos', 'Work'), ('sites', 'Websites'), ('desporto', 'Sport'), ('como', 'How it works'), ('marcas', 'Brands'), ('/blog/', 'Blog'), ('agenda', 'Booking'), ('contacto', 'Contact')],
+    nav=[('quem', 'About'), ('servicos', 'Services'), ('trabalhos', 'Work'), ('sites', 'Websites'), ('desporto', 'Sport'), ('como', 'How it works'), ('marcas', 'Brands'), ('/blog/', 'Blog (PT)'), ('agenda', 'Booking'), ('contacto', 'Contact')],
     cta='Ask for a quote',
     wa_msg='Hello Freire, I would like a quote from Usina Vídeos.',
     hero_eb='Content and communication agency · Northern Portugal and nationwide',
@@ -115,7 +117,7 @@ T = {
     works=[('/cordiallevel/', '/cordiallevel/t3leca/img/leca-37-t.jpg', 'Cordial Level', 'Production partner: website, property videos, podcast and social media. ' + AMI, 'See the website'),
            ('/t4coral/en.html', '/img/coral-fachada.jpg', 'Condomínio Coral · Foz do Douro', 'Photography, drone, a video with the agent and a digital presentation in four languages. Agent Cheila Monteiro · CENTURY 21 Arquitectos II · AMI 11414', 'See the presentation'),
            ('https://century21.pt/ref/C0554-00006', '/img/core-devesas-t.jpg', 'CENTURY 21 Core · Vila Nova de Gaia', 'Photography and video of a five-bedroom house in Devesas (agent Vasco Dinis) and a three-bedroom flat in Oliveira do Douro.', 'See the listing'),
-           ('https://www.motoreseacao.com/?utm_source=usinavideos&utm_medium=trabalhos&utm_campaign=usina', '/img/mea-toro.jpg', 'Motores e Ação · Automotive', 'Automotive journalism since 2002: road tests, launches and brand content in Brazil and Portugal. Over 115,000 YouTube subscribers.', 'See the website'),
+           ('https://www.motoreseacao.com/?utm_source=usinavideos&utm_medium=trabalhos&utm_campaign=usina', '/img/mea-toro.jpg', 'Motores e Ação · Automotive', 'Automotive journalism since 2002: road tests, launches and brand content in Brazil and Portugal. Over 115,000 YouTube subscribers. Image: Fiat.', 'See the website'),
            ('/cordiallevel/moncao/', '/cordiallevel/moncao/img/t1-area-t.jpg', 'Land in Monção · Alto Minho', 'Drone, video and project visualisations labelled as AI. ' + AMI, 'See the presentation'),
            ('https://www.youtube.com/watch?v=ed1kwc3x27I', 'https://i.ytimg.com/vi/ed1kwc3x27I/hqdefault.jpg', 'Panorama Imobiliário PT', 'Cordial Level’s podcast on YouTube, about the market and the decisions behind buying a home (in Portuguese). Produced and edited by Usina Vídeos.', 'Watch on YouTube')],
     cdj=('CDJRegio', 'Clube Desportivo José Régio, Vila do Conde. Basketball match coverage and highlights.', 'See on Instagram'),
@@ -140,10 +142,11 @@ T = {
     sites={'nav': 'Webs', 'eb': 'Webs, presentaciones y pódcasts', 'h2': 'Soluciones digitales para su negocio.', 'p': 'Además del vídeo, creamos las herramientas donde vive: webs, presentaciones y pódcasts, con la misma calidad de reportaje.', 'items': [('Webs', 'Webs para agencias, agentes y marcas, con cartera de inmuebles, vídeos y contacto directo por WhatsApp.', [('Cordial Level', '/cordiallevel/')]), ('Presentaciones digitales', 'Una página por inmueble o proyecto, en varios idiomas, para enviar por enlace, imprimir en PDF o mostrar en reuniones.', [('Condomínio Coral', '/t4coral/es.html'), ('T3 Leça', '/cordiallevel/t3leca/')]), ('Pódcasts', 'Formato, grabación, edición y publicación en YouTube y Spotify, con cortes para redes sociales.', [('Panorama Imobiliário PT', 'https://www.youtube.com/watch?v=ed1kwc3x27I')])], 'ex': 'Ejemplo'},
     ig_cl='Destacado en el Instagram de Cordial Level',
     agenda={'nav': 'Agenda', 'eb': 'Agenda', 'h2': 'Agenda abierta para finales de octubre y noviembre.', 'p': 'Elija el día y la hora de su sesión directamente en nuestro calendario. ¿Prefiere hablar primero? Envíenos un mensaje por WhatsApp.', 'alt': 'Abrir el calendario en una nueva ventana'},
+    trust_t='Confían en nosotros', fab='Hable con nosotros por WhatsApp',
     path='es/', html_lang='es', og_locale='es_ES',
     title='Usina Vídeos · Productora de contenido y comunicación en Portugal',
     desc='Vídeo, fotografía, dron, contenido para redes, webs y campañas digitales para empresas, marcas y profesionales. Inmobiliario, automoción, deporte, turismo y negocios, en el Norte y en todo Portugal. Pida presupuesto.',
-    nav=[('quem', 'Quiénes somos'), ('servicos', 'Servicios'), ('trabalhos', 'Trabajos'), ('sites', 'Webs'), ('desporto', 'Deporte'), ('como', 'Cómo funciona'), ('marcas', 'Marcas'), ('/blog/', 'Blog'), ('agenda', 'Agenda'), ('contacto', 'Contacto')],
+    nav=[('quem', 'Quiénes somos'), ('servicos', 'Servicios'), ('trabalhos', 'Trabajos'), ('sites', 'Webs'), ('desporto', 'Deporte'), ('como', 'Cómo funciona'), ('marcas', 'Marcas'), ('/blog/', 'Blog (PT)'), ('agenda', 'Agenda'), ('contacto', 'Contacto')],
     cta='Pida presupuesto',
     wa_msg='Hola Freire, me gustaría pedir un presupuesto a Usina Vídeos.',
     hero_eb='Productora de contenido y comunicación · Norte y todo Portugal',
@@ -174,7 +177,7 @@ T = {
     works=[('/cordiallevel/', '/cordiallevel/t3leca/img/leca-37-t.jpg', 'Cordial Level', 'Socio de producción: web, vídeo-reportajes, pódcast y redes sociales. ' + AMI, 'Ver la web'),
            ('/t4coral/es.html', '/img/coral-fachada.jpg', 'Condomínio Coral · Foz do Douro', 'Fotografía, dron, vídeo con la agente y presentación digital en cuatro idiomas. Agente Cheila Monteiro · CENTURY 21 Arquitectos II · AMI 11414', 'Ver la presentación'),
            ('https://century21.pt/ref/C0554-00006', '/img/core-devesas-t.jpg', 'CENTURY 21 Core · Vila Nova de Gaia', 'Fotografía y vídeo de una casa de cinco dormitorios en Devesas (agente Vasco Dinis) y de un piso de tres dormitorios en Oliveira do Douro.', 'Ver el anuncio'),
-           ('https://www.motoreseacao.com/?utm_source=usinavideos&utm_medium=trabalhos&utm_campaign=usina', '/img/mea-toro.jpg', 'Motores e Ação · Automoción', 'Periodismo del motor desde 2002: pruebas, lanzamientos y contenidos para marcas, en Brasil y Portugal. Más de 115.000 suscriptores en YouTube.', 'Ver la web'),
+           ('https://www.motoreseacao.com/?utm_source=usinavideos&utm_medium=trabalhos&utm_campaign=usina', '/img/mea-toro.jpg', 'Motores e Ação · Automoción', 'Periodismo del motor desde 2002: pruebas, lanzamientos y contenidos para marcas, en Brasil y Portugal. Más de 115.000 suscriptores en YouTube. Imagen: Fiat.', 'Ver la web'),
            ('/cordiallevel/moncao/', '/cordiallevel/moncao/img/t1-area-t.jpg', 'Terrenos en Monção · Alto Minho', 'Dron, vídeo y simulaciones de proyecto identificadas como IA. ' + AMI, 'Ver la presentación'),
            ('https://www.youtube.com/watch?v=ed1kwc3x27I', 'https://i.ytimg.com/vi/ed1kwc3x27I/hqdefault.jpg', 'Panorama Imobiliário PT', 'El pódcast de Cordial Level en YouTube, sobre el mercado y las decisiones de quien compra casa (en portugués). Producción y edición de Usina Vídeos.', 'Ver en YouTube')],
     cdj=('CDJRegio', 'Clube Desportivo José Régio, Vila do Conde. Reportajes y resúmenes de los partidos de baloncesto.', 'Ver en Instagram'),
@@ -216,14 +219,14 @@ section{padding:88px 0}
 .nav{position:sticky;top:0;z-index:20;background:rgba(20,18,19,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;align-items:center;gap:18px;height:64px}
 .nav .logo img{height:30px;width:auto}
-.nav .links{display:flex;gap:18px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.nav .links{display:flex;gap:16px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
 .nav .links::-webkit-scrollbar{display:none}
 .nav .links a{color:#D6D1CD;text-decoration:none;font-size:14px;font-weight:700;white-space:nowrap}
 .nav .links a:hover{color:var(--y)}
 .lang{display:flex;gap:2px;font-size:12px;font-weight:800}
 .lang a{color:var(--muted);text-decoration:none;padding:4px 6px;border-radius:6px}
 .lang a[aria-current]{color:var(--ink);background:var(--y)}
-.nav .btn{padding:10px 16px;font-size:14px}
+.nav .btn{padding:10px 16px;font-size:14px;white-space:nowrap;flex:none}
 @media(max-width:900px){.nav .links{display:none}.nav .wrap{gap:10px}.nav .lang{margin-left:auto}}
 @media(max-width:420px){.nav .btn{display:none}}
 /* hero */
@@ -237,6 +240,11 @@ section{padding:88px 0}
 .hero .btn.o{color:#fff}
 .stripe{display:flex;width:120px;height:5px;border-radius:3px;overflow:hidden;margin-top:26px}.stripe i{flex:1}
 .cap{position:absolute;right:20px;bottom:16px;z-index:1;font-size:12px;color:rgba(255,255,255,.65)}
+/* confiança e botão WhatsApp */
+.trust{background:var(--ink2);border-bottom:1px solid var(--line)}.trust .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;padding-top:16px;padding-bottom:16px}
+.trust span{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--y)}.trust b{color:#E9E5E1;font-size:16px;font-weight:800;letter-spacing:.02em;opacity:.85}
+.fab{position:fixed;right:16px;bottom:16px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.fab{color:#fff}.fab svg{width:30px;height:30px}
 /* quem */
 .team{display:grid;gap:12px;margin-top:22px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.team>div{background:#fff;border:1px solid #E3DED6;border-left:5px solid var(--c);border-radius:14px;padding:16px 18px}.team b{display:block;font-size:18px;color:var(--ink)}.team span{display:block;margin-top:2px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}.team p{margin:8px 0 0!important;font-size:15px}
 .two{display:grid;gap:40px}
@@ -346,7 +354,7 @@ def page(lang):
     canon = 'https://usinavideos.pt/' + t['path']
     alts = ''.join(f'<link rel="alternate" hreflang="{T[l]["html_lang"]}" href="https://usinavideos.pt/{T[l]["path"]}">' for l in T)
     langsw = ''.join(f'<a href="/{T[l]["path"]}" hreflang="{T[l]["html_lang"]}"{" aria-current=\"page\"" if l == lang else ""}>{l.upper()}</a>' for l in T)
-    nav = ''.join(f'<a href="{a if a.startswith("/") else "#" + a}">{e(b)}</a>' for a, b in t['nav'])
+    nav = ''.join(f'<a href="{a if a.startswith("/") else "#" + a}">{e(b)}</a>' for a, b in t['nav'] if a not in ('sites', 'como', 'agenda'))
     blog = ''
     if lang == 'pt':
         from blog import teaser, BLOG_CSS
@@ -386,7 +394,7 @@ def page(lang):
 </div></nav>
 
 <header class="hero dark">
-  <img src="/img/foz-drone.jpg" alt="" fetchpriority="high">
+  <img src="/img/foz-drone.jpg" srcset="/img/foz-drone-t.jpg 900w, /img/foz-drone.jpg 1920w" sizes="100vw" alt="" fetchpriority="high">
   <div class="wrap">
     <span class="eb">{e(t['hero_eb'])}</span>
     <h1>{e(t['hero_h1'])}</h1>
@@ -396,6 +404,7 @@ def page(lang):
   </div>
   <span class="cap">{e(t['hero_cap'])}</span>
 </header>
+<div class="trust"><div class="wrap"><span>{e(t['trust_t'])}</span><b>Cordial Level</b><b>CENTURY 21</b><b>Motores e Ação</b><b>CDJRegio</b><b>MatchBall</b></div></div>
 
 <section id="quem">
   <div class="wrap two">
@@ -488,6 +497,7 @@ def page(lang):
   <a href="/{t['path']}" aria-label="Usina Vídeos · página inicial"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
   <span>© Usina Vídeos · {e(t['foot'])} · <a href="https://www.facebook.com/usinacomvideos" target="_blank" rel="noopener">Facebook</a></span>
 </div></footer>
+<a class="fab" href="{wa}" target="_blank" rel="noopener" aria-label="{e(t['fab'])}">{WA_SVG}</a>
 </body>
 </html>
 '''

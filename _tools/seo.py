@@ -93,6 +93,24 @@ def inject(path, block, drop_desc=False):
     open(p, 'w', encoding='utf-8').write(s)
 
 
+def outside(s):
+    return re.sub(r'<!--seo-->.*?<!--/seo-->', '', s, flags=re.S)
+
+
+import hashlib, json as _json
+STATE = os.path.join(ROOT, '_tools', 'seo_state.json')
+state = _json.load(open(STATE)) if os.path.exists(STATE) else {}
+
+
+def keep(s, key, url=''):
+    """Mantém a data já publicada (datePosted, uploadDate) para não a mudar a cada execução."""
+    k = f'date:{url}:{key}'
+    m = re.search(r'<!--seo-->.*?"' + key + r'":\s*"(\d{4}-\d{2}-\d{2})"', s, flags=re.S)
+    d = state.get(k) or (m.group(1) if m else TODAY)
+    state[k] = d
+    return d
+
+
 def common(s, url, kind='website', desc=None):
     s = re.sub(r'<!--seo-->.*?<!--/seo-->', '', s, flags=re.S)  # ver só o que está fora do bloco gerado
     out = [ROBOTS]
@@ -116,7 +134,7 @@ for p, lang in USINA_LANG.items():
     url = f'{BASE}/{p}'
     out = common(s, url)
     out.append('<meta name="msvalidate.01" content="56593FE2E31FC20F2AEE040C5E1B0D3D">')
-    if 'hreflang="x-default"' not in s: out.append(f'<link rel="alternate" hreflang="x-default" href="{BASE}/">')
+    if 'hreflang="x-default"' not in outside(s): out.append(f'<link rel="alternate" hreflang="x-default" href="{BASE}/">')
     out.append(ld({'@graph': [dict(USINA), {'@type': 'WebSite', '@id': BASE + '/#site', 'url': BASE + '/', 'name': 'Usina Vídeos', 'inLanguage': lang, 'publisher': {'@id': USINA['@id']}},
                               {'@type': 'WebPage', 'url': url, 'name': html.unescape(re.search(r'<title>(.*?)</title>', s).group(1)), 'inLanguage': lang, 'isPartOf': {'@id': BASE + '/#site'}, 'about': {'@id': USINA['@id']}}]}))
     inject(f, '\n'.join(out))
@@ -142,7 +160,7 @@ for path, (kind, name, area, rooms, loc, region, geo, offers) in LISTINGS.items(
     url = f'{BASE}/{path}'
     img = meta(s, 'og:image')
     listing = {'@type': 'RealEstateListing', 'name': name, 'url': url, 'inLanguage': 'pt-PT',
-               'description': meta(s, 'description', 'name'), 'datePosted': TODAY,
+               'description': meta(s, 'description', 'name'), 'datePosted': keep(s, 'datePosted', url),
                'about': place(kind, name, area, rooms, loc, region, geo),
                'offers': [offer(pr, ref, f'https://century21.pt/comprar/{ref}') for pr, ref in offers],
                'provider': {'@id': CL['@id']}}
@@ -154,7 +172,7 @@ for path, (kind, name, area, rooms, loc, region, geo, offers) in LISTINGS.items(
     graph = [listing, crumbs, dict(CL)]
     if yt:
         graph.append({'@type': 'VideoObject', 'name': name, 'description': meta(s, 'description', 'name'), 'thumbnailUrl': f'https://i.ytimg.com/vi/{yt.group(1)}/hqdefault.jpg',
-                      'contentUrl': f'https://www.youtube.com/watch?v={yt.group(1)}', 'embedUrl': f'https://www.youtube.com/embed/{yt.group(1)}', 'uploadDate': TODAY})
+                      'contentUrl': f'https://www.youtube.com/watch?v={yt.group(1)}', 'embedUrl': f'https://www.youtube.com/embed/{yt.group(1)}', 'uploadDate': keep(s, 'uploadDate', url)})
     out = common(s, url, 'article')
     out.append(ld({'@graph': graph}))
     inject(f, '\n'.join(out))
@@ -171,7 +189,7 @@ for fn, (lang, desc) in CORAL_LANG.items():
     out += [f'<link rel="alternate" hreflang="{l}" href="{u}">' for l, u in alts_coral]
     out.append(f'<link rel="alternate" hreflang="x-default" href="{BASE}/t4coral/">')
     listing = {'@type': 'RealEstateListing', 'name': 'Condomínio Coral · Foz do Douro', 'url': url, 'inLanguage': lang, 'description': desc,
-               'image': meta(s, 'og:image'), 'datePosted': TODAY,
+               'image': meta(s, 'og:image'), 'datePosted': keep(s, 'datePosted', url),
                'about': place('Apartment', 'Condomínio Coral · dois apartamentos T4+1', 236, 4, 'Foz do Douro, Porto', 'Porto', None),
                'provider': {'@type': 'RealEstateAgent', 'name': 'CENTURY 21 Arquitectos II', 'identifier': {'@type': 'PropertyValue', 'name': 'Licença AMI', 'value': '11414'},
                             'employee': {'@type': 'Person', 'name': 'Cheila Monteiro', 'jobTitle': 'Consultora'}},
@@ -196,14 +214,28 @@ if os.path.exists(os.path.join(ROOT, 'blog/index.html')):
         if os.path.exists(os.path.join(ROOT, 'blog', d, 'index.html')):
             pages.append((f'{BASE}/blog/{d}/', None))
 
-# sitemap.xml
+# sitemap.xml (lastmod só muda quando o conteúdo da página muda)
+
+
+def lastmod(url):
+    rel = url[len(BASE) + 1:]
+    f = os.path.join(ROOT, rel + ('index.html' if rel == '' or rel.endswith('/') else ''))
+    if not os.path.exists(f): return TODAY
+    h = hashlib.sha1(outside(open(f, encoding='utf-8').read()).encode()).hexdigest()
+    old = state.get(url)
+    if old and old[0] == h: return old[1]
+    state[url] = [h, TODAY]
+    return TODAY
+
+
 seen, rows = set(), []
 for url, alts in pages:
     if url in seen: continue
     seen.add(url)
     x = ''.join(f'<xhtml:link rel="alternate" hreflang="{l}" href="{u}"/>' for l, u in (alts or []))
     pri = '1.0' if url == BASE + '/' else '0.9' if url.endswith('/cordiallevel/') else '0.8'
-    rows.append(f'<url><loc>{url}</loc><lastmod>{TODAY}</lastmod><priority>{pri}</priority>{x}</url>')
+    rows.append(f'<url><loc>{url}</loc><lastmod>{lastmod(url)}</lastmod><priority>{pri}</priority>{x}</url>')
+_json.dump(state, open(STATE, 'w'), indent=0)
 open(os.path.join(ROOT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + '\n'.join(rows) + '\n</urlset>\n')
 
 # robots.txt: tudo aberto, incluindo motores de pesquisa com IA

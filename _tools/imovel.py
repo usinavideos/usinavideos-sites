@@ -275,7 +275,7 @@ def build(p):
 <nav class="nav" aria-label="Secções"><div class="wrap"><a class="brand" href="../">Cordial <b>Level</b></a>{nav}</div></nav>
 
 <header id="inicio" class="hero{'' if p.get('hero') else ' plain'}">
-  {f'<img src="{img(p["hero"], 2200)}" alt="{e(p["hero_alt"])}" fetchpriority="high"' + (f' style="object-position:{p["hero_pos"]}"' if p.get("hero_pos") else '') + '>' if p.get('hero') else '<img class="logo" src="../img/logo-cordial-level-claro.png" alt="Cordial Level">'}
+  {f'<img src="{img(p["hero"], 2200)}" srcset="{img(p["hero"], 900)} 900w, {img(p["hero"], 2200)} 1920w" sizes="100vw" alt="{e(p["hero_alt"])}" fetchpriority="high"' + (f' style="object-position:{p["hero_pos"]}"' if p.get("hero_pos") else '') + '>' if p.get('hero') else '<img class="logo" src="../img/logo-cordial-level-claro.png" alt="Cordial Level">'}
   <div class="band"><div class="wrap">
     <div class="loc">{e(p['loc'])}</div>
     <h1>{e(p['h1'])}</h1>

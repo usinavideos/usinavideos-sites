@@ -58,6 +58,11 @@ section{padding:88px 0}
 .hero .btn.o{color:#fff}
 .stripe{display:flex;width:120px;height:5px;border-radius:3px;overflow:hidden;margin-top:26px}.stripe i{flex:1}
 .cap{position:absolute;right:20px;bottom:16px;z-index:1;font-size:12px;color:rgba(255,255,255,.65)}
+/* confiança e botão WhatsApp */
+.trust{background:var(--ink2);border-bottom:1px solid var(--line)}.trust .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:10px 26px;padding:16px 0}
+.trust span{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--y)}.trust b{color:#E9E5E1;font-size:16px;font-weight:800;letter-spacing:.02em;opacity:.85}
+.fab{position:fixed;right:16px;bottom:16px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.fab{color:#fff}.fab svg{width:30px;height:30px}
 /* quem */
 .team{display:grid;gap:12px;margin-top:22px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.team>div{background:#fff;border:1px solid #E3DED6;border-left:5px solid var(--c);border-radius:14px;padding:16px 18px}.team b{display:block;font-size:18px;color:var(--ink)}.team span{display:block;margin-top:2px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}.team p{margin:8px 0 0!important;font-size:15px}
 .two{display:grid;gap:40px}
@@ -207,7 +212,7 @@ footer a{color:#D6D1CD}
 <main class="wrap"><article class="art">
   <span class="eb">Bastidores e making of</span><h1>Bastidores: como produzimos o T4+1 do Condomínio Coral, na Foz</h1>
   <p class="meta">27 de outubro de 2026 · por <a href="https://www.linkedin.com/in/freireneto/" target="_blank" rel="noopener">Freire Neto</a></p>
-  <img class="hero" src="/img/coral-fachada.jpg" alt="" fetchpriority="high">
+  <img class="hero" src="/img/coral-fachada.jpg" srcset="/img/coral-fachada-t.jpg 900w, /img/coral-fachada.jpg 1920w" sizes="(max-width: 800px) 100vw, 760px" alt="" fetchpriority="high">
   <p class="imp">Um imóvel premium não se vende com três fotos e um texto. Precisa de ser mostrado por inteiro: por dentro, de cima e por quem o conhece.</p>
   <p>O T4+1 do Condomínio Coral, na Foz do Douro, é uma construção nova com 236 m², quatro suítes e terraços. A consultora <b>Cheila Monteiro</b> (CENTURY 21 Arquitectos II · AMI 11414) pediu-nos tudo numa só produção.</p>
 <h2>O que fizemos</h2>
@@ -229,5 +234,6 @@ footer a{color:#D6D1CD}
   <a href="/" aria-label="Usina Vídeos · página inicial"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
   <span>Produtora de conteúdo e comunicação · Norte e todo o Portugal · © Usina Vídeos</span>
 </div></footer>
+<a class="fab" href="https://wa.me/351912988971?text=Ol%C3%A1%20Freire%2C%20li%20o%20blog%20da%20Usina%20V%C3%ADdeos%20e%20gostaria%20de%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener" aria-label="Fale connosco no WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg></a>
 </body>
 </html>

@@ -33,14 +33,14 @@ section{padding:88px 0}
 .nav{position:sticky;top:0;z-index:20;background:rgba(20,18,19,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;align-items:center;gap:18px;height:64px}
 .nav .logo img{height:30px;width:auto}
-.nav .links{display:flex;gap:18px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.nav .links{display:flex;gap:16px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
 .nav .links::-webkit-scrollbar{display:none}
 .nav .links a{color:#D6D1CD;text-decoration:none;font-size:14px;font-weight:700;white-space:nowrap}
 .nav .links a:hover{color:var(--y)}
 .lang{display:flex;gap:2px;font-size:12px;font-weight:800}
 .lang a{color:var(--muted);text-decoration:none;padding:4px 6px;border-radius:6px}
 .lang a[aria-current]{color:var(--ink);background:var(--y)}
-.nav .btn{padding:10px 16px;font-size:14px}
+.nav .btn{padding:10px 16px;font-size:14px;white-space:nowrap;flex:none}
 @media(max-width:900px){.nav .links{display:none}.nav .wrap{gap:10px}.nav .lang{margin-left:auto}}
 @media(max-width:420px){.nav .btn{display:none}}
 /* hero */
@@ -54,6 +54,11 @@ section{padding:88px 0}
 .hero .btn.o{color:#fff}
 .stripe{display:flex;width:120px;height:5px;border-radius:3px;overflow:hidden;margin-top:26px}.stripe i{flex:1}
 .cap{position:absolute;right:20px;bottom:16px;z-index:1;font-size:12px;color:rgba(255,255,255,.65)}
+/* confiança e botão WhatsApp */
+.trust{background:var(--ink2);border-bottom:1px solid var(--line)}.trust .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;padding-top:16px;padding-bottom:16px}
+.trust span{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--y)}.trust b{color:#E9E5E1;font-size:16px;font-weight:800;letter-spacing:.02em;opacity:.85}
+.fab{position:fixed;right:16px;bottom:16px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.fab{color:#fff}.fab svg{width:30px;height:30px}
 /* quem */
 .team{display:grid;gap:12px;margin-top:22px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.team>div{background:#fff;border:1px solid #E3DED6;border-left:5px solid var(--c);border-radius:14px;padding:16px 18px}.team b{display:block;font-size:18px;color:var(--ink)}.team span{display:block;margin-top:2px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}.team p{margin:8px 0 0!important;font-size:15px}
 .two{display:grid;gap:40px}
@@ -184,13 +189,13 @@ footer a{color:#D6D1CD}
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
   <a class="logo" href="/en/"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
-  <div class="links"><a href="#quem">About</a><a href="#servicos">Services</a><a href="#trabalhos">Work</a><a href="#sites">Websites</a><a href="#desporto">Sport</a><a href="#como">How it works</a><a href="#marcas">Brands</a><a href="/blog/">Blog</a><a href="#agenda">Booking</a><a href="#contacto">Contact</a></div>
+  <div class="links"><a href="#quem">About</a><a href="#servicos">Services</a><a href="#trabalhos">Work</a><a href="#desporto">Sport</a><a href="#marcas">Brands</a><a href="/blog/">Blog (PT)</a><a href="#contacto">Contact</a></div>
   <div class="lang"><a href="/" hreflang="pt-PT">PT</a><a href="/en/" hreflang="en" aria-current="page">EN</a><a href="/es/" hreflang="es">ES</a></div>
   <a class="btn y" href="https://wa.me/351912988971?text=Hello%20Freire%2C%20I%20would%20like%20a%20quote%20from%20Usina%20V%C3%ADdeos." target="_blank" rel="noopener">Ask for a quote</a>
 </div></nav>
 
 <header class="hero dark">
-  <img src="/img/foz-drone.jpg" alt="" fetchpriority="high">
+  <img src="/img/foz-drone.jpg" srcset="/img/foz-drone-t.jpg 900w, /img/foz-drone.jpg 1920w" sizes="100vw" alt="" fetchpriority="high">
   <div class="wrap">
     <span class="eb">Content and communication agency · Northern Portugal and nationwide</span>
     <h1>Communication you can see. Content that delivers.</h1>
@@ -200,6 +205,7 @@ footer a{color:#D6D1CD}
   </div>
   <span class="cap">Foz do Douro, Porto · drone by Usina Vídeos</span>
 </header>
+<div class="trust"><div class="wrap"><span>Trusted by</span><b>Cordial Level</b><b>CENTURY 21</b><b>Motores e Ação</b><b>CDJRegio</b><b>MatchBall</b></div></div>
 
 <section id="quem">
   <div class="wrap two">
@@ -223,7 +229,7 @@ footer a{color:#D6D1CD}
 <section id="trabalhos" class="dark">
   <div class="wrap">
     <span class="eb">Work</span><h2>Recent work across several areas, published with permission.</h2>
-    <div class="works"><a class="work" href="/cordiallevel/"><div class="ph"><img src="/cordiallevel/t3leca/img/leca-37-t.jpg" alt="Cordial Level" loading="lazy" width="900" height="563"></div><div class="bd"><h3>Cordial Level</h3><p>Production partner: website, property videos, podcast and social media. Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p><em>See the website →</em></div></a><a class="work" href="/t4coral/en.html"><div class="ph"><img src="/img/coral-fachada.jpg" alt="Condomínio Coral · Foz do Douro" loading="lazy" width="900" height="563"></div><div class="bd"><h3>Condomínio Coral · Foz do Douro</h3><p>Photography, drone, a video with the agent and a digital presentation in four languages. Agent Cheila Monteiro · CENTURY 21 Arquitectos II · AMI 11414</p><em>See the presentation →</em></div></a><a class="work" href="https://century21.pt/ref/C0554-00006" target="_blank" rel="noopener"><div class="ph"><img src="/img/core-devesas-t.jpg" alt="CENTURY 21 Core · Vila Nova de Gaia" loading="lazy" width="900" height="563"></div><div class="bd"><h3>CENTURY 21 Core · Vila Nova de Gaia</h3><p>Photography and video of a five-bedroom house in Devesas (agent Vasco Dinis) and a three-bedroom flat in Oliveira do Douro.</p><em>See the listing →</em></div></a><a class="work" href="https://www.motoreseacao.com/?utm_source=usinavideos&utm_medium=trabalhos&utm_campaign=usina" target="_blank" rel="noopener"><div class="ph"><img src="/img/mea-toro.jpg" alt="Motores e Ação · Automotive" loading="lazy" width="900" height="563"></div><div class="bd"><h3>Motores e Ação · Automotive</h3><p>Automotive journalism since 2002: road tests, launches and brand content in Brazil and Portugal. Over 115,000 YouTube subscribers.</p><em>See the website →</em></div></a><a class="work" href="/cordiallevel/moncao/"><div class="ph"><img src="/cordiallevel/moncao/img/t1-area-t.jpg" alt="Land in Monção · Alto Minho" loading="lazy" width="900" height="563"></div><div class="bd"><h3>Land in Monção · Alto Minho</h3><p>Drone, video and project visualisations labelled as AI. Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p><em>See the presentation →</em></div></a><a class="work" href="https://www.youtube.com/watch?v=ed1kwc3x27I" target="_blank" rel="noopener"><div class="ph"><img src="https://i.ytimg.com/vi/ed1kwc3x27I/hqdefault.jpg" alt="Panorama Imobiliário PT" loading="lazy" width="900" height="563"></div><div class="bd"><h3>Panorama Imobiliário PT</h3><p>Cordial Level’s podcast on YouTube, about the market and the decisions behind buying a home (in Portuguese). Produced and edited by Usina Vídeos.</p><em>Watch on YouTube →</em></div></a></div>
+    <div class="works"><a class="work" href="/cordiallevel/"><div class="ph"><img src="/cordiallevel/t3leca/img/leca-37-t.jpg" alt="Cordial Level" loading="lazy" width="900" height="563"></div><div class="bd"><h3>Cordial Level</h3><p>Production partner: website, property videos, podcast and social media. Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p><em>See the website →</em></div></a><a class="work" href="/t4coral/en.html"><div class="ph"><img src="/img/coral-fachada.jpg" alt="Condomínio Coral · Foz do Douro" loading="lazy" width="900" height="563"></div><div class="bd"><h3>Condomínio Coral · Foz do Douro</h3><p>Photography, drone, a video with the agent and a digital presentation in four languages. Agent Cheila Monteiro · CENTURY 21 Arquitectos II · AMI 11414</p><em>See the presentation →</em></div></a><a class="work" href="https://century21.pt/ref/C0554-00006" target="_blank" rel="noopener"><div class="ph"><img src="/img/core-devesas-t.jpg" alt="CENTURY 21 Core · Vila Nova de Gaia" loading="lazy" width="900" height="563"></div><div class="bd"><h3>CENTURY 21 Core · Vila Nova de Gaia</h3><p>Photography and video of a five-bedroom house in Devesas (agent Vasco Dinis) and a three-bedroom flat in Oliveira do Douro.</p><em>See the listing →</em></div></a><a class="work" href="https://www.motoreseacao.com/?utm_source=usinavideos&utm_medium=trabalhos&utm_campaign=usina" target="_blank" rel="noopener"><div class="ph"><img src="/img/mea-toro.jpg" alt="Motores e Ação · Automotive" loading="lazy" width="900" height="563"></div><div class="bd"><h3>Motores e Ação · Automotive</h3><p>Automotive journalism since 2002: road tests, launches and brand content in Brazil and Portugal. Over 115,000 YouTube subscribers. Image: Fiat.</p><em>See the website →</em></div></a><a class="work" href="/cordiallevel/moncao/"><div class="ph"><img src="/cordiallevel/moncao/img/t1-area-t.jpg" alt="Land in Monção · Alto Minho" loading="lazy" width="900" height="563"></div><div class="bd"><h3>Land in Monção · Alto Minho</h3><p>Drone, video and project visualisations labelled as AI. Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p><em>See the presentation →</em></div></a><a class="work" href="https://www.youtube.com/watch?v=ed1kwc3x27I" target="_blank" rel="noopener"><div class="ph"><img src="https://i.ytimg.com/vi/ed1kwc3x27I/hqdefault.jpg" alt="Panorama Imobiliário PT" loading="lazy" width="900" height="563"></div><div class="bd"><h3>Panorama Imobiliário PT</h3><p>Cordial Level’s podcast on YouTube, about the market and the decisions behind buying a home (in Portuguese). Produced and edited by Usina Vídeos.</p><em>Watch on YouTube →</em></div></a></div>
     <h3 class="igh">Featured on Cordial Level’s Instagram</h3>
     <div class="igrow"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Dd7UOxSDG8Q/?utm_source=ig_embed" data-instgrm-version="14" style="background:#fff;border:0;border-radius:14px;margin:0;max-width:540px;min-width:280px;width:100%"><a href="https://www.instagram.com/p/Dd7UOxSDG8Q/" target="_blank" rel="noopener">Instagram</a></blockquote><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DbMWJvfs3_z/?utm_source=ig_embed" data-instgrm-version="14" style="background:#fff;border:0;border-radius:14px;margin:0;max-width:540px;min-width:280px;width:100%"><a href="https://www.instagram.com/p/DbMWJvfs3_z/" target="_blank" rel="noopener">Instagram</a></blockquote><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYfFrTsDZk0/?utm_source=ig_embed" data-instgrm-version="14" style="background:#fff;border:0;border-radius:14px;margin:0;max-width:540px;min-width:280px;width:100%"><a href="https://www.instagram.com/p/DYfFrTsDZk0/" target="_blank" rel="noopener">Instagram</a></blockquote></div>
   </div>
@@ -292,5 +298,6 @@ footer a{color:#D6D1CD}
   <a href="/en/" aria-label="Usina Vídeos · página inicial"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
   <span>© Usina Vídeos · Content and communication agency · Northern Portugal and nationwide · <a href="https://www.facebook.com/usinacomvideos" target="_blank" rel="noopener">Facebook</a></span>
 </div></footer>
+<a class="fab" href="https://wa.me/351912988971?text=Hello%20Freire%2C%20I%20would%20like%20a%20quote%20from%20Usina%20V%C3%ADdeos." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg></a>
 </body>
 </html>
