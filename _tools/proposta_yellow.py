@@ -37,9 +37,19 @@ AUTORIDADE = [('Testes sinceros', 'Sempre a mesma fórmula: problema, produto, t
               ('Eventos e provas', 'Cobertura com drone e entrevistas nas provas onde o Renato já está.'),
               ('Motores e Ação', 'Episódio conjunto e divulgação cruzada com o canal de jornalismo automóvel da Usina, desde 2002.')]
 
-OPCOES = [('Para começar', 'Essencial', '150€', 'Tabela: mais de 200€', ['1 sessão de gravação por mês em Viana do Castelo (meio dia)', '4 Reels verticais com legendas (1 por semana)', '10 fotografias de produto para a 2r4.eu e redes', 'Deslocação incluída'], 'Presença semanal nas redes com custo baixo e fixo.'),
-          ('Recomendado', 'Mensal', '250€', 'Tabela: mais de 430€', ['1 sessão de gravação por mês em Viana do Castelo', '1 vídeo para o YouTube (até 10 min)', '8 Reels verticais com legendas (2 por semana)', '10 fotografias de produto', 'Calendário e textos prontos para a Michelle publicar'], 'YouTube todos os meses e Reels duas vezes por semana.'),
-          ('Quando fizer sentido', 'Extras', 'À medida', 'Sem compromisso mensal', ['Jeca Joia Show: gravação e edição de episódios', 'Cobertura de provas e eventos com drone', 'Gestão de anúncios na Meta (investimento à parte)', 'Legendas em espanhol', 'Relatório de resultados'], 'Acrescenta-se quando os resultados o justificarem.')]
+OPCOES = [('Para começar', 'Essencial', ['1 sessão de gravação por mês em Viana do Castelo', 'Reels verticais com legendas, 1 por semana', 'Fotografias de produto para a 2r4.eu e redes'], 'Presença semanal nas redes, com custo baixo e fixo.'),
+          ('Recomendado', 'Mensal', ['1 sessão de gravação por mês em Viana do Castelo', '1 vídeo para o YouTube por mês', 'Reels verticais, 2 por semana', 'Fotografias de produto', 'Calendário e textos prontos para a Michelle publicar'], 'YouTube todos os meses e Reels duas vezes por semana.'),
+          ('Quando fizer sentido', 'Extras', ['Jeca Joia Show: gravação e edição de episódios', 'Cobertura de provas e eventos com drone', 'Gestão de anúncios na Meta', 'Legendas em espanhol', 'Relatório de resultados'], 'Acrescenta-se quando os resultados o justificarem.')]
+
+DIVULGA = [('usinavideos.pt', 'A Yellow Rules nos trabalhos do site e um artigo no blog sobre o Jeca Joia e a história da marca.'),
+           ('Motores e Ação', 'Divulgação cruzada no site, no Instagram e no YouTube do Motores e Ação, com público de motores desde 2002.'),
+           ('Instagram da Usina', 'Bastidores das gravações em Viana no @usina.videos, com marcação das contas da Yellow Rules e das marcas.'),
+           ('LinkedIn', 'Os casos e os resultados partilhados no LinkedIn de Freire Neto, para lojistas e parceiros profissionais.')]
+
+COMERCIAL = [('Lojistas no Norte', 'Apresentar as marcas da Yellow Rules a lojas, oficinas e clubes da região, com catálogo e vídeos.'),
+             ('Eventos e feiras', 'Presença conjunta em provas, encontros e feiras, a produzir conteúdo e a gerar contactos.'),
+             ('Logística pontual', 'Apoio em entregas, amostras e material de ponto de venda quando for útil.'),
+             ('Rede de contactos', 'Ligação a marcas, stands e clubes com quem a Usina e o Motores e Ação já trabalham.')]
 
 
 def build():
@@ -47,7 +57,9 @@ def build():
     mes = ''.join(f'<tr><td><b>{e(a)}</b></td><td>{e(b)}</td><td>{e(c)}</td></tr>' for a, b, c in MES)
     vendas = ''.join(f'<article class="card" style="--c:{COLORS[i % 3]}"><span class="n">{i + 1:02d}</span><h3>{e(a)}</h3><p>{e(b)}</p></article>' for i, (a, b) in enumerate(VENDAS))
     aut = ''.join(f'<article class="card" style="--c:{COLORS[(i + 1) % 3]}"><span class="n">{i + 1:02d}</span><h3>{e(a)}</h3><p>{e(b)}</p></article>' for i, (a, b) in enumerate(AUTORIDADE))
-    ops = ''.join(f'<article class="{"ref" if i == 1 else ""}" style="--c:{COLORS[i % 3]}"><span class="lb">{e(lb)}</span><h3>{e(n)}</h3><div class="pr"{"" if "€" in pr else " style=\"font-size:30px\""}>{e(pr)}{"<small>+ IVA · por mês</small>" if "€" in pr else ""}</div><p style="margin-top:8px;font-size:14px;opacity:.75">{e(tb)}</p><ul>{"".join(f"<li>{e(x)}</li>" for x in items)}</ul><p>{e(d)}</p></article>' for i, (lb, n, pr, tb, items, d) in enumerate(OPCOES))
+    ops = ''.join(f'<article class="{"ref" if i == 1 else ""}" style="--c:{COLORS[i % 3]}"><span class="lb">{e(lb)}</span><h3>{e(n)}</h3><ul>{"".join(f"<li>{e(x)}</li>" for x in items)}</ul><p>{e(d)}</p></article>' for i, (lb, n, items, d) in enumerate(OPCOES))
+    div = ''.join(f'<article class="card" style="--c:{COLORS[i % 3]}"><span class="n">{i + 1:02d}</span><h3>{e(a)}</h3><p>{e(b)}</p></article>' for i, (a, b) in enumerate(DIVULGA))
+    com = ''.join(f'<article class="card" style="--c:{COLORS[(i + 2) % 3]}"><span class="n">{i + 1:02d}</span><h3>{e(a)}</h3><p>{e(b)}</p></article>' for i, (a, b) in enumerate(COMERCIAL))
     ed = ''.join(f'<tr><td>{e(n)}</td><td>{p} + IVA</td><td>{e(d.replace("imóvel", "produto"))}</td></tr>' for n, p, d in EDICAO)
     return f'''<!doctype html>
 <html lang="pt-PT">
@@ -72,7 +84,7 @@ def build():
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
   <a class="logo" href="/"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
-  <div class="links"><a href="#modelo">O modelo</a><a href="#vendas">Vendas</a><a href="#autoridade">Autoridade</a><a href="#opcoes">Como começar</a></div>
+  <div class="links"><a href="#modelo">O modelo</a><a href="#vendas">Vendas</a><a href="#autoridade">Autoridade</a><a href="#divulgacao">Divulgação</a><a href="#comercial">Comercial</a><a href="#opcoes">Como começar</a></div>
   <a class="btn y" href="{WA}" target="_blank" rel="noopener">Conversar</a>
 </div></nav>
 
@@ -117,13 +129,23 @@ def build():
   </div>
 </section>
 
+<section id="divulgacao">
+  <div class="wrap"><span class="eb">Divulgação nos nossos canais</span><h2>A Yellow Rules também nos nossos meios.</h2>
+    <p class="lead">Cada conteúdo produzido em conjunto chega também ao público da Usina Vídeos e do Motores e Ação.</p>
+    <div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">{div}</div></div>
+</section>
+
+<section id="comercial" style="background:var(--paper2)">
+  <div class="wrap"><span class="eb">Mais do que conteúdo</span><h2>Apoio comercial e logístico em Portugal.</h2>
+    <p class="lead">Conhecemos o mercado do Norte e estamos na estrada todas as semanas. Podemos ajudar a levar as marcas da Yellow Rules a mais pontos de venda, em condições a combinar.</p>
+    <div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">{com}</div></div>
+</section>
+
 <section id="opcoes">
   <div class="wrap"><span class="eb">Como começar</span><h2>Começar pequeno, crescer com resultados.</h2>
-    <p class="lead">Um valor fixo por mês, sem fidelização longa. Ao fim de 3 meses avaliamos os resultados juntos e decidimos se faz sentido crescer.</p>
+    <p class="lead">Primeiro ouvimos o que a Yellow Rules precisa; depois fechamos um valor fixo por mês, sem fidelização longa. Ao fim de 3 meses avaliamos os resultados juntos.</p>
     <div class="pk">{ops}</div>
-    <h3 style="margin-top:40px;font-size:22px">Tabela de edição de referência</h3>
-    <div style="overflow-x:auto;margin-top:14px;border-radius:14px"><table class="ytab"><thead><tr><th>Formato</th><th>Valor</th><th>Para quê</th></tr></thead><tbody>{ed}</tbody></table></div>
-    <p class="note">Valores de tabela sem IVA, para referência. Nos pacotes mensais, a gravação e a deslocação a Viana do Castelo estão incluídas e o preço fica bem abaixo da soma da tabela.</p></div>
+</div>
 </section>
 
 <section class="dark">
