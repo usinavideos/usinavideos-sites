@@ -262,7 +262,7 @@ def build(cliente=None):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e('Proposta para ' + cliente['nome'] + ' · Usina Vídeos') if cliente else 'Proposta de serviços · Usina Vídeos'}</title>
-<meta name="description" content="Pacotes de fotografia, vídeo, drone, visita 3D e apresentações digitais para o mercado imobiliário. Proposta Usina Vídeos.">
+<meta name="description" content="Proposta Usina Vídeos: produtora de conteúdo e comunicação. Vídeo, fotografia, drone, redes sociais, sites e campanhas digitais, com pacotes para imobiliário.">
 <meta name="robots" content="noindex, follow">
 <meta property="og:title" content="Proposta de serviços · Usina Vídeos"><meta property="og:description" content="Fotografia, vídeo, drone, visita 3D e apresentações digitais para imóveis. Pacotes a partir de 40€ + IVA.">
 <meta property="og:image" content="https://usinavideos.pt/img/foz-drone.jpg"><meta name="twitter:card" content="summary_large_image">
@@ -283,8 +283,8 @@ def build(cliente=None):
   <img src="{(cliente or {}).get('hero', '/img/foz-drone.jpg')}" alt="" fetchpriority="high">
   <div class="wrap">
     <span class="eb">{e('Proposta para ' + cliente['nome'] + ' · ' + cliente['cidade']) if cliente else 'Proposta de serviços · Usina Vídeos'}</span>
-    <h1>{e(cliente['h1']) if cliente else 'Produção audiovisual para o mercado imobiliário.'}</h1>
-    <p>{e(cliente['intro']) if cliente else 'Para agências, consultores, promotores e proprietários. Um parceiro, um briefing, um contacto, do Norte a todo o país.'}</p>
+    <h1>{e(cliente['h1']) if cliente else 'Comunicação, audiovisual e marketing digital.'}</h1>
+    <p>{e(cliente['intro']) if cliente else 'Para empresas, marcas e profissionais: imobiliário, automóvel, desporto, comércio, turismo e eventos. Abaixo, os pacotes para imobiliário; para as outras áreas, orçamento à medida. Um parceiro, um briefing, um contacto.'}</p>
     <div class="row"><a class="btn y" href="{'#plano' if cliente and cliente.get('plano') else '#pacotes'}">{'Ver o plano' if cliente and cliente.get('plano') else 'Ver pacotes'}</a><a class="btn o" href="{CAL}" target="_blank" rel="noopener">Marcar sessão</a></div>
     {STRIPE}
   </div>
