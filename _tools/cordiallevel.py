@@ -43,7 +43,8 @@ def card(p):
 </a>'''
 FEAT=('07GUVT6ILno','T1 duplex em Cedofeita, no centro do Porto','Novo · Vídeo-reportagem · 1 min 38 s',
       'T1 duplex de 2022 num condomínio com pátio ajardinado, garagem e elevador, a poucos minutos da Baixa. 289 000 €.','cedofeita/','Ver a apresentação do imóvel')
-V=[('yo7RN7u6JJY','Terrenos junto ao Rio Minho, em Monção','Vídeo-reportagem · 1 min 45 s','moncao/'),
+V=[('m76LalcRi0A','T1 duplex em Cedofeita, em formato vertical','Short · 289 000 €','cedofeita/'),
+   ('yo7RN7u6JJY','Terrenos junto ao Rio Minho, em Monção','Vídeo-reportagem · 1 min 45 s','moncao/'),
    ('xEDuuPNMacM','T3 em Leça da Palmeira, junto às Piscinas das Marés','Vídeo-reportagem · 1 min 42 s','t3leca/'),
    ('vU0bXm_uhGk','T3 em Leça da Palmeira, em formato vertical','Short · 550 000 €','t3leca/'),
    ('7JOcy10W8oY','Novo T1 em Matosinhos, pronto a habitar','Vídeo-reportagem · 10 min',None),
