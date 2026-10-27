@@ -62,6 +62,7 @@ LISTINGS = {  # caminho: (tipo, nome, área, quartos, localidade, região, geo, 
     'cordiallevel/casaraofoz/': ('House', 'Moradia T4 com vista de mar na Foz do Douro', 165, 4, 'Foz do Douro, Porto', 'Porto', (41.1512834, -8.6767872), [(875000, 'C0393-01661')]),
     'cordiallevel/bosquepicua/': ('Apartment', 'T2+1 com terraço e box no Bosque da Pícua', 92.3, 2, 'Águas Santas, Maia', 'Porto', (41.2037790756507, -8.56774606227663), [(None, 'C0393-01555')]),
     'cordiallevel/anteroquental/': ('Apartment', 'T2 remodelado na Rua Antero de Quental', 77.3, 2, 'Porto', 'Porto', (41.1602049, -8.6116069), [(349000, 'C0393-01689')]),
+    'cordiallevel/cedofeita/': ('Apartment', 'T1 duplex quase novo em Cedofeita', 59, 1, 'Porto', 'Porto', (41.1532354, -8.6211018), [(289000, 'C0393-01583')]),
     'cordiallevel/moncao/': ('Place', 'Dois terrenos de cultura e vinha em São Bento (Bela), Monção', None, None, 'Monção', 'Viana do Castelo', (42.072910104535, -8.43833682762678), [(75000, 'C0393-01441'), (35000, 'C0393-01442')]),
 }
 
