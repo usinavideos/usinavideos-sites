@@ -641,7 +641,7 @@ IMOVEIS = {
         loc_txt='Em Cedofeita, uma das zonas mais procuradas do Porto, com bancos, farmácias, restaurantes, comércio e espaços verdes por perto, e a Baixa a poucos minutos.',
         maps='Cedofeita, Porto', geo=(41.1532354, -8.6211018),
         legal='Informação sujeita a confirmação; áreas e características segundo a ficha CENTURY 21.',
-        video=None, tour=None,
+        video='07GUVT6ILno', video_img='cf-sala', tour=None,
     ),
     'moncao': dict(
         ref='C0393-01441 · C0393-01442', refs=['C0393-01441', 'C0393-01442'], curto='Terrenos em Monção',
