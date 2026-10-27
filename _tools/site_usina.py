@@ -25,7 +25,7 @@ T = {
     path='', html_lang='pt-PT', og_locale='pt_PT',
     title='Usina Vídeos · Produtora de conteúdo e comunicação em Portugal',
     desc='Vídeo, fotografia, drone, conteúdo para redes, sites e campanhas digitais para empresas, marcas e profissionais. Imobiliário, automóvel, desporto, turismo e negócios, no Norte e em todo o Portugal. Peça orçamento.',
-    nav=[('quem', 'Quem somos'), ('servicos', 'Serviços'), ('trabalhos', 'Trabalhos'), ('sites', 'Sites'), ('desporto', 'Desporto'), ('como', 'Como funciona'), ('marcas', 'Marcas'), ('agenda', 'Agenda'), ('contacto', 'Contacto')],
+    nav=[('quem', 'Quem somos'), ('servicos', 'Serviços'), ('trabalhos', 'Trabalhos'), ('sites', 'Sites'), ('desporto', 'Desporto'), ('como', 'Como funciona'), ('marcas', 'Marcas'), ('/blog/', 'Blog'), ('agenda', 'Agenda'), ('contacto', 'Contacto')],
     cta='Peça orçamento',
     wa_msg='Olá Freire, gostaria de pedir um orçamento à Usina Vídeos.',
     hero_eb='Produtora de conteúdo e comunicação · Norte e todo o Portugal',
@@ -84,7 +84,7 @@ T = {
     path='en/', html_lang='en', og_locale='en_GB',
     title='Usina Vídeos · Content and communication agency in Portugal',
     desc='Video, photography, drone, social media content, websites and digital campaigns for companies, brands and professionals. Real estate, automotive, sport, tourism and business, across Northern Portugal and nationwide. Ask for a quote.',
-    nav=[('quem', 'About'), ('servicos', 'Services'), ('trabalhos', 'Work'), ('sites', 'Websites'), ('desporto', 'Sport'), ('como', 'How it works'), ('marcas', 'Brands'), ('agenda', 'Booking'), ('contacto', 'Contact')],
+    nav=[('quem', 'About'), ('servicos', 'Services'), ('trabalhos', 'Work'), ('sites', 'Websites'), ('desporto', 'Sport'), ('como', 'How it works'), ('marcas', 'Brands'), ('/blog/', 'Blog'), ('agenda', 'Booking'), ('contacto', 'Contact')],
     cta='Ask for a quote',
     wa_msg='Hello Freire, I would like a quote from Usina Vídeos.',
     hero_eb='Content and communication agency · Northern Portugal and nationwide',
@@ -143,7 +143,7 @@ T = {
     path='es/', html_lang='es', og_locale='es_ES',
     title='Usina Vídeos · Productora de contenido y comunicación en Portugal',
     desc='Vídeo, fotografía, dron, contenido para redes, webs y campañas digitales para empresas, marcas y profesionales. Inmobiliario, automoción, deporte, turismo y negocios, en el Norte y en todo Portugal. Pida presupuesto.',
-    nav=[('quem', 'Quiénes somos'), ('servicos', 'Servicios'), ('trabalhos', 'Trabajos'), ('sites', 'Webs'), ('desporto', 'Deporte'), ('como', 'Cómo funciona'), ('marcas', 'Marcas'), ('agenda', 'Agenda'), ('contacto', 'Contacto')],
+    nav=[('quem', 'Quiénes somos'), ('servicos', 'Servicios'), ('trabalhos', 'Trabajos'), ('sites', 'Webs'), ('desporto', 'Deporte'), ('como', 'Cómo funciona'), ('marcas', 'Marcas'), ('/blog/', 'Blog'), ('agenda', 'Agenda'), ('contacto', 'Contacto')],
     cta='Pida presupuesto',
     wa_msg='Hola Freire, me gustaría pedir un presupuesto a Usina Vídeos.',
     hero_eb='Productora de contenido y comunicación · Norte y todo Portugal',
@@ -346,7 +346,11 @@ def page(lang):
     canon = 'https://usinavideos.pt/' + t['path']
     alts = ''.join(f'<link rel="alternate" hreflang="{T[l]["html_lang"]}" href="https://usinavideos.pt/{T[l]["path"]}">' for l in T)
     langsw = ''.join(f'<a href="/{T[l]["path"]}" hreflang="{T[l]["html_lang"]}"{" aria-current=\"page\"" if l == lang else ""}>{l.upper()}</a>' for l in T)
-    nav = ''.join(f'<a href="#{a}">{e(b)}</a>' for a, b in t['nav'])
+    nav = ''.join(f'<a href="{a if a.startswith("/") else "#" + a}">{e(b)}</a>' for a, b in t['nav'])
+    blog = ''
+    if lang == 'pt':
+        from blog import teaser, BLOG_CSS
+        blog = f'<section id="blog" style="padding-bottom:24px"><div class="wrap"><span class="eb">Blog</span><h2>Bastidores, ideias e mercados.</h2><div class="bgrid" style="margin-top:30px;padding-bottom:0">{teaser()}</div><p style="margin-top:22px"><a class="btn o" href="/blog/">Ver todos os artigos →</a></p></div></section>\n<style>{BLOG_CSS}</style>\n'
     servs = ''.join(f'<article class="card" style="--c:{COLORS[i % 3]}"><span class="n">{i + 1:02d}</span><h3>{e(a)}</h3><p>{e(b)}</p></article>' for i, (a, b) in enumerate(t['servs']))
     medida = ''.join(f'<li>{e(x)}</li>' for x in t['medida'])
     works = ''.join(f'<a class="work" href="{h}"{" target=\"_blank\" rel=\"noopener\"" if h.startswith("http") else ""}><div class="ph"><img src="{im}" alt="{e(ti)}" loading="lazy" width="900" height="563"></div><div class="bd"><h3>{e(ti)}</h3><p>{e(d)}</p><em>{e(c)} →</em></div></a>' for h, im, ti, d, c in t['works'])
@@ -460,7 +464,7 @@ def page(lang):
   </div>
 </section>
 
-<section id="agenda" style="background:var(--paper2)">
+{blog}<section id="agenda" style="background:var(--paper2)">
   <div class="wrap">
     <span class="eb">{e(t['agenda']['eb'])}</span><h2>{e(t['agenda']['h2'])}</h2><p class="lead">{e(t['agenda']['p'])}</p>
     <div class="row" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:22px"><a class="btn y" href="{wa}" target="_blank" rel="noopener">{WA_SVG}WhatsApp</a><a class="btn o" style="color:var(--ink)" href="https://calendly.com/usinavideos/videoreport" target="_blank" rel="noopener">{e(t['agenda']['alt'])} ↗</a></div>

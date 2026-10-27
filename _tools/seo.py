@@ -189,6 +189,13 @@ for old in ('t3leca', 'casaraofoz', 'bosquepicua'):
             s = s.replace('<link rel="canonical"', '<meta name="robots" content="noindex, follow"><link rel="canonical"', 1)
             open(os.path.join(ROOT, f), 'w', encoding='utf-8').write(s)
 
+# Blog (meta e JSON-LD escritos pelo _tools/blog.py)
+if os.path.exists(os.path.join(ROOT, 'blog/index.html')):
+    pages.append((BASE + '/blog/', None))
+    for d in sorted(os.listdir(os.path.join(ROOT, 'blog'))):
+        if os.path.exists(os.path.join(ROOT, 'blog', d, 'index.html')):
+            pages.append((f'{BASE}/blog/{d}/', None))
+
 # sitemap.xml
 seen, rows = set(), []
 for url, alts in pages:
