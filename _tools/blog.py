@@ -221,6 +221,7 @@ FOOT = f'''<footer><div class="wrap" style="display:block;margin-bottom:28px">{m
   <a href="/" aria-label="Usina Vídeos · página inicial"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
   <span>Produtora de conteúdo e comunicação · Norte e todo o Portugal · © Usina Vídeos</span>
 </div></footer>
+<a class="fab" href="{WA}" target="_blank" rel="noopener" aria-label="Fale connosco no WhatsApp">{WA_SVG}</a>
 </body>
 </html>
 '''
@@ -229,8 +230,13 @@ PUB = {'@type': 'Organization', '@id': BASE + '/#usina', 'name': 'Usina Vídeos'
 AUTHOR = {'@type': 'Person', 'name': 'Freire Neto', 'url': 'https://www.linkedin.com/in/freireneto/'}
 
 
+def t_img(src):
+    t = src.replace('.jpg', '-t.jpg')
+    return t if os.path.exists(os.path.join(ROOT, t.lstrip('/'))) else src
+
+
 def card(p, i):
-    return (f'<a class="bc" href="/blog/{p["slug"]}/" style="--c:{COLORS[i % 3]}"><img src="{p["img"]}" alt="" loading="lazy">'
+    return (f'<a class="bc" href="/blog/{p["slug"]}/" style="--c:{COLORS[i % 3]}"><img src="{t_img(p["img"])}" alt="" loading="lazy">'
             f'<div><span>{e(CATS[p["cat"]])}</span><h3>{e(p["title"])}</h3><p>{e(p["desc"])}</p><em>{data_pt(p["date"])} · Freire Neto</em></div></a>')
 
 
@@ -264,7 +270,7 @@ def build():
 <main class="wrap"><article class="art">
   <span class="eb">{e(CATS[p['cat']])}</span><h1>{e(p['title'])}</h1>
   <p class="meta">{data_pt(p['date'])} · por <a href="https://www.linkedin.com/in/freireneto/" target="_blank" rel="noopener">Freire Neto</a></p>
-  <img class="hero" src="{p['img']}" alt="" fetchpriority="high">{cap}
+  <img class="hero" src="{p['img']}" srcset="{t_img(p['img'])} 900w, {p['img']} 1920w" sizes="(max-width: 800px) 100vw, 760px" alt="" fetchpriority="high">{cap}
   <p class="imp">{e(p['lead'])}</p>
   {p['body']}
   <div class="dica"><b>💡 Dica do Freire</b><p>{e(p['dica'])}</p></div>

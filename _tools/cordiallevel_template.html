@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cordial Level · Imóveis no Grande Porto</title>
+<meta name="description" content="Cordial Level — compra, venda e investimento imobiliário no Grande Porto. Imóveis disponíveis, vídeo-reportagens e o podcast Panorama Imobiliário PT.">
+
+<meta property="og:title" content="Cordial Level · Imóveis no Grande Porto">
+<meta property="og:description" content="Atendimento cordial. Soluções de alto nível. Compra · Venda · Investimento.">
+<meta property="og:image" content="https://usinavideos.pt/cordiallevel/t3leca/img/leca-38.jpg">
+<meta name="theme-color" content="#1B3A6B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B3A6B; --navy-d:#12284B; --gold:#B8962E; --gold-l:#D4B562; --cream:#F7F5F0; --ink:#1E2328; --muted:#5E6873; --line:#E3DED2;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Mulish',system-ui,-apple-system,sans-serif; --max:1160px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-variant-numeric:lining-nums;margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.12;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+section{padding:72px 0;scroll-margin-top:56px}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.h2{font-size:clamp(32px,5.5vw,48px);color:var(--navy);margin:8px 0 12px}
+.lead{color:var(--muted);max-width:640px;font-size:17px}
+
+.nav{position:sticky;top:0;z-index:20;background:var(--navy);border-bottom:1px solid var(--gold)}
+.nav .wrap{display:flex;align-items:center;gap:22px;min-height:56px;overflow-x:auto;white-space:nowrap}
+.nav .brand{font-family:var(--serif);font-size:22px;color:var(--cream);text-decoration:none;letter-spacing:.04em;margin-right:auto}
+.nav .brand b{color:var(--gold-l);font-weight:600}
+.nav a.l{color:var(--cream);text-decoration:none;font-size:13px;letter-spacing:.08em}
+.nav a.l:hover{color:var(--gold-l)}
+
+.hero .pill{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:12px;letter-spacing:.22em;font-weight:700;color:var(--navy)}
+.hero .pill span+span::before{content:"·";margin-right:18px;color:var(--gold)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.btn{display:inline-block;padding:13px 20px;border-radius:2px;font-weight:700;font-size:15px;text-decoration:none}
+.btn.navy{background:var(--navy);color:var(--cream)}
+.btn.line{border:1px solid var(--navy);color:var(--navy)}
+.btn:hover{filter:brightness(1.1)}
+
+.tabs{display:flex;gap:8px;overflow-x:auto;margin:28px 0 24px;padding-bottom:4px}
+.tab{flex:0 0 auto;font:600 14px var(--sans);padding:9px 14px;border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:999px;cursor:pointer}
+.tab.on{background:var(--navy);border-color:var(--navy);color:var(--cream)}
+.grid{display:grid;gap:18px}
+@media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
+.prop{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);text-decoration:none;color:var(--ink);transition:border-color .2s,transform .2s}
+.prop:hover{border-color:var(--gold);transform:translateY(-2px)}
+.prop[hidden]{display:none}
+.ph{position:relative;aspect-ratio:4/3;background:#E9E4D8;overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover}
+.flag{position:absolute;left:10px;top:10px;background:var(--navy);color:var(--cream);font-size:11px;letter-spacing:.08em;padding:4px 8px;font-weight:700}
+.ai{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.92);color:#7A5A00;border:1px solid var(--gold);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:3px 7px;font-weight:700}
+.body{padding:18px 18px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.loc{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.prop h3{font-size:22px;color:var(--navy)}
+.specs{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;color:var(--muted)}
+.row{margin-top:auto;padding-top:10px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.price{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--navy)}
+.ref{font-size:12px;color:var(--muted)}
+.allprops{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center;padding:22px 24px;background:var(--navy);color:var(--cream);text-decoration:none;border-left:4px solid var(--gold)}
+.allprops span{font-family:var(--serif);font-size:clamp(20px,3.4vw,28px);word-break:break-word}
+.allprops small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-l);font-weight:700;margin-bottom:2px}
+.allprops b{font-size:15px;color:var(--gold-l)}
+.allprops:hover b{color:var(--cream)}
+.note{font-size:13px;color:var(--muted);margin-top:18px}
+
+.dark{background:var(--navy);color:var(--cream)}
+.dark .h2{color:var(--cream)}
+.dark .lead{color:#C9D2DE}
+.vfeat{display:grid;gap:22px;margin-top:32px;align-items:center}
+@media(min-width:900px){.vfeat{grid-template-columns:1.55fr 1fr;gap:36px}}
+.vtxt h3{font-family:var(--serif);font-size:clamp(26px,3vw,34px);line-height:1.12;font-weight:600;margin:6px 0 10px}
+.vtxt p{color:#C9D2DE;margin:0 0 18px}
+.vtag{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-l);font-weight:700}
+.vtxt .btn{margin-right:18px}
+.vlk{display:inline-block;margin:12px 0 0;color:var(--gold-l);font-weight:700;font-size:14px}
+.vid .vlk{display:block;margin:8px 0 0;font-family:var(--sans);font-size:14px}
+.vsub{font-family:var(--serif);font-size:26px;font-weight:600;margin:56px 0 0;padding-top:28px;border-top:1px solid rgba(212,181,98,.35)}
+.vgrid{display:grid;gap:22px;margin-top:22px}
+@media(min-width:640px){.vgrid{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.vgrid{grid-template-columns:repeat(4,1fr)}.vgrid .vid figcaption{font-size:19px}}
+.pod{display:grid;gap:22px;margin-top:56px;padding:24px;border:1px solid rgba(212,181,98,.5);background:rgba(0,0,0,.14);align-items:center}
+@media(min-width:900px){.pod{grid-template-columns:1fr 1.3fr;gap:36px;padding:32px}}
+.pod .ep{margin:0;padding-top:14px;border-top:1px solid rgba(212,181,98,.3)}.pod .ep b{display:block;font-family:var(--serif);font-size:21px;color:var(--cream);font-weight:600;line-height:1.2}.pod .ep span{font-size:13px;color:var(--gold-l)}
+.igrow iframe.instagram-media{min-height:620px!important;background:#fff!important}
+.igrow{display:grid;gap:18px;margin-top:22px;align-items:start}@media(min-width:760px){.igrow{grid-template-columns:repeat(3,1fr)}}
+.vcta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.vid{margin:0}
+.yt{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:1px solid rgba(212,181,98,.5);background:#000;cursor:pointer;overflow:hidden}
+.yt img{width:100%;height:100%;object-fit:cover;opacity:.88;transition:opacity .2s}
+.yt:hover img{opacity:1}
+.play{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:var(--gold)}
+.play::after{content:"";position:absolute;left:26px;top:20px;border-style:solid;border-width:12px 0 12px 19px;border-color:transparent transparent transparent var(--navy)}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid figcaption{margin-top:10px;font-family:var(--serif);font-size:21px;line-height:1.25}
+.vid figcaption span{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-l);margin-bottom:4px;font-weight:700}
+
+.channels{display:grid;gap:12px;margin-top:28px}
+@media(min-width:760px){.channels{grid-template-columns:repeat(3,1fr)}}
+.channels a{display:flex;flex-direction:column;gap:2px;padding:20px;background:#fff;border:1px solid var(--line);text-decoration:none;color:var(--navy)}
+.channels a:hover{border-color:var(--gold)}
+.channels b{font-family:var(--serif);font-size:24px;font-weight:600}
+.channels span{font-size:14px;color:var(--muted)}
+
+
+.dirs{display:grid;gap:18px;margin-top:28px}
+@media(min-width:800px){.dirs{grid-template-columns:1fr 1fr}}
+.dir{background:#fff;border:1px solid var(--line);padding:26px 24px;display:flex;flex-direction:column;gap:10px}
+.dir h3{font-size:30px;color:var(--navy)}
+.dir .role{font-size:13px;color:var(--muted)}
+.dir ul{list-style:none;margin:6px 0 10px;padding:0;display:grid;gap:8px;font-size:15px}
+.dir li span{display:inline-block;min-width:104px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.dir li a{color:var(--navy);text-decoration:none;border-bottom:1px solid var(--line);word-break:break-word}
+.dir li a:hover{border-color:var(--gold)}
+.dir .btn{align-self:flex-start;margin-top:auto}
+.sig{margin:40px 0 0;text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(24px,4vw,34px);color:var(--navy)}
+.sell{background:#fff}
+.steps{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:18px;counter-reset:s}
+@media(min-width:900px){.steps{grid-template-columns:repeat(4,1fr)}}
+.steps li{counter-increment:s;border-top:2px solid var(--gold);padding-top:16px}
+.steps li::before{content:"0" counter(s);font-family:var(--serif);font-size:32px;color:var(--gold);display:block;line-height:1;margin-bottom:8px}
+.steps h3{font-size:23px;color:var(--navy);margin-bottom:6px}.steps p{font-size:15px;color:var(--muted)}.steps a{color:var(--navy)}
+.why{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:32px}
+@media(min-width:760px){.why{grid-template-columns:repeat(3,1fr)}}
+.why div{background:var(--cream);padding:18px}.why b{display:block;font-family:var(--serif);font-size:26px;color:var(--navy);font-weight:600}.why span{font-size:14px;color:var(--muted)}
+.btn.wa{background:#1E9E4A;color:#fff}
+#usufruto + #videos{border-top:1px solid rgba(212,181,98,.35)}
+.uf{display:grid;gap:16px;margin-top:28px}@media(min-width:800px){.uf{grid-template-columns:1fr 1fr}}
+.uf article{border:1px solid rgba(212,181,98,.5);padding:24px}.uf h3{font-size:26px;color:var(--gold-l);margin-bottom:10px}
+.uf ul{margin:0;padding-left:18px;display:grid;gap:8px;color:#E6EBF1}
+.cta-lbl{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--gold);margin:6px 0 -2px}
+.dark .cta-lbl{color:var(--gold-l)}
+footer{background:var(--navy-d);color:#C9D2DE;font-size:13px}
+footer .wrap{padding-top:32px;padding-bottom:32px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+footer .usina{display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none}
+footer .usina img{height:36px;width:auto}
+footer .usina:hover span{color:var(--gold-l)}
+
+.hero{position:relative;padding:0;background:var(--navy-d);color:var(--cream);overflow:hidden;min-height:min(88vh,760px);display:flex;align-items:flex-end}
+.slides,.slides img{position:absolute;inset:0;width:100%;height:100%}
+.slides img{object-fit:cover;opacity:0;animation:fade 18s infinite}
+.slides img:nth-child(1){opacity:1;animation-delay:0s}.slides img:nth-child(2){animation-delay:6s}.slides img:nth-child(3){animation-delay:12s}
+@keyframes fade{0%{opacity:0}4%{opacity:1}33%{opacity:1}38%{opacity:0}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.slides img{animation:none}.slides img:nth-child(n+2){display:none}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,40,75,.15) 0%,rgba(18,40,75,.55) 45%,rgba(12,28,54,.94) 100%)}
+.hero-in{position:relative;z-index:1;padding-top:120px;padding-bottom:48px;display:grid;gap:16px;width:100%}
+.hlogo{width:180px;height:auto}
+.hero h1{font-size:clamp(34px,6vw,60px);color:#fff;max-width:820px}
+.hlead{font-size:17px;color:#E6EBF1;max-width:620px}
+.hami{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold-l)}
+.hcred{font-size:12px;color:#AEB9C7}
+.btn.gold{background:var(--gold);color:var(--navy-d)}
+.btn.ghost{border:1px solid rgba(247,245,240,.7);color:var(--cream)}
+.feat{background:#fff}
+.fgrid{display:grid;gap:18px;margin-top:28px}
+@media(min-width:900px){.fgrid{grid-template-columns:1.5fr 1fr;grid-template-rows:auto auto}.fcard.big{grid-row:span 2}}
+.fcard{position:relative;display:block;overflow:hidden;background:var(--navy);color:var(--cream);text-decoration:none;min-height:300px}
+.fcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.fcard:hover img{transform:scale(1.04)}
+.fcard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,40,75,0) 25%,rgba(12,28,54,.7) 55%,rgba(12,28,54,.96) 100%)}
+.fbody{text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.fbody{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:20px 22px;display:grid;gap:6px}
+.fcard .loc{color:var(--gold-l)}
+.fcard h3{font-size:clamp(24px,3vw,32px);color:#fff}
+.fmeta{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}.fmeta b{font-family:var(--serif);font-size:28px;font-weight:600}.fmeta span{font-size:12px;color:#C9D2DE}
+.fgo{font-size:14px;font-weight:700;color:var(--gold-l)}
+@media(min-width:900px){.fcard.big{min-height:640px}.fcard{min-height:310px}}
+body{padding-bottom:104px}
+@media(min-width:900px){body{padding-bottom:0}footer .wrap{padding-bottom:110px}}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(18,40,75,.97);border-top:1px solid var(--gold)}
+.bar-lbl{grid-column:1/-1;margin:0 0 -2px;text-align:center;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--gold-l);line-height:1.1}
+.bar a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:999px;background:#1E9E4A;color:#fff;text-decoration:none;font-weight:700;font-size:14px}
+.bar a:hover{filter:brightness(1.08)}
+@media(min-width:900px){.bar{left:auto;right:18px;bottom:18px;grid-template-columns:auto auto;border:1px solid var(--gold);border-radius:22px;padding:10px}.bar a{padding:0 18px}}
+{{MEACSS}}</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Secções">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Cordial <b>Level</b></a>
+    <a class="l" href="#destaques">Destaques</a>
+    <a class="l" href="#imoveis">Imóveis</a>
+    <a class="l" href="#vender">Vender</a>
+    <a class="l" href="#usufruto">Usufruto</a>
+    <a class="l" href="#videos">Vídeos</a>
+    <a class="l" href="#canais">Canais</a>
+    <a class="l" href="#contacto">Contacto</a>
+  </div>
+</nav>
+
+<header id="inicio" class="hero">
+  <div class="slides" aria-hidden="true">
+    <img src="t3leca/img/leca-38.jpg" srcset="t3leca/img/leca-38-t.jpg 900w, t3leca/img/leca-38.jpg 1920w" sizes="100vw" alt="" width="2200" height="1238" fetchpriority="high">
+    <img src="casaraofoz/img/foz-f80.jpg" srcset="casaraofoz/img/foz-f80-t.jpg 900w, casaraofoz/img/foz-f80.jpg 1920w" sizes="100vw" alt="" width="2200" height="1238" loading="lazy">
+    <img src="img/antero-20.jpg" srcset="img/antero-20-t.jpg 900w, img/antero-20.jpg 1920w" sizes="100vw" alt="" width="2200" height="1238" loading="lazy">
+  </div>
+  <div class="wrap hero-in">
+    <img class="hlogo" src="img/logo-cordial-level-claro.png" alt="Cordial Level" width="240">
+    <h1>Imóveis no Grande Porto, apresentados com o cuidado que merecem.</h1>
+    <p class="hlead">Casas, terrenos e oportunidades de investimento, com vídeo-reportagem e acompanhamento de perto, do primeiro contacto à escritura.</p>
+    <p class="hami">Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p>
+    <div class="btns">
+      <a class="btn gold" href="#destaques">Imóveis em destaque</a>
+      <a class="btn ghost" href="#imoveis">Ver os {{N}} imóveis</a>
+    </div>
+    <p class="hcred">Na imagem: Leça da Palmeira · Foz do Douro · Antero de Quental</p>
+  </div>
+</header>
+
+<section id="destaques" class="feat">
+  <div class="wrap">
+    <span class="eyebrow">Em destaque</span>
+    <h2 class="h2">Três imóveis, apresentados por inteiro.</h2>
+    <p class="lead">Fotografia, vídeo e drone da Usina Vídeos. Toque para ver a apresentação completa.</p>
+    <div class="fgrid">
+      <a class="fcard big" href="t3leca/">
+        <img src="t3leca/img/leca-36.jpg" srcset="t3leca/img/leca-36-t.jpg 900w, t3leca/img/leca-36.jpg 1920w" sizes="(min-width:900px) 50vw, 100vw" alt="Edifício do T3 em Leça da Palmeira, junto ao mar" loading="lazy" width="2200" height="1238">
+        <div class="fbody"><span class="loc">Leça da Palmeira · 1.ª linha de mar</span><h3>T3 com 171 m² e 2 lugares de garagem</h3><p class="fmeta"><b>550 000 €</b><span>Ref. C0393-01659</span></p><span class="fgo">Ver apresentação →</span></div>
+      </a>
+      <a class="fcard" href="casaraofoz/">
+        <img src="casaraofoz/img/foz-f52-t.jpg" srcset="casaraofoz/img/foz-f52-t.jpg 900w, casaraofoz/img/foz-f52.jpg 2200w" sizes="(min-width:900px) 40vw, 100vw" alt="Fachada do casarão na Foz do Douro" loading="lazy" width="900" height="506">
+        <div class="fbody"><span class="loc">Foz do Douro, Porto</span><h3>Moradia T4 com vista de mar</h3><p class="fmeta"><b>875 000 €</b><span>Ref. C0393-01661</span></p><span class="fgo">Ver apresentação →</span></div>
+      </a>
+      <a class="fcard" href="anteroquental/">
+        <img src="img/antero-20-t.jpg" srcset="img/antero-20-t.jpg 900w, img/antero-20.jpg 2200w" sizes="(min-width:900px) 40vw, 100vw" alt="Sala do T2 remodelado na Rua Antero de Quental" loading="lazy" width="900" height="506">
+        <div class="fbody"><span class="loc">Antero de Quental, Porto</span><h3>T2 remodelado e equipado</h3><p class="fmeta"><b>349 000 €</b><span>Ref. C0393-01689</span></p><span class="fgo">Ver apresentação →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<main>
+<section id="imoveis">
+  <div class="wrap">
+    <span class="eyebrow">Imóveis disponíveis</span>
+    <h2 class="h2">A nossa carteira.</h2>
+    <p class="lead">Toque num imóvel para ver a ficha completa, as fotografias e a visita virtual. A carteira completa e sempre atualizada está em <a href="https://century21.pt/consultores/cramos" target="_blank" rel="noopener" style="color:var(--navy);font-weight:700">century21.pt/consultores/cramos</a>.</p>
+    <div class="tabs" role="group" aria-label="Filtrar imóveis">{{TABS}}</div>
+    <div class="grid" id="lista">
+{{PROPS}}
+    </div>
+    <a class="allprops" href="https://century21.pt/consultores/cramos" target="_blank" rel="noopener"><span><small>Carteira completa e sempre atualizada</small>century21.pt/consultores/cramos</span><b>Ver todos os imóveis →</b></a>
+    <p class="note">Preços e disponibilidade sujeitos a confirmação. Mediação: Cordial Level | CENTURY 21 Arquitectos · AMI 11414. Informação atualizada em outubro de 2026; a ficha na CENTURY 21 tem sempre a versão mais recente.</p>
+  </div>
+</section>
+
+<section id="vender" class="sell">
+  <div class="wrap">
+    <span class="eyebrow">Para proprietários</span>
+    <h2 class="h2">Confie-nos a venda do seu imóvel.</h2>
+    <p class="lead">Vender bem é mais do que publicar um anúncio. É saber quanto vale o imóvel, apresentá-lo como merece e acompanhar cada passo até à escritura — com a segurança de uma rede CENTURY 21.</p>
+    <ol class="steps">
+      <li><h3>Avaliação de mercado</h3><p>Analisamos o imóvel, a zona e as vendas recentes para definir um preço realista e competitivo.</p></li>
+      <li><h3>Produção profissional</h3><p>Fotografia, vídeo, drone e uma apresentação digital própria do imóvel, produzidas pela Usina Vídeos — veja o <a href="casaraofoz/">exemplo da Foz</a> e o <a href="t3leca/">de Leça</a>.</p></li>
+      <li><h3>Divulgação certa</h3><p>Portais e rede CENTURY 21, redes sociais da Cordial Level e campanhas dirigidas a quem procura na zona.</p></li>
+      <li><h3>Acompanhamento até ao fim</h3><p>Visitas, negociação, documentação e apoio ao comprador no crédito habitação, até à escritura.</p></li>
+    </ol>
+    <div class="why">
+      <div><b>Mais de 10 anos</b><span>de experiência de Casemiro Ramos em mediação e avaliação imobiliária</span></div>
+      <div><b>25 anos</b><span>de experiência comercial de Francisco Medeiros</span></div>
+      <div><b>Master Ruby Team 2025</b><span>distinção CENTURY 21 atribuída à equipa</span></div>
+    </div>
+    <p class="cta-lbl" style="margin-top:26px">Fale comigo!</p><div class="btns" style="margin-top:10px"><a class="btn wa" href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20tenho%20um%20im%C3%B3vel%20que%20gostaria%20de%20vender%20e%20queria%20falar%20com%20a%20Cordial%20Level." target="_blank" rel="noopener">WhatsApp Casemiro</a><a class="btn wa" href="https://wa.me/351912706395?text=Ol%C3%A1%20Francisco%2C%20tenho%20um%20im%C3%B3vel%20que%20gostaria%20de%20vender%20e%20queria%20falar%20com%20a%20Cordial%20Level." target="_blank" rel="noopener">WhatsApp Francisco</a></div>
+  </div>
+</section>
+
+<section id="usufruto" class="dark">
+  <div class="wrap">
+    <span class="eyebrow">Especialidade Cordial Level</span>
+    <h2 class="h2">Vender a casa e continuar a viver nela.</h2>
+    <p class="lead">A venda da propriedade de raiz com reserva de usufruto (também chamada nua-propriedade) permite ao proprietário receber já o valor da venda e manter, por toda a vida, o direito de habitar a casa. É uma das especialidades de Casemiro Ramos.</p>
+    <div class="uf">
+      <article><h3>Para quem vende</h3><ul>
+        <li>Recebe o capital agora, sem ter de sair de casa.</li>
+        <li>Mantém o direito de habitar (ou arrendar) o imóvel enquanto viver.</li>
+        <li>Pode usar o valor para complementar rendimentos, apoiar a família ou investir.</li></ul></article>
+      <article><h3>Para quem compra</h3><ul>
+        <li>Adquire o imóvel abaixo do valor de mercado da propriedade plena.</li>
+        <li>Torna-se proprietário pleno quando o usufruto termina.</li>
+        <li>Investimento patrimonial de longo prazo, sem gestão de inquilinos.</li></ul></article>
+    </div>
+    <p class="note" style="color:#C9D2DE">Cada caso é avaliado individualmente. O valor da nua-propriedade depende, entre outros fatores, da idade do usufrutuário. Esta informação é geral e não dispensa aconselhamento jurídico e fiscal.</p>
+    <p class="cta-lbl" style="margin-top:26px">Fale comigo!</p><div class="btns" style="margin-top:10px"><a class="btn wa" href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20venda%20com%20reserva%20de%20usufruto." target="_blank" rel="noopener">WhatsApp Casemiro</a><a class="btn wa" href="https://wa.me/351912706395?text=Ol%C3%A1%20Francisco%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20venda%20com%20reserva%20de%20usufruto." target="_blank" rel="noopener">WhatsApp Francisco</a></div>
+  </div>
+</section>
+
+<section id="videos" class="dark">
+  <div class="wrap">
+    <span class="eyebrow">Vídeos e podcast</span>
+    <h2 class="h2">Conheça os imóveis antes da visita.</h2>
+    <p class="lead">Vídeo-reportagens dos imóveis e o podcast <em>Panorama Imobiliário PT</em>, sobre o mercado e as decisões de quem compra casa.</p>
+{{VIDS}}
+  </div>
+</section>
+
+<section id="canais">
+  <div class="wrap">
+    <span class="eyebrow">Siga a Cordial Level</span>
+    <h2 class="h2">Todos os imóveis, também nas redes.</h2>
+    <div class="channels">
+      <a href="https://www.youtube.com/@CordialLevelPT" target="_blank" rel="noopener"><b>YouTube</b><span>@CordialLevelPT · vídeos e podcast</span></a>
+      <a href="https://www.instagram.com/cordiallevel/" target="_blank" rel="noopener"><b>Instagram</b><span>@cordiallevel</span></a>
+      <a href="https://www.facebook.com/cordiallevel/" target="_blank" rel="noopener"><b>Facebook</b><span>/cordiallevel</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Contacto</span>
+    <h2 class="h2">Quer comprar, vender ou investir?</h2>
+    <p class="lead">Fale diretamente com um dos consultores da Cordial Level.</p>
+    <div class="dirs">
+      <article class="dir">
+        <h3>Casemiro Ramos</h3>
+        <p class="role">Consultor · Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p>
+        <ul>
+          <li><span>WhatsApp</span><a href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20vi%20o%20site%20da%20Cordial%20Level%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">+351 935 101 667</a></li>
+          <li><span>E-mail</span><a href="mailto:cramos@century21.pt">cramos@century21.pt</a></li>
+          <li><span>CENTURY 21</span><a href="https://century21.pt/consultores/cramos" target="_blank" rel="noopener">century21.pt/consultores/cramos</a></li>
+        </ul>
+        <p class="cta-lbl">Fale comigo!</p>
+        <a class="btn navy" href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20vi%20o%20site%20da%20Cordial%20Level%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Falar com Casemiro no WhatsApp</a>
+      </article>
+      <article class="dir">
+        <h3>Francisco Medeiros</h3>
+        <p class="role">Consultor · Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p>
+        <ul>
+          <li><span>WhatsApp</span><a href="https://wa.me/351912706395?text=Ol%C3%A1%20Francisco%2C%20vi%20o%20site%20da%20Cordial%20Level%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">+351 912 706 395</a></li>
+          <li><span>E-mail</span><a href="mailto:franciscomedeiros@century21.pt">franciscomedeiros@century21.pt</a></li>
+          <li><span>CENTURY 21</span><a href="https://franciscomedeiros.century21.pt" target="_blank" rel="noopener">franciscomedeiros.century21.pt</a></li>
+        </ul>
+        <p class="cta-lbl">Fale comigo!</p>
+        <a class="btn navy" href="https://wa.me/351912706395?text=Ol%C3%A1%20Francisco%2C%20vi%20o%20site%20da%20Cordial%20Level%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Falar com Francisco no WhatsApp</a>
+      </article>
+    </div>
+    <blockquote class="sig">“A sua exigência, a nossa assinatura.”</blockquote>
+  </div>
+</section>
+</main>
+
+<footer>
+<div class="wrap" style="display:block;padding-top:40px;padding-bottom:0">{{MEA}}</div>
+  <div class="wrap">
+    <span><b style="color:#F7F5F0;font-weight:700">Cordial Level | CENTURY 21 Arquitectos · AMI 11414</b> · <a href="https://century21.pt/consultores/cramos" style="color:inherit">century21.pt/consultores/cramos</a> · <a href="https://www.instagram.com/cordiallevel/" style="color:inherit">Instagram</a> · <a href="https://www.facebook.com/cordiallevel/" style="color:inherit">Facebook</a><br>Cada agência CENTURY 21 é jurídica e financeiramente independente.</span>
+    <a class="usina" href="{{WA}}" target="_blank" rel="noopener" aria-label="Usina Vídeos — WhatsApp"><span>Produção audiovisual</span><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
+  </div>
+</footer>
+
+{{BAR}}
+
+<script>
+document.querySelectorAll('.tab').forEach(function(b){b.addEventListener('click',function(){
+  var f=b.dataset.f;
+  document.querySelectorAll('.tab').forEach(function(t){var on=t===b;t.classList.toggle('on',on);t.setAttribute('aria-pressed',on)});
+  document.querySelectorAll('.prop').forEach(function(p){p.hidden=!(f==='todos'||p.dataset.cat===f)});
+})});
+document.querySelectorAll('.yt').forEach(function(b){b.addEventListener('click',function(){
+  var i=document.createElement('iframe');
+  i.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0';
+  i.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';i.allowFullscreen=true;i.title=b.getAttribute('aria-label');
+  b.innerHTML='';b.appendChild(i);
+},{once:true})});
+</script>
+</body>
+</html>
