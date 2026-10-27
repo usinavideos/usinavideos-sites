@@ -19,10 +19,10 @@ FORCAS = [('25+ anos', 'no setor das duas rodas, da Revista Pró Moto à Yellow 
           ('Jeca Joia', 'um canal com rosto, sotaque e histórias próprias'),
           ('Na estrada', 'visitas a lojistas e presença nos eventos e provas')]
 
-MES = [('Semana 1', 'Teste de produto no YouTube', 'Reel do produto · Dica de montagem · Bastidores'),
-       ('Semana 2', 'Jeca na loja: visita a um lojista', 'Reel da visita · Produto em 30 s · Humor do Jeca'),
-       ('Semana 3', 'Comparativo ou «erro comum»', 'Reel do comparativo · Dica de manutenção · Bastidores'),
-       ('Semana 4', 'Jeca Joia Show (entrevista)', 'Corte da entrevista · Produto em 30 s · Convite para o próximo mês')]
+MES = [('Semana 1', 'Vídeo no YouTube: teste de produto', 'Corte vertical do teste · Bastidores da gravação'),
+       ('Semana 2', 'Jeca na loja: visita a um lojista', 'Reel da visita · Produto em 30 s'),
+       ('Semana 3', 'Dica de montagem ou manutenção', 'Reel da dica · Humor do Jeca'),
+       ('Semana 4', 'Produto em destaque do mês', 'Reel do produto · Convite para o próximo mês')]
 
 VENDAS = [('Jeca na loja', 'As visitas aos lojistas viram vídeo: publicidade para quem revende e motivo para comprar mais à Yellow Rules.'),
           ('Código por vídeo', 'Um código de desconto da 2r4.eu em cada vídeo (ex.: JECA10). Mede quanto cada conteúdo vende.'),
@@ -37,9 +37,9 @@ AUTORIDADE = [('Testes sinceros', 'Sempre a mesma fórmula: problema, produto, t
               ('Eventos e provas', 'Cobertura com drone e entrevistas nas provas onde o Renato já está.'),
               ('Motores e Ação', 'Episódio conjunto e divulgação cruzada com o canal de jornalismo automóvel da Usina, desde 2002.')]
 
-OPCOES = [('Para começar', 'Arranque', ['1 dia de gravação em Viana do Castelo', '1 vídeo para o YouTube (até 10 min)', '4 Reels verticais com legendas', 'Fotografias de produto para a 2r4.eu e redes'], 'Um mês de teste para conhecer o método e medir resultados.'),
-          ('Recomendado', 'Mensal', ['1 dia de gravação por mês', '4 vídeos para o YouTube (1 por semana)', '12 Reels (3 por semana)', 'Fotografias de produto', 'Calendário e textos prontos para a Michelle publicar'], 'Conteúdo novo todas as semanas, gravado num só dia.'),
-          ('Crescimento', 'Completo', ['Tudo do pacote Mensal', 'Jeca Joia Show: gravação e edição de 1 episódio', 'Gestão de anúncios na Meta (investimento à parte)', 'Relatório mensal com visualizações, cliques e vendas'], 'Para acelerar vendas e autoridade a partir do 2.º ou 3.º mês.')]
+OPCOES = [('Para começar', 'Essencial', '150€', 'Tabela: mais de 200€', ['1 sessão de gravação por mês em Viana do Castelo (meio dia)', '4 Reels verticais com legendas (1 por semana)', '10 fotografias de produto para a 2r4.eu e redes', 'Deslocação incluída'], 'Presença semanal nas redes com custo baixo e fixo.'),
+          ('Recomendado', 'Mensal', '250€', 'Tabela: mais de 430€', ['1 sessão de gravação por mês em Viana do Castelo', '1 vídeo para o YouTube (até 10 min)', '8 Reels verticais com legendas (2 por semana)', '10 fotografias de produto', 'Calendário e textos prontos para a Michelle publicar'], 'YouTube todos os meses e Reels duas vezes por semana.'),
+          ('Quando fizer sentido', 'Extras', 'À medida', 'Sem compromisso mensal', ['Jeca Joia Show: gravação e edição de episódios', 'Cobertura de provas e eventos com drone', 'Gestão de anúncios na Meta (investimento à parte)', 'Legendas em espanhol', 'Relatório de resultados'], 'Acrescenta-se quando os resultados o justificarem.')]
 
 
 def build():
@@ -47,8 +47,8 @@ def build():
     mes = ''.join(f'<tr><td><b>{e(a)}</b></td><td>{e(b)}</td><td>{e(c)}</td></tr>' for a, b, c in MES)
     vendas = ''.join(f'<article class="card" style="--c:{COLORS[i % 3]}"><span class="n">{i + 1:02d}</span><h3>{e(a)}</h3><p>{e(b)}</p></article>' for i, (a, b) in enumerate(VENDAS))
     aut = ''.join(f'<article class="card" style="--c:{COLORS[(i + 1) % 3]}"><span class="n">{i + 1:02d}</span><h3>{e(a)}</h3><p>{e(b)}</p></article>' for i, (a, b) in enumerate(AUTORIDADE))
-    ops = ''.join(f'<article class="{"ref" if i == 1 else ""}" style="--c:{COLORS[i % 3]}"><span class="lb">{e(lb)}</span><h3>{e(n)}</h3><div class="pr" style="font-size:26px">Sob orçamento</div><ul>{"".join(f"<li>{e(x)}</li>" for x in items)}</ul><p>{e(d)}</p></article>' for i, (lb, n, items, d) in enumerate(OPCOES))
-    ed = ''.join(f'<tr><td>{e(n)}</td><td>{p} + IVA</td><td>{e(d)}</td></tr>' for n, p, d in EDICAO)
+    ops = ''.join(f'<article class="{"ref" if i == 1 else ""}" style="--c:{COLORS[i % 3]}"><span class="lb">{e(lb)}</span><h3>{e(n)}</h3><div class="pr"{"" if "€" in pr else " style=\"font-size:30px\""}>{e(pr)}{"<small>+ IVA · por mês</small>" if "€" in pr else ""}</div><p style="margin-top:8px;font-size:14px;opacity:.75">{e(tb)}</p><ul>{"".join(f"<li>{e(x)}</li>" for x in items)}</ul><p>{e(d)}</p></article>' for i, (lb, n, pr, tb, items, d) in enumerate(OPCOES))
+    ed = ''.join(f'<tr><td>{e(n)}</td><td>{p} + IVA</td><td>{e(d.replace("imóvel", "produto"))}</td></tr>' for n, p, d in EDICAO)
     return f'''<!doctype html>
 <html lang="pt-PT">
 <head>
@@ -94,9 +94,9 @@ def build():
 
 <section id="modelo" style="background:var(--paper2)">
   <div class="wrap"><span class="eb">O modelo</span><h2>Um dia em Viana, um mês de conteúdo.</h2>
-    <p class="lead">Uma vez por mês vamos a Viana do Castelo e gravamos tudo num dia: testes, visitas, entrevista e fotografias. Depois editamos e entregamos o mês pronto a publicar.</p>
-    <div style="overflow-x:auto;margin-top:26px;border-radius:14px"><table class="ytab"><thead><tr><th>Semana</th><th>YouTube</th><th>Instagram e Facebook</th></tr></thead><tbody>{mes}</tbody></table></div>
-    <p class="note">Exemplo de calendário. Os temas escolhem-se convosco, de acordo com as marcas e as campanhas de cada mês.</p></div>
+    <p class="lead">Uma vez por mês vamos a Viana do Castelo e gravamos tudo numa sessão: teste de produto, visita a um lojista, dicas e fotografias. Depois editamos e entregamos o mês pronto a publicar.</p>
+    <div style="overflow-x:auto;margin-top:26px;border-radius:14px"><table class="ytab"><thead><tr><th>Semana</th><th>Destaque</th><th>Reels</th></tr></thead><tbody>{mes}</tbody></table></div>
+    <p class="note">Exemplo de um mês no pacote Mensal. Os temas escolhem-se convosco, de acordo com as marcas e as campanhas de cada mês.</p></div>
 </section>
 
 <section id="vendas">
@@ -119,11 +119,11 @@ def build():
 
 <section id="opcoes">
   <div class="wrap"><span class="eb">Como começar</span><h2>Começar pequeno, crescer com resultados.</h2>
-    <p class="lead">Três formas de trabalhar juntos. Os valores fecham-se depois da nossa conversa, à medida do que for mais útil para a Yellow Rules.</p>
+    <p class="lead">Um valor fixo por mês, sem fidelização longa. Ao fim de 3 meses avaliamos os resultados juntos e decidimos se faz sentido crescer.</p>
     <div class="pk">{ops}</div>
     <h3 style="margin-top:40px;font-size:22px">Tabela de edição de referência</h3>
     <div style="overflow-x:auto;margin-top:14px;border-radius:14px"><table class="ytab"><thead><tr><th>Formato</th><th>Valor</th><th>Para quê</th></tr></thead><tbody>{ed}</tbody></table></div>
-    <p class="note">Valores sem IVA. A gravação e a deslocação a Viana do Castelo são orçamentadas no pacote. Num contrato mensal, o valor fechado fica abaixo da soma da tabela.</p></div>
+    <p class="note">Valores de tabela sem IVA, para referência. Nos pacotes mensais, a gravação e a deslocação a Viana do Castelo estão incluídas e o preço fica bem abaixo da soma da tabela.</p></div>
 </section>
 
 <section class="dark">
