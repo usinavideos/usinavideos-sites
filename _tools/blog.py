@@ -23,6 +23,45 @@ CATS = {'bastidores': 'Bastidores e making of', 'comunicacao': 'Comunicação e 
         'mercados': 'Mercados', 'cases': 'Cases'}
 
 POSTS = [
+    dict(slug='credito-jovem-comprar-casa-sem-entrada', cat='mercados', date='2026-10-27',
+         title='Crédito jovem: tem menos de 35 anos? Saiba como comprar casa sem entrada',
+         desc='Garantia pública de até 15% e isenção de IMT e Imposto do Selo: quem tem direito, o que é preciso e até quando, em 2026.',
+         img='/cordiallevel/anteroquental/img/aq-1.jpg', img_cap='T2 Antero de Quental, Porto · Cordial Level | CENTURY 21 Arquitectos · AMI 11414',
+         lead='Para quem tem até 35 anos, a entrada deixou de ser o maior obstáculo. O Estado pode ser fiador de até 15% do valor da casa, e o banco pode financiar a compra a 100%.',
+         body='''<p>São duas medidas que se somam: a <b>garantia pública</b> no crédito à habitação e a <b>isenção de IMT e Imposto do Selo</b> na compra da primeira casa. A garantia está em vigor para contratos assinados até 31 de dezembro de 2026.</p>
+<h2>Como funciona a garantia pública</h2>
+<p>O Estado garante ao banco até 15% do valor da compra, a parte que normalmente seria a entrada. Numa casa de 200 000 €, são 30 000 € que deixam de ter de sair do bolso. A garantia dura 10 anos a contar da assinatura do contrato.</p>
+<h2>Quem tem direito</h2>
+<ul><li>Entre <b>18 e 35 anos</b>, com domicílio fiscal em Portugal.</li>
+<li>Rendimentos até ao <b>8.º escalão de IRS</b>.</li>
+<li>Sem outra habitação em seu nome, total ou parcialmente.</li>
+<li>Compra da <b>primeira habitação própria e permanente</b>, até <b>450 000 €</b>.</li>
+<li>Sem dívidas às Finanças nem à Segurança Social.</li>
+<li>Se forem dois compradores, ambos têm de cumprir as condições.</li></ul>
+<p>A decisão final é sempre do banco, que continua a avaliar o risco e a taxa de esforço.</p>
+<h2>IMT e Imposto do Selo: quanto se poupa</h2>
+<table class="bt"><thead><tr><th>Valor da casa (2026)</th><th>IMT e Imposto do Selo</th></tr></thead><tbody>
+<tr><td>Até 330 539 €</td><td>Isenção total</td></tr>
+<tr><td>De 330 539 € a 660 982 €</td><td>Isenção parcial: paga só sobre o valor acima de 330 539 €</td></tr>
+<tr><td>Acima de 660 982 €</td><td>Sem isenção</td></tr></tbody></table>
+<p>Para a isenção: até 35 anos à data da escritura, não ser dependente no IRS desse ano e não ter tido casa em seu nome nos últimos três anos.</p>
+<h2>O que é preciso</h2>
+<ul><li>Documento de identificação e NIF.</li>
+<li>Últimas declarações de IRS e recibos de vencimento.</li>
+<li>Declarações de não dívida às Finanças e à Segurança Social.</li>
+<li>Mapa de responsabilidades do Banco de Portugal.</li>
+<li>Dados do imóvel: caderneta predial, certidão permanente e certificado energético.</li></ul>
+<h2>Uma medida em crescimento</h2>
+<p>Até novembro de 2025 foram assinados <b>22 933 contratos</b> com garantia pública. Em setembro de 2026 o Governo voltou a reforçar o montante da garantia em 100 milhões de euros.</p>
+<p class="cap">Fontes: <a href="https://portugal.gov.pt/pt/gc24/comunicacao/noticias/garantia-publica-o-que-e-e-como-funciona" target="_blank" rel="noopener">Governo de Portugal</a> · <a href="https://www.santander.pt/salto/imt-jovem" target="_blank" rel="noopener">Santander, IMT jovem (atualizado em maio de 2026)</a> · <a href="https://observador.pt/2026/09/02/governo-reforca-em-100-milhoes-de-euros-garantia-publica-para-credito-a-habitacao-a-jovens/" target="_blank" rel="noopener">Observador, 2 set. 2026</a> · <a href="https://observador.pt/2026/01/05/mais-de-metade-da-garantia-do-estado-para-jovens-utilizada-ate-novembro/" target="_blank" rel="noopener">Observador, 5 jan. 2026</a>. Informação geral; não dispensa a confirmação junto do banco e das Finanças.</p>''',
+         dica='Antes de procurar casa, peça ao banco uma simulação com a garantia pública. Saber o valor máximo aprovado poupa visitas e dá força na negociação.',
+         veredito='Para quem tem até 35 anos, 2026 é a janela: garantia até ao fim do ano e impostos de compra a zero até 330 539 €.',
+         cta='''<div class="clb"><img src="/cordiallevel/img/logo-cordial-level-claro.png" alt="Cordial Level" width="1156" height="754" loading="lazy">
+<div><b>Gostava de saber mais sobre o tema e avaliar o seu perfil? Fale connosco!</b>
+<p>Casemiro Ramos e Francisco Medeiros, consultores da Cordial Level, ajudam a preparar a compra com a garantia pública, do crédito à escritura. Tema também em breve no podcast Panorama Imobiliário PT.</p>
+<div class="clr"><a href="/cordiallevel/">Ver a Cordial Level</a><a href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20li%20o%20artigo%20sobre%20cr%C3%A9dito%20jovem%20e%20gostava%20de%20avaliar%20o%20meu%20perfil." target="_blank" rel="noopener">Casemiro · 935 101 667</a><a href="https://wa.me/351912706395?text=Ol%C3%A1%20Francisco%2C%20li%20o%20artigo%20sobre%20cr%C3%A9dito%20jovem%20e%20gostava%20de%20avaliar%20o%20meu%20perfil." target="_blank" rel="noopener">Francisco · 912 706 395</a><a href="https://century21.pt/consultores/cramos" target="_blank" rel="noopener">century21.pt/consultores/cramos</a></div>
+<small>Cordial Level | CENTURY 21 Arquitectos · AMI 11414</small></div></div>''',
+         links=[('Ver os imóveis da Cordial Level', '/cordiallevel/'), ('Ver o Panorama Imobiliário PT', 'https://www.youtube.com/@CordialLevelPT')]),
     dict(slug='home-staging-antes-da-reportagem', cat='comunicacao', date='2026-10-27',
          title='Home staging: o que fazer antes da sessão de fotografia e vídeo',
          desc='Arrumação, limpeza, luz e a ajuda de proprietários, inquilinos e consultor: o checklist para fotos e vídeos de imóveis que geram contactos.',
@@ -140,6 +179,10 @@ BLOG_CSS = '''
 .bt{width:100%;border-collapse:collapse;margin-top:16px;background:#fff;border-radius:12px;overflow:hidden;font-size:16px}.bt th,.bt td{padding:12px 14px;border-bottom:1px solid #E3DED6;text-align:left}.bt th{background:var(--ink);color:#fff;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
 .dica{margin-top:30px;background:#FFF7E3;border:1px solid #F1D592;border-radius:16px;padding:20px 22px}.dica b{display:block;font-size:15px;color:var(--ink)}.dica p{margin-top:6px!important}
 .ver{margin-top:18px;background:var(--ink);color:#E9E5E1;border-radius:16px;padding:20px 22px}.ver b{display:block;color:var(--y);font-size:13px;letter-spacing:.14em;text-transform:uppercase}.ver p{margin-top:6px!important;color:#E9E5E1}
+.clb{margin-top:26px;display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:center;background:#0F2438;color:#E6E1D6;border-radius:18px;padding:22px;border-bottom:5px solid #C9A45C}
+.clb img{width:110px;height:auto}.clb b{display:block;color:#fff;font-size:19px;line-height:1.3}.clb p{margin-top:8px!important;font-size:16px!important;color:#D7D2C6}
+.clr{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.clr a{background:#C9A45C;color:#0F2438;font-weight:800;font-size:14px;padding:9px 14px;border-radius:999px;text-decoration:none}
+.clb small{display:block;margin-top:10px;font-size:12px;color:#B9B3A6}@media(max-width:560px){.clb{grid-template-columns:1fr}.clb img{width:90px}}
 .sig{margin-top:26px;font-weight:800;color:var(--ink)}.blinks{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
 '''
 
@@ -227,6 +270,7 @@ def build():
   <div class="dica"><b>💡 Dica do Freire</b><p>{e(p['dica'])}</p></div>
   <div class="ver"><b>Veredito Usina</b><p>{e(p['veredito'])}</p></div>
   <p class="sig">{e(SIG)}</p>
+  {p.get('cta', '')}
   <div class="blinks">{links}<a class="btn o" href="/blog/">Mais artigos</a></div>
 </article></main>
 ''' + FOOT)
