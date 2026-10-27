@@ -21,7 +21,7 @@ ENTREG = [('Fotografia profissional', 'Alta resolução, luz e composição edit
           ('Drone', 'Planos aéreos em foto e vídeo que mostram a envolvente, a localização e os acessos.', '/cordiallevel/t3leca/img/leca-37-t.jpg'),
           ('Visita virtual 3D com planta', 'Visita navegável a 360° com planta técnica integrada, para portais e reuniões.', '/cordiallevel/casaraofoz/img/foz-f2-t.jpg')]
 PK_IMG = ['/cordiallevel/anteroquental/img/aq-20-t.jpg', '/cordiallevel/moncao/img/t1-d4-t.jpg', '/img/coral-fachada.jpg']
-VIDEOS = [('qwL_NxCdlNY', 'T4+1 no Condomínio Coral, Foz do Douro', 'Vídeo com a consultora Cheila Monteiro'),
+VIDEOS = [('XQ-kl1XxiCo', 'T4+1 no Condomínio Coral, Foz do Douro', 'Vídeo com a consultora Cheila Monteiro'),
           ('yo7RN7u6JJY', 'Terrenos em Monção', 'Drone e vídeo-reportagem · 1 min 45 s'),
           ('xEDuuPNMacM', 'T3 em Leça da Palmeira', 'Vídeo do imóvel com drone · 1 min 42 s'),
           ('7JOcy10W8oY', 'T1 em Matosinhos', 'Vídeo-reportagem · 10 min'),
@@ -213,7 +213,7 @@ def case_html():
     <div><span class="eb">Case · Condomínio Coral, Foz do Douro</span><h2>Um T4+1 apresentado em quatro línguas.</h2>
       <p style="margin-top:18px">Para a consultora <b style="color:#fff">Cheila Monteiro</b> (CENTURY 21 Arquitectos II · AMI 11414), fizemos a produção completa de um T4+1 de nova construção com 236 m² na Foz: fotografia, drone, vídeo com a consultora em cena e uma página própria do imóvel em português, inglês, espanhol e francês.</p>
       <ul class="cl"><li>Fotografia de interiores e exteriores</li><li>Planos aéreos com drone sobre a Foz</li><li>Vídeo com a consultora a apresentar o imóvel</li><li>Apresentação digital em 4 línguas, com simulação identificada como IA</li></ul>
-      <div class="row" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:22px"><a class="btn y" href="/t4coral/">Ver a apresentação</a><a class="btn o" style="color:#fff" href="https://youtu.be/qwL_NxCdlNY" target="_blank" rel="noopener">Ver o vídeo da Cheila</a></div></div>
+      <div class="row" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:22px"><a class="btn y" href="/t4coral/">Ver a apresentação</a><a class="btn o" style="color:#fff" href="https://youtu.be/XQ-kl1XxiCo" target="_blank" rel="noopener">Ver o vídeo da Cheila</a></div></div>
     <div class="cs"><img src="/img/coral-fachada.jpg" alt="Condomínio Coral, Foz do Douro" loading="lazy"><img src="/img/coral-drone-t.jpg" alt="Drone sobre a Foz do Douro" loading="lazy"><img src="/img/coral-cozinha-t.jpg" alt="Cozinha do T4+1 Coral" loading="lazy"></div>
   </div>
 </section>

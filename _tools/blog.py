@@ -116,10 +116,10 @@ POSTS = [
 <figure class="bf"><img src="/img/coral-drone.jpg" alt="Drone sobre o Condomínio Coral, Foz do Douro" loading="lazy"><figcaption>Drone Usina Vídeos · Foz do Douro</figcaption></figure>
 <h2>Porque é que funciona</h2>
 <p>Quem compra na Foz compara muito e muitas vezes está fora do país. O vídeo dá confiança, o drone responde à pergunta «onde fica?» e a página em quatro línguas evita o reencaminhamento de PDFs e fotos soltas.</p>
-<div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/qwL_NxCdlNY?rel=0" title="Vídeo do Condomínio Coral com Cheila Monteiro" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>''',
+<div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/XQ-kl1XxiCo?rel=0" title="Vídeo do Condomínio Coral com Cheila Monteiro" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>''',
          dica='Grave o consultor sempre no próprio imóvel e no fim do vídeo. É o rosto que o comprador vai procurar quando ligar.',
          veredito='Um briefing, uma produção, quatro entregáveis. É este o padrão que propomos para qualquer imóvel premium.',
-         links=[('Ver a apresentação do Coral', '/t4coral/'), ('Ver o vídeo no YouTube', 'https://youtu.be/qwL_NxCdlNY')]),
+         links=[('Ver a apresentação do Coral', '/t4coral/'), ('Ver o vídeo no YouTube', 'https://youtu.be/XQ-kl1XxiCo')]),
     dict(slug='5-regras-video-que-gera-contactos', cat='comunicacao', date='2026-10-27',
          title='5 regras para um vídeo que gera contactos',
          desc='Gancho, legendas, formatos, contacto no ecrã e resposta rápida: o que separa um vídeo bonito de um vídeo que traz clientes.',
