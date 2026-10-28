@@ -214,15 +214,15 @@ footer a{color:#D6D1CD}
 .cond{display:grid;gap:14px;margin-top:32px}@media(min-width:800px){.cond{grid-template-columns:repeat(3,1fr)}}
 .cond div{background:#fff;border:1px solid #E3DED6;border-radius:14px;padding:20px}.cond b{display:block;color:var(--ink);font-size:16px;margin-bottom:6px}
 </style>
+<script src="/consent.js"></script>
 <!-- Google tag (gtag.js) - Usina Vídeos -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2SJMFPJ10"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q2SJMFPJ10');
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.href||'',ev=/wa\.me|whatsapp/.test(h)?'whatsapp_click':/^mailto:/.test(h)?'email_click':/calendly/.test(h)?'agendar_click':/^tel:/.test(h)?'telefone_click':null;if(ev)gtag('event',ev,{link_url:h,page_path:location.pathname});});</script>
 <!-- Meta Pixel - Usina Vídeos -->
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','2965321207157558');fbq('track','PageView');
+fbq('consent',window.uvConsent&&uvConsent()?'grant':'revoke');fbq('init','2965321207157558');fbq('track','PageView');
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.href||'';if(/wa\.me|whatsapp|^mailto:|^tel:/.test(h))fbq('track','Contact');else if(/calendly/.test(h))fbq('track','Schedule');});</script>
-<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=2965321207157558&amp;ev=PageView&amp;noscript=1"/></noscript>
 </head>
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
@@ -358,7 +358,8 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 <footer><div class="wrap" style="display:block;margin-bottom:28px"><a class="meaimg" href="https://www.motoreseacao.com/?utm_source=proposta&amp;utm_medium=banner&amp;utm_campaign=mea_top" target="_blank" rel="noopener"><img src="/img/banner-motoreseacao-1200x300.jpg" alt="Motores e Ação: antes de comprar carro, passa por aqui. Lançamentos, testes e ofertas no Brasil e em Portugal." width="1200" height="300" loading="lazy"></a><a class="meam" href="https://www.motoreseacao.com/?utm_source=proposta&amp;utm_medium=banner&amp;utm_campaign=mea_top" target="_blank" rel="noopener" aria-label="Motores e Ação: antes de comprar carro, passa por aqui. Lançamentos, testes e ofertas no Brasil e em Portugal."><span class="mm-im"><img class="mm-car" src="/img/mea-toro-t.jpg" alt="" loading="lazy"><span class="mm-cap">Fiat Toro Ranch · imagem Fiat</span></span><span class="mm-bd"><img class="mm-lg" src="/img/logo/motores-e-acao-quadrado.jpg" alt="Motores e Ação" width="120" height="120" loading="lazy"><span><span class="mm-eb">Motores e Ação · desde 2002</span><b>Antes de comprar carro, passa por aqui.</b><span class="mm-p">Lançamentos, testes e ofertas · Brasil e Portugal</span></span></span><span class="mm-cta">Ver no motoreseacao.com →</span></a></div><div class="wrap">
   <a href="/" aria-label="Usina Vídeos · página inicial"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
   <span>A sua exigência, a nossa assinatura. · © Usina Vídeos</span>
-</div></footer>
+</div><p class="uvck-l" style="margin:18px 0 0;font-size:13px;text-align:center;opacity:.8"><a href="/cookies/" style="color:inherit">Política de cookies</a> · <a href="/cookies/" data-cookies style="color:inherit">Preferências de cookies</a></p>
+</footer>
 <script>document.querySelectorAll('.yt2').forEach(function(b){b.addEventListener('click',function(){var i=document.createElement('iframe');i.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0';i.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';i.allowFullscreen=true;i.title=b.getAttribute('aria-label');b.innerHTML='';b.appendChild(i)},{once:true})});</script>
 </body>
 </html>
