@@ -179,6 +179,27 @@ for path, (kind, name, area, rooms, loc, region, geo, offers) in LISTINGS.items(
     inject(f, '\n'.join(out))
     pages.append((url, None))
 
+# Imóveis de consultores (fora da Cordial Level)
+CONSULTORES = {  # caminho: (tipo, nome, área, quartos, localidade, região, geo, [(preço, ref)], consultor, agência)
+    'tiagobranquinha/prelada/': ('Apartment', 'T2 com vista sobre o Porto, na Prelada', 71.5, 2, 'Ramalde, Porto', 'Porto', (41.173706, -8.6338658), [(275000, 'C0393-01739')], 'Tiago Branquinha', 'CENTURY 21 Arquitectos II'),
+}
+for path, (kind, name, area, rooms, loc, region, geo, offers, pessoa, agencia) in CONSULTORES.items():
+    f = path + 'index.html'
+    if not os.path.exists(os.path.join(ROOT, f)): continue
+    s = open(os.path.join(ROOT, f), encoding='utf-8').read()
+    url = f'{BASE}/{path}'
+    listing = {'@type': 'RealEstateListing', 'name': name, 'url': url, 'inLanguage': 'pt-PT',
+               'description': meta(s, 'description', 'name'), 'datePosted': keep(s, 'datePosted', url),
+               'image': meta(s, 'og:image'), 'about': place(kind, name, area, rooms, loc, region, geo),
+               'offers': [offer(pr, ref, f'https://century21.pt/comprar/{ref}') for pr, ref in offers],
+               'provider': {'@type': 'RealEstateAgent', 'name': agencia, 'identifier': {'@type': 'PropertyValue', 'name': 'Licença AMI', 'value': '11414'},
+                            'employee': {'@type': 'Person', 'name': pessoa, 'jobTitle': 'Consultor imobiliário'}},
+               'creator': {'@id': USINA['@id']}}
+    out = common(s, url, 'article')
+    out.append(ld({'@graph': [listing]}))
+    inject(f, '\n'.join(out))
+    pages.append((url, None))
+
 # Condomínio Coral (PT/EN/ES/FR)
 alts_coral = [(l, f'{BASE}/t4coral/' + ('' if fn == 'index.html' else fn)) for fn, (l, _) in CORAL_LANG.items()]
 for fn, (lang, desc) in CORAL_LANG.items():

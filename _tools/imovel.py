@@ -21,6 +21,28 @@ DIRETORES = [
          mail='franciscomedeiros@century21.pt', site='https://franciscomedeiros.century21.pt', site_txt='franciscomedeiros.century21.pt'),
 ]
 
+MARCAS = {
+    'cl': dict(pasta='cordiallevel', nav='Cordial <b>Level</b>', nav_href='../', ass='Cordial Level | CENTURY 21 Arquitectos · AMI 11414',
+               role='Consultor · Cordial Level | CENTURY 21 Arquitectos · AMI 11414', cons=DIRETORES,
+               lead='Fale diretamente com um dos consultores da Cordial Level.',
+               all_url=CRAMOS, all_lbl='Todos os imóveis da Cordial Level', all_txt='century21.pt/consultores/cramos', social='cl',
+               foot_links=[('Instagram', 'https://www.instagram.com/cordiallevel/'), ('Facebook', 'https://www.facebook.com/cordiallevel/'), ('YouTube', 'https://www.youtube.com/@CordialLevelPT')],
+               cred_ag='CENTURY 21 Arquitectos', sig='A sua exigência, a nossa assinatura.', bar_lbl='Fale diretamente connosco'),
+    'tb': dict(pasta='tiagobranquinha', nav='Tiago <b>Branquinha</b>', nav_href='#inicio', ass='Tiago Branquinha | CENTURY 21 Arquitectos II · AMI 11414',
+               role='Consultor imobiliário · CENTURY 21 Arquitectos II · AMI 11414',
+               cons=[dict(nome='Tiago Branquinha', curto='Tiago', num='351910718791', tel='+351 910 718 791',
+                          mail='tiagobranquinha@century21.pt', site='https://tiagobranquinha.century21.pt', site_txt='tiagobranquinha.century21.pt')],
+               lead='Fale diretamente com o consultor responsável por este imóvel.',
+               all_url='https://tiagobranquinha.century21.pt', all_lbl='Todos os imóveis do Tiago Branquinha', all_txt='tiagobranquinha.century21.pt', social=None,
+               foot_links=[('Site CENTURY 21', 'https://tiagobranquinha.century21.pt')],
+               cred_ag='CENTURY 21 Arquitectos', sig='A sua próxima casa, com vista sobre o Porto.', bar_lbl='Fale diretamente comigo'),
+}
+
+
+def marca(p):
+    return MARCAS[p.get('marca', 'cl')]
+
+
 WA_ICON = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c.3 1.8 1.8 3.6 3.6 4.4l1.2-1.1 2 .9-.4 1.6c-3.2.3-6.9-3.2-6.8-6.6l1.6-.4.9 2z"/></svg>'
 TEL_ICON = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>'
 PLAY = '<span class="play" aria-hidden="true"><svg width="40%" height="40%" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#1B3A6B"/></svg></span>'
@@ -29,6 +51,8 @@ e = html.escape
 
 
 def img(name, w=None):
+    if name.startswith('http'):
+        return name.split('?')[0] + ('?width=900&height=675&quality=85' if w and w <= 900 else '?width=1920&height=1440&quality=90')
     return f'img/{name}-t.jpg' if w and w <= 900 else f'img/{name}.jpg'
 
 
@@ -40,16 +64,16 @@ def wa(num, txt):
     return f'https://wa.me/{num}?text=' + up.quote(txt)
 
 
-CREDITO = """<section id="credito" class="credito">
+def credito(m):
+    return f"""<section id="credito" class="credito">
   <div class="wrap cr">
     <div><span class="eyebrow" style="color:var(--gold-l)">Crédito habitação</span>
       <h2 class="h2" style="color:#fff">Ajudamos também no crédito.</h2>
-      <p class="lead" style="color:#D9D3C6">A CENTURY 21 Arquitectos apoia na intermediação de crédito habitação: compara propostas de vários bancos, procura as melhores condições e oportunidades para o seu perfil e acompanha todo o processo até à escritura.</p>
+      <p class="lead" style="color:#D9D3C6">A {m["cred_ag"]} apoia na intermediação de crédito habitação: compara propostas de vários bancos, procura as melhores condições e oportunidades para o seu perfil e acompanha todo o processo até à escritura.</p>
       <p class="lead" style="color:#fff;font-weight:700">Fale diretamente connosco e saiba todos os detalhes e dicas.</p></div>
-    <div class="crb"><a class="b wa" href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20gostava%20de%20saber%20mais%20sobre%20o%20apoio%20no%20cr%C3%A9dito%20habita%C3%A7%C3%A3o." target="_blank" rel="noopener">Falar sobre crédito · Casemiro</a>
-      <a class="b wa" href="https://wa.me/351912706395?text=Ol%C3%A1%20Francisco%2C%20gostava%20de%20saber%20mais%20sobre%20o%20apoio%20no%20cr%C3%A9dito%20habita%C3%A7%C3%A3o." target="_blank" rel="noopener">Falar sobre crédito · Francisco</a>
+    <div class="crb">{''.join(f'<a class="b wa" href="{wa(d['num'], 'Olá ' + d['curto'] + ', gostava de saber mais sobre o apoio no crédito habitação.')}" target="_blank" rel="noopener">Falar sobre crédito · {d['curto']}</a>' for d in m['cons'])}
       <a class="b line" style="border-color:var(--gold-l);color:var(--gold-l)" href="https://century21.pt/credito-habitacao" target="_blank" rel="noopener">Simulador CENTURY 21 ↗</a>
-      <small>Cordial Level | CENTURY 21 Arquitectos · AMI 11414. Sujeito a aprovação das instituições de crédito.</small></div>
+      <small>{m["ass"]}. Sujeito a aprovação das instituições de crédito.</small></div>
   </div>
 </section>
 """
@@ -152,7 +176,7 @@ footer .usina{display:flex;align-items:center;gap:12px;color:inherit;text-decora
 footer a{color:inherit}
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(18,40,75,.97);border-top:1px solid var(--gold)}
 .bar a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:999px;background:#1E9E4A;color:#fff;text-decoration:none;font-weight:700;font-size:14px}
-@media(min-width:900px){.bar{left:auto;right:18px;bottom:18px;grid-template-columns:auto auto;border:1px solid var(--gold);border-radius:22px;padding:10px 10px 10px}.bar a{padding:0 18px}}
+.bar.one{grid-template-columns:1fr}@media(min-width:900px){.bar.one{grid-template-columns:auto}.bar{left:auto;right:18px;bottom:18px;grid-template-columns:auto auto;border:1px solid var(--gold);border-radius:22px;padding:10px 10px 10px}.bar a{padding:0 18px}}
 """
 
 JS = r"""
@@ -172,6 +196,7 @@ if(v)v.addEventListener('click',function(){var f=document.createElement('iframe'
 
 def build(p):
     ref = p['ref']
+    m = marca(p)
     ficha = f'https://century21.pt/comprar/{ref}'
     msg = lambda nome: f"Olá {nome}, vi a apresentação do imóvel {p['curto']} (ref. {ref}) e gostaria de mais informações."
     navs = p.get('navs') or [('ficha', 'O imóvel'), ('galeria', 'Fotografias')]
@@ -262,7 +287,7 @@ def build(p):
     def dir_card(d):
         return f'''<article class="dir">
         <h3>{d['nome']}</h3>
-        <p class="role">Consultor · Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p>
+        <p class="role">{m['role']}</p>
         <p class="cta-lbl">Fale comigo!</p>
         <div class="btns">
           <a class="b wa" href="{wa(d['num'], msg(d['curto']))}" target="_blank" rel="noopener">{WA_ICON}WhatsApp {d['curto']}</a>
@@ -272,7 +297,7 @@ def build(p):
         <p class="mail">E-mail: <a href="mailto:{d['mail']}?subject={up.quote('Ref. ' + ref + ' · ' + p['curto'])}">{d['mail']}</a></p>
       </article>'''
 
-    bar = ''.join(f'<a href="{wa(d["num"], msg(d["curto"]))}" target="_blank" rel="noopener" aria-label="Fale comigo: WhatsApp {d["nome"]}">{WA_ICON}{d["curto"]}</a>' for d in DIRETORES)
+    bar = ''.join(f'<a href="{wa(d["num"], msg(d["curto"]))}" target="_blank" rel="noopener" aria-label="Fale comigo: WhatsApp {d["nome"]}">{WA_ICON}{d["curto"]}</a>' for d in m['cons'])
     usina = USINA_WA + up.quote(f"Olá Freire, vi a apresentação do imóvel {p['curto']} e gostaria de saber mais sobre os serviços da Usina Vídeos.")
 
     return f'''<!doctype html>
@@ -284,7 +309,7 @@ def build(p):
 <meta name="description" content="{e(p['desc'])}">
 <meta property="og:title" content="{e(p['title'])}">
 <meta property="og:description" content="{e(p['desc'])}">
-<meta property="og:image" content="{f"https://usinavideos.pt/cordiallevel/{p['slug']}/img/{p['hero']}.jpg" if p.get('hero') else 'https://usinavideos.pt/cordiallevel/img/capa-logo.jpg'}">
+<meta property="og:image" content="{f"https://usinavideos.pt/{m['pasta']}/{p['slug']}/img/{p['hero']}.jpg" if p.get('hero') else 'https://usinavideos.pt/cordiallevel/img/capa-logo.jpg'}">
 <meta name="theme-color" content="#1B3A6B">
 <link rel="icon" href="/img/logo/usina-simbolo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -292,7 +317,7 @@ def build(p):
 <style>{CSS}{CREDITO_CSS}{SOCIAL_CSS}</style>
 </head>
 <body>
-<nav class="nav" aria-label="Secções"><div class="wrap"><a class="brand" href="../">Cordial <b>Level</b></a>{nav}</div></nav>
+<nav class="nav" aria-label="Secções"><div class="wrap"><a class="brand" href="{m['nav_href']}">{m['nav']}</a>{nav}</div></nav>
 
 <header id="inicio" class="hero{'' if p.get('hero') else ' plain'}">
   {f'<img src="{img(p["hero"], 2200)}" srcset="{img(p["hero"], 900)} 900w, {img(p["hero"], 2200)} 1920w" sizes="100vw" alt="{e(p["hero_alt"])}" fetchpriority="high"' + (f' style="object-position:{p["hero_pos"]}"' if p.get("hero_pos") else '') + '>' if p.get('hero') else '<img class="logo" src="../img/logo-cordial-level-claro.png" alt="Cordial Level">'}
@@ -301,7 +326,7 @@ def build(p):
     <h1>{e(p['h1'])}</h1>
     <p class="sub">{e(p['sub'])}</p>
     <div class="price">{e(p['price'])}</div>
-    <p class="by">Cordial Level | CENTURY 21 Arquitectos · AMI 11414 · Ref. {ref}</p>
+    <p class="by">{m['ass']} · Ref. {ref}</p>
   </div></div>
 </header>
 
@@ -346,26 +371,26 @@ def build(p):
 </section>
 
 {closing}
-{CREDITO}<section id="contacto">
+{credito(m)}<section id="contacto">
   <div class="wrap">
     <span class="eyebrow">Contacto</span>
     <h2 class="h2">Marque a sua visita</h2>
-    <p class="lead">Fale diretamente com um dos consultores da Cordial Level.</p>
-    <div class="dirs">{dir_card(DIRETORES[0])}{dir_card(DIRETORES[1])}</div>
-    <a class="allprops" href="{CRAMOS}" target="_blank" rel="noopener"><span><small>Todos os imóveis da Cordial Level</small>century21.pt/consultores/cramos</span><b>Ver a carteira completa →</b></a>
+    <p class="lead">{m['lead']}</p>
+    <div class="dirs">{''.join(dir_card(d) for d in m['cons'])}</div>
+    <a class="allprops" href="{m['all_url']}" target="_blank" rel="noopener"><span><small>{m['all_lbl']}</small>{m['all_txt']}</span><b>Ver a carteira completa →</b></a>
     <p class="more" style="margin-top:14px">{' · '.join(f'<a href="https://century21.pt/comprar/{r}" target="_blank" rel="noopener" style="color:var(--navy)">Ficha CENTURY 21 (ref. {r}) ↗</a>' for r in p.get('refs', [ref]))}</p>
-    <p class="sig">A sua exigência, a nossa assinatura.</p>
+    <p class="sig">{m['sig']}</p>
   </div>
 </section>
 
-<section id="redes" style="padding-top:0"><div class="wrap">{social_banner('cl')}</div></section>
+{f'<section id="redes" style="padding-top:0"><div class="wrap">{social_banner(m["social"])}</div></section>' if m.get('social') else ''}
 
 <footer><div class="wrap">
-  <span><b style="color:#F7F5F0;font-weight:700">Cordial Level | CENTURY 21 Arquitectos · AMI 11414</b> · <a href="https://www.instagram.com/cordiallevel/">Instagram</a> · <a href="https://www.facebook.com/cordiallevel/">Facebook</a> · <a href="https://www.youtube.com/@CordialLevelPT">YouTube</a><br>{e(p['legal'])} Cada agência CENTURY 21 é jurídica e financeiramente independente.</span>
+  <span><b style="color:#F7F5F0;font-weight:700">{m['ass']}</b>{''.join(f' · <a href="{u}">{t}</a>' for t, u in m['foot_links'])}<br>{e(p['legal'])} Cada agência CENTURY 21 é jurídica e financeiramente independente.</span>
   <a class="usina" href="{usina}" target="_blank" rel="noopener" aria-label="Usina Vídeos — WhatsApp"><span>Produção audiovisual</span><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
 </div></footer>
 
-<nav class="bar" aria-label="Contacto rápido por WhatsApp"><p class="bar-lbl">Fale diretamente connosco</p>{bar}</nav>
+<nav class="bar{' one' if len(m['cons']) == 1 else ''}" aria-label="Contacto rápido por WhatsApp"><p class="bar-lbl">{m['bar_lbl']}</p>{bar}</nav>
 
 <div class="lb" role="dialog" aria-modal="true" aria-label="Fotografia ampliada"><img alt=""><button class="x" aria-label="Fechar">×</button><button class="p" aria-label="Anterior">‹</button><button class="n" aria-label="Seguinte">›</button><div class="c"></div></div>
 <script>{JS}</script>
@@ -649,6 +674,79 @@ IMOVEIS = {
         legal='Informação sujeita a confirmação; áreas e características segundo a ficha CENTURY 21.',
         video='07GUVT6ILno', video_img='cf-sala', tour=None,
     ),
+    'prelada': dict(marca='tb',
+        ref='C0393-01739', curto='T2 na Prelada',
+        title='T2 com vista sobre o Porto, na Prelada · Tiago Branquinha · CENTURY 21',
+        desc='T2 com 71,5 m² úteis num 7.º andar com elevador, na Prelada (Ramalde, Porto): vista ampla sobre a cidade, lugar de garagem e arrumos. 275 000 €.',
+        hero='tb-predio', hero_alt='O edifício na Prelada, Porto',
+        loc='Prelada · Ramalde · Porto', h1='T2 com vista sobre o Porto',
+        sub='Num 7.º andar com dois elevadores, lugar de garagem e arrumos, na Prelada, a minutos do metro e do Hospital da Prelada.',
+        price='275 000 €',
+        quote='Luz, vista desafogada e tudo perto, num bairro calmo do Porto.',
+        intro='Apartamento T2 com 71,5 m² úteis, num 7.º andar com vista ampla sobre a cidade e muita luz natural. Sala, cozinha funcional, dois quartos e casa de banho com banheira, num edifício bem construído e bem conservado, com dois elevadores, lugar de garagem e arrumos no apartamento e na garagem.',
+        photos_intro=['tb-sala', 'tb-vista', 'tb-cozinha'],
+        ficha_h2='Um T2 com luz e vista',
+        ficha_lead=['No 7.º andar, a sala e os quartos abrem-se sobre a cidade, com vista desafogada e luz natural durante todo o dia.',
+                    'O edifício tem dois elevadores e garagem. O apartamento inclui um lugar de garagem e arrumos, no apartamento e na garagem.'],
+        photos_ficha=['https://images.century21.pt/f976d1c7-b7d0-4039-8cba-a467ef8354a7/F1.jpg', 'https://images.century21.pt/05817f9e-f2fb-4b40-a8d0-83c3bc18578d/F10.jpg'],
+        facts=[('Área útil', '71,5 m²'), ('Área bruta', '75,7 m²'), ('Tipologia', 'T2'), ('Casas de banho', '1'),
+               ('Andar', '7.º com elevador'), ('Garagem', '1 lugar'), ('Ano', '1992'), ('Certificado energético', 'C')],
+        rooms_h3='Áreas', rooms=[('Sala', '19,50 m²'), ('Quarto', '10,16 m²'), ('Cozinha', '7,59 m²'), ('Corredor', '4,45 m²'), ('Casa de banho', '4,18 m²'), ('Arrumos', '4,20 m²')],
+        feat_h3='O que tem',
+        features=['Vista ampla sobre a cidade', 'Muita luz natural', 'Dois elevadores', 'Lugar de garagem',
+                  'Arrumos no apartamento e na garagem', 'Casa de banho com banheira', 'Edifício bem conservado', 'Sem encargos, propriedade livre'],
+        extras=[
+            dict(id='zona', eb='A zona', h2='Tudo perto, num bairro calmo', dark=True,
+                 paras=['Na Prelada, em Ramalde, com metro, autocarros, supermercados, escola e hospital a poucos minutos a pé, e os jardins históricos da Quinta da Prelada ao virar da esquina.'],
+                 chips=['Metro Ramalde · 650 m', 'Autocarros STCP · 550 m', 'Pingo Doce · 400 m', 'Escola EB 2/3 Maria Lamas · 450 m',
+                        'Hospital da Prelada · 550 m', 'Quinta da Prelada · 450 m', 'NorteShopping · 5 min de carro', 'Hospital de São João · 10 min',
+                        'Parque da Cidade e praia · 10 min', 'Casa da Música · 2 estações de metro']),
+        ],
+        closing=dict(id='versatil', eb='Para viver ou investir', h2='Uma casa pronta a habitar, bem servida de transportes',
+                     paras=['Pela localização, pela vista e pela garagem, este T2 serve quem quer viver perto do centro do Porto e também quem procura um investimento para arrendar.',
+                            'Marque a sua visita e venha ver a vista do 7.º andar.']),
+        gallery=[('https://images.century21.pt/914b3f8e-66f6-41ea-a330-1695fd18e2a6/F33.jpg', 'Fachada do edifício'),
+                 ('https://images.century21.pt/527ceda0-9e57-4053-988a-6d8dab25e876/F32.jpg', 'T2 na Prelada'),
+                 ('https://images.century21.pt/f976d1c7-b7d0-4039-8cba-a467ef8354a7/F1.jpg', 'Sala'),
+                 ('https://images.century21.pt/42a61feb-a392-4318-a967-fa8104b961d9/F2.jpg', 'Sala'),
+                 ('https://images.century21.pt/8658c958-b610-41e9-af05-08b8d0fbc1a7/F6.jpg', 'Sala'),
+                 ('https://images.century21.pt/6d805d4f-418e-4081-9311-8ce7ebb42827/F4.jpg', 'Sala'),
+                 ('https://images.century21.pt/5a90c6ba-af0d-49ba-9cd4-148298b64f9e/F3.jpg', 'Sala'),
+                 ('https://images.century21.pt/c8514c12-7032-49ce-9333-2a0016b3a727/F5.jpg', 'Sala'),
+                 ('https://images.century21.pt/6909b0ad-aa15-441f-9569-afff1a89b2d3/F15.jpg', 'T2 na Prelada'),
+                 ('https://images.century21.pt/be59261c-0fc7-45fe-aeb3-a9ec62307521/F18.jpg', 'T2 na Prelada'),
+                 ('https://images.century21.pt/a30c80c4-4784-410b-b0de-2a9d46f4e267/F19.jpg', 'T2 na Prelada'),
+                 ('https://images.century21.pt/1918b16a-28e7-469a-8d59-9e4b1a910ae7/F17.jpg', 'T2 na Prelada'),
+                 ('https://images.century21.pt/39b61222-18df-4eff-abc2-16c9cf6a945a/F16.jpg', 'T2 na Prelada'),
+                 ('https://images.century21.pt/c755ed89-d727-4b4b-8485-2e12ce760390/F22.jpg', 'T2 na Prelada'),
+                 ('https://images.century21.pt/de27b091-6e36-4d7e-9480-fdfcb8d0f19e/F25.jpg', 'T2 na Prelada'),
+                 ('https://images.century21.pt/6548dea2-0cff-44da-b2e6-399bde0f7409/F23.jpg', 'T2 na Prelada'),
+                 ('https://images.century21.pt/62aa12e5-6f3b-433c-811a-e8c0f8296cdb/F24.jpg', 'T2 na Prelada'),
+                 ('https://images.century21.pt/fa76401b-1412-45b9-ba97-d39719be5d24/F26.jpg', 'T2 na Prelada'),
+                 ('https://images.century21.pt/3b72ed4e-4079-4f52-a84d-5870c4c1f740/F27.jpg', 'Hall de entrada'),
+                 ('https://images.century21.pt/b69adc68-9179-46e2-959b-50d600d062c9/F14.jpg', 'Cozinha e zona de lavandaria'),
+                 ('https://images.century21.pt/827cd373-4af8-4987-bb62-46adec25a178/F13.jpg', 'Cozinha'),
+                 ('https://images.century21.pt/00aad8c8-457f-430e-afe1-92eb411d834c/F11.jpg', 'Cozinha'),
+                 ('https://images.century21.pt/05817f9e-f2fb-4b40-a8d0-83c3bc18578d/F10.jpg', 'Cozinha'),
+                 ('https://images.century21.pt/383cab01-d8d5-4a74-bb48-689b4ae1f0da/F12.jpg', 'Cozinha'),
+                 ('https://images.century21.pt/fd0cd52c-b24c-436c-96cc-e834dda7ffc8/F20.jpg', 'T2 na Prelada'),
+                 ('https://images.century21.pt/12c1f544-8ac7-44bb-8694-e6cf325bde33/F21.jpg', 'T2 na Prelada'),
+                 ('https://images.century21.pt/cd7699be-12b6-4a7c-beaa-36ddaf4421c2/F31.jpg', 'T2 na Prelada'),
+                 ('https://images.century21.pt/c83499da-5bd9-4c42-9b9e-96956a2416ca/F8.jpg', 'T2 na Prelada'),
+                 ('https://images.century21.pt/6a60a726-65f5-4e7b-be5a-222dd01509ac/F7.jpg', 'T2 na Prelada'),
+                 ('https://images.century21.pt/2f88e953-8938-4de5-ac0d-9690a7d93bb7/F9.jpg', 'T2 na Prelada'),
+                 ('https://images.century21.pt/7fdf3711-6fd7-4e5d-ae86-de3cb10e89f3/F28.jpg', 'Hall de entrada'),
+                 ('https://images.century21.pt/522b030d-8611-428b-8f3c-9580f042c7b0/F29.jpg', 'T2 na Prelada'),
+                 ('https://images.century21.pt/f7168dc2-7969-484b-bb9f-4e342c76330b/F30.jpg', 'T2 na Prelada'),
+                 ('https://images.century21.pt/a1cce1c6-3129-4a22-a4f4-00e58b392c97/F34.jpg', 'Fachada do edifício')],
+        alt='T2 na Prelada, Porto', gal_h2='Por dentro e por fora',
+        gal_note='Fotografias Usina Vídeos. Em algumas foram retirados digitalmente objetos pessoais, sem alterar o imóvel.',
+        loc_h2='Prelada, Ramalde · Porto',
+        loc_txt='Na Prelada, em Ramalde, uma zona residencial calma do Porto, com a estação de metro de Ramalde, autocarros, supermercados, farmácias, bancos e o Hospital da Prelada por perto. O NorteShopping, a Circunvalação e a VCI ficam a poucos minutos de carro.',
+        maps='Rua Dr. Cruz Malpique, Porto', geo=(41.173706, -8.6338658),
+        legal='Informação sujeita a confirmação; áreas e características segundo a ficha CENTURY 21.',
+        video=None, tour=None,
+    ),
     'moncao': dict(
         ref='C0393-01441 · C0393-01442', refs=['C0393-01441', 'C0393-01442'], curto='Terrenos em Monção',
         title='Dois terrenos junto ao Rio Minho, em Monção · Cordial Level',
@@ -719,7 +817,7 @@ IMOVEIS = {
 if __name__ == '__main__':
     for slug, p in IMOVEIS.items():
         p['slug'] = slug
-        d = os.path.join(ROOT, 'cordiallevel', slug)
+        d = os.path.join(ROOT, marca(p)['pasta'], slug)
         os.makedirs(d, exist_ok=True)
         with open(os.path.join(d, 'index.html'), 'w') as f:
             f.write(build(p))
