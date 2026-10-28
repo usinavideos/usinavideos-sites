@@ -214,6 +214,10 @@ footer a{color:#D6D1CD}
 .cond{display:grid;gap:14px;margin-top:32px}@media(min-width:800px){.cond{grid-template-columns:repeat(3,1fr)}}
 .cond div{background:#fff;border:1px solid #E3DED6;border-radius:14px;padding:20px}.cond b{display:block;color:var(--ink);font-size:16px;margin-bottom:6px}
 </style>
+<!-- Google tag (gtag.js) - Usina Vídeos -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2SJMFPJ10"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q2SJMFPJ10');
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.href||'',ev=/wa\.me|whatsapp/.test(h)?'whatsapp_click':/^mailto:/.test(h)?'email_click':/calendly/.test(h)?'agendar_click':/^tel:/.test(h)?'telefone_click':null;if(ev)gtag('event',ev,{link_url:h,page_path:location.pathname});});</script>
 </head>
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
