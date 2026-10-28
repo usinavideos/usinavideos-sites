@@ -745,7 +745,7 @@ IMOVEIS = {
         loc_txt='Na Prelada, em Ramalde, uma zona residencial calma do Porto, com a estação de metro de Ramalde, autocarros, supermercados, farmácias, bancos e o Hospital da Prelada por perto. O NorteShopping, a Circunvalação e a VCI ficam a poucos minutos de carro.',
         maps='Rua Dr. Cruz Malpique, Porto', geo=(41.173706, -8.6338658),
         legal='Informação sujeita a confirmação; áreas e características segundo a ficha CENTURY 21.',
-        video=None, tour=None,
+        video='95BJatqZSVo', video_img='tb-vista', video_h2='Veja o T2 e a vista em vídeo', tour=None,
     ),
     'moncao': dict(
         ref='C0393-01441 · C0393-01442', refs=['C0393-01441', 'C0393-01442'], curto='Terrenos em Monção',

@@ -195,8 +195,13 @@ for path, (kind, name, area, rooms, loc, region, geo, offers, pessoa, agencia) i
                'provider': {'@type': 'RealEstateAgent', 'name': agencia, 'identifier': {'@type': 'PropertyValue', 'name': 'Licença AMI', 'value': '11414'},
                             'employee': {'@type': 'Person', 'name': pessoa, 'jobTitle': 'Consultor imobiliário'}},
                'creator': {'@id': USINA['@id']}}
+    graph = [listing]
+    yt = re.search(r'data-yt="([\w-]{11})"', s)
+    if yt:
+        graph.append({'@type': 'VideoObject', 'name': name, 'description': meta(s, 'description', 'name'), 'thumbnailUrl': f'https://i.ytimg.com/vi/{yt.group(1)}/hqdefault.jpg',
+                      'contentUrl': f'https://www.youtube.com/watch?v={yt.group(1)}', 'embedUrl': f'https://www.youtube.com/embed/{yt.group(1)}', 'uploadDate': keep(s, 'uploadDate', url)})
     out = common(s, url, 'article')
-    out.append(ld({'@graph': [listing]}))
+    out.append(ld({'@graph': graph}))
     inject(f, '\n'.join(out))
     pages.append((url, None))
 
