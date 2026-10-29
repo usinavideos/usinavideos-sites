@@ -51,9 +51,15 @@ VIDEOS = [
     ('W928uxPDX6U', 'CDJ Régio 78–74 Beira-Mar', 'Afundanços e o 3.º lugar · fev. 2026'),
     ('YHqB45YwLjc', 'Vitória sobre o Benfica OA (75–73)', 'Apuramento para a 2.ª fase · jan. 2026'),
     ('wd4Ms8ICggc', 'CDJ Régio × GDB Leça', 'Melhores momentos · nov. 2025'),
-    ('0zziUdQ3Mw0', 'CD José Régio 63–81 CPN', 'Nacional 1.ª Divisão Feminina · out. 2025'),
+    ('0zziUdQ3Mw0', 'CD José Régio 63–81 CPN', 'Nacional 1.ª Divisão Feminina · out. 2025', 'https://motoreseacao.com/campeonato-portugues-de-basquetebol-feminino-cdjr-63-x-81-cpn-melhores-momentos/'),
 ]
 SHORT = 'FpYg6vGqiEs'
+
+
+def vid(v, t, m, art=None):
+    a = f'<a class="art" href="{art}" target="_blank" rel="noopener">Ler a reportagem no Motores e Ação ↗</a>' if art else ''
+    return (f'<figure class="pv"><button class="yt2" data-id="{v}" aria-label="Ver vídeo: {e(t)}"><img src="https://i.ytimg.com/vi/{v}/hqdefault.jpg" alt="" loading="lazy">'
+            f'<span class="pl" aria-hidden="true"></span></button><figcaption><b>{e(t)}</b><span>{e(m)}</span>{a}</figcaption></figure>')
 
 
 def jogo(r):
@@ -102,7 +108,7 @@ EXTRA = """
 .yt2 img{width:100%;height:100%;object-fit:cover;opacity:.9}.yt2:hover img{opacity:1}.yt2 iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .yt2 .pl{position:absolute;left:50%;top:50%;width:66px;height:66px;margin:-33px 0 0 -33px;border-radius:50%;background:var(--y)}
 .yt2 .pl::after{content:"";position:absolute;left:27px;top:21px;border-style:solid;border-width:12px 0 12px 19px;border-color:transparent transparent transparent var(--ink)}
-.pv figcaption{margin-top:10px}.pv b{display:block;color:#fff;font-size:18px}.pv span{font-size:14px;color:#C9C3BF}
+.pv .art{display:inline-block;margin-top:6px;color:var(--y);font-weight:800;font-size:14px}.pv figcaption{margin-top:10px}.pv b{display:block;color:#fff;font-size:18px}.pv span{font-size:14px;color:#C9C3BF}
 
 .cdj{display:flex;align-items:center;gap:18px;margin-bottom:18px}.cdj img{width:84px;height:84px;background:#fff;border-radius:50%;padding:6px}
 .cdj span{font-weight:900;font-size:22px;color:#fff}.cdj i{font-style:normal;color:var(--y);font-size:28px;font-weight:900}
@@ -193,7 +199,7 @@ def build():
     <span class="eb">Lances em vídeo</span>
     <h2>Os melhores momentos, no YouTube.</h2>
     <p class="lead">Highlights produzidos pela Usina Vídeos nas épocas do José Régio.</p>
-    <div class="pvs">{''.join(f'<figure class="pv"><button class="yt2" data-id="{v}" aria-label="Ver vídeo: {e(t)}"><img src="https://i.ytimg.com/vi/{v}/hqdefault.jpg" alt="" loading="lazy"><span class="pl" aria-hidden="true"></span></button><figcaption><b>{e(t)}</b><span>{e(m)}</span></figcaption></figure>' for v, t, m in VIDEOS)}</div>
+    <div class="pvs">{"".join(vid(*r) for r in VIDEOS)}</div>
     <div class="row" style="margin-top:26px"><a class="btn y" href="https://www.youtube.com/shorts/{SHORT}" target="_blank" rel="noopener">Ver o Short dos afundanços ↗</a><a class="btn o" style="color:#fff" href="https://www.youtube.com/@DicasdoFreire?sub_confirmation=1" target="_blank" rel="noopener">Subscrever no YouTube</a></div>
   </div>
 </section>
