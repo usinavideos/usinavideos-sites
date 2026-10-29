@@ -29,6 +29,17 @@ RESULTADOS = [
     ('10 out.', 'Sub-14 Feminino', 'CD José Régio', 49, 'Guifões SC "B"', 86, 'Distrital 1.ª Divisão'),
 ]
 
+# Jogos desta semana (casa e fora): (dia, hora, escalão, casa, fora, local, competição)
+SEMANA_T = '30 de outubro a 1 de novembro'
+SEMANA = [
+    ('Sex. 30 out.', '21:00', 'Sub-18 Masculino', 'FC Porto 2', 'CD José Régio', 'Gimnodesportivo do Lagarteiro', 'Distrital 1.ª Divisão'),
+    ('Sáb. 31 out.', '14:30', 'Sub-16 Masculino B', 'GDB Leça "B"', 'CD José Régio', 'Pav. Municipal de Leça da Palmeira', 'Distrital 1.ª Divisão'),
+    ('Sáb. 31 out.', '15:00', 'Sub-14 Feminino', 'Guifões SC "B"', 'CD José Régio', 'Pav. Engenheiro António Maia', 'Distrital 1.ª Divisão'),
+    ('Sáb. 31 out.', '18:30', 'Sub-16 Masculino A', 'SC Vasco da Gama "A"', 'CD José Régio', 'Parque das Camélias', 'Distrital 1.ª Divisão'),
+    ('Sáb. 31 out.', '21:00', 'Sénior Masculino', 'ACR Vigorosa', 'CD José Régio', 'Pav. EB 2/3 Prof. Napoleão de Sousa Marques', 'Nacional 2.ª Divisão'),
+    ('Dom. 1 nov.', '11:30', 'Sub-14 Masculino B', 'Guifões SC "B"', 'CD José Régio', 'Pav. Municipal de Guifões', 'Distrital 1.ª Divisão'),
+]
+
 # (dia, hora, escalão, adversário, competição)
 PROXIMOS = [
     ('Sáb. 7 nov.', '21:00', 'Sénior Masculino', 'BC Limiense', 'Nacional 2.ª Divisão'),
@@ -71,6 +82,13 @@ def jogo(r):
     B = f'<b>{e(b)}</b>' if not regio_casa else e(b)
     return (f'<li>{tag}<div><small>{e(d)} · {e(esc)} · {e(comp)}</small>'
             f'<p>{A} <strong>{pa} – {pb}</strong> {B}</p></div></li>')
+
+
+def sem(p):
+    d, h, esc, a, b, loc, comp = p
+    A = f'<b>{e(a)}</b>' if 'Régio' in a else e(a)
+    B = f'<b>{e(b)}</b>' if 'Régio' in b else e(b)
+    return f'<li><time>{e(d)}<b>{e(h)}</b></time><div><small>{e(esc)} · {e(comp)}</small><p>{A} × {B}</p><small style="text-transform:none;letter-spacing:0;font-weight:600">{e(loc)}</small></div></li>'
 
 
 def prox(p):
@@ -119,7 +137,7 @@ EXTRA = """
 .lst p{margin:2px 0 0;color:var(--ink)}.lst strong{font-size:19px;margin:0 6px}
 .res{flex:0 0 36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff}
 .res.v{background:var(--g)}.res.d{background:var(--r)}
-.lst time{flex:0 0 92px;font-weight:800;color:var(--ink);font-size:14px;line-height:1.2}.lst time b{display:block;color:var(--r);font-size:18px}
+.sem{display:grid;gap:10px}@media(min-width:900px){.sem{grid-template-columns:1fr 1fr}}.lst time{flex:0 0 92px;font-weight:800;color:var(--ink);font-size:14px;line-height:1.2}.lst time b{display:block;color:var(--r);font-size:18px}
 .big{background:var(--ink);color:#fff;border-radius:18px;padding:26px;border-left:6px solid var(--r);margin-top:22px}
 .big small{color:var(--y);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:12px}.big h3{color:#fff;font-size:clamp(24px,3.4vw,34px);margin:8px 0}
 .big p{margin:0;color:#D6D1CD}
@@ -176,7 +194,10 @@ def build():
 
 <section id="jogos">
   <div class="wrap">
-    <span class="eb">Próximo jogo em casa</span>
+    <span class="eb">Esta semana · {SEMANA_T}</span>
+    <h2 style="font-size:32px">Os jogos do José Régio</h2>
+    <ul class="lst sem">{''.join(sem(p) for p in SEMANA)}</ul>
+    <span class="eb" style="display:block;margin-top:44px">Próximo jogo em casa</span>
     <div class="big"><small>{e(d)} · {e(h)} · {e(comp)}</small><h3>CD José Régio × {e(adv)}</h3><p>{e(esc)} · {CASA}. Venha apoiar.</p></div>
     <div class="grid2" style="margin-top:44px">
       <div><span class="eb">Últimos resultados</span><h2 style="font-size:32px">A época até agora</h2><ul class="lst">{res}</ul>
