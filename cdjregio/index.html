@@ -161,6 +161,13 @@ footer a{color:#D6D1CD}
 .sb-cl{background:linear-gradient(135deg,#0F2438,#1B3A57);color:#fff;border-bottom:5px solid #C9A45C}.sb-cl .sb-eb{color:#D4B562}.sb-cl .sb-i em{color:#D4B562}
 .sb-us{background:#141213;color:#fff;border-bottom:5px solid #E5AE29}.sb-us .sb-eb{color:#E5AE29}.sb-us .sb-i em{color:#E5AE29}
 
+.pvs{display:grid;gap:18px;margin-top:32px}@media(min-width:700px){.pvs{grid-template-columns:1fr 1fr}}
+.pv{margin:0}.yt2{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;border-radius:14px;overflow:hidden;background:#000;cursor:pointer}
+.yt2 img{width:100%;height:100%;object-fit:cover;opacity:.9}.yt2:hover img{opacity:1}.yt2 iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt2 .pl{position:absolute;left:50%;top:50%;width:66px;height:66px;margin:-33px 0 0 -33px;border-radius:50%;background:var(--y)}
+.yt2 .pl::after{content:"";position:absolute;left:27px;top:21px;border-style:solid;border-width:12px 0 12px 19px;border-color:transparent transparent transparent var(--ink)}
+.pv figcaption{margin-top:10px}.pv b{display:block;color:#fff;font-size:18px}.pv span{font-size:14px;color:#C9C3BF}
+
 .cdj{display:flex;align-items:center;gap:18px;margin-bottom:18px}.cdj img{width:84px;height:84px;background:#fff;border-radius:50%;padding:6px}
 .cdj span{font-weight:900;font-size:22px;color:#fff}.cdj i{font-style:normal;color:var(--y);font-size:28px;font-weight:900}
 .grid2{display:grid;gap:28px}@media(min-width:900px){.grid2{grid-template-columns:1fr 1fr}}
@@ -181,7 +188,7 @@ footer a{color:#D6D1CD}
 .cl{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.cv{font-weight:800;color:var(--ink);border:2px solid var(--ink);border-radius:999px;padding:9px 16px;text-decoration:none;font-size:14px}
 .soon{margin-top:24px;background:#fff;border:2px dashed #D9D2C7;border-radius:18px;padding:28px;text-align:center;color:#6E6764}
 .links3{display:grid;gap:12px;margin-top:24px}@media(min-width:760px){.links3{grid-template-columns:repeat(3,1fr)}}
-.links3 a{display:block;background:var(--ink2);border:1px solid var(--line);border-radius:14px;padding:18px;color:#fff;text-decoration:none}.links3 b{display:block;font-size:18px}.links3 span{color:#C9C3BF;font-size:14px}
+.links3 a{display:block;background:var(--ink);border:1px solid var(--line);border-radius:14px;padding:18px;color:#fff;text-decoration:none}.links3 b{display:block;font-size:18px}.links3 span{color:#C9C3BF;font-size:14px}
 </style>
 <script src="/consent.js"></script>
 <!-- Google tag (gtag.js) - Usina Vídeos -->
@@ -196,7 +203,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
   <a class="logo" href="/"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
-  <div class="links"><a href="#jogos">Jogos</a><a href="#coberturas">Coberturas</a><a href="#clube">O clube</a></div>
+  <div class="links"><a href="#jogos">Jogos</a><a href="#coberturas">Coberturas</a><a href="#lances">Vídeos</a><a href="#clube">O clube</a></div>
   <a class="btn y" href="https://wa.me/351912988971?text=Ol%C3%A1%20Freire%2C%20vi%20a%20cobertura%20do%20CDJRegio%20no%20site%20da%20Usina%20V%C3%ADdeos%20e%20quero%20saber%20mais%20para%20o%20meu%20clube%20/%20a%20minha%20marca." target="_blank" rel="noopener">Falar connosco</a>
 </div></nav>
 
@@ -228,11 +235,21 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
     <span class="eb">Coberturas Usina Vídeos</span>
     <h2>Cada jogo, contado em imagem.</h2>
     <p class="lead">Galeria de fotografias, os melhores lances em vídeo e uma Web Story com o resultado, logo a seguir a cada jogo.</p>
-    <div class="soon"><b>A primeira cobertura da época está a chegar.</b><br>Fotografias, lances em vídeo e Web Story de cada jogo em casa.</div>
+    <div class="cobs"><article class="cob"><div class="cb"><small>Sábado, 17 de outubro de 2026</small><h3>Apresentação das equipas e Sénior × NCR Valongo</h3><p>Noite de apresentação das equipas da época 2026/2027 no Pavilhão de Desportos, seguida do jogo da equipa sénior com o NCR Valongo (71–89), no Nacional da 2.ª Divisão. O pavilhão veio abaixo com um triplo mesmo em cima do apito do primeiro tempo.</p><div class="cl"><a class="cv" href="https://www.instagram.com/p/Deri9uUiObc/" target="_blank" rel="noopener">Ver os lances no Instagram ↗</a></div></div><div class="cb" style="background:#F2EEE8"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Deri9uUiObc/?utm_source=ig_embed" data-instgrm-version="14" style="background:#fff;border:0;border-radius:14px;margin:0 auto;max-width:540px;min-width:280px;width:100%"><a href="https://www.instagram.com/p/Deri9uUiObc/" target="_blank" rel="noopener">Ver a publicação no Instagram</a></blockquote></div></article></div>
   </div>
 </section>
 
-<section id="clube" class="dark">
+<section id="lances" class="dark">
+  <div class="wrap">
+    <span class="eb">Lances em vídeo</span>
+    <h2>Os melhores momentos, no YouTube.</h2>
+    <p class="lead">Highlights produzidos pela Usina Vídeos nas épocas do José Régio.</p>
+    <div class="pvs"><figure class="pv"><button class="yt2" data-id="W928uxPDX6U" aria-label="Ver vídeo: CDJ Régio 78–74 Beira-Mar"><img src="https://i.ytimg.com/vi/W928uxPDX6U/hqdefault.jpg" alt="" loading="lazy"><span class="pl" aria-hidden="true"></span></button><figcaption><b>CDJ Régio 78–74 Beira-Mar</b><span>Afundanços e o 3.º lugar · fev. 2026</span></figcaption></figure><figure class="pv"><button class="yt2" data-id="YHqB45YwLjc" aria-label="Ver vídeo: Vitória sobre o Benfica OA (75–73)"><img src="https://i.ytimg.com/vi/YHqB45YwLjc/hqdefault.jpg" alt="" loading="lazy"><span class="pl" aria-hidden="true"></span></button><figcaption><b>Vitória sobre o Benfica OA (75–73)</b><span>Apuramento para a 2.ª fase · jan. 2026</span></figcaption></figure><figure class="pv"><button class="yt2" data-id="wd4Ms8ICggc" aria-label="Ver vídeo: CDJ Régio × GDB Leça"><img src="https://i.ytimg.com/vi/wd4Ms8ICggc/hqdefault.jpg" alt="" loading="lazy"><span class="pl" aria-hidden="true"></span></button><figcaption><b>CDJ Régio × GDB Leça</b><span>Melhores momentos · nov. 2025</span></figcaption></figure><figure class="pv"><button class="yt2" data-id="0zziUdQ3Mw0" aria-label="Ver vídeo: CD José Régio 63–81 CPN"><img src="https://i.ytimg.com/vi/0zziUdQ3Mw0/hqdefault.jpg" alt="" loading="lazy"><span class="pl" aria-hidden="true"></span></button><figcaption><b>CD José Régio 63–81 CPN</b><span>Nacional 1.ª Divisão Feminina · out. 2025</span></figcaption></figure></div>
+    <div class="row" style="margin-top:26px"><a class="btn y" href="https://www.youtube.com/shorts/FpYg6vGqiEs" target="_blank" rel="noopener">Ver o Short dos afundanços ↗</a><a class="btn o" style="color:#fff" href="https://www.youtube.com/@DicasdoFreire?sub_confirmation=1" target="_blank" rel="noopener">Subscrever no YouTube</a></div>
+  </div>
+</section>
+
+<section id="clube">
   <div class="wrap">
     <span class="eb">O clube</span>
     <h2>Mais de 200 atletas, 10 equipas e mais de 29 anos de basquetebol.</h2>
@@ -259,5 +276,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
   <span>Cobertura do CD José Régio pela Usina Vídeos. Emblema e resultados: Clube Desportivo José Régio. · © Usina Vídeos</span>
 </div><p class="uvck-l" style="margin:18px 0 0;font-size:13px;text-align:center;opacity:.8"><a href="/cookies/" style="color:inherit">Política de cookies</a> · <a href="/cookies/" data-cookies style="color:inherit">Preferências de cookies</a></p>
 </footer>
+<script>document.querySelectorAll('.yt2').forEach(function(b){b.addEventListener('click',function(){var i=document.createElement('iframe');i.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0';i.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';i.allowFullscreen=true;i.title=b.getAttribute('aria-label');b.innerHTML='';b.appendChild(i)},{once:true})});</script>
+<script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>

@@ -40,7 +40,20 @@ PROXIMOS = [
 ]
 
 # Coberturas Usina: dict(slug, data, titulo, resumo, capa='img/x.jpg', fotos=[...], yt='ID', ig='URL', story='/web-stories/x/')
-COBERTURAS = []
+COBERTURAS = [
+    dict(slug='apresentacao-2026', data='Sábado, 17 de outubro de 2026', titulo='Apresentação das equipas e Sénior × NCR Valongo',
+         resumo='Noite de apresentação das equipas da época 2026/2027 no Pavilhão de Desportos, seguida do jogo da equipa sénior com o NCR Valongo (71–89), no Nacional da 2.ª Divisão. O pavilhão veio abaixo com um triplo mesmo em cima do apito do primeiro tempo.',
+         ig_code='Deri9uUiObc'),
+]
+
+# Lances já publicados no YouTube (canal Dicas do Freire): (id, título, legenda)
+VIDEOS = [
+    ('W928uxPDX6U', 'CDJ Régio 78–74 Beira-Mar', 'Afundanços e o 3.º lugar · fev. 2026'),
+    ('YHqB45YwLjc', 'Vitória sobre o Benfica OA (75–73)', 'Apuramento para a 2.ª fase · jan. 2026'),
+    ('wd4Ms8ICggc', 'CDJ Régio × GDB Leça', 'Melhores momentos · nov. 2025'),
+    ('0zziUdQ3Mw0', 'CD José Régio 63–81 CPN', 'Nacional 1.ª Divisão Feminina · out. 2025'),
+]
+SHORT = 'FpYg6vGqiEs'
 
 
 def jogo(r):
@@ -59,7 +72,17 @@ def prox(p):
     return f'<li><time>{e(d)}<b>{e(h)}</b></time><div><small>{e(esc)} · {e(comp)}</small><p><b>CD José Régio</b> × {e(adv)}</p></div></li>'
 
 
+def ig(code):
+    u = f'https://www.instagram.com/p/{code}/'
+    return (f'<blockquote class="instagram-media" data-instgrm-permalink="{u}?utm_source=ig_embed" data-instgrm-version="14" '
+            f'style="background:#fff;border:0;border-radius:14px;margin:0 auto;max-width:540px;min-width:280px;width:100%"><a href="{u}" target="_blank" rel="noopener">Ver a publicação no Instagram</a></blockquote>')
+
+
 def cobertura(c):
+    if c.get('ig_code') and not c.get('capa'):
+        return (f'<article class="cob"><div class="cb"><small>{e(c["data"])}</small><h3>{e(c["titulo"])}</h3><p>{e(c["resumo"])}</p>'
+                f'<div class="cl"><a class="cv" href="https://www.instagram.com/p/{c["ig_code"]}/" target="_blank" rel="noopener">Ver os lances no Instagram ↗</a></div></div>'
+                f'<div class="cb" style="background:#F2EEE8">{ig(c["ig_code"])}</div></article>')
     media = ''
     if c.get('yt'):
         media += f'<a class="cv" href="https://youtu.be/{c["yt"]}" target="_blank" rel="noopener">Ver os lances no YouTube ↗</a>'
@@ -74,6 +97,13 @@ def cobertura(c):
 
 
 EXTRA = """
+.pvs{display:grid;gap:18px;margin-top:32px}@media(min-width:700px){.pvs{grid-template-columns:1fr 1fr}}
+.pv{margin:0}.yt2{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;border-radius:14px;overflow:hidden;background:#000;cursor:pointer}
+.yt2 img{width:100%;height:100%;object-fit:cover;opacity:.9}.yt2:hover img{opacity:1}.yt2 iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt2 .pl{position:absolute;left:50%;top:50%;width:66px;height:66px;margin:-33px 0 0 -33px;border-radius:50%;background:var(--y)}
+.yt2 .pl::after{content:"";position:absolute;left:27px;top:21px;border-style:solid;border-width:12px 0 12px 19px;border-color:transparent transparent transparent var(--ink)}
+.pv figcaption{margin-top:10px}.pv b{display:block;color:#fff;font-size:18px}.pv span{font-size:14px;color:#C9C3BF}
+
 .cdj{display:flex;align-items:center;gap:18px;margin-bottom:18px}.cdj img{width:84px;height:84px;background:#fff;border-radius:50%;padding:6px}
 .cdj span{font-weight:900;font-size:22px;color:#fff}.cdj i{font-style:normal;color:var(--y);font-size:28px;font-weight:900}
 .grid2{display:grid;gap:28px}@media(min-width:900px){.grid2{grid-template-columns:1fr 1fr}}
@@ -94,7 +124,7 @@ EXTRA = """
 .cl{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.cv{font-weight:800;color:var(--ink);border:2px solid var(--ink);border-radius:999px;padding:9px 16px;text-decoration:none;font-size:14px}
 .soon{margin-top:24px;background:#fff;border:2px dashed #D9D2C7;border-radius:18px;padding:28px;text-align:center;color:#6E6764}
 .links3{display:grid;gap:12px;margin-top:24px}@media(min-width:760px){.links3{grid-template-columns:repeat(3,1fr)}}
-.links3 a{display:block;background:var(--ink2);border:1px solid var(--line);border-radius:14px;padding:18px;color:#fff;text-decoration:none}.links3 b{display:block;font-size:18px}.links3 span{color:#C9C3BF;font-size:14px}
+.links3 a{display:block;background:var(--ink);border:1px solid var(--line);border-radius:14px;padding:18px;color:#fff;text-decoration:none}.links3 b{display:block;font-size:18px}.links3 span{color:#C9C3BF;font-size:14px}
 """
 
 
@@ -122,7 +152,7 @@ def build():
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
   <a class="logo" href="/"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
-  <div class="links"><a href="#jogos">Jogos</a><a href="#coberturas">Coberturas</a><a href="#clube">O clube</a></div>
+  <div class="links"><a href="#jogos">Jogos</a><a href="#coberturas">Coberturas</a><a href="#lances">Vídeos</a><a href="#clube">O clube</a></div>
   <a class="btn y" href="{WA}" target="_blank" rel="noopener">Falar connosco</a>
 </div></nav>
 
@@ -158,7 +188,17 @@ def build():
   </div>
 </section>
 
-<section id="clube" class="dark">
+<section id="lances" class="dark">
+  <div class="wrap">
+    <span class="eb">Lances em vídeo</span>
+    <h2>Os melhores momentos, no YouTube.</h2>
+    <p class="lead">Highlights produzidos pela Usina Vídeos nas épocas do José Régio.</p>
+    <div class="pvs">{''.join(f'<figure class="pv"><button class="yt2" data-id="{v}" aria-label="Ver vídeo: {e(t)}"><img src="https://i.ytimg.com/vi/{v}/hqdefault.jpg" alt="" loading="lazy"><span class="pl" aria-hidden="true"></span></button><figcaption><b>{e(t)}</b><span>{e(m)}</span></figcaption></figure>' for v, t, m in VIDEOS)}</div>
+    <div class="row" style="margin-top:26px"><a class="btn y" href="https://www.youtube.com/shorts/{SHORT}" target="_blank" rel="noopener">Ver o Short dos afundanços ↗</a><a class="btn o" style="color:#fff" href="https://www.youtube.com/@DicasdoFreire?sub_confirmation=1" target="_blank" rel="noopener">Subscrever no YouTube</a></div>
+  </div>
+</section>
+
+<section id="clube">
   <div class="wrap">
     <span class="eb">O clube</span>
     <h2>Mais de 200 atletas, 10 equipas e mais de 29 anos de basquetebol.</h2>
@@ -184,6 +224,8 @@ def build():
   <a href="/" aria-label="Usina Vídeos · página inicial"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
   <span>Cobertura do CD José Régio pela Usina Vídeos. Emblema e resultados: Clube Desportivo José Régio. · © Usina Vídeos</span>
 </div></footer>
+<script>document.querySelectorAll('.yt2').forEach(function(b){{b.addEventListener('click',function(){{var i=document.createElement('iframe');i.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0';i.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';i.allowFullscreen=true;i.title=b.getAttribute('aria-label');b.innerHTML='';b.appendChild(i)}},{{once:true}})}});</script>
+<script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
 '''
