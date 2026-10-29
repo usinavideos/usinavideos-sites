@@ -24,6 +24,40 @@ CATS = {'bastidores': 'Bastidores e making of', 'comunicacao': 'Comunicação e 
         'mercados': 'Mercados', 'cases': 'Cases'}
 
 POSTS = [
+    dict(slug='panorama-imobiliario-credito-jovem-2027', cat='mercados', date='2026-10-29',
+         title='Panorama Imobiliário PT: crédito jovem em 2027 e três imóveis para conhecer',
+         desc='No novo episódio, Francisco Medeiros e Freire Neto falam do mercado, da angariação e do crédito jovem, e apresentam três imóveis da Cordial Level.',
+         img='/web-stories/panorama-credito-jovem-2027/img/capa-blog.jpg', img_cap='Piscinas das Marés, Leça da Palmeira · drone Usina Vídeos',
+         lead='A garantia pública para jovens está garantida até ao fim do ano. Para 2027 há uma proposta, mas ainda não há decisão. É o ponto de partida do novo episódio do Panorama Imobiliário PT.',
+         body='''<p>Gravado na CENTURY 21 Arquitectos, o episódio junta <b>Francisco Medeiros</b>, consultor da Cordial Level, e <b>Freire Neto</b>, da Usina Vídeos. Em cima da mesa: o mercado, a angariação, o crédito jovem, o que diferencia a Cordial Level, a rede CENTURY 21 e o trabalho de consultoria até à escritura.</p>
+<div style="display:flex;flex-wrap:wrap;gap:22px;margin-top:20px"><div style="display:flex;align-items:center;gap:12px"><img src="/web-stories/panorama-credito-jovem-2027/img/francisco.png" alt="Francisco Medeiros" width="72" height="72" style="border-radius:50%;border:3px solid #C9A45C" loading="lazy"><span><b>Francisco Medeiros</b><br>Consultor · Cordial Level</span></div><div style="display:flex;align-items:center;gap:12px"><img src="/web-stories/panorama-credito-jovem-2027/img/freire.png" alt="Freire Neto" width="72" height="72" style="border-radius:50%;border:3px solid #C9A45C" loading="lazy"><span><b>Freire Neto</b><br>Jornalista · Usina Vídeos</span></div></div>
+<h2>Crédito jovem: o que está em vigor</h2>
+<ul><li>Jovens dos <b>18 aos 35 anos</b>, com morada fiscal em Portugal, a comprar a <b>primeira habitação própria e permanente</b>.</li>
+<li>O Estado garante até <b>15%</b> do valor e o banco pode financiar até <b>100%</b>.</li>
+<li>Imóveis até <b>450 000 €</b>. A aprovação do crédito é sempre do banco.</li></ul>
+<p>Segundo o Banco de Portugal, até junho de 2026 foram assinados <b>40 148 contratos</b> com garantia pública, num total de 8,3 mil milhões de euros.</p>
+<h2>E em 2027?</h2>
+<p>A garantia cobre contratos assinados até 31 de dezembro de 2026. A proposta de Orçamento do Estado para 2027, entregue a 8 de outubro, prevê mantê-la, bem como as isenções de IMT e Imposto do Selo. O ministro das Finanças disse, porém, que a decisão formal ainda não foi tomada.</p>
+<h2>O que muda para quem vende</h2>
+<p>Há muitos compradores jovens com financiamento à procura de casas até 450 000 €. Mas procura não chega: o preço certo e uma boa apresentação continuam a decidir a venda.</p>
+<h2>Cordial Level Shopping</h2>
+<table class="bt"><thead><tr><th>Imóvel</th><th>Área útil</th><th>Preço</th></tr></thead><tbody>
+<tr><td><a href="/cordiallevel/anteroquental/">T2 remodelado na Antero de Quental, Porto</a></td><td>77,30 m²</td><td>349 000 €</td></tr>
+<tr><td><a href="/cordiallevel/t3leca/">T3 com suíte e 2 lugares de garagem, Leça da Palmeira</a></td><td>138 m²</td><td>550 000 €</td></tr>
+<tr><td><a href="/cordiallevel/casaraofoz/">Moradia T4 com vista de mar, Foz do Douro</a></td><td>165 m²</td><td>875 000 €</td></tr></tbody></table>
+<p class="cap">Preços e disponibilidade sujeitos a confirmação · Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p>
+<figure class="bf"><img src="/cordiallevel/anteroquental/img/aq-lapa.jpg" alt="Igreja da Lapa e Rua Antero de Quental vistas de drone" loading="lazy"><figcaption>Rua Antero de Quental, junto à Igreja da Lapa · drone Usina Vídeos</figcaption></figure>
+<p>O T2 da Antero de Quental é o único dos três dentro do limite da garantia pública para jovens.</p>
+<p>Veja também a <a href="/web-stories/panorama-credito-jovem-2027/">web story do episódio</a>.</p>
+<p class="cap">Fontes: <a href="https://www.idealista.pt/news/financas/credito-a-habitacao/2026/10/08/78113-garantia-publica-e-isencao-de-imt-mantem-se-para-jovens-em-2027" target="_blank" rel="noopener">idealista/news, 8 out. 2026</a> · <a href="https://www.literaciafinanceira.pt/artigos/credito-habitacao-jovem" target="_blank" rel="noopener">Literacia Financeira, dados do Banco de Portugal</a> · <a href="https://portugal.gov.pt/pt/gc24/comunicacao/noticias/garantia-publica-o-que-e-e-como-funciona" target="_blank" rel="noopener">Governo de Portugal</a>. Informação geral, situação a 27 de outubro de 2026; não dispensa simulação junto do banco.</p>''',
+         dica='Se tem até 35 anos, não deixe a simulação para dezembro. Um processo de crédito demora semanas, e o prazo certo hoje é 31 de dezembro.',
+         veredito='Uma gravação, várias peças: episódio, cortes, carrossel, web story e este artigo. Assim um tema chega a quem procura casa e a quem quer vender.',
+         cta='''<div class="clb"><img src="/cordiallevel/img/logo-cordial-level-claro.png" alt="Cordial Level" width="1156" height="754" loading="lazy">
+<div><b>Quer comprar com a garantia pública ou saber quanto vale o seu imóvel? Fale connosco!</b>
+<p>Casemiro Ramos e Francisco Medeiros, consultores da Cordial Level, acompanham cada processo do primeiro contacto à escritura.</p>
+<div class="clr"><a href="/cordiallevel/">Ver a Cordial Level</a><a href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20vi%20o%20Panorama%20Imobili%C3%A1rio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Casemiro · 935 101 667</a><a href="https://wa.me/351912706395?text=Ol%C3%A1%20Francisco%2C%20vi%20o%20Panorama%20Imobili%C3%A1rio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Francisco · 912 706 395</a></div>
+<small>Chamada para a rede móvel nacional · Cordial Level | CENTURY 21 Arquitectos · AMI 11414</small></div></div>''',
+         links=[('Ver o episódio no YouTube', 'https://www.youtube.com/@CordialLevelPT'), ('Ver a web story', '/web-stories/panorama-credito-jovem-2027/')]),
     dict(slug='credito-jovem-comprar-casa-sem-entrada', cat='mercados', date='2026-10-27',
          title='Crédito jovem: tem menos de 35 anos? Saiba como comprar casa sem entrada',
          desc='Garantia pública de até 15% e isenção de IMT e Imposto do Selo: quem tem direito, o que é preciso e até quando, em 2026.',
@@ -172,7 +206,7 @@ BLOG_CSS = '''
 .bc h3{font-size:21px;line-height:1.2;margin-top:6px;color:var(--ink)}.bc p{margin-top:8px;font-size:15px}.bc em{display:block;margin-top:12px;font-style:normal;font-size:13px;color:var(--muted)}
 .art{max-width:760px;margin:0 auto;padding:44px 0 72px}.art h1{font-size:clamp(30px,4.2vw,46px);line-height:1.08;margin-top:10px}
 .art .meta{margin-top:14px;font-size:14px;color:var(--muted)}.art .hero{width:100%;border-radius:18px;margin-top:26px;aspect-ratio:16/9;object-fit:cover}
-.art .cap{font-size:12px;color:var(--muted);margin-top:6px}
+.art .cap{position:static;font-size:12px;color:var(--muted);margin-top:6px}
 .art .imp{margin-top:26px;font-size:21px;line-height:1.45;font-weight:700;color:var(--ink);border-left:5px solid var(--y);padding-left:18px}
 .art h2{font-size:26px;margin-top:34px}.art p,.art li{font-size:18px;line-height:1.65}.art p{margin-top:14px}.art ul{margin-top:14px;padding-left:22px;display:grid;gap:8px}
 .art .bf{margin:26px 0 0}.art .bf img{width:100%;border-radius:16px}.art figcaption{font-size:12px;color:var(--muted);margin-top:6px}
