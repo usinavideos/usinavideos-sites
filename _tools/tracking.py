@@ -73,4 +73,7 @@ def main(paths=None):
 
 
 if __name__ == '__main__':
+    if len(sys.argv) == 1:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import stories_strip; stories_strip.main()
     main([os.path.abspath(a) for a in sys.argv[1:]] or None)
