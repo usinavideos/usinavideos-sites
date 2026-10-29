@@ -49,7 +49,7 @@ COBERTURAS = [
 # Lances já publicados no YouTube (canal Dicas do Freire): (id, título, legenda)
 VIDEOS = [
     ('W928uxPDX6U', 'CDJ Régio 78–74 Beira-Mar', 'Afundanços e o 3.º lugar · fev. 2026'),
-    ('YHqB45YwLjc', 'Vitória sobre o Benfica OA (75–73)', 'Apuramento para a 2.ª fase · jan. 2026'),
+    ('YHqB45YwLjc', 'Vitória sobre o Benfica OA (75–73)', 'Apuramento para a 2.ª fase · jan. 2026', 'https://motoreseacao.com/cd-jose-regio-elimina-benfica-oa-apuramento-norte-2/'),
     ('wd4Ms8ICggc', 'CDJ Régio × GDB Leça', 'Melhores momentos · nov. 2025'),
     ('0zziUdQ3Mw0', 'CD José Régio 63–81 CPN', 'Nacional 1.ª Divisão Feminina · out. 2025', 'https://motoreseacao.com/campeonato-portugues-de-basquetebol-feminino-cdjr-63-x-81-cpn-melhores-momentos/'),
 ]
