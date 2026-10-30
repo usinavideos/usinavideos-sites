@@ -33,6 +33,25 @@ LINK = {'pt': ('Política de cookies', 'Preferências de cookies', '/cookies/'),
         'es': ('Política de cookies', 'Preferencias de cookies', '/cookies/#es')}
 
 
+FOTOS = {'Casemiro Ramos': '/cordiallevel/img/casemiro.jpg', 'Francisco Medeiros': '/cordiallevel/img/francisco.jpg'}
+AVCSS = ('<style id="avcss">.dir .av{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--gold,#B8962E);display:block;margin-bottom:4px}'
+         '.bar a .bav{width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid #fff;flex:none}</style>')
+
+
+def fotos(s):
+    """Foto dos consultores ao lado dos contactos (cartões .dir e barra fixa)."""
+    if '<article class="dir">' not in s:
+        return s
+    for nome, src in FOTOS.items():
+        s = re.sub(r'(<article class="dir">\s*)(<h3>' + nome + '</h3>)',
+                   lambda m: m.group(1) + f'<img class="av" src="{src}" alt="{nome}" width="96" height="96" loading="lazy">' + m.group(2), s)
+        s = re.sub(r'(aria-label="Fale comigo: WhatsApp ' + nome + r'">)(?!<img)',
+                   lambda m: m.group(1) + f'<img class="bav" src="{src}" alt="" width="30" height="30">', s)
+    if 'id="avcss"' not in s:
+        s = s.replace('</head>', AVCSS + '</head>', 1)
+    return s
+
+
 def fix(s):
     if FB_INIT not in s and GA not in s:
         s = s.replace('</head>', TAGS + '</head>', 1)
@@ -52,7 +71,7 @@ def fix(s):
              f'<a href="{u}" style="color:inherit">{a}</a> · <a href="{u}" data-cookies style="color:inherit">{b}</a></p>\n')
         k = s.rfind('</footer>')
         s = s[:k] + p + s[k:]
-    return s
+    return fotos(s)
 
 
 def main(paths=None):
