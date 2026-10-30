@@ -36,6 +36,14 @@ MARCAS = {
                all_url='https://tiagobranquinha.century21.pt', all_lbl='Todos os imóveis do Tiago Branquinha', all_txt='tiagobranquinha.century21.pt', social=None,
                foot_links=[('Site CENTURY 21', 'https://tiagobranquinha.century21.pt')],
                cred_ag='CENTURY 21 Arquitectos', sig='A sua próxima casa, com vista sobre o Porto.', bar_lbl='Fale diretamente comigo'),
+    'jb': dict(pasta='josebacelar', nav='José <b>Bacelar</b>', nav_href='#inicio', ass='José Bacelar | CENTURY 21 Arquitectos III · AMI 23921',
+               role='Consultor imobiliário · CENTURY 21 Arquitectos III · AMI 23921',
+               cons=[dict(nome='José Bacelar', curto='José', num='351917103516', tel='+351 917 103 516',
+                          mail='josembacelar@century21.pt', site='https://century21.pt/consultores/josembacelar', site_txt='century21.pt/consultores/josembacelar')],
+               lead='Fale diretamente com o consultor responsável por este imóvel.',
+               all_url='https://century21.pt/consultores/josembacelar', all_lbl='Todos os imóveis do José Bacelar', all_txt='century21.pt/consultores/josembacelar', social=None,
+               foot_links=[('Perfil CENTURY 21', 'https://century21.pt/consultores/josembacelar')],
+               cred_ag='CENTURY 21 Arquitectos', sig='Transparência, compromisso e resultados.', bar_lbl='Fale diretamente comigo'),
 }
 
 
