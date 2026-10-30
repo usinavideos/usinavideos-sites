@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Faixa "Web Stories" na página inicial (PT/EN/ES): lista automaticamente todas as web-stories/*/.
+"""Faixa "Web Stories" na página inicial (PT/EN/ES): lista automaticamente web-stories/*/ e cordiallevel/web-stories/*/.
 
 Idempotente. Corre depois de criar uma story nova ou de regenerar a página inicial (site_usina.py).
 Uso: python3 _tools/stories_strip.py
@@ -23,13 +23,14 @@ MESES = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.',
 
 def stories():
     out = []
-    for f in glob.glob(os.path.join(ROOT, 'web-stories', '*', 'index.html')):
+    files = glob.glob(os.path.join(ROOT, 'web-stories', '*', 'index.html')) + glob.glob(os.path.join(ROOT, 'cordiallevel', 'web-stories', '*', 'index.html'))
+    for f in files:
         s = open(f, encoding='utf-8').read()
-        slug = os.path.basename(os.path.dirname(f))
+        slug = os.path.relpath(os.path.dirname(f), ROOT).replace(os.sep, '/')
         t = html.unescape(re.search(r'<title>(.*?)</title>', s, re.S).group(1).strip())
         p = re.search(r'poster-portrait-src="([^"]+)"', s)
         d = re.search(r'"datePublished":"(\d{4}-\d\d-\d\d)', s)
-        poster = p.group(1).replace('https://usinavideos.pt', '') if p else f'/web-stories/{slug}/img/poster.jpg'
+        poster = p.group(1).replace('https://usinavideos.pt', '') if p else f'/{slug}/img/poster.jpg'
         out.append((d.group(1) if d else '0000-00-00', slug, t, poster))
     return sorted(out, reverse=True)
 
@@ -37,9 +38,9 @@ def stories():
 def block(lang, items):
     eb, h2, lead = TXT[lang]
     cards = ''.join(
-        f'<a class="wsc" href="/web-stories/{slug}/"><span class="im"><img src="{e(poster)}" alt="" loading="lazy"></span><b>{e(t)}</b>'
+        f'<a class="wsc" href="/{slug}/"><span class="im"><img src="{e(poster)}" alt="" loading="lazy"></span><b>{e(t)}</b>'
         f'<small>{int(d[8:])} {MESES[int(d[5:7]) - 1]} {d[:4]}</small></a>' if d[0] != '0' else
-        f'<a class="wsc" href="/web-stories/{slug}/"><span class="im"><img src="{e(poster)}" alt="" loading="lazy"></span><b>{e(t)}</b></a>'
+        f'<a class="wsc" href="/{slug}/"><span class="im"><img src="{e(poster)}" alt="" loading="lazy"></span><b>{e(t)}</b></a>'
         for d, slug, t, poster in items)
     return (f'<!--ws-->{CSS}<section id="stories" style="padding-bottom:24px"><div class="wrap"><span class="eb">{eb}</span><h2>{e(h2)}</h2>'
             f'<p class="lead">{e(lead)}</p><div class="wsr">{cards}</div></div></section><!--/ws-->\n')
