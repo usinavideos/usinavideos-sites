@@ -26,6 +26,7 @@ IDEIAS = [('Highlights por jogo', 'Os melhores lances de cada atleta, em vertica
           ('Mixtape da época', 'Uma compilação dos melhores lances de vários jogos do atleta, a meio e no fim da época. É o vídeo que se envia a clubes e scouts para o próximo contrato.'),
           ('Perfil do atleta no site', 'Uma página por atleta em usinavideos.pt, com vídeos, dados, clube e contacto da MatchBall, para enviar por link a scouts e clubes.'),
           ('Web stories', 'Uma história em ecrã inteiro por jogo ou por atleta, que aparece no Google e no site.'),
+          ('Jogos em direto', 'Transmissão em direto de jogos e showcases no YouTube e nas redes, com marcador e comentário em PT ou EN. Valor a orçamentar por evento.'),
           ('Showcases e tours', 'Cobertura completa dos showcases em Portugal: jogos, sessões de scouting, entrevistas e perfis.')]
 
 PRECOS = [('Highlights de 1 atleta', '60€', 'por jogo', 'Captação do jogo, vídeo de 45 a 90 s em vertical e horizontal, legendas PT e EN'),
@@ -43,6 +44,8 @@ PACOTES = [('Por pedido', '1 a 3 vídeos no mês', '80€', ['Highlights + entre
 
 GAL = [('W928uxPDX6U', 'CDJ Régio 78–74 Beira-Mar'), ('YHqB45YwLjc', 'CDJ Régio 75–73 Benfica OA'), ('wd4Ms8ICggc', 'CDJ Régio × GDB Leça'), ('0zziUdQ3Mw0', 'CDJ Régio × CPN · feminino')]
 
+EX = [('7SPYD5xZ5Hg', 'Podcast · Panorama Imobiliário PT #3', 'https://youtu.be/7SPYD5xZ5Hg'), ('6BYrH0vu69k', 'Direto · SEXTOU com Freire Neto', 'https://www.youtube.com/watch?v=6BYrH0vu69k'), ('07GUVT6ILno', 'Vídeo-reportagem · T1 em Cedofeita', 'https://www.youtube.com/watch?v=07GUVT6ILno'), ('jfVBYI3YN8U', 'Short · Dica Cordial Level', 'https://www.youtube.com/shorts/jfVBYI3YN8U')]
+
 STEPS = [('Calendário', 'A MatchBall indica os atletas e os jogos do mês. Nós organizamos as deslocações.'),
          ('Captação', 'Gravamos o jogo inteiro e, no fim, a entrevista no pavilhão, com autorização do clube.'),
          ('Edição', 'Highlights e entrevista editados com a marca MatchBall, música licenciada e legendas PT e EN.'),
@@ -55,6 +58,7 @@ def build():
     precos = ''.join(f'<tr><td><b>{e(n)}</b></td><td style="white-space:nowrap"><b>{e(p)}</b>{" + IVA" if "€" in p else ""}<br><small>{e(u)}</small></td><td>{e(d)}</td></tr>' for n, p, u, d in PRECOS)
     pk = ''.join(f'<article class="{"ref" if i == 1 else ""}" style="--c:{COLORS[i % 3]}"><span class="lb">{e(lb)}</span><h3>{e(n)}</h3><div class="pr">{e(p)}{"<small>+ IVA</small>" if "€" in p else ""}</div><ul>{"".join(f"<li>{e(x)}</li>" for x in it)}</ul><p>{e(d)}</p></article>' for i, (lb, n, p, it, d) in enumerate(PACOTES))
     gal = ''.join(f'<a href="https://www.youtube.com/watch?v={v}" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/{v}/hqdefault.jpg" alt="{e(t)}" loading="lazy"><span>{e(t)} ▶</span></a>' for v, t in GAL)
+    ex = ''.join(f'<a href="{u}" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/{v}/hqdefault.jpg" alt="{e(t)}" loading="lazy"><span>{e(t)} ▶</span></a>' for v, t, u in EX)
     steps = ''.join(f'<article class="card" style="--c:{COLORS[i % 3]}"><span class="n">{i + 1:02d}</span><h3>{e(a)}</h3><p>{e(b)}</p></article>' for i, (a, b) in enumerate(STEPS))
     return f'''<!doctype html>
 <html lang="pt-PT">
@@ -83,7 +87,7 @@ def build():
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
   <a class="logo" href="/"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
-  <div class="links"><a href="#feito">Já fizemos</a><a href="#ideias">Ideias</a><a href="#precos">Preços</a><a href="#pacotes">Quantidade</a><a href="#como">Como funciona</a></div>
+  <div class="links"><a href="#feito">Já fizemos</a><a href="#ideias">Ideias</a><a href="#precos">Preços</a><a href="#pacotes">Quantidade</a><a href="#exemplos">Exemplos</a><a href="#como">Como funciona</a></div>
   <a class="btn y" href="{WA}" target="_blank" rel="noopener">Avançar</a>
 </div></nav>
 
@@ -116,6 +120,21 @@ def build():
     <div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(250px,1fr))">{ideias}</div></div>
 </section>
 
+<section id="exemplos">
+  <div class="wrap"><span class="eb">Também fazemos</span><h2>Podcasts, diretos e vídeos.</h2>
+    <p class="lead">A mesma equipa grava e edita podcasts, faz transmissões em direto e vídeo-reportagens. Formatos que também podem servir a MatchBall: conversas com atletas e treinadores, jogos e showcases em direto.</p>
+    <div class="mgal">{ex}</div></div>
+</section>
+
+<section class="dark">
+  <div class="wrap two">
+    <div><span class="eb">Canal Dicas do Freire</span><h2>Mais um canal para os vossos vídeos.</h2>
+      <p style="margin-top:18px;color:#D6D1CD">No canal Dicas do Freire, no YouTube, publicamos os jogos e os highlights do basquetebol que cobrimos, além de diretos semanais. Os vídeos e os diretos da MatchBall podem ser publicados também aqui, com link para a MatchBall e para os atletas, sem custo adicional.</p>
+      <div class="row" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:22px"><a class="btn y" href="https://www.youtube.com/@DicasdoFreire?sub_confirmation=1" target="_blank" rel="noopener">Ver o canal no YouTube</a><a class="btn o" style="color:#fff" href="https://www.youtube.com/@DicasdoFreire/streams" target="_blank" rel="noopener">Ver os diretos</a></div></div>
+    <div class="stats"><div><b>229</b><span>vídeos publicados</span></div><div><b>Diretos</b><span>todas as semanas</span></div><div><b>Basquetebol</b><span>CDJ Régio e MatchBall</span></div><div><b>PT · EN</b><span>legendas nos vídeos</span></div></div>
+  </div>
+</section>
+
 <section id="precos" style="background:var(--paper2)">
   <div class="wrap"><span class="eb">Preços</span><h2>Preços por serviço.</h2>
     <p class="lead">Valores sem IVA, que acresce à taxa legal em vigor. Legendas em português e inglês incluídas; espanhol + 15€ por vídeo.</p>
@@ -143,7 +162,7 @@ def build():
   </div>
 </section>
 
-<footer><div class="wrap" style="display:block;margin-bottom:28px">{mea_banner('pt', 'proposta_matchball')}</div><div class="wrap">
+<footer><div class="wrap" style="display:block;margin-bottom:18px"><a class="meaimg" href="/cordiallevel/?utm_source=proposta_matchball&amp;utm_medium=banner&amp;utm_campaign=cordiallevel"><img src="/cordiallevel/img/banner-cordial-level-1200x300.jpg" alt="Cordial Level: viver ou investir em Portugal. Imóveis e investimento. Cordial Level | CENTURY 21 Arquitectos · AMI 11414" width="1200" height="300" loading="lazy" style="display:block;width:100%;height:auto"></a></div><div class="wrap" style="display:block;margin-bottom:28px">{mea_banner('pt', 'proposta_matchball')}</div><div class="wrap">
   <a href="/" aria-label="Usina Vídeos · página inicial"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
   <span>Produtora de conteúdo e comunicação · © Usina Vídeos</span>
 </div></footer>
