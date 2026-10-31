@@ -16,12 +16,12 @@ WA = 'https://wa.me/351912988971?text=' + up.quote('Olá Freire, vi a proposta d
 HERO = 'https://i.ytimg.com/vi/W928uxPDX6U/maxresdefault.jpg'
 
 FEITO = [('Tour Red Rose Thunder', 'Jogos, destaques e perfis dos jogadores durante o tour internacional em Portugal.'),
-         ('Showcase de Porto', 'Jogos do MatchBall Women\'s Showcase contra equipas portuguesas.'),
+         ('Showcase do Porto', 'Jogos do MatchBall Women\'s Showcase contra equipas portuguesas.'),
          ('CDJ Régio · Vila do Conde', 'Cobertura semanal de jogos de basquetebol, com destaques no YouTube e no Instagram.')]
 
 IDEIAS = [('Highlights por jogo', 'Os melhores lances de cada atleta, em vertical para Reels e TikTok e em horizontal para YouTube e clubes. Entrega em 48 horas.'),
           ('Entrevista pós-jogo', 'Dois a três minutos com o atleta no pavilhão: o jogo, a adaptação a Portugal e os objetivos. Legendada em PT e EN.'),
-          ('Welcome to Portugal', 'Vídeo de chegada: o atleta na cidade, no pavilhão e com o clube. Ótimo para anunciar novas contratações.'),
+          ('Welcome to Portugal', 'Vídeo de chegada: o atleta na cidade, no pavilhão e com o clube. Ideal para anunciar novas contratações.'),
           ('Overseas diary', 'A vida do atleta em Portugal: casa, treino, cidade e comida. O formato que mais atrai novos jogadores para a MatchBall.'),
           ('Mixtape da época', 'Uma compilação dos melhores lances de vários jogos do atleta, a meio e no fim da época. É o vídeo que se envia a clubes e scouts para o próximo contrato.'),
           ('Perfil do atleta no site', 'Uma página por atleta em usinavideos.pt, com vídeos, dados, clube e contacto da MatchBall, para enviar por link a scouts e clubes.'),
@@ -41,6 +41,8 @@ PACOTES = [('Por pedido', '1 a 3 vídeos no mês', '80€', ['Highlights + entre
            ('Mais pedido', '4 a 7 vídeos no mês', '75€', ['Highlights + entrevista, por jogo', 'Só highlights: 55€', 'Pode ser 1 vídeo por atleta, de vários atletas', 'Web story de cada jogo incluída'], 'Por exemplo: um vídeo por mês de cada atleta em Portugal.'),
            ('Volume', '8 ou mais vídeos no mês', '70€', ['Highlights + entrevista, por jogo', 'Só highlights: 50€', 'Calendário fechado no início do mês', 'Web story de cada jogo incluída'], 'Para cobrir a carteira de atletas em Portugal.')]
 
+GAL = [('W928uxPDX6U', 'CDJ Régio 78–74 Beira-Mar'), ('YHqB45YwLjc', 'CDJ Régio 75–73 Benfica OA'), ('wd4Ms8ICggc', 'CDJ Régio × GDB Leça'), ('0zziUdQ3Mw0', 'CDJ Régio × CPN · feminino')]
+
 STEPS = [('Calendário', 'A MatchBall indica os atletas e os jogos do mês. Nós organizamos as deslocações.'),
          ('Captação', 'Gravamos o jogo inteiro e, no fim, a entrevista no pavilhão, com autorização do clube.'),
          ('Edição', 'Highlights e entrevista editados com a marca MatchBall, música licenciada e legendas PT e EN.'),
@@ -52,6 +54,7 @@ def build():
     ideias = ''.join(f'<article class="card" style="--c:{COLORS[i % 3]}"><span class="n">{i + 1:02d}</span><h3>{e(a)}</h3><p>{e(b)}</p></article>' for i, (a, b) in enumerate(IDEIAS))
     precos = ''.join(f'<tr><td><b>{e(n)}</b></td><td style="white-space:nowrap"><b>{e(p)}</b>{" + IVA" if "€" in p else ""}<br><small>{e(u)}</small></td><td>{e(d)}</td></tr>' for n, p, u, d in PRECOS)
     pk = ''.join(f'<article class="{"ref" if i == 1 else ""}" style="--c:{COLORS[i % 3]}"><span class="lb">{e(lb)}</span><h3>{e(n)}</h3><div class="pr">{e(p)}{"<small>+ IVA</small>" if "€" in p else ""}</div><ul>{"".join(f"<li>{e(x)}</li>" for x in it)}</ul><p>{e(d)}</p></article>' for i, (lb, n, p, it, d) in enumerate(PACOTES))
+    gal = ''.join(f'<a href="https://www.youtube.com/watch?v={v}" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/{v}/hqdefault.jpg" alt="{e(t)}" loading="lazy"><span>{e(t)} ▶</span></a>' for v, t in GAL)
     steps = ''.join(f'<article class="card" style="--c:{COLORS[i % 3]}"><span class="n">{i + 1:02d}</span><h3>{e(a)}</h3><p>{e(b)}</p></article>' for i, (a, b) in enumerate(STEPS))
     return f'''<!doctype html>
 <html lang="pt-PT">
@@ -71,8 +74,10 @@ def build():
 .mhero .wrap{{position:relative}}.mhero h1{{font-size:clamp(34px,5.4vw,64px);line-height:1.04;margin-top:12px;color:#fff;max-width:17ch}}
 .mhero p{{margin-top:18px;font-size:19px;line-height:1.55;color:#D6D1CD;max-width:60ch}}.mhero .eb{{color:var(--y)}}
 .mtab{{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;font-size:15px;min-width:600px}}.mtab th,.mtab td{{padding:13px 15px;border-bottom:1px solid #E3DED6;text-align:left;vertical-align:top}}.mtab th{{background:var(--ink);color:#fff;font-size:12px;letter-spacing:.08em;text-transform:uppercase}}.mtab small{{color:var(--muted);font-weight:700}}
+@media(max-width:640px){{.mtab{{min-width:0}}.mtab thead{{display:none}}.mtab tr{{display:block;border-bottom:1px solid #E3DED6;padding:14px 16px}}.mtab td{{display:block;border:0;padding:2px 0}}.mtab td:first-child{{font-size:17px}}}}
 .igrow{{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:30px;align-items:start}}
 .mst b{{font-size:clamp(19px,5.2vw,28px)!important}}
+.mgal{{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:26px}}.mgal a{{position:relative;display:block;border-radius:14px;overflow:hidden;aspect-ratio:16/9;background:#222}}.mgal img{{width:100%;height:100%;object-fit:cover}}.mgal span{{position:absolute;left:0;right:0;bottom:0;padding:22px 14px 10px;background:linear-gradient(transparent,rgba(0,0,0,.8));color:#fff;font-weight:800;font-size:14px}}
 </style>
 </head>
 <body>
@@ -93,7 +98,7 @@ def build():
   <div class="wrap two">
     <div><span class="eb">Porquê</span><h2>Cada jogo em Portugal é uma montra para o próximo contrato.</h2>
       <p style="margin-top:18px">Os atletas que a MatchBall coloca em Portugal precisam de mostrar o que valem em cada jornada. Com vídeo regular, a MatchBall prova o seu trabalho a novos jogadores, os atletas ganham material para a carreira e os clubes ganham visibilidade.</p></div>
-    <div class="stats mst"><div><b>48 h</b><span>entrega dos highlights</span></div><div><b>PT · EN</b><span>legendas incluídas</span></div><div><b>9:16 · 16:9</b><span>vertical e horizontal</span></div><div><b>Norte e Centro</b><span>Póvoa, Porto, Aveiro e mais</span></div></div>
+    <div class="stats mst"><div><b>48 h</b><span>entrega dos highlights</span></div><div><b>PT · EN</b><span>legendas em todos os vídeos</span></div><div><b>9:16 · 16:9</b><span>vertical e horizontal</span></div><div><b>Norte e Centro</b><span>Póvoa, Porto, Aveiro e mais</span></div></div>
   </div>
 </section>
 
@@ -101,6 +106,7 @@ def build():
   <div class="wrap"><span class="eb">O que já fizemos juntos</span><h2>Já conhecemos o pavilhão e os atletas.</h2>
     <div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(250px,1fr))">{feito}</div>
     <div class="igrow">{ig_embed('DYvUDd_xY2d')}{ig_embed('DY-qXG4M95k')}{ig_embed('DY-tmeisiO0')}</div>
+    <div class="mgal">{gal}</div>
     <p class="note" style="margin-top:18px">Mais jogos em <a href="/cdjregio/">usinavideos.pt/cdjregio</a>.</p></div>
 </section>
 
