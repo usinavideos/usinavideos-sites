@@ -13,7 +13,7 @@ SLUG = 'panorama-credito-jovem-2027'
 DIR = os.path.join(ROOT, 'web-stories', SLUG)
 URL = f'https://usinavideos.pt/web-stories/{SLUG}/'
 # Trocar pelo link do episódio quando estiver publicado no YouTube
-VIDEO = 'https://www.youtube.com/@CordialLevelPT'
+VIDEO = 'https://www.youtube.com/watch?v=7SPYD5xZ5Hg'
 BLOG = '/blog/panorama-imobiliario-credito-jovem-2027/'
 WA = 'https://wa.me/351935101667?text=' + 'Ol%C3%A1%20Casemiro%2C%20vi%20a%20web%20story%20do%20Panorama%20Imobili%C3%A1rio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.'
 AMI = 'Cordial Level | CENTURY 21 Arquitectos · AMI 11414'
