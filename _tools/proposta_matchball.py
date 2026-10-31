@@ -129,15 +129,6 @@ def build():
     <div class="mgal">{ex}</div></div>
 </section>
 
-<section class="dark">
-  <div class="wrap two">
-    <div><span class="eb">Canal Dicas do Freire</span><h2>Mais um canal para os vossos vídeos.</h2>
-      <p style="margin-top:18px;color:#D6D1CD">No canal Dicas do Freire, no YouTube, publicamos os jogos e os highlights do basquetebol que cobrimos, além de diretos semanais. Os vídeos e os diretos da MatchBall podem ser publicados também aqui, com link para a MatchBall e para os atletas, sem custo adicional.</p>
-      <div class="row" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:22px"><a class="btn y" href="https://www.youtube.com/@DicasdoFreire?sub_confirmation=1" target="_blank" rel="noopener">Ver o canal no YouTube</a><a class="btn o" style="color:#fff" href="https://www.youtube.com/@DicasdoFreire/streams" target="_blank" rel="noopener">Ver os diretos</a></div></div>
-    <div class="stats"><div><b>229</b><span>vídeos publicados</span></div><div><b>Diretos</b><span>todas as semanas</span></div><div><b>Basquetebol</b><span>CDJ Régio e MatchBall</span></div><div><b>PT · EN</b><span>legendas nos vídeos</span></div></div>
-  </div>
-</section>
-
 <section id="precos" style="background:var(--paper2)">
   <div class="wrap"><span class="eb">Preços</span><h2>Preços por serviço.</h2>
     <p class="lead">Valores sem IVA, que acresce à taxa legal em vigor. Legendas em português e inglês incluídas; espanhol + 15€ por vídeo.</p>
@@ -161,7 +152,7 @@ def build():
     <div><span class="eb">Quem somos</span><h2>Freire Neto e Sandra Freire</h2>
       <p style="margin-top:14px">A Usina Vídeos foi criada em 2002 por Freire Neto, jornalista desde 1997 e fundador do Motores e Ação. Sandra Freire assegura a edição, a produção e a administração, com 20 anos de televisão e produtoras. No basquetebol, cobrimos o CDJ Régio e os eventos da MatchBall em Portugal.</p>
       <div class="row" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:22px"><a class="btn y" href="{WA}" target="_blank" rel="noopener">{WA_SVG}WhatsApp +351 912 988 971</a><a class="btn o" style="color:#fff" href="{CAL}" target="_blank" rel="noopener">Marcar conversa online</a></div></div>
-    <div class="stats"><a href="/cdjregio/" style="display:block;background:var(--ink);padding:22px 20px;text-decoration:none"><b>CDJRegio</b><span>jogos e highlights →</span></a><a href="https://www.instagram.com/usina.videos/" target="_blank" rel="noopener" style="display:block;background:var(--ink);padding:22px 20px;text-decoration:none"><b>Instagram</b><span>@usina.videos →</span></a><a href="https://www.youtube.com/@DicasdoFreire" target="_blank" rel="noopener" style="display:block;background:var(--ink);padding:22px 20px;text-decoration:none"><b>YouTube</b><span>highlights →</span></a><a href="/" style="display:block;background:var(--ink);padding:22px 20px;text-decoration:none"><b>Usina Vídeos</b><span>trabalhos e serviços →</span></a></div>
+    <div class="stats"><a href="/cdjregio/" style="display:block;background:var(--ink);padding:22px 20px;text-decoration:none"><b>CDJRegio</b><span>jogos e highlights →</span></a><a href="https://www.instagram.com/usina.videos/" target="_blank" rel="noopener" style="display:block;background:var(--ink);padding:22px 20px;text-decoration:none"><b>Instagram</b><span>@usina.videos →</span></a><a href="/cordiallevel/" style="display:block;background:var(--ink);padding:22px 20px;text-decoration:none"><b>Cordial Level</b><span>podcast e vídeos →</span></a><a href="/" style="display:block;background:var(--ink);padding:22px 20px;text-decoration:none"><b>Usina Vídeos</b><span>trabalhos e serviços →</span></a></div>
   </div>
 </section>
 
