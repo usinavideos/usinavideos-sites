@@ -24,6 +24,37 @@ CATS = {'bastidores': 'Bastidores e making of', 'comunicacao': 'Comunicação e 
         'mercados': 'Mercados', 'cases': 'Cases'}
 
 POSTS = [
+    dict(slug='dois-sites-novos-usinavideos-motoreseacao', cat='cases', date='2026-11-02',
+         title='Dois sites novos no ar: usinavideos.pt e motoreseacao.com',
+         desc='A Usina Vídeos e o Motores e Ação estrearam sites novos. Mostramos as capas, as secções e o que cada um oferece.',
+         img='/img/blog/sites-novos/capa.jpg', img_cap='usinavideos.pt e motoreseacao.com · arte Usina Vídeos',
+         lead='A produtora e o jornalismo automóvel nasceram juntos em 2002. Agora têm casa nova na internet, feita com o mesmo método que usamos para os clientes.',
+         body='''<p>São dois sites com objetivos diferentes. O <b>usinavideos.pt</b> mostra o que a Usina Vídeos faz e como pedir um orçamento. O <b>motoreseacao.com</b> é onde o <b>Motores e Ação</b> publica notícias, testes e ofertas todos os dias. Os dois foram pensados primeiro para o telemóvel.</p>
+<h2>usinavideos.pt: a produtora</h2>
+<figure class="bf"><img src="/img/blog/sites-novos/usina-capa.jpg" alt="Capa do site usinavideos.pt com vista de drone da Foz do Douro" width="1600" height="1000" loading="lazy"><figcaption>Capa do usinavideos.pt · Foz do Douro, drone Usina Vídeos</figcaption></figure>
+<p>Na capa está logo o essencial: o que fazemos, para quem e um botão para pedir orçamento por WhatsApp. O site está em <b>português, inglês e espanhol</b>.</p>
+<figure class="bf"><img src="/img/blog/sites-novos/usina-servicos.jpg" alt="Secção de serviços: vídeo, fotografia, drone, redes sociais, sites e campanhas" width="1600" height="983" loading="lazy"><figcaption>Serviços: vídeo e reportagem, fotografia, drone, redes sociais, sites e campanhas</figcaption></figure>
+<ul><li><b>Serviços:</b> vídeo e reportagem, fotografia, drone, conteúdo para redes sociais, sites e campanhas de marketing digital.</li>
+<li><b>Trabalhos:</b> projetos recentes, publicados com autorização, como a Cordial Level, o Condomínio Coral na Foz e o CDJ Régio.</li>
+<li><b>Sites, apresentações e podcasts:</b> exemplos reais, do site da Cordial Level ao Panorama Imobiliário PT.</li>
+<li><b>Blog e web stories:</b> bastidores, mercado e dicas, também em formato vertical.</li></ul>
+<figure class="bf"><img src="/img/blog/sites-novos/usina-trabalhos.jpg" alt="Secção de trabalhos com a Cordial Level e o Condomínio Coral" width="1600" height="1250" loading="lazy"><figcaption>Trabalhos recentes, publicados com autorização dos clientes</figcaption></figure>
+<figure class="bf"><img src="/img/blog/sites-novos/usina-sites.jpg" alt="Secção de sites, apresentações digitais e podcasts" width="1600" height="912" loading="lazy"><figcaption>Sites, apresentações digitais e podcasts, com exemplos</figcaption></figure>
+<h2>motoreseacao.com: jornalismo automóvel desde 2002</h2>
+<figure class="bf"><img src="/img/blog/sites-novos/mea-capa.jpg" alt="Capa do site motoreseacao.com com a barra de última hora e os destaques" width="1600" height="1025" loading="lazy"><figcaption>Capa do motoreseacao.com, com a barra "Última hora" e o destaque da semana</figcaption></figure>
+<p>O Motores e Ação ficou mais rápido e mais fácil de ler no telemóvel. Tem notícias e lançamentos do Brasil e de Portugal, testes, ofertas e o espaço Europa.</p>
+<ul><li><b>Última hora:</b> as notícias do dia, numa barra no topo.</li>
+<li><b>Shorts e web stories:</b> as notícias em menos de um minuto, em vertical.</li>
+<li><b>Canal no YouTube:</b> mais de 114 mil inscritos, com lançamentos, testes e lives.</li>
+<li><b>Mídia kit:</b> para marcas e stands que querem anunciar.</li></ul>
+<figure class="bf"><img src="/img/blog/sites-novos/mea-shorts.jpg" alt="Secções Shorts da semana, redes sociais e Web Stories do Motores e Ação" width="1600" height="1473" loading="lazy"><figcaption>Shorts da semana, redes sociais e web stories</figcaption></figure>
+<figure class="bf"><img src="/img/blog/sites-novos/mea-midia.jpg" alt="Faixa do mídia kit do Motores e Ação" width="1600" height="405" loading="lazy"><figcaption>Anuncie no Motores e Ação: mídia kit</figcaption></figure>
+<h2>Um site que trabalha pelo seu negócio</h2>
+<p>O que fizemos para nós é o que fazemos para os clientes: páginas rápidas, conteúdo próprio em vídeo e foto, contacto direto por WhatsApp e tudo ligado às redes sociais.</p>
+<figure class="bf" style="max-width:420px"><img src="/img/blog/sites-novos/arte-post.jpg" alt="Arte de divulgação dos dois sites novos" width="1080" height="1350" loading="lazy"><figcaption>Arte de divulgação nas redes sociais</figcaption></figure>''',
+         dica='Antes de investir em anúncios, veja o seu site no telemóvel durante um minuto. Se não percebe logo o que faz e como contactar, os anúncios vão gastar dinheiro.',
+         veredito='Dois sites, a mesma escola: conteúdo próprio, rapidez e um contacto a um toque.',
+         links=[('Visitar usinavideos.pt', '/'), ('Visitar motoreseacao.com', 'https://www.motoreseacao.com/?utm_source=usinavideos&utm_medium=blog&utm_campaign=sites-novos'), ('Pedir orçamento por WhatsApp', WA)]),
     dict(slug='panorama-imobiliario-credito-jovem-2027', cat='mercados', date='2026-10-29',
          title='Panorama Imobiliário PT: crédito jovem em 2027 e três imóveis para conhecer',
          desc='No novo episódio, Francisco Medeiros e Freire Neto falam do mercado, da angariação e do crédito jovem, e apresentam três imóveis da Cordial Level.',
@@ -205,11 +236,11 @@ BLOG_CSS = '''
 .bc img{width:100%;aspect-ratio:16/9;object-fit:cover}.bc div{padding:18px 20px 22px}.bc span{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}
 .bc h3{font-size:21px;line-height:1.2;margin-top:6px;color:var(--ink)}.bc p{margin-top:8px;font-size:15px}.bc em{display:block;margin-top:12px;font-style:normal;font-size:13px;color:var(--muted)}
 .art{max-width:760px;margin:0 auto;padding:44px 0 72px}.art h1{font-size:clamp(30px,4.2vw,46px);line-height:1.08;margin-top:10px}
-.art .meta{margin-top:14px;font-size:14px;color:var(--muted)}.art .hero{width:100%;border-radius:18px;margin-top:26px;aspect-ratio:16/9;object-fit:cover}
+.art .meta{margin-top:14px;font-size:14px;color:var(--muted)}.art .hero{display:block;min-height:0;width:100%;height:auto;border-radius:18px;margin-top:26px;aspect-ratio:16/9;object-fit:cover}
 .art .cap{position:static;font-size:12px;color:var(--muted);margin-top:6px}
 .art .imp{margin-top:26px;font-size:21px;line-height:1.45;font-weight:700;color:var(--ink);border-left:5px solid var(--y);padding-left:18px}
 .art h2{font-size:26px;margin-top:34px}.art p,.art li{font-size:18px;line-height:1.65}.art p{margin-top:14px}.art ul{margin-top:14px;padding-left:22px;display:grid;gap:8px}
-.art .bf{margin:26px 0 0}.art .bf img{width:100%;border-radius:16px}.art figcaption{font-size:12px;color:var(--muted);margin-top:6px}
+.art .bf{margin:26px 0 0}.art .bf img{width:100%;height:auto;border-radius:16px}.art figcaption{font-size:12px;color:var(--muted);margin-top:6px}
 .art .yt{position:relative;aspect-ratio:16/9;margin-top:26px;border-radius:16px;overflow:hidden;background:#000}.art .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .bt{width:100%;border-collapse:collapse;margin-top:16px;background:#fff;border-radius:12px;overflow:hidden;font-size:16px}.bt th,.bt td{padding:12px 14px;border-bottom:1px solid #E3DED6;text-align:left}.bt th{background:var(--ink);color:#fff;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
 .dica{margin-top:30px;background:#FFF7E3;border:1px solid #F1D592;border-radius:16px;padding:20px 22px}.dica b{display:block;font-size:15px;color:var(--ink)}.dica p{margin-top:6px!important}
