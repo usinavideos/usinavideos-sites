@@ -307,7 +307,7 @@ def build(cliente=None):
 {case_html()}{edicao_html() if cliente and cliente.get('edicao') else ''}{juntos_html(cliente) if cliente and cliente.get('juntos') else ''}{evento_html(cliente) if cliente and cliente.get('evento') else ''}{zona_html(cliente) if cliente and cliente.get('zona') else ''}{plano_html(cliente) if cliente and cliente.get('plano') else ''}
 <section id="pacotes">
   <div class="wrap"><span class="eb">Pacotes por imóvel</span><h2>Preços claros, por imóvel.</h2>
-    <p class="lead">Valores sem IVA, que acresce à taxa legal em vigor.</p>
+    <p class="lead">Valores sem IVA, que acresce à taxa legal em vigor. Para apartamentos e moradias até 300 m².</p>
     <div class="pk">{pk}</div>
     <div style="overflow-x:auto;margin-top:28px;border-radius:14px"><table class="cmp" style="margin-top:0;min-width:560px"><thead><tr><th>Entregável</th><th>Contratado em separado (média)</th><th>Usina Vídeos</th></tr></thead><tbody>
       <tr><td>Fotografia profissional</td><td>80–120€</td><td>Incluído</td></tr>
@@ -315,6 +315,12 @@ def build(cliente=None):
       <tr><td>Drone</td><td>60–80€</td><td>Incluído no Aéreo e no Completo</td></tr>
       <tr><td>Visita virtual 3D com planta</td><td>80–120€</td><td>Incluído no Completo</td></tr>
       <tr class="t"><td>Total</td><td>310–470€</td><td>98€ + IVA (Completo)</td></tr></tbody></table></div>
+    <div class="cond" style="margin-top:22px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">
+      <div><b>Até 300 m²</b>Preços válidos para apartamentos e moradias até 300 m².</div>
+      <div><b>Quintas e moradias grandes</b>Quintas e moradias acima de T4 ou de 300 m²: proposta negociada caso a caso.</div>
+      <div><b>Tratamento por IA e arrumação</b>Imóveis que precisem de tratamento de imagem por IA, arrumação virtual ou projeto: + 5€ + IVA por divisão. Sempre identificado como simulação.</div>
+      <div><b>Deslocação</b>Incluída no Grande Porto. Fora do Grande Porto, a deslocação é negociada e indicada na proposta.</div>
+    </div>
     <p class="note">A oferta de lançamento do vídeo editado nos pacotes Essencial e Aéreo é válida até {VALIDADE}. Drone sujeito às condições meteorológicas, à disponibilidade e às autorizações de voo.</p>
   </div>
 </section>
@@ -344,7 +350,7 @@ def build(cliente=None):
   <div class="wrap"><span class="eb">Processo e condições</span><h2>Do pedido à entrega.</h2>
     <div class="steps">{steps}</div>
     <div class="cond">
-      <div><b>Zona e deslocações</b>Preços para produções no Norte de Portugal. Fora do Norte, como Lisboa, a deslocação é orçamentada à parte e indicada na proposta.</div>
+      <div><b>Zona e deslocações</b>Deslocação incluída no Grande Porto. Fora do Grande Porto, a deslocação é negociada e indicada na proposta.</div>
       <div><b>Faturação</b>Uma fatura por serviço ou pacote, ou condições acordadas por projeto.</div>
       <div><b>Validade</b>Valores válidos até {VALIDADE}. Simulações feitas com IA são sempre identificadas como tal.</div>
     </div>
