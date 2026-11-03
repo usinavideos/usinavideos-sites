@@ -26,30 +26,28 @@ CATS = {'bastidores': 'Bastidores e making of', 'comunicacao': 'Comunicação e 
 POSTS = [
     dict(slug='em-breve-t2-perafita-moradia-senhora-da-hora', cat='bastidores', date='2026-11-03',
          title='Em breve: T2 em Perafita e moradia T3+T2+T2 na Senhora da Hora',
-         desc='Dias de gravação na CENTURY 21 Arquitectos: dois imóveis em Matosinhos chegam em breve às redes sociais e aos portais. Saiba como ser o primeiro a conhecer os detalhes.',
-         img='/img/blog/em-breve/moradia-drone.jpg', img_cap='Senhora da Hora, Matosinhos · drone Usina Vídeos',
-         lead='Foram dias de drone no ar e câmara na mão. Duas novas oportunidades da CENTURY 21 Arquitectos estão quase prontas para chegar ao mercado.',
-         body='''<p>A Usina Vídeos esteve a gravar dois imóveis em Matosinhos para a <b>Cordial Level</b>. As fotos, os vídeos e todos os detalhes vão ser publicados em breve nas nossas redes sociais e nos principais portais imobiliários.</p>
-<h2>T2 em Perafita</h2>
+         desc='Dias de gravação na CENTURY 21: dois imóveis em Matosinhos chegam em breve às redes sociais e aos portais. Saiba como ser o primeiro a conhecer os detalhes.',
+         img='/img/blog/em-breve/moradia-drone.jpg', img_cap='Moradia na Senhora da Hora, Matosinhos · drone Usina Vídeos',
+         lead='Foram dias de drone no ar e câmara na mão. Duas novas oportunidades da CENTURY 21 estão quase prontas para chegar ao mercado.',
+         body='''<p>A Usina Vídeos esteve a gravar dois imóveis em Matosinhos. As fotos, os vídeos e todos os detalhes vão ser publicados em breve nas nossas redes sociais e nos principais portais imobiliários.</p>
+<h2>T2 em Perafita · Cordial Level</h2>
 <figure class="bf"><img src="/img/blog/em-breve/predio-perafita.jpg" alt="Edifício do apartamento T2 em Perafita" width="1600" height="901" loading="lazy"><figcaption>Perafita, Matosinhos · Usina Vídeos</figcaption></figure>
-<p>Um apartamento T2 em Perafita, no concelho de Matosinhos.</p>
+<p>Um apartamento T2 em Perafita, no concelho de Matosinhos, com a <b>Cordial Level</b>.</p>
+<div style="display:flex;flex-wrap:wrap;gap:22px;margin-top:18px"><div style="display:flex;align-items:center;gap:12px"><img src="/cordiallevel/img/casemiro.jpg" alt="Casemiro Ramos" width="64" height="64" style="border-radius:50%;border:3px solid #C9A45C;object-fit:cover" loading="lazy"><span><b>Casemiro Ramos</b> · Consultor<br><a href="https://wa.me/351935101667" target="_blank" rel="noopener">935 101 667</a></span></div><div style="display:flex;align-items:center;gap:12px"><img src="/cordiallevel/img/francisco.jpg" alt="Francisco Medeiros" width="64" height="64" style="border-radius:50%;border:3px solid #C9A45C;object-fit:cover" loading="lazy"><span><b>Francisco Medeiros</b> · Consultor<br><a href="https://wa.me/351912706395" target="_blank" rel="noopener">912 706 395</a></span></div></div>
+<p class="cap">Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p>
 <h2>Moradia T3+T2+T2 na Senhora da Hora</h2>
-<figure class="bf"><img src="/img/blog/em-breve/envolvente-1.jpg" alt="Vista aérea da zona" width="1600" height="900" loading="lazy"><figcaption>Imagem aérea da zona · drone Usina Vídeos</figcaption></figure>
-<p>Uma moradia T3+T2+T2 na Senhora da Hora, também em Matosinhos.</p>
+<figure class="bf"><img src="/img/blog/em-breve/moradia-frente.jpg" alt="Fachada da moradia na Senhora da Hora" width="1600" height="939" loading="lazy"><figcaption>Senhora da Hora, Matosinhos · Usina Vídeos</figcaption></figure>
+<p>Uma moradia T3+T2+T2 na Senhora da Hora, também em Matosinhos, com o consultor <b>José Bacelar</b>.</p>
+<p class="cap">José Bacelar · CENTURY 21 Arquitectos III · AMI 23921</p>
 <h2>Bastidores</h2>
 <figure class="bf"><img src="/img/blog/em-breve/bastidores-drone.jpg" alt="Freire Neto a pilotar o drone durante a gravação" width="1600" height="1352" loading="lazy"><figcaption>Freire Neto a pilotar o drone · Usina Vídeos</figcaption></figure>
 <p>Cada imóvel tem fotografia, vídeo e imagens aéreas. Assim, quem procura casa percebe logo o imóvel e a zona, antes de marcar a visita.</p>
-<figure class="bf"><img src="/img/blog/em-breve/envolvente-2.jpg" alt="Vista aérea da zona, com vias de acesso e área verde" width="1600" height="900" loading="lazy"><figcaption>Imagem aérea da zona · drone Usina Vídeos</figcaption></figure>
+<figure class="bf"><img src="/img/blog/em-breve/envolvente-1.jpg" alt="Vista aérea da zona, com vias de acesso" width="1600" height="900" loading="lazy"><figcaption>Imagem aérea da zona · drone Usina Vídeos</figcaption></figure>
 <h2>Quer ser o primeiro a saber?</h2>
-<p>Envie por WhatsApp ou e-mail o seu <b>nome e apelido</b>, o <b>e-mail</b> e o <b>número de telemóvel</b>. Recebe os detalhes destes imóveis antes de serem publicados. Os seus dados servem só para o contactar sobre estes imóveis.</p>''',
+<p>Envie o seu <b>nome e apelido</b>, o <b>e-mail</b> e o <b>número de telemóvel</b> por WhatsApp para o <a href="https://wa.me/351912988971?text=Ol%C3%A1%20Freire%2C%20quero%20saber%20os%20detalhes%20do%20T2%20em%20Perafita%20e%20da%20moradia%20na%20Senhora%20da%20Hora.%20Nome%3A%20%20E-mail%3A%20%20Telem%C3%B3vel%3A%20" target="_blank" rel="noopener">912 988 971</a> ou para <a href="mailto:freireneto@me.com?subject=Em%20breve%3A%20T2%20Perafita%20e%20moradia%20Senhora%20da%20Hora">freireneto@me.com</a>. Recebe os detalhes antes de serem publicados. Os seus dados servem só para o contactar sobre estes imóveis.</p>''',
          dica='Se procura casa em Matosinhos, tenha já a simulação de crédito feita. Quando um bom imóvel chega ao mercado, quem está pronto visita primeiro.',
          veredito='Boas imagens chegam antes do anúncio: quem segue as nossas redes vê primeiro.',
-         cta='''<div class="clb"><img src="/cordiallevel/img/logo-cordial-level-claro.png" alt="Cordial Level" width="1156" height="754" loading="lazy">
-<div><b>Quer saber os detalhes primeiro? Fale connosco!</b>
-<p>Envie nome e apelido, e-mail e telemóvel. Casemiro Ramos e Francisco Medeiros, consultores da Cordial Level, enviam-lhe a informação assim que estiver disponível.</p>
-<div class="clr"><a href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20quero%20saber%20os%20detalhes%20do%20T2%20em%20Perafita%20e%20da%20moradia%20na%20Senhora%20da%20Hora.%20Nome%3A%20%20E-mail%3A%20%20Telem%C3%B3vel%3A%20" target="_blank" rel="noopener">Casemiro · 935 101 667</a><a href="https://wa.me/351912706395?text=Ol%C3%A1%20Francisco%2C%20quero%20saber%20os%20detalhes%20do%20T2%20em%20Perafita%20e%20da%20moradia%20na%20Senhora%20da%20Hora.%20Nome%3A%20%20E-mail%3A%20%20Telem%C3%B3vel%3A%20" target="_blank" rel="noopener">Francisco · 912 706 395</a><a href="mailto:cramos@century21.pt?subject=Detalhes%20T2%20Perafita%20e%20moradia%20Senhora%20da%20Hora">cramos@century21.pt</a></div>
-<small>Chamada para a rede móvel nacional · Cordial Level | CENTURY 21 Arquitectos · AMI 11414</small></div></div>''',
-         links=[('Ver a Cordial Level', '/cordiallevel/'), ('Imóveis da Cordial Level na CENTURY 21', 'https://www.century21.pt/consultores/cramos')]),
+         links=[('Pedir os detalhes por WhatsApp', 'https://wa.me/351912988971?text=Ol%C3%A1%20Freire%2C%20quero%20saber%20os%20detalhes%20do%20T2%20em%20Perafita%20e%20da%20moradia%20na%20Senhora%20da%20Hora.'), ('Ver a Cordial Level', '/cordiallevel/')]),
     dict(slug='dois-sites-novos-usinavideos-motoreseacao', cat='cases', date='2026-11-02',
          title='Dois sites novos no ar: usinavideos.pt e motoreseacao.com',
          desc='A Usina Vídeos e o Motores e Ação estrearam sites novos. Mostramos as capas, as secções e o que cada um oferece.',
