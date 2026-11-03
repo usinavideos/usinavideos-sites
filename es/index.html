@@ -52,6 +52,12 @@ section{padding:88px 0}
 .hero p{color:#E4DFDB;font-size:clamp(17px,1.6vw,20px);max-width:56ch;margin:20px 0 0}
 .hero .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .hero .btn.o{color:#fff}
+.fnchip{display:inline-flex;align-items:center;gap:12px;margin-top:26px;text-decoration:none;color:#fff;background:rgba(20,18,19,.55);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 18px 6px 6px}
+.fnchip img{width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid var(--y)}.fnchip b{display:block;font-size:16px}.fnchip span{font-size:13px;color:#D8D2CB;line-height:1.3}
+.fnpf{display:none}
+@media(min-width:1100px){.hero .wrap{padding-right:300px}.fnchip{display:none}.fnpf{display:block;position:absolute;z-index:1;right:max(32px,calc((100vw - 1180px)/2));bottom:64px;width:250px;margin:0;border-radius:20px;overflow:hidden;border:3px solid var(--y);box-shadow:0 20px 50px rgba(0,0,0,.5)}.fnpf img{display:block;width:100%;height:auto}.fnpf figcaption{background:var(--ink);color:#D8D2CB;font-size:13px;padding:10px 14px;line-height:1.35}.fnpf b{display:block;color:#fff;font-size:16px}}
+.fncard{display:flex;align-items:center;gap:18px;margin-top:28px;background:#fff;border:1px solid #E3DED6;border-radius:18px;padding:16px 20px;max-width:560px}
+.fncard img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--y);flex:none}.fncard b{display:block;font-size:20px;color:var(--ink)}.fncard span{display:block;font-size:15px;color:var(--ink)}.fncard small{display:block;font-size:13px;color:var(--muted);margin-top:4px}
 .stripe{display:flex;width:120px;height:5px;border-radius:3px;overflow:hidden;margin-top:26px}.stripe i{flex:1}
 .cap{position:absolute;right:20px;bottom:16px;z-index:1;font-size:12px;color:rgba(255,255,255,.65)}
 /* confiança e botão WhatsApp */
@@ -227,7 +233,9 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
     <p>Vídeo, fotografía, dron, redes sociales, webs y campañas digitales para empresas, marcas y profesionales. Del inmobiliario a la automoción, del deporte al turismo: una producción, un briefing, un contacto.</p>
     <div class="row"><a class="btn y" href="https://wa.me/351912988971?text=Hola%20Freire%2C%20me%20gustar%C3%ADa%20pedir%20un%20presupuesto%20a%20Usina%20V%C3%ADdeos." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>Pida presupuesto</a><a class="btn o" href="#trabalhos">Ver trabajos</a></div>
     <div class="stripe" aria-hidden="true"><i style="background:var(--g)"></i><i style="background:var(--y)"></i><i style="background:var(--r)"></i></div>
+    <a class="fnchip" href="#contacto"><img src="/img/freire/freire-neto.jpg" alt="Freire Neto" width="56" height="56"><span><b>Freire Neto</b>Periodista · fundador de Usina Vídeos</span></a>
   </div>
+  <figure class="fnpf"><img src="/img/freire/freire-neto-drone.jpg" alt="Freire Neto a pilotar o drone" width="600" height="750"><figcaption><b>Freire Neto</b>Periodista · fundador de Usina Vídeos</figcaption></figure>
   <span class="cap">Foz do Douro, Oporto · dron de Usina Vídeos</span>
 </header>
 <div class="trust"><div class="wrap"><span>Confían en nosotros</span><b>Cordial Level</b><b>CENTURY 21</b><b>Motores e Ação</b><b>CDJRegio</b><b>MatchBall</b></div></div>
@@ -311,6 +319,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 <section id="contacto">
   <div class="wrap">
     <span class="eb">Contacto</span><h2>¿Comunicamos su proyecto?</h2><p class="lead">Pida presupuesto sin compromiso, por WhatsApp o e-mail.</p>
+    <div class="fncard"><img src="/img/freire/freire-neto.jpg" alt="Freire Neto" width="96" height="96" loading="lazy"><div><b>Freire Neto</b><span>Periodista · fundador de Usina Vídeos</span><small>Dirección, reportaje e imagen</small></div></div>
     <div class="contact">
       <a class="wa" href="https://wa.me/351912988971?text=Hola%20Freire%2C%20me%20gustar%C3%ADa%20pedir%20un%20presupuesto%20a%20Usina%20V%C3%ADdeos." target="_blank" rel="noopener"><small>WhatsApp</small><b>+351 912 988 971</b><span>Pida presupuesto →</span></a>
       <a href="mailto:freireneto@me.com?subject=Pida%20presupuesto%20%C2%B7%20Usina%20V%C3%ADdeos"><small>E-mail</small><b>freireneto@me.com</b></a>

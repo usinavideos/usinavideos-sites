@@ -36,7 +36,7 @@ T = {
     hero_b2='Ver trabalhos',
     hero_cap='Foz do Douro, Porto · drone Usina Vídeos',
     team=[('Freire Neto', 'Direção, reportagem e imagem', 'Fundador da Usina Vídeos (2002) e do Motores e Ação. Jornalista desde 1997.'), ('Sandra Freire', 'Edição, produção e administração', '20 anos em televisão, produtoras e no Motores e Ação.')],
-    quem_eb='Quem somos', quem_h2='Olhar de jornalista, ao serviço da sua comunicação.',
+    fn_role='Jornalista · fundador da Usina Vídeos', fn_cont='Direção, reportagem e imagem', quem_eb='Quem somos', quem_h2='Olhar de jornalista, ao serviço da sua comunicação.',
     quem_p=['Criada em 2002 por <b>Freire Neto</b>, a Usina Vídeos é hoje dirigida por ele e por <b>Sandra Freire</b>. Freire Neto é jornalista desde 1997, fundador do Motores e Ação e ex-diretor de conteúdo e produção em televisão no Brasil (<a href="https://www.linkedin.com/in/freireneto/" target="_blank" rel="noopener">LinkedIn</a>). Sandra Freire assegura a edição, a produção e a administração, com 20 anos de televisão e produtoras.',
             'Tratamos cada projeto como uma reportagem: perceber o que o torna único, captá-lo com rigor e contá-lo com clareza.',
             'Trabalhamos em <b>todo o Norte</b> e em <b>qualquer ponto de Portugal</b>.'],
@@ -96,7 +96,7 @@ T = {
     hero_b2='See our work',
     hero_cap='Foz do Douro, Porto · drone by Usina Vídeos',
     team=[('Freire Neto', 'Direction, reporting and camera', 'Founder of Usina Vídeos (2002) and Motores e Ação. Journalist since 1997.'), ('Sandra Freire', 'Editing, production and administration', '20 years in television, production companies and Motores e Ação.')],
-    quem_eb='About us', quem_h2='A journalist’s eye, working for your communication.',
+    fn_role='Journalist · founder of Usina Vídeos', fn_cont='Direction, reporting and camera', quem_eb='About us', quem_h2='A journalist’s eye, working for your communication.',
     quem_p=['Founded in 2002 by <b>Freire Neto</b>, Usina Vídeos is run today by him and <b>Sandra Freire</b>. Freire Neto has been a journalist since 1997, founded Motores e Ação and was head of content and production in television in Brazil (<a href="https://www.linkedin.com/in/freireneto/" target="_blank" rel="noopener">LinkedIn</a>). Sandra Freire runs editing, production and administration, with 20 years in television and production companies.',
             'We treat every project like a story: find what makes it unique, capture it carefully and tell it clearly.',
             'We work across <b>Northern Portugal</b> and <b>anywhere in the country</b>.'],
@@ -156,7 +156,7 @@ T = {
     hero_b2='Ver trabajos',
     hero_cap='Foz do Douro, Oporto · dron de Usina Vídeos',
     team=[('Freire Neto', 'Dirección, reportaje e imagen', 'Fundador de Usina Vídeos (2002) y de Motores e Ação. Periodista desde 1997.'), ('Sandra Freire', 'Edición, producción y administración', '20 años en televisión, productoras y en Motores e Ação.')],
-    quem_eb='Quiénes somos', quem_h2='Mirada de periodista, al servicio de su comunicación.',
+    fn_role='Periodista · fundador de Usina Vídeos', fn_cont='Dirección, reportaje e imagen', quem_eb='Quiénes somos', quem_h2='Mirada de periodista, al servicio de su comunicación.',
     quem_p=['Creada en 2002 por <b>Freire Neto</b>, Usina Vídeos la dirigen hoy él y <b>Sandra Freire</b>. Freire Neto es periodista desde 1997, fundador de Motores e Ação y fue director de contenido y producción en televisión en Brasil (<a href="https://www.linkedin.com/in/freireneto/" target="_blank" rel="noopener">LinkedIn</a>). Sandra Freire se encarga de la edición, la producción y la administración, con 20 años de televisión y productoras.',
             'Tratamos cada proyecto como un reportaje: entender qué lo hace único, captarlo con rigor y contarlo con claridad.',
             'Trabajamos en <b>todo el Norte</b> y en <b>cualquier punto de Portugal</b>.'],
@@ -239,6 +239,12 @@ section{padding:88px 0}
 .hero p{color:#E4DFDB;font-size:clamp(17px,1.6vw,20px);max-width:56ch;margin:20px 0 0}
 .hero .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .hero .btn.o{color:#fff}
+.fnchip{display:inline-flex;align-items:center;gap:12px;margin-top:26px;text-decoration:none;color:#fff;background:rgba(20,18,19,.55);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 18px 6px 6px}
+.fnchip img{width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid var(--y)}.fnchip b{display:block;font-size:16px}.fnchip span{font-size:13px;color:#D8D2CB;line-height:1.3}
+.fnpf{display:none}
+@media(min-width:1100px){.hero .wrap{padding-right:300px}.fnchip{display:none}.fnpf{display:block;position:absolute;z-index:1;right:max(32px,calc((100vw - 1180px)/2));bottom:64px;width:250px;margin:0;border-radius:20px;overflow:hidden;border:3px solid var(--y);box-shadow:0 20px 50px rgba(0,0,0,.5)}.fnpf img{display:block;width:100%;height:auto}.fnpf figcaption{background:var(--ink);color:#D8D2CB;font-size:13px;padding:10px 14px;line-height:1.35}.fnpf b{display:block;color:#fff;font-size:16px}}
+.fncard{display:flex;align-items:center;gap:18px;margin-top:28px;background:#fff;border:1px solid #E3DED6;border-radius:18px;padding:16px 20px;max-width:560px}
+.fncard img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--y);flex:none}.fncard b{display:block;font-size:20px;color:var(--ink)}.fncard span{display:block;font-size:15px;color:var(--ink)}.fncard small{display:block;font-size:13px;color:var(--muted);margin-top:4px}
 .stripe{display:flex;width:120px;height:5px;border-radius:3px;overflow:hidden;margin-top:26px}.stripe i{flex:1}
 .cap{position:absolute;right:20px;bottom:16px;z-index:1;font-size:12px;color:rgba(255,255,255,.65)}
 /* confiança e botão WhatsApp */
@@ -402,7 +408,9 @@ def page(lang):
     <p>{e(t['hero_p'])}</p>
     <div class="row"><a class="btn y" href="{wa}" target="_blank" rel="noopener">{WA_SVG}{e(t['cta'])}</a><a class="btn o" href="#trabalhos">{e(t['hero_b2'])}</a></div>
     {STRIPE}
+    <a class="fnchip" href="#contacto"><img src="/img/freire/freire-neto.jpg" alt="Freire Neto" width="56" height="56"><span><b>Freire Neto</b>{e(t['fn_role'])}</span></a>
   </div>
+  <figure class="fnpf"><img src="/img/freire/freire-neto-drone.jpg" alt="Freire Neto a pilotar o drone" width="600" height="750"><figcaption><b>Freire Neto</b>{e(t['fn_role'])}</figcaption></figure>
   <span class="cap">{e(t['hero_cap'])}</span>
 </header>
 <div class="trust"><div class="wrap"><span>{e(t['trust_t'])}</span><b>Cordial Level</b><b>CENTURY 21</b><b>Motores e Ação</b><b>CDJRegio</b><b>MatchBall</b></div></div>
@@ -486,6 +494,7 @@ def page(lang):
 <section id="contacto">
   <div class="wrap">
     <span class="eb">{e(t['cont_eb'])}</span><h2>{e(t['cont_h2'])}</h2><p class="lead">{e(t['cont_p'])}</p>
+    <div class="fncard"><img src="/img/freire/freire-neto.jpg" alt="Freire Neto" width="96" height="96" loading="lazy"><div><b>Freire Neto</b><span>{e(t['fn_role'])}</span><small>{e(t['fn_cont'])}</small></div></div>
     <div class="contact">
       <a class="wa" href="{wa}" target="_blank" rel="noopener"><small>{e(t['wa_lbl'])}</small><b>+351 912 988 971</b><span>{e(t['cta'])} →</span></a>
       <a href="mailto:{MAIL}?subject={up.quote(t['cta'] + ' · Usina Vídeos')}"><small>{e(t['mail_lbl'])}</small><b>{MAIL}</b></a>
