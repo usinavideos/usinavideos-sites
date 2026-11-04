@@ -718,7 +718,7 @@ IMOVEIS = {
         ref='', curto='T2 em Perafita',
         title='T2 em Perafita, Matosinhos, junto à A28 · Cordial Level',
         desc='T2 em excelentes condições em Perafita, Matosinhos, ao lado da A28 e perto de escolas e transportes públicos. Vídeo com o consultor Francisco Medeiros e visita virtual 3D.',
-        hero='pf-fachada', hero_pos='62% 78%', hero_alt='Fachada do edifício do T2 em Perafita, em tijolo e betão, sob céu azul',
+        hero='pf-fachada', hero_pos='85% 50%', hero_alt='Fachada do edifício do T2 em Perafita, em tijolo e betão, sob céu azul',
         loc='Perafita · Matosinhos', h1='T2 em Perafita, junto à A28',
         sub='Em excelentes condições e por um preço muito bom, perto de escolas e transportes públicos.',
         price='Preço sob consulta',
