@@ -64,6 +64,7 @@ LISTINGS = {  # caminho: (tipo, nome, área, quartos, localidade, região, geo, 
     'cordiallevel/anteroquental/': ('Apartment', 'T2 remodelado na Rua Antero de Quental', 77.3, 2, 'Porto', 'Porto', (41.1602049, -8.6116069), [(349000, 'C0393-01689')]),
     'cordiallevel/cedofeita/': ('Apartment', 'T1 duplex quase novo em Cedofeita', 59, 1, 'Porto', 'Porto', (41.1532354, -8.6211018), [(289000, 'C0393-01583')]),
     'cordiallevel/moncao/': ('Place', 'Dois terrenos de cultura e vinha em São Bento (Bela), Monção', None, None, 'Monção', 'Viana do Castelo', (42.072910104535, -8.43833682762678), [(75000, 'C0393-01441'), (35000, 'C0393-01442')]),
+    'cordiallevel/perafita/': ('Apartment', 'T2 em Perafita, junto à A28', None, 2, 'Perafita, Matosinhos', 'Porto', (41.2232, -8.7048), [(None, '')]),
 }
 
 CORAL_LANG = {

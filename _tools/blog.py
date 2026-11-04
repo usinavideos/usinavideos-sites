@@ -38,7 +38,12 @@ POSTS = [
 <p>Os detalhes chegam em breve. Para ser dos primeiros a saber, siga a Cordial Level nas redes sociais ou fale diretamente com o Francisco Medeiros ou com o Casemiro Ramos.</p>
 <h2>Tem um imóvel na zona?</h2>
 <p>Se tem um apartamento para vender ou arrendar em Perafita ou nas redondezas, a Cordial Level está pronta para ajudar. Como explica o Francisco, quantos mais imóveis tivermos na mesma zona, maior é a procura que conseguimos atrair para todos.</p>
-<p>Também já está nas nossas redes: Instagram, Facebook e YouTube da Cordial Level.</p>''',
+<h2>O que a Usina Vídeos produziu</h2>
+<p>Para este T2, a Usina Vídeos fez a tradicional <b>reportagem de fotografia e vídeo</b> e a <b>visita virtual 3D</b>. Produzimos também um teaser com o consultor <b>Francisco Medeiros</b> (Cordial Level | CENTURY 21 Arquitectos), já publicado em todas as redes sociais da Cordial Level.</p>
+<figure class="bf"><img src="/cordiallevel/perafita/img/pf-fachada.jpg" alt="Fachada do edifício do T2 em Perafita" width="1920" height="1072" loading="lazy"><figcaption>O edifício em Perafita · fotografia Usina Vídeos</figcaption></figure>
+<figure class="bf"><img src="/cordiallevel/perafita/img/pf-transportes.jpg" alt="Paragem de autocarro em frente ao edifício" width="1920" height="1080" loading="lazy"><figcaption>Transportes públicos à porta · fotografia Usina Vídeos</figcaption></figure>
+<p><a href="/cordiallevel/perafita/">Veja a apresentação completa do imóvel</a>, com fotografias, vídeo e mapa, ou <a href="https://realsee.ai/JVLLgJmB" target="_blank" rel="noopener">percorra-o na visita virtual 3D</a>. Também há uma <a href="/web-stories/t2-perafita/">web story</a> para ver no telemóvel.</p>
+<p class="cap">Fotografias tratadas digitalmente para cor e luz.</p>''',
          dica='Se um imóvel lhe interessa, marque a visita cedo. As boas oportunidades em Matosinhos não ficam muito tempo no mercado.',
          veredito='Um vídeo curto, com o consultor no local: quem procura casa percebe o imóvel antes de sair de casa.',
          cta='''<div class="clb"><img src="/cordiallevel/img/logo-cordial-level-claro.png" alt="Cordial Level" width="1156" height="754" loading="lazy">
@@ -46,7 +51,7 @@ POSTS = [
 <p>Casemiro Ramos e Francisco Medeiros, consultores da Cordial Level, acompanham cada processo do primeiro contacto à escritura.</p>
 <div class="clr"><a href="https://wa.me/351912706395?text=Ol%C3%A1%20Francisco%2C%20vi%20o%20v%C3%ADdeo%20do%20T2%20em%20Perafita%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Francisco · 912 706 395</a><a href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20vi%20o%20v%C3%ADdeo%20do%20T2%20em%20Perafita%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Casemiro · 935 101 667</a><a href="mailto:franciscomedeiros@century21.pt?subject=T2%20em%20Perafita">franciscomedeiros@century21.pt</a></div>
 <small>Chamada para a rede móvel nacional · Cordial Level | CENTURY 21 Arquitectos · AMI 11414</small></div></div>''',
-         links=[('Ver a Cordial Level', '/cordiallevel/'), ('Imóveis da Cordial Level na CENTURY 21', 'https://www.century21.pt/consultores/cramos')]),
+         links=[('Ver a apresentação do imóvel', '/cordiallevel/perafita/'), ('Visita virtual 3D', 'https://realsee.ai/JVLLgJmB'), ('Ver a Cordial Level', '/cordiallevel/')]),
     dict(slug='em-breve-t2-perafita-moradia-senhora-da-hora', cat='bastidores', date='2026-11-03',
          title='Em breve: T2 em Perafita e moradia T3+T2+T2 na Senhora da Hora',
          desc='Dias de gravação na CENTURY 21: dois imóveis em Matosinhos chegam em breve às redes sociais e aos portais. Saiba como ser o primeiro a conhecer os detalhes.',

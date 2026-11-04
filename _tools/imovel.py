@@ -173,7 +173,7 @@ if(v)v.addEventListener('click',function(){var f=document.createElement('iframe'
 def build(p):
     ref = p['ref']
     ficha = f'https://century21.pt/comprar/{ref}'
-    msg = lambda nome: f"Olá {nome}, vi a apresentação do imóvel {p['curto']} (ref. {ref}) e gostaria de mais informações."
+    msg = lambda nome: f"Olá {nome}, vi a apresentação do imóvel {p['curto']}{f' (ref. {ref})' if ref else ''} e gostaria de mais informações."
     navs = p.get('navs') or [('ficha', 'O imóvel'), ('galeria', 'Fotografias')]
     if not p.get('navs'):
         if p.get('video'): navs.insert(1, ('video', 'Vídeo'))
@@ -269,7 +269,7 @@ def build(p):
           <a class="b line" href="tel:+{d['num']}">{TEL_ICON}Ligar · {d['tel']}</a>
           <a class="b line" href="{d['site']}" target="_blank" rel="noopener">Site CENTURY 21</a>
         </div>
-        <p class="mail">E-mail: <a href="mailto:{d['mail']}?subject={up.quote('Ref. ' + ref + ' · ' + p['curto'])}">{d['mail']}</a></p>
+        <p class="mail">E-mail: <a href="mailto:{d['mail']}?subject={up.quote(('Ref. ' + ref + ' · ' if ref else '') + p['curto'])}">{d['mail']}</a></p>
       </article>'''
 
     bar = ''.join(f'<a href="{wa(d["num"], msg(d["curto"]))}" target="_blank" rel="noopener" aria-label="Fale comigo: WhatsApp {d["nome"]}">{WA_ICON}{d["curto"]}</a>' for d in DIRETORES)
@@ -301,7 +301,7 @@ def build(p):
     <h1>{e(p['h1'])}</h1>
     <p class="sub">{e(p['sub'])}</p>
     <div class="price">{e(p['price'])}</div>
-    <p class="by">Cordial Level | CENTURY 21 Arquitectos · AMI 11414 · Ref. {ref}</p>
+    <p class="by">Cordial Level | CENTURY 21 Arquitectos · AMI 11414{f" · Ref. {ref}" if ref else ""}</p>
   </div></div>
 </header>
 
@@ -713,6 +713,50 @@ IMOVEIS = {
         maps='São Bento, Bela, Monção', geo=(42.072910104535, -8.43833682762678),
         legal='Informação sujeita a confirmação; áreas e características segundo as fichas CENTURY 21. Terrenos rústicos: a edificabilidade depende do PDM de Monção e de licenciamento municipal.',
         video='yo7RN7u6JJY', video_img='t1-d4', video_h2='Monção: dois terrenos entre o Minho e a Galiza', tour=None,
+    ),
+    'perafita': dict(
+        ref='', curto='T2 em Perafita',
+        title='T2 em Perafita, Matosinhos, junto à A28 · Cordial Level',
+        desc='T2 em excelentes condições em Perafita, Matosinhos, ao lado da A28 e perto de escolas e transportes públicos. Vídeo com o consultor Francisco Medeiros e visita virtual 3D.',
+        hero='pf-fachada', hero_pos='62% 78%', hero_alt='Fachada do edifício do T2 em Perafita, em tijolo e betão, sob céu azul',
+        loc='Perafita · Matosinhos', h1='T2 em Perafita, junto à A28',
+        sub='Em excelentes condições e por um preço muito bom, perto de escolas e transportes públicos.',
+        price='Preço sob consulta',
+        quote='Uma excelente oportunidade, numa localização estratégica.',
+        intro='Apartamento T2 em Perafita, no concelho de Matosinhos, numa localização estratégica ao lado da A28, com escolas e transportes públicos por perto. Em excelentes condições e por um preço muito bom, é uma oportunidade para habitação própria ou investimento. Conheça-o em vídeo com o consultor Francisco Medeiros e percorra-o na visita virtual 3D.',
+        photos_intro=['pf-sala', 'pf-sala-2', 'pf-jardim'],
+        ficha_h2='Pronto a conhecer, por dentro e por fora',
+        ficha_lead=['A sala junta zona de estar e de refeições, com pavimento em madeira e luz natural. Percorra todas as divisões na visita virtual 3D.',
+                    'O edifício tem garagem coletiva no piso inferior, arrumos e uma ampla zona verde. Peça ao Francisco Medeiros ou ao Casemiro Ramos a ficha completa, com áreas e preço.'],
+        photos_ficha=['pf-sala-3', 'pf-garagem'],
+        facts=[('Tipologia', 'T2'), ('Localização', 'Perafita, Matosinhos'), ('Estado', 'Excelentes condições'), ('Acessos', 'Ao lado da A28'),
+               ('Envolvente', 'Escolas e transportes públicos'), ('Preço', 'Sob consulta')],
+        photos_rooms=['pf-garagem-3', 'pf-arrumo', 'pf-transportes'],
+        feat_h3='Destaques',
+        features=['Localização estratégica, ao lado da A28', 'Perto de escolas', 'Transportes públicos à porta', 'Excelentes condições',
+                  'Garagem coletiva no edifício', 'Arrumos', 'Zona verde junto ao edifício', 'Visita virtual 3D'],
+        extras=[
+            dict(id='edificio', eb='O edifício', h2='Arquitetura em tijolo e betão, com muito verde', photos=['pf-fachada-2', 'pf-lateral', 'pf-jardim'],
+                 paras=['Um conjunto residencial com fachadas em tijolo e betão, varandas corridas e uma ampla zona relvada com árvores, em Perafita.']),
+            dict(id='mobilidade', eb='Mobilidade', h2='A A28 e os transportes à porta', dark=True, photos=['pf-transportes', 'pf-rua'],
+                 paras=['Ao lado da A28, com ligação rápida ao Porto, a Matosinhos, ao aeroporto e a Vila do Conde. Paragem de autocarro e escolas por perto.']),
+            dict(id='destaque', eb='Em destaque', h2='O essencial deste T2', photos=['pf-garagem-2', 'pf-arrumo', 'pf-sala-2'],
+                 chips=['T2', 'Perafita, Matosinhos', 'Ao lado da A28', 'Escolas e transportes', 'Excelentes condições', 'Garagem no edifício', 'Visita 3D']),
+        ],
+        closing=dict(id='versatil', eb='Uma oportunidade especial', h2='Para viver ou para investir', photos=['pf-fachada'],
+                     paras=['Pela localização, pelo estado e pelo preço, este T2 é uma boa opção para quem procura casa em Matosinhos ou quer investir.',
+                            'Marque a sua visita e venha conhecer este apartamento.']),
+        gallery=[('pf-sala', 'Sala com zona de refeições'), ('pf-sala-2', 'Sala'), ('pf-sala-3', 'Sala'),
+                 ('pf-fachada', 'Fachada do edifício'), ('pf-fachada-2', 'O edifício'), ('pf-lateral', 'O edifício e a zona verde'),
+                 ('pf-jardim', 'Zona verde junto ao edifício'), ('pf-rua', 'A rua e o edifício'), ('pf-transportes', 'Paragem de autocarro em frente'),
+                 ('pf-garagem', 'Garagem coletiva'), ('pf-garagem-2', 'Garagem coletiva'), ('pf-garagem-3', 'Garagem coletiva'), ('pf-arrumo', 'Arrumo')],
+        alt='T2 em Perafita, Matosinhos', gal_h2='Por dentro e por fora',
+        gal_note='Fotografias Usina Vídeos, tratadas digitalmente para cor e luz. Imagens da sala retiradas do vídeo.',
+        loc_h2='Perafita: a A28 à porta',
+        loc_txt='Em Perafita, no concelho de Matosinhos, ao lado da A28, com escolas, transportes públicos e comércio por perto, e ligação rápida ao Porto, a Matosinhos e ao aeroporto.',
+        maps='Perafita, Matosinhos', geo=(41.2232, -8.7048),
+        legal='Informação sujeita a confirmação. Preço, áreas e características completas na ficha do imóvel, a pedido.',
+        video='shp7XDfpkHM', video_img='pf-sala', video_vertical=True, video_h2='O Francisco Medeiros apresenta o T2', tour='https://realsee.ai/JVLLgJmB', tour_img='pf-sala-2',
     ),
 }
 
