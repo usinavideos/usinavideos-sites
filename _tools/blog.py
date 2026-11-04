@@ -24,6 +24,27 @@ CATS = {'bastidores': 'Bastidores e making of', 'comunicacao': 'Comunicação e 
         'mercados': 'Mercados', 'cases': 'Cases'}
 
 POSTS = [
+    dict(slug='t2-perafita-cordial-level', cat='mercados', date='2026-11-04',
+         title='T2 em Perafita: uma oportunidade especial com a Cordial Level',
+         desc='Francisco Medeiros, consultor da Cordial Level, apresenta em vídeo um T2 em Perafita, Matosinhos. Veja o vídeo e peça mais informações.',
+         img='/img/blog/perafita-t2.jpg', img_cap='Francisco Medeiros em Perafita · vídeo Usina Vídeos',
+         lead='Há imóveis que merecem ser vistos com calma. O Francisco Medeiros foi a Perafita apresentar um T2 que é uma oportunidade especial.',
+         body='''<p>Prometemos e cumprimos: depois dos dias de gravação, chega o primeiro vídeo. O T2 fica em <b>Perafita, no concelho de Matosinhos</b>, e é apresentado pelo <b>Francisco Medeiros</b>, consultor da Cordial Level.</p>
+<figure class="bf" style="max-width:420px;margin-left:auto;margin-right:auto"><video controls playsinline preload="none" poster="/cordiallevel/img/perafita-t2-capa.jpg" style="width:100%;border-radius:16px;background:#000;aspect-ratio:9/16"><source src="/cordiallevel/media/perafita-t2.mp4" type="video/mp4"></video><figcaption>T2 em Perafita, apresentado por Francisco Medeiros · vídeo Usina Vídeos</figcaption></figure>
+<h2>O que vai ver no vídeo</h2>
+<ul><li>O edifício e a zona, em Perafita.</li>
+<li>A sala com zona de refeições.</li>
+<li>O Francisco a explicar porque é uma oportunidade a não perder.</li></ul>
+<p>Para saber o preço, a área e todos os detalhes, ou para marcar uma visita, fale diretamente com os consultores da Cordial Level.</p>
+<p>Também já está nas nossas redes: Instagram, Facebook e YouTube da Cordial Level.</p>''',
+         dica='Se um imóvel lhe interessa, marque a visita cedo. As boas oportunidades em Matosinhos não ficam muito tempo no mercado.',
+         veredito='Um vídeo curto, com o consultor no local: quem procura casa percebe o imóvel antes de sair de casa.',
+         cta='''<div class="clb"><img src="/cordiallevel/img/logo-cordial-level-claro.png" alt="Cordial Level" width="1156" height="754" loading="lazy">
+<div><b>Quer saber mais sobre o T2 em Perafita ou marcar uma visita? Fale connosco!</b>
+<p>Casemiro Ramos e Francisco Medeiros, consultores da Cordial Level, acompanham cada processo do primeiro contacto à escritura.</p>
+<div class="clr"><a href="https://wa.me/351912706395?text=Ol%C3%A1%20Francisco%2C%20vi%20o%20v%C3%ADdeo%20do%20T2%20em%20Perafita%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Francisco · 912 706 395</a><a href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20vi%20o%20v%C3%ADdeo%20do%20T2%20em%20Perafita%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Casemiro · 935 101 667</a><a href="mailto:franciscomedeiros@century21.pt?subject=T2%20em%20Perafita">franciscomedeiros@century21.pt</a></div>
+<small>Chamada para a rede móvel nacional · Cordial Level | CENTURY 21 Arquitectos · AMI 11414</small></div></div>''',
+         links=[('Ver a Cordial Level', '/cordiallevel/'), ('Imóveis da Cordial Level na CENTURY 21', 'https://www.century21.pt/consultores/cramos')]),
     dict(slug='em-breve-t2-perafita-moradia-senhora-da-hora', cat='bastidores', date='2026-11-03',
          title='Em breve: T2 em Perafita e moradia T3+T2+T2 na Senhora da Hora',
          desc='Dias de gravação na CENTURY 21: dois imóveis em Matosinhos chegam em breve às redes sociais e aos portais. Saiba como ser o primeiro a conhecer os detalhes.',
