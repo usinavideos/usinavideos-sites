@@ -26,16 +26,18 @@ CATS = {'bastidores': 'Bastidores e making of', 'comunicacao': 'Comunicação e 
 POSTS = [
     dict(slug='t2-perafita-cordial-level', cat='mercados', date='2026-11-04',
          title='T2 em Perafita: uma oportunidade especial com a Cordial Level',
-         desc='Francisco Medeiros, consultor da Cordial Level, apresenta em vídeo um T2 em Perafita, Matosinhos. Veja o vídeo e peça mais informações.',
+         desc='Francisco Medeiros apresenta um T2 em Perafita, Matosinhos, ao lado da A28, perto de escolas e transportes, em excelentes condições e por um preço muito bom.',
          img='/img/blog/perafita-t2.jpg', img_cap='Francisco Medeiros em Perafita · vídeo Usina Vídeos',
-         lead='Há imóveis que merecem ser vistos com calma. O Francisco Medeiros foi a Perafita apresentar um T2 que é uma oportunidade especial.',
+         lead='Cordial Level em campo com mais uma angariação: um T2 em Perafita, ao lado da A28, em excelentes condições e por um preço muito bom.',
          body='''<p>Prometemos e cumprimos: depois dos dias de gravação, chega o primeiro vídeo. O T2 fica em <b>Perafita, no concelho de Matosinhos</b>, e é apresentado pelo <b>Francisco Medeiros</b>, consultor da Cordial Level.</p>
 <figure class="bf" style="max-width:420px;margin-left:auto;margin-right:auto"><video controls playsinline preload="none" poster="/cordiallevel/img/perafita-t2-capa.jpg" style="width:100%;border-radius:16px;background:#000;aspect-ratio:9/16"><source src="/cordiallevel/media/perafita-t2.mp4" type="video/mp4"></video><figcaption>T2 em Perafita, apresentado por Francisco Medeiros · vídeo Usina Vídeos</figcaption></figure>
-<h2>O que vai ver no vídeo</h2>
-<ul><li>O edifício e a zona, em Perafita.</li>
-<li>A sala com zona de refeições.</li>
-<li>O Francisco a explicar porque é uma oportunidade a não perder.</li></ul>
-<p>Para saber o preço, a área e todos os detalhes, ou para marcar uma visita, fale diretamente com os consultores da Cordial Level.</p>
+<h2>Porque é uma boa oportunidade</h2>
+<ul><li><b>Localização estratégica</b>, ao lado da A28.</li>
+<li>Perto de <b>escolas</b> e de <b>transportes públicos</b>.</li>
+<li>T2 em <b>excelentes condições</b>, por um <b>preço muito bom</b>.</li></ul>
+<p>Os detalhes chegam em breve. Para ser dos primeiros a saber, siga a Cordial Level nas redes sociais ou fale diretamente com o Francisco Medeiros ou com o Casemiro Ramos.</p>
+<h2>Tem um imóvel na zona?</h2>
+<p>Se tem um apartamento para vender ou arrendar em Perafita ou nas redondezas, a Cordial Level está pronta para ajudar. Como explica o Francisco, quantos mais imóveis tivermos na mesma zona, maior é a procura que conseguimos atrair para todos.</p>
 <p>Também já está nas nossas redes: Instagram, Facebook e YouTube da Cordial Level.</p>''',
          dica='Se um imóvel lhe interessa, marque a visita cedo. As boas oportunidades em Matosinhos não ficam muito tempo no mercado.',
          veredito='Um vídeo curto, com o consultor no local: quem procura casa percebe o imóvel antes de sair de casa.',
