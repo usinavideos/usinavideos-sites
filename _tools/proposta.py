@@ -131,6 +131,46 @@ CLIENTES = {
               ('Parque', 'Parque da Quinta da Conceição', '700 m · 10 min a pé'), ('Praia', 'Praia de Leça e Piscina das Marés', '1,3 a 1,5 km · 4 min de carro'),
               ('Compras', 'MAR Shopping e IKEA', '1,2 km · 4 min de carro'), ('Lazer', 'Farol e Casa de Chá da Boa Nova', '1,8 km · 5 min de carro'),
               ('Metro', 'Estação Mercado, Matosinhos', '1,3 km · 5 min de carro'), ('Viagens', 'Aeroporto Francisco Sá Carneiro', '5,5 km · 10 min de carro')]),
+    'cristina-russo-mensal': dict(nome='Cristina Russo', cidade='Leça da Palmeira', edicao=False,
+        h1='A referência em Leça da Palmeira tem um rosto. O seu.',
+        intro='Proposta preparada para a Cristina Russo, consultora imobiliária da CENTURY 21 Arquitectos III (AMI 23921). Deixamos-lhe duas formas de trabalhar connosco: uma consultoria mensal, com vídeos e artes todas as semanas, as redes e campanhas geridas pela Usina e um site seu a captar contactos; ou ações à medida, em que escolhe só os vídeos e serviços de que precisa, quando precisa. O objetivo é o mesmo: que, em Leça, quem pensa em comprar, vender ou arrendar se lembre de si.',
+        hero='/proposta/cristina-russo/img/cr-leca.jpg',
+        juntos_t=('Já trabalhámos juntos', 'Os seus imóveis, pela Usina.', 'Os três imóveis que tem hoje à venda foram todos fotografados e filmados pela Usina. A moradia de Leça e o T3 do Cerco abrem o primeiro mês da consultoria.'),
+        juntos=[('/proposta/cristina-russo/img/cr-leca-t.jpg', 'Moradia T3 em Leça da Palmeira', '745 000 € · 3 quartos · 3 WC · 188 m² · vídeo «Viver em Leça» no 1.º mês', 'https://cristinarusso.century21.pt/comprar/C0521-00227'),
+                ('/proposta/cristina-russo/img/cr-cerco-t.jpg', 'T3 no Cerco, Campanhã', '310 000 € · 3 quartos · 2 WC · 109 m² · vídeo de divulgação no 1.º mês', 'https://cristinarusso.century21.pt/comprar/C0521-00222'),
+                ('/proposta/cristina-russo/img/cr-valongo-t.jpg', 'T2 em Campo, Valongo', '210 000 € · 2 quartos · 1 WC · 80 m² · fotografia e vídeo', 'https://cristinarusso.century21.pt/comprar/C0521-00219')],
+        acao=[('/cordiallevel/t3leca/img/leca-44-t.jpg', 'Vídeo consigo em cena', '110€', ' · por vídeo', ['Gravação consigo a apresentar a zona, um imóvel ou uma dica', 'Imagens aéreas com drone quando fizer sentido', 'Versão YouTube e Reel vertical, com legendas']),
+              ('/proposta/cristina-russo/img/cr-cerco-t.jpg', 'Vídeo com imagens já captadas', '95€', ' · até 3 min', ['Montagem com as fotos e vídeos que já temos dos seus imóveis', 'Texto em off e legendas, sem precisar de nova gravação', 'Reel ou short avulso: 35€ + IVA']),
+              ('/proposta/cristina-russo/img/cr-valongo-t.jpg', 'Reportagem de nova angariação', 'desde 40€', ' · por imóvel', ['Essencial 40€: fotografia e vídeo do imóvel', 'Aéreo 65€: com drone, em foto e vídeo', 'Completo 98€: com visita virtual 3D e planta']),
+              ('/proposta/cristina-russo/img/cr-leca-t.jpg', 'Página do imóvel e campanha', '50€', ' · por página', ['Página do imóvel com fotos, vídeo, mapa e contactos diretos: 50€ com reportagem Usina (tabela 100€)', 'Gestão da campanha Facebook e Instagram: 100€ + IVA por imóvel', 'Transmissão em direto de open house: 300€ + IVA'])],
+        ideias=[('Vídeo em cena', '«Viver em Leça»', 'Praia, Quinta da Conceição, comércio e transportes'), ('Vídeo em cena', '«Leça em 60 segundos»', 'Boa Nova, Piscina das Marés, marginal'),
+                ('Vídeo em cena', '«Dica da Cristina»', 'Comprar, vender, arrendar, crédito habitação'), ('Vídeo em cena', 'Cafés, padarias e restaurantes', 'Os sítios de Leça que recomenda'),
+                ('Imagens captadas', 'T3 do Cerco: o espaço e as conveniências', 'Supermercados, transportes, acessos'), ('Imagens captadas', '«Imóvel da semana»', 'Um imóvel da carteira em 60 segundos'),
+                ('Reportagem', 'Bastidores de uma visita ou open house', 'Como trabalha, com quem conhece a zona'), ('Vídeo em cena', 'Zonas calmas e oportunidades', 'Leça, Perafita e Matosinhos')],
+        mensal=dict(preco=250, tabela=[('4 vídeos por mês, consigo em cena ou em reportagem', 440, '4 × 110€'),
+                                        ('Página de apresentação e captação de contactos', 100, '1 por mês'),
+                                        ('Gestão de redes, campanhas e contactos', 100, 'por mês')],
+            fotos=[('/cordiallevel/t3leca/img/leca-44.jpg', 'Praia de Leça vista do céu'), ('/cordiallevel/t3leca/img/leca-40-t.jpg', 'Piscina das Marés, Leça da Palmeira'), ('/cordiallevel/t3leca/img/leca-46-t.jpg', 'Marginal de Leça da Palmeira')],
+            cards=[('/cordiallevel/t3leca/img/leca-45-t.jpg', 'Todas as semanas', 'Vídeos para as suas redes',
+                    ['2 dias de captação por mês, em Leça e nos seus imóveis', '4 vídeos por mês, em formato vertical e horizontal, com legendas', 'Vlogs do dia a dia e da zona de Leça', 'Imóveis, empreendimentos e diferenciais da zona', 'Dicas: cafés, padarias, restaurantes, farmácias, serviços, zonas mais calmas e oportunidades']),
+                   ('/proposta/cristina-russo/img/cr-cerco-t.jpg', 'Todas as semanas', 'Artes e textos',
+                    ['4 artes por mês para Instagram e Facebook', 'Textos de cada publicação, prontos a publicar', 'Calendário editorial do mês, combinado consigo', 'Capas e miniaturas dos vídeos']),
+                   ('/proposta/cristina-russo/img/cr-valongo-t.jpg', 'Todos os meses', 'Redes, campanhas e contactos',
+                    ['Gestão do Instagram e da página de Facebook', 'Canal no YouTube com os seus vídeos', 'Campanhas Facebook, Instagram e Google Ads em Leça, Perafita e Matosinhos, com foco em Leça', 'Relatório mensal com os números reais e reunião de acompanhamento']),
+                   ('/proposta/cristina-russo/img/cr-leca-t.jpg', 'A sua presença online', 'O seu site e as angariações',
+                    ['O seu site de apresentação em usinavideos.pt, pensado para captar contactos', '1 página de apresentação por mês incluída (tabela: 100€); as seguintes a 50€ + IVA', 'Enquanto for nossa cliente, o site fica no ar com os destaques, as vídeo-reportagens e as angariações', 'Padrão usinavideos.pt, indexado no Google, com divulgação a construir a sua autoridade online', 'Botões de WhatsApp, chamada e e-mail diretos para si e ligação a cristinarusso.century21.pt'])],
+            arranque=['Criação da sua página de apresentação em usinavideos.pt', 'Criação da página de Facebook e do canal no YouTube', 'Configuração das contas de anúncios Meta e Google em seu nome'],
+            mes1=['Vídeo «Viver em Leça», consigo em cena, com drone', 'Vídeo de divulgação do T3 do Cerco: o espaço do apartamento e as conveniências por perto', 'Mais 2 vídeos e as 4 artes do mês, segundo o calendário']),
+        zona_t='Viela das Icas, Leça da Palmeira · Matosinhos', zona_ref='Viela das Icas, n.º 7',
+        zona_h2='Tudo a poucos passos, num bairro de topo.',
+        zona_lead='É isto que vai mostrar no vídeo: autocarro, supermercados, farmácia, bancos e centro de saúde a menos de 5 minutos a pé, a Quinta da Conceição ao lado e a praia de Leça logo ali.',
+        zona=[('Autocarro', 'Paragem Centro de Saúde de Leça', '200 m · 3 min a pé'), ('Supermercado', 'Mercadona', '270 m · 4 min a pé'),
+              ('Supermercado', 'Pingo Doce e Continente', '350 a 550 m · 5 a 8 min a pé'), ('Farmácia', 'Farmácia Beleza', '300 m · 5 min a pé'),
+              ('Banco', 'ABANCA, BPI e Santander', '220 a 800 m · 3 a 11 min a pé'), ('Saúde', 'USF Maresia (centro de saúde)', '250 m · 4 min a pé'),
+              ('Saúde', 'Hospital Pedro Hispano', '3,3 km · 8 min de carro'), ('Escola', 'EB Eng. Fernando Pinto de Oliveira', '600 m · 9 min a pé'),
+              ('Parque', 'Parque da Quinta da Conceição', '700 m · 10 min a pé'), ('Praia', 'Praia de Leça e Piscina das Marés', '1,3 a 1,5 km · 4 min de carro'),
+              ('Compras', 'MAR Shopping e IKEA', '1,2 km · 4 min de carro'), ('Lazer', 'Farol e Casa de Chá da Boa Nova', '1,8 km · 5 min de carro'),
+              ('Metro', 'Estação Mercado, Matosinhos', '1,3 km · 5 min de carro'), ('Viagens', 'Aeroporto Francisco Sá Carneiro', '5,5 km · 10 min de carro')],),
     'ruben-assis': dict(nome='Rúben Assis', cidade='Gaia e região', edicao=False,
         h1='As suas angariações em vídeo e a sua voz como referência em Gaia.',
         intro='Proposta preparada para o Rúben Assis, Gestor de Ativos Imobiliários na Predilar (AMI 11428). Juntamos duas frentes: vídeo-reportagem de cada angariação, para vender mais rápido, e vídeos de autoridade em que o Rúben apresenta Gaia, Esmoriz, Ovar e a região, para ser a referência de quem quer comprar, vender ou investir. Ao fim de um mês avaliamos os resultados juntos.',
@@ -210,6 +250,49 @@ def plano_html(c):
     <div class="leads"><div><span class="eb">Os contactos são seus</span><h3>Cada contacto chega diretamente a si.</h3></div>
       <ul><li><b>WhatsApp, e-mail ou telefone:</b> quem responde ao vídeo, à página ou aos anúncios fala logo consigo, sem intermediários.</li><li><b>A Usina gera os contactos:</b> conteúdo, página e campanha a trabalhar para o imóvel.</li><li><b>O acompanhamento é seu:</b> a resposta, a qualificação e a marcação de visitas ficam a seu cargo.</li><li><b>Oferta Usina:</b> mensagens de resposta prontas a usar, para WhatsApp e e-mail, cordiais e pensadas para converter o contacto em visita.</li></ul></div>
     <p class="note">Drone sujeito às condições meteorológicas e às autorizações de voo. Os resultados da campanha dependem do mercado e do investimento; o relatório mostra os números reais, sem promessas de vendas.</p></div>
+</section>
+'''
+
+
+def mensal_html(c):
+    m = c['mensal']; tt = sum(x[1] for x in m['tabela']); pv = m['preco']
+    cards = ''.join(f'<article style="--c:{COLORS[i % 3]}"><img class="pkimg" style="max-width:none" src="{im}" alt="" loading="lazy"><span class="lb">{e(f)}</span><h3>{e(n)}</h3><ul>{"".join(f"<li>{e(x)}</li>" for x in items)}</ul></article>' for i, (im, f, n, items) in enumerate(m['cards']))
+    fotos = ''.join(f'<img src="{u}" alt="{e(a)}" loading="lazy">' for u, a in m['fotos'])
+    rows = ''.join(f'<tr><td>{e(n)} <small style="color:var(--muted)">({e(d)})</small></td><td>{t}€</td></tr>' for n, t, d in m['tabela'])
+    li = lambda xs: ''.join(f'<li>{e(x)}</li>' for x in xs)
+    return f'''<section id="plano">
+  <div class="wrap"><span class="eb">Opção 1 · Consultoria mensal · recomendada</span><h2>Um plano mensal para ser a referência em Leça.</h2>
+    <p class="lead">Conteúdo todas as semanas, redes e campanhas geridas e uma página sua a captar contactos. Sai mais em conta do que investir em separado em cada imóvel, e cada mês soma ao anterior.</p>
+    <div class="cs" style="margin-top:32px">{fotos}</div>
+    <p class="note" style="margin-top:10px">Leça da Palmeira em imagens aéreas captadas pela Usina Vídeos. É este o cenário dos seus vídeos.</p>
+    <div class="pk pk4">{cards}</div>
+    <div style="overflow-x:auto;margin-top:28px;border-radius:14px"><table class="cmp" style="margin-top:0"><thead><tr><th>Incluído todos os meses</th><th>Preço de tabela</th></tr></thead><tbody>{rows}
+      <tr><td>2 dias de captação, 4 artes e textos, calendário editorial</td><td>incluído</td></tr>
+      <tr class="t"><td>Tabela mensal</td><td><s>{tt}€</s> + IVA</td></tr>
+      <tr class="t"><td>Para si</td><td>{pv}€ + IVA por mês</td></tr>
+      <tr><td>Pagamento</td><td>dia 1 do mês seguinte</td></tr>
+      <tr><td>Desconto</td><td class="dc">−{tt - pv}€ por mês ({round((tt - pv) * 100 / tt)}%)</td></tr>
+      <tr><td>Investimento em anúncios (Meta e Google)</td><td>à parte, sem margem</td></tr></tbody></table></div>
+    <div class="orc" style="margin-top:28px"><div><h3>{pv}€ + IVA por mês</h3><p>Inclui 2 dias de captação por mês. Pagamento no dia 1 do mês seguinte ao dos trabalhos: paga o mês depois de o ver feito. Compromisso mínimo de 3 meses: é o tempo que a autoridade numa zona leva a construir-se. Com esse compromisso, o arranque fica incluído. Os anúncios são pagos diretamente por si, nas contas Meta e Google em seu nome, geridas pela Usina: vê cada fatura e o histórico das campanhas é sempre seu. O valor do investimento é definido consigo.</p></div>
+      <div><h4>Arranque incluído</h4><ul>{li(m['arranque'])}</ul><h4 style="margin-top:16px">O primeiro mês</h4><ul>{li(m['mes1'])}</ul></div></div>
+    <div class="leads"><div><span class="eb">Os contactos são seus</span><h3>Cada contacto chega diretamente a si.</h3></div>
+      <ul><li><b>WhatsApp, e-mail ou telefone:</b> quem responde aos vídeos, à página ou aos anúncios fala logo consigo, sem intermediários.</li><li><b>A Usina gera os contactos:</b> conteúdo, páginas e campanhas a trabalhar para si e para os seus imóveis.</li><li><b>O acompanhamento é seu:</b> a resposta, a qualificação e a marcação de visitas ficam a seu cargo.</li><li><b>Oferta Usina:</b> mensagens de resposta prontas a usar, para WhatsApp e e-mail.</li></ul></div>
+    <p class="note">Drone sujeito às condições meteorológicas e às autorizações de voo. Os resultados dependem do mercado e do investimento em anúncios; o relatório mensal mostra os números reais, sem promessas de vendas. Assinatura das peças: Cristina Russo | CENTURY 21 Arquitectos III · AMI 23921.</p></div>
+</section>
+'''
+
+
+def acao_html(c):
+    cards = ''.join(f'<article style="--c:{COLORS[i % 3]}"><img class="pkimg" style="max-width:none" src="{im}" alt="" loading="lazy"><span class="lb">À medida</span><h3>{e(n)}</h3><div class="pr">{('<small style="margin:0 8px 0 0">desde</small>' + p[6:]) if p.startswith('desde ') else p}<small>+ IVA</small></div><div class="tab">{e(u.strip(' ·'))}</div><ul>{"".join(f"<li>{e(x)}</li>" for x in items)}</ul></article>' for i, (im, n, p, u, items) in enumerate(c['acao']))
+    ideias = ''.join(f'<div class="zn" style="--c:{COLORS[i % 3]}"><span>{e(k)}</span><b>{e(n)}</b><em>{e(d)}</em></div>' for i, (k, n, d) in enumerate(c['ideias']))
+    return f'''<section id="acao" style="background:var(--paper2)">
+  <div class="wrap"><span class="eb">Opção 2 · Por ação</span><h2>Só o que precisa, quando precisa.</h2>
+    <p class="lead">Sem mensalidade nem compromisso: escolhe o vídeo ou o serviço, marcamos a gravação e entregamos. Ideal para começar, para uma angariação nova ou para um momento especial.</p>
+    <div class="pk pk4">{cards}</div>
+    <span class="eb" style="display:block;margin-top:48px">Ideias de vídeos para si</span><h3 style="font-size:clamp(24px,2.6vw,32px);margin-top:6px">Por onde começar.</h3>
+    <div class="zg">{ideias}</div>
+    <div class="orc" style="margin-top:28px"><div><h3>Por ação ou por mês?</h3><p>Quatro vídeos consigo em cena, por ação, somam 440€ + IVA. Na consultoria mensal, por 250€ + IVA, tem esses quatro vídeos e ainda as artes, a gestão das redes e das campanhas e o seu site. Pode começar por uma ação e passar ao plano mensal quando quiser.</p></div>
+      <div><h4>Condições por ação</h4><ul><li>Pagamento após a entrega de cada trabalho</li><li>Fotografias em 48 horas; vídeo em 72 horas</li><li>Cada sessão de gravação dura até 1h30</li><li>Anúncios, quando os houver, pagos diretamente por si, sem margem</li></ul></div></div></div>
 </section>
 '''
 
@@ -301,7 +384,7 @@ def build(cliente=None):
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
   <a class="logo" href="/"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
-  <div class="links">{'<a href="#edicao">Edição</a>' if cliente and cliente.get('edicao') else ''}{'<a href="#juntos">O nosso trabalho</a>' if cliente and cliente.get('juntos') else ''}{'<a href="#zona">A zona</a>' if cliente and cliente.get('zona') else ''}{'<a href="#plano">O plano</a>' if cliente and cliente.get('plano') else ''}<a href="#case">Case</a><a href="#pacotes">Pacotes</a><a href="#videos">Vídeos</a><a href="#premium">Serviços premium</a><a href="#condicoes">Condições</a><a href="/#trabalhos">Trabalhos</a></div>
+  <div class="links">{'<a href="#edicao">Edição</a>' if cliente and cliente.get('edicao') else ''}{'<a href="#juntos">O nosso trabalho</a>' if cliente and cliente.get('juntos') else ''}{'<a href="#zona">A zona</a>' if cliente and cliente.get('zona') else ''}{'<a href="#plano">O plano</a>' if cliente and (cliente.get('plano') or cliente.get('mensal')) else ''}<a href="#case">Case</a><a href="#pacotes">Pacotes</a><a href="#videos">Vídeos</a><a href="#premium">Serviços premium</a><a href="#condicoes">Condições</a><a href="/#trabalhos">Trabalhos</a></div>
   <a class="btn y" href="{WA}" target="_blank" rel="noopener">Avançar</a>
 </div></nav>
 
@@ -311,7 +394,7 @@ def build(cliente=None):
     <span class="eb">{e('Proposta para ' + cliente['nome'] + ' · ' + cliente['cidade']) if cliente else 'Proposta de serviços · Usina Vídeos'}</span>
     <h1>{e(cliente['h1']) if cliente else 'Comunicação, audiovisual e marketing digital.'}</h1>
     <p>{e(cliente['intro']) if cliente else 'Para empresas, marcas e profissionais: imobiliário, automóvel, desporto, comércio, turismo e eventos. Abaixo, os pacotes para imobiliário; para as outras áreas, orçamento à medida. Um parceiro, um briefing, um contacto.'}</p>
-    <div class="row"><a class="btn y" href="{'#plano' if cliente and cliente.get('plano') else '#pacotes'}">{'Ver o plano' if cliente and cliente.get('plano') else 'Ver pacotes'}</a><a class="btn o" href="{CAL}" target="_blank" rel="noopener">Marcar sessão</a></div>
+    <div class="row"><a class="btn y" href="{'#plano' if cliente and (cliente.get('plano') or cliente.get('mensal')) else '#pacotes'}">{'Ver o plano' if cliente and (cliente.get('plano') or cliente.get('mensal')) else 'Ver pacotes'}</a><a class="btn o" href="{CAL}" target="_blank" rel="noopener">Marcar sessão</a></div>
     {STRIPE}
   </div>
 </header>
@@ -330,7 +413,7 @@ def build(cliente=None):
     <div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">{ent}</div></div>
 </section>
 
-{case_html()}{edicao_html() if cliente and cliente.get('edicao') else ''}{juntos_html(cliente) if cliente and cliente.get('juntos') else ''}{evento_html(cliente) if cliente and cliente.get('evento') else ''}{zona_html(cliente) if cliente and cliente.get('zona') else ''}{plano_html(cliente) if cliente and cliente.get('plano') else ''}
+{case_html()}{edicao_html() if cliente and cliente.get('edicao') else ''}{juntos_html(cliente) if cliente and cliente.get('juntos') else ''}{evento_html(cliente) if cliente and cliente.get('evento') else ''}{zona_html(cliente) if cliente and cliente.get('zona') else ''}{plano_html(cliente) if cliente and cliente.get('plano') else ''}{mensal_html(cliente) if cliente and cliente.get('mensal') else ''}{acao_html(cliente) if cliente and cliente.get('acao') else ''}
 <section id="pacotes">
   <div class="wrap"><span class="eb">Pacotes por imóvel</span><h2>Preços claros, por imóvel.</h2>
     <p class="lead">Valores sem IVA, que acresce à taxa legal em vigor. Para apartamentos e moradias até 300 m².</p>
