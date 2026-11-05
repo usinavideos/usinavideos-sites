@@ -44,6 +44,13 @@ PREMIUM = [('Apresentação digital do imóvel', '100€', '50€ com reportagem
            ('Transmissão em direto', '300€', '', 'Open house ou lançamento em direto nas redes sociais e no YouTube.'),
            ('Gestão de campanhas e contactos', '100€', 'por imóvel', 'Campanhas Facebook e Instagram segmentadas por zona e comprador. Acresce o investimento em anúncios.')]
 
+SITES = [('Página em usinavideos.pt', '100€', 'por página', 'A sua página de apresentação ou de imóvel no site da Usina, indexada no Google. Incluída na consultoria mensal.'),
+         ('Site no seu domínio', '150€', 'uma vez', 'Configuração e migração para o seu domínio (ex. oseunome.pt), com HTTPS e redirecionamento das páginas antigas sem perder o Google.'),
+         ('Alojamento', '0€', 'incluído', 'Alojamento rápido e seguro, sem custo de servidor. Só paga o domínio, diretamente à entidade de registo e em seu nome.'),
+         ('Manutenção base', '25€', 'por mês', 'Site sempre no ar, HTTPS, cópias de segurança e pequenas correções até 1 hora por mês.'),
+         ('Manutenção e atualização', '50€', 'por mês', 'A manutenção base e até 4 atualizações por mês: novos imóveis, vídeos, notícias ou blog.'),
+         ('Trabalho extra', '20€', 'por hora', 'Novas secções, redesenho ou conteúdos fora do plano, com orçamento fechado antes de começar.')]
+
 ESPECIAIS = [('Vídeos de luxo', 'Produções cinematográficas com narrativa e banda sonora, para propriedades de alto valor.'),
              ('Sites e páginas de imóveis', 'Sites para agências e consultores e páginas únicas por imóvel ou empreendimento. <a href="/cordiallevel/">Exemplo</a>'),
              ('Visitas interativas', 'Visitas virtuais com pontos de informação, medições e multimédia.'),
@@ -371,6 +378,7 @@ def build(cliente=None):
     pk = ''.join(f'<article class="{"ref" if ref else ""}" style="--c:{COLORS[i % 3]}"><img class="pkimg" src="{PK_IMG[i]}" alt="" loading="lazy"><span class="lb">{e(lb)}</span><h3>{e(n)}</h3><div class="pr">{p}<small>+ IVA · por imóvel</small></div><ul>{"".join(f"<li>{x}</li>" for x in items)}</ul><p>{e(d)}</p></article>'
                  for i, (lb, n, p, items, d, ref) in enumerate(PACOTES))
     prem = ''.join(f'<article><b class="pr">{p}<small>{e(s)}</small></b><h3>{e(n)}</h3><p>{d}</p></article>' for n, p, s, d in PREMIUM)
+    sites = ''.join(f'<article><b class="pr">{p}<small>{"+ IVA · " if p != "0€" else ""}{e(u)}</small></b><h3>{e(n)}</h3><p>{e(d)}</p></article>' for n, p, u, d in SITES)
     esp = ''.join(f'<article class="card" style="--c:{COLORS[i % 3]}"><h3>{e(a)}</h3><p>{b}</p></article>' for i, (a, b) in enumerate(ESPECIAIS))
     socials = ''.join(f'<a class="mini {k}" href="{u}" target="_blank" rel="noopener">{MEA_ICON if "motoreseacao" in u else (IG_SVG if k == "ig" else IN_SVG)}<div><b>{e(a)}</b><span>{e(b)}</span></div><em>{e(c)} →</em></a>' for u, k, a, b, c in T['pt']['socials'])
     steps = ''.join(f'<div class="step"><h3>{e(a)}</h3><p>{e(b)}</p></div>' for a, b in STEPS)
@@ -393,7 +401,7 @@ def build(cliente=None):
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
   <a class="logo" href="/"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
-  <div class="links">{'<a href="#edicao">Edição</a>' if cliente and cliente.get('edicao') else ''}{'<a href="#juntos">O nosso trabalho</a>' if cliente and cliente.get('juntos') else ''}{'<a href="#zona">A zona</a>' if cliente and cliente.get('zona') else ''}{'<a href="#plano">O plano</a>' if cliente and (cliente.get('plano') or cliente.get('mensal')) else ''}<a href="#case">Case</a><a href="#pacotes">Pacotes</a><a href="#videos">Vídeos</a><a href="#premium">Serviços premium</a><a href="#condicoes">Condições</a><a href="/#trabalhos">Trabalhos</a></div>
+  <div class="links">{'<a href="#edicao">Edição</a>' if cliente and cliente.get('edicao') else ''}{'<a href="#juntos">O nosso trabalho</a>' if cliente and cliente.get('juntos') else ''}{'<a href="#zona">A zona</a>' if cliente and cliente.get('zona') else ''}{'<a href="#plano">O plano</a>' if cliente and (cliente.get('plano') or cliente.get('mensal')) else ''}<a href="#case">Case</a><a href="#pacotes">Pacotes</a><a href="#videos">Vídeos</a><a href="#premium">Serviços premium</a><a href="#sites">Sites</a><a href="#condicoes">Condições</a><a href="/#trabalhos">Trabalhos</a></div>
   <a class="btn y" href="{WA}" target="_blank" rel="noopener">Avançar</a>
 </div></nav>
 
@@ -454,6 +462,17 @@ def build(cliente=None):
   <div class="wrap"><span class="eb">Serviços premium</span><h2>Autoridade digital e geração de contactos.</h2>
     <p class="lead">Além dos pacotes por imóvel, produções que valorizam o consultor, a agência e o empreendimento.</p>
     <div class="prem">{prem}</div></div>
+</section>
+
+<section id="sites" class="dark" style="border-top:1px solid var(--line)">
+  <div class="wrap"><span class="eb">Novo serviço · Sites e domínio próprio</span><h2>O seu site, no seu domínio, sempre atualizado.</h2>
+    <p class="lead">O domínio fica em seu nome. A Usina trata do resto: alojamento, segurança, cópias de segurança e atualizações, no mesmo padrão das nossas páginas.</p>
+    <div class="prem">{sites}</div>
+    <div class="cond" style="margin-top:22px">
+      <div style="background:var(--ink2);border-color:var(--line);color:#D6D1CD"><b style="color:#fff">O domínio é seu</b>Registado e pago por si (um domínio .pt custa, em regra, entre 10€ e 20€ por ano). A Usina fica como contacto técnico.</div>
+      <div style="background:var(--ink2);border-color:var(--line);color:#D6D1CD"><b style="color:#fff">Clientes da consultoria mensal</b>A manutenção do site está incluída enquanto for nosso cliente.</div>
+      <div style="background:var(--ink2);border-color:var(--line);color:#D6D1CD"><b style="color:#fff">Sem perder o Google</b>Ao mudar para o seu domínio, as páginas antigas redirecionam para as novas e o histórico de pesquisa acompanha.</div>
+    </div></div>
 </section>
 
 <section style="background:var(--paper2)">
