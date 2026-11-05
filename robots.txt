@@ -59,5 +59,6 @@ Allow: /
 User-agent: *
 Allow: /
 Disallow: /_tools/
+Disallow: /interno/
 
 Sitemap: https://usinavideos.pt/sitemap.xml
