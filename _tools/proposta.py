@@ -131,6 +131,30 @@ CLIENTES = {
               ('Parque', 'Parque da Quinta da Conceição', '700 m · 10 min a pé'), ('Praia', 'Praia de Leça e Piscina das Marés', '1,3 a 1,5 km · 4 min de carro'),
               ('Compras', 'MAR Shopping e IKEA', '1,2 km · 4 min de carro'), ('Lazer', 'Farol e Casa de Chá da Boa Nova', '1,8 km · 5 min de carro'),
               ('Metro', 'Estação Mercado, Matosinhos', '1,3 km · 5 min de carro'), ('Viagens', 'Aeroporto Francisco Sá Carneiro', '5,5 km · 10 min de carro')]),
+    'ruben-assis': dict(nome='Rúben Assis', cidade='Gaia e região', edicao=False,
+        h1='As suas angariações em vídeo e a sua voz como referência em Gaia.',
+        intro='Proposta preparada para o Rúben Assis, Gestor de Ativos Imobiliários na Predilar (AMI 11428). Juntamos duas frentes: vídeo-reportagem de cada angariação, para vender mais rápido, e vídeos de autoridade em que o Rúben apresenta Gaia, Esmoriz, Ovar e a região, para ser a referência de quem quer comprar, vender ou investir. Ao fim de um mês avaliamos os resultados juntos.',
+        plano_eb='O plano para a sua marca', plano_h2='Angariações em vídeo e conteúdo de autoridade: um mês para gerar contactos.',
+        plano_lead='Quatro frentes, um só objetivo: que quem procura casa ou quer vender na sua zona pense primeiro em si. Os imóveis mostram o que tem, os vídeos de autoridade mostram quem é.',
+        unid={65: ' · por imóvel', 100: ' · por vídeo'},
+        orc_txt='Exemplo para o primeiro mês, com um vídeo de autoridade e uma angariação. Cada angariação a mais acresce 65€ + IVA (Pacote Aéreo) ou 98€ + IVA (Pacote Completo, com visita 3D). Os 120€ de anúncios vão integralmente para a Meta, sem margem: a Usina gere a campanha e mostra-lhe todos os números.',
+        plano=[('Fase 1 · Semana 1', 'Vídeo de autoridade «Viver em Gaia»', 100, 100,
+                ['Gravação consigo em cena a apresentar a zona: Cais de Gaia, praias, comércio, escolas, acessos', 'Imagens aéreas com drone', 'Versão YouTube (até 3 min) e 2 Reels verticais com legendas', 'Série a continuar: Esmoriz, Ovar, Espinho e Porto, um vídeo por zona']),
+               ('Fase 2 · Cada angariação', 'Vídeo-reportagem do imóvel', 65, 65,
+                ['Fotografia profissional e vídeo com drone (Pacote Aéreo)', 'Reel vertical consigo a apresentar o imóvel', 'Opcional: visita virtual 3D (Pacote Completo, 98€ + IVA)', 'Pronto para portais, redes sociais e WhatsApp']),
+               ('Fase 3 · Semanas 1 a 4', 'Gestão da campanha nas redes', 50, 50,
+                ['Publicação dos vídeos no Instagram, Facebook e YouTube do Rúben', 'Anúncios Facebook e Instagram segmentados por zona e perfil', 'Ajustes semanais de público e criativos', 'Investimento em anúncios: 120€ no mês (30€ por semana), gerido pela Usina']),
+               ('Fase 4 · Semana 5', 'Avaliação de resultados', 0, 0,
+                ['Relatório de visualizações, cliques e contactos recebidos', 'Reunião de 30 minutos para decidir os próximos passos', 'Ajuste do calendário de vídeos de autoridade e angariações'])],
+        meta=120,
+        passos=['Escolhemos a primeira angariação e o tema do vídeo de autoridade', 'Gravamos consigo em Gaia na mesma deslocação', 'Vídeos publicados na semana seguinte; avaliação ao fim de 1 mês'],
+        zona_t='Gaia, Esmoriz, Ovar e região', zona_ref='as zonas onde atua', zona_note='Temas a escolher consigo. Gravações em Esmoriz e Ovar com deslocação fora do Grande Porto, negociada e indicada antes de cada gravação.',
+        zona_h2='Uma série para ser a referência na sua zona.',
+        zona_lead='Os vídeos de autoridade são a sua montra: o Rúben a mostrar a zona como quem a conhece, com dicas para quem compra, vende ou investe. Estas são as primeiras ideias de temas.',
+        zona=[('Gaia', '«Viver em Gaia»', 'Cais, praias, escolas, acessos'), ('Gaia', 'Comprar casa em Gaia em 2027', 'Preços, zonas e crédito jovem'),
+              ('Esmoriz', '«Viver em Esmoriz»', 'Praia, lagoa e qualidade de vida'), ('Ovar', '«Viver em Ovar»', 'Centro, praias do Furadouro e Cortegaça'),
+              ('Dica', 'Comprar com emoção pode sair caro', 'Reel de 30 segundos'), ('Dica', 'Vender sem perder tempo nem dinheiro', 'Preço, fotos e visitas'),
+              ('Dica', 'O que ninguém diz sobre o IMT', 'Custos de quem compra'), ('Investir', 'Investir em Gaia e no Porto', 'Arrendamento e valorização')]),
     'ricardo-ribeiro': dict(nome='Ricardo Ribeiro', cidade='Lisboa', edicao=True, h1='Vídeo para eventos, imóveis e reportagem.',
         intro='Proposta preparada para o Ricardo Ribeiro, jornalista em Lisboa, para eventos, imóveis e edição de material já captado. Do jornalista para o jornalista: a mesma linguagem de reportagem, com prazos de redação.'),
     'tiago-branquinha': dict(nome='Tiago Branquinha', cidade='Porto', edicao=False,
@@ -167,19 +191,21 @@ def plano_html(c):
     def pr(v, t):
         if not v:
             return '<div class="pr" style="font-size:34px">Incluída</div>'
+        if t == v:
+            return f'<div class="pr">{v}€<small>+ IVA{e(c.get("unid", {}).get(v, ""))}</small></div>'
         return f'<div class="pr">{v}€<small>+ IVA</small></div><div class="tab">Tabela <s>{t}€</s> · <b>poupa {t - v}€</b></div>'
     cards = ''.join(f'<article style="--c:{COLORS[i % 3]}"><span class="lb">{e(f)}</span><h3>{e(n)}</h3>{pr(v, t)}<ul>{"".join(f"<li>{e(x)}</li>" for x in items)}</ul></article>' for i, (f, n, v, t, items) in enumerate(c['plano']))
-    rows = ''.join(f'<tr><td>{e(n)}</td><td>{f"{t}€" if t else "—"}</td><td>{f"{v}€" if v else "Incluída"}</td><td class="dc">{f"−{t - v}€ ({round((t - v) * 100 / t)}%)" if t else "—"}</td></tr>' for f, n, v, t, items in c['plano'])
+    rows = ''.join(f'<tr><td>{e(n)}</td><td>{f"{t}€" if t else "—"}</td><td>{f"{v}€" if v else "Incluída"}</td><td class="dc">{f"−{t - v}€ ({round((t - v) * 100 / t)}%)" if t and t != v else "—"}</td></tr>' for f, n, v, t, items in c['plano'])
     tt = sum(x[3] for x in c['plano']); tv = sum(x[2] for x in c['plano']); m = c['meta']
     return f'''<section id="plano">
-  <div class="wrap"><span class="eb">O plano para o seu imóvel</span><h2>Vídeo, página e campanha: um mês para gerar contactos.</h2>
-    <p class="lead">Quatro fases, um só contacto. Cada fase alimenta a seguinte: o vídeo leva às redes, as redes levam à página, a página leva até si.</p>
+  <div class="wrap"><span class="eb">{e(c.get('plano_eb', 'O plano para o seu imóvel'))}</span><h2>{e(c.get('plano_h2', 'Vídeo, página e campanha: um mês para gerar contactos.'))}</h2>
+    <p class="lead">{e(c.get('plano_lead', 'Quatro fases, um só contacto. Cada fase alimenta a seguinte: o vídeo leva às redes, as redes levam à página, a página leva até si.'))}</p>
     <div class="pk pk4">{cards}</div>
     <div style="overflow-x:auto;margin-top:28px;border-radius:14px"><table class="cmp" style="margin-top:0;min-width:560px"><thead><tr><th>Serviço</th><th>Preço de tabela</th><th>Para si</th><th>Desconto</th></tr></thead><tbody>{rows}
-      <tr class="t"><td>Produção e gestão</td><td>{tt}€ + IVA</td><td>{tv}€ + IVA</td><td class="dc">−{tt - tv}€ ({round((tt - tv) * 100 / tt)}%)</td></tr>
+      <tr class="t"><td>Produção e gestão</td><td>{tt}€ + IVA</td><td>{tv}€ + IVA</td><td class="dc">{f"−{tt - tv}€ ({round((tt - tv) * 100 / tt)}%)" if tt != tv else "—"}</td></tr>
       <tr><td>Investimento em anúncios na Meta (4 semanas × 30€)</td><td>{m}€</td><td>{m}€</td><td>sem margem</td></tr>
-      <tr class="t"><td>Total do primeiro mês <small style="font-weight:600">(IVA à parte na produção)</small></td><td>{tt + m}€</td><td>{tv + m}€</td><td class="dc">−{tt - tv}€</td></tr></tbody></table></div>
-    <div class="orc" style="margin-top:28px"><div><h3>{tv}€ + IVA + {m}€ em anúncios</h3><p>Produção e gestão por {tv}€ + IVA, em vez de {tt}€ de tabela: um desconto de {tt - tv}€ por já ser nosso cliente. Os {m}€ de anúncios vão integralmente para a Meta, sem margem: a Usina gere e paga a campanha na sua conta de anúncios e, se precisar, emite-lhe a fatura.</p></div>
+      <tr class="t"><td>Total do primeiro mês <small style="font-weight:600">(IVA à parte na produção)</small></td><td>{tt + m}€</td><td>{tv + m}€</td><td class="dc">{f"−{tt - tv}€" if tt != tv else "—"}</td></tr></tbody></table></div>
+    <div class="orc" style="margin-top:28px"><div><h3>{tv}€ + IVA + {m}€ em anúncios</h3><p>{c["orc_txt"] if c.get("orc_txt") else f"""Produção e gestão por {tv}€ + IVA, em vez de {tt}€ de tabela: um desconto de {tt - tv}€ por já ser nosso cliente. Os {m}€ de anúncios vão integralmente para a Meta, sem margem: a Usina gere e paga a campanha na sua conta de anúncios e, se precisar, emite-lhe a fatura."""}</p></div>
       <div><h4>Como avançamos</h4><ul>{''.join(f'<li>{e(x)}</li>' for x in c['passos'])}</ul></div></div>
     <div class="leads"><div><span class="eb">Os contactos são seus</span><h3>Cada contacto chega diretamente a si.</h3></div>
       <ul><li><b>WhatsApp, e-mail ou telefone:</b> quem responde ao vídeo, à página ou aos anúncios fala logo consigo, sem intermediários.</li><li><b>A Usina gera os contactos:</b> conteúdo, página e campanha a trabalhar para o imóvel.</li><li><b>O acompanhamento é seu:</b> a resposta, a qualificação e a marcação de visitas ficam a seu cargo.</li><li><b>Oferta Usina:</b> mensagens de resposta prontas a usar, para WhatsApp e e-mail, cordiais e pensadas para converter o contacto em visita.</li></ul></div>
@@ -202,7 +228,7 @@ def zona_html(c):
   <div class="wrap"><span class="eb">A zona · {e(c['zona_t'])}</span><h2>{e(c['zona_h2'])}</h2>
     <p class="lead">{e(c['zona_lead'])}</p>
     <div class="zg">{cards}</div>
-    <p class="note">Distâncias aproximadas a partir de {e(c['zona_ref'])}, em linha reta e tempos estimados. Confirmamos no terreno durante a gravação.</p></div>
+    <p class="note">{e(c.get('zona_note', 'Distâncias aproximadas a partir de ' + c['zona_ref'] + ', em linha reta e tempos estimados. Confirmamos no terreno durante a gravação.'))}</p></div>
 </section>
 '''
 
