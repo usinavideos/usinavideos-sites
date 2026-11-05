@@ -39,8 +39,21 @@ STEPS = [('Domínio', 'A Cordial regista o domínio em seu nome (por exemplo, co
          ('Mudança', 'Ativamos o domínio e redirecionamos as páginas antigas. Quem tiver um link antigo chega à página certa.'),
          ('Manutenção', 'A partir daí, o site é atualizado a cada imóvel, vídeo ou artigo, com relatório mensal.')]
 
+# fotografia de capa de cada imóvel no site (todas produzidas pela Usina)
+IMOVEIS = [('casaraofoz', 'foz-f2-t.jpg', 'Moradia T4 na Foz do Douro'), ('t3leca', 'leca-37-t.jpg', 'T3 em Leça da Palmeira'),
+           ('bosquepicua', 'bp-parque-t.jpg', 'T2+1 no Bosque da Pícua'), ('cedofeita', 'cf-drone-cidade-t.jpg', 'T1 duplex em Cedofeita'),
+           ('anteroquental', 'aq-20-t.jpg', 'T2 na Rua Antero de Quental'), ('moncao', 'mc-rio-muralhas-t.jpg', 'Terrenos em Monção'),
+           ('perafita', 'pf-sala-t.jpg', 'T2 em Perafita')]
+FOTOS = ['t3leca/img/leca-40-t.jpg', 'casaraofoz/img/foz-f40-t.jpg', 'bosquepicua/img/bp-fachada-t.jpg', 'moncao/img/t1-d4-t.jpg',
+         't3leca/img/leca-1-t.jpg', 'cedofeita/img/cf-sala-t.jpg', 'anteroquental/img/aq-1-t.jpg', 'perafita/img/pf-fachada-t.jpg']
+VIDS = [('zno11IhgXtE', 'Moradia T4 na Foz do Douro'), ('vU0bXm_uhGk', 'T3 em Leça da Palmeira'), ('07GUVT6ILno', 'T1 duplex em Cedofeita'),
+        ('shp7XDfpkHM', 'T2 em Perafita'), ('yo7RN7u6JJY', 'Terrenos em Monção'), ('ed1kwc3x27I', 'Podcast Panorama Imobiliário PT')]
+
 
 def build():
+    imov = ''.join(f'<a href="/cordiallevel/{d}/"><img src="/cordiallevel/{d}/img/{f}" alt="{e(t)}" loading="lazy"><span>{e(t)} →</span></a>' for d, f, t in IMOVEIS) + '<a href="/cordiallevel/"><img src="/cordiallevel/img/capa.jpg" alt="Site da Cordial Level" loading="lazy"><span>Todos os imóveis no site →</span></a>'
+    fotos = ''.join(f'<img src="/cordiallevel/{f}" alt="" loading="lazy">' for f in FOTOS)
+    vids = ''.join(f'<figure class="pv"><button class="yt2" data-id="{v}" aria-label="Ver vídeo: {e(t)}"><img src="https://i.ytimg.com/vi/{v}/hqdefault.jpg" alt="" loading="lazy"><span class="pl" aria-hidden="true"></span></button><figcaption><b>{e(t)}</b><span>Produção Usina Vídeos</span></figcaption></figure>' for v, t in VIDS)
     leva = ''.join(f'<article class="card" style="--c:{COLORS[i % 3]}"><span class="n">{i + 1:02d}</span><h3>{e(a)}</h3><p>{e(b)}</p></article>' for i, (a, b) in enumerate(LEVA))
     def cel(v):
         return v if v in ('Oferta', 'Incluído', '—', '0€') else f'{v} + IVA'
@@ -67,6 +80,8 @@ def build():
 .shots{{display:grid;gap:18px;grid-template-columns:1fr;margin-top:30px;align-items:end}}@media(min-width:800px){{.shots{{grid-template-columns:3fr 1fr}}}}
 .shots img{{width:100%;height:auto;display:block;border-radius:14px;border:1px solid #E3DED6;box-shadow:0 18px 40px rgba(0,0,0,.12)}}
 .shots .ph{{max-width:240px;justify-self:center;border-radius:26px;border:6px solid #141213}}
+.mgal{{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:30px}}.mgal a{{position:relative;display:block;border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:#222}}.mgal img{{width:100%;height:100%;object-fit:cover;transition:transform .4s}}.mgal a:hover img{{transform:scale(1.04)}}.mgal span{{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;background:linear-gradient(transparent,rgba(0,0,0,.82));color:#fff;font-weight:800;font-size:15px}}
+.fgrid{{display:grid;gap:8px;grid-template-columns:repeat(2,1fr);margin-top:12px}}@media(min-width:800px){{.fgrid{{grid-template-columns:repeat(4,1fr)}}}}.fgrid img{{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;display:block}}
 .mtab{{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;font-size:15px}}.mtab th,.mtab td{{padding:13px 15px;border-bottom:1px solid #E3DED6;text-align:left;vertical-align:top}}.mtab th{{background:var(--ink);color:#fff;font-size:12px;letter-spacing:.08em;text-transform:uppercase}}.mtab small{{color:var(--muted);font-weight:600}}.mtab td.dc b{{color:#23863D}}
 .mtab tr.t td{{background:var(--paper2);font-weight:900}}
 @media(max-width:640px){{.mtab thead{{display:none}}.mtab tr{{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #E3DED6;padding:14px 16px;gap:4px 12px}}.mtab td{{border:0;padding:2px 0}}.mtab td:first-child{{grid-column:1/3;font-size:16px}}.mtab td:nth-child(2)::before{{content:"Tabela ";color:var(--muted);font-size:12px}}.mtab td:nth-child(3)::before{{content:"Para a Cordial ";color:var(--muted);font-size:12px}}}}
@@ -75,7 +90,7 @@ def build():
 <body>
 <nav class="nav" aria-label="Menu"><div class="wrap">
   <a class="logo" href="/"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
-  <div class="links"><a href="#hoje">O site hoje</a><a href="#leva">O que muda</a><a href="#precos">Investimento</a><a href="#como">Como avançamos</a></div>
+  <div class="links"><a href="#hoje">O site hoje</a><a href="#resultados">Resultados</a><a href="#leva">O que muda</a><a href="#precos">Investimento</a><a href="#como">Como avançamos</a></div>
   <a class="btn y" href="{WA}" target="_blank" rel="noopener">Avançar</a>
 </div></nav>
 
@@ -91,6 +106,17 @@ def build():
     <p class="lead">O site da Cordial Level vive hoje em usinavideos.pt/cordiallevel. No domínio próprio, a marca fica mais forte: um endereço curto para cartões, anúncios e assinaturas de e-mail, e uma presença no Google que é só vossa.</p>
     <div class="shots"><img src="img/cl-desktop.jpg" alt="Site atual da Cordial Level no computador" loading="lazy"><img class="ph" src="img/cl-mobile.jpg" alt="Site atual da Cordial Level no telemóvel" loading="lazy"></div>
     <p class="note">O site atual: <a href="/cordiallevel/" style="font-weight:800;color:var(--ink)">usinavideos.pt/cordiallevel →</a></p></div>
+</section>
+
+<section id="resultados" class="dark">
+  <div class="wrap"><span class="eb">Resultados na prática</span><h2>Cada imóvel, fotografado e filmado pela Usina.</h2>
+    <p class="lead">É este o trabalho que passa para o novo domínio: reportagens completas, com fotografia, drone e vídeo, numa página própria para cada imóvel. Toque num imóvel para abrir a página.</p>
+    <div class="mgal">{imov}</div>
+    <div class="fgrid">{fotos}</div>
+    <h3 style="color:#fff;font-size:clamp(24px,2.6vw,32px);margin-top:56px">Os vídeos da Cordial Level.</h3>
+    <p style="color:#C9C3BF;margin-top:8px">Toque para ver aqui mesmo.</p>
+    <div class="pvs">{vids}</div>
+    <div style="margin-top:24px"><a class="btn o" style="color:#fff" href="https://www.youtube.com/@CordialLevelPT" target="_blank" rel="noopener">Todos os vídeos no YouTube →</a></div></div>
 </section>
 
 <section id="leva" style="background:var(--paper2)">
@@ -129,6 +155,7 @@ def build():
   <a href="/" aria-label="Usina Vídeos · página inicial"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
   <span>A sua exigência, a nossa assinatura. · © Usina Vídeos</span>
 </div></footer>
+<script>document.querySelectorAll('.yt2').forEach(function(b){{b.addEventListener('click',function(){{var i=document.createElement('iframe');i.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0';i.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';i.allowFullscreen=true;i.title=b.getAttribute('aria-label');b.innerHTML='';b.appendChild(i)}},{{once:true}})}});</script>
 </body>
 </html>
 '''
