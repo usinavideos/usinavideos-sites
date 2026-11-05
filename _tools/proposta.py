@@ -289,9 +289,18 @@ def acao_html(c):
   <div class="wrap"><span class="eb">Opção 2 · Por ação</span><h2>Só o que precisa, quando precisa.</h2>
     <p class="lead">Sem mensalidade nem compromisso: escolhe o vídeo ou o serviço, marcamos a gravação e entregamos. Ideal para começar, para uma angariação nova ou para um momento especial.</p>
     <div class="pk pk4">{cards}</div>
+    <span class="eb" style="display:block;margin-top:48px">Desconto progressivo</span><h3 style="font-size:clamp(24px,2.6vw,32px);margin-top:6px">Quanto mais fazemos juntos, menos paga.</h3>
+    <p class="lead" style="margin-top:10px">O desconto conta as ações de cada mês (vídeos, reportagens, páginas e campanhas) e aplica-se a todas elas. Quem trabalha connosco todos os meses ganha ainda o desconto de cliente frequente.</p>
+    <div style="overflow-x:auto;margin-top:22px;border-radius:14px"><table class="cmp" style="margin-top:0"><thead><tr><th>Ações no mês</th><th>Desconto</th><th>Exemplo: vídeo em cena</th></tr></thead><tbody>
+      <tr><td>1 ou 2 ações</td><td>preço de tabela</td><td>110€</td></tr>
+      <tr><td>3 ou 4 ações</td><td class="dc">−10%</td><td>99€</td></tr>
+      <tr><td>5 ou 6 ações</td><td class="dc">−15%</td><td>93,50€</td></tr>
+      <tr><td>7 ou mais ações</td><td class="dc">−20%</td><td>88€</td></tr>
+      <tr class="t"><td>Cliente frequente: 3 meses seguidos com ações</td><td class="dc">mais −5%</td><td>sobre o desconto do mês</td></tr></tbody></table></div>
+    <p class="note">Valores + IVA. O desconto aplica-se à produção da Usina; o investimento em anúncios não tem desconto nem margem.</p>
     <span class="eb" style="display:block;margin-top:48px">Ideias de vídeos para si</span><h3 style="font-size:clamp(24px,2.6vw,32px);margin-top:6px">Por onde começar.</h3>
     <div class="zg">{ideias}</div>
-    <div class="orc" style="margin-top:28px"><div><h3>Por ação ou por mês?</h3><p>Quatro vídeos consigo em cena, por ação, somam 440€ + IVA. Na consultoria mensal, por 250€ + IVA, tem esses quatro vídeos e ainda as artes, a gestão das redes e das campanhas e o seu site. Pode começar por uma ação e passar ao plano mensal quando quiser.</p></div>
+    <div class="orc" style="margin-top:28px"><div><h3>Por ação ou por mês?</h3><p>Quatro vídeos consigo em cena, por ação, somam 396€ + IVA, já com o desconto de 10%. Na consultoria mensal, por 250€ + IVA, tem esses quatro vídeos e ainda as artes, a gestão das redes e das campanhas e o seu site. Pode começar por uma ação e passar ao plano mensal quando quiser.</p></div>
       <div><h4>Condições por ação</h4><ul><li>Pagamento após a entrega de cada trabalho</li><li>Fotografias em 48 horas; vídeo em 72 horas</li><li>Cada sessão de gravação dura até 1h30</li><li>Anúncios, quando os houver, pagos diretamente por si, sem margem</li></ul></div></div></div>
 </section>
 '''
