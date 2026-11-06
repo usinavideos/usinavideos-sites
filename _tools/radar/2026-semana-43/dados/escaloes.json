@@ -1,0 +1,7 @@
+[{"escalao":"<1,5k","ordem":1,"imoveis":309,"yield":3.7},
+{"escalao":"1,5–2k","ordem":2,"imoveis":303,"yield":3.6},
+{"escalao":"2–2,5k","ordem":3,"imoveis":431,"yield":3.5},
+{"escalao":"2,5–3k","ordem":4,"imoveis":439,"yield":3.4},
+{"escalao":"3–4k","ordem":5,"imoveis":765,"yield":3.4},
+{"escalao":"4–5k","ordem":6,"imoveis":421,"yield":3.2},
+{"escalao":">5k","ordem":7,"imoveis":562,"yield":2.9}]

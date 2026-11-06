@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="660.225781pt" height="357.84pt" viewBox="0 0 660.225781 357.84" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-06T02:01:48.227540</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 357.84 
+L 660.225781 357.84 
+L 660.225781 0 
+L 0 0 
+z
+" style="fill: #f7f5f0"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 97.508906 302.220859 
+L 642.225781 302.220859 
+L 642.225781 35.625 
+L 97.508906 35.625 
+z
+" style="fill: #f7f5f0"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 97.508906 290.102866 
+L 284.268978 290.102866 
+L 284.268978 274.955374 
+L 97.508906 274.955374 
+z
+" clip-path="url(#pcc326e32d0)" style="fill: #1b3a6b"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 97.508906 264.857046 
+L 313.839322 264.857046 
+L 313.839322 249.709554 
+L 97.508906 249.709554 
+z
+" clip-path="url(#pcc326e32d0)" style="fill: #b8962e"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 97.508906 239.611226 
+L 320.842825 239.611226 
+L 320.842825 224.463734 
+L 97.508906 224.463734 
+z
+" clip-path="url(#pcc326e32d0)" style="fill: #1b3a6b"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 97.508906 214.365406 
+L 323.288493 214.365406 
+L 323.288493 199.217914 
+L 97.508906 199.217914 
+z
+" clip-path="url(#pcc326e32d0)" style="fill: #1b3a6b"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 97.508906 189.119586 
+L 329.958495 189.119586 
+L 329.958495 173.972094 
+L 97.508906 173.972094 
+z
+" clip-path="url(#pcc326e32d0)" style="fill: #1b3a6b"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 97.508906 163.873766 
+L 364.309008 163.873766 
+L 364.309008 148.726274 
+L 97.508906 148.726274 
+z
+" clip-path="url(#pcc326e32d0)" style="fill: #1b3a6b"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 97.508906 138.627946 
+L 394.101686 138.627946 
+L 394.101686 123.480454 
+L 97.508906 123.480454 
+z
+" clip-path="url(#pcc326e32d0)" style="fill: #b8962e"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 97.508906 113.382126 
+L 462.913879 113.382126 
+L 462.913879 98.234634 
+L 97.508906 98.234634 
+z
+" clip-path="url(#pcc326e32d0)" style="fill: #1b3a6b"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 97.508906 88.136306 
+L 525.72307 88.136306 
+L 525.72307 72.988814 
+L 97.508906 72.988814 
+z
+" clip-path="url(#pcc326e32d0)" style="fill: #1b3a6b"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 97.508906 62.890486 
+L 571.634921 62.890486 
+L 571.634921 47.742994 
+L 97.508906 47.742994 
+z
+" clip-path="url(#pcc326e32d0)" style="fill: #1b3a6b"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m482452106e" d="M 0 0 
+L 0 3.5 
+" style="stroke: #5a5649; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m482452106e" x="97.508906" y="302.220859" style="fill: #5a5649; stroke: #5a5649; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 11px; font-family: 'Inter'; text-anchor: middle; fill: #5a5649" x="97.508906" y="319.877109" transform="rotate(-0 97.508906 319.877109)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m482452106e" x="208.675615" y="302.220859" style="fill: #5a5649; stroke: #5a5649; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 11px; font-family: 'Inter'; text-anchor: middle; fill: #5a5649" x="208.675615" y="319.877109" transform="rotate(-0 208.675615 319.877109)">1000</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m482452106e" x="319.842325" y="302.220859" style="fill: #5a5649; stroke: #5a5649; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 11px; font-family: 'Inter'; text-anchor: middle; fill: #5a5649" x="319.842325" y="319.877109" transform="rotate(-0 319.842325 319.877109)">2000</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m482452106e" x="431.009034" y="302.220859" style="fill: #5a5649; stroke: #5a5649; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 11px; font-family: 'Inter'; text-anchor: middle; fill: #5a5649" x="431.009034" y="319.877109" transform="rotate(-0 431.009034 319.877109)">3000</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m482452106e" x="542.175743" y="302.220859" style="fill: #5a5649; stroke: #5a5649; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 11px; font-family: 'Inter'; text-anchor: middle; fill: #5a5649" x="542.175743" y="319.877109" transform="rotate(-0 542.175743 319.877109)">4000</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 11px; font-family: 'Inter'; text-anchor: middle; fill: #1b3a6b" x="369.867344" y="337.18668" transform="rotate(-0 369.867344 337.18668)">Preço pedido mediano (€/m²) · entre parênteses, nº de imóveis</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_6">
+      <defs>
+       <path id="m8a6416d7a3" d="M 0 0 
+L -3.5 0 
+" style="stroke: #5a5649; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m8a6416d7a3" x="97.508906" y="282.52912" style="fill: #5a5649; stroke: #5a5649; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 11px; font-family: 'Inter'; text-anchor: end; fill: #5a5649" x="90.508906" y="287.857245" transform="rotate(-0 90.508906 287.857245)">Beja (34)</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#m8a6416d7a3" x="97.508906" y="257.2833" style="fill: #5a5649; stroke: #5a5649; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 11px; font-family: 'Inter'; text-anchor: end; fill: #5a5649" x="90.508906" y="262.611425" transform="rotate(-0 90.508906 262.611425)">Braga (196)</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m8a6416d7a3" x="97.508906" y="232.03748" style="fill: #5a5649; stroke: #5a5649; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 11px; font-family: 'Inter'; text-anchor: end; fill: #5a5649" x="90.508906" y="237.365605" transform="rotate(-0 90.508906 237.365605)">Coimbra (127)</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m8a6416d7a3" x="97.508906" y="206.79166" style="fill: #5a5649; stroke: #5a5649; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 11px; font-family: 'Inter'; text-anchor: end; fill: #5a5649" x="90.508906" y="212.119785" transform="rotate(-0 90.508906 212.119785)">Aveiro (196)</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m8a6416d7a3" x="97.508906" y="181.54584" style="fill: #5a5649; stroke: #5a5649; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 11px; font-family: 'Inter'; text-anchor: end; fill: #5a5649" x="90.508906" y="186.873965" transform="rotate(-0 90.508906 186.873965)">Leiria (197)</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m8a6416d7a3" x="97.508906" y="156.30002" style="fill: #5a5649; stroke: #5a5649; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font-size: 11px; font-family: 'Inter'; text-anchor: end; fill: #5a5649" x="90.508906" y="161.628145" transform="rotate(-0 90.508906 161.628145)">Évora (46)</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m8a6416d7a3" x="97.508906" y="131.0542" style="fill: #5a5649; stroke: #5a5649; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <text style="font-size: 11px; font-family: 'Inter'; text-anchor: end; fill: #5a5649" x="90.508906" y="136.382325" transform="rotate(-0 90.508906 136.382325)">Porto (662)</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#m8a6416d7a3" x="97.508906" y="105.80838" style="fill: #5a5649; stroke: #5a5649; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_14">
+      <text style="font-size: 11px; font-family: 'Inter'; text-anchor: end; fill: #5a5649" x="90.508906" y="111.136505" transform="rotate(-0 90.508906 111.136505)">Setúbal (447)</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m8a6416d7a3" x="97.508906" y="80.56256" style="fill: #5a5649; stroke: #5a5649; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_15">
+      <text style="font-size: 11px; font-family: 'Inter'; text-anchor: end; fill: #5a5649" x="90.508906" y="85.890685" transform="rotate(-0 90.508906 85.890685)">Faro (376)</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#m8a6416d7a3" x="97.508906" y="55.31674" style="fill: #5a5649; stroke: #5a5649; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_16">
+      <text style="font-size: 11px; font-family: 'Inter'; text-anchor: end; fill: #5a5649" x="90.508906" y="60.644865" transform="rotate(-0 90.508906 60.644865)">Lisboa (949)</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_13">
+    <path d="M 97.508906 302.220859 
+L 97.508906 35.625 
+" style="fill: none; stroke: #8a8577; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 97.508906 302.220859 
+L 642.225781 302.220859 
+" style="fill: none; stroke: #8a8577; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 9.5px; font-family: 'Inter'; text-anchor: start; fill: #1b3a6b" x="288.715646" y="285.98493" transform="rotate(-0 288.715646 285.98493)">1 680 €</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 9.5px; font-family: 'Inter'; text-anchor: start; fill: #1b3a6b" x="318.285991" y="260.73911" transform="rotate(-0 318.285991 260.73911)">1 946 €</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 9.5px; font-family: 'Inter'; text-anchor: start; fill: #1b3a6b" x="325.289493" y="235.49329" transform="rotate(-0 325.289493 235.49329)">2 009 €</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 9.5px; font-family: 'Inter'; text-anchor: start; fill: #1b3a6b" x="327.735161" y="210.24747" transform="rotate(-0 327.735161 210.24747)">2 031 €</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 9.5px; font-family: 'Inter'; text-anchor: start; fill: #1b3a6b" x="334.405164" y="185.00165" transform="rotate(-0 334.405164 185.00165)">2 091 €</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 9.5px; font-family: 'Inter'; text-anchor: start; fill: #1b3a6b" x="368.755677" y="159.75583" transform="rotate(-0 368.755677 159.75583)">2 400 €</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 9.5px; font-family: 'Inter'; text-anchor: start; fill: #1b3a6b" x="398.548355" y="134.51001" transform="rotate(-0 398.548355 134.51001)">2 668 €</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 9.5px; font-family: 'Inter'; text-anchor: start; fill: #1b3a6b" x="467.360548" y="109.26419" transform="rotate(-0 467.360548 109.26419)">3 287 €</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 9.5px; font-family: 'Inter'; text-anchor: start; fill: #1b3a6b" x="530.169738" y="84.01837" transform="rotate(-0 530.169738 84.01837)">3 852 €</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 9.5px; font-family: 'Inter'; text-anchor: start; fill: #1b3a6b" x="576.081589" y="58.77255" transform="rotate(-0 576.081589 58.77255)">4 265 €</text>
+   </g>
+   <g id="text_27">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Inter'; text-anchor: start; fill: #1b3a6b" x="97.508906" y="29.625" transform="rotate(-0 97.508906 29.625)">Preço pedido por distrito · Norte em destaque</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pcc326e32d0">
+   <rect x="97.508906" y="35.625" width="544.716875" height="266.595859"/>
+  </clipPath>
+ </defs>
+</svg>

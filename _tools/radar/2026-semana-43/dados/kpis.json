@@ -1,0 +1,6 @@
+[{"indicador":"analisados","valor":3396,"variacao":151,"unidade":"imóveis"},
+{"indicador":"modelos_acordo","valor":1828,"variacao":153,"unidade":"imóveis"},
+{"indicador":"subavaliados","valor":217,"pct":11.9,"variacao_pp":1.6,"unidade":"imóveis"},
+{"indicador":"sobreavaliados","valor":972,"pct":53.2,"variacao_pp":0.5,"unidade":"imóveis"},
+{"indicador":"preco_m2","valor":3148,"variacao":-7,"unidade":"€/m²"},
+{"indicador":"yield","valor":3.3,"variacao_pp":-0.1,"n":2642,"unidade":"%"}]
