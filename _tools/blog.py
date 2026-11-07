@@ -24,6 +24,30 @@ CATS = {'bastidores': 'Bastidores e making of', 'comunicacao': 'Comunicação e 
         'mercados': 'Mercados', 'cases': 'Cases'}
 
 POSTS = [
+    dict(slug='cordial-level-nas-lives-motores-e-acao', cat='cases', date='2026-11-07',
+         title='Cordial Level estreia-se nas lives do Motores e Ação',
+         desc='A partir de agora, a Cordial Level é exibida e divulgada nas lives do Motores e Ação. A estreia foi na sexta-feira, 6 de novembro, com Freire Neto.',
+         img='/img/blog/merchan-cordial-mea.jpg', img_cap='Merchan da Cordial Level na live SEXTOU do Motores e Ação · Usina Vídeos',
+         lead='Quem pensa em morar ou investir em Portugal passa a encontrar a Cordial Level todas as semanas nas lives do Motores e Ação, um canal com mais de 20 anos.',
+         body='''<p>A estreia foi na <b>sexta-feira, 6 de novembro</b>, na live <b>SEXTOU</b> do Motores e Ação, com <b>Freire Neto</b> e Edward Sousa. A meio da conversa sobre o mercado automóvel, entrou o novo parceiro do canal: a <b>Cordial Level</b>, equipa dos consultores <b>Casemiro Ramos</b> e <b>Francisco Medeiros</b>, da CENTURY 21 Arquitectos.</p>
+<figure class="bf"><video controls playsinline preload="none" poster="/img/blog/merchan-cordial-mea.jpg" style="width:100%;border-radius:16px;background:#000;aspect-ratio:16/9"><source src="/cordiallevel/media/merchan-mea-16x9.mp4" type="video/mp4"></video><figcaption>Morar ou investir em Portugal: o merchan da Cordial Level na live SEXTOU · edição Usina Vídeos</figcaption></figure>
+<h2>"Eu vivi isso na pele"</h2>
+<p>Freire Neto mudou-se do Brasil para Portugal em 2023 e conhece as dúvidas de quem chega: onde procurar casa, em quem confiar, que freguesia ou zona escolher. É essa experiência que leva para a recomendação: para morar, arrendar, comprar ou investir, a Cordial Level acompanha o processo do primeiro contacto à escritura.</p>
+<h2>Um canal com mais de 20 anos</h2>
+<p>O <b>Motores e Ação</b> atua no mercado brasileiro desde 2002 e, desde 2023, produz também conteúdos em Portugal. Tem mais de 110 mil inscritos no YouTube e lives semanais com notícias, lançamentos e ofertas. É uma audiência de brasileiros e portugueses, muitos deles a pensar em viver ou investir em Portugal.</p>
+<h2>O que a Usina Vídeos produziu</h2>
+<ul><li><b>Faixa de merchan na live</b>, com a marca, os dois consultores e o endereço usinavideos.pt/cordiallevel.</li>
+<li><b>Vídeo para o YouTube</b> da Cordial Level, com legendas e cartão final de contactos.</li>
+<li><b>Reel e Short verticais</b> com o essencial em 40 segundos.</li>
+<li><b>Carrossel e story</b> para o Instagram e o Facebook.</li></ul>
+<figure class="bf" style="max-width:420px;margin-left:auto;margin-right:auto"><video controls playsinline preload="none" poster="/cordiallevel/img/social/merchan-mea/reel-capa.jpg" style="width:100%;border-radius:16px;background:#000;aspect-ratio:9/16"><source src="/cordiallevel/media/merchan-mea-reel.mp4" type="video/mp4"></video><figcaption>Versão vertical para Reels e Shorts · Usina Vídeos</figcaption></figure>
+<h2>Contactos</h2>
+<div style="display:flex;gap:14px;align-items:center;margin:14px 0"><img src="/cordiallevel/img/casemiro.jpg" alt="Casemiro Ramos" width="84" height="84" loading="lazy" style="width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid #B8962E;flex:none"><p style="margin:0"><b>Casemiro Ramos</b>, Consultor<br><a href="https://wa.me/351935101667">WhatsApp 935 101 667</a><br><a href="https://www.century21.pt/consultores/cramos">century21.pt/consultores/cramos</a></p></div>
+<div style="display:flex;gap:14px;align-items:center;margin:14px 0"><img src="/cordiallevel/img/francisco.jpg" alt="Francisco Medeiros" width="84" height="84" loading="lazy" style="width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid #B8962E;flex:none"><p style="margin:0"><b>Francisco Medeiros</b>, Consultor<br><a href="tel:+351912706395">912 706 395</a><br><a href="mailto:franciscomedeiros@century21.pt">franciscomedeiros@century21.pt</a></p></div>
+<p>Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p>''',
+         dica='Uma parceria de conteúdo rende mais quando o mesmo momento vira várias peças: a live, o vídeo do YouTube, o Reel, o carrossel e o artigo.',
+         veredito='Credibilidade de quem viveu a mudança, ao serviço de quem a está a planear.',
+         links=[('Ver a Cordial Level e os imóveis', '/cordiallevel/'), ('Ver a live completa no YouTube', 'https://www.youtube.com/watch?v=bJhROYiy-VU&t=3168s'), ('Canal da Cordial Level no YouTube', 'https://www.youtube.com/@CordialLevelPT')]),
     dict(slug='t2-perafita-cordial-level', cat='mercados', date='2026-11-04',
          title='T2 em Perafita: uma oportunidade especial com a Cordial Level',
          desc='Francisco Medeiros apresenta um T2 em Perafita, Matosinhos, ao lado da A28, perto de escolas e transportes, em excelentes condições e por um preço muito bom.',
