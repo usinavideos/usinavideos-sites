@@ -38,10 +38,10 @@ POSTS = [
 <li><b>Câmara em terra</b>, com planos de pormenor no paredão e no jardim.</li>
 <li><b>Edição e música</b> pensadas para Reels, YouTube e site, num só filme.</li></ul>
 <p>É o mesmo método que usamos nas vídeo-reportagens de imóveis, como o <a href="/t4coral/">Condomínio Coral, na Foz</a>, e nos trabalhos para a <a href="/cordiallevel/">Cordial Level</a>.</p>
-<p><a href="https://www.instagram.com/reel/Deu9izSoAB6/" target="_blank" rel="noopener">Veja também no Instagram do @neofreireportugal ↗</a></p>''',
+<p><a href="https://youtu.be/_DmRtHWTy2k" target="_blank" rel="noopener">Veja o filme no YouTube, no canal Dicas do Freire ↗</a> · <a href="https://www.instagram.com/reel/Deu9izSoAB6/" target="_blank" rel="noopener">e no Instagram do @neofreireportugal ↗</a></p>''',
          dica='Grave a sua zona com luz de manhã cedo ou ao fim da tarde: o céu e o rio ficam com mais cor e menos reflexos.',
          veredito='Um lugar bem filmado vende-se sozinho. É isso que fazemos por imóveis, marcas e cidades.',
-         links=[('Pedir um orçamento por WhatsApp', WA), ('Ver o canal Dicas do Freire', 'https://www.youtube.com/@DicasdoFreire')]),
+         links=[('Ver o filme no YouTube (Dicas do Freire)', 'https://youtu.be/_DmRtHWTy2k'), ('Pedir um orçamento por WhatsApp', WA), ('Ver o canal Dicas do Freire', 'https://www.youtube.com/@DicasdoFreire')]),
     dict(slug='cordial-level-nas-lives-motores-e-acao', cat='cases', date='2026-11-07',
          title='Cordial Level estreia-se nas lives do Motores e Ação',
          desc='A partir de agora, a Cordial Level é exibida e divulgada nas lives do Motores e Ação. A estreia foi na sexta-feira, 6 de novembro, com Freire Neto.',
