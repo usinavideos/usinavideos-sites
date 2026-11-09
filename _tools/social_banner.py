@@ -14,16 +14,16 @@ BRANDS = {
                       ('ig', IG, 'Instagram', '@cordiallevel', 'Seguir', 'https://www.instagram.com/cordiallevel/'),
                       ('fb', FB, 'Facebook', '/cordiallevel', 'Seguir', 'https://www.facebook.com/cordiallevel/')]),
     'usina': dict(cls='sb-us', eb='Siga a Usina Vídeos', h='Bastidores e trabalhos novos todas as semanas.',
-                  p='Reportagens, making of e dicas de comunicação nas redes da Usina e no canal do Motores e Ação.',
+                  p='Reportagens, making of, vlogs e vídeos imobiliários nas redes da Usina e no canal Dicas do Freire, no YouTube.',
                   items=[('ig', IG, 'Instagram', '@usina.videos', 'Seguir', 'https://www.instagram.com/usina.videos'),
                          ('fb', FB, 'Facebook', '/usinacomvideos', 'Seguir', 'https://www.facebook.com/usinacomvideos'),
-                         ('yt', YT, 'YouTube', 'Motores e Ação · @motoreseacao', 'Subscrever', 'https://www.youtube.com/@motoreseacao?sub_confirmation=1'),
+                         ('yt', YT, 'YouTube', 'Dicas do Freire · vlogs em Portugal', 'Subscrever', 'https://www.youtube.com/@DicasdoFreire?sub_confirmation=1'),
                          ('in', IN, 'LinkedIn', 'Freire Neto', 'Seguir', 'https://www.linkedin.com/in/freireneto/')]),
 }
 
 
-TR = {'en': dict(eb='Follow Usina Vídeos', h='New work and behind-the-scenes every week.', p='Reports, making-of and communication tips on Usina\'s channels and on Motores e Ação.', s='Follow', y='Subscribe'),
-      'es': dict(eb='Siga a Usina Vídeos', h='Trabajos nuevos y making of cada semana.', p='Reportajes, making of y consejos de comunicación en las redes de Usina y en el canal de Motores e Ação.', s='Seguir', y='Suscribirse')}
+TR = {'en': dict(eb='Follow Usina Vídeos', h='New work and behind-the-scenes every week.', p='Reports, making-of, vlogs and property videos on Usina\'s channels and on Dicas do Freire, on YouTube.', s='Follow', y='Subscribe'),
+      'es': dict(eb='Siga a Usina Vídeos', h='Trabajos nuevos y making of cada semana.', p='Reportajes, making of, vlogs y vídeos inmobiliarios en las redes de Usina y en el canal Dicas do Freire, en YouTube.', s='Seguir', y='Suscribirse')}
 
 
 def social_banner(brand='cl', lang='pt'):
