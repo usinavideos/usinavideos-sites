@@ -860,7 +860,7 @@ IMOVEIS = {
         video='shp7XDfpkHM', video_img='pf-int-sala', video_vertical=True, video_h2='O Francisco Medeiros apresenta o T2', tour='https://realsee.ai/JVLLgJmB', tour_img='pf-int-sala-3',
     ),
     'senhoradahora': dict(
-        ag=dict(nome='José Bacelar', curto='José', num='351917103516', tel='+351 917 103 516', mail='josembacelar@century21.pt',
+        ag=dict(nome='José Bacelar', curto='Bacelar', num='351917103516', tel='+351 917 103 516', mail='josembacelar@century21.pt',
                 site='https://josembacelar.century21.pt', site_txt='josembacelar.century21.pt',
                 role='Consultor imobiliário · CENTURY 21 Arquitectos III · AMI 23921',
                 assin='José Bacelar · CENTURY 21 Arquitectos III · AMI 23921', ig='https://www.instagram.com/josembacelar/',
