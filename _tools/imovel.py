@@ -58,22 +58,22 @@ CREDITO_CSS = ".credito{background:#0F2438;border-top:5px solid var(--gold)}.cr{
 
 def angariacao(curto):
     m = lambda who, txt: wa(who, txt)
-    c1 = m('351935101667', 'Olá Casemiro, tenho um imóvel e gostava de pedir uma avaliação.')
-    f1 = m('351912706395', 'Olá Francisco, tenho um imóvel e gostava de pedir uma avaliação.')
+    c1 = m('351935101667', 'Olá Casemiro, tenho um imóvel e gostava de pedir uma avaliação gratuita.')
+    f1 = m('351912706395', 'Olá Francisco, tenho um imóvel e gostava de pedir uma avaliação gratuita.')
     c2 = m('351935101667', 'Olá Casemiro, tenho um imóvel para vender ou arrendar e gostava de saber como podem ajudar.')
     return f'''<section id="vender" class="ang">
   <div class="wrap">
     <span class="eyebrow">Tem um imóvel para vender ou arrendar?</span>
-    <h2 class="h2">Avaliamos e apresentamos o seu imóvel como este.</h2>
+    <h2 class="h2">Avaliação gratuita e uma apresentação como esta.</h2>
     <p class="lead">Este {e(curto)} foi apresentado com fotografia profissional, vídeo com o consultor e visita virtual 3D. Fazemos o mesmo pelo seu imóvel, do preço certo à escritura.</p>
     <div class="angs">
-      <div class="angc"><b>1. Avaliação do imóvel</b><p>Estudo de mercado da sua zona e preço de venda ou de renda ajustado à realidade.</p></div>
+      <div class="angc"><b>1. Avaliação gratuita</b><p>Estudo de mercado da sua zona e preço de venda ou de renda ajustado à realidade, sem custos.</p></div>
       <div class="angc"><b>2. Apresentação premium</b><p>Fotografia, vídeo-reportagem e visita 3D, divulgados no site, nas redes sociais e nos portais.</p></div>
       <div class="angc"><b>3. Acompanhamento total</b><p>Visitas, negociação, crédito do comprador e documentação até à escritura.</p></div>
     </div>
     <div class="btns" style="margin-top:22px">
-      <a class="b wa" href="{c1}" target="_blank" rel="noopener">{WA_ICON}Pedir avaliação · Casemiro</a>
-      <a class="b wa" href="{f1}" target="_blank" rel="noopener">{WA_ICON}Pedir avaliação · Francisco</a>
+      <a class="b wa" href="{c1}" target="_blank" rel="noopener">{WA_ICON}Avaliação gratuita · Casemiro</a>
+      <a class="b wa" href="{f1}" target="_blank" rel="noopener">{WA_ICON}Avaliação gratuita · Francisco</a>
       <a class="b line" href="{c2}" target="_blank" rel="noopener">Quero vender ou arrendar</a>
     </div>
   </div>
