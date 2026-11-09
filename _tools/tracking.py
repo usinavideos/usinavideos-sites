@@ -33,7 +33,7 @@ LINK = {'pt': ('Política de cookies', 'Preferências de cookies', '/cookies/'),
         'es': ('Política de cookies', 'Preferencias de cookies', '/cookies/#es')}
 
 
-FOTOS = {'Casemiro Ramos': '/cordiallevel/img/casemiro.jpg', 'Francisco Medeiros': '/cordiallevel/img/francisco.jpg'}
+FOTOS = {'José Bacelar': '/img/blog/em-breve/jose-bacelar.jpg', 'Casemiro Ramos': '/cordiallevel/img/casemiro.jpg', 'Francisco Medeiros': '/cordiallevel/img/francisco.jpg'}
 AVCSS = ('<style id="avcss">.dir .av{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--gold,#B8962E);display:block;margin-bottom:4px}'
          '.bar a .bav{width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid #fff;flex:none}</style>')
 

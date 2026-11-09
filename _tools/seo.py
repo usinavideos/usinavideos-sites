@@ -180,6 +180,38 @@ for path, (kind, name, area, rooms, loc, region, geo, offers) in LISTINGS.items(
     inject(f, '\n'.join(out))
     pages.append((url, None))
 
+# Imóveis de outros consultores (fora da Cordial Level)
+JB = {'@type': 'RealEstateAgent', '@id': BASE + '/josebacelar/#agente', 'name': 'José Bacelar · CENTURY 21 Arquitectos III',
+      'telephone': '+351917103516', 'email': 'josembacelar@century21.pt', 'url': 'https://josembacelar.century21.pt',
+      'areaServed': ['Matosinhos', 'Leça da Palmeira', 'Maia', 'Gondomar'],
+      'parentOrganization': {'@type': 'RealEstateAgent', 'name': 'CENTURY 21 Arquitectos III'},
+      'identifier': {'@type': 'PropertyValue', 'name': 'Licença AMI', 'value': '23921'},
+      'employee': {'@type': 'Person', 'name': 'José Bacelar', 'jobTitle': 'Consultor imobiliário', 'telephone': '+351917103516', 'email': 'josembacelar@century21.pt'},
+      'sameAs': ['https://www.instagram.com/josembacelar/', 'https://josembacelar.century21.pt']}
+OUTROS = {
+    'josebacelar/senhoradahora/': ('House', 'Moradia T3+T2+T2 com 650 m² de terreno na Senhora da Hora', 236, 7, 'Senhora da Hora, Matosinhos', 'Porto', (41.1907781, -8.6749612), [(530000, 'C0521-00237')], JB),
+}
+for path, (kind, name, area, rooms, loc, region, geo, offers, ag) in OUTROS.items():
+    f = path + 'index.html'
+    if not os.path.exists(os.path.join(ROOT, f)): continue
+    s = open(os.path.join(ROOT, f), encoding='utf-8').read()
+    url = f'{BASE}/{path}'
+    listing = {'@type': 'RealEstateListing', 'name': name, 'url': url, 'inLanguage': 'pt-PT',
+               'description': meta(s, 'description', 'name'), 'datePosted': keep(s, 'datePosted', url),
+               'about': place(kind, name, area, rooms, loc, region, geo),
+               'offers': [dict(offer(pr, ref, f'https://century21.pt/ref/{ref}'), seller={'@id': ag['@id']}) for pr, ref in offers],
+               'provider': {'@id': ag['@id']}, 'creator': {'@id': USINA['@id']}}
+    if meta(s, 'og:image'): listing['image'] = meta(s, 'og:image')
+    graph = [listing, dict(ag)]
+    yt = re.search(r'data-yt="([\w-]{11})"', s)
+    if yt:
+        graph.append({'@type': 'VideoObject', 'name': name, 'description': meta(s, 'description', 'name'), 'thumbnailUrl': f'https://i.ytimg.com/vi/{yt.group(1)}/hqdefault.jpg',
+                      'contentUrl': f'https://www.youtube.com/watch?v={yt.group(1)}', 'embedUrl': f'https://www.youtube.com/embed/{yt.group(1)}', 'uploadDate': keep(s, 'uploadDate', url)})
+    out = common(s, url, 'article')
+    out.append(ld({'@graph': graph}))
+    inject(f, '\n'.join(out))
+    pages.append((url, None))
+
 # Condomínio Coral (PT/EN/ES/FR)
 alts_coral = [(l, f'{BASE}/t4coral/' + ('' if fn == 'index.html' else fn)) for fn, (l, _) in CORAL_LANG.items()]
 for fn, (lang, desc) in CORAL_LANG.items():
@@ -267,6 +299,9 @@ open(os.path.join(ROOT, 'llms.txt'), 'w').write(f'''# Usina Vídeos
 Mediação imobiliária no Grande Porto e no Norte. Consultores: Casemiro Ramos (+351 935 101 667) e Francisco Medeiros (+351 912 706 395).
 - [Cordial Level · todos os imóveis]({BASE}/cordiallevel/)
 ''' + ''.join(f'- [{v[1]}]({BASE}/{k})\n' for k, v in LISTINGS.items()) + f'''
+## Outros consultores CENTURY 21
+José Bacelar · CENTURY 21 Arquitectos III · AMI 23921: Matosinhos, Leça da Palmeira, Maia e Gondomar (+351 917 103 516, josembacelar@century21.pt).
+''' + ''.join(f'- [{v[1]}]({BASE}/{k}): {v[8]["name"]}\n' for k, v in OUTROS.items()) + f'''
 ## Apresentações digitais
 - [Condomínio Coral, Foz do Douro (PT/EN/ES/FR)]({BASE}/t4coral/): dois T4+1, consultora Cheila Monteiro · CENTURY 21 Arquitectos II · AMI 11414
 

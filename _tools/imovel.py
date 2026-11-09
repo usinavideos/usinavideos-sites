@@ -53,10 +53,50 @@ CREDITO = """<section id="credito" class="credito">
   </div>
 </section>
 """
+def credito_ag(ag, curto):
+    t = wa(ag['num'], f"Olá {ag['curto']}, gostava de saber mais sobre o apoio no crédito habitação para a {curto}.")
+    return f"""<section id="credito" class="credito">
+  <div class="wrap cr">
+    <div><span class="eyebrow" style="color:var(--gold-l)">Crédito habitação</span>
+      <h2 class="h2" style="color:#fff">Ajudamos também no crédito.</h2>
+      <p class="lead" style="color:#D9D3C6">A CENTURY 21 Arquitectos III apoia na intermediação de crédito habitação: compara propostas de vários bancos, procura as melhores condições para o seu perfil e acompanha todo o processo até à escritura.</p>
+      <p class="lead" style="color:#fff;font-weight:700">Fale diretamente com o {e(ag['nome'])} e saiba todos os detalhes.</p></div>
+    <div class="crb"><a class="b wa" href="{t}" target="_blank" rel="noopener">Falar sobre crédito · {e(ag['curto'])}</a>
+      <a class="b line" style="border-color:var(--gold-l);color:var(--gold-l)" href="https://century21.pt/credito-habitacao" target="_blank" rel="noopener">Simulador CENTURY 21 ↗</a>
+      <small>{e(ag['assin'])}. Sujeito a aprovação das instituições de crédito.</small></div>
+  </div>
+</section>
+"""
+
+
+AG_CSS = ":root{--navy:#252526;--navy-d:#19191A;--gold:#A8986A;--gold-l:#CDBF96}.hero .band{background:rgba(25,25,26,.86)}.bar{background:rgba(25,25,26,.97)}.credito{background:#19191A}.media,.map{background:#19191A}.dirs{max-width:620px}.dirs{grid-template-columns:1fr!important}"
+
+
 CREDITO_CSS = ".credito{background:#0F2438;border-top:5px solid var(--gold)}.cr{display:grid;gap:28px;align-items:center}@media(min-width:900px){.cr{grid-template-columns:1.4fr 1fr}}.crb{display:grid;gap:12px}.crb .b{text-align:center;justify-content:center}.crb small{color:#B9B3A6;font-size:13px;line-height:1.5}"
 
 
-def angariacao(curto):
+def angariacao(curto, ag=None):
+    if ag:
+        n, c = ag['num'], ag['curto']
+        a1 = wa(n, f'Olá {c}, tenho um imóvel e gostava de pedir uma avaliação gratuita.')
+        a2 = wa(n, f'Olá {c}, tenho um imóvel para vender ou arrendar e gostava de saber como pode ajudar.')
+        return f'''<section id="vender" class="ang">
+  <div class="wrap">
+    <span class="eyebrow">Tem um imóvel para vender ou arrendar?</span>
+    <h2 class="h2">Quanto vale a sua casa? A avaliação é gratuita.</h2>
+    <p class="lead">Esta {e(curto)} foi apresentada com fotografia profissional, imagens de drone e vídeo-reportagem. O {e(ag['nome'])} faz o mesmo pelo seu imóvel em Matosinhos, Leça da Palmeira, Maia e Gondomar, do preço certo à escritura.</p>
+    <div class="angs">
+      <div class="angc"><b>1. Avaliação gratuita</b><p>Estudo de mercado da sua zona e preço de venda ou de renda ajustado à realidade, sem custos.</p></div>
+      <div class="angc"><b>2. Apresentação profissional</b><p>Fotografia, drone e vídeo-reportagem, divulgados no site, nas redes sociais e nos portais.</p></div>
+      <div class="angc"><b>3. Acompanhamento total</b><p>Visitas, negociação, crédito do comprador e documentação até à escritura.</p></div>
+    </div>
+    <div class="btns" style="margin-top:22px">
+      <a class="b wa" href="{a1}" target="_blank" rel="noopener">{WA_ICON}Pedir avaliação gratuita · {e(c)}</a>
+      <a class="b line" href="{a2}" target="_blank" rel="noopener">Quero vender ou arrendar</a>
+    </div>
+  </div>
+</section>
+'''
     m = lambda who, txt: wa(who, txt)
     c1 = m('351935101667', 'Olá Casemiro, tenho um imóvel e gostava de pedir uma avaliação gratuita.')
     f1 = m('351912706395', 'Olá Francisco, tenho um imóvel e gostava de pedir uma avaliação gratuita.')
@@ -83,6 +123,15 @@ def angariacao(curto):
 
 def leads(p, ref):
     r = f' (ref. {ref})' if ref else ''
+    ag = p.get('ag')
+    if ag:
+        n, c = ag['num'], ag['curto']
+        cards = [(wa(n, f"Olá {c}, gostava de marcar uma visita à {p['curto']}{r}."), 'Ver ao vivo', 'Marcar visita', f'WhatsApp {c} →'),
+                 (wa(n, f"Olá {c}, pode enviar-me a ficha completa da {p['curto']}{r}?"), 'Áreas, cadernetas e documentos', 'Receber a ficha completa', 'WhatsApp →'),
+                 (wa(n, f"Olá {c}, gostava de simular o crédito para a {p['curto']}{r}."), p.get('prest', 'Prestação estimada'), 'Simular o crédito', 'WhatsApp →'),
+                 (f"tel:+{n}", 'Prefere falar já?', f"Ligar ao {c}", ag['tel'] + ' →')]
+        return '<section id="interesse" style="padding-top:0"><div class="wrap">\n  <div class="lcards">' + ''.join(
+            f'<a class="lc" href="{h}"{"" if h.startswith("tel:") else " target=\"_blank\" rel=\"noopener\""}><small>{e(a)}</small><b>{e(b)}</b><span>{e(d)}</span></a>' for h, a, b, d in cards) + '</div></div></section>'
     cv = wa('351935101667', f"Olá Casemiro, gostava de marcar uma visita ao {p['curto']}{r}.")
     fv = wa('351912706395', f"Olá Francisco, gostava de marcar uma visita ao {p['curto']}{r}.")
     ff = wa('351935101667', f"Olá Casemiro, pode enviar-me a ficha completa do {p['curto']}{r}?")
@@ -305,7 +354,7 @@ def build(p):
     def dir_card(d):
         return f'''<article class="dir">
         <h3>{d['nome']}</h3>
-        <p class="role">Consultor · Cordial Level | CENTURY 21 Arquitectos · AMI 11414</p>
+        <p class="role">{d.get('role', 'Consultor · Cordial Level | CENTURY 21 Arquitectos · AMI 11414')}</p>
         <p class="cta-lbl">Fale comigo!</p>
         <div class="btns">
           <a class="b wa" href="{wa(d['num'], msg(d['curto']))}" target="_blank" rel="noopener">{WA_ICON}WhatsApp {d['curto']}</a>
@@ -315,7 +364,12 @@ def build(p):
         <p class="mail">E-mail: <a href="mailto:{d['mail']}?subject={up.quote(('Ref. ' + ref + ' · ' if ref else '') + p['curto'])}">{d['mail']}</a></p>
       </article>'''
 
-    bar = ''.join(f'<a href="{wa(d["num"], msg(d["curto"]))}" target="_blank" rel="noopener" aria-label="Fale comigo: WhatsApp {d["nome"]}">{WA_ICON}{d["curto"]}</a>' for d in DIRETORES)
+    ag = p.get('ag')
+    dirs = [ag] if ag else DIRETORES
+    base = ag['base'] if ag else 'cordiallevel'
+    assin = ag['assin'] if ag else 'Cordial Level | CENTURY 21 Arquitectos · AMI 11414'
+    bar = ''.join(f'<a href="{wa(d["num"], msg(d["curto"]))}" target="_blank" rel="noopener" aria-label="Fale comigo: WhatsApp {d["nome"]}">{WA_ICON}{d["curto"]}</a>' for d in dirs)
+    if ag: bar += f'<a href="tel:+{ag["num"]}" aria-label="Ligar a {ag["nome"]}" style="background:transparent;border:1px solid var(--gold-l)">{TEL_ICON}Ligar</a>'
     usina = USINA_WA + up.quote(f"Olá Freire, vi a apresentação do imóvel {p['curto']} e gostaria de saber mais sobre os serviços da Usina Vídeos.")
 
     return f'''<!doctype html>
@@ -327,15 +381,15 @@ def build(p):
 <meta name="description" content="{e(p['desc'])}">
 <meta property="og:title" content="{e(p['title'])}">
 <meta property="og:description" content="{e(p['desc'])}">
-<meta property="og:image" content="{f"https://usinavideos.pt/cordiallevel/{p['slug']}/img/{p['hero']}.jpg" if p.get('hero') else 'https://usinavideos.pt/cordiallevel/img/capa-logo.jpg'}">
-<meta name="theme-color" content="#1B3A6B">
+<meta property="og:image" content="{f"https://usinavideos.pt/{base}/{p['slug']}/img/{p['hero']}.jpg" if p.get('hero') else 'https://usinavideos.pt/cordiallevel/img/capa-logo.jpg'}">
+<meta name="theme-color" content="{'#252526' if ag else '#1B3A6B'}">
 <link rel="icon" href="/img/logo/usina-simbolo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
-<style>{CSS}{CREDITO_CSS}{SOCIAL_CSS}{ANG_CSS if p.get('angariacao', True) else ''}</style>
+<style>{CSS}{CREDITO_CSS}{SOCIAL_CSS}{ANG_CSS if p.get('angariacao', True) else ''}{AG_CSS if ag else ''}</style>
 </head>
 <body>
-<nav class="nav" aria-label="Secções"><div class="wrap"><a class="brand" href="../">Cordial <b>Level</b></a>{nav}</div></nav>
+<nav class="nav" aria-label="Secções"><div class="wrap"><a class="brand" href="{'#inicio' if ag else '../'}">{ag['brand'] if ag else 'Cordial <b>Level</b>'}</a>{nav}</div></nav>
 
 <header id="inicio" class="hero{'' if p.get('hero') else ' plain'}">
   {f'<img src="{img(p["hero"], 2200)}" srcset="{img(p["hero"], 900)} 900w, {img(p["hero"], 2200)} 1920w" sizes="100vw" alt="{e(p["hero_alt"])}" fetchpriority="high"' + (f' style="object-position:{p["hero_pos"]}"' if p.get("hero_pos") else '') + '>' if p.get('hero') else '<img class="logo" src="../img/logo-cordial-level-claro.png" alt="Cordial Level">'}
@@ -344,7 +398,7 @@ def build(p):
     <h1>{e(p['h1'])}</h1>
     <p class="sub">{e(p['sub'])}</p>
     <div class="price">{e(p['price'])}</div>
-    <p class="by">Cordial Level | CENTURY 21 Arquitectos · AMI 11414{f" · Ref. {ref}" if ref else ""}</p>
+    <p class="by">{e(assin)}{f" · Ref. {ref}" if ref else ""}</p>
   </div></div>
 </header>
 
@@ -390,22 +444,22 @@ def build(p):
 </section>
 
 {closing}
-{CREDITO}{angariacao(p['curto']) if p.get('angariacao', True) else ''}<section id="contacto">
+{credito_ag(ag, p['curto']) if ag else CREDITO}{angariacao(p['curto'], ag) if p.get('angariacao', True) else ''}<section id="contacto">
   <div class="wrap">
     <span class="eyebrow">Contacto</span>
     <h2 class="h2">Marque a sua visita</h2>
-    <p class="lead">Fale diretamente com um dos consultores da Cordial Level.</p>
-    <div class="dirs">{dir_card(DIRETORES[0])}{dir_card(DIRETORES[1])}</div>
-    <a class="allprops" href="{CRAMOS}" target="_blank" rel="noopener"><span><small>Todos os imóveis da Cordial Level</small>century21.pt/consultores/cramos</span><b>Ver a carteira completa →</b></a>
+    <p class="lead">{f"Fale diretamente com o consultor {e(ag['nome'])}." if ag else 'Fale diretamente com um dos consultores da Cordial Level.'}</p>
+    <div class="dirs">{''.join(dir_card(d) for d in dirs)}</div>
+    <a class="allprops" href="{ag['site'] if ag else CRAMOS}" target="_blank" rel="noopener"><span><small>{f"Todos os imóveis do {e(ag['nome'])}" if ag else 'Todos os imóveis da Cordial Level'}</small>{ag['site_txt'] if ag else 'century21.pt/consultores/cramos'}</span><b>Ver a carteira completa →</b></a>
     <p class="more" style="margin-top:14px">{(f'<a href="{p["ficha_url"]}" target="_blank" rel="noopener" style="color:var(--navy)">Ver o anúncio no site CENTURY 21 (ref. {ref}) ↗</a>' if p.get('ficha_url') else '') or ' · '.join(f'<a href="https://century21.pt/comprar/{r}" target="_blank" rel="noopener" style="color:var(--navy)">Ficha CENTURY 21 (ref. {r}) ↗</a>' for r in p.get('refs', [ref]))}</p>
-    <p class="sig">A sua exigência, a nossa assinatura.</p>
+    <p class="sig">{e(ag['sig']) if ag else 'A sua exigência, a nossa assinatura.'}</p>
   </div>
 </section>
 
-<section id="redes" style="padding-top:0"><div class="wrap">{social_banner('cl')}</div></section>
+{'' if ag else '<section id="redes" style="padding-top:0"><div class="wrap">' + social_banner('cl') + '</div></section>'}
 
 <footer><div class="wrap">
-  <span><b style="color:#F7F5F0;font-weight:700">Cordial Level | CENTURY 21 Arquitectos · AMI 11414</b> · <a href="https://www.instagram.com/cordiallevel/">Instagram</a> · <a href="https://www.facebook.com/cordiallevel/">Facebook</a> · <a href="https://www.youtube.com/@CordialLevelPT">YouTube</a><br>{e(p['legal'])} Cada agência CENTURY 21 é jurídica e financeiramente independente.</span>
+  <span><b style="color:#F7F5F0;font-weight:700">{e(assin)}</b> · {(f'<a href="{ag["ig"]}">Instagram @josembacelar</a> · <a href="{ag["site"]}">{ag["site_txt"]}</a>' if ag else '<a href="https://www.instagram.com/cordiallevel/">Instagram</a> · <a href="https://www.facebook.com/cordiallevel/">Facebook</a> · <a href="https://www.youtube.com/@CordialLevelPT">YouTube</a>')}<br>{e(p['legal'])} Cada agência CENTURY 21 é jurídica e financeiramente independente.</span>
   <a class="usina" href="{usina}" target="_blank" rel="noopener" aria-label="Usina Vídeos — WhatsApp"><span>Produção audiovisual</span><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
 </div></footer>
 
@@ -805,12 +859,83 @@ IMOVEIS = {
         legal='Informação sujeita a confirmação. *Prestação indicativa do simulador CENTURY 21, sujeita a aprovação bancária. Certificado energético D. Licença de utilização n.º 446, CM Matosinhos.',
         video='shp7XDfpkHM', video_img='pf-int-sala', video_vertical=True, video_h2='O Francisco Medeiros apresenta o T2', tour='https://realsee.ai/JVLLgJmB', tour_img='pf-int-sala-3',
     ),
+    'senhoradahora': dict(
+        ag=dict(nome='José Bacelar', curto='José', num='351917103516', tel='+351 917 103 516', mail='josembacelar@century21.pt',
+                site='https://josembacelar.century21.pt', site_txt='josembacelar.century21.pt',
+                role='Consultor imobiliário · CENTURY 21 Arquitectos III · AMI 23921',
+                assin='José Bacelar · CENTURY 21 Arquitectos III · AMI 23921', ig='https://www.instagram.com/josembacelar/',
+                brand='José <b>Bacelar</b>', base='josebacelar', sig='Quanto vale a tua casa? Fale comigo.'),
+        ref='C0521-00237', curto='moradia T3+T2+T2 na Senhora da Hora', ficha_url='https://century21.pt/ref/C0521-00237', prest='Cerca de 1 472 €/mês*',
+        title='Moradia T3+T2+T2 com 650 m² de terreno, Senhora da Hora · 530 000 € · José Bacelar',
+        desc='Moradia com três casas independentes (T3 + T2 + T2) na Senhora da Hora, Matosinhos: 236 m² úteis, terreno de 650 m², garagem para 3 carros, árvores de fruto e horta. 530 000 €. Fotografias, drone e vídeo.',
+        hero='ae-07', hero_pos='50% 100%', hero_alt='A moradia T3+T2+T2 na Senhora da Hora vista de drone, com a escada, o terraço e o jardim',
+        loc='Senhora da Hora · Matosinhos · Ref. C0521-00237', h1='Três casas, um só terreno, na Senhora da Hora',
+        sub='Moradia com um T3 e dois T2 independentes, 650 m² de terreno, garagem para 3 carros e jardim com árvores de fruto.',
+        price='530 000 €',
+        quote='Viver perto da família, cada um na sua casa. Ou investir com três rendimentos.',
+        intro='Moradia em propriedade horizontal com três frações independentes, cada uma com o seu artigo matricial: um T3 no piso superior e dois T2 no rés-do-chão. São 236 m² úteis num terreno de 650 m², com garagem para 3 carros, árvores de fruto e espaço para horta. Ideal para famílias que querem viver perto umas das outras, mantendo a privacidade, ou para quem procura um investimento com várias rendas.',
+        photos_intro=['ae-07', 'ae-10', 'ae-16'],
+        ficha_h2='Uma moradia, três casas independentes',
+        ficha_lead=['No piso superior, um T3 com uma sala ampla e luminosa, duas casas de banho, cozinha, varanda e uma área exterior privada. No rés-do-chão, dois T2 independentes, um deles com lavandaria fechada.',
+                    'Como cada fração tem o seu artigo matricial, pode viver numa e arrendar as outras, juntar a família sob o mesmo terreno ou vender cada casa em separado.'],
+        photos_ficha=['t3-07', 't2a-12', 't2b-14'],
+        facts=[('Preço', '530 000 €'), ('Tipologia', 'T3 + T2 + T2'), ('Área útil', '236 m²'), ('Área bruta', '237 m²'), ('Terreno', '650 m²'),
+               ('Quartos', '7'), ('Casas de banho', '4'), ('Garagem', '3 carros'), ('Ano', '1977'), ('Cert. energético', 'C')],
+        rooms_h3='As três casas',
+        rooms=[('T3 · piso superior · sala ampla, varanda e terraço', '3 quartos · 2 WC'), ('T2 · rés-do-chão · com lavandaria fechada', '2 quartos · 1 WC'),
+               ('T2 · rés-do-chão · independente', '2 quartos · 1 WC'), ('Terreno com árvores de fruto e horta', '650 m²'), ('Garagem', '3 carros')],
+        photos_rooms=['t3-15', 't2a-01', 'ex-10'],
+        feat_h3='Destaques',
+        features=['Três frações independentes, cada uma com artigo matricial', 'T3 no piso superior com 2 casas de banho', 'Área exterior privada e varanda no T3',
+                  'Dois T2 no rés-do-chão, um com lavandaria fechada', 'Terreno de 650 m² com árvores de fruto e horta', 'Garagem para 3 carros',
+                  'Vista sobre a cidade', 'Metro Senhor de Matosinhos a cerca de 1 km', 'Para viver em família ou investir'],
+        extras=[
+            dict(id='drone', eb='Vista de cima', h2='A moradia e os 650 m² de terreno, vistos de drone', dark=True, photos=['ae-08', 'ae-17', 'ae-03'],
+                 paras=['De cima percebe-se a dimensão do conjunto: a casa ao centro do lote, o jardim com árvores de fruto, a horta, o pátio e o acesso à garagem, numa rua tranquila da Senhora da Hora.']),
+            dict(id='fachada', eb='A fachada', h2='Uma casa com entrada própria para cada família', photos=['ae-11', 'ex-02', 'ex-03'],
+                 paras=['A escada exterior leva diretamente ao T3, no piso superior, com varanda corrida e terraço. Os dois T2 do rés-do-chão têm entradas independentes pelo pátio.']),
+            dict(id='t3', eb='Piso superior', h2='O T3: sala ampla, muita luz e duas casas de banho', photos=['t3-02', 't3-08', 't3-29'],
+                 paras=['A casa principal ocupa o piso superior: uma sala grande com janelas largas, cozinha com despensa, três quartos e duas casas de banho, com acesso à varanda e a uma área exterior privada.']),
+            dict(id='t2', eb='Rés-do-chão', h2='Dois T2 independentes', dark=True, photos=['t2a-13', 't2a-17', 't2b-09'],
+                 paras=['Cada T2 tem entrada própria. Um está mobilado e tem lavandaria fechada; o outro está desocupado e pronto a ser renovado ao seu gosto.']),
+            dict(id='exterior', eb='O terreno', h2='650 m² com jardim, árvores de fruto e horta', photos=['ae-02', 'ex-08', 'ex-11'],
+                 paras=['À volta da casa, um terreno de 650 m² com árvores de fruto, espaço para horta e um pátio. A garagem leva três carros.']),
+            dict(id='destaque', eb='Em destaque', h2='O essencial desta moradia', photos=['ae-14', 't3-04', 'ae-15'],
+                 chips=['T3 + T2 + T2', '530 000 €', '650 m² de terreno', '3 artigos matriciais', 'Garagem para 3 carros', 'Árvores de fruto', 'Vista sobre a cidade', 'Habitação ou investimento']),
+        ],
+        closing=dict(id='versatil', eb='Uma oportunidade rara', h2='Para viver em família ou para investir', photos=['ae-10'],
+                     paras=['Três casas independentes num só terreno, na Senhora da Hora, perto do metro, do NorteShopping e do Hospital Pedro Hispano: para juntar a família ou para ter várias rendas.',
+                            'Marque a sua visita com o José Bacelar e venha conhecer esta moradia.']),
+        gallery=[('ae-07', 'A moradia vista de drone'), ('ae-11', 'A fachada e a escada de acesso ao T3'), ('ae-10', 'A fachada vista de drone'),
+                 ('ae-08', 'A casa, o jardim e o acesso'), ('ae-16', 'A moradia e o jardim vistos de drone'), ('ae-17', 'O terreno e a rua vistos de cima'),
+                 ('ae-03', 'O telhado e o logradouro vistos de cima'), ('ae-02', 'O terreno visto de cima'), ('ae-12', 'A envolvente e os acessos'),
+                 ('ae-14', 'Vista sobre a cidade'), ('ae-15', 'Vista sobre a cidade'),
+                 ('ex-02', 'A casa e o jardim'), ('ex-03', 'A escada de acesso ao T3'), ('ex-08', 'O jardim com árvores de fruto'),
+                 ('ex-10', 'Pátio e entrada do rés-do-chão'), ('ex-11', 'Pátio'), ('ex-01', 'Vista da entrada'),
+                 ('t3-02', 'T3 · sala'), ('t3-03', 'T3 · sala'), ('t3-05', 'T3 · sala'), ('t3-07', 'T3 · sala'), ('t3-06', 'T3 · sala'),
+                 ('t3-04', 'T3 · vista da janela'), ('t3-08', 'T3 · cozinha'), ('t3-09', 'T3 · cozinha'), ('t3-11', 'T3 · cozinha'),
+                 ('t3-15', 'T3 · área exterior privada'), ('t3-14', 'T3 · varanda'), ('t3-31', 'T3 · varanda'),
+                 ('t3-19', 'T3 · casa de banho'), ('t3-20', 'T3 · casa de banho'), ('t3-17', 'T3 · casa de banho'),
+                 ('t3-23', 'T3 · quarto'), ('t3-25', 'T3 · quarto'), ('t3-27', 'T3 · quarto'), ('t3-29', 'T3 · quarto'), ('t3-30', 'T3 · quarto'), ('t3-32', 'T3 · quarto'),
+                 ('t2a-12', 'T2 · sala e zona de refeições'), ('t2a-11', 'T2 · sala'), ('t2a-13', 'T2 · sala'), ('t2a-07', 'T2 · cozinha'), ('t2a-08', 'T2 · cozinha'),
+                 ('t2a-01', 'T2 · lavandaria fechada'), ('t2a-03', 'T2 · lavandaria fechada'), ('t2a-17', 'T2 · quarto'), ('t2a-25', 'T2 · quarto'), ('t2a-26', 'T2 · quarto'),
+                 ('t2a-19', 'T2 · casa de banho'),
+                 ('t2b-14', 'T2 desocupado · sala e cozinha'), ('t2b-09', 'T2 desocupado · sala'), ('t2b-11', 'T2 desocupado · cozinha'),
+                 ('t2b-01', 'T2 desocupado · quarto'), ('t2b-05', 'T2 desocupado · quarto'), ('t2b-07', 'T2 desocupado · casa de banho')],
+        alt='Moradia T3+T2+T2 na Senhora da Hora, Matosinhos', gal_h2='As três casas, o terreno e a envolvente',
+        gal_note='Fotografias e drone Usina Vídeos, tratadas digitalmente para cor e luz.',
+        loc_h2='Senhora da Hora: tudo perto, sem sair de Matosinhos',
+        loc_txt='Farmácia a cerca de 700 m, escola primária a 800 m, metro Senhor de Matosinhos a 1 km, supermercados a 1,5 km, Hospital Pedro Hispano a 1,8 km, praia de Matosinhos, NorteShopping e Parque da Cidade a cerca de 2,5 km, aeroporto a 8 km e centro do Porto a 9 km, segundo a ficha do imóvel.',
+        maps='Senhora da Hora, Matosinhos', geo=(41.1907781, -8.6749612),
+        legal='Informação sujeita a confirmação; áreas e características segundo a ficha CENTURY 21. *Prestação indicativa do simulador CENTURY 21, sujeita a aprovação bancária. Certificado energético C.',
+        video='3se-8yLE3XU', video_img='ae-07', video_h2='A moradia em vídeo, com imagens de drone', tour=None,
+    ),
 }
 
 if __name__ == '__main__':
     for slug, p in IMOVEIS.items():
         p['slug'] = slug
-        d = os.path.join(ROOT, 'cordiallevel', slug)
+        d = os.path.join(ROOT, p['ag']['base'] if p.get('ag') else 'cordiallevel', slug)
         os.makedirs(d, exist_ok=True)
         with open(os.path.join(d, 'index.html'), 'w') as f:
             f.write(build(p))
