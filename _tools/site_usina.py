@@ -495,7 +495,7 @@ def page(lang):
     <div class="contact">
       <a class="wa" href="{wa}" target="_blank" rel="noopener"><small>{e(t['wa_lbl'])}</small><b>+351 912 988 971</b><span>{e(t['cta'])} →</span></a>
       <a href="mailto:{MAIL}?subject={up.quote(t['cta'] + ' · Usina Vídeos')}"><small>{e(t['mail_lbl'])}</small><b>{MAIL}</b></a>
-      <a href="https://www.instagram.com/usina.videos" target="_blank" rel="noopener"><small>{e(t['social'])}</small><b>@usina.videos</b><span>Instagram · Facebook /usinacomvideos</span></a>
+      <a href="https://www.instagram.com/usina.videos" target="_blank" rel="noopener"><small>{e(t['social'])}</small><b>@usina.videos</b><span>Instagram · Facebook Usina Vídeos</span></a>
     </div>
   </div>
 </section>
@@ -503,7 +503,7 @@ def page(lang):
 <section id="siga" style="padding-bottom:0"><div class="wrap">{social_banner('usina', lang)}</div></section>
 <footer><div class="wrap" style="display:block;margin-bottom:28px">{mea_banner(lang, 'usinavideos')}</div><div class="wrap">
   <a href="/{t['path']}" aria-label="Usina Vídeos · página inicial"><img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" width="1367" height="298"></a>
-  <span>© Usina Vídeos · {e(t['foot'])} · <a href="https://www.facebook.com/usinacomvideos" target="_blank" rel="noopener">Facebook</a></span>
+  <span>© Usina Vídeos · {e(t['foot'])} · <a href="https://www.facebook.com/profile.php?id=61596609981238" target="_blank" rel="noopener">Facebook</a></span>
 </div></footer>
 <a class="fab" href="{wa}" target="_blank" rel="noopener" aria-label="{e(t['fab'])}">{WA_SVG}</a>
 </body>

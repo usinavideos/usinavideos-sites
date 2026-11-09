@@ -16,7 +16,7 @@ BRANDS = {
     'usina': dict(cls='sb-us', eb='Siga a Usina Vídeos', h='Bastidores e trabalhos novos todas as semanas.',
                   p='Reportagens, making of, vlogs e vídeos imobiliários nas redes da Usina e no canal Dicas do Freire, no YouTube.',
                   items=[('ig', IG, 'Instagram', '@usina.videos', 'Seguir', 'https://www.instagram.com/usina.videos'),
-                         ('fb', FB, 'Facebook', '/usinacomvideos', 'Seguir', 'https://www.facebook.com/usinacomvideos'),
+                         ('fb', FB, 'Facebook', 'Usina Vídeos', 'Seguir', 'https://www.facebook.com/profile.php?id=61596609981238'),
                          ('yt', YT, 'YouTube', 'Dicas do Freire · vlogs em Portugal', 'Subscrever', 'https://www.youtube.com/@DicasdoFreire?sub_confirmation=1'),
                          ('in', IN, 'LinkedIn', 'Freire Neto', 'Seguir', 'https://www.linkedin.com/in/freireneto/')]),
 }

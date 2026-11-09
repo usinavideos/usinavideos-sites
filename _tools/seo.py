@@ -24,7 +24,7 @@ USINA = {
     'knowsLanguage': ['pt-PT', 'en', 'es'], 'foundingDate': '2002',
     'founder': [{'@type': 'Person', 'name': 'Freire Neto', 'jobTitle': 'Jornalista e produtor audiovisual', 'sameAs': ['https://www.linkedin.com/in/freireneto/', 'https://www.instagram.com/freireneto', 'https://www.instagram.com/neofreireportugal']},
                 {'@type': 'Person', 'name': 'Sandra Freire', 'jobTitle': 'Edição, produção e administração'}],
-    'sameAs': ['https://www.instagram.com/usina.videos', 'https://www.facebook.com/usinacomvideos', 'https://motoreseacao.com',
+    'sameAs': ['https://www.instagram.com/usina.videos', 'https://www.facebook.com/profile.php?id=61596609981238', 'https://motoreseacao.com',
                'https://www.youtube.com/@motoreseacao', 'https://www.youtube.com/@DicasdoFreire/'],
     'makesOffer': [{'@type': 'Offer', 'itemOffered': {'@type': 'Service', 'name': n}} for n in
                    ['Reportagem fotográfica de imóveis', 'Vídeo com drone', 'Vídeo com o consultor', 'Visita virtual 3D',
