@@ -24,6 +24,24 @@ CATS = {'bastidores': 'Bastidores e making of', 'comunicacao': 'Comunicação e 
         'mercados': 'Mercados', 'cases': 'Cases'}
 
 POSTS = [
+    dict(slug='do-papel-a-tela-foz-do-douro', cat='bastidores', date='2026-11-09',
+         title='Do papel à tela: um voo pela Foz do Douro',
+         desc='Drone e câmara na mão pela Foz do Douro, dos molhes ao Jardim do Passeio Alegre: o novo filme de bastidores da Usina Vídeos, com Freire Neto e Sandra Freire.',
+         img='/img/blog/foz-do-papel-a-tela.jpg', img_cap='Foz do Douro vista de cima · drone Usina Vídeos',
+         lead='Quando o Douro encontra o Atlântico, o cenário fala por si. Fomos à Foz com o drone e a câmara para mostrar como a Usina transforma um guião em imagem.',
+         body='''<p>Nesta gravação na <b>Foz do Douro</b>, no Porto, <b>Freire Neto</b> e <b>Sandra Freire</b> captaram cada detalhe: os molhes e o farol, a marginal entre palmeiras, a Fortaleza de São João da Foz e o <b>Jardim do Passeio Alegre</b> com as cores do outono.</p>
+<figure class="bf"><video controls playsinline preload="none" poster="/img/blog/foz-do-papel-a-tela.jpg" style="width:100%;border-radius:16px;background:#000;aspect-ratio:16/9"><source src="/media/foz-do-papel-a-tela.mp4" type="video/mp4"></video><figcaption>Do papel à tela · Foz do Douro, Porto · produção e edição Usina Vídeos</figcaption></figure>
+<h2>Décadas de história, a mesma vontade</h2>
+<p>Desde 1997, acompanhámos a passagem do jornal para a era das redes sociais. O que nos move continua igual: contar boas histórias, gerar impacto real e entregar soluções completas em jornalismo, marketing e comunicação.</p>
+<h2>Como foi feito</h2>
+<ul><li><b>Drone</b> (DJI Mini 4 Pro) sobre os molhes, a marginal e o rio.</li>
+<li><b>Câmara em terra</b>, com planos de pormenor no paredão e no jardim.</li>
+<li><b>Edição e música</b> pensadas para Reels, YouTube e site, num só filme.</li></ul>
+<p>É o mesmo método que usamos nas vídeo-reportagens de imóveis, como o <a href="/t4coral/">Condomínio Coral, na Foz</a>, e nos trabalhos para a <a href="/cordiallevel/">Cordial Level</a>.</p>
+<p><a href="https://www.instagram.com/reel/Deu9izSoAB6/" target="_blank" rel="noopener">Veja também no Instagram do @neofreireportugal ↗</a></p>''',
+         dica='Grave a sua zona com luz de manhã cedo ou ao fim da tarde: o céu e o rio ficam com mais cor e menos reflexos.',
+         veredito='Um lugar bem filmado vende-se sozinho. É isso que fazemos por imóveis, marcas e cidades.',
+         links=[('Pedir um orçamento por WhatsApp', WA), ('Ver o canal Dicas do Freire', 'https://www.youtube.com/@DicasdoFreire')]),
     dict(slug='cordial-level-nas-lives-motores-e-acao', cat='cases', date='2026-11-07',
          title='Cordial Level estreia-se nas lives do Motores e Ação',
          desc='A partir de agora, a Cordial Level é exibida e divulgada nas lives do Motores e Ação. A estreia foi na sexta-feira, 6 de novembro, com Freire Neto.',
