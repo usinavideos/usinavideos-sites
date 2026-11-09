@@ -253,7 +253,7 @@ section{padding:88px 0}
 .fab{position:fixed;right:16px;bottom:16px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3)}
 .fab{color:#fff}.fab svg{width:30px;height:30px}
 /* quem */
-.team{display:grid;gap:12px;margin-top:22px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.team>div{background:#fff;border:1px solid #E3DED6;border-left:5px solid var(--c);border-radius:14px;padding:16px 18px}.team b{display:block;font-size:18px;color:var(--ink)}.team span{display:block;margin-top:2px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}.team p{margin:8px 0 0!important;font-size:15px}
+.team{display:grid;gap:12px;margin-top:22px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.team>div{background:#fff;border:1px solid #E3DED6;border-left:5px solid var(--c);border-radius:14px;padding:16px 18px}.team b{display:block;font-size:18px;color:var(--ink)}.team span{display:block;margin-top:2px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}.team p{margin:8px 0 0!important;font-size:15px}.team>div{display:flex;gap:14px;align-items:flex-start}.tav{width:72px;height:72px;border-radius:50%;object-fit:cover;flex:none;border:3px solid var(--c)}.tmono{font-style:normal;display:flex;align-items:center;justify-content:center;background:var(--c);color:#fff;font-weight:900;font-size:22px;letter-spacing:.04em}
 .two{display:grid;gap:40px}
 @media(min-width:900px){.two{grid-template-columns:1.25fr 1fr;gap:64px;align-items:start}}
 .two p{margin:0 0 16px}.two b{color:var(--ink)}
@@ -373,7 +373,11 @@ def page(lang):
     steps = ''.join(f'<div class="step"><h3>{e(a)}</h3><p>{e(b)}</p></div>' for a, b in t['steps'])
     stats = ''.join(f'<div><b>{a}</b><span>{e(b)}</span></div>' for a, b in t['stats'])
     quem = ''.join(f'<p>{x}</p>' for x in t['quem_p'])
-    quem += '<div class="team">' + ''.join(f'<div style="--c:{COLORS[i % 3]}"><b>{e(n)}</b><span>{e(r)}</span><p>{e(d)}</p></div>' for i, (n, r, d) in enumerate(t['team'])) + '</div>'
+    def av(n):
+        if n == 'Freire Neto':
+            return '<img class="tav" src="/img/equipa/freire-neto-quadrado.jpg" alt="Freire Neto" title="Foto: Sandra Freire" width="72" height="72" loading="lazy">'
+        return f'<i class="tav tmono">{e("".join(x[0] for x in n.split()[:2]))}</i>'
+    quem += '<div class="team">' + ''.join(f'<div style="--c:{COLORS[i % 3]}">{av(n)}<div><b>{e(n)}</b><span>{e(r)}</span><p>{e(d)}</p></div></div>' for i, (n, r, d) in enumerate(t['team'])) + '</div>'
     sites = ''.join(f'<article class="card" style="--c:{COLORS[i % 3]}"><span class="n">{i + 1:02d}</span><h3>{e(a)}</h3><p>{e(b)}</p><p class="ex">{e(t["sites"]["ex"])}: ' + ' · '.join(f'<a href="{u}"' + (' target="_blank" rel="noopener"' if u.startswith('http') else '') + f'>{e(l)} →</a>' for l, u in exs) + '</p></article>' for i, (a, b, exs) in enumerate(t['sites']['items']))
     socials = ''.join(f'<a class="mini {k}" href="{u}" target="_blank" rel="noopener">{MEA_ICON if "motoreseacao" in u else (IG_SVG if k == "ig" else IN_SVG)}<div><b>{e(a)}</b><span>{e(b)}</span></div><em>{e(c)} →</em></a>' for u, k, a, b, c in t['socials'])
     return f'''<!doctype html>

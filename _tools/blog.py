@@ -349,7 +349,7 @@ BLOG_CSS = '''
 .clb img{width:110px;height:auto}.clb b{display:block;color:#fff;font-size:19px;line-height:1.3}.clb p{margin-top:8px!important;font-size:16px!important;color:#D7D2C6}
 .clr{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.clr a{background:#C9A45C;color:#0F2438;font-weight:800;font-size:14px;padding:9px 14px;border-radius:999px;text-decoration:none}
 .clb small{display:block;margin-top:10px;font-size:12px;color:#B9B3A6}@media(max-width:560px){.clb{grid-template-columns:1fr}.clb img{width:90px}}
-.sig{margin-top:26px;font-weight:800;color:var(--ink)}.blinks{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.autor{display:flex;gap:14px;align-items:center;margin-top:30px;padding:14px 16px;border:1px solid #E3DED6;border-radius:14px;background:#fff}.autor img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:3px solid #E5AE29;flex:none}.autor b{display:block;color:var(--ink)}.autor span{display:block;font-size:14px;color:#5E5855;line-height:1.4}.autor small{display:block;font-size:11px;color:#8A8380;margin-top:2px}.sig{margin-top:26px;font-weight:800;color:var(--ink)}.blinks{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
 '''
 
 
@@ -442,6 +442,7 @@ def build():
   {p['body']}
   <div class="dica"><b>💡 Dica do Freire</b><p>{e(p['dica'])}</p></div>
   <div class="ver"><b>Veredito Usina</b><p>{e(p['veredito'])}</p></div>
+  <div class="autor"><img src="/img/equipa/freire-neto-quadrado.jpg" alt="Freire Neto" width="64" height="64" loading="lazy"><div><b>Freire Neto</b><span>Jornalista desde 1997 · fundador da Usina Vídeos e do Motores e Ação</span><small>Foto: Sandra Freire</small></div></div>
   <p class="sig">{e(SIG)}</p>
   {p.get('cta', '')}
   <div class="blinks">{links}<a class="btn o" href="/blog/">Mais artigos</a></div>
