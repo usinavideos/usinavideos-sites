@@ -13,18 +13,18 @@ AMI = W.AMI
 DATE = '2026-11-04'
 
 W.PAGES = [
-    dict(id='capa', kind='full', img='capa.jpg', alt='Fachada do edifício do T2 em Perafita', kicker='CORDIAL LEVEL · NOVA OPORTUNIDADE',
-         h='T2 em Perafita', big=True, p='Ao lado da A28, perto de escolas e transportes, em excelentes condições.', foot=AMI),
+    dict(id='capa', kind='full', img='capa.jpg', alt='Fachada do edifício do T2 em Perafita', kicker='CORDIAL LEVEL · À VENDA · 258 000 €',
+         h='T2 em Perafita', big=True, p='Remodelado, 83 m², com lugar de garagem e arrumos, ao lado da A28.', foot=AMI),
     dict(id='video', kind='video', kicker='EM VÍDEO', h='O Francisco Medeiros apresenta', p='Ligue o som.', foot=AMI),
     dict(id='sala', kind='frame', img='sala.jpg', alt='Sala com zona de refeições', kicker='POR DENTRO', h='Sala com zona de refeições',
-         chips=['T2', 'Excelentes condições', 'Pavimento em madeira'], foot=AMI, outlink=('/cordiallevel/perafita/', 'Ver o imóvel')),
+         chips=['T2 · 83 m²', 'Cozinha remodelada', 'Pavimento flutuante'], foot=AMI, outlink=('/cordiallevel/perafita/', 'Ver o imóvel')),
     dict(id='tour', kind='frame', img='tour.jpg', alt='Sala do T2 em Perafita', kicker='VISITA VIRTUAL 3D', h='Percorra a casa sem sair do sofá',
          p='Todas as divisões, em 3D, no telemóvel ou no computador.', foot=AMI, outlink=('https://realsee.ai/JVLLgJmB', 'Abrir a visita 3D')),
     dict(id='mobilidade', kind='frame', img='transportes.jpg', alt='Paragem de autocarro em frente ao edifício', kicker='LOCALIZAÇÃO', h='A A28 e os transportes à porta',
          chips=['Ao lado da A28', 'Escolas', 'Autocarro', 'Perafita · Matosinhos'], foot=AMI),
-    dict(id='garagem', kind='frame', img='garagem.jpg', alt='Garagem coletiva do edifício', kicker='NO EDIFÍCIO', h='Garagem e arrumos',
-         chips=['Garagem coletiva', 'Arrumos', 'Zona verde'], foot=AMI),
-    dict(id='contactos', kind='contact', kicker='PREÇO E VISITAS', h='Fale connosco',
+    dict(id='garagem', kind='frame', img='garagem.jpg', alt='Garagem coletiva do edifício', kicker='INCLUI', h='Lugar de garagem e arrumos',
+         chips=['Lugar de garagem grande', 'Arrumos', 'Capoto (ETICS)'], foot=AMI),
+    dict(id='contactos', kind='contact', kicker='258 000 € · REF. C0393-01754', h='Marque a sua visita',
          lines=['Francisco Medeiros · +351 912 706 395', 'Casemiro Ramos · +351 935 101 667', 'usinavideos.pt/cordiallevel/perafita'],
          note='Chamada para a rede móvel nacional · ' + AMI, outlink=(WA, 'Falar com o Francisco')),
 ]
@@ -40,9 +40,9 @@ W.page_inner = page_inner
 
 if __name__ == '__main__':
     html = W.amp().replace(W.URL, URL)
-    html = html.replace('Crédito jovem em 2027: o novo episódio do Panorama Imobiliário PT', 'T2 em Perafita, junto à A28 · Cordial Level')
+    html = html.replace('Crédito jovem em 2027: o novo episódio do Panorama Imobiliário PT', 'T2 em Perafita · 258 000 € · Cordial Level')
     html = html.replace(W.esc('Garantia pública para jovens, o que está decidido para 2027 e três imóveis da Cordial Level no Porto, em Leça da Palmeira e na Foz do Douro. ' + AMI + '.'),
-                        W.esc('T2 em Perafita, Matosinhos, ao lado da A28, perto de escolas e transportes. Vídeo com o consultor Francisco Medeiros e visita virtual 3D. ' + AMI + '.'))
+                        W.esc('T2 remodelado em Perafita, Matosinhos: 83 m², garagem e arrumos, ao lado da A28. 258 000 €. Vídeo com o consultor Francisco Medeiros e visita virtual 3D. ' + AMI + '.'))
     html = html.replace(f'"datePublished":"{W.DATE}"', f'"datePublished":"{DATE}"')
     html = html.replace('<script async custom-element="amp-story"', '<script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>\n<script async custom-element="amp-story"')
     html = html.replace('<amp-story-page id="p-video" auto-advance-after="8s">\n<amp-story-grid-layer template="fill"><div class="pg">',

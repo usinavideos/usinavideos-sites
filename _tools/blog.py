@@ -50,16 +50,21 @@ POSTS = [
          links=[('Ver a Cordial Level e os imóveis', '/cordiallevel/'), ('Ver a live completa no YouTube', 'https://www.youtube.com/watch?v=bJhROYiy-VU&t=3168s'), ('Canal da Cordial Level no YouTube', 'https://www.youtube.com/@CordialLevelPT')]),
     dict(slug='t2-perafita-cordial-level', cat='mercados', date='2026-11-04',
          title='T2 em Perafita: uma oportunidade especial com a Cordial Level',
-         desc='Francisco Medeiros apresenta um T2 em Perafita, Matosinhos, ao lado da A28, perto de escolas e transportes, em excelentes condições e por um preço muito bom.',
+         desc='Já à venda: T2 remodelado em Perafita, Matosinhos, com 83 m², lugar de garagem e arrumos, ao lado da A28, por 258 000 €. Vídeo com Francisco Medeiros e visita virtual 3D.',
          img='/img/blog/perafita-t2.jpg', img_cap='Francisco Medeiros em Perafita · vídeo Usina Vídeos',
-         lead='Cordial Level em campo com mais uma angariação: um T2 em Perafita, ao lado da A28, em excelentes condições e por um preço muito bom.',
+         lead='Já à venda por 258 000 €: um T2 remodelado em Perafita, com 83 m², lugar de garagem grande e arrumos, ao lado da A28.',
          body='''<p>Prometemos e cumprimos: depois dos dias de gravação, chega o primeiro vídeo. O T2 fica em <b>Perafita, no concelho de Matosinhos</b>, e é apresentado pelo <b>Francisco Medeiros</b>, consultor da Cordial Level.</p>
 <figure class="bf" style="max-width:420px;margin-left:auto;margin-right:auto"><video controls playsinline preload="none" poster="/cordiallevel/img/perafita-t2-capa.jpg" style="width:100%;border-radius:16px;background:#000;aspect-ratio:9/16"><source src="/cordiallevel/media/perafita-t2.mp4" type="video/mp4"></video><figcaption>T2 em Perafita, apresentado por Francisco Medeiros · vídeo Usina Vídeos</figcaption></figure>
 <h2>Porque é uma boa oportunidade</h2>
 <ul><li><b>Localização estratégica</b>, ao lado da A28.</li>
 <li>Perto de <b>escolas</b> e de <b>transportes públicos</b>.</li>
 <li>T2 em <b>excelentes condições</b>, por um <b>preço muito bom</b>.</li></ul>
-<p>Os detalhes chegam em breve. Para ser dos primeiros a saber, siga a Cordial Level nas redes sociais ou fale diretamente com o Francisco Medeiros ou com o Casemiro Ramos.</p>
+<h2>Já à venda: 258 000 €</h2>
+<ul><li><b>T2</b> com 83 m² úteis e 100,6 m² de área bruta, 1 casa de banho.</li>
+<li><b>Remodelado:</b> cozinha remodelada, pavimento flutuante, caixilharia dupla com vidro duplo e isolamento exterior em capoto.</li>
+<li><b>Lugar de garagem grande</b> e <b>espaço de arrumos</b>.</li>
+<li>Edifício de 2003 · certificado energético D · ref. <a href="https://century21.pt/ref/C0393-01754" target="_blank" rel="noopener">C0393-01754</a>.</li></ul>
+<p>Para marcar uma visita, fale diretamente com o Francisco Medeiros ou com o Casemiro Ramos.</p>
 <h2>Tem um imóvel na zona?</h2>
 <p>Se tem um apartamento para vender ou arrendar em Perafita ou nas redondezas, a Cordial Level está pronta para ajudar. Como explica o Francisco, quantos mais imóveis tivermos na mesma zona, maior é a procura que conseguimos atrair para todos.</p>
 <h2>O que a Usina Vídeos produziu</h2>

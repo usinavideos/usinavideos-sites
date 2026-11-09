@@ -6,6 +6,7 @@ import html
 I='https://images.century21.pt/'
 Q='?width=900&height=675&quality=85'
 P=[ # ref, cat, title, local, price, specs, img, flags
+('C0393-01754','casa','T2 remodelado com garagem e arrumos','Perafita, Matosinhos','258 000 €',['2 quartos','1 WC','83 m²'],'cbee7f95-004d-414f-9b69-e05fb0c449c5/F2.jpeg','Novo · Visita virtual'),
 ('C0393-01659','casa','T3 na 1.ª linha de mar com 2 lugares de garagem','Leça da Palmeira','550 000 €',['3 quartos','2 WC','171 m²'],'ccf64483-326e-4ce4-911c-4e6b470f5263/PHOTO-2026-09-19-18-11-13.jpg','Descida de preço'),
 ('C0393-01661','casa','Moradia T4 com vista de mar, para renovar','Foz do Douro, Porto','875 000 €',['4 quartos','2 WC','169 m²'],'52f4c54c-b55b-40b4-802c-b14ddd697acb/F79.jpg','Visita virtual'),
 ('C0393-01360','casa','T4 na Foz do Douro — propriedade de raiz com usufruto','Foz do Douro, Porto','548 000 €',['4 quartos','4 WC','240 m²'],'0793775f-8fa9-4b00-a603-4d45fcc6e507/casemiroramosuzu-11.jpg','Visita virtual · Descida de preço'),
@@ -29,7 +30,7 @@ CATS=[('todos','Todos'),('casa','Casas e apartamentos'),('terreno','Terrenos'),(
 def card(p):
     ref,cat,t,loc,price,specs,img,flag=p
     url=f'https://century21.pt/{"arrendar" if cat=="arrendar" else "comprar"}/{ref}'
-    LOCAL={'C0393-01659':('t3leca/','t3leca/img/leca-37-t.jpg'),'C0393-01661':('casaraofoz/','casaraofoz/img/foz-f52-t.jpg'),'C0393-01555':('bosquepicua/',None),'C0393-01689':('anteroquental/','img/antero-20-t.jpg'),'C0393-01583':('cedofeita/','cedofeita/img/cf-fachada-t.jpg'),'C0393-01441':('moncao/#terreno1','moncao/img/t1-d4-t.jpg'),'C0393-01442':('moncao/#terreno2','moncao/img/t2-d4-t.jpg')}
+    LOCAL={'C0393-01754':('perafita/','perafita/img/pf-sala-t.jpg'),'C0393-01659':('t3leca/','t3leca/img/leca-37-t.jpg'),'C0393-01661':('casaraofoz/','casaraofoz/img/foz-f52-t.jpg'),'C0393-01555':('bosquepicua/',None),'C0393-01689':('anteroquental/','img/antero-20-t.jpg'),'C0393-01583':('cedofeita/','cedofeita/img/cf-fachada-t.jpg'),'C0393-01441':('moncao/#terreno1','moncao/img/t1-d4-t.jpg'),'C0393-01442':('moncao/#terreno2','moncao/img/t2-d4-t.jpg')}
     tgt=' target="_blank" rel="noopener"'
     img_src=I+img+Q
     if ref in LOCAL:

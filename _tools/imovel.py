@@ -56,6 +56,49 @@ CREDITO = """<section id="credito" class="credito">
 CREDITO_CSS = ".credito{background:#0F2438;border-top:5px solid var(--gold)}.cr{display:grid;gap:28px;align-items:center}@media(min-width:900px){.cr{grid-template-columns:1.4fr 1fr}}.crb{display:grid;gap:12px}.crb .b{text-align:center;justify-content:center}.crb small{color:#B9B3A6;font-size:13px;line-height:1.5}"
 
 
+def angariacao(curto):
+    m = lambda who, txt: wa(who, txt)
+    c1 = m('351935101667', 'Olá Casemiro, tenho um imóvel e gostava de pedir uma avaliação.')
+    f1 = m('351912706395', 'Olá Francisco, tenho um imóvel e gostava de pedir uma avaliação.')
+    c2 = m('351935101667', 'Olá Casemiro, tenho um imóvel para vender ou arrendar e gostava de saber como podem ajudar.')
+    return f'''<section id="vender" class="ang">
+  <div class="wrap">
+    <span class="eyebrow">Tem um imóvel para vender ou arrendar?</span>
+    <h2 class="h2">Avaliamos e apresentamos o seu imóvel como este.</h2>
+    <p class="lead">Este {e(curto)} foi apresentado com fotografia profissional, vídeo com o consultor e visita virtual 3D. Fazemos o mesmo pelo seu imóvel, do preço certo à escritura.</p>
+    <div class="angs">
+      <div class="angc"><b>1. Avaliação do imóvel</b><p>Estudo de mercado da sua zona e preço de venda ou de renda ajustado à realidade.</p></div>
+      <div class="angc"><b>2. Apresentação premium</b><p>Fotografia, vídeo-reportagem e visita 3D, divulgados no site, nas redes sociais e nos portais.</p></div>
+      <div class="angc"><b>3. Acompanhamento total</b><p>Visitas, negociação, crédito do comprador e documentação até à escritura.</p></div>
+    </div>
+    <div class="btns" style="margin-top:22px">
+      <a class="b wa" href="{c1}" target="_blank" rel="noopener">{WA_ICON}Pedir avaliação · Casemiro</a>
+      <a class="b wa" href="{f1}" target="_blank" rel="noopener">{WA_ICON}Pedir avaliação · Francisco</a>
+      <a class="b line" href="{c2}" target="_blank" rel="noopener">Quero vender ou arrendar</a>
+    </div>
+  </div>
+</section>
+'''
+
+
+def leads(p, ref):
+    r = f' (ref. {ref})' if ref else ''
+    cv = wa('351935101667', f"Olá Casemiro, gostava de marcar uma visita ao {p['curto']}{r}.")
+    fv = wa('351912706395', f"Olá Francisco, gostava de marcar uma visita ao {p['curto']}{r}.")
+    ff = wa('351935101667', f"Olá Casemiro, pode enviar-me a ficha completa do {p['curto']}{r}?")
+    fc = wa('351912706395', f"Olá Francisco, gostava de simular o crédito para o {p['curto']}{r}.")
+    return f'''<section id="interesse" style="padding-top:0"><div class="wrap">
+  <div class="lcards">
+    <a class="lc" href="{cv}" target="_blank" rel="noopener"><small>Ver ao vivo</small><b>Marcar visita</b><span>WhatsApp Casemiro →</span></a>
+    <a class="lc" href="{fv}" target="_blank" rel="noopener"><small>Com o consultor do vídeo</small><b>Visita com o Francisco</b><span>WhatsApp Francisco →</span></a>
+    <a class="lc" href="{ff}" target="_blank" rel="noopener"><small>Áreas, planta e documentos</small><b>Receber a ficha completa</b><span>WhatsApp →</span></a>
+    <a class="lc" href="{fc}" target="_blank" rel="noopener"><small>{e(p.get('prest', 'Prestação estimada'))}</small><b>Simular o crédito</b><span>WhatsApp →</span></a>
+  </div></div></section>'''
+
+
+ANG_CSS = ".ang{background:var(--cream);border-top:5px solid var(--gold)}.angs{display:grid;gap:14px;margin-top:22px}@media(min-width:900px){.angs{grid-template-columns:repeat(3,1fr)}}.angc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}.angc b{color:var(--navy);font-size:18px}.angc p{margin:8px 0 0;color:var(--muted)}.lcards{display:grid;gap:12px;grid-template-columns:1fr 1fr}@media(min-width:900px){.lcards{grid-template-columns:repeat(4,1fr)}}.lc{display:flex;flex-direction:column;gap:4px;padding:16px;border-radius:14px;background:var(--navy);color:var(--cream);text-decoration:none;border-bottom:4px solid var(--gold)}.lc small{color:var(--gold-l);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.lc b{font-size:18px;line-height:1.2}.lc span{font-size:13px;color:#C9D2DE;margin-top:auto}"
+
+
 CSS = r"""
 :root{--navy:#1B3A6B;--navy-d:#12284B;--gold:#B8962E;--gold-l:#D4B562;--cream:#F7F5F0;--ink:#1E2328;--muted:#5E6873;--line:#E3DED2;
 --serif:'Cormorant Garamond',Georgia,serif;--sans:'Mulish',system-ui,-apple-system,sans-serif;--max:1120px}
@@ -289,7 +332,7 @@ def build(p):
 <link rel="icon" href="/img/logo/usina-simbolo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
-<style>{CSS}{CREDITO_CSS}{SOCIAL_CSS}</style>
+<style>{CSS}{CREDITO_CSS}{SOCIAL_CSS}{ANG_CSS if p.get('angariacao', True) else ''}</style>
 </head>
 <body>
 <nav class="nav" aria-label="Secções"><div class="wrap"><a class="brand" href="../">Cordial <b>Level</b></a>{nav}</div></nav>
@@ -311,6 +354,7 @@ def build(p):
   <p class="t">{e(p['intro'])}</p>
 </div>
 {('<div class="wrap" style="margin-top:-24px;margin-bottom:56px">' + strip(p['photos_intro']) + '</div>') if p.get('photos_intro') else ''}
+{leads(p, ref) if p.get('angariacao', True) else ''}
 
 {lotes}{'' if p.get('lotes') else f'''<section id="ficha" style="padding-top:0">
   <div class="wrap">
@@ -346,14 +390,14 @@ def build(p):
 </section>
 
 {closing}
-{CREDITO}<section id="contacto">
+{CREDITO}{angariacao(p['curto']) if p.get('angariacao', True) else ''}<section id="contacto">
   <div class="wrap">
     <span class="eyebrow">Contacto</span>
     <h2 class="h2">Marque a sua visita</h2>
     <p class="lead">Fale diretamente com um dos consultores da Cordial Level.</p>
     <div class="dirs">{dir_card(DIRETORES[0])}{dir_card(DIRETORES[1])}</div>
     <a class="allprops" href="{CRAMOS}" target="_blank" rel="noopener"><span><small>Todos os imóveis da Cordial Level</small>century21.pt/consultores/cramos</span><b>Ver a carteira completa →</b></a>
-    <p class="more" style="margin-top:14px">{' · '.join(f'<a href="https://century21.pt/comprar/{r}" target="_blank" rel="noopener" style="color:var(--navy)">Ficha CENTURY 21 (ref. {r}) ↗</a>' for r in p.get('refs', [ref]))}</p>
+    <p class="more" style="margin-top:14px">{(f'<a href="{p["ficha_url"]}" target="_blank" rel="noopener" style="color:var(--navy)">Ver o anúncio no site CENTURY 21 (ref. {ref}) ↗</a>' if p.get('ficha_url') else '') or ' · '.join(f'<a href="https://century21.pt/comprar/{r}" target="_blank" rel="noopener" style="color:var(--navy)">Ficha CENTURY 21 (ref. {r}) ↗</a>' for r in p.get('refs', [ref]))}</p>
     <p class="sig">A sua exigência, a nossa assinatura.</p>
   </div>
 </section>
@@ -715,36 +759,36 @@ IMOVEIS = {
         video='yo7RN7u6JJY', video_img='t1-d4', video_h2='Monção: dois terrenos entre o Minho e a Galiza', tour=None,
     ),
     'perafita': dict(
-        ref='', curto='T2 em Perafita',
-        title='T2 em Perafita, Matosinhos, junto à A28 · Cordial Level',
-        desc='T2 em excelentes condições em Perafita, Matosinhos, ao lado da A28 e perto de escolas e transportes públicos. Vídeo com o consultor Francisco Medeiros e visita virtual 3D.',
+        ref='C0393-01754', curto='T2 em Perafita', ficha_url='https://century21.pt/ref/C0393-01754', prest='Cerca de 716 €/mês*',
+        title='T2 remodelado em Perafita, com garagem e arrumos · 258 000 € · Cordial Level',
+        desc='T2 remodelado em Perafita, Matosinhos: 83 m² úteis, cozinha remodelada, lugar de garagem grande e arrumos, junto à A28. 258 000 €. Vídeo e visita virtual 3D.',
         hero='pf-fachada', hero_pos='85% 50%', hero_alt='Fachada do edifício do T2 em Perafita, em tijolo e betão, sob céu azul',
-        loc='Perafita · Matosinhos', h1='T2 em Perafita, junto à A28',
-        sub='Em excelentes condições e por um preço muito bom, perto de escolas e transportes públicos.',
-        price='Preço sob consulta',
+        loc='Perafita · Matosinhos · Ref. C0393-01754', h1='T2 remodelado em Perafita, com garagem e arrumos',
+        sub='83 m² úteis, cozinha remodelada, lugar de garagem grande e arrumos, ao lado da A28.',
+        price='258 000 €',
         quote='Uma excelente oportunidade, numa localização estratégica.',
-        intro='Apartamento T2 em Perafita, no concelho de Matosinhos, numa localização estratégica ao lado da A28, com escolas e transportes públicos por perto. Em excelentes condições e por um preço muito bom, é uma oportunidade para habitação própria ou investimento. Conheça-o em vídeo com o consultor Francisco Medeiros e percorra-o na visita virtual 3D.',
+        intro='Apartamento T2 remodelado em Perafita, no concelho de Matosinhos, ao lado da A28, com escolas e transportes públicos por perto. Tem 83 m² úteis, cozinha remodelada, pavimento flutuante, caixilharia com vidro duplo, um lugar de garagem grande e espaço de arrumos. Para habitação própria ou investimento, por 258 000 €. Conheça-o em vídeo com o consultor Francisco Medeiros e percorra-o na visita virtual 3D.',
         photos_intro=['pf-sala', 'pf-sala-2', 'pf-jardim'],
-        ficha_h2='Pronto a conhecer, por dentro e por fora',
-        ficha_lead=['A sala junta zona de estar e de refeições, com pavimento em madeira e luz natural. Percorra todas as divisões na visita virtual 3D.',
-                    'O edifício tem garagem coletiva no piso inferior, arrumos e uma ampla zona verde. Peça ao Francisco Medeiros ou ao Casemiro Ramos a ficha completa, com áreas e preço.'],
+        ficha_h2='Remodelado e pronto a habitar',
+        ficha_lead=['83 m² úteis e 100,6 m² de área bruta, com dois quartos, uma casa de banho e uma sala com zona de estar e de refeições. A cozinha foi remodelada, o pavimento é flutuante e a caixilharia é dupla, com vidro duplo.',
+                    'O edifício, de 2003, tem isolamento exterior em capoto (ETICS). O apartamento inclui um lugar de garagem grande e espaço de arrumos. Licença de utilização emitida pela Câmara Municipal de Matosinhos; certificado energético D.'],
         photos_ficha=['pf-sala-3', 'pf-garagem'],
-        facts=[('Tipologia', 'T2'), ('Localização', 'Perafita, Matosinhos'), ('Estado', 'Excelentes condições'), ('Acessos', 'Ao lado da A28'),
-               ('Envolvente', 'Escolas e transportes públicos'), ('Preço', 'Sob consulta')],
+        facts=[('Preço', '258 000 €'), ('Tipologia', 'T2 · 1 WC'), ('Área útil', '83 m²'), ('Área bruta', '100,6 m²'), ('Ano', '2003'),
+               ('Garagem', 'Lugar grande'), ('Arrumos', 'Sim'), ('Cert. energético', 'D'), ('Localização', 'Perafita, Matosinhos'), ('Ref.', 'C0393-01754')],
         photos_rooms=['pf-garagem-3', 'pf-arrumo', 'pf-transportes'],
         feat_h3='Destaques',
-        features=['Localização estratégica, ao lado da A28', 'Perto de escolas', 'Transportes públicos à porta', 'Excelentes condições',
-                  'Garagem coletiva no edifício', 'Arrumos', 'Zona verde junto ao edifício', 'Visita virtual 3D'],
+        features=['Remodelado, pronto a habitar', 'Cozinha remodelada', 'Pavimento flutuante', 'Caixilharia dupla com vidro duplo',
+                  'Isolamento exterior em capoto (ETICS)', 'Lugar de garagem grande', 'Espaço de arrumos', 'Ao lado da A28', 'Escolas e transportes por perto', 'Visita virtual 3D'],
         extras=[
             dict(id='edificio', eb='O edifício', h2='Arquitetura em tijolo e betão, com muito verde', photos=['pf-fachada-2', 'pf-lateral', 'pf-jardim'],
                  paras=['Um conjunto residencial com fachadas em tijolo e betão, varandas corridas e uma ampla zona relvada com árvores, em Perafita.']),
             dict(id='mobilidade', eb='Mobilidade', h2='A A28 e os transportes à porta', dark=True, photos=['pf-transportes', 'pf-rua'],
                  paras=['Ao lado da A28, com ligação rápida ao Porto, a Matosinhos, ao aeroporto e a Vila do Conde. Paragem de autocarro e escolas por perto.']),
             dict(id='destaque', eb='Em destaque', h2='O essencial deste T2', photos=['pf-garagem-2', 'pf-arrumo', 'pf-sala-2'],
-                 chips=['T2', 'Perafita, Matosinhos', 'Ao lado da A28', 'Escolas e transportes', 'Excelentes condições', 'Garagem no edifício', 'Visita 3D']),
+                 chips=['T2 · 83 m²', '258 000 €', 'Remodelado', 'Garagem grande', 'Arrumos', 'Ao lado da A28', 'Visita 3D']),
         ],
         closing=dict(id='versatil', eb='Uma oportunidade especial', h2='Para viver ou para investir', photos=['pf-fachada'],
-                     paras=['Pela localização, pelo estado e pelo preço, este T2 é uma boa opção para quem procura casa em Matosinhos ou quer investir.',
+                     paras=['Remodelado, com garagem e arrumos, ao lado da A28 e por 258 000 €: uma boa opção para quem procura casa em Matosinhos ou quer investir.',
                             'Marque a sua visita e venha conhecer este apartamento.']),
         gallery=[('pf-sala', 'Sala com zona de refeições'), ('pf-sala-2', 'Sala'), ('pf-sala-3', 'Sala'),
                  ('pf-fachada', 'Fachada do edifício'), ('pf-fachada-2', 'O edifício'), ('pf-lateral', 'O edifício e a zona verde'),
@@ -754,8 +798,8 @@ IMOVEIS = {
         gal_note='Fotografias Usina Vídeos, tratadas digitalmente para cor e luz. Imagens da sala retiradas do vídeo.',
         loc_h2='Perafita: a A28 à porta',
         loc_txt='Em Perafita, no concelho de Matosinhos, ao lado da A28, com escolas, transportes públicos e comércio por perto, e ligação rápida ao Porto, a Matosinhos e ao aeroporto.',
-        maps='Perafita, Matosinhos', geo=(41.2232, -8.7048),
-        legal='Informação sujeita a confirmação. Preço, áreas e características completas na ficha do imóvel, a pedido.',
+        maps='Perafita, Matosinhos', geo=(41.2299, -8.6937),
+        legal='Informação sujeita a confirmação. *Prestação indicativa do simulador CENTURY 21, sujeita a aprovação bancária. Certificado energético D. Licença de utilização n.º 446, CM Matosinhos.',
         video='shp7XDfpkHM', video_img='pf-sala', video_vertical=True, video_h2='O Francisco Medeiros apresenta o T2', tour='https://realsee.ai/JVLLgJmB', tour_img='pf-sala-2',
     ),
 }
