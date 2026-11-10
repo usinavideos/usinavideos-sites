@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portefólio · Usina Vídeos</title>
+<meta name="description" content="Portefólio da Usina Vídeos: fotografia, drone e vídeo de imóveis, automóveis e projetos no Porto e no Norte de Portugal.">
+<link rel="canonical" href="https://usinavideos.pt/portefolio/">
+<meta property="og:title" content="Portefólio · Usina Vídeos"><meta property="og:description" content="Vídeo, fotografia, drone, conteúdo para redes, sites e campanhas digitais para empresas, marcas e profissionais. Imobiliário, automóvel, desporto, turismo e negócios, no Norte e em todo o Portugal. Peça orçamento.">
+<meta property="og:image" content="https://usinavideos.pt/img/logo/usina-horizontal-1200.png"><meta property="og:locale" content="pt_PT">
+<link rel="icon" href="/img/logo/usina-simbolo.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/img/logo/usina-simbolo-180.png">
+<meta name="theme-color" content="#211E1F">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --carvao:#211E1F;   /* logo charcoal */
+  --estudio:#F4F4F1;  /* studio wall */
+  --cinza:#77716E;
+  --linha:#D9D6D2;
+  --amarelo:#E5AE29;  /* logo yellow */
+  --rec:#D0252F;      /* logo red, used only for REC */
+  --verde:#3EB15C;    /* logo green, used only for "online" */
+  --wide:125; --pad:clamp(20px,4vw,56px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--estudio);color:var(--carvao);font-family:Archivo,system-ui,sans-serif;font-variation-settings:"wdth" 100;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px}
+.wide{font-stretch:125%;font-variation-settings:"wdth" 125;font-weight:800;letter-spacing:-.02em;line-height:.98}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--pad)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:4px;font-weight:700;text-decoration:none;font-size:16px;line-height:1}
+.btn-y{background:var(--amarelo);color:var(--carvao)}
+.btn-y:hover{background:#F0BD3A}
+.btn-line{border:1.5px solid currentColor}
+
+/* NAV */
+.nav{position:fixed;inset:0 0 auto 0;z-index:30;display:flex;align-items:center;gap:20px;padding:14px var(--pad);color:#fff;transition:background .3s,color .3s}
+.nav.solid{background:var(--estudio);color:var(--carvao);box-shadow:0 1px 0 var(--linha)}
+.nav .logo img{height:30px;width:auto}
+.nav .logo .dark{display:none}.nav.solid .logo .light{display:none}.nav.solid .logo .dark{display:block}
+.nav .links{display:flex;gap:22px;margin-left:auto}
+.nav .links a{text-decoration:none;font-weight:600;font-size:15px}
+.nav .links a:hover{color:var(--amarelo)}
+.nav .lang{display:flex;gap:8px;font-size:13px;font-weight:600;opacity:.8}
+.nav .lang a{text-decoration:none}
+.nav .btn{padding:11px 18px;font-size:14px}
+@media (max-width:900px){.nav .links,.nav .lang{display:none}}
+
+footer{background:var(--carvao);color:#A9A3A0;padding:44px 0;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+footer a{color:#E9E6E3;text-decoration:none;margin-right:16px}
+
+.nav{background:var(--estudio);color:var(--carvao);box-shadow:0 1px 0 var(--linha)}.nav .logo .light{display:none}.nav .logo .dark{display:block}
+.ph{padding:140px 0 40px}.ph h1{font-size:clamp(40px,6vw,84px);margin:0 0 18px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chips button{font:inherit;font-weight:600;font-size:15px;padding:10px 18px;border-radius:4px;border:1.5px solid var(--carvao);background:transparent;color:var(--carvao);cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--carvao);color:#fff}
+.grid{columns:3 320px;column-gap:18px;padding-bottom:96px}
+.tile{display:block;position:relative;margin:0 0 18px;break-inside:avoid;border-radius:4px;overflow:hidden;background:#ddd}
+.tile img{width:100%;height:auto}
+.tile span{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 12px;color:#fff;font-weight:600;font-size:15px;background:linear-gradient(transparent,rgba(33,30,31,.85));opacity:0;transition:opacity .2s}
+.tile:hover span,.tile:focus-visible span{opacity:1}
+@media (hover:none){.tile span{opacity:1}}
+.tile[hidden]{display:none}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(20,18,19,.96);display:none;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:78vh;object-fit:contain}
+.lb .bar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center;margin-top:18px;color:#fff}
+.lb .bar b{font-size:18px}
+.lb .x,.lb .nv{position:absolute;background:none;border:0;color:#fff;font-size:34px;cursor:pointer;padding:10px}
+.lb .x{top:10px;right:16px}.lb .pv{left:10px;top:50%}.lb .nx{right:10px;top:50%}
+.cta2{background:var(--amarelo);padding:64px 0}.cta2 h2{font-size:clamp(28px,4vw,48px);margin:0 0 20px}
+.cta2 .btn-dark{background:var(--carvao);color:#fff}
+</style>
+<script src="/consent.js"></script>
+<!-- Google tag (gtag.js) - Usina Vídeos -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2SJMFPJ10"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q2SJMFPJ10');
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.href||'',ev=/wa\.me|whatsapp/.test(h)?'whatsapp_click':/^mailto:/.test(h)?'email_click':/calendly/.test(h)?'agendar_click':/^tel:/.test(h)?'telefone_click':null;if(ev)gtag('event',ev,{link_url:h,page_path:location.pathname});});</script>
+<!-- Meta Pixel - Usina Vídeos -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('consent',window.uvConsent&&uvConsent()?'grant':'revoke');fbq('init','2965321207157558');fbq('track','PageView');
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.href||'';if(/wa\.me|whatsapp|^mailto:|^tel:/.test(h))fbq('track','Contact');else if(/calendly/.test(h))fbq('track','Schedule');});</script>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","ProfessionalService"],"@id":"https://usinavideos.pt/#usina","name":"Usina Vídeos","url":"https://usinavideos.pt/","logo":"https://usinavideos.pt/img/logo/usina-horizontal-1200.png","image":"https://usinavideos.pt/img/foz-drone.jpg","description":"Produtora de conteúdo e comunicação: vídeo, fotografia, drone, conteúdo para redes, sites e campanhas digitais para empresas, marcas e profissionais. Imobiliário, automóvel, desporto, turismo e negócios, no Norte e em todo o Portugal.","telephone":"+351912988971","email":"freireneto@me.com","address":{"@type":"PostalAddress","addressRegion":"Porto","addressCountry":"PT"},"areaServed":[{"@type":"AdministrativeArea","name":"Norte de Portugal"},{"@type":"Country","name":"Portugal"}],"knowsLanguage":["pt-PT","en","es"],"foundingDate":"2002","founder":[{"@type":"Person","name":"Freire Neto","jobTitle":"Jornalista e produtor audiovisual","sameAs":["https://www.linkedin.com/in/freireneto/","https://www.instagram.com/freireneto","https://www.instagram.com/neofreireportugal"]},{"@type":"Person","name":"Sandra Freire","jobTitle":"Edição, produção e administração"}],"sameAs":["https://www.instagram.com/usina.videos","https://www.facebook.com/profile.php?id=61596609981238","https://motoreseacao.com","https://www.youtube.com/@motoreseacao","https://www.youtube.com/@DicasdoFreire/"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Reportagem fotográfica de imóveis"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Vídeo com drone"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Vídeo com o consultor"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Visita virtual 3D"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Apresentação digital de imóveis"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Sites para agências e consultores"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Produção de podcasts"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Reportagem desportiva"}}]},{"@type":"WebSite","@id":"https://usinavideos.pt/#site","url":"https://usinavideos.pt/","name":"Usina Vídeos","inLanguage":"pt-PT","publisher":{"@id":"https://usinavideos.pt/#usina"}},{"@type":"WebPage","url":"https://usinavideos.pt/","name":"Usina Vídeos · Produtora de conteúdo e comunicação em Portugal","inLanguage":"pt-PT","isPartOf":{"@id":"https://usinavideos.pt/#site"},"about":{"@id":"https://usinavideos.pt/#usina"}}]}</script>
+</head>
+<body>
+<nav class="nav" id="nav" aria-label="Menu">
+  <a class="logo" href="/" aria-label="Usina Vídeos, início"><img class="light" src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos"><img class="dark" src="/img/logo/usina-horizontal.svg" alt="Usina Vídeos"></a>
+  <div class="links"><a href="/#quem">Quem somos</a><a href="/#servicos">Serviços</a><a href="/portefolio/" aria-current="page">Portefólio</a><a href="/blog/">Blog</a><a href="/#contacto">Contacto</a></div>
+  <div class="lang"><a href="/" aria-current="page">PT</a><a href="/en/">EN</a><a href="/es/">ES</a></div>
+  <a class="btn btn-y" href="/#contacto">Peça orçamento</a>
+</nav>
+<main class="wrap">
+  <div class="ph">
+    <h1 class="wide">Portefólio</h1>
+    <p class="lead">Fotografia, drone e vídeo feitos pela Usina. Toque numa imagem para a ver em grande e abrir o projeto.</p>
+    <div class="chips" role="group" aria-label="Filtrar por área"><button type="button" data-f="todos" aria-pressed="true">Todos</button><button type="button" data-f="imobiliario" aria-pressed="false">Imobiliário</button><button type="button" data-f="drone" aria-pressed="false">Drone</button><button type="button" data-f="automovel" aria-pressed="false">Automóvel</button></div>
+  </div>
+  <div class="grid" id="grid"><a class="tile" href="/portefolio/img/p00.jpg" data-c="imobiliario" data-t="Condomínio Coral, Foz do Douro" data-l="/t4coral/"><img src="/portefolio/img/p00-t.jpg" width="800" height="491" alt="Condomínio Coral, Foz do Douro" loading="lazy"><span>Condomínio Coral, Foz do Douro</span></a><a class="tile" href="/portefolio/img/p01.jpg" data-c="drone" data-t="Condomínio Coral, Foz do Douro" data-l="/t4coral/"><img src="/portefolio/img/p01-t.jpg" width="800" height="450" alt="Condomínio Coral, Foz do Douro" loading="lazy"><span>Condomínio Coral, Foz do Douro</span></a><a class="tile" href="/portefolio/img/p02.jpg" data-c="imobiliario" data-t="Condomínio Coral, Foz do Douro" data-l="/t4coral/"><img src="/portefolio/img/p02-t.jpg" width="800" height="450" alt="Condomínio Coral, Foz do Douro" loading="lazy"><span>Condomínio Coral, Foz do Douro</span></a><a class="tile" href="/portefolio/img/p03.jpg" data-c="imobiliario" data-t="T2 em Perafita, Matosinhos" data-l="/cordiallevel/perafita/"><img src="/portefolio/img/p03-t.jpg" width="800" height="533" alt="T2 em Perafita, Matosinhos" loading="lazy"><span>T2 em Perafita, Matosinhos</span></a><a class="tile" href="/portefolio/img/p04.jpg" data-c="imobiliario" data-t="T2 em Perafita, Matosinhos" data-l="/cordiallevel/perafita/"><img src="/portefolio/img/p04-t.jpg" width="800" height="450" alt="T2 em Perafita, Matosinhos" loading="lazy"><span>T2 em Perafita, Matosinhos</span></a><a class="tile" href="/portefolio/img/p05.jpg" data-c="drone" data-t="Terrenos em Monção" data-l="/cordiallevel/moncao/"><img src="/portefolio/img/p05-t.jpg" width="800" height="450" alt="Terrenos em Monção" loading="lazy"><span>Terrenos em Monção</span></a><a class="tile" href="/portefolio/img/p06.jpg" data-c="drone" data-t="Terrenos em Monção" data-l="/cordiallevel/moncao/"><img src="/portefolio/img/p06-t.jpg" width="800" height="450" alt="Terrenos em Monção" loading="lazy"><span>Terrenos em Monção</span></a><a class="tile" href="/portefolio/img/p07.jpg" data-c="imobiliario" data-t="T3 em Leça da Palmeira" data-l="/cordiallevel/t3leca/"><img src="/portefolio/img/p07-t.jpg" width="800" height="450" alt="T3 em Leça da Palmeira" loading="lazy"><span>T3 em Leça da Palmeira</span></a><a class="tile" href="/portefolio/img/p08.jpg" data-c="imobiliario" data-t="T3 em Leça da Palmeira" data-l="/cordiallevel/t3leca/"><img src="/portefolio/img/p08-t.jpg" width="800" height="450" alt="T3 em Leça da Palmeira" loading="lazy"><span>T3 em Leça da Palmeira</span></a><a class="tile" href="/portefolio/img/p09.jpg" data-c="imobiliario" data-t="Moradia T4 na Foz do Douro" data-l="/cordiallevel/casaraofoz/"><img src="/portefolio/img/p09-t.jpg" width="800" height="450" alt="Moradia T4 na Foz do Douro" loading="lazy"><span>Moradia T4 na Foz do Douro</span></a><a class="tile" href="/portefolio/img/p10.jpg" data-c="imobiliario" data-t="Moradia T4 na Foz do Douro" data-l="/cordiallevel/casaraofoz/"><img src="/portefolio/img/p10-t.jpg" width="450" height="800" alt="Moradia T4 na Foz do Douro" loading="lazy"><span>Moradia T4 na Foz do Douro</span></a><a class="tile" href="/portefolio/img/p11.jpg" data-c="imobiliario" data-t="T2+1 no Bosque da Pícua" data-l="/cordiallevel/bosquepicua/"><img src="/portefolio/img/p11-t.jpg" width="800" height="447" alt="T2+1 no Bosque da Pícua" loading="lazy"><span>T2+1 no Bosque da Pícua</span></a><a class="tile" href="/portefolio/img/p12.jpg" data-c="imobiliario" data-t="T2+1 no Bosque da Pícua" data-l="/cordiallevel/bosquepicua/"><img src="/portefolio/img/p12-t.jpg" width="800" height="447" alt="T2+1 no Bosque da Pícua" loading="lazy"><span>T2+1 no Bosque da Pícua</span></a><a class="tile" href="/portefolio/img/p13.jpg" data-c="drone" data-t="T1 duplex em Cedofeita, Porto" data-l="/cordiallevel/cedofeita/"><img src="/portefolio/img/p13-t.jpg" width="800" height="600" alt="T1 duplex em Cedofeita, Porto" loading="lazy"><span>T1 duplex em Cedofeita, Porto</span></a><a class="tile" href="/portefolio/img/p14.jpg" data-c="imobiliario" data-t="T1 duplex em Cedofeita, Porto" data-l="/cordiallevel/cedofeita/"><img src="/portefolio/img/p14-t.jpg" width="800" height="450" alt="T1 duplex em Cedofeita, Porto" loading="lazy"><span>T1 duplex em Cedofeita, Porto</span></a><a class="tile" href="/portefolio/img/p15.jpg" data-c="imobiliario" data-t="T2 na Rua Antero de Quental, Porto" data-l="/cordiallevel/anteroquental/"><img src="/portefolio/img/p15-t.jpg" width="800" height="450" alt="T2 na Rua Antero de Quental, Porto" loading="lazy"><span>T2 na Rua Antero de Quental, Porto</span></a><a class="tile" href="/portefolio/img/p16.jpg" data-c="drone" data-t="Do papel à tela, Foz do Douro" data-l="/blog/do-papel-a-tela-foz-do-douro/"><img src="/portefolio/img/p16-t.jpg" width="800" height="450" alt="Do papel à tela, Foz do Douro" loading="lazy"><span>Do papel à tela, Foz do Douro</span></a><a class="tile" href="/portefolio/img/p17.jpg" data-c="imobiliario" data-t="Moradia T5 nas Devesas, Gaia" data-l="/#trabalhos"><img src="/portefolio/img/p17-t.jpg" width="800" height="450" alt="Moradia T5 nas Devesas, Gaia" loading="lazy"><span>Moradia T5 nas Devesas, Gaia</span></a><a class="tile" href="/portefolio/img/p18.jpg" data-c="automovel" data-t="Motores e Ação" data-l="https://www.motoreseacao.com/?utm_source=usinavideos&amp;utm_medium=portefolio"><img src="/portefolio/img/p18-t.jpg" width="800" height="533" alt="Motores e Ação" loading="lazy"><span>Motores e Ação</span></a></div>
+</main>
+<section class="cta2"><div class="wrap"><h2 class="wide">Quer imagens assim para o seu projeto?</h2>
+<a class="btn btn-dark" href="https://wa.me/351912988971?text=Ol%C3%A1%20Freire%2C%20vi%20o%20portef%C3%B3lio%20e%20gostaria%20de%20pedir%20um%20or%C3%A7amento.">Peça orçamento no WhatsApp</a></div></section>
+<footer><div class="wrap">
+  <img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" style="height:28px">
+  <div><a href="https://www.instagram.com/usina.videos/">Instagram</a><a href="https://www.youtube.com/@DicasdoFreire/">YouTube</a><a href="/blog/">Blog</a><a href="/cookies/">Cookies</a></div>
+  <span>© 2002–2026 Usina Vídeos</span>
+</div></footer>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Imagem em grande">
+  <button class="x" type="button" aria-label="Fechar">×</button>
+  <button class="nv pv" type="button" aria-label="Imagem anterior">‹</button><button class="nv nx" type="button" aria-label="Imagem seguinte">›</button>
+  <img alt="">
+  <div class="bar"><b></b><a class="btn btn-y" href="#">Ver o projeto</a></div>
+</div>
+<script>
+(function(){
+var tiles=[].slice.call(document.querySelectorAll('.tile')),lb=document.getElementById('lb'),im=lb.querySelector('img'),tt=lb.querySelector('b'),go=lb.querySelector('.btn'),cur=0;
+function vis(){return tiles.filter(function(t){return !t.hidden})}
+function show(i){var v=vis();cur=(i+v.length)%v.length;var t=v[cur];im.src=t.getAttribute('href');im.alt=t.dataset.t;tt.textContent=t.dataset.t;go.href=t.dataset.l;lb.classList.add('on');lb.querySelector('.x').focus();}
+tiles.forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();show(vis().indexOf(t));})});
+lb.querySelector('.x').onclick=function(){lb.classList.remove('on')};
+lb.querySelector('.pv').onclick=function(){show(cur-1)};lb.querySelector('.nx').onclick=function(){show(cur+1)};
+document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowRight')show(cur+1);if(e.key==='ArrowLeft')show(cur-1);});
+[].forEach.call(document.querySelectorAll('.chips button'),function(b){b.onclick=function(){[].forEach.call(document.querySelectorAll('.chips button'),function(x){x.setAttribute('aria-pressed',x===b)});var f=b.dataset.f;tiles.forEach(function(t){t.hidden=!(f==='todos'||t.dataset.c===f)});}});
+})();
+</script>
+</body>
+</html>
