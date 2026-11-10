@@ -10,7 +10,7 @@
 <meta name="theme-color" content="#211E1F">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="/img/hero-foz-poster.jpg">
+<link rel="preload" as="image" href="/img/hero-foz-poster-s.jpg">
 <style>
 :root{
   --carvao:#211E1F;   /* logo charcoal */
@@ -169,9 +169,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 <header class="vf" id="topo">
   <div class="vf-stick">
     <div class="vf-frame">
-      <video id="hero" autoplay muted loop playsinline poster="/img/hero-foz-poster.jpg" aria-label="Voo de drone sobre a Foz do Douro, Porto">
-        <source src="/media/hero-foz-drone.mp4" type="video/mp4">
-      </video>
+      <video id="hero" muted loop playsinline preload="none" poster="/img/hero-foz-poster-s.jpg" aria-label="Voo de drone sobre a Foz do Douro, Porto"></video>
       <div class="vf-shade"></div>
     </div>
     <div class="vf-ui" aria-hidden="true">
@@ -296,7 +294,8 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
     if(v&&tc){var t=v.currentTime||0,f=Math.floor((t%1)*25),s=Math.floor(t)%60,m=Math.floor(t/60);tc.textContent='00:'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')+':'+String(f).padStart(2,'0');}
     requestAnimationFrame(tick);
   }
-  if(reduce&&v){v.removeAttribute('autoplay');v.pause();}
+  var c=navigator.connection||{};var slow=c.saveData||/(^|-)2g$/.test(c.effectiveType||'');
+  if(v&&!reduce&&!slow){window.addEventListener('load',function(){v.src=innerWidth<700?'/media/hero-foz-drone-mob.mp4':'/media/hero-foz-drone-960.mp4';v.play&&v.play().catch(function(){});});}
   requestAnimationFrame(tick);
 })();
 </script>
