@@ -57,6 +57,7 @@ p{font-size:34px;line-height:1.38;color:#E8ECF2;max-width:900px}
 .facts i{font-style:normal;font-size:20px;letter-spacing:.14em;text-transform:uppercase;color:#5E6873;font-weight:700}
 .who{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .who div{background:#1B3A6B;color:#F7F5F0;padding:22px 24px;border-radius:14px}
+.who div{display:flex;align-items:center;gap:18px}.who img{width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid #D4B562;flex:none}.who p{color:inherit;font-size:inherit;line-height:1.15;max-width:none}.who p b{font-size:40px;white-space:nowrap}.who p span{font-size:24px;white-space:nowrap}
 .who b{display:block;font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:600}
 .who span{display:block;font-size:28px;font-weight:700;color:#D4B562;margin-top:4px}
 .web{margin-top:auto;text-align:center;font-size:30px;font-weight:700;color:#1B3A6B}
@@ -90,7 +91,7 @@ def end_slide(n, total, title, lead, facts, link, link_label='Apresentação com
     return page(f'''<div class="s end"><img class="logo" src="file://{ROOT}/cordiallevel/img/logo-cordial-level.png">
 <h2>{e(title)}</h2><p class="lead">{e(lead)}</p>
 <div class="facts">{fx}</div>
-<div class="who"><div><b>Casemiro Ramos</b><span>WhatsApp 935 101 667</span></div><div><b>Francisco Medeiros</b><span>WhatsApp 912 706 395</span></div></div>
+<div class="who"><div><img src="file://{ROOT}/cordiallevel/img/casemiro.jpg"><p><b>Casemiro Ramos</b><span>WhatsApp 935 101 667</span></p></div><div><img src="file://{ROOT}/cordiallevel/img/francisco.jpg"><p><b>Francisco Medeiros</b><span>WhatsApp 912 706 395</span></p></div></div>
 <div class="web">{e(link_label)}: {e(link)}<br>Todos os imóveis: century21.pt/consultores/cramos
 <small>Cordial Level | CENTURY 21 Arquitectos · AMI 11414 · Ref. {e(n and '')}</small></div></div>''')
 
@@ -188,6 +189,26 @@ def bosque():
     ]
     s[-1] = s[-1].replace('Ref. ', 'Ref. C0393-01555')
     build('carrossel-bosque-picua', s)
+
+
+PF = ROOT / 'cordiallevel/perafita/img'
+
+
+def perafita():
+    T = 8
+    s = [
+        photo_slide(PF / 'pf-fachada.jpg', 1, T, 'Perafita · Matosinhos', 'T2 remodelado em Perafita', 'Com garagem e arrumos, ao lado da A28.', '258 000 €', big=True),
+        photo_slide(PF / 'pf-int-sala.jpg', 2, T, 'Sala', 'Estar e refeições num só espaço', 'Luz natural, pavimento flutuante e caixilharia com vidro duplo.', band=True),
+        photo_slide(PF / 'pf-int-cozinha-3.jpg', 3, T, 'Cozinha', 'Cozinha remodelada', 'Equipada e pronta a usar.'),
+        photo_slide(PF / 'pf-int-quarto-2.jpg', 4, T, 'Quartos', 'Dois quartos', '83 m² úteis bem distribuídos.', chips=('T2', '83 m²', '1 WC'), band=True),
+        photo_slide(PF / 'pf-int-wc.jpg', 5, T, 'Casa de banho', 'Casa de banho completa', 'Pronto a habitar, sem obras.', band=True),
+        photo_slide(PF / 'pf-garagem-3.jpg', 6, T, 'Garagem e arrumos', 'Lugar de garagem grande', 'E ainda um espaço de arrumos.', chips=('Garagem', 'Arrumos'), band=True),
+        photo_slide(PF / 'pf-transportes.jpg', 7, T, 'Mobilidade', 'A A28 à porta', 'Ligação rápida ao Porto, a Matosinhos e ao aeroporto. Escolas e autocarro por perto.'),
+        end_slide(8, T, 'T2 remodelado · Perafita', 'Edifício de 2003 com isolamento em capoto · certificado energético D · vídeo com o Francisco e visita 3D na apresentação.',
+                  [('Preço', '258 000 €'), ('Área útil', '83 m²'), ('Tipologia', 'T2 · 1 WC'), ('Garagem', 'Lugar grande')], 'usinavideos.pt/cordiallevel/perafita'),
+    ]
+    s[-1] = s[-1].replace('Ref. ', 'Ref. C0393-01754')
+    build('carrossel-perafita', s)
 
 
 if __name__ == '__main__':
