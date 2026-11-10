@@ -523,7 +523,10 @@ if __name__ == '__main__':
     d = os.path.join(ROOT, 'proposta')
     os.makedirs(d, exist_ok=True)
     open(os.path.join(d, 'index.html'), 'w').write(build())
+    from proposta_v2 import V2  # estas usam o visual novo: gerar com proposta_v2.py
     for slug, c in CLIENTES.items():
+        if slug in V2:
+            continue
         os.makedirs(os.path.join(d, slug), exist_ok=True)
         open(os.path.join(d, slug, 'index.html'), 'w').write(build(c))
     print('ok proposta +', ', '.join(CLIENTES))
