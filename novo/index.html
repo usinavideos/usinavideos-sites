@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Usina Vídeos · Produtora de conteúdo e comunicação em Portugal</title>
+<meta name="description" content="Vídeo, fotografia, drone, redes sociais, sites e campanhas digitais para empresas, marcas e profissionais, no Norte e em todo o Portugal. Peça orçamento.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/img/logo/usina-simbolo.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/img/logo/usina-simbolo-180.png">
+<meta name="theme-color" content="#211E1F">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/img/hero-foz-poster.jpg">
+<style>
+:root{
+  --carvao:#211E1F;   /* logo charcoal */
+  --estudio:#F4F4F1;  /* studio wall */
+  --cinza:#77716E;
+  --linha:#D9D6D2;
+  --amarelo:#E5AE29;  /* logo yellow */
+  --rec:#D0252F;      /* logo red, used only for REC */
+  --verde:#3EB15C;    /* logo green, used only for "online" */
+  --wide:125; --pad:clamp(20px,4vw,56px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--estudio);color:var(--carvao);font-family:Archivo,system-ui,sans-serif;font-variation-settings:"wdth" 100;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px}
+.wide{font-stretch:125%;font-variation-settings:"wdth" 125;font-weight:800;letter-spacing:-.02em;line-height:.98}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--pad)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:4px;font-weight:700;text-decoration:none;font-size:16px;line-height:1}
+.btn-y{background:var(--amarelo);color:var(--carvao)}
+.btn-y:hover{background:#F0BD3A}
+.btn-line{border:1.5px solid currentColor}
+
+/* NAV */
+.nav{position:fixed;inset:0 0 auto 0;z-index:30;display:flex;align-items:center;gap:20px;padding:14px var(--pad);color:#fff;transition:background .3s,color .3s}
+.nav.solid{background:var(--estudio);color:var(--carvao);box-shadow:0 1px 0 var(--linha)}
+.nav .logo img{height:30px;width:auto}
+.nav .logo .dark{display:none}.nav.solid .logo .light{display:none}.nav.solid .logo .dark{display:block}
+.nav .links{display:flex;gap:22px;margin-left:auto}
+.nav .links a{text-decoration:none;font-weight:600;font-size:15px}
+.nav .links a:hover{color:var(--amarelo)}
+.nav .lang{display:flex;gap:8px;font-size:13px;font-weight:600;opacity:.8}
+.nav .lang a{text-decoration:none}
+.nav .btn{padding:11px 18px;font-size:14px}
+@media (max-width:900px){.nav .links,.nav .lang{display:none}}
+
+/* HERO — the viewfinder */
+.vf{height:230vh;position:relative;background:var(--carvao)}
+.vf-stick{position:sticky;top:0;height:100vh;overflow:hidden}
+.vf-frame{position:absolute;inset:calc(var(--i,1)*12vh) calc(var(--i,1)*9vw);border-radius:calc(var(--i,1)*6px);overflow:hidden;background:#000}
+.vf-frame video,.vf-frame img{width:100%;height:100%;object-fit:cover}
+.vf-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,30,31,.35),rgba(33,30,31,0) 30%,rgba(33,30,31,0) 55%,rgba(33,30,31,.75))}
+.vf-ui{position:absolute;inset:calc(var(--i,1)*12vh + 18px + (1 - var(--i,1))*64px) calc(var(--i,1)*9vw + 18px) calc(var(--i,1)*12vh + 18px);pointer-events:none;color:#fff;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+.vf-ui .c{position:absolute;width:28px;height:28px;border:2px solid rgba(255,255,255,.85)}
+.vf-ui .tl{top:0;left:0;border-right:0;border-bottom:0}.vf-ui .tr{top:0;right:0;border-left:0;border-bottom:0}
+.vf-ui .bl{bottom:0;left:0;border-right:0;border-top:0}.vf-ui .br{bottom:0;right:0;border-left:0;border-top:0}
+.vf-rec{position:absolute;top:6px;left:44px;display:flex;align-items:center;gap:8px}
+.vf-rec i{width:10px;height:10px;border-radius:50%;background:var(--rec);animation:blink 1.2s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.vf-tc{position:absolute;top:6px;right:44px}
+.vf-place{position:absolute;bottom:6px;right:44px;opacity:.9}
+.vf-copy{position:absolute;left:calc(var(--i,1)*9vw + var(--pad));right:calc(var(--i,1)*9vw + var(--pad));bottom:calc(10vh + var(--i,1)*4vh);color:#fff;max-width:1240px;margin:0 auto}
+.vf-copy h1{font-size:clamp(40px,6.6vw,104px);margin:0;max-width:15ch}
+.vf-copy p{font-size:clamp(17px,1.6vw,21px);max-width:52ch;margin:22px 0 28px;opacity:.92}
+.vf-copy .acts{display:flex;gap:12px;flex-wrap:wrap}
+.vf-copy .btn-line{color:#fff}
+@media (max-width:700px){.vf{height:180vh}.vf-frame,.vf-ui{inset:calc(var(--i,1)*9vh) calc(var(--i,1)*5vw)}.vf-ui{inset:calc(var(--i,1)*9vh + 12px) calc(var(--i,1)*5vw + 12px)}.vf-place{display:none}}
+
+/* trust strip */
+.trust{background:var(--carvao);color:#CFCAC6;padding:26px 0 30px}
+.trust .wrap{display:flex;flex-wrap:wrap;gap:12px 40px;align-items:baseline}
+.trust span{font-size:15px}
+.trust b{color:#fff;font-weight:700;font-size:18px;font-stretch:112%}
+
+section{padding:clamp(72px,10vw,128px) 0}
+.h2{font-size:clamp(34px,5vw,64px);margin:0 0 28px;max-width:18ch}
+.lead{font-size:19px;max-width:58ch;color:#4A4543;margin:0}
+
+/* about */
+.about .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(32px,6vw,96px);align-items:start}
+.about .people{display:grid;gap:22px;margin-top:8px}
+.person{display:grid;grid-template-columns:84px 1fr;gap:18px;align-items:center}
+.person img,.person .ini{width:84px;height:84px;border-radius:50%;object-fit:cover;background:var(--amarelo);display:grid;place-items:center;font-weight:800;font-size:26px}
+.person h3{margin:0;font-size:19px}.person p{margin:2px 0 0;color:var(--cinza);font-size:15px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linha);margin-top:56px;border:1px solid var(--linha)}
+.facts div{background:var(--estudio);padding:22px}
+.facts b{display:block;font-size:clamp(28px,3vw,40px);font-stretch:125%;font-weight:800;line-height:1}
+.facts span{font-size:15px;color:var(--cinza)}
+@media (max-width:800px){.about .grid{grid-template-columns:1fr}.facts{grid-template-columns:1fr}}
+
+/* services: a shot list */
+.svc{background:#fff}
+.shots{margin-top:40px;border-top:2px solid var(--carvao)}
+.shot{display:grid;grid-template-columns:minmax(200px,1fr) 1.6fr 1fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--linha);align-items:baseline}
+.shot h3{margin:0;font-size:clamp(22px,2.4vw,30px)}
+.shot p{margin:0;color:#4A4543}
+.shot .fmt{font-size:14px;color:var(--cinza)}
+@media (max-width:800px){.shot{grid-template-columns:1fr;gap:6px}}
+.svc .note{margin-top:36px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+.svc .note p{margin:0;max-width:60ch}
+
+/* work */
+.work .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px;margin-top:44px}
+.case{grid-column:span 6;text-decoration:none;display:block}
+.case.big{grid-column:span 12}
+.case.third{grid-column:span 4}
+.case figure{margin:0;overflow:hidden;border-radius:4px;background:#ddd;aspect-ratio:16/10}
+.case.big figure{aspect-ratio:21/9}
+.case img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.case:hover img{transform:scale(1.03)}
+.case h3{margin:16px 0 4px;font-size:22px}
+.case p{margin:0;color:#4A4543;font-size:16px;max-width:60ch}
+.case .who{font-size:13px;color:var(--cinza);margin-top:6px}
+@media (max-width:800px){.case,.case.third,.case.big{grid-column:span 12}.case.big figure{aspect-ratio:16/10}}
+
+/* digital + sport */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,80px)}
+.duo ul{list-style:none;padding:0;margin:24px 0 0}
+.duo li{padding:16px 0;border-top:1px solid var(--linha)}
+.duo li b{display:block;font-size:19px}
+.duo li a{font-size:15px;color:var(--cinza)}
+@media (max-width:800px){.duo{grid-template-columns:1fr}}
+
+/* process: a real sequence */
+.proc{background:var(--carvao);color:#E9E6E3}
+.proc .h2{color:#fff}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:40px;counter-reset:s}
+.step{border-top:2px solid var(--amarelo);padding-top:18px}
+.step::before{counter-increment:s;content:counter(s);font-stretch:125%;font-weight:800;font-size:44px;color:var(--amarelo);display:block;line-height:1;margin-bottom:12px}
+.step h3{margin:0 0 6px;font-size:20px;color:#fff}
+.step p{margin:0;color:#BDB7B3;font-size:16px}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}@media (max-width:560px){.steps{grid-template-columns:1fr}}
+
+/* contact */
+.cta{background:var(--amarelo)}
+.cta .h2{max-width:16ch}
+.cta .row{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.cta .btn-dark{background:var(--carvao);color:#fff}
+.cta .on{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-size:15px}
+.cta .on i{width:9px;height:9px;border-radius:50%;background:var(--verde)}
+footer{background:var(--carvao);color:#A9A3A0;padding:44px 0;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+footer a{color:#E9E6E3;text-decoration:none;margin-right:16px}
+@media (prefers-reduced-motion:reduce){.vf{height:auto}.vf-stick{position:relative;height:92vh}.vf-rec i{animation:none}.case img{transition:none}}
+</style>
+<script src="/consent.js"></script>
+<!-- Google tag (gtag.js) - Usina Vídeos -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2SJMFPJ10"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q2SJMFPJ10');
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.href||'',ev=/wa\.me|whatsapp/.test(h)?'whatsapp_click':/^mailto:/.test(h)?'email_click':/calendly/.test(h)?'agendar_click':/^tel:/.test(h)?'telefone_click':null;if(ev)gtag('event',ev,{link_url:h,page_path:location.pathname});});</script>
+<!-- Meta Pixel - Usina Vídeos -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('consent',window.uvConsent&&uvConsent()?'grant':'revoke');fbq('init','2965321207157558');fbq('track','PageView');
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.href||'';if(/wa\.me|whatsapp|^mailto:|^tel:/.test(h))fbq('track','Contact');else if(/calendly/.test(h))fbq('track','Schedule');});</script>
+
+</head>
+<body>
+<nav class="nav" id="nav" aria-label="Menu">
+  <a class="logo" href="/" aria-label="Usina Vídeos, início"><img class="light" src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos"><img class="dark" src="/img/logo/usina-horizontal.svg" alt="Usina Vídeos"></a>
+  <div class="links"><a href="#quem">Quem somos</a><a href="#servicos">Serviços</a><a href="#trabalhos">Trabalhos</a><a href="/blog/">Blog</a><a href="#contacto">Contacto</a></div>
+  <div class="lang"><a href="/" aria-current="page">PT</a><a href="/en/">EN</a><a href="/es/">ES</a></div>
+  <a class="btn btn-y" href="#contacto">Peça orçamento</a>
+</nav>
+
+<header class="vf" id="topo">
+  <div class="vf-stick">
+    <div class="vf-frame">
+      <video id="hero" autoplay muted loop playsinline poster="/img/hero-foz-poster.jpg" aria-label="Voo de drone sobre a Foz do Douro, Porto">
+        <source src="/media/hero-foz-drone.mp4" type="video/mp4">
+      </video>
+      <div class="vf-shade"></div>
+    </div>
+    <div class="vf-ui" aria-hidden="true">
+      <span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>
+      <span class="vf-rec"><i></i>REC</span>
+      <span class="vf-tc" id="tc">00:00:00:00</span>
+      <span class="vf-place">Foz do Douro, Porto</span>
+    </div>
+    <div class="vf-copy">
+      <h1 class="wide">Contamos a sua história como uma reportagem.</h1>
+      <p>Vídeo, fotografia, drone, redes sociais, sites e campanhas para empresas, marcas e profissionais. No Norte e em todo o Portugal.</p>
+      <div class="acts"><a class="btn btn-y" href="#contacto">Peça orçamento</a><a class="btn btn-line" href="#trabalhos">Ver trabalhos</a></div>
+    </div>
+  </div>
+</header>
+
+<div class="trust"><div class="wrap">
+  <span>Confiam em nós:</span>
+  <b>Cordial Level</b><b>CENTURY 21</b><b>Motores e Ação</b><b>CDJRegio</b><b>MatchBall</b>
+</div></div>
+
+<section class="about" id="quem"><div class="wrap">
+  <div class="grid">
+    <div>
+      <h2 class="h2 wide">Olhar de jornalista, ao serviço da sua marca.</h2>
+      <p class="lead">A Usina Vídeos nasceu em 2002 e é dirigida por Freire Neto e Sandra Freire. Tratamos cada projeto como uma reportagem: perceber o que o torna único, captá-lo com rigor e contá-lo com clareza.</p>
+    </div>
+    <div class="people">
+      <div class="person"><img src="/img/equipa/freire-neto-quadrado.jpg" alt="Freire Neto"><div><h3>Freire Neto</h3><p>Direção, reportagem e imagem. Jornalista desde 1997, fundador do Motores e Ação.</p></div></div>
+      <div class="person"><span class="ini" aria-hidden="true">SF</span><div><h3>Sandra Freire</h3><p>Edição, produção e administração. 20 anos de televisão e produtoras.</p></div></div>
+    </div>
+  </div>
+  <div class="facts">
+    <div><b>48 h</b><span>para entregar as fotografias</span></div>
+    <div><b>72 h</b><span>para entregar os vídeos editados</span></div>
+    <div><b>3 línguas</b><span>conteúdos em português, inglês e espanhol</span></div>
+  </div>
+</div></section>
+
+<section class="svc" id="servicos"><div class="wrap">
+  <h2 class="h2 wide">Tudo o que a sua mensagem precisa para ser vista.</h2>
+  <p class="lead">Cada serviço pode ser contratado sozinho ou em conjunto. Um briefing, um contacto, uma produção.</p>
+  <div class="shots">
+    <div class="shot"><h3>Vídeo e reportagem</h3><p>Institucionais, reportagens, entrevistas, eventos e making of.</p><span class="fmt">Horizontal e vertical</span></div>
+    <div class="shot"><h3>Fotografia</h3><p>Imóveis, produtos, eventos, equipas e retratos profissionais.</p><span class="fmt">Alta resolução, em 48 h</span></div>
+    <div class="shot"><h3>Drone</h3><p>Planos aéreos para imóveis, turismo, eventos e desporto.</p><span class="fmt">Foto e vídeo</span></div>
+    <div class="shot"><h3>Redes sociais</h3><p>Reels, shorts, carrosséis e posts com a voz da sua marca.</p><span class="fmt">Instagram, Facebook, YouTube, TikTok</span></div>
+    <div class="shot"><h3>Sites e apresentações</h3><p>Sites, landing pages e uma página por imóvel ou projeto, prontas a partilhar.</p><span class="fmt">Em várias línguas</span></div>
+    <div class="shot"><h3>Campanhas</h3><p>Anúncios no Facebook e no Instagram e geração de contactos.</p><span class="fmt">Os contactos vão direto para si</span></div>
+  </div>
+  <div class="note"><p>Imobiliário, automóvel, desporto, comércio, turismo, empresas e marca pessoal. Simulações feitas com IA são sempre identificadas.</p><a class="btn btn-y" href="#contacto">Peça orçamento</a></div>
+</div></section>
+
+<section class="work" id="trabalhos"><div class="wrap">
+  <h2 class="h2 wide">Trabalho recente, publicado com autorização.</h2>
+  <div class="grid">
+    <a class="case big" href="/blog/do-papel-a-tela-foz-do-douro/"><figure><img src="/img/foz-drone.jpg" alt="Foz do Douro vista do drone" loading="lazy"></figure><h3>Do papel à tela, na Foz do Douro</h3><p>Drone e câmara dos molhes ao Jardim do Passeio Alegre: o nosso filme de bastidores.</p></a>
+    <a class="case" href="/t4coral/"><figure><img src="/img/coral-fachada.jpg" alt="Condomínio Coral, Foz do Douro" loading="lazy"></figure><h3>Condomínio Coral, Foz do Douro</h3><p>Fotografia, drone, vídeo com a consultora e apresentação em quatro línguas.</p><p class="who">Cheila Monteiro, CENTURY 21 Arquitectos II</p></a>
+    <a class="case" href="/cordiallevel/perafita/"><figure><img src="/img/blog/perafita-t2.jpg" alt="T2 em Perafita" loading="lazy"></figure><h3>T2 em Perafita, Matosinhos</h3><p>Fotografia, vídeo-reportagem, vídeo com o consultor e visita virtual 3D.</p><p class="who">Cordial Level, CENTURY 21 Arquitectos</p></a>
+    <a class="case third" href="/cordiallevel/"><figure><img src="/img/coral-drone.jpg" alt="Cordial Level" loading="lazy"></figure><h3>Cordial Level</h3><p>Site, vídeo-reportagens, podcast e redes sociais.</p></a>
+    <a class="case third" href="https://www.motoreseacao.com/?utm_source=usinavideos&amp;utm_medium=trabalhos&amp;utm_campaign=usina"><figure><img src="/img/mea-toro.jpg" alt="Motores e Ação" loading="lazy"></figure><h3>Motores e Ação</h3><p>Jornalismo automóvel desde 2002, com mais de 114 mil inscritos no YouTube.</p></a>
+    <a class="case third" href="/cordiallevel/moncao/"><figure><img src="/cordiallevel/moncao/img/mc-rio-muralhas.jpg" alt="Rio Minho e muralhas de Monção" loading="lazy"></figure><h3>Terrenos em Monção</h3><p>Drone, vídeo e simulações de projeto identificadas como IA.</p></a>
+  </div>
+</div></section>
+
+<section><div class="wrap duo">
+  <div>
+    <h2 class="h2 wide">Sites, apresentações e podcasts.</h2>
+    <p class="lead">Criamos também os lugares onde os vídeos vivem.</p>
+    <ul>
+      <li><b>Sites</b>Para agências, consultores e marcas, com contacto direto por WhatsApp. <a href="/cordiallevel/">Ver o da Cordial Level</a></li>
+      <li><b>Apresentações digitais</b>Uma página por imóvel, para enviar por link ou mostrar em reunião. <a href="/t4coral/">Ver o Condomínio Coral</a></li>
+      <li><b>Podcasts</b>Gravação, edição e cortes para as redes. <a href="https://www.youtube.com/watch?v=7SPYD5xZ5Hg">Ver o Panorama Imobiliário PT</a></li>
+    </ul>
+  </div>
+  <div>
+    <h2 class="h2 wide">Também no pavilhão.</h2>
+    <p class="lead">Reportagem de jogos e torneios de basquetebol, com destaques e perfis de jogadores.</p>
+    <ul>
+      <li><b>CDJRegio</b>Clube Desportivo José Régio, Vila do Conde. <a href="https://cdjregio.pt/">cdjregio.pt</a></li>
+      <li><b>MatchBall</b>Tour internacional de basquetebol em Portugal. <a href="https://www.instagram.com/matchballbasketball/">Ver no Instagram</a></li>
+    </ul>
+  </div>
+</div></section>
+
+<section class="proc"><div class="wrap">
+  <h2 class="h2 wide">Do pedido à entrega.</h2>
+  <div class="steps">
+    <div class="step"><h3>Pedido</h3><p>Conte-nos o projeto, o local e o objetivo, por WhatsApp ou e-mail.</p></div>
+    <div class="step"><h3>Produção</h3><p>Planeamos consigo e captamos no local: imóvel, evento, empresa ou exterior.</p></div>
+    <div class="step"><h3>Pós-produção</h3><p>Tratamento de imagem, edição, legendas e versões para cada plataforma.</p></div>
+    <div class="step"><h3>Entrega</h3><p>Fotografias em 48 horas, vídeos em 72 horas. Se quiser, publicamos por si.</p></div>
+  </div>
+</div></section>
+
+<section class="cta" id="contacto"><div class="wrap">
+  <h2 class="h2 wide">Vamos contar a sua história?</h2>
+  <p class="lead" style="color:var(--carvao)">Diga-nos o que quer comunicar, onde e para quem. Respondemos com uma proposta clara, sem compromisso.</p>
+  <div class="row">
+    <a class="btn btn-dark" href="https://wa.me/351912988971?text=Ol%C3%A1%20Freire%2C%20gostaria%20de%20pedir%20um%20or%C3%A7amento%20%C3%A0%20Usina%20V%C3%ADdeos.">Falar no WhatsApp</a>
+    <a class="btn btn-line" href="mailto:freireneto@me.com?subject=Pe%C3%A7a%20or%C3%A7amento%20%C2%B7%20Usina%20V%C3%ADdeos">Enviar e-mail</a>
+    <a class="btn btn-line" href="https://calendly.com/usinavideos/videoreport">Marcar uma sessão</a>
+  </div>
+  <span class="on"><i></i>Respondemos no mesmo dia, de segunda a sábado.</span>
+</div></section>
+
+<footer><div class="wrap">
+  <img src="/img/logo/usina-horizontal-claro.svg" alt="Usina Vídeos" style="height:28px">
+  <div><a href="https://www.instagram.com/usina.videos/">Instagram</a><a href="https://www.youtube.com/@DicasdoFreire/">YouTube</a><a href="/blog/">Blog</a><a href="/cookies/">Cookies</a></div>
+  <span>© 2002–2026 Usina Vídeos</span>
+</div></footer>
+
+<script>
+(function(){
+  var vf=document.querySelector('.vf'),stick=document.querySelector('.vf-stick'),nav=document.getElementById('nav'),tc=document.getElementById('tc'),v=document.getElementById('hero');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function tick(){
+    var r=vf.getBoundingClientRect(),h=vf.offsetHeight-window.innerHeight;
+    var p=reduce?1:Math.min(1,Math.max(0,-r.top/(h*0.55)));
+    stick.style.setProperty('--i',(1-p).toFixed(3));
+    nav.classList.toggle('solid',r.bottom<70);
+    if(v&&tc){var t=v.currentTime||0,f=Math.floor((t%1)*25),s=Math.floor(t)%60,m=Math.floor(t/60);tc.textContent='00:'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')+':'+String(f).padStart(2,'0');}
+    requestAnimationFrame(tick);
+  }
+  if(reduce&&v){v.removeAttribute('autoplay');v.pause();}
+  requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>
