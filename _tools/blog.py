@@ -24,6 +24,36 @@ CATS = {'bastidores': 'Bastidores e making of', 'comunicacao': 'Comunicação e 
         'mercados': 'Mercados', 'cases': 'Cases'}
 
 POSTS = [
+    dict(slug='metade-das-casas-anunciadas-acima-do-valor-de-mercado', cat='mercados', date='2026-11-15',
+         title='Mais de metade das casas anunciadas está acima do valor de mercado',
+         desc='Num relatório semanal da PrivateMarkets.pt com 2 779 imóveis, 52,7% estavam anunciados pelo menos 5% acima das estimativas de valor. No Porto, o preço de venda estimado subiu 2,8% até setembro.',
+         img='/img/blog/anuncios-acima-mercado.jpg', img_cap='Dados: PrivateMarkets.pt · arte Usina Vídeos',
+         lead='Um relatório semanal de mercado mostra o que muitos proprietários sentem na pele: a maioria dos anúncios pede mais do que o mercado indica.',
+         body='''<p>A <b>PrivateMarkets.pt</b>, uma plataforma de dados imobiliários, analisou <b>2 779 imóveis</b> anunciados entre 5 e 11 de novembro em dez distritos, incluindo o Porto, Lisboa, Braga e Aveiro. Comparou o preço pedido de cada um com dois modelos de avaliação diferentes. O resultado é claro:</p>
+<table class="bt"><thead><tr><th>Imóveis anunciados (5 a 11 de novembro)</th><th>Peso</th></tr></thead><tbody>
+<tr><td>Pelo menos 5% <b>acima</b> das duas estimativas de valor</td><td><b>52,7%</b></td></tr>
+<tr><td>Pelo menos 5% <b>abaixo</b> das duas estimativas</td><td>9,7%</td></tr>
+<tr><td>Preço pedido mediano (10 distritos)</td><td>3 247 €/m²</td></tr>
+<tr><td>Rentabilidade bruta mediana de arrendamento</td><td>3,3%</td></tr></tbody></table>
+<p>Ou seja, por cada casa anunciada abaixo do valor estimado, há mais de cinco anunciadas claramente acima.</p>
+<h2>E no Porto?</h2>
+<p>No distrito do Porto entraram 500 anúncios nessa semana, com um preço pedido mediano de <b>2 776 €/m²</b>. Quanto às vendas efetivas, a estimativa da PrivateMarkets para setembro aponta para <b>2 888 €/m²</b>, mais 2,8% do que em junho (2 810 €/m², preço oficial do INE nos 12 meses até junho), com perto de 13 300 escrituras estimadas em 12 meses.</p>
+<p>A própria fonte avisa que estes dois números não se comparam diretamente: um vem de anúncios, o outro de escrituras, e as áreas são medidas de forma diferente. O que contam, juntos, é que o mercado do Porto continua a subir, mas a ritmo moderado, e que <b>o preço que se pede não é o preço que se faz</b>.</p>
+<h2>O que isto significa para quem quer vender</h2>
+<ul><li><b>Um anúncio acima do mercado fica parado.</b> Perde visitas nas primeiras semanas, que são as que mais contam, e acaba muitas vezes com descidas de preço sucessivas.</li>
+<li><b>O banco também avalia.</b> A avaliação bancária média nacional ficou em 2 278 €/m² em setembro (INE). Se o preço pedido se afasta muito do que o banco avalia, o comprador não consegue o crédito de que precisa.</li>
+<li><b>O preço certo vende mais depressa</b>, e muitas vezes por mais, porque atrai mais interessados ao mesmo tempo.</li></ul>
+<p>É por isso que, na Cordial Level, a venda começa sempre por uma <b>avaliação de mercado com visita ao imóvel</b>, baseada em vendas reais na zona e não em preços de anúncios. Como explica o consultor Francisco Medeiros, <a href="/blog/quanto-vale-a-sua-casa-avaliacao-cordial-level/">uma casa são três casas</a>: a do proprietário, a que se prepara para a apresentação e a que o comprador vai comprar.</p>
+<p><a href="/cordiallevel/avaliacao/?utm_source=blog&amp;utm_campaign=avaliacao_mercado" style="display:inline-block;background:#D4B562;color:#12284B;font-weight:700;padding:14px 24px;border-radius:999px;text-decoration:none">Saber quanto vale a minha casa</a></p>
+<p class="nota"><small>Fonte: PrivateMarkets.pt, relatório semanal de mercado de 5 a 11 de novembro de 2026 (anúncios em Lisboa, Porto, Setúbal, Faro, Braga, Aveiro, Coimbra, Leiria, Beja e Évora; preços de venda a partir de dados do INE). Valores indicativos; cada imóvel precisa da sua própria avaliação.</small></p>''',
+         dica='Antes de definir o preço, compare com vendas reais e não com anúncios. Um anúncio igual ao seu pode estar parado há meses.',
+         veredito='O mercado continua a subir, mas devagar. Quem vende com o preço certo vende primeiro.',
+         cta='''<div class="clb"><img src="/cordiallevel/img/logo-cordial-level-claro.png" alt="Cordial Level" width="1156" height="754" loading="lazy">
+<div><b>Quer saber quanto vale a sua casa? Fale connosco!</b>
+<p>Avaliação gratuita e sem compromisso no Porto, Matosinhos, Leça da Palmeira, Maia, Gaia e Vila do Conde.</p>
+<div class="clr"><a href="/cordiallevel/avaliacao/?utm_source=blog&amp;utm_campaign=avaliacao_mercado">Pedir avaliação</a><a href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20li%20o%20artigo%20sobre%20os%20pre%C3%A7os%20dos%20an%C3%BAncios%20e%20gostava%20de%20avaliar%20o%20meu%20im%C3%B3vel." target="_blank" rel="noopener">Casemiro · WhatsApp 935 101 667</a><a href="https://wa.me/351912706395?text=Ol%C3%A1%20Francisco%2C%20li%20o%20artigo%20sobre%20os%20pre%C3%A7os%20dos%20an%C3%BAncios%20e%20gostava%20de%20avaliar%20o%20meu%20im%C3%B3vel." target="_blank" rel="noopener">Francisco · 912 706 395</a></div>
+<small>Cordial Level | CENTURY 21 Arquitectos · AMI 11414</small></div></div>''',
+         links=[('Pedir a avaliação', '/cordiallevel/avaliacao/'), ('Uma casa são três casas', '/blog/quanto-vale-a-sua-casa-avaliacao-cordial-level/'), ('PrivateMarkets.pt', 'https://www.privatemarkets.pt')]),
     dict(slug='quanto-vale-a-sua-casa-avaliacao-cordial-level', cat='mercados', date='2026-11-15',
          title='Quanto vale a sua casa? Porque um valor de portal não é uma avaliação',
          desc='A Cordial Level lança a avaliação de imóveis gratuita no Porto, Matosinhos, Leça da Palmeira, Maia, Gaia e Vila do Conde: comparação com vendas reais, visita ao imóvel e pedido em dois minutos por WhatsApp.',
