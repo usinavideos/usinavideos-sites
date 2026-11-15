@@ -24,6 +24,35 @@ CATS = {'bastidores': 'Bastidores e making of', 'comunicacao': 'Comunicação e 
         'mercados': 'Mercados', 'cases': 'Cases'}
 
 POSTS = [
+    dict(slug='quanto-vale-a-sua-casa-avaliacao-cordial-level', cat='mercados', date='2026-11-15',
+         title='Quanto vale a sua casa? Porque um valor de portal não é uma avaliação',
+         desc='A Cordial Level lança a avaliação de imóveis gratuita em Leça da Palmeira, Maia e Vila do Conde: comparação com vendas reais, visita ao imóvel e pedido em dois minutos por WhatsApp.',
+         img='/img/blog/avaliacao-cordial-level.jpg', img_cap='Avaliação de imóveis Cordial Level · arte Usina Vídeos',
+         lead='Quem pensa vender casa começa quase sempre pela mesma pergunta: quanto vale? A resposta certa não está num simulador.',
+         body='''<p>A <b>Cordial Level</b> (CENTURY 21 Arquitectos) abriu uma página própria para os proprietários de <b>Leça da Palmeira, Maia e Vila do Conde</b> pedirem a avaliação de mercado do seu imóvel. É gratuita, sem compromisso, e o pedido segue em dois minutos por WhatsApp, diretamente para os consultores.</p>
+<p><a href="/cordiallevel/avaliacao/?utm_source=blog&amp;utm_campaign=avaliacao" style="display:inline-block;background:#D4B562;color:#12284B;font-weight:700;padding:14px 24px;border-radius:999px;text-decoration:none">Pedir a avaliação da minha casa</a></p>
+<h2>Uma casa são três casas</h2>
+<p>No Panorama Imobiliário PT, o consultor <b>Francisco Medeiros</b> explicou a ideia com uma imagem simples: há a casa onde o proprietário vive, com os seus móveis e a sua história; a casa que é preparada para fotografia e vídeo; e a casa que o comprador vai ver. São três olhares diferentes, e o preço tem de falar com o último.</p>
+<figure class="bf"><a href="https://www.youtube.com/watch?v=7SPYD5xZ5Hg&amp;t=992s" target="_blank" rel="noopener"><img src="/cordiallevel/img/panorama-credito-jovem-2027.jpg" alt="Francisco Medeiros no Panorama Imobiliário PT" width="960" height="540" loading="lazy"></a><figcaption>Francisco Medeiros no Panorama Imobiliário PT #3 · ver a partir dos 16:32</figcaption></figure>
+<h2>Porque o simulador não chega</h2>
+<ul><li><b>Usa preços pedidos, não preços de venda.</b> Um anúncio igual ao seu no mesmo prédio pode estar à venda há dois anos, porque o mercado não paga esse valor.</li>
+<li><b>Não vê o imóvel.</b> Obras, exposição solar, vistas e estado do prédio mudam o valor, e só uma visita os mostra.</li>
+<li><b>Não diz como vender.</b> O valor certo vem acompanhado de um plano: preparação, fotografia, vídeo e divulgação.</li></ul>
+<p>Na avaliação da Cordial Level, o imóvel é comparado com vendas reais na zona e o consultor usa também os métodos do rendimento e do custo, antes de afinar o valor ao que só a visita revela.</p>
+<h2>Como funciona</h2>
+<ol><li><b>Faz o pedido</b> na <a href="/cordiallevel/avaliacao/?utm_source=blog&amp;utm_campaign=avaliacao">página de avaliação</a>: zona, tipo de imóvel e quando pensa vender.</li>
+<li><b>O consultor marca a visita</b> consigo, à hora que lhe der jeito.</li>
+<li><b>Recebe o valor de mercado</b> e, se quiser vender, o plano para o fazer. Não fica obrigado a nada.</li></ol>
+<h2>E se decidir vender</h2>
+<p>Os imóveis da Cordial Level são apresentados com produção da Usina Vídeos: vídeo-reportagem, fotografia, drone e uma página própria. Veja os exemplos do <a href="/cordiallevel/perafita/">T2 em Perafita</a>, do <a href="/cordiallevel/t3leca/">T3 em Leça da Palmeira</a> e da <a href="/cordiallevel/casaraofoz/">moradia na Foz do Douro</a>.</p>''',
+         dica='Antes de pôr a casa à venda, peça uma avaliação com visita. Começar com o preço certo poupa meses de anúncio parado e descidas de preço.',
+         veredito='Um proprietário informado decide melhor. Uma avaliação gratuita e sem compromisso é o primeiro passo certo.',
+         cta='''<div class="clb"><img src="/cordiallevel/img/logo-cordial-level-claro.png" alt="Cordial Level" width="1156" height="754" loading="lazy">
+<div><b>Quer saber quanto vale a sua casa? Fale connosco!</b>
+<p>Casemiro Ramos e Francisco Medeiros, consultores da Cordial Level, fazem a avaliação e acompanham cada processo do primeiro contacto à escritura.</p>
+<div class="clr"><a href="/cordiallevel/avaliacao/?utm_source=blog&amp;utm_campaign=avaliacao">Pedir avaliação</a><a href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20li%20o%20artigo%20sobre%20avalia%C3%A7%C3%A3o%20e%20gostava%20de%20saber%20quanto%20vale%20o%20meu%20im%C3%B3vel." target="_blank" rel="noopener">Casemiro · WhatsApp 935 101 667</a><a href="https://wa.me/351912706395?text=Ol%C3%A1%20Francisco%2C%20li%20o%20artigo%20sobre%20avalia%C3%A7%C3%A3o%20e%20gostava%20de%20saber%20quanto%20vale%20o%20meu%20im%C3%B3vel." target="_blank" rel="noopener">Francisco · 912 706 395</a></div>
+<small>Cordial Level | CENTURY 21 Arquitectos · AMI 11414</small></div></div>''',
+         links=[('Pedir a avaliação', '/cordiallevel/avaliacao/'), ('Ver o Panorama Imobiliário PT #3', 'https://youtu.be/7SPYD5xZ5Hg'), ('Ver a Cordial Level', '/cordiallevel/')]),
     dict(slug='casas-mais-caras-que-rendimentos-portugal-eurostat', cat='mercados', date='2026-11-10',
          title='Casas 60,8% mais caras face aos rendimentos: o que o dado do Eurostat significa para quem compra e para quem vende',
          desc='Entre 2015 e 2025, o rácio entre o preço das casas e os rendimentos subiu 60,8% em Portugal, a maior subida da UE (média: 6,8%). O comentário do Panorama Imobiliário.',
