@@ -26,10 +26,10 @@ CATS = {'bastidores': 'Bastidores e making of', 'comunicacao': 'Comunicação e 
 POSTS = [
     dict(slug='quanto-vale-a-sua-casa-avaliacao-cordial-level', cat='mercados', date='2026-11-15',
          title='Quanto vale a sua casa? Porque um valor de portal não é uma avaliação',
-         desc='A Cordial Level lança a avaliação de imóveis gratuita em Leça da Palmeira, Maia e Vila do Conde: comparação com vendas reais, visita ao imóvel e pedido em dois minutos por WhatsApp.',
+         desc='A Cordial Level lança a avaliação de imóveis gratuita no Porto, Matosinhos, Leça da Palmeira, Maia, Gaia e Vila do Conde: comparação com vendas reais, visita ao imóvel e pedido em dois minutos por WhatsApp.',
          img='/img/blog/avaliacao-cordial-level.jpg', img_cap='Avaliação de imóveis Cordial Level · arte Usina Vídeos',
          lead='Quem pensa vender casa começa quase sempre pela mesma pergunta: quanto vale? A resposta certa não está num simulador.',
-         body='''<p>A <b>Cordial Level</b> (CENTURY 21 Arquitectos) abriu uma página própria para os proprietários de <b>Leça da Palmeira, Maia e Vila do Conde</b> pedirem a avaliação de mercado do seu imóvel. É gratuita, sem compromisso, e o pedido segue em dois minutos por WhatsApp, diretamente para os consultores.</p>
+         body='''<p>A <b>Cordial Level</b> (CENTURY 21 Arquitectos) abriu uma página própria para os proprietários do <b>Porto, Matosinhos, Leça da Palmeira, Maia, Gaia e Vila do Conde</b> pedirem a avaliação de mercado do seu imóvel. É gratuita, sem compromisso, e o pedido segue em dois minutos por WhatsApp, diretamente para os consultores.</p>
 <p><a href="/cordiallevel/avaliacao/?utm_source=blog&amp;utm_campaign=avaliacao" style="display:inline-block;background:#D4B562;color:#12284B;font-weight:700;padding:14px 24px;border-radius:999px;text-decoration:none">Pedir a avaliação da minha casa</a></p>
 <h2>Uma casa são três casas</h2>
 <p>No Panorama Imobiliário PT, o consultor <b>Francisco Medeiros</b> explicou a ideia com uma imagem simples: há a casa onde o proprietário vive, com os seus móveis e a sua história; a casa que é preparada para fotografia e vídeo; e a casa que o comprador vai ver. São três olhares diferentes, e o preço tem de falar com o último.</p>
