@@ -99,6 +99,11 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}
 :root[data-theme="dark"] .btn{color:#0f181d}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn{color:#0f181d}}
 @page{margin:12mm}@media print{.picks{display:block;columns:2;column-gap:14px}.pick{break-inside:avoid;margin-bottom:14px}.zone{break-inside:avoid}body{font-size:13px}.wrap{padding:0}section{margin-top:24px}}
+.btn.tel{background:var(--gold);margin-top:0}
+.contacts{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.contact{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:6px}
+.contact .num-big{font-family:var(--display);font-weight:800;font-size:22px;font-variant-numeric:tabular-nums}
+.contact p{font-size:15px}
 </style>
 </head>
 <body>
@@ -112,6 +117,21 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}
     <span class="chip gold">Novo esta semana</span>
   </div>
 </header>
+
+
+<section id="contactos">
+  <div class="sec-head">
+    <h2>Telefones para ligar já</h2>
+    <p>Os anúncios que mostram o número. Nos outros, o contacto é pelo chat ou pelo botão "Ver telefone" do portal.</p>
+  </div>
+  <div class="contacts">
+    <div class="contact"><span class="rank">PÓVOA DE VARZIM · T1 600 €</span><a class="num-big" href="tel:+351960077527">960 077 527</a><p>Maria Eduarda, imobiliária Rentkasa. Praça João XXIII, 2.º com elevador.</p></div>
+    <div class="contact"><span class="rank">PORTO · BONFIM · T1 670 €</span><a class="num-big" href="tel:+351932729910">932 729 910</a><p>Maximo, particular. Av. Fernão de Magalhães 146, rés do chão, metro a 300 m.</p></div>
+    <div class="contact"><span class="rank">VIANA DO CASTELO · T0 590 €</span><a class="num-big" href="tel:+351925825114">925 825 114</a><p>Sousa, particular. Rua dos Manjovos 52, rés do chão, mobilado. <span class="warn">Marcado como temporário: perguntar se aceita contrato longo.</span> · <a href="https://www.idealista.pt/imovel/35450167/">anúncio</a></p></div>
+    <div class="contact"><span class="rank">MATOSINHOS · S. MAMEDE · T1 750 €</span><a class="num-big" href="tel:+351962166027">962 166 027</a><p>Rodrigues, junto ao metro Hospital S. João. <span class="warn">Parece pensado para estudantes; confirmar contrato longo e tentar 700 €.</span> · <a href="https://www.imovirtual.com/pt/anuncio/t1-metro-hospital-s-joao-polo-universitario-ID1jdc0">anúncio</a></p></div>
+  </div>
+  <p class="note" style="margin-top:12px">Só por chat do portal: Santo Tirso (moradia T1 600 €, Paulo) e Ermesinde junto à estação (T1 700 €, Filipe Lopes). Guimarães (1.º, favorito): pedir pela referência 1796P no Imovirtual.</p>
+</section>
 
 <section id="destaques">
   <div class="sec-head">
@@ -146,6 +166,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}
 <p class="where">Praça João XXIII</p>
 <div class="legend"><span class="chip ok">2.º com elevador</span><span class="chip ok">Metro Linha B</span></div>
 <p class="coment"><b>Nosso comentário:</b> Abaixo do preço da zona. Comércio e supermercados à porta, praia perto e a família em Vila do Conde a poucos minutos de metro.</p><p class="warn">⚠ Sem mobília.</p>
+<a class="btn tel" href="tel:+351960077527">📞 Ligar 960 077 527</a>
 <a class="btn" href="https://www.imovirtual.com/pt/anuncio/apartamento-t1-para-arrendamento-ID1j1LZ">Ver anúncio</a></article>
 <article class="pick"><div class="photo empty"><a class="ph" href="https://www.imovirtual.com/pt/anuncio/t1-mobilado-com-elevador-em-mafamude-ID1jexp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Ver as fotos no anúncio</a></div>
 <span class="rank">5 · GAIA · MAFAMUDE</span>
@@ -209,6 +230,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}
 <p class="where">Av. de Fernão de Magalhães, 146</p>
 <div class="legend"><span class="chip ok">Rés do chão</span><span class="chip ok">Metro a 300 m</span></div>
 <p class="coment"><b>Nosso comentário:</b> Entrada imediata, mobilado, jardim comum. Metro Campo 24 de Agosto e muitos autocarros perto. Contrato mínimo de 12 meses.</p><p class="warn">⚠ Pede recibos de salário: perguntar se aceita reforma. Caução de 2 meses.</p>
+<a class="btn tel" href="tel:+351932729910">📞 Ligar 932 729 910</a>
 <a class="btn" href="https://www.idealista.pt/imovel/35479956/">Ver anúncio</a></article>
 <article class="pick"><div class="photo empty"><a class="ph" href="https://casa.sapo.pt/alugar-apartamento-t1-porto-cedofeita-santo-ildefonso-se-miragaia-sao-nicolau-e-vitoria-83f152d2-bfe7-44d5-92e2-8b46eddab442.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Ver as fotos no anúncio</a></div>
 <span class="rank">14 · PORTO · CENTRO</span>
