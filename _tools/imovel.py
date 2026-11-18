@@ -136,12 +136,14 @@ def leads(p, ref):
     fv = wa('351912706395', f"Olá Francisco, gostava de marcar uma visita ao {p['curto']}{r}.")
     ff = wa('351935101667', f"Olá Casemiro, pode enviar-me a ficha completa do {p['curto']}{r}?")
     fc = wa('351912706395', f"Olá Francisco, gostava de simular o crédito para o {p['curto']}{r}.")
+    if p.get('rent'):
+        fc = wa('351912706395', f"Olá Francisco, gostava de saber as condições de arrendamento do {p['curto']}{r}.")
     return f'''<section id="interesse" style="padding-top:0"><div class="wrap">
   <div class="lcards">
     <a class="lc" href="{cv}" target="_blank" rel="noopener"><small>Ver ao vivo</small><b>Marcar visita</b><span>WhatsApp Casemiro →</span></a>
     <a class="lc" href="{fv}" target="_blank" rel="noopener"><small>Com o consultor do vídeo</small><b>Visita com o Francisco</b><span>WhatsApp Francisco →</span></a>
     <a class="lc" href="{ff}" target="_blank" rel="noopener"><small>Áreas, planta e documentos</small><b>Receber a ficha completa</b><span>WhatsApp →</span></a>
-    <a class="lc" href="{fc}" target="_blank" rel="noopener"><small>{e(p.get('prest', 'Prestação estimada'))}</small><b>Simular o crédito</b><span>WhatsApp →</span></a>
+    <a class="lc" href="{fc}" target="_blank" rel="noopener"><small>{e(p.get('prest', 'Prestação estimada'))}</small><b>{'Pedir as condições' if p.get('rent') else 'Simular o crédito'}</b><span>WhatsApp →</span></a>
   </div></div></section>'''
 
 
@@ -444,7 +446,7 @@ def build(p):
 </section>
 
 {closing}
-{credito_ag(ag, p['curto']) if ag else CREDITO}{angariacao(p['curto'], ag) if p.get('angariacao', True) else ''}<section id="contacto">
+{'' if p.get('rent') else (credito_ag(ag, p['curto']) if ag else CREDITO)}{angariacao(p['curto'], ag) if p.get('angariacao', True) else ''}<section id="contacto">
   <div class="wrap">
     <span class="eyebrow">Contacto</span>
     <h2 class="h2">Marque a sua visita</h2>
@@ -852,6 +854,52 @@ IMOVEIS = {
         maps='Perafita, Matosinhos', geo=(41.2299, -8.6937),
         legal='Informação sujeita a confirmação. *Prestação indicativa do simulador CENTURY 21, sujeita a aprovação bancária. Certificado energético D. Licença de utilização n.º 446, CM Matosinhos.',
         video='shp7XDfpkHM', video_img='pfn-01', video_vertical=True, video_h2='O Francisco Medeiros apresenta o T2', tour='https://realsee.ai/JVLLgJmB', tour_img='pfn-03',
+    ),
+    'foco': dict(
+        ref='C0393-01634', curto='T3 mobilado no Foco', ficha_url='https://century21.pt/ref/C0393-01634', prest='2 rendas + 1 caução + fiador', rent=True,
+        title='T3 mobilado para arrendar no Foco, Porto · 1 400 €/mês · Cordial Level',
+        desc='T3 mobilado para arrendamento na Rua Professor Damião Peres, zona do Foco e do Bessa, no Porto: 120 m² úteis, 2 casas de banho remodeladas, cozinha equipada, lugar de garagem, prédio com 3 elevadores. 1 400 €/mês, a 450 m da Avenida da Boavista.',
+        hero='fc-01', hero_pos='50% 60%', hero_alt='Sala mobilada e luminosa do T3 para arrendar no Foco, Porto',
+        loc='Foco · Ramalde · Porto · Ref. C0393-01634', h1='T3 mobilado para arrendar no Foco, a 450 m da Boavista',
+        sub='120 m² úteis, mobilado e equipado, com lugar de garagem e vista sobre a cidade. É trazer as malas.',
+        price='1 400 €/mês',
+        quote='Uma casa pronta a viver, num dos pontos mais bem servidos do Porto.',
+        intro='T3 remodelado e mobilado para arrendamento na Rua Professor Damião Peres, na zona do Foco e do Bessa, em Ramalde. Tem 120 m² úteis, sala com vista sobre a cidade, cozinha equipada com lavandaria, três quartos mobilados e duas casas de banho completas e remodeladas. O prédio tem três elevadores e o apartamento tem lugar de garagem. Fica a cerca de 450 m da Avenida da Boavista e a cerca de 1 km do metro.',
+        photos_intro=['fc-02', 'fc-04', 'fc-08'],
+        ficha_h2='Remodelado, mobilado e equipado',
+        ficha_lead=['120 m² úteis e 149 m² de área bruta: sala, cozinha com zona de refeições e lavandaria, três quartos e duas casas de banho, com um corredor de muita arrumação.',
+                    'A cozinha, a sala e todos os quartos estão mobilados; dois quartos têm camas e colchões novos. Vidros duplos em todas as janelas, pavimento flutuante e as duas casas de banho remodeladas.'],
+        photos_ficha=['fc-05', 'fc-13', 'fc-09'],
+        facts=[('Renda', '1 400 €/mês'), ('Tipologia', 'T3 · 2 WC'), ('Área útil', '120 m²'), ('Área bruta', '149 m²'), ('Estado', 'Remodelado e mobilado'),
+               ('Garagem', '1 lugar'), ('Prédio', '3 elevadores'), ('Ano', '1980'), ('Ref.', 'C0393-01634')],
+        rooms_h3='Condições de arrendamento',
+        rooms=[('Renda mensal', '1 400 €'), ('À entrada', '2 rendas + caução'), ('Garantia', 'fiador'), ('Rendimentos', 'comprovativo'), ('Contrato', 'longa duração')],
+        photos_rooms=['fc-06', 'fc-07', 'fc-14'],
+        feat_h3='Destaques',
+        features=['Mobilado: sala, cozinha e os três quartos', 'Dois quartos com camas e colchões novos', 'Cozinha equipada: frigorífico, placa, forno, exaustor, máquina de lavar loiça e micro-ondas',
+                  'Lavandaria com máquina de lavar roupa e termoacumulador', 'Duas casas de banho completas e remodeladas', 'Vidros duplos em todas as janelas',
+                  'Lugar de garagem', 'Prédio com 3 elevadores', 'Vista sobre a cidade', 'A cerca de 450 m da Avenida da Boavista e 1 km do metro'],
+        extras=[
+            dict(id='sala', eb='A casa', h2='Sala com luz natural e vista sobre a cidade', photos=['fc-01', 'fc-03', 'fc-15'],
+                 paras=['Sala mobilada com sofá, poltrona e mesa de refeições para quatro, pavimento flutuante e porta de correr para o corredor. Da janela vê-se a cidade e a zona da Boavista.']),
+            dict(id='quartos', eb='Três quartos', h2='Três quartos mobilados, dois com camas novas', photos=['fc-10', 'fc-11', 'fc-12'],
+                 paras=['Todos os quartos têm cama, mesas de cabeceira e cortinados, e janelas com vidro duplo e estores. No corredor, roupeiros embutidos dão arrumação para toda a casa.']),
+            dict(id='destaque', eb='Em destaque', h2='O essencial deste T3', photos=['fc-04', 'fc-13', 'fc-16'],
+                 chips=['T3 · 120 m²', '1 400 €/mês', 'Mobilado e equipado', '2 WC remodeladas', 'Lugar de garagem', '3 elevadores', 'Boavista a 450 m']),
+        ],
+        closing=dict(id='versatil', eb='Pronto a viver', h2='Mude-se já para o Foco', photos=['fc-02'],
+                     paras=['Um T3 mobilado, equipado e com garagem, a poucos minutos da Boavista. Ideal para famílias ou profissionais que procuram contrato de longa duração.',
+                            'Fale com o Casemiro Ramos ou com o Francisco Medeiros para conhecer as condições e marcar a visita.']),
+        gallery=[('fc-01', 'Sala'), ('fc-02', 'Sala'), ('fc-03', 'Sala e porta de correr'), ('fc-04', 'Cozinha'), ('fc-05', 'Cozinha equipada'), ('fc-06', 'Cozinha'),
+                 ('fc-07', 'Lavandaria'), ('fc-08', 'Quarto com cama nova'), ('fc-09', 'Quarto com cama nova'), ('fc-10', 'Quarto com cama nova'), ('fc-11', 'Quarto'), ('fc-12', 'Quarto'),
+                 ('fc-13', 'Casa de banho'), ('fc-14', 'Casa de banho'), ('fc-15', 'Vista da janela'), ('fc-16', 'Planta')],
+        alt='T3 mobilado para arrendar no Foco, Porto', gal_h2='Por dentro',
+        gal_note='Fotografias do anúncio CENTURY 21. O mobiliário pode variar.',
+        loc_h2='Foco e Bessa: perto de tudo',
+        loc_txt='Na Rua Professor Damião Peres, em Ramalde, junto ao Estádio do Bessa: a cerca de 450 m da Avenida da Boavista e a cerca de 1 km da estação de metro de Francos. Supermercado, farmácia, padaria e autocarros nas imediações; Shopping Cidade do Porto, Casa da Música e Rotunda da Boavista a poucos minutos; acesso rápido à VCI e daí à A28, A3 e A4.',
+        maps='Rua Professor Damião Peres, Porto', geo=(41.1625, -8.6420),
+        legal='Informação sujeita a confirmação; dados segundo a ficha CENTURY 21. Arrendamento: 2 rendas adiantadas + 1 mês de caução, fiador e comprovativo de rendimentos; preferência por contratos de longa duração. Licença de utilização 51/80 CMP. Certificado energético a confirmar.',
+        video=None, tour=None,
     ),
     'joaoxxi': dict(
         ref='C0393-01727', curto='T3 na Av. João XXI', ficha_url='https://century21.pt/ref/C0393-01727', prest='Simulação personalizada',
