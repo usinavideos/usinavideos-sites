@@ -64,6 +64,7 @@ LISTINGS = {  # caminho: (tipo, nome, área, quartos, localidade, região, geo, 
     'cordiallevel/anteroquental/': ('Apartment', 'T2 remodelado na Rua Antero de Quental', 77.3, 2, 'Porto', 'Porto', (41.1602049, -8.6116069), [(349000, 'C0393-01689')]),
     'cordiallevel/cedofeita/': ('Apartment', 'T1 duplex quase novo em Cedofeita', 59, 1, 'Porto', 'Porto', (41.1532354, -8.6211018), [(289000, 'C0393-01583')]),
     'cordiallevel/moncao/': ('Place', 'Dois terrenos de cultura e vinha em São Bento (Bela), Monção', None, None, 'Monção', 'Viana do Castelo', (42.072910104535, -8.43833682762678), [(75000, 'C0393-01441'), (35000, 'C0393-01442')]),
+    'cordiallevel/joaoxxi/': ('Apartment', 'T3 em nua-propriedade com terraço na Av. João XXI, Areeiro', 110, 3, 'Areeiro, Lisboa', 'Lisboa', (38.7422, -9.1357), [(540000, 'C0393-01727')]),
     'cordiallevel/perafita/': ('Apartment', 'T2 remodelado em Perafita com garagem e arrumos', 83, 2, 'Perafita, Matosinhos', 'Porto', (41.2299, -8.6937), [(258000, 'C0393-01754')]),
 }
 
