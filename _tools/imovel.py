@@ -859,7 +859,7 @@ IMOVEIS = {
         ref='C0393-01634', curto='T3 mobilado no Foco', ficha_url='https://century21.pt/ref/C0393-01634', prest='2 rendas + 1 caução + fiador', rent=True,
         title='T3 mobilado para arrendar no Foco, Porto · 1 400 €/mês · Cordial Level',
         desc='T3 mobilado para arrendamento na Rua Professor Damião Peres, zona do Foco e do Bessa, no Porto: 120 m² úteis, 2 casas de banho remodeladas, cozinha equipada, lugar de garagem, prédio com 3 elevadores. 1 400 €/mês, a 450 m da Avenida da Boavista.',
-        hero='fc-01', hero_pos='50% 60%', hero_alt='Sala mobilada e luminosa do T3 para arrendar no Foco, Porto',
+        hero='fc-00', hero_pos='50% 60%', hero_alt='Sala mobilada e luminosa do T3 para arrendar no Foco, Porto',
         loc='Foco · Ramalde · Porto · Ref. C0393-01634', h1='T3 mobilado para arrendar no Foco, a 450 m da Boavista',
         sub='120 m² úteis, mobilado e equipado, com lugar de garagem e vista sobre a cidade. É trazer as malas.',
         price='1 400 €/mês',
