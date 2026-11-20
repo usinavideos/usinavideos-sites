@@ -6,7 +6,7 @@ Regras editoriais (herdadas do Motores e Ação):
 - números só de fontes oficiais, com link; nunca valores gerados por IA;
 - notas de bastidores retiradas antes de publicar; imagens IA sempre identificadas;
 - clientes só com autorização; textos curtos e diretos;
-- fórmula: declaração de impacto + corpo + "💡 Dica do Freire" + "Veredito Usina" + assinatura.
+- fórmula: declaração de impacto + corpo + "Dica do Freire" + "Veredito Usina" + assinatura.
 """
 import html, json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -537,7 +537,7 @@ def build():
   <img class="hero" src="{p['img']}" srcset="{t_img(p['img'])} 900w, {p['img']} 1920w" sizes="(max-width: 800px) 100vw, 760px" alt="" fetchpriority="high">{cap}
   <p class="imp">{e(p['lead'])}</p>
   {p['body']}
-  <div class="dica"><b>💡 Dica do Freire</b><p>{e(p['dica'])}</p></div>
+  <div class="dica"><b>Dica do Freire</b><p>{e(p['dica'])}</p></div>
   <div class="ver"><b>Veredito Usina</b><p>{e(p['veredito'])}</p></div>
   <div class="autor"><img src="/img/equipa/freire-neto-quadrado.jpg" alt="Freire Neto" width="64" height="64" loading="lazy"><div><b>Freire Neto</b><span>Jornalista desde 1997 · fundador da Usina Vídeos e do Motores e Ação</span><small>Foto: Sandra Freire</small></div></div>
   <p class="sig">{e(SIG)}</p>

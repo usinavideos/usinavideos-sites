@@ -37,6 +37,23 @@ FOTOS = {'José Bacelar': '/img/blog/em-breve/jose-bacelar.jpg', 'Casemiro Ramos
 AVCSS = ('<style id="avcss">.dir .av{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--gold,#B8962E);display:block;margin-bottom:4px}'
          '.bar a .bav{width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid #fff;flex:none}</style>')
 
+TYPO = '<style id="uvtype">h1,h2,h3{text-wrap:balance}p,li,figcaption{text-wrap:pretty}</style>'
+RM = ('<style id="uvrm">@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;'
+      'animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}</style>')
+# Propostas a clientes ja enviadas: nao mexer no visual.
+PROPOSTAS_ENVIADAS = re.compile(r'^proposta/[^/]+/')
+RM_PAGES = re.compile(r'^(portefolio/|cdjregio/|cordiallevel/(?!radar/)[^/]+/)')
+
+
+def acabamento(s, rel):
+    if PROPOSTAS_ENVIADAS.match(rel):
+        return s
+    if 'id="uvtype"' not in s:
+        s = s.replace('</head>', TYPO + '</head>', 1)
+    if RM_PAGES.match(rel) and 'id="uvrm"' not in s and 'http-equiv="refresh"' not in s:
+        s = s.replace('</head>', RM + '</head>', 1)
+    return s
+
 
 def fotos(s):
     """Foto dos consultores ao lado dos contactos (cartões .dir e barra fixa)."""
@@ -85,7 +102,7 @@ def main(paths=None):
         s = open(p, encoding='utf-8').read()
         if '<head' not in s or 'http-equiv="refresh"' in s and 'gtag' not in s:
             continue
-        t = fix(s)
+        t = acabamento(fix(s), rel.replace(os.sep, '/'))
         if t != s:
             open(p, 'w', encoding='utf-8').write(t); n += 1
     print(f'tracking: {n} ficheiros atualizados')

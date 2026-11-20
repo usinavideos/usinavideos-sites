@@ -166,8 +166,15 @@ def build():
 '''
 
 
+# Marcadores sem emoji: o visto passa a ser desenhado em CSS (so nesta proposta).
+def sem_emoji(h):
+    t = 'content:"";position:absolute;left:5px;top:.42em;width:6px;height:11px;border:solid {};border-width:0 2.5px 2.5px 0;transform:rotate(45deg)'
+    h = h.replace('.pk li::before{content:"✓";position:absolute;left:0;font-weight:900;color:var(--c)}', '.pk li::before{' + t.format('var(--c)') + '}')
+    return h.replace('.cl li::before{content:"✓";position:absolute;left:0;color:var(--y);font-weight:900}', '.cl li::before{' + t.format('var(--y)') + '}')
+
+
 if __name__ == '__main__':
     d = os.path.join(ROOT, 'proposta', 'matchball')
     os.makedirs(d, exist_ok=True)
-    open(os.path.join(d, 'index.html'), 'w').write(build())
+    open(os.path.join(d, 'index.html'), 'w').write(sem_emoji(build()))
     print('ok proposta matchball')
