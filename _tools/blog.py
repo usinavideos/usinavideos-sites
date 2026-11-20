@@ -24,6 +24,38 @@ CATS = {'bastidores': 'Bastidores e making of', 'comunicacao': 'Comunicação e 
         'mercados': 'Mercados', 'cases': 'Cases'}
 
 POSTS = [
+    dict(slug='oe2027-habitacao-mais-valias-comissao-amortizacao-garantia-rendas', cat='mercados', date='2026-11-20',
+         title='OE2027: o que muda para quem vende, compra e arrenda casa',
+         desc='Isenção de mais-valias na venda de segundas casas até 300 mil euros, fim da comissão de amortização antecipada e garantia pública para senhorios: as medidas para a habitação aprovadas na especialidade do Orçamento do Estado para 2027.',
+         img='/img/blog/oe2027-habitacao-mais-valias.jpg', img_cap='Orçamento do Estado 2027 e habitação · arte Usina Vídeos para a Cordial Level',
+         lead='Nas votações na especialidade do Orçamento do Estado para 2027 passaram medidas que mexem com proprietários, compradores, inquilinos e senhorios. Explicamos as que mais contam, e o que ainda falta.',
+         body='''<p>Entre 18 e 19 de novembro, o Parlamento votou centenas de propostas de alteração ao Orçamento do Estado para 2027 (OE2027). Na habitação, a maioria foi chumbada, mas passaram medidas com impacto direto em quem tem casa para vender, crédito para pagar ou casa para arrendar. A votação final global do Orçamento está marcada para 24 de novembro; as medidas só entram em vigor com o Orçamento aprovado e publicado.</p>
+<h2>1. Vender a segunda casa sem pagar mais-valias (até 300 mil euros)</h2>
+<p>Foi aprovada uma proposta do PS que <b>isenta de IRS as mais-valias</b> na venda de segundas habitações, casas vazias ou outros imóveis que não sejam a habitação própria e permanente do vendedor. A condição: a casa tem de ir para a <b>habitação própria e permanente do comprador</b> ou para <b>arrendamento acessível</b>.</p>
+<ul><li><b>Vendas até 300 000 €:</b> isenção total das mais-valias.</li>
+<li><b>Vendas entre 300 000 € e 500 000 €:</b> só 25% da mais-valia conta para IRS.</li>
+<li><b>Prazo:</b> regime excecional de 1 de janeiro de 2027 a 31 de dezembro de 2029.</li>
+<li><b>Amortização do crédito:</b> a proposta recupera também a isenção quando o dinheiro da venda serve para amortizar o crédito à habitação própria e permanente, em determinadas condições.</li></ul>
+<p>A proposta passou com o voto a favor do Chega e os votos contra do PSD, CDS-PP, PCP e BE. O objetivo declarado é pôr no mercado casas que hoje estão paradas.</p>
+<h2>2. Amortizar o crédito à habitação sem comissão</h2>
+<p>Foi aprovada a proposta da AD que <b>suspende em 2027 a comissão de reembolso antecipado</b> nos créditos à habitação com taxa variável. Passou também a proposta do PS que <b>elimina essa comissão de forma permanente</b> nos períodos de taxa variável, incluindo os contratos de taxa mista enquanto estiverem em taxa variável. A medida não abrange os contratos de taxa fixa nem o período fixo da taxa mista.</p>
+<h2>3. Garantia pública para senhorios</h2>
+<p>Por proposta do PS, o Governo fica obrigado a criar, durante 2027, a <b>Garantia Pública de Segurança no Arrendamento Habitacional</b>, a que podem aderir os senhorios que pratiquem rendas acessíveis. O objetivo é reduzir o risco de falta de pagamento e facilitar o acesso ao arrendamento. As regras ainda vão ser definidas pelo Governo.</p>
+<h2>4. Outras medidas aprovadas</h2>
+<p>Segundo o balanço do jornal Público, passaram ainda medidas de apoio a profissionais essenciais (saúde, ensino, segurança e proteção civil), apoio à renda para pensionistas com rendimentos reduzidos, apoio a pessoas em situação de sem-abrigo, o alargamento do Porta 65+ às vítimas de violência doméstica e regras sobre a gestão e a transferência de imóveis públicos para os municípios.</p>
+<h2>O que isto pode significar no Grande Porto</h2>
+<p>Quem tem uma segunda casa, uma casa herdada ou um apartamento vazio passa a ter, se o Orçamento for aprovado, uma janela de três anos para vender com menos imposto, desde que o comprador vá morar na casa ou a arrende a preço acessível. Na prática, o valor de venda passa a contar mais do que nunca: abaixo dos 300 mil euros a isenção é total.</p>
+<p>Cada caso é diferente. Antes de decidir, fale com um contabilista ou consultor fiscal: este artigo é informativo e não substitui aconselhamento fiscal ou jurídico.</p>
+<p><a href="/cordiallevel/avaliacao/?utm_source=blog&amp;utm_campaign=oe2027" style="display:inline-block;background:#D4B562;color:#12284B;font-weight:700;padding:14px 24px;border-radius:999px;text-decoration:none">Saber quanto vale a minha casa</a></p>
+<p style="font-size:.9em;color:#666">Fontes: <a href="https://eco.sapo.pt/2026/11/19/parlamento-aprova-isencao-de-mais-valias-ate-300-mil-euros-para-por-casas-no-mercado/" target="_blank" rel="noopener">ECO</a>, <a href="https://observador.pt/2026/11/19/isencao-de-mais-valia-nas-vendas-de-segundas-casas-ate-300-mil-euros-ou-na-amortizacao-do-credito-a-habitacao-conforme-proposto-pelo-ps/" target="_blank" rel="noopener">Observador</a>, <a href="https://rr.pt/noticia/politica/2026/11/18/oe2027-aprovada-a-suspensao-da-comissao-de-reembolso-antecipado-de-creditos-a-habitacao/494182/" target="_blank" rel="noopener">Renascença</a>, <a href="https://executivedigest.sapo.pt/oe2027-governo-obrigado-a-criar-garantia-publica-para-pagamento-de-rendas-proposta-pelo-ps/" target="_blank" rel="noopener">Executive Digest/Lusa</a>, <a href="https://www.dn.pt/pol%C3%ADtica/oe2027-psd-critica-ps-por-rejeio-de-artigo-essencial-gesto-oramental" target="_blank" rel="noopener">DN</a> e Público.</p>''',
+         dica='Tem uma segunda casa abaixo dos 300 mil euros? Antes de decidir, peça uma avaliação: o valor de venda pode fazer a diferença entre isenção total e imposto.',
+         veredito='Medidas aprovadas na especialidade, à espera da votação final global de 24 de novembro e, em alguns casos, de regulamentação.',
+         cta='''<div class="clb"><img src="/cordiallevel/img/logo-cordial-level-claro.png" alt="Cordial Level" width="1156" height="754" loading="lazy">
+<div><b>Pensa vender, comprar ou arrendar? Fale connosco!</b>
+<p>Casemiro Ramos e Francisco Medeiros, consultores da Cordial Level, ajudam a perceber o valor do seu imóvel e acompanham cada processo do primeiro contacto à escritura.</p>
+<div class="clr"><a href="/cordiallevel/avaliacao/?utm_source=blog&amp;utm_campaign=oe2027">Pedir avaliação</a><a href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20li%20o%20artigo%20sobre%20o%20OE2027%20e%20a%20habita%C3%A7%C3%A3o%20e%20gostava%20de%20falar%20sobre%20o%20meu%20im%C3%B3vel." target="_blank" rel="noopener">Casemiro · WhatsApp 935 101 667</a><a href="https://wa.me/351912706395?text=Ol%C3%A1%20Francisco%2C%20li%20o%20artigo%20sobre%20o%20OE2027%20e%20a%20habita%C3%A7%C3%A3o%20e%20gostava%20de%20falar%20sobre%20o%20meu%20im%C3%B3vel." target="_blank" rel="noopener">Francisco · 912 706 395</a></div>
+<small>Cordial Level | CENTURY 21 Arquitectos · AMI 11414</small></div></div>''',
+         links=[('Pedir a avaliação', '/cordiallevel/avaliacao/'), ('Ver os imóveis da Cordial Level', '/cordiallevel/'), ('Canal da Cordial Level no YouTube', 'https://www.youtube.com/@CordialLevelPT')]),
     dict(slug='quanto-vale-a-sua-casa-avaliacao-cordial-level', cat='mercados', date='2026-11-15',
          title='Quanto vale a sua casa? Porque um valor de portal não é uma avaliação',
          desc='A Cordial Level lança a avaliação de imóveis gratuita no Porto, Matosinhos, Leça da Palmeira, Maia, Gaia e Vila do Conde: comparação com vendas reais, visita ao imóvel e pedido em dois minutos por WhatsApp.',
