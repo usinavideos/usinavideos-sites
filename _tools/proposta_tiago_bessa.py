@@ -18,6 +18,7 @@ IMG = '/proposta/tiago-branquinha/img/'
 HERO = '/img/foz-drone.jpg'
 
 REPORTAGEM, PAGINA, PAGINA_TABELA = 40, 50, 100
+CAMPANHA_TABELA = 100
 TOTAL, TABELA = REPORTAGEM + PAGINA, REPORTAGEM + PAGINA_TABELA
 
 JUNTOS = [('tb-predio-t.jpg', 'O prédio', 'Fachada, na Rua Dr. Cruz Malpique'),
@@ -36,6 +37,11 @@ ACOES = [
       'Botões de WhatsApp, chamada e e-mail diretos para si',
       'Pedido de visita, avaliação gratuita e análise de financiamento, descritos mais abaixo',
       'Fica privada, com palavra-passe, até a aprovar']),
+    (IMG + 'tb-cozinha-t.jpg', 'Campanha de anúncios', 'Oferta', f'tabela {CAMPANHA_TABELA}€ · gestão',
+     ['Anúncios no Facebook e no Instagram, segmentados por zona e por perfil',
+      'Para este apartamento ou para outro imóvel da sua carteira: escolhe você',
+      'Montagem, gestão e ajustes semanais pela Usina, sem custo',
+      'O investimento em anúncios é seu, pago diretamente à Meta, sem margem']),
 ]
 
 CAPTA = [('Para quem quer arrendar', 'Pedido de visita', 'Chega-lhe por WhatsApp já com a data de entrada e o número de pessoas. Menos conversas sem perfil.'),
@@ -52,7 +58,8 @@ PEDIR = ['Tipologia, renda e condições de arrendamento (caução, fiador)',
          'Se o apartamento está mobilado e equipado',
          'Uma fotografia sua, para os contactos da página',
          'A entidade de intermediação de crédito com que a Arquitectos II trabalha',
-         'Os diferenciais da CENTURY 21 que quer destacar']
+         'Os diferenciais da CENTURY 21 que quer destacar',
+         'O imóvel para a campanha e o valor que quer investir em anúncios']
 
 EXTRA_CSS = """
 .copy h1{max-width:17ch}.copy .sub{font-size:14px;opacity:.85;margin:14px 0 0}
@@ -75,7 +82,7 @@ def li(xs):
 
 def build():
     juntos = ''.join(f'<div><figure><img src="{IMG}{im}" alt="{e(t)} do T2 na Prelada" loading="lazy"></figure><h3>{e(t)}</h3><p>{e(d)}</p></div>' for im, t, d in JUNTOS)
-    acoes = ''.join(f'<div class="shot"><img src="{im}" alt="" loading="lazy"><div><h3>{e(n)}</h3><div class="pr">{e(p)} <small>+ IVA</small></div><div class="tb">{e(tb)}</div></div><ul>{li(items)}</ul></div>' for im, n, p, tb, items in ACOES)
+    acoes = ''.join(f'<div class="shot"><img src="{im}" alt="" loading="lazy"><div><h3>{e(n)}</h3><div class="pr">{e(p)}{"" if p == "Oferta" else " <small>+ IVA</small>"}</div><div class="tb">{e(tb)}</div></div><ul>{li(items)}</ul></div>' for im, n, p, tb, items in ACOES)
     capta = ''.join(f'<div><span>{e(k)}</span><b>{e(n)}</b><em>{e(d)}</em></div>' for k, n, d in CAPTA)
     ideias = ''.join(f'<div><span>{e(k)}</span><b>{e(n)}</b><em>{e(d)}</em></div>' for k, n, d in IDEIAS)
     provas = ''.join(f'<a href="{u}"><img src="{im}" alt="{e(t)}" loading="lazy"><span>{e(t)}</span></a>' for im, t, u in PROVAS)
@@ -88,7 +95,7 @@ def build():
 <title>Proposta para Tiago Branquinha · Apartamento no Bessa · Usina Vídeos</title>
 <meta name="description" content="Proposta da Usina Vídeos para Tiago Branquinha: fotografia, vídeo e página do apartamento para arrendar no Bessa, Porto.">
 <meta name="robots" content="noindex, nofollow">
-<meta property="og:title" content="Proposta para Tiago Branquinha · Usina Vídeos"><meta property="og:description" content="Fotografia, vídeo e página do apartamento no Bessa: {TOTAL}€ + IVA.">
+<meta property="og:title" content="Proposta para Tiago Branquinha · Usina Vídeos"><meta property="og:description" content="Fotografia, vídeo, página e campanha do apartamento no Bessa: {TOTAL}€ + IVA.">
 <meta property="og:image" content="https://usinavideos.pt{HERO}"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#211E1F">
 <link rel="icon" href="/img/logo/usina-simbolo.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/img/logo/usina-simbolo-180.png">
@@ -111,13 +118,13 @@ def build():
     <div class="copy">
       <p class="para">Proposta para Tiago Branquinha · Bessa, Porto</p>
       <h1 class="wide">Um arrendamento no Bessa que lhe traz proprietários.</h1>
-      <p class="in">Fotografia e vídeo do apartamento por cima da agência, drone de oferta e uma página que marca visitas e convida os proprietários da Boavista a pedirem-lhe uma avaliação. {TOTAL}€ + IVA.</p>
+      <p class="in">Fotografia e vídeo do apartamento por cima da agência, drone e campanha de anúncios de oferta, e uma página que marca visitas e convida os proprietários da Boavista a pedirem-lhe uma avaliação. {TOTAL}€ + IVA.</p>
       <div class="acts"><a class="btn btn-y" href="#plano">Ver a proposta</a><a class="btn btn-line" href="#pagina">Ver o que a página faz</a></div>
       <p class="sub">Gravação na sexta, 27, ou no sábado, 28 de novembro. Sem mensalidade.</p>
     </div>
   </div>
 </header>
-<div class="trust"><div class="wrap"><span><b>{TOTAL}€ + IVA</b> reportagem e página</span><span><b>48h</b> fotografias · <b>72h</b> vídeo</span><span><b>Drone</b> de oferta</span><span><b>T2 na Prelada</b> já filmado para si</span><span><b>Desde 2002</b> a fazer reportagem</span></div></div>
+<div class="trust"><div class="wrap"><span><b>{TOTAL}€ + IVA</b> reportagem e página</span><span><b>48h</b> fotografias · <b>72h</b> vídeo</span><span><b>Drone e campanha</b> de oferta</span><span><b>T2 na Prelada</b> já filmado para si</span><span><b>Desde 2002</b> a fazer reportagem</span></div></div>
 
 <section id="imoveis">
   <div class="wrap"><p class="kick">Já trabalhámos juntos</p><h2 class="h2 wide">O seu T2 na Prelada, pela Usina.</h2>
@@ -129,8 +136,8 @@ def build():
   <div class="wrap">
     <div class="opt-head">
       <div><p class="kick">A proposta · Apartamento no Bessa</p><h2 class="h2 wide">Só o necessário para arrendar bem.</h2>
-        <p class="lead">Pediu uma fotorreportagem sem grande investimento. Fica com fotografia e vídeo pelo pacote de entrada, o drone de oferta e a página do imóvel a metade do preço por ser feita com a nossa reportagem.</p></div>
-      <div class="price"><div class="tab">Preço de tabela <s>{TABELA + 25}€</s></div><b>{TOTAL}€ <small>+ IVA</small></b><span class="poup">Poupa {TABELA + 25 - TOTAL}€ · drone de oferta</span>
+        <p class="lead">Pediu uma fotorreportagem sem grande investimento. Fica com fotografia e vídeo pelo pacote de entrada, o drone e a gestão da campanha de anúncios de oferta, e a página do imóvel a metade do preço por ser feita com a nossa reportagem.</p></div>
+      <div class="price"><div class="tab">Preço de tabela <s>{TABELA + 25 + CAMPANHA_TABELA}€</s></div><b>{TOTAL}€ <small>+ IVA</small></b><span class="poup">Poupa {TABELA + 25 + CAMPANHA_TABELA - TOTAL}€ · drone e campanha de oferta</span>
         <p>Paga depois da entrega. Sem mensalidade nem compromisso.</p></div>
     </div>
     <div class="shots">{acoes}</div>
@@ -138,10 +145,11 @@ def build():
       <tr><td>Reportagem Essencial <small style="color:var(--cinza)">(fotografia e vídeo)</small></td><td>{REPORTAGEM}€</td></tr>
       <tr><td>Drone <small style="color:var(--cinza)">(diferença para o Pacote Aéreo)</small></td><td>25€</td></tr>
       <tr><td>Página do imóvel <small style="color:var(--cinza)">({PAGINA}€ com reportagem Usina)</small></td><td>{PAGINA_TABELA}€</td></tr>
-      <tr><td>Tabela</td><td><s>{TABELA + 25}€</s> + IVA</td></tr>
-      <tr class="hl"><td>Para si, com o drone de oferta</td><td>{TOTAL}€ + IVA</td></tr>
+      <tr><td>Gestão da campanha de anúncios <small style="color:var(--cinza)">(este ou outro imóvel seu)</small></td><td>{CAMPANHA_TABELA}€</td></tr>
+      <tr><td>Tabela</td><td><s>{TABELA + 25 + CAMPANHA_TABELA}€</s> + IVA</td></tr>
+      <tr class="hl"><td>Para si, com drone e campanha de oferta</td><td>{TOTAL}€ + IVA</td></tr>
 </tbody></table>
-    <p class="note">Esta proposta não inclui anúncios pagos. Se quiser reforçar a divulgação, a gestão de campanha é orçamentada à parte e o investimento em anúncios não tem margem.</p>
+    <p class="note">A gestão da campanha é oferta. O investimento em anúncios é pago por si diretamente à Meta, numa conta em seu nome, sem margem da Usina: vê cada fatura e o valor é definido consigo. Pode usar a campanha neste apartamento ou noutro imóvel da sua carteira.</p>
     <div class="more"><a class="btn btn-dark" href="{WA}" target="_blank" rel="noopener">Aceitar por WhatsApp</a></div>
   </div>
 </section>
@@ -181,7 +189,7 @@ def build():
       <div class="step"><h3>Aceita a proposta</h3><p>Por WhatsApp. Escolhe o dia: sexta, 27, ou sábado, 28 de novembro.</p></div>
       <div class="step"><h3>Gravamos no Bessa</h3><p>Entre as 10h e as 15h, com luz natural e drone, se o tempo deixar. Apartamento arrumado e estores abertos.</p></div>
       <div class="step"><h3>Recebe o material</h3><p>Fotografias em 48 horas e vídeo em 72, prontos para os portais e para as redes.</p></div>
-      <div class="step"><h3>Aprova a página</h3><p>Vê a página em privado, pede ajustes e só depois fica pública.</p></div>
+      <div class="step"><h3>Lançamos a campanha</h3><p>Aprova a página e escolhe o imóvel da campanha. Montamos os anúncios e acompanhamos todas as semanas.</p></div>
     </div>
     <div class="leads"><h3>O que precisamos de si.</h3>
       <ul>{li(PEDIR)}</ul></div>
