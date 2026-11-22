@@ -38,6 +38,7 @@ POSTS = [
 <figure><img src="/img/blog/basket-regio-lance-livre.jpg" alt="Lance livre da equipa sénior do CD José Régio no pavilhão de Vila do Conde" width="1800" height="1013" loading="lazy" style="width:100%;height:auto;border-radius:4px"><figcaption>Lance livre no Pavilhão Desportos de Vila do Conde.</figcaption></figure>
 <figure><img src="/img/blog/basket-regio-lancamento.jpg" alt="Lançamento de um atleta sénior do CD José Régio em Vila do Conde" width="1800" height="1013" loading="lazy" style="width:100%;height:auto;border-radius:4px"><figcaption>Lançamento na zona pintada, equipa sénior do CD José Régio.</figcaption></figure>
 <figure><img src="/img/blog/basket-regio-ressalto.jpg" alt="Luta pelo ressalto num jogo da equipa sénior do CD José Régio" width="1800" height="1365" loading="lazy" style="width:100%;height:auto;border-radius:4px"><figcaption>Luta pelo ressalto, em Vila do Conde.</figcaption></figure>
+<figure><img src="/img/blog/basket-regio-bola-ao-ar.jpg" alt="Bola ao ar no início de um jogo da equipa sénior do CD José Régio" width="1800" height="1434" loading="lazy" style="width:100%;height:auto;border-radius:4px"><figcaption>Bola ao ar: o arranque de mais um jogo em Vila do Conde.</figcaption></figure>
 <h2>O que fazemos para clubes e atletas</h2>
 <ul><li><b>Highlights de jogos</b>, prontos para Instagram, TikTok e YouTube.</li>
 <li><b>Perfis de atleta</b> em vídeo, com as melhores jogadas e entrevista, para mostrar a clubes, agentes e patrocinadores.</li>
