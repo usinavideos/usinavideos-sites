@@ -51,7 +51,7 @@ POSTS = [
 <p><b>Atitude fala sempre mais alto.</b></p>''',
          dica='Um bom highlight não precisa de ser longo: 30 a 60 segundos com as melhores jogadas, nome e número do atleta bem visíveis, e o vídeo na vertical para as redes.',
          veredito='Jornalismo desportivo com quase 30 anos de estrada, agora ao serviço de clubes e atletas de basquetebol em Portugal.',
-         links=[('Cobertura do CD José Régio', '/cdjregio/'), ('Ver o portefólio', '/portefolio/'), ('Pedir orçamento', '/#contacto')]),
+         links=[('Cobertura do CD José Régio', '/cdjregio/'), ('Galeria de basquetebol', '/portefolio/#basquetebol'), ('Pedir orçamento', '/#contacto')]),
     dict(slug='oe2027-habitacao-mais-valias-comissao-amortizacao-garantia-rendas', cat='mercados', date='2026-11-20',
          title='OE2027: o que muda para quem vende, compra e arrenda casa',
          desc='Isenção de mais-valias na venda de segundas casas até 300 mil euros, fim da comissão de amortização antecipada e garantia pública para senhorios: as medidas para a habitação aprovadas na especialidade do Orçamento do Estado para 2027.',
