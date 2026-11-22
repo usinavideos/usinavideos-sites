@@ -27,11 +27,12 @@ POSTS = [
     dict(slug='jornalismo-desportivo-basquetebol-portugal', cat='cases', date='2026-11-22',
          title='Do rádio ao pavilhão: 30 anos de jornalismo desportivo, agora no basquetebol em Portugal',
          desc='Desde 1997 que Freire Neto faz jornalismo desportivo. Desde 2025, a Usina Vídeos produz highlights, entrevistas e coberturas de jogos e atletas de basquetebol em Portugal.',
-         img='/img/blog/basket-regio-capa.jpg', img_cap='Lance livre num jogo do CD José Régio, em Vila do Conde · foto Usina Vídeos',
+         img='/img/blog/basket-regio-matchball.jpg', img_cap='Atletas do CD José Régio e do MatchBall Showcase, em Vila do Conde · foto Usina Vídeos',
          lead='Quase 30 anos depois do primeiro microfone, a paixão é a mesma: contar o desporto de perto. Agora, nos pavilhões de Portugal.',
          body='''<p>Freire Neto começou no jornalismo desportivo em 1997. Desde então, fez vídeos e programas de rádio e televisão desportivos em todo o Nordeste e em vários estados do Brasil, sempre com o mesmo método: estar no local, conhecer as pessoas e contar a história completa, não só o resultado.</p>
 <h2>Do Brasil aos pavilhões de Portugal</h2>
 <p>Desde 2025, a Usina Vídeos produz highlights e conteúdos de jogos e atletas de basquetebol em Portugal. Acompanhamos o CD José Régio, em Vila do Conde, e trabalhamos com a MatchBall em vídeos de atletas: jogadas, entrevistas e perfis para redes sociais e para recrutamento.</p>
+<figure><img src="/img/blog/basket-regio-capa.jpg" alt="Lance livre num jogo do CD José Régio" width="1512" height="851" loading="lazy" style="width:100%;height:auto;border-radius:4px"><figcaption>Lance livre num jogo do CD José Régio, em Vila do Conde.</figcaption></figure>
 <h2>O que fazemos para clubes e atletas</h2>
 <ul><li><b>Highlights de jogos</b>, prontos para Instagram, TikTok e YouTube.</li>
 <li><b>Perfis de atleta</b> em vídeo, com as melhores jogadas e entrevista, para mostrar a clubes, agentes e patrocinadores.</li>
