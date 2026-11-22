@@ -24,6 +24,26 @@ CATS = {'bastidores': 'Bastidores e making of', 'comunicacao': 'Comunicação e 
         'mercados': 'Mercados', 'cases': 'Cases'}
 
 POSTS = [
+    dict(slug='jornalismo-desportivo-basquetebol-portugal', cat='cases', date='2026-11-22',
+         title='Do rádio ao pavilhão: 30 anos de jornalismo desportivo, agora no basquetebol em Portugal',
+         desc='Desde 1997 que Freire Neto faz jornalismo desportivo. Desde 2025, a Usina Vídeos produz highlights, entrevistas e coberturas de jogos e atletas de basquetebol em Portugal.',
+         img='/img/blog/basket-regio-capa.jpg', img_cap='Lance livre num jogo do CD José Régio, em Vila do Conde · foto Usina Vídeos',
+         lead='Quase 30 anos depois do primeiro microfone, a paixão é a mesma: contar o desporto de perto. Agora, nos pavilhões de Portugal.',
+         body='''<p>Freire Neto começou no jornalismo desportivo em 1997. Desde então, fez vídeos e programas de rádio e televisão desportivos em todo o Nordeste e em vários estados do Brasil, sempre com o mesmo método: estar no local, conhecer as pessoas e contar a história completa, não só o resultado.</p>
+<h2>Do Brasil aos pavilhões de Portugal</h2>
+<p>Desde 2025, a Usina Vídeos produz highlights e conteúdos de jogos e atletas de basquetebol em Portugal. Acompanhamos o CD José Régio, em Vila do Conde, e trabalhamos com a MatchBall em vídeos de atletas: jogadas, entrevistas e perfis para redes sociais e para recrutamento.</p>
+<h2>O que fazemos para clubes e atletas</h2>
+<ul><li><b>Highlights de jogos</b>, prontos para Instagram, TikTok e YouTube.</li>
+<li><b>Perfis de atleta</b> em vídeo, com as melhores jogadas e entrevista, para mostrar a clubes, agentes e patrocinadores.</li>
+<li><b>Coberturas e transmissões</b> de jogos, torneios e campeonatos.</li>
+<li><b>Conteúdo para patrocinadores</b>: o clube ganha visibilidade e o parceiro vê o retorno.</li></ul>
+<h2>Vamos falar?</h2>
+<p>Gostava de ter um conteúdo profissional dos seus atletas, jogos ou campeonatos? Marque uma conversa sem compromisso e discuta as suas ideias e necessidades com o Freire Neto. Em quase 30 anos de mercado, com muitas inovações e aprendizagens, a equipa da Usina Vídeos pode ajudar o seu clube ou a sua carreira a ganhar mercado, conquistar parceiros e gerar resultados.</p>
+<p><a href="https://wa.me/351912988971?text=Ol%C3%A1%20Freire%2C%20li%20o%20artigo%20sobre%20o%20basquetebol%20e%20gostava%20de%20marcar%20uma%20conversa." target="_blank" rel="noopener" style="display:inline-block;background:#E5AE29;color:#211E1F;font-weight:700;padding:14px 24px;border-radius:4px;text-decoration:none">Marcar conversa com o Freire Neto</a><br><small>Resposta no próprio dia · sem compromisso</small></p>
+<p><b>Atitude fala sempre mais alto.</b></p>''',
+         dica='Um bom highlight não precisa de ser longo: 30 a 60 segundos com as melhores jogadas, nome e número do atleta bem visíveis, e o vídeo na vertical para as redes.',
+         veredito='Jornalismo desportivo com quase 30 anos de estrada, agora ao serviço de clubes e atletas de basquetebol em Portugal.',
+         links=[('Cobertura do CD José Régio', '/cdjregio/'), ('Ver o portefólio', '/portefolio/'), ('Pedir orçamento', '/#contacto')]),
     dict(slug='oe2027-habitacao-mais-valias-comissao-amortizacao-garantia-rendas', cat='mercados', date='2026-11-20',
          title='OE2027: o que muda para quem vende, compra e arrenda casa',
          desc='Isenção de mais-valias na venda de segundas casas até 300 mil euros, fim da comissão de amortização antecipada e garantia pública para senhorios: as medidas para a habitação aprovadas na especialidade do Orçamento do Estado para 2027.',
