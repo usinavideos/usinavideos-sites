@@ -34,6 +34,7 @@ POSTS = [
 <p>Desde 2025, a Usina Vídeos produz highlights e conteúdos de jogos e atletas de basquetebol em Portugal. Acompanhamos o CD José Régio, em Vila do Conde, e trabalhamos com a MatchBall em vídeos de atletas: jogadas, entrevistas e perfis para redes sociais e para recrutamento.</p>
 <figure><img src="/img/blog/basket-regio-capa.jpg" alt="Lance livre num jogo do CD José Régio" width="1512" height="851" loading="lazy" style="width:100%;height:auto;border-radius:4px"><figcaption>Lance livre num jogo do CD José Régio, em Vila do Conde.</figcaption></figure>
 <figure><img src="/img/blog/basket-matchball-povoa.jpg" alt="Atleta da MatchBall ao serviço do CD Póvoa num lance livre" width="1600" height="1200" loading="lazy" style="width:100%;height:auto;border-radius:4px"><figcaption>Atleta acompanhada pela MatchBall, ao serviço do CD Póvoa.</figcaption></figure>
+<figure><img src="/img/blog/basket-regio-seniores.jpg" alt="Lançamento num jogo da equipa sénior do CD José Régio" width="1120" height="1400" loading="lazy" style="width:100%;height:auto;border-radius:4px"><figcaption>Equipa sénior do CD José Régio em jogo, em Vila do Conde.</figcaption></figure>
 <h2>O que fazemos para clubes e atletas</h2>
 <ul><li><b>Highlights de jogos</b>, prontos para Instagram, TikTok e YouTube.</li>
 <li><b>Perfis de atleta</b> em vídeo, com as melhores jogadas e entrevista, para mostrar a clubes, agentes e patrocinadores.</li>
