@@ -31,7 +31,7 @@ POSTS = [
          lead='Seis pontos separaram as duas equipas no fim. O GDB Leça venceu por 70–76 no Pavilhão de Desportos de Vila do Conde, no sábado à noite.',
          body='''<p>A equipa sénior masculina do CD José Régio recebeu o GDB Leça no sábado, 21 de novembro, às 21h00, para o Campeonato Nacional da 2.ª Divisão. O jogo acabou 70–76 para a equipa de Leça da Palmeira.</p>
 <h2>Os números do placard</h2>
-<p>No CD José Régio, o melhor marcador foi Gonçalves, com 17 pontos. Do lado do GDB Leça, Neves e Nunes marcaram 14 pontos cada.</p>
+<p>No CD José Régio, o melhor marcador foi Gonçalves «Picachu», com 17 pontos. Do lado do GDB Leça, Neves e Nunes marcaram 14 pontos cada.</p>
 <h2>Os lances do jogo</h2>
 <p>A Usina Vídeos esteve no pavilhão a filmar. Os melhores lances vão sair ao longo da semana nos Reels da <a href="https://www.instagram.com/usina.videos/" target="_blank" rel="noopener">@usina.videos</a> e no canal <a href="https://www.youtube.com/@DicasdoFreire?sub_confirmation=1" target="_blank" rel="noopener">Dicas do Freire</a> no YouTube.</p>
 <h2>Próximo jogo em casa</h2>
