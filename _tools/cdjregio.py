@@ -19,6 +19,7 @@ CASA = 'Pavilhão de Desportos de Vila do Conde'
 
 # (data, escalão, casa, pts_casa, fora, pts_fora, competição)
 RESULTADOS = [
+    ('21 nov.', 'Sénior Masculino', 'CD José Régio', 70, 'GDB Leça', 76, 'Nacional 2.ª Divisão'),
     ('18 out.', 'Sub-14 Masculino A', 'CD José Régio', 86, 'CAA Salesianos', 34, 'Distrital 1.ª Divisão'),
     ('17 out.', 'Sénior Masculino', 'CD José Régio', 71, 'NCR Valongo', 89, 'Nacional 2.ª Divisão'),
     ('17 out.', 'Sub-16 Masculino B', 'CD José Régio', 51, 'CD Póvoa "B"', 56, 'Distrital 1.ª Divisão'),
@@ -45,7 +46,6 @@ PROXIMOS = [
     ('Sáb. 7 nov.', '21:00', 'Sénior Masculino', 'BC Limiense', 'Nacional 2.ª Divisão'),
     ('Dom. 8 nov.', '11:00', 'Sub-16 Masculino A', 'CLIP Teams', 'Distrital 1.ª Divisão'),
     ('Dom. 15 nov.', '11:00', 'Sub-16 Masculino A', 'Juvemaia "A"', 'Distrital 1.ª Divisão'),
-    ('Sáb. 21 nov.', '21:00', 'Sénior Masculino', 'GDB Leça', 'Nacional 2.ª Divisão'),
     ('Ter. 1 dez.', '15:00', 'Sénior Masculino', 'SC Muya', 'Nacional 2.ª Divisão'),
     ('Sáb. 12 dez.', '15:00', 'Sénior Masculino', 'CD Aves', 'Nacional 2.ª Divisão'),
 ]

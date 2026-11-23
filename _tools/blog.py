@@ -24,6 +24,22 @@ CATS = {'bastidores': 'Bastidores e making of', 'comunicacao': 'Comunicação e 
         'mercados': 'Mercados', 'cases': 'Cases'}
 
 POSTS = [
+    dict(slug='cd-jose-regio-gdb-leca-nacional-2-divisao', cat='cases', date='2026-11-23',
+         title='CD José Régio 70–76 GDB Leça: derrota por seis pontos em Vila do Conde',
+         desc='A equipa sénior do CD José Régio perdeu em casa com o GDB Leça por 70–76, no Nacional da 2.ª Divisão, no Pavilhão de Desportos de Vila do Conde.',
+         img='/img/blog/regio-leca-placard-2026-11-21.jpg', img_cap='O placard no fim do jogo, no Pavilhão de Desportos de Vila do Conde · foto Usina Vídeos',
+         lead='Seis pontos separaram as duas equipas no fim. O GDB Leça venceu por 70–76 no Pavilhão de Desportos de Vila do Conde, no sábado à noite.',
+         body='''<p>A equipa sénior masculina do CD José Régio recebeu o GDB Leça no sábado, 21 de novembro, às 21h00, para o Campeonato Nacional da 2.ª Divisão. O jogo acabou 70–76 para a equipa de Leça da Palmeira.</p>
+<h2>Os números do placard</h2>
+<p>No CD José Régio, o melhor marcador foi Gonçalves, com 17 pontos. Do lado do GDB Leça, Neves e Nunes marcaram 14 pontos cada.</p>
+<h2>Os lances do jogo</h2>
+<p>A Usina Vídeos esteve no pavilhão a filmar. Os melhores lances vão sair ao longo da semana nos Reels da <a href="https://www.instagram.com/usina.videos/" target="_blank" rel="noopener">@usina.videos</a> e no canal <a href="https://www.youtube.com/@DicasdoFreire?sub_confirmation=1" target="_blank" rel="noopener">Dicas do Freire</a> no YouTube.</p>
+<h2>Próximo jogo em casa</h2>
+<p>O CD José Régio volta a jogar no Pavilhão de Desportos de Vila do Conde na terça-feira, 1 de dezembro, às 15h00, com o SC Muya, também para o Nacional da 2.ª Divisão. Os resultados e as coberturas do clube estão na <a href="/cdjregio/">página do CD José Régio</a>.</p>
+<p><a href="https://wa.me/351912988971?text=Ol%C3%A1%20Freire%2C%20vi%20a%20cobertura%20do%20CD%20Jos%C3%A9%20R%C3%A9gio%20e%20quero%20saber%20mais%20para%20o%20meu%20clube." target="_blank" rel="noopener" style="display:inline-block;background:#E5AE29;color:#211E1F;font-weight:700;padding:14px 24px;border-radius:4px;text-decoration:none">Pedir uma cobertura para o meu clube</a><br><small>Resposta no próprio dia · sem compromisso</small></p>''',
+         dica='Fotografar o placard no apito final dá o resultado oficial e os pontos de cada atleta numa só imagem, pronto para o post e para o arquivo do clube.',
+         veredito='Derrota curta em casa. Os lances em vídeo saem esta semana nas redes da Usina.',
+         links=[('Cobertura do CD José Régio', '/cdjregio/'), ('Do rádio ao pavilhão: 30 anos de jornalismo desportivo', '/blog/jornalismo-desportivo-basquetebol-portugal/'), ('Pedir orçamento', '/#contacto')]),
     dict(slug='jornalismo-desportivo-basquetebol-portugal', cat='cases', date='2026-11-22',
          title='Do rádio ao pavilhão: 30 anos de jornalismo desportivo, agora no basquetebol em Portugal',
          desc='Desde 1997 que Freire Neto faz jornalismo desportivo. Desde 2025, a Usina Vídeos produz highlights, entrevistas e coberturas de jogos e atletas de basquetebol em Portugal.',
