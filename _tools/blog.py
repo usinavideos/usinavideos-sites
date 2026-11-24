@@ -24,6 +24,43 @@ CATS = {'bastidores': 'Bastidores e making of', 'comunicacao': 'Comunicação e 
         'mercados': 'Mercados', 'cases': 'Cases'}
 
 POSTS = [
+    dict(slug='certificado-energetico-valor-casa-vale-eficiencia', cat='mercados', date='2026-11-24',
+         title='Certificado energético: quanto pesa no valor da casa quando vende ou arrenda',
+         desc='O certificado energético é obrigatório para vender ou arrendar e tem de constar no anúncio. O que diz a lei, o que mostram os preços anunciados e o que muda com o Vale Eficiência II, reaberto a 23 de novembro.',
+         img='/img/blog/certificado-energetico-valor-casa.jpg', img_cap='Escala de classes energéticas de A+ a F · arte Usina Vídeos para a Cordial Level',
+         lead='Antes de pôr a casa no mercado, há um documento que não pode faltar e que o comprador lê cada vez com mais atenção: o certificado energético. Explicamos o que é obrigatório, quanto pode pesar no preço e o apoio que reabriu esta semana.',
+         body='''<h2>1. Sem certificado, não há anúncio</h2>
+<p>O certificado energético classifica a casa numa escala de <b>A+ (mais eficiente) a F (menos eficiente)</b>. É emitido por um perito qualificado pela ADENE, depois de uma visita ao imóvel, e vale <b>10 anos</b> para habitação.</p>
+<ul><li><b>Venda e arrendamento:</b> é obrigatório a partir do momento em que a casa é colocada no mercado.</li>
+<li><b>Anúncio:</b> a classe energética tem de aparecer no anúncio, em portais, montras ou redes sociais (artigo 14.º do Decreto-Lei 118/2013).</li>
+<li><b>Contrato e escritura:</b> o proprietário entrega cópia ao comprador ou inquilino no contrato-promessa ou de arrendamento, e o certificado é verificado na escritura.</li>
+<li><b>Coima:</b> anunciar sem classe energética pode custar entre 250 e 3 740 euros a um particular, e entre 2 500 e 44 890 euros a uma empresa.</li></ul>
+<p>Se o certificado da sua casa é de 2016 ou anterior, confirme a data: pode já estar fora de validade quando quiser vender.</p>
+<h2>2. O que mostram os preços anunciados</h2>
+<p>Uma análise dos anúncios do Imovirtual entre janeiro e setembro de 2026 encontrou um <b>preço médio de 435 mil euros</b> nas casas de classe A ou A+, contra <b>240 mil euros</b> nas de classe F.</p>
+<p>Esta diferença não quer dizer que a classe energética, sozinha, faz o preço. Localização, área, idade e estado de conservação pesam muito, e as casas novas, que concentram as classes mais altas, também são mais caras. O que os números mostram é que a eficiência energética anda junto com o segmento de valor mais alto, e que o comprador compara cada vez mais a fatura de energia antes de decidir.</p>
+<p>Na prática, uma classe baixa dá argumentos ao comprador para negociar o preço. Uma classe alta é um argumento a favor de quem vende.</p>
+<h2>3. Vale Eficiência II: reabriu para quem ficou à espera</h2>
+<p>O Fundo Ambiental reabriu a 23 de novembro o Vale Eficiência II num mecanismo simplificado. <b>Não é uma nova candidatura</b>: abrange apenas as famílias que tinham candidatura aprovada na segunda fase e nunca receberam o vale.</p>
+<ul><li><b>Valor:</b> um único vale de 1 300 euros mais IVA, até ao máximo de 1 599 euros por habitação (em vez dos três vales previstos no início).</li>
+<li><b>Pagamento:</b> o vale é pago diretamente ao fornecedor que faz a obra, escolhido na lista de fornecedores qualificados.</li>
+<li><b>Prazo:</b> a manifestação de interesse está aberta na plataforma do Fundo Ambiental até 25 de janeiro de 2027.</li></ul>
+<p>Se está nesta situação, não deixe passar o prazo: janelas, isolamento ou uma bomba de calor podem ajudar a subir a classe da casa antes de a pôr no mercado.</p>
+<h2>O que fazer antes de vender ou arrendar</h2>
+<ul><li>Confirme se tem certificado e se ainda está dentro da validade.</li>
+<li>Leia as medidas de melhoria que o próprio certificado sugere: algumas são baratas e sobem a classe.</li>
+<li>Peça uma avaliação antes de fixar o preço, para saber o que a classe energética e o estado da casa representam na sua zona.</li></ul>
+<p>Este artigo é informativo e não substitui aconselhamento técnico, fiscal ou jurídico.</p>
+<p><a href="/cordiallevel/avaliacao/?utm_source=blog&amp;utm_campaign=certificado-energetico" style="display:inline-block;background:#D4B562;color:#12284B;font-weight:700;padding:14px 24px;border-radius:999px;text-decoration:none">Saber quanto vale a minha casa</a></p>
+<p style="font-size:.9em;color:#666">Fontes: <a href="https://www.idealista.pt/news/node/48802" target="_blank" rel="noopener">idealista/news</a>, <a href="https://www.cgd.pt/Site/Saldo-Positivo/casa-e-familia/Pages/obter-certificado-energetico.aspx" target="_blank" rel="noopener">CGD Saldo Positivo</a>, <a href="https://www.montepio.org/blog/casa/certificado-energetico-o-que-e-o-que-revela-sobre-casa/" target="_blank" rel="noopener">Montepio</a>, <a href="https://ptjornal.com/imoveis-de-classe-energetica-a-apresentam-precos-81-superiores-aos-de-classe-f-549429" target="_blank" rel="noopener">PT Jornal / Imovirtual</a>, <a href="https://simula.pt/noticias/vale-eficiencia-mecanismo-simplificado-2026/" target="_blank" rel="noopener">Simula</a>, <a href="https://tugatech.com.pt/t95114-vale-eficiencia-ii-reabre-com-apoio-unico-de-ate-1-599-eur-para-candidaturas-retidas" target="_blank" rel="noopener">TugaTech</a>, <a href="https://contaspoupanca.pt/casa/2026-11-23-vale-eficiencia-ii-ja-reabriu-saiba-como-receber-ate-1.599-euros-para-melhorar-a-sua-casa-e-evite-perder-o-apoio-05cf01eb" target="_blank" rel="noopener">Contas Poupança</a>.</p>''',
+         dica='Antes de anunciar, leia a página das medidas de melhoria no seu certificado: às vezes uma janela ou o isolamento de um teto bastam para subir uma classe.',
+         veredito='Obrigatório por lei, visível no anúncio e lido pelo comprador: o certificado energético já faz parte da conversa sobre o preço.',
+         cta='''<div class="clb"><img src="/cordiallevel/img/logo-cordial-level-claro.png" alt="Cordial Level" width="1156" height="754" loading="lazy">
+<div><b>Pensa vender, comprar ou arrendar? Fale connosco!</b>
+<p>Casemiro Ramos e Francisco Medeiros, consultores da Cordial Level, ajudam a perceber o valor do seu imóvel e acompanham cada processo do primeiro contacto à escritura.</p>
+<div class="clr"><a href="/cordiallevel/avaliacao/?utm_source=blog&amp;utm_campaign=certificado-energetico">Pedir avaliação</a><a href="https://wa.me/351935101667?text=Ol%C3%A1%20Casemiro%2C%20li%20o%20artigo%20sobre%20o%20certificado%20energ%C3%A9tico%20e%20gostava%20de%20falar%20sobre%20o%20meu%20im%C3%B3vel." target="_blank" rel="noopener">Casemiro · WhatsApp 935 101 667</a><a href="https://wa.me/351912706395?text=Ol%C3%A1%20Francisco%2C%20li%20o%20artigo%20sobre%20o%20certificado%20energ%C3%A9tico%20e%20gostava%20de%20falar%20sobre%20o%20meu%20im%C3%B3vel." target="_blank" rel="noopener">Francisco · 912 706 395</a></div>
+<small>Cordial Level | CENTURY 21 Arquitectos · AMI 11414</small></div></div>''',
+         links=[('Pedir a avaliação', '/cordiallevel/avaliacao/'), ('OE2027: o que muda para quem vende, compra e arrenda casa', '/blog/oe2027-habitacao-mais-valias-comissao-amortizacao-garantia-rendas/'), ('Ver os imóveis da Cordial Level', '/cordiallevel/')]),
     dict(slug='cd-jose-regio-gdb-leca-nacional-2-divisao', cat='cases', date='2026-11-23',
          title='CD José Régio 70–76 GDB Leça: derrota por seis pontos em Vila do Conde',
          desc='A equipa sénior do CD José Régio perdeu em casa com o GDB Leça por 70–76, no Nacional da 2.ª Divisão, no Pavilhão de Desportos de Vila do Conde.',
