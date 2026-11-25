@@ -96,7 +96,7 @@ header .btn{min-height:44px;padding:10px 18px;font-size:.92rem}
 form,.passo2{background:#fff;color:var(--texto);border-radius:var(--raio);padding:26px;margin-top:30px;max-width:640px}
 .campo{margin-bottom:18px}
 label{display:block;font-weight:600;font-size:.95rem;margin-bottom:6px;color:var(--azul)}
-input[type=text],input[type=tel],select{width:100%;min-height:52px;padding:12px 14px;border:1.5px solid #C9C2B2;border-radius:12px;font:400 1rem Mulish,sans-serif;background:#fff;color:var(--texto)}
+input[type=text],input[type=tel],input[type=email],select{width:100%;min-height:52px;padding:12px 14px;border:1.5px solid #C9C2B2;border-radius:12px;font:400 1rem Mulish,sans-serif;background:#fff;color:var(--texto)}
 .duas{display:grid;gap:0 16px}
 .consent{display:flex;gap:12px;align-items:flex-start;font-weight:400;font-size:.9rem;color:var(--suave)}
 .consent input{width:22px;height:22px;margin-top:2px;flex:none;accent-color:var(--azul)}
@@ -299,36 +299,21 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
             <option value="">Escolha a zona</option>
             <option>Porto</option><option>Matosinhos</option><option>Leça da Palmeira</option><option>Maia</option><option>Vila Nova de Gaia</option><option>Vila do Conde</option><option>Outra zona</option>
           </select></div>
-        <div class="campo"><label for="tipo">Tipo de imóvel</label>
-          <select id="tipo" required>
-            <option value="">Escolha o tipo</option>
-            <option>Apartamento</option><option>Moradia</option><option>Terreno</option><option>Outro</option>
-          </select></div>
+        <div class="campo"><label for="email">E-mail <small>(opcional, para receber a confirmação)</small></label><input type="email" id="email" autocomplete="email"></div>
       </div>
-      <div class="duas">
-        <div class="campo"><label for="tipologia">Tipologia</label>
-          <select id="tipologia">
-            <option value="">Não se aplica</option>
-            <option>T0</option><option>T1</option><option>T2</option><option>T3</option><option>T4</option><option>T5 ou superior</option>
-          </select></div>
-        <div class="campo"><label for="prazo">Quando pensa vender</label>
-          <select id="prazo" required>
-            <option value="">Escolha uma opção</option>
-            <option>Já decidi vender</option><option>Nos próximos 6 meses</option><option>Daqui a mais de 6 meses</option><option>Para já, só quero saber o valor</option>
-          </select></div>
-      </div>
+      <input type="text" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
       <label class="consent"><input type="checkbox" id="ok" required><span>Autorizo que a Cordial Level | CENTURY 21 Arquitectos use estes dados para me contactar sobre a avaliação do meu imóvel.</span></label>
       <p class="erro" id="erro" role="alert"></p>
-      <button class="btn btn-ouro" type="submit">Continuar</button>
-      <p class="nota">Gratuita e sem compromisso. Não fica obrigado a vender.</p>
+      <button class="btn btn-ouro" type="submit" id="enviar">Pedir avaliação gratuita</button>
+      <p class="nota">Leva 20 segundos. Gratuita e sem compromisso: não fica obrigado a vender.</p>
     </form>
 
     <div class="passo2" id="p2" hidden tabindex="-1">
-      <h3>Falta só enviar</h3>
-      <p class="nota">O pedido ainda não foi enviado. Toque no botão para o enviar por WhatsApp.</p>
+      <h3 id="p2t">Pedido recebido</h3>
+      <p class="nota" id="p2n">Obrigado. O Casemiro Ramos ou o Francisco Medeiros vão contactá-lo pelo telemóvel indicado. Se preferir adiantar, fale já por WhatsApp.</p>
       <pre id="resumo"></pre>
-      <a class="btn btn-ouro" id="wa1" href="#" target="_blank" rel="noopener">Enviar a Casemiro Ramos</a>
-      <a class="btn btn-linha" id="wa2" href="#" target="_blank" rel="noopener">Enviar a Francisco Medeiros</a>
+      <a class="btn btn-ouro" id="wa1" href="#" target="_blank" rel="noopener">WhatsApp do Casemiro Ramos</a>
+      <a class="btn btn-linha" id="wa2" href="#" target="_blank" rel="noopener">WhatsApp do Francisco Medeiros</a>
       <button class="link" type="button" id="voltar">Corrigir os dados</button>
     </div>
   </div>
@@ -415,25 +400,35 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 
   f.addEventListener('submit',function(ev){
     ev.preventDefault();
-    var nome=g('nome').value.trim(),tel=g('tel').value.trim();
-    var falta=!nome?'nome':!tel?'tel':!g('zona').value?'zona':!g('tipo').value?'tipo':!g('prazo').value?'prazo':!g('ok').checked?'ok':'';
+    var nome=g('nome').value.trim(),tel=g('tel').value.trim(),email=g('email').value.trim();
+    var falta=!nome?'nome':!tel?'tel':!g('zona').value?'zona':!g('ok').checked?'ok':'';
     if(falta){
       erro.textContent=falta==='ok'?'Falta autorizar o contacto.':'Preencha os campos em falta.';
       g(falta).focus();return;
     }
+    if(g('hp').value)return;
     erro.textContent='';
-    var l=['Olá, gostava de pedir a avaliação do meu imóvel.','',
-      'Nome: '+nome,'Telemóvel: '+tel,'Zona: '+g('zona').value,
-      'Imóvel: '+g('tipo').value+(g('tipologia').value?' '+g('tipologia').value:''),
-      'Venda: '+g('prazo').value];
+    var l=['Olá, gostava de pedir a avaliação do meu imóvel.','','Nome: '+nome,'Telemóvel: '+tel,'Zona: '+g('zona').value];
+    if(email)l.push('E-mail: '+email);
     if(origem)l.push('Origem: '+origem);
     var msg=l.join('\n'),enc=encodeURIComponent(msg);
     g('resumo').textContent=msg;
     g('wa1').href='https://wa.me/351935101667?text='+enc;
     g('wa2').href='https://wa.me/351912706395?text='+enc;
-    f.hidden=true;f.style.display='none';p2.hidden=false;p2.focus();
-    // evento para GA4 / Meta Pixel, quando o tracking do site estiver na página
-    try{if(window.gtag)gtag('event','generate_lead',{zona:g('zona').value});if(window.fbq)fbq('track','Lead')}catch(e){}
+    var bt=g('enviar');bt.disabled=true;bt.textContent='A enviar…';
+    function fim(ok){
+      if(!ok){g('p2t').textContent='Falta só enviar';g('p2n').textContent='Não conseguimos registar o pedido. Toque num dos botões para o enviar por WhatsApp.';}
+      f.hidden=true;f.style.display='none';p2.hidden=false;p2.focus();
+      bt.disabled=false;bt.textContent='Pedir avaliação gratuita';
+      try{if(window.gtag)gtag('event','generate_lead',{zona:g('zona').value,canal:ok?'email':'whatsapp'});if(window.fbq)fbq('track','Lead')}catch(e){}
+    }
+    var dados={_subject:'Novo pedido de avaliação: '+g('zona').value+' ('+nome+')',_template:'table',_captcha:'false',
+      _cc:'cramos@century21.pt,franciscomedeiros@century21.pt',
+      Nome:nome,'Telemóvel':tel,Zona:g('zona').value,'E-mail':email||'(não indicado)',Origem:origem||'direto',
+      'Página':location.href};
+    if(email){dados.email=email;dados._autoresponse='Olá '+nome.split(' ')[0]+', recebemos o seu pedido de avaliação gratuita do imóvel em '+g('zona').value+'. O Casemiro Ramos ou o Francisco Medeiros, consultores da Cordial Level, vão contactá-lo pelo telemóvel '+tel+'. Se preferir, fale já connosco por WhatsApp: Casemiro 935 101 667 ou Francisco 912 706 395. A avaliação é gratuita e sem compromisso. Cordial Level | CENTURY 21 Arquitectos · AMI 11414';}
+    fetch('https://formsubmit.co/ajax/manoelneto@century21.pt',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(dados)})
+      .then(function(r){return r.json()}).then(function(j){fim(j&&(j.success===true||j.success==='true'))}).catch(function(){fim(false)});
   });
   Array.prototype.forEach.call(document.querySelectorAll('.yt'),function(yt){yt.addEventListener('click',function(){yt.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+yt.dataset.yt+'?autoplay=1&rel=0'+(yt.dataset.start?'&start='+yt.dataset.start:'')+'" title="'+yt.getAttribute('aria-label')+'" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';try{if(window.gtag)gtag('event','video_play',{video_id:yt.dataset.yt})}catch(e){}},{once:true})});
   g('voltar').addEventListener('click',function(){p2.hidden=true;f.hidden=false;f.style.display='';g('nome').focus()});
